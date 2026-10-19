@@ -125,7 +125,7 @@ function LevelHeader({ level, modules, progress }: { level: Level; modules: Syll
         <>
           <ProgressBar
             className="flex-1"
-            label={`Уровень ${level}: уверенно ${c.confident} из ${ids.length}`}
+            label={`Уровень ${level}, тем ${ids.length}; не начато ${c['not-started']}`}
             segments={STATUS_ORDER.filter((s) => s !== 'not-started').map((s) => ({
               value: c[s] / ids.length,
               className: STATUS_META[s].bar,

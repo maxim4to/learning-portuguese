@@ -460,7 +460,7 @@ function LevelBar({ stats }: { stats: LevelStats }) {
       </div>
       <ProgressBar
         size="lg"
-        label={`Уровень ${level}: уверенно ${done} из ${total}`}
+        label={`Уровень ${level}, тем ${total}; не начато ${counts['not-started']}`}
         segments={
           total > 0
             ? STATUS_ORDER.filter((s) => s !== 'not-started').map((s) => ({
