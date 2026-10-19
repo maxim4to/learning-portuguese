@@ -1,10 +1,13 @@
 import type { ReactNode } from 'react'
 import { RotateCw, TriangleAlert } from 'lucide-react'
 import { cx } from './cx'
+import { Illustration } from './Illustration'
+import type { IllustrationName } from './illustrations'
 
 /** Icon + one line of meaning + optional CTA. */
 export function EmptyState({
   icon,
+  art,
   title,
   text,
   action,
@@ -13,6 +16,8 @@ export function EmptyState({
   compact,
 }: {
   icon?: ReactNode
+  /** Poster illustration instead of the icon circle (decorative). */
+  art?: IllustrationName
   title: ReactNode
   text?: ReactNode
   action?: ReactNode
@@ -29,7 +34,9 @@ export function EmptyState({
   }[tone]
   return (
     <div className={cx('flex flex-col items-center text-center', compact ? 'gap-2 py-4' : 'gap-3 py-8', className)}>
-      {icon && (
+      {art ? (
+        <Illustration name={art} sizes={compact ? '144px' : '208px'} className={cx('rounded-card', compact ? 'w-36' : 'w-52')} />
+      ) : icon && (
         <span aria-hidden className={cx('grid place-items-center rounded-full', compact ? 'size-12' : 'size-16', iconTone)}>
           {icon}
         </span>

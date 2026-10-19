@@ -4,6 +4,8 @@ import { ChevronRight } from 'lucide-react'
 import { ButtonLink } from '@/components/Button'
 import { getDiagnostic, getSyllabus, getTopic } from '@/content'
 import { LevelBadge } from '@/components/StatusBadge'
+import { Illustration } from '@/components/Illustration'
+import { levelArt } from '@/components/illustrations'
 import {
   GRADE_META,
   countGrades,
@@ -153,7 +155,8 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
           .levels.filter((l) => l.modules.length > 0 && probed.has(l.level))
           .map((lvl) => (
             <div key={lvl.level} className="card space-y-4">
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-center gap-3">
+                <Illustration name={levelArt(lvl.level)} sizes="56px" className="size-14 rounded-[1.25rem]" />
                 <LevelBadge level={lvl.level} />
                 {skipped.has(lvl.level) && <span className="text-sm text-ink-muted">не оценивался</span>}
               </div>

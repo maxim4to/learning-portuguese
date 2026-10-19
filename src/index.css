@@ -572,3 +572,9 @@ input[type='range'].range::-moz-range-thumb {
     scroll-behavior: auto !important;
   }
 }
+
+/* Poster illustrations (components/Illustration.tsx): flat tiles with their own paper; on basalt they are
+   dimmed a touch so the Limestone/Pumice paper doesn't glare next to dark cards. */
+.dark .illus {
+  filter: brightness(0.84) saturate(0.95);
+}

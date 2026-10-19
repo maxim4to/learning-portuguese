@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { CalendarCheck, Layers, Plus } from 'lucide-react'
+import { Layers, Plus } from 'lucide-react'
 import { ButtonLink } from '@/components/Button'
 import { EmptyState, ErrorState, PageSkeleton } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
@@ -133,7 +133,7 @@ export function ReviewPage() {
               </div>
             ) : (
               <EmptyState
-                icon={<CalendarCheck className="size-7" />}
+                art="empty-review"
                 title="На сегодня всё"
                 text={
                   <>

@@ -100,7 +100,7 @@ export default defineConfig(({ mode }) => {
           ],
         },
         workbox: {
-          globPatterns: ['**/*.{js,css,html,svg,woff2}'],
+          globPatterns: ['**/*.{js,css,html,svg,woff2,webp}'],
           globIgnores: ['404.html'],
           navigateFallback: `${base}index.html`,
           navigateFallbackDenylist: [new RegExp(`^${esc}audio/`), new RegExp(`^${esc}__/`)],

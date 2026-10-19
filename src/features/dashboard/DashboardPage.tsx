@@ -7,15 +7,13 @@ import {
   ClipboardCheck,
   Flame,
   Layers,
-  PartyPopper,
   Sparkles,
   Target,
 } from 'lucide-react'
 import type { ErrorEntry } from '@/data/types.ts'
 import { dueCards, isNewCard } from '@/engine/fsrs'
 import { ButtonLink } from '@/components/Button'
-import { AzulejoCorner } from '@/components/Card'
-import { Halftone } from '@/components/Halftone'
+import { Illustration } from '@/components/Illustration'
 import { cx } from '@/components/cx'
 import { EmptyState, ErrorState, PageSkeleton } from '@/components/EmptyState'
 import { ProgressBar } from '@/components/ProgressBar'
@@ -133,7 +131,7 @@ export function DashboardPage() {
               {errors.length === 0 ? (
                 <EmptyState
                   compact
-                  icon={<PartyPopper className="size-5" />}
+                  art="empty-errors"
                   title="Ошибок пока нет"
                   text="Сюда попадут ошибки из упражнений — их удобно повторять карточками."
                 />
@@ -170,8 +168,14 @@ export function DashboardPage() {
 /** First visit: one clear recommendation instead of empty widgets (audit §3.2). */
 function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string } }) {
   return (
-    <section className="card-raised relative isolate space-y-6 overflow-hidden rounded-hero p-6 sm:p-10">
-      <AzulejoCorner />
+    <section className="card-raised relative isolate grid gap-6 overflow-hidden rounded-hero p-6 sm:p-10 md:grid-cols-[1fr_minmax(0,0.9fr)] md:items-center">
+      <Illustration
+        name="hero"
+        eager
+        sizes="(min-width: 1280px) 520px, (min-width: 768px) 45vw, 100vw"
+        className="w-full rounded-card md:order-last"
+      />
+      <div className="space-y-6">
       <div className="max-w-[46ch] space-y-3">
         <p className="inline-flex rounded-pill bg-sun-soft px-3 py-1 text-xs font-semibold tracking-[0.08em] text-sun uppercase">
           Bem-vindo · добро пожаловать
@@ -182,7 +186,7 @@ function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string }
           тему уровня A1.
         </p>
       </div>
-      <div className="flex flex-col gap-2 sm:flex-row">
+      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-start">
         <ButtonLink to="/diagnostic" size="lg" className="shrink-0" icon={<ClipboardCheck className="size-5" />}>
           Пройти диагностику
         </ButtonLink>
@@ -191,6 +195,7 @@ function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string }
             Первая тема: {firstTopic.title}
           </ButtonLink>
         )}
+      </div>
       </div>
     </section>
   )
@@ -291,9 +296,15 @@ function TodayHero({
       )}
       </div>
 
-      {/* Signature halftone panel with the day's goal ring (Caldera hero block). */}
-      <div className="relative isolate flex min-h-44 items-end overflow-hidden rounded-hero p-4 sm:p-6">
-        <Halftone seed={due + 7} width={420} height={420} step={11} heat={0.45} className="absolute inset-0 -z-10 size-full" />
+      {/* Signature poster panel (Lisbon halftone hero) with the day's goal ring. */}
+      <div className="relative isolate flex aspect-[3/2] items-end overflow-hidden rounded-hero bg-terracotta-fill p-4 sm:p-6 md:aspect-auto md:min-h-72">
+        <Illustration
+          name="hero"
+          cover
+          eager
+          sizes="(min-width: 768px) 680px, 100vw"
+          className="-z-10 object-[72%_50%]"
+        />
         <div className="flex items-center gap-4 rounded-pill bg-surface py-2 pr-6 pl-2">
           <ProgressRing value={ratio} size={64} stroke={7} tone="brand">
             <span className="font-display text-2xl leading-none font-black tabular-nums">{doneToday}</span>

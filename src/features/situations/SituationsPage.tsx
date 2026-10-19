@@ -3,6 +3,8 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { MessagesSquare } from 'lucide-react'
 import { Chip, ChipGroup } from '@/components/Chip'
 import { cx } from '@/components/cx'
+import { Illustration } from '@/components/Illustration'
+import { situationArt } from '@/components/illustrations'
 import { EmptyState } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
 import { plural } from '@/features/library/format'
@@ -91,9 +93,12 @@ export function SituationsPage() {
 function SituationCard({ situation: s, progress }: { situation: Situation; progress?: TopicProgress }) {
   return (
     <Link to={`/situation/${s.id}`} className="card card-link flex h-full flex-col gap-4 sm:p-6">
-      <span className="flex items-center justify-between gap-2">
-        <span aria-hidden className={cx('grid size-14 shrink-0 place-items-center rounded-full', sceneTint(s.id))}>
-          {createElement(sceneIcon(s.id), { className: 'size-6', strokeWidth: 1.8 })}
+      <span className="flex items-start justify-between gap-2">
+        <span className="relative shrink-0">
+          <Illustration name={situationArt(s.id)} sizes="88px" className="size-22 rounded-[1.5rem]" />
+          <span aria-hidden className={cx('absolute -right-1.5 -bottom-1.5 grid size-9 place-items-center rounded-full ring-4 ring-surface', sceneTint(s.id))}>
+            {createElement(sceneIcon(s.id), { className: 'size-4.5', strokeWidth: 2 })}
+          </span>
         </span>
         <LevelBadge level={s.level} className="shrink-0" />
       </span>
