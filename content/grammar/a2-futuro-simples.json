@@ -1,0 +1,454 @@
+{
+  "id": "a2-futuro-simples",
+  "level": "A2",
+  "module": "a2-imperativo-futuro-condicional",
+  "title": "Простое будущее время",
+  "titlePt": "Futuro simples do indicativo",
+  "requires": [
+    "a1-estar-a-ir-infinitivo",
+    "a1-presente-irregulares"
+  ],
+  "theory": "## Образование\n\nОкончания прибавляются **к целому инфинитиву** и одинаковы для всех спряжений:\n\n| | falar | comer | partir |\n|---|---|---|---|\n| eu | falar**ei** | comer**ei** | partir**ei** |\n| tu | falar**ás** | comer**ás** | partir**ás** |\n| ele / você | falar**á** | comer**á** | partir**á** |\n| nós | falar**emos** | comer**emos** | partir**emos** |\n| eles / vocês | falar**ão** | comer**ão** | partir**ão** |\n\nНе путайте **falarão** (будут говорить) и **falaram** (говорили) — ударение и смысл разные.\n\n## Неправильные: всего три\n\n| | fazer | dizer | trazer |\n|---|---|---|---|\n| eu | **farei** | **direi** | **trarei** |\n| tu | farás | dirás | trarás |\n| ele / você | fará | dirá | trará |\n| nós | faremos | diremos | traremos |\n| eles / vocês | farão | dirão | trarão |\n\nВсе остальные — правильные: **serei, estarei, terei, irei, virei, poderei, quererei**; от **pôr** — **porei** (без ^).\n\n## Когда употребляется\n\n### 1. Будущее в письменной и официальной речи\n\n**Amanhã choverá no Norte.** (прогноз погоды) **O comboio partirá às 10h15.** **Prometo que te ligarei.**\n\n### 2. Предположение о настоящем\n\nЖивое и частое употребление: futuro выражает догадку — «наверное, должно быть, интересно...».\n\n**Que horas são? — Serão umas nove.** (Наверное, около девяти.)\n**Onde estará o Rui?** (Где же Руи? / Интересно, где Руи?)\n**Ela terá uns trinta anos.** (Ей, наверное, лет тридцать.)\n\nСиноним в речи — **dever + инфинитив**: **Devem ser nove horas.**\n\n### 3. В разговоре о планах — ir + infinitivo\n\nВ устной речи о будущем обычно говорят **ir + infinitivo** или просто **presente**:\n\n| ситуация | что сказать |\n|---|---|\n| планы, намерения | **Vou fazer** / **Faço amanhã** |\n| прогноз, расписание, официальный текст | **fará, partirá** |\n| торжественное обещание | **Farei tudo!** |\n| догадка о настоящем | **Será...? Estará...?** |\n\n«Я пойду» — **Vou** (или **Irei**), а не *vou ir*: **Amanhã vou ao médico.**\n\n## Местоимения: mesóclise\n\nБез «магнита» клитика встаёт внутрь формы: **dir-te-ei** (скажу тебе), **far-se-á** (будет сделано), **levantar-me-ei**. После магнита — перед глаголом: **Não te direi. Nunca o farei.** В разговоре mesóclise обходят: **Vou dizer-te.**\n\n## После quando / se — не futuro simples\n\n**Quando chegar, ligo-te.** (а не *quando chegarei*) — здесь нужен futuro do conjuntivo, это тема уровня B1.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Dir-te-ei** / **Vou dizer-te.** | **Te direi** / **Vou te dizer.** | mesóclise в BR практически исчезла |\n| **Vou** ao Porto amanhã. | **Vou ir** ao Rio amanhã. | *vou ir* — бразильская разговорная форма; в pt-PT — **vou** или **irei** |\n| **Serão** nove horas. | **Devem ser** nove horas. | догадка через futuro в pt-PT звучит живо; в BR чаще **dever** |\n\nВ обеих нормах futuro simples в речи уступает **ir + infinitivo**, но в Португалии он заметно чаще встречается в значении догадки (**Quem será?**).",
+  "commonErrors": "- **Неправильные по аналогии**: *fazerei, dizerei, trazerei* ✗ → **farei, direi, trarei** ✓.\n- **Двойное ir**: *Vou ir ao cinema* ✗ → **Vou ao cinema** / **Irei ao cinema** ✓.\n- **Клитика после формы futuro**: *Direi-te* ✗ → **Dir-te-ei** / **Vou dizer-te** ✓.\n- **Futuro после quando/se** (калька с русского «когда приду»): *Quando chegarei, ligo-te* ✗ → **Quando chegar, ligo-te** ✓.\n- **Потерянное ударение**: *ele fara, eles farao* ✗ → **fará, farão** ✓.\n- **Буквальное понимание догадки**: **Serão dez horas** — это не «будет десять часов», а «сейчас, наверное, десять».\n- **Книжность в разговоре**: *Logo à noite jantarei com a Joana* — грамматично, но звучит как в романе; естественнее **Logo à noite vou jantar com a Joana**.",
+  "examples": [
+    {
+      "pt": "Amanhã choverá em todo o país.",
+      "ru": "Завтра по всей стране пройдут дожди.",
+      "audio": true
+    },
+    {
+      "pt": "Onde estará a minha carteira?",
+      "ru": "Куда же подевался мой кошелёк?",
+      "audio": true
+    },
+    {
+      "pt": "Que horas são? — Serão umas nove.",
+      "ru": "Сколько времени? — Наверное, около девяти.",
+      "audio": true
+    },
+    {
+      "pt": "Prometo que farei tudo para te ajudar.",
+      "ru": "Обещаю, что сделаю всё, чтобы тебе помочь.",
+      "audio": true
+    },
+    {
+      "pt": "No sábado vamos jantar com a Inês.",
+      "ru": "В субботу мы ужинаем с Инеш.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-futuro-simples-ex-01",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Amanhã eu ___ (falar) com o diretor.",
+      "answer": [
+        "falarei"
+      ],
+      "ru": "Завтра я поговорю с директором."
+    },
+    {
+      "id": "a2-futuro-simples-ex-02",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "O comboio ___ (partir) às dez e meia.",
+      "answer": [
+        "partirá"
+      ],
+      "ru": "Поезд отправится в половине одиннадцатого."
+    },
+    {
+      "id": "a2-futuro-simples-ex-03",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (fazer) o possível.",
+      "answer": [
+        "faremos"
+      ],
+      "ru": "Мы сделаем всё возможное.",
+      "explanation": "fazer → far- + emos."
+    },
+    {
+      "id": "a2-futuro-simples-ex-04",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Eu nunca te ___ (dizer) uma mentira.",
+      "answer": [
+        "direi"
+      ],
+      "ru": "Я никогда не скажу тебе неправду.",
+      "explanation": "dizer → dir-; nunca притягивает местоимение te."
+    },
+    {
+      "id": "a2-futuro-simples-ex-05",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "No jantar de sábado, a Rita ___ (trazer) a sobremesa.",
+      "answer": [
+        "trará"
+      ],
+      "ru": "На субботний ужин Рита принесёт десерт."
+    },
+    {
+      "id": "a2-futuro-simples-ex-06",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Onde ___ (estar) o Pedro a esta hora?",
+      "answer": [
+        "estará"
+      ],
+      "hint": "догадка о настоящем",
+      "ru": "Где же Педру в такое время?",
+      "explanation": "Futuro выражает предположение: «интересно, где он сейчас»."
+    },
+    {
+      "id": "a2-futuro-simples-ex-07",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Os resultados ___ (ser) publicados na próxima semana.",
+      "answer": [
+        "serão"
+      ],
+      "ru": "Результаты будут опубликованы на следующей неделе."
+    },
+    {
+      "id": "a2-futuro-simples-ex-08",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Vocês ___ (ter) tempo para nos visitar?",
+      "answer": [
+        "terão"
+      ],
+      "ru": "У вас будет время нас навестить?"
+    },
+    {
+      "id": "a2-futuro-simples-ex-09",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "Amanhã ___ ao Porto.",
+      "options": [
+        "vou ir",
+        "vou",
+        "irei-me",
+        "vai ir"
+      ],
+      "correct": 1,
+      "explanation": "«Vou ir» — бразильская разговорная форма; в pt-PT — vou или irei."
+    },
+    {
+      "id": "a2-futuro-simples-ex-10",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "— Que idade tem o professor? — Não sei, ___ uns cinquenta anos.",
+      "options": [
+        "teve",
+        "tinha",
+        "terá",
+        "tenho"
+      ],
+      "correct": 2,
+      "explanation": "Догадка о настоящем — futuro: terá («наверное, ему»)."
+    },
+    {
+      "id": "a2-futuro-simples-ex-11",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "Prometo que ___.",
+      "options": [
+        "te ligarei",
+        "ligarei-te",
+        "ligar-te-ei",
+        "te vou ligar-te"
+      ],
+      "correct": 0,
+      "explanation": "Que — «магнит», поэтому местоимение перед глаголом, без mesóclise."
+    },
+    {
+      "id": "a2-futuro-simples-ex-12",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "Eu ___ o trabalho até sexta.",
+      "options": [
+        "fazerei",
+        "fazei",
+        "fazirei",
+        "farei"
+      ],
+      "correct": 3,
+      "explanation": "fazer → far- + ei = farei (не *fazerei*)."
+    },
+    {
+      "id": "a2-futuro-simples-ex-13",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "Самый естественный вариант в разговоре с другом: «Сегодня вечером я буду смотреть фильм».",
+      "options": [
+        "Hoje à noite verei um filme.",
+        "Hoje à noite estarei vendo um filme.",
+        "Hoje à noite vou ver um filme.",
+        "Hoje à noite vou ir ver um filme."
+      ],
+      "correct": 2,
+      "explanation": "О планах в речи говорят ir + infinitivo. Verei — грамматично, но книжно."
+    },
+    {
+      "id": "a2-futuro-simples-ex-14",
+      "topicId": "a2-futuro-simples",
+      "type": "transform",
+      "prompt": "Vou fazer o jantar.",
+      "instruction": "Замените ir + infinitivo на futuro simples.",
+      "answer": [
+        "Farei o jantar.",
+        "Eu farei o jantar."
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-ex-15",
+      "topicId": "a2-futuro-simples",
+      "type": "transform",
+      "prompt": "Vamos dizer a verdade.",
+      "instruction": "Замените ir + infinitivo на futuro simples.",
+      "answer": [
+        "Diremos a verdade.",
+        "Nós diremos a verdade."
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-ex-16",
+      "topicId": "a2-futuro-simples",
+      "type": "transform",
+      "prompt": "Vou dizer-te amanhã.",
+      "instruction": "Замените на futuro simples с mesóclise.",
+      "answer": [
+        "Dir-te-ei amanhã.",
+        "Amanhã dir-te-ei."
+      ],
+      "explanation": "Без «магнита» местоимение встаёт внутрь: dir-te-ei."
+    },
+    {
+      "id": "a2-futuro-simples-ex-17",
+      "topicId": "a2-futuro-simples",
+      "type": "order-words",
+      "words": [
+        "Quem",
+        "será",
+        "aquele",
+        "senhor?"
+      ],
+      "answer": "Quem será aquele senhor?",
+      "explanation": "«Интересно, кто этот господин?» — futuro догадки."
+    },
+    {
+      "id": "a2-futuro-simples-ex-18",
+      "topicId": "a2-futuro-simples",
+      "type": "order-words",
+      "words": [
+        "Não",
+        "te",
+        "direi",
+        "nada"
+      ],
+      "answer": "Não te direi nada"
+    },
+    {
+      "id": "a2-futuro-simples-ex-19",
+      "topicId": "a2-futuro-simples",
+      "type": "translate-ru-pt",
+      "ru": "Сейчас, наверное, около десяти.",
+      "answer": [
+        "Serão umas dez horas.",
+        "Serão umas dez.",
+        "Agora serão umas dez horas.",
+        "Agora serão umas dez.",
+        "Serão por volta das dez.",
+        "Devem ser umas dez horas.",
+        "Devem ser umas dez.",
+        "Agora devem ser umas dez horas.",
+        "Agora devem ser umas dez.",
+        "Devem ser por volta das dez."
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-ex-20",
+      "topicId": "a2-futuro-simples",
+      "type": "translate-ru-pt",
+      "ru": "Завтра я принесу книгу.",
+      "answer": [
+        "Amanhã trarei o livro.",
+        "Amanhã eu trarei o livro.",
+        "Trarei o livro amanhã.",
+        "Amanhã vou trazer o livro.",
+        "Vou trazer o livro amanhã.",
+        "Amanhã trago o livro.",
+        "Trago o livro amanhã.",
+        "Eu trago o livro amanhã.",
+        "Amanhã eu vou trazer o livro.",
+        "Eu vou trazer o livro amanhã.",
+        "Eu trarei o livro amanhã."
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-ex-21",
+      "topicId": "a2-futuro-simples",
+      "type": "listen-type",
+      "text": "Isso será difícil, mas faremos o possível.",
+      "answer": [
+        "Isso será difícil, mas faremos o possível."
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-ex-22",
+      "topicId": "a2-futuro-simples",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой eu в futuro simples.",
+      "pairs": [
+        {
+          "left": "fazer",
+          "right": "farei"
+        },
+        {
+          "left": "dizer",
+          "right": "direi"
+        },
+        {
+          "left": "trazer",
+          "right": "trarei"
+        },
+        {
+          "left": "pôr",
+          "right": "porei"
+        },
+        {
+          "left": "ir",
+          "right": "irei"
+        },
+        {
+          "left": "ser",
+          "right": "serei"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-futuro-simples-mt-01",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (ver) isso amanhã.",
+      "answer": [
+        "verei"
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-mt-02",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (fazer) uma festa no sábado.",
+      "answer": [
+        "farão"
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-mt-03",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "A reunião ___ (começar) às nove em ponto.",
+      "answer": [
+        "começará"
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-mt-04",
+      "topicId": "a2-futuro-simples",
+      "type": "fill-gap",
+      "prompt": "Está alguém à porta. Quem ___ (ser) a esta hora?",
+      "answer": [
+        "será"
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-mt-05",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "Eu ___ o casaco aqui, está bem?",
+      "options": [
+        "ponharei",
+        "pôrei",
+        "porei",
+        "porrei"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-futuro-simples-mt-06",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "Não ___ nada, prometo.",
+      "options": [
+        "te direi",
+        "direi-te",
+        "dir-te-ei",
+        "te dizerei"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a2-futuro-simples-mt-07",
+      "topicId": "a2-futuro-simples",
+      "type": "choice",
+      "prompt": "— Onde está a Rita? — Não sei, ___ no trabalho.",
+      "options": [
+        "está-se",
+        "estará",
+        "estive",
+        "estaria"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-futuro-simples-mt-08",
+      "topicId": "a2-futuro-simples",
+      "type": "transform",
+      "prompt": "Vou trazer os bilhetes.",
+      "instruction": "Замените ir + infinitivo на futuro simples.",
+      "answer": [
+        "Trarei os bilhetes.",
+        "Eu trarei os bilhetes."
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-mt-09",
+      "topicId": "a2-futuro-simples",
+      "type": "translate-ru-pt",
+      "ru": "Мы сделаем это завтра.",
+      "answer": [
+        "Faremos isso amanhã.",
+        "Faremos isto amanhã.",
+        "Amanhã faremos isso.",
+        "Amanhã faremos isto.",
+        "Nós faremos isso amanhã.",
+        "Fá-lo-emos amanhã.",
+        "Vamos fazer isso amanhã.",
+        "Amanhã vamos fazer isso.",
+        "Fazemos isso amanhã.",
+        "Amanhã fazemos isso."
+      ]
+    },
+    {
+      "id": "a2-futuro-simples-mt-10",
+      "topicId": "a2-futuro-simples",
+      "type": "listen-choice",
+      "text": "Serão umas oito horas.",
+      "prompt": "Что значит эта фраза?",
+      "options": [
+        "Будет восемь часов.",
+        "Сейчас, наверное, около восьми.",
+        "Было восемь часов.",
+        "Встреча будет в восемь."
+      ],
+      "correct": 1
+    }
+  ]
+}

@@ -1,0 +1,460 @@
+{
+  "id": "b1-conectores-discursivos",
+  "level": "B1",
+  "module": "b1-lexico-estilo",
+  "title": "Дискурсивные коннекторы",
+  "titlePt": "Conectores discursivos",
+  "requires": [
+    "a2-conjuncoes-basicas",
+    "b1-conjuntivo-conjuncoes"
+  ],
+  "theory": "## Зачем нужны коннекторы\n\nКоннекторы связывают фразы и показывают логику: противопоставление, следствие, добавление, пояснение. На B1 пора выйти за пределы **e, mas, porque** — это сразу делает речь и письмо взрослее.\n\n## Противопоставление («однако», «хотя»)\n\n| коннектор | регистр | пример |\n|---|---|---|\n| **mas** | нейтр., разг. | **Gosto de Lisboa, mas é cara.** |\n| **no entanto** | нейтральный | **Estudei muito. No entanto, chumbei.** — Однако я провалился. |\n| **contudo, todavia, porém** | письменный, формальный | **O projeto é bom; contudo, é caro.** |\n| **mesmo assim** | разговорный | **Estava a chover; mesmo assim, saímos.** — И всё равно мы вышли. |\n| **apesar de** + сущ. / инф. | любой | **Apesar da chuva, fomos à praia.** **Apesar de estar cansado, fui.** |\n| **embora** + conjuntivo | любой | **Embora esteja cansado, vou.** — Хотя я устал, пойду. |\n\n- **No entanto, contudo, todavia, porém** могут стоять внутри фразы между запятыми: **O plano, contudo, falhou.** **Mas** — только в начале части.\n- **apesar de** сливается с артиклем: **apesar da crise**, **apesar do frio**.\n- После **embora** — всегда conjuntivo: **embora seja**, **embora tenha**.\n\n## Следствие («поэтому»)\n\n**por isso**, **portanto**, **assim**, **por conseguinte** (формально), **então** (разг.): **Estou constipado, por isso não vou ao ginásio.** — Я простужен, поэтому не пойду в спортзал.\n\n## Добавление («кроме того»)\n\n**além disso** (в pt-PT очень часто **para além disso**), **também**, **além de** + сущ./инф.: **Além de ser barato, fica perto.**\n\n**aliás** — два значения:\n1. «к тому же, впрочем» (добавляет более сильный довод): **Não gosto de futebol. Aliás, nunca gostei.**\n2. «вернее, точнее» (поправка): **Chego às três, aliás, às quatro.**\n\n## Пояснение («то есть»)\n\n**ou seja**, **isto é**, **quer dizer**: **O NIF, ou seja, o número de contribuinte.**\n\n## Структура текста\n\n**em primeiro lugar** → **em segundo lugar** → **depois / a seguir** → **por fim / finalmente**; сравнение двух сторон — **por um lado... por outro (lado)...**; итог — **em suma**, **em resumo**: **Por um lado, o trabalho é interessante; por outro, paga mal.** — С одной стороны, работа интересная; с другой — платят мало.\n\n## Пунктуация\n\nКоннектор в начале фразы отделяется запятой: **No entanto, ...**, **Além disso, ...**, **Por fim, ...**. Перед **mas** запятая ставится, после — нет: **Quero ir, mas não posso.** **Por isso** и **portanto** внутри фразы обычно идут после запятой: **Choveu, por isso ficámos em casa.**\n\n## Подтверждение и неожиданный итог\n\n- **de facto** — действительно, и правда (подтверждает сказанное): **Disseram que ia chover e, de facto, choveu.**\n- **na verdade** — на самом деле (часто поправляет): **Parece fácil; na verdade, é difícil.**\n- **afinal** — в итоге, всё-таки, оказывается (результат расходится с ожиданием): **Afinal, a loja estava aberta.** В вопросе — «так всё-таки...?»: **Afinal, vens ou não?**\n- «Наконец» в перечислении — **por fim, finalmente**, а не *afinal*.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **de facto** | de fato | в pt-PT *fato* — это «костюм» |\n| **no entanto, contudo** | porém, no entanto | в BR *porém* частотно и в речи; в pt-PT звучит книжно |\n| **apesar de** + инф./сущ. | apesar de; разг. *apesar que* | *apesar que* — ненормативно в обеих нормах |\n| **Afinal, vens ou não?** | Afinal, você vem ou não? | tu + 2-е лицо в pt-PT |\n| **por isso** | por isso / aí (разг.) | разговорное *aí* («и тогда») — бразильское |\n\nСами коннекторы в двух нормах почти совпадают; различаются частотность и орфография (**facto**).",
+  "commonErrors": "- **Индикатив после embora**: *Embora está cansado, vai trabalhar* ✗ → **Embora esteja cansado, vai trabalhar** ✓.\n- **apesar de без артикля перед существительным**: *Apesar de chuva* ✗ → **Apesar da chuva** ✓.\n- **apesar que**: *Apesar que chove, saímos* ✗ → **Apesar de chover, saímos** / **Embora chova, saímos** ✓.\n- **afinal = «наконец»**: *Afinal chegou o verão* (в значении «наконец-то») ✗ → **Finalmente chegou o verão** ✓.\n- **Путаница por isso / porque**: *Não vou, por isso estou doente* ✗ → **Não vou porque estou doente** / **Estou doente, por isso não vou** ✓.\n- **Бразильская орфография**: *de fato* ✗ → **de facto** ✓.\n- **Злоупотребление mas в письме**: *Mas... mas... mas...* — в формальном тексте разнообразьте: **no entanto, contudo**.",
+  "examples": [
+    {
+      "pt": "Estudei muito. No entanto, não passei no exame.",
+      "ru": "Я много занимался. Однако экзамен не сдал.",
+      "audio": true
+    },
+    {
+      "pt": "Apesar da chuva, fomos dar uma volta.",
+      "ru": "Несмотря на дождь, мы пошли прогуляться.",
+      "audio": true
+    },
+    {
+      "pt": "Embora seja caro, este café vale a pena.",
+      "ru": "Хотя это кафе дорогое, оно того стоит.",
+      "audio": true
+    },
+    {
+      "pt": "A casa é pequena; além disso, fica longe do metro.",
+      "ru": "Дом маленький; кроме того, он далеко от метро.",
+      "audio": true
+    },
+    {
+      "pt": "Afinal, a loja estava aberta!",
+      "ru": "Оказывается, магазин всё-таки был открыт!",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-conectores-discursivos-ex-01",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Estava a chover. ___, fomos à praia.",
+      "answer": [
+        "Mesmo assim",
+        "No entanto",
+        "Contudo",
+        "Todavia",
+        "Porém",
+        "Ainda assim"
+      ],
+      "hint": "«и всё равно / однако»",
+      "ru": "Шёл дождь. И всё равно мы пошли на пляж."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-02",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Estou constipado, ___ não vou ao ginásio.",
+      "answer": [
+        "por isso",
+        "portanto",
+        "então",
+        "por conseguinte"
+      ],
+      "hint": "следствие",
+      "ru": "Я простужен, поэтому не пойду в спортзал."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-03",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "___ da chuva, o concerto não foi cancelado.",
+      "answer": [
+        "Apesar"
+      ],
+      "ru": "Несмотря на дождь, концерт не отменили.",
+      "explanation": "apesar de + a chuva → apesar da chuva."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-04",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Embora ___ (estar) cansada, a Inês vai trabalhar.",
+      "answer": [
+        "esteja"
+      ],
+      "ru": "Хотя Инеш устала, она идёт на работу.",
+      "explanation": "После embora — всегда conjuntivo."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-05",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "O apartamento é caro e, ___, fica longe do metro.",
+      "answer": [
+        "além disso",
+        "aliás",
+        "para além disso"
+      ],
+      "hint": "«кроме того»",
+      "ru": "Квартира дорогая и к тому же далеко от метро."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-06",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Chego às oito, ___, às oito e meia.",
+      "answer": [
+        "aliás",
+        "ou melhor",
+        "quer dizer"
+      ],
+      "hint": "поправка: «вернее»",
+      "ru": "Приеду в восемь, вернее, в полдевятого."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-07",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "O NIF, ___, o número de contribuinte, é obrigatório.",
+      "answer": [
+        "ou seja",
+        "isto é",
+        "quer dizer"
+      ],
+      "ru": "NIF, то есть налоговый номер, обязателен."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-08",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Disseram que ia chover e, de ___, choveu.",
+      "answer": [
+        "facto"
+      ],
+      "ru": "Сказали, что будет дождь, и действительно пошёл дождь.",
+      "explanation": "В pt-PT — facto (fato = костюм)."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-09",
+      "topicId": "b1-conectores-discursivos",
+      "type": "choice",
+      "prompt": "___ estar doente, o Rui foi trabalhar.",
+      "options": [
+        "Embora",
+        "Apesar de",
+        "Mesmo assim",
+        "Contudo"
+      ],
+      "correct": 1,
+      "explanation": "Перед инфинитивом — apesar de; embora требует личной формы в conjuntivo."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-10",
+      "topicId": "b1-conectores-discursivos",
+      "type": "choice",
+      "prompt": "___ o filme seja longo, vale a pena.",
+      "options": [
+        "Apesar de",
+        "Porque",
+        "Embora",
+        "Portanto"
+      ],
+      "correct": 2,
+      "explanation": "seja (conjuntivo) → embora."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-11",
+      "topicId": "b1-conectores-discursivos",
+      "type": "choice",
+      "prompt": "Pensámos que o restaurante estava fechado, mas ___ estava aberto.",
+      "options": [
+        "afinal",
+        "portanto",
+        "além disso",
+        "por fim"
+      ],
+      "correct": 0,
+      "explanation": "afinal — «оказывается», итог вопреки ожиданиям."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-12",
+      "topicId": "b1-conectores-discursivos",
+      "type": "choice",
+      "prompt": "Выберите правильную фразу для формального текста:",
+      "options": [
+        "Os resultados são bons. Tipo, os custos aumentaram.",
+        "Os resultados são bons. Embora os custos aumentaram.",
+        "Os resultados são bons. Mesmo, os custos aumentaram.",
+        "Os resultados são bons. Contudo, os custos aumentaram."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-13",
+      "topicId": "b1-conectores-discursivos",
+      "type": "transform",
+      "prompt": "Estou cansado, mas vou à festa.",
+      "instruction": "Перепишите с embora.",
+      "answer": [
+        "Embora esteja cansado, vou à festa.",
+        "Vou à festa, embora esteja cansado.",
+        "Embora eu esteja cansado, vou à festa.",
+        "Vou à festa, embora eu esteja cansado."
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-14",
+      "topicId": "b1-conectores-discursivos",
+      "type": "transform",
+      "prompt": "Embora chova, vamos sair.",
+      "instruction": "Перепишите с apesar de + инфинитив.",
+      "answer": [
+        "Apesar de chover, vamos sair.",
+        "Vamos sair apesar de chover."
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-15",
+      "topicId": "b1-conectores-discursivos",
+      "type": "transform",
+      "prompt": "Não tenho tempo. Não vou.",
+      "instruction": "Объедините в одну фразу с por isso.",
+      "answer": [
+        "Não tenho tempo, por isso não vou.",
+        "Não tenho tempo e por isso não vou."
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-16",
+      "topicId": "b1-conectores-discursivos",
+      "type": "order-words",
+      "words": [
+        "Em",
+        "a",
+        "todos",
+        "primeiro",
+        "agradecer",
+        "quero",
+        "lugar,"
+      ],
+      "answer": "Em primeiro lugar, quero agradecer a todos",
+      "ru": "Прежде всего хочу поблагодарить всех."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-17",
+      "topicId": "b1-conectores-discursivos",
+      "type": "order-words",
+      "words": [
+        "Afinal,",
+        "comboio",
+        "o",
+        "se",
+        "não",
+        "atrasou"
+      ],
+      "answer": "Afinal, o comboio não se atrasou",
+      "ru": "В итоге поезд не опоздал.",
+      "explanation": "После não клитика стоит перед глаголом."
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-18",
+      "topicId": "b1-conectores-discursivos",
+      "type": "translate-ru-pt",
+      "ru": "Несмотря на дождь, мы пошли гулять.",
+      "answer": [
+        "Apesar da chuva, fomos passear.",
+        "Apesar da chuva, fomos dar uma volta.",
+        "Fomos passear apesar da chuva.",
+        "Fomos dar uma volta apesar da chuva."
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-19",
+      "topicId": "b1-conectores-discursivos",
+      "type": "translate-ru-pt",
+      "ru": "То есть ты не придёшь?",
+      "answer": [
+        "Ou seja, não vens?",
+        "Isto é, não vens?",
+        "Quer dizer, não vens?",
+        "Ou seja, tu não vens?",
+        "Quer dizer que não vens?"
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-20",
+      "topicId": "b1-conectores-discursivos",
+      "type": "listen-type",
+      "text": "No entanto, ninguém percebeu o problema.",
+      "answer": [
+        "No entanto, ninguém percebeu o problema."
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-21",
+      "topicId": "b1-conectores-discursivos",
+      "type": "listen-choice",
+      "text": "Afinal, não vens connosco?",
+      "options": [
+        "Наконец-то ты идёшь с нами!",
+        "Так ты всё-таки не идёшь с нами?",
+        "Почему ты никогда не ходишь с нами?",
+        "Ты в конце концов придёшь к нам?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-conectores-discursivos-ex-22",
+      "topicId": "b1-conectores-discursivos",
+      "type": "match",
+      "prompt": "Соедините коннектор с переводом.",
+      "pairs": [
+        {
+          "left": "no entanto",
+          "right": "однако"
+        },
+        {
+          "left": "portanto",
+          "right": "следовательно"
+        },
+        {
+          "left": "além disso",
+          "right": "кроме того"
+        },
+        {
+          "left": "ou seja",
+          "right": "то есть"
+        },
+        {
+          "left": "afinal",
+          "right": "в итоге, всё-таки"
+        },
+        {
+          "left": "de facto",
+          "right": "действительно"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-conectores-discursivos-mt-01",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "___ estar cansado, o Rui foi correr.",
+      "answer": [
+        "Apesar de"
+      ],
+      "ru": "Несмотря на усталость, Руй пошёл на пробежку."
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-02",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Embora não ___ (ter) muito dinheiro, eles viajam muito.",
+      "answer": [
+        "tenham"
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-03",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Perdi o autocarro, ___ cheguei atrasado.",
+      "answer": [
+        "por isso",
+        "portanto",
+        "então"
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-04",
+      "topicId": "b1-conectores-discursivos",
+      "type": "fill-gap",
+      "prompt": "Não gosto de praia. ___, nunca gostei.",
+      "answer": [
+        "Aliás"
+      ],
+      "hint": "«впрочем, к тому же»"
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-05",
+      "topicId": "b1-conectores-discursivos",
+      "type": "choice",
+      "prompt": "Ela trabalha muito; ___, ganha pouco.",
+      "options": [
+        "portanto",
+        "além disso",
+        "no entanto",
+        "isto é"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-06",
+      "topicId": "b1-conectores-discursivos",
+      "type": "choice",
+      "prompt": "O exame é amanhã, ___ tenho de estudar hoje.",
+      "options": [
+        "embora",
+        "portanto",
+        "apesar de",
+        "contudo"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-07",
+      "topicId": "b1-conectores-discursivos",
+      "type": "choice",
+      "prompt": "Выберите правильную фразу:",
+      "options": [
+        "Apesar que chove, vamos sair.",
+        "Embora está a chover, vamos sair.",
+        "Apesar de chove, vamos sair.",
+        "Embora esteja a chover, vamos sair."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-08",
+      "topicId": "b1-conectores-discursivos",
+      "type": "transform",
+      "prompt": "Apesar de ser caro, o hotel é ótimo.",
+      "instruction": "Перепишите с embora.",
+      "answer": [
+        "Embora seja caro, o hotel é ótimo.",
+        "O hotel é ótimo, embora seja caro.",
+        "Embora o hotel seja caro, é ótimo."
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-09",
+      "topicId": "b1-conectores-discursivos",
+      "type": "translate-ru-pt",
+      "ru": "Кроме того, это близко от метро.",
+      "answer": [
+        "Além disso, fica perto do metro.",
+        "Além disso, é perto do metro.",
+        "Além disso, fica perto da estação de metro.",
+        "Para além disso, fica perto do metro.",
+        "Para além disso, é perto do metro."
+      ]
+    },
+    {
+      "id": "b1-conectores-discursivos-mt-10",
+      "topicId": "b1-conectores-discursivos",
+      "type": "listen-type",
+      "text": "De facto, o plano não era mau.",
+      "answer": [
+        "De facto, o plano não era mau."
+      ]
+    }
+  ]
+}

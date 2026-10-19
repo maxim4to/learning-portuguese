@@ -1,0 +1,158 @@
+{
+  "levels": [
+    {
+      "level": "A1",
+      "modules": [
+        {
+          "id": "a1-basics",
+          "title": "Основы",
+          "topics": [
+            "a1-artigos-genero-numero",
+            "a1-pronomes-pessoais-tratamento",
+            "a1-ser-estar",
+            "a1-possessivos",
+            "a1-demonstrativos",
+            "a1-interrogativos",
+            "a1-negacao"
+          ]
+        },
+        {
+          "id": "a1-verbo-presente",
+          "title": "Глагол: настоящее время",
+          "topics": [
+            "a1-ter-haver",
+            "a1-presente-indicativo-regulares",
+            "a1-presente-irregulares",
+            "a1-estar-a-ir-infinitivo",
+            "a1-gostar-de"
+          ]
+        },
+        {
+          "id": "a1-preposicoes-numeros",
+          "title": "Предлоги и числа",
+          "topics": [
+            "a1-preposicoes-lugar-contracoes",
+            "a1-numeros-horas-datas"
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "modules": [
+        {
+          "id": "a2-passado",
+          "title": "Прошедшие времена",
+          "topics": [
+            "a2-preterito-perfeito-simples",
+            "a2-preterito-imperfeito",
+            "a2-perfeito-vs-imperfeito",
+            "a2-preterito-perfeito-composto",
+            "a2-mais-que-perfeito"
+          ]
+        },
+        {
+          "id": "a2-pronomes",
+          "title": "Местоимения и клитики",
+          "topics": [
+            "a2-pronomes-complemento",
+            "a2-pronomes-cliticos-colocacao",
+            "a2-verbos-reflexos"
+          ]
+        },
+        {
+          "id": "a2-imperativo-futuro-condicional",
+          "title": "Повеление, будущее, условное",
+          "topics": [
+            "a2-imperativo",
+            "a2-futuro-simples",
+            "a2-condicional"
+          ]
+        },
+        {
+          "id": "a2-frase",
+          "title": "Сравнение, наречия, предлоги, союзы",
+          "topics": [
+            "a2-comparativos-superlativos",
+            "a2-adverbios",
+            "a2-adverbios-frequencia",
+            "a2-por-para",
+            "a2-preposicoes-tempo",
+            "a2-haver-ter-expressoes",
+            "a2-conjuncoes-basicas"
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "modules": [
+        {
+          "id": "b1-conjuntivo",
+          "title": "Conjuntivo и личный инфинитив",
+          "topics": [
+            "b1-presente-conjuntivo",
+            "b1-conjuntivo-conjuncoes",
+            "b1-imperfeito-conjuntivo-condicional",
+            "b1-futuro-conjuntivo",
+            "b1-conjuntivo-relativas",
+            "b1-infinitivo-pessoal"
+          ]
+        },
+        {
+          "id": "b1-sintaxe",
+          "title": "Синтаксис",
+          "topics": [
+            "b1-voz-passiva",
+            "b1-discurso-indireto",
+            "b1-pronomes-relativos",
+            "b1-gerundio-vs-a-infinitivo",
+            "b1-participios-duplos",
+            "b1-ordem-palavras-enfase",
+            "b1-ha-desde-durante"
+          ]
+        },
+        {
+          "id": "b1-lexico-estilo",
+          "title": "Лексика и стиль",
+          "topics": [
+            "b1-verbos-preposicao",
+            "b1-expressoes-idiomaticas",
+            "b1-conectores-discursivos",
+            "b1-verbos-mudanca",
+            "b1-formacao-palavras",
+            "b1-diminutivos-aumentativos",
+            "b1-email-formal-informal"
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "modules": [
+        {
+          "id": "b2-tempos-compostos",
+          "title": "Сложные времена и conjuntivo (продвинутый уровень)",
+          "topics": [
+            "b2-conjuntivo-tempos-compostos",
+            "b2-futuro-composto",
+            "b2-condicional-composto",
+            "b2-mais-que-perfeito-simples",
+            "b2-concordancia-tempos"
+          ]
+        },
+        {
+          "id": "b2-discurso-estilo",
+          "title": "Дискурс, стиль, письмо",
+          "topics": [
+            "b2-voz-passiva-impessoal",
+            "b2-conectores-argumentativos",
+            "b2-fraseologia",
+            "b2-registo-estilo",
+            "b2-escrita-argumentativa"
+          ]
+        }
+      ]
+    }
+  ]
+}

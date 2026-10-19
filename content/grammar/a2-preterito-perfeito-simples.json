@@ -1,0 +1,429 @@
+{
+  "id": "a2-preterito-perfeito-simples",
+  "level": "A2",
+  "module": "a2-passado",
+  "title": "Простое прошедшее время (pretérito perfeito simples)",
+  "titlePt": "Pretérito perfeito simples",
+  "requires": [
+    "a1-presente-indicativo-regulares",
+    "a1-presente-irregulares"
+  ],
+  "theory": "## Значение\n\n**Pretérito perfeito simples** — главное прошедшее время для **законченного действия**: что-то произошло и завершилось. По-русски чаще всего соответствует совершенному виду: *сделал, пришёл, купил*.\n\n**Ontem fui ao cinema.** — Вчера я сходил в кино.\n\n## Правильные глаголы\n\n| | falar | comer | partir |\n|---|---|---|---|\n| eu | fal**ei** | com**i** | part**i** |\n| tu | fal**aste** | com**este** | part**iste** |\n| ele / você | fal**ou** | com**eu** | part**iu** |\n| nós | fal**ámos** | com**emos** | part**imos** |\n| eles / vocês | fal**aram** | com**eram** | part**iram** |\n\nВ pt-PT у глаголов на -ar форма **nós** в прошедшем пишется с ударением: **falámos** (мы поговорили) ≠ **falamos** (мы говорим). У -er/-ir формы совпадают с настоящим (**comemos, partimos**) — помогает контекст.\n\n**Орфография в форме eu**: chegar → **cheguei**, ficar → **fiquei**, começar → **comecei**, almoçar → **almocei**.\n\n## Неправильные глаголы\n\n| | ser / ir | estar | ter | fazer | poder |\n|---|---|---|---|---|---|\n| eu | fui | estive | tive | fiz | pude |\n| tu | foste | estiveste | tiveste | fizeste | pudeste |\n| ele / você | foi | esteve | teve | fez | **pôde** |\n| nós | fomos | estivemos | tivemos | fizemos | pudemos |\n| eles / vocês | foram | estiveram | tiveram | fizeram | puderam |\n\n| инфинитив | eu | ele | eles |\n|---|---|---|---|\n| dizer | disse | disse | disseram |\n| trazer | trouxe | trouxe | trouxeram |\n| querer | quis | quis | quiseram |\n| saber | soube | soube | souberam |\n| pôr | pus | **pôs** | puseram |\n| ver | vi | viu | viram |\n| vir | vim | **veio** | vieram |\n| dar | dei | deu | deram |\n| haver | — | houve | — |\n\n**ser** и **ir** в этом времени совпадают полностью: **Foi ótimo** (было отлично) / **Foi a Lisboa** (поехал в Лиссабон).\n\n## Маркеры времени\n\n**ontem, anteontem, na semana passada, no ano passado, há dois dias** (два дня назад), **em 2019, já, ainda não, uma vez**.\n\n## Главное отличие от русского и английского\n\nВ Португалии **perfeito simples** используется и там, где по-английски был бы Present Perfect: **Já almoçaste?** — **Já, já almocei.** / **Ainda não almocei.**\n\nФорма **tenho feito** (pretérito perfeito composto) значит совсем другое — *повторяющееся действие, которое длится до сих пор*: **Tenho trabalhado muito** — «В последнее время я много работаю». Для «я сделал» её использовать нельзя.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| Ontem **falámos** com ele. | Ontem **falamos** com ele. | в pt-PT прош. вр. -ar для nós пишется с акцентом |\n| **Já comeste?** | Você já comeu? | tu + 2-е лицо |\n| **Foste ao** médico? | Você foi no médico? | «пойти куда-то» в pt-PT — **ir a** |\n| **Apanhei** o comboio. | Peguei o trem. | лексика |\n\nЗначение perfeito simples и composto в обеих нормах в целом совпадает, но в Бразилии чаще допускается разговорное *a gente foi*, а в Португалии нормой остаётся **nós fomos**.",
+  "commonErrors": "- **«Сделал» через tenho feito**: *Tenho visto este filme ontem* ✗ → **Vi este filme ontem** ✓.\n- **Аналогия с правильными**: *fazi, dizi, trazi, podi* ✗ → **fiz, disse, trouxe, pude**.\n- **Путаница eu / ele у неправильных**: *eu fez* ✗ → **eu fiz**; *ele fiz* ✗ → **ele fez**; *eu esteve* ✗ → **eu estive**.\n- **Акцент**: *ele pode ontem* ✗ → **ele pôde**; *ele pos* ✗ → **ele pôs**.\n- **Забытое ударение в falámos** — для pt-PT это орфографическая ошибка.\n- **Неправильный выбор вида**: длительный фон в прошлом (*было, шёл, жил*) — это уже **imperfeito** (*Quando era pequeno...*), а не perfeito.",
+  "examples": [
+    {
+      "pt": "Ontem fui ao supermercado e comprei fruta.",
+      "ru": "Вчера я сходил в супермаркет и купил фрукты.",
+      "audio": true
+    },
+    {
+      "pt": "Já almoçaste? — Ainda não.",
+      "ru": "Ты уже пообедал? — Ещё нет.",
+      "audio": true
+    },
+    {
+      "pt": "No ano passado estivemos três semanas nos Açores.",
+      "ru": "В прошлом году мы провели три недели на Азорах.",
+      "audio": true
+    },
+    {
+      "pt": "O comboio chegou com vinte minutos de atraso.",
+      "ru": "Поезд пришёл с опозданием на двадцать минут.",
+      "audio": true
+    },
+    {
+      "pt": "Ela não pôde vir porque teve um problema com o carro.",
+      "ru": "Она не смогла прийти, потому что у неё была проблема с машиной.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-preterito-perfeito-simples-ex-01",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ontem eu ___ (trabalhar) até às oito.",
+      "answer": [
+        "trabalhei"
+      ],
+      "ru": "Вчера я работал до восьми."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-02",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (comer) o bolo todo?!",
+      "answer": [
+        "comeste"
+      ],
+      "ru": "Ты съел весь торт?!"
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-03",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "No sábado passado nós ___ (jantar) num restaurante indiano.",
+      "answer": [
+        "jantámos"
+      ],
+      "hint": "pt-PT: nós -ámos в прошедшем",
+      "ru": "В прошлую субботу мы ужинали в индийском ресторане."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-04",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ontem eu ___ (chegar) atrasado à reunião.",
+      "answer": [
+        "cheguei"
+      ],
+      "hint": "g → gu перед e",
+      "ru": "Вчера я опоздал на собрание."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-05",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Na semana passada eles ___ (ir) de comboio para o Porto.",
+      "answer": [
+        "foram"
+      ],
+      "ru": "На прошлой неделе они поехали в Порту на поезде."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-06",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "O que é que tu ___ (fazer) no fim de semana passado?",
+      "answer": [
+        "fizeste"
+      ],
+      "ru": "Что ты делал в прошлые выходные?"
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-07",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ontem eu não ___ (poder) ir à festa.",
+      "answer": [
+        "pude"
+      ],
+      "ru": "Вчера я не смог пойти на вечеринку."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-08",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Hoje de manhã a Sofia ___ (trazer) um bolo para o escritório.",
+      "answer": [
+        "trouxe"
+      ],
+      "ru": "Сегодня утром София принесла торт в офис."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-09",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "choice",
+      "prompt": "Ontem ___ este filme.",
+      "options": [
+        "vejo",
+        "tenho visto",
+        "vi",
+        "via"
+      ],
+      "correct": 2,
+      "explanation": "Законченное действие в конкретный момент — perfeito simples. Tenho visto = «в последнее время смотрю (неоднократно)»."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-10",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "choice",
+      "prompt": "O meu irmão ___ o carro na garagem.",
+      "options": [
+        "pos",
+        "pôe",
+        "pus",
+        "pôs"
+      ],
+      "correct": 3,
+      "explanation": "pôr → ele pôs (с циркумфлексом)."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-11",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "choice",
+      "prompt": "Ontem nós ___ com o senhorio sobre a renda.",
+      "options": [
+        "falámos",
+        "falávamos",
+        "falemos",
+        "falamos"
+      ],
+      "correct": 0,
+      "explanation": "В pt-PT прошедшее время nós у глаголов на -ar пишется с акцентом: falámos."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-12",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "choice",
+      "prompt": "A reunião ___ muito longa.",
+      "options": [
+        "foi",
+        "fui",
+        "esteve",
+        "era"
+      ],
+      "correct": 0,
+      "explanation": "Оценка законченного события — ser в perfeito: foi."
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-13",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "transform",
+      "prompt": "Eu faço o jantar.",
+      "instruction": "Поставьте в pretérito perfeito simples.",
+      "answer": [
+        "Eu fiz o jantar.",
+        "Fiz o jantar."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-14",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "transform",
+      "prompt": "Eles vêm de Braga.",
+      "instruction": "Поставьте в pretérito perfeito simples.",
+      "answer": [
+        "Eles vieram de Braga.",
+        "Vieram de Braga."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-15",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "transform",
+      "prompt": "Tu dizes a verdade.",
+      "instruction": "Поставьте в pretérito perfeito simples.",
+      "answer": [
+        "Tu disseste a verdade.",
+        "Disseste a verdade."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-16",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "order-words",
+      "words": [
+        "há",
+        "Mudei-me",
+        "para",
+        "Portugal",
+        "anos",
+        "dois"
+      ],
+      "answer": "Mudei-me para Portugal há dois anos"
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-17",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "order-words",
+      "words": [
+        "já",
+        "Tu",
+        "bilhetes?",
+        "os",
+        "compraste"
+      ],
+      "answer": "Tu já compraste os bilhetes?"
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-18",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "translate-ru-pt",
+      "ru": "Ты уже позавтракал?",
+      "answer": [
+        "Já tomaste o pequeno-almoço?",
+        "Tu já tomaste o pequeno-almoço?"
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-19",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "translate-ru-pt",
+      "ru": "Вчера я не смог позвонить.",
+      "answer": [
+        "Ontem não pude ligar.",
+        "Ontem eu não pude ligar.",
+        "Ontem não pude telefonar.",
+        "Ontem eu não pude telefonar.",
+        "Não pude ligar ontem.",
+        "Não pude telefonar ontem."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-20",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "listen-type",
+      "text": "Ontem estive em casa todo o dia.",
+      "answer": [
+        "Ontem estive em casa todo o dia."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-21",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "listen-choice",
+      "text": "Ele veio cá ontem.",
+      "options": [
+        "Он придёт сюда завтра.",
+        "Он приходил сюда вчера.",
+        "Он видел это вчера.",
+        "Я пришёл сюда вчера."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-ex-22",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой «eu» в pretérito perfeito.",
+      "pairs": [
+        {
+          "left": "ter",
+          "right": "tive"
+        },
+        {
+          "left": "estar",
+          "right": "estive"
+        },
+        {
+          "left": "saber",
+          "right": "soube"
+        },
+        {
+          "left": "querer",
+          "right": "quis"
+        },
+        {
+          "left": "ver",
+          "right": "vi"
+        },
+        {
+          "left": "vir",
+          "right": "vim"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-preterito-perfeito-simples-mt-01",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (ficar) em casa no domingo passado.",
+      "answer": [
+        "fiquei"
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-02",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ontem vocês ___ (ter) muita sorte!",
+      "answer": [
+        "tiveram"
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-03",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ela ___ (saber) a notícia ontem.",
+      "answer": [
+        "soube"
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-04",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ontem à tarde nós ___ (dar) uma volta pela Baixa.",
+      "answer": [
+        "demos"
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-05",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "choice",
+      "prompt": "Eu ___ ao médico na segunda-feira.",
+      "options": [
+        "tenho ido",
+        "fui",
+        "foi",
+        "fiz"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-06",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "choice",
+      "prompt": "Ela não ___ sair porque estava doente.",
+      "options": [
+        "pude",
+        "podeu",
+        "pode",
+        "pôde"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-07",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "choice",
+      "prompt": "— Já leste o livro? — Sim, ___ na semana passada.",
+      "options": [
+        "tenho-o lido",
+        "lia-o",
+        "leio-o",
+        "li-o"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-08",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "transform",
+      "prompt": "Nós estamos no Algarve.",
+      "instruction": "Поставьте в pretérito perfeito simples.",
+      "answer": [
+        "Nós estivemos no Algarve.",
+        "Estivemos no Algarve."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-09",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "translate-ru-pt",
+      "ru": "Они пришли поздно.",
+      "answer": [
+        "Eles chegaram tarde.",
+        "Chegaram tarde.",
+        "Elas chegaram tarde.",
+        "Eles vieram tarde.",
+        "Vieram tarde."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-simples-mt-10",
+      "topicId": "a2-preterito-perfeito-simples",
+      "type": "listen-type",
+      "text": "Quiseste falar comigo?",
+      "answer": [
+        "Quiseste falar comigo?"
+      ]
+    }
+  ]
+}

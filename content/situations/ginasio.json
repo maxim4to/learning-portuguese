@@ -1,0 +1,191 @@
+{
+  "id": "ginasio",
+  "title": "Спортзал",
+  "titlePt": "No ginásio",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Olá, boa tarde! Em que posso ajudar?", "ru": "Здравствуйте! Чем могу помочь?" },
+    { "speaker": "B", "pt": "Boa tarde. Queria informações sobre a inscrição no ginásio.", "ru": "Добрый день. Хотел бы узнать, как записаться в зал." },
+    { "speaker": "A", "pt": "Claro. Temos o plano manhã, por vinte e nove euros por mês, e o plano livre, por trinta e nove.", "ru": "Конечно. Есть утренний абонемент за двадцать девять евро в месяц и безлимитный за тридцать девять." },
+    { "speaker": "B", "pt": "Qual é a diferença?", "ru": "А в чём разница?" },
+    { "speaker": "A", "pt": "Com o plano manhã, só pode vir até às duas da tarde. O livre dá para qualquer hora.", "ru": "С утренним можно приходить только до двух часов дня. Безлимитный — в любое время." },
+    { "speaker": "B", "pt": "Costumo treinar depois do trabalho, por isso prefiro o livre. Há taxa de inscrição?", "ru": "Я обычно тренируюсь после работы, так что лучше безлимитный. Есть вступительный взнос?" },
+    { "speaker": "A", "pt": "Normalmente são vinte euros, mas este mês a inscrição é grátis.", "ru": "Обычно двадцать евро, но в этом месяце запись бесплатная." },
+    { "speaker": "B", "pt": "Ótimo. E as aulas de grupo estão incluídas?", "ru": "Отлично. А групповые занятия входят в абонемент?" },
+    { "speaker": "A", "pt": "Estão, sim. Temos pilates, cycling e zumba. É preciso marcar as aulas na aplicação.", "ru": "Да. У нас пилатес, сайклинг и зумба. На занятия нужно записываться в приложении." },
+    { "speaker": "B", "pt": "E se eu quiser um personal trainer?", "ru": "А если я захочу персонального тренера?" },
+    { "speaker": "A", "pt": "Isso paga-se à parte. Mas a primeira avaliação física é gratuita.", "ru": "Это оплачивается отдельно. Но первая оценка физической формы бесплатная." },
+    { "speaker": "B", "pt": "Então queria marcar a avaliação. Posso pagar a mensalidade por débito direto?", "ru": "Тогда хотел бы записаться на оценку. Можно оплачивать абонемент автоматическим списанием?" },
+    { "speaker": "A", "pt": "Pode. Preciso de um documento de identificação, do seu NIF e do IBAN.", "ru": "Можно. Мне нужны документ, удостоверяющий личность, ваш NIF и IBAN." },
+    { "speaker": "B", "pt": "Aqui tem. Já agora, a que horas fecham ao fim de semana?", "ru": "Вот, пожалуйста. Кстати, во сколько вы закрываетесь в выходные?" },
+    { "speaker": "A", "pt": "Ao sábado e ao domingo fechamos às oito. Não se esqueça da toalha e do cadeado para o cacifo!", "ru": "В субботу и воскресенье закрываемся в восемь. Не забудьте полотенце и замок для шкафчика!" }
+  ],
+  "phrases": [
+    { "pt": "Queria inscrever-me no ginásio.", "ru": "Я хотел бы записаться в спортзал." },
+    { "pt": "Quanto é a mensalidade?", "ru": "Сколько стоит абонемент в месяц?" },
+    { "pt": "Há taxa de inscrição?", "ru": "Есть вступительный взнос?" },
+    { "pt": "Há período de fidelização?", "ru": "Есть минимальный срок договора?" },
+    { "pt": "As aulas de grupo estão incluídas?", "ru": "Групповые занятия входят в абонемент?" },
+    { "pt": "Posso experimentar uma aula?", "ru": "Можно сходить на пробное занятие?" },
+    { "pt": "Onde ficam os balneários?", "ru": "Где раздевалки?" },
+    { "pt": "Desculpe, este aparelho está livre?", "ru": "Простите, этот тренажёр свободен?" },
+    { "pt": "Pode mostrar-me como funciona esta máquina?", "ru": "Покажете, как работает этот тренажёр?" },
+    { "pt": "Queria cancelar a minha inscrição.", "ru": "Я хотел бы расторгнуть абонемент." }
+  ],
+  "vocab": [
+    { "pt": "o ginásio", "ru": "спортзал, фитнес-клуб", "example": "Vou ao ginásio três vezes por semana." },
+    { "pt": "a inscrição", "ru": "запись, регистрация", "example": "A inscrição faz-se na receção." },
+    { "pt": "inscrever-se", "ru": "записаться", "example": "Inscrevi-me no ginásio em janeiro." },
+    { "pt": "a mensalidade", "ru": "ежемесячная плата, абонемент на месяц", "example": "A mensalidade é paga no início do mês." },
+    { "pt": "a taxa de inscrição", "ru": "вступительный взнос", "example": "Este mês não há taxa de inscrição." },
+    { "pt": "a fidelização", "ru": "минимальный срок договора", "example": "O plano tem uma fidelização de doze meses." },
+    { "pt": "o débito direto", "ru": "автоматическое списание со счёта", "example": "Pago a mensalidade por débito direto." },
+    { "pt": "a aula de grupo", "ru": "групповое занятие", "example": "A aula de grupo começa às sete." },
+    { "pt": "marcar uma aula", "ru": "записаться на занятие", "example": "Já marquei a aula de pilates para amanhã." },
+    { "pt": "o personal trainer", "ru": "персональный тренер", "example": "O personal trainer fez-me um plano de treino." },
+    { "pt": "a avaliação física", "ru": "оценка физической формы", "example": "Na avaliação física mediram-me o peso e a gordura." },
+    { "pt": "o plano de treino", "ru": "план тренировок", "example": "O meu plano de treino tem três dias de pesos." },
+    { "pt": "treinar", "ru": "тренироваться", "example": "Prefiro treinar de manhã cedo." },
+    { "pt": "o treino", "ru": "тренировка", "example": "O treino de hoje foi muito puxado." },
+    { "pt": "o balneário", "ru": "раздевалка", "example": "O balneário masculino fica à direita." },
+    { "pt": "o cacifo", "ru": "шкафчик", "example": "Deixei a mochila no cacifo." },
+    { "pt": "o cadeado", "ru": "навесной замок", "example": "Traga um cadeado para o cacifo." },
+    { "pt": "a toalha", "ru": "полотенце", "example": "É obrigatório usar toalha nas máquinas." },
+    { "pt": "o duche", "ru": "душ", "example": "Tomo duche no ginásio depois do treino." },
+    { "pt": "a sala de musculação", "ru": "тренажёрный зал (силовой)", "example": "A sala de musculação está cheia ao fim da tarde." },
+    { "pt": "a máquina / o aparelho", "ru": "тренажёр", "example": "Esta máquina é para as costas." },
+    { "pt": "os pesos", "ru": "веса, свободные веса", "example": "Hoje vou fazer pesos." },
+    { "pt": "os halteres", "ru": "гантели", "example": "Pode arrumar os halteres no fim?" },
+    { "pt": "a passadeira", "ru": "беговая дорожка", "example": "Corri vinte minutos na passadeira." },
+    { "pt": "a bicicleta", "ru": "велотренажёр; велосипед", "example": "Faço aquecimento na bicicleta." },
+    { "pt": "o aquecimento", "ru": "разминка", "example": "Nunca salto o aquecimento." },
+    { "pt": "os alongamentos", "ru": "растяжка", "example": "No fim do treino faço alongamentos." },
+    { "pt": "as sapatilhas", "ru": "кроссовки", "example": "Esqueci-me das sapatilhas em casa." },
+    { "pt": "o fato de treino", "ru": "спортивный костюм", "example": "Comprei um fato de treino novo." },
+    { "pt": "a garrafa de água", "ru": "бутылка воды", "example": "Leva sempre uma garrafa de água." },
+    { "pt": "a aplicação", "ru": "мобильное приложение", "example": "As aulas marcam-se na aplicação do ginásio." },
+    { "pt": "estar em forma", "ru": "быть в форме", "example": "Quero estar em forma para o verão." },
+    { "pt": "a lesão", "ru": "травма", "example": "Tive uma lesão no joelho a correr." },
+    { "pt": "as dores musculares", "ru": "мышечная боль, крепатура", "example": "Depois da primeira aula fiquei cheio de dores musculares." }
+  ],
+  "exercises": [
+    {
+      "id": "ginasio-ex-01",
+      "topicId": "ginasio",
+      "type": "choice",
+      "prompt": "Em Portugal, o valor que se paga todos os meses no ginásio chama-se ___.",
+      "options": ["a mensalidade", "a renda", "a propina", "a gorjeta"],
+      "correct": 0,
+      "explanation": "**A mensalidade** — ежемесячная плата (за спортзал, бассейн, школу). **A renda** — аренда жилья, **a propina** — плата за обучение в университете, **a gorjeta** — чаевые."
+    },
+    {
+      "id": "ginasio-ex-02",
+      "topicId": "ginasio",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "o balneário", "right": "раздевалка" },
+        { "left": "o cacifo", "right": "шкафчик" },
+        { "left": "a passadeira", "right": "беговая дорожка" },
+        { "left": "as sapatilhas", "right": "кроссовки" },
+        { "left": "o duche", "right": "душ" }
+      ]
+    },
+    {
+      "id": "ginasio-ex-03",
+      "topicId": "ginasio",
+      "type": "fill-gap",
+      "prompt": "Queria ___ (inscrever-se) no ginásio.",
+      "answer": ["inscrever-me"],
+      "hint": "возвратный глагол, 1-е лицо",
+      "ru": "Я хотел бы записаться в спортзал.",
+      "explanation": "После **queria** инфинитив с местоимением через дефис: **inscrever-me** (ênclise). *Me inscrever* — бразильский порядок."
+    },
+    {
+      "id": "ginasio-ex-04",
+      "topicId": "ginasio",
+      "type": "listen-type",
+      "text": "Ótimo. E as aulas de grupo estão incluídas?",
+      "answer": ["Ótimo. E as aulas de grupo estão incluídas?"],
+      "explanation": "**Estar incluído** — «входить (в цену)». Согласуется с подлежащим: **as aulas estão incluídas**."
+    },
+    {
+      "id": "ginasio-ex-05",
+      "topicId": "ginasio",
+      "type": "listen-choice",
+      "text": "Com o plano manhã, só pode vir até às duas da tarde. O livre dá para qualquer hora.",
+      "prompt": "Какое ограничение у утреннего абонемента?",
+      "options": ["Только по выходным", "Не больше двух раз в неделю", "Только до двух часов дня", "Без групповых занятий"],
+      "correct": 2,
+      "explanation": "**Só pode vir até às duas da tarde** — можно приходить только до 14:00. **Dá para qualquer hora** — подходит для любого времени."
+    },
+    {
+      "id": "ginasio-ex-06",
+      "topicId": "ginasio",
+      "type": "order-words",
+      "words": ["Desculpe,", "este", "aparelho", "está", "livre?"],
+      "answer": "Desculpe, este aparelho está livre?",
+      "ru": "Простите, этот тренажёр свободен?"
+    },
+    {
+      "id": "ginasio-ex-07",
+      "topicId": "ginasio",
+      "type": "translate-ru-pt",
+      "ru": "Сколько стоит абонемент на месяц?",
+      "answer": [
+        "Quanto é a mensalidade?",
+        "Quanto custa a mensalidade?",
+        "Qual é o preço da mensalidade?",
+        "Qual é o valor da mensalidade?",
+        "Quanto fica a mensalidade?"
+      ],
+      "explanation": "Ежемесячная плата — **a mensalidade**. Вопрос о цене: **Quanto é…?** или **Quanto custa…?**"
+    },
+    {
+      "id": "ginasio-ex-08",
+      "topicId": "ginasio",
+      "type": "choice",
+      "prompt": "Como se diz «кроссовки» em Portugal?",
+      "options": ["os tênis", "as sapatilhas", "os chinelos", "as botas"],
+      "correct": 1,
+      "explanation": "В Португалии кроссовки — **as sapatilhas** (в разговоре также **os ténis**, с é). *Tênis* с циркумфлексом — бразильское написание. **Chinelos** — шлёпанцы, **botas** — ботинки/сапоги."
+    },
+    {
+      "id": "ginasio-ex-09",
+      "topicId": "ginasio",
+      "type": "fill-gap",
+      "prompt": "É preciso ___ as aulas de grupo na aplicação.",
+      "answer": ["marcar"],
+      "hint": "записаться на определённое время",
+      "ru": "На групповые занятия нужно записываться в приложении.",
+      "explanation": "**Marcar** — записаться на время: **marcar uma aula**, **marcar uma consulta**, **marcar mesa**."
+    },
+    {
+      "id": "ginasio-ex-10",
+      "topicId": "ginasio",
+      "type": "transform",
+      "prompt": "Quero experimentar uma aula.",
+      "instruction": "Смягчи просьбу: используй Queria… или Gostava de…",
+      "answer": [
+        "Queria experimentar uma aula.",
+        "Gostava de experimentar uma aula.",
+        "Queria experimentar uma aula, se faz favor.",
+        "Gostava de experimentar uma aula, se faz favor.",
+        "Queria experimentar uma aula, por favor.",
+        "Gostava de experimentar uma aula, por favor."
+      ],
+      "explanation": "**Queria** и **Gostava de** (imperfeito) звучат как вежливое «я бы хотел». После **gostar** не забывайте предлог **de**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы хотите записаться в спортзал рядом с домом. Напишите e-mail в клуб: спросите, сколько стоит абонемент и есть ли вступительный взнос, есть ли минимальный срок договора (fidelização), какие групповые занятия бывают утром, сколько стоит персональный тренер, и попросите записать вас на пробное занятие или оценку физической формы.",
+    "sample": "Boa tarde,\n\nChamo-me Pavel Orlov e moro perto do vosso ginásio. Gostava de me inscrever e queria fazer algumas perguntas.\nQuanto é a mensalidade do plano livre? Há taxa de inscrição?\nO contrato tem período de fidelização?\nQue aulas de grupo é que têm de manhã? Costumo treinar antes do trabalho, por volta das sete.\nQuanto custa uma sessão com personal trainer?\nPor último, queria marcar uma avaliação física ou uma aula experimental para a próxima semana, se for possível.\n\nObrigado desde já.\nCumprimentos,\nPavel Orlov",
+    "checklist": [
+      "Есть приветствие и подпись (Boa tarde, Cumprimentos)",
+      "Используются слова mensalidade, taxa de inscrição, fidelização",
+      "Просьбы смягчены: Queria…, Gostava de…",
+      "Названо, когда вы обычно тренируетесь (de manhã, depois do trabalho)",
+      "Нет бразилизмов: tênis, academia (в значении «спортзал»), me inscrever в начале фразы"
+    ]
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "id": "a1-ser-estar",
+  "level": "A1",
+  "module": "a1-basics",
+  "title": "Ser и estar: два глагола «быть»",
+  "titlePt": "Ser e estar",
+  "requires": [],
+  "theory": "В португальском два глагола со значением «быть». Русскому языку это непривычно: в настоящем времени мы обычно вообще опускаем связку («я — русский», «кофе холодный»). В португальском связка **обязательна**, и нужно выбрать между **ser** и **estar**.\n\n| | ser | estar |\n|---|---|---|\n| eu | sou | estou |\n| tu | és | estás |\n| ele / ela / você | é | está |\n| nós | somos | estamos |\n| eles / elas / vocês | são | estão |\n\n## Ser — что это, какое по сути\n\n**Ser** описывает постоянные, «паспортные» характеристики:\n\n| значение | пример |\n|---|---|\n| имя, национальность, происхождение | **Sou o Maxim. Sou russo. Sou de Moscovo.** |\n| профессия | **A Ana é professora.** |\n| характер, внешность | **O Rui é simpático e alto.** |\n| материал, принадлежность | **A mesa é de madeira. O carro é do Pedro.** |\n| время, дата, день недели | **São três horas. Hoje é segunda-feira.** |\n| место события | **A festa é em casa do João.** |\n\n## Estar — в каком состоянии сейчас\n\n**Estar** описывает временное состояние или положение:\n\n| значение | пример |\n|---|---|\n| самочувствие, настроение | **Estou cansado. A Joana está doente.** |\n| временное качество | **O café está frio. O jantar está pronto.** |\n| погода | **Hoje está calor. Está a chover.** |\n| где находятся люди и вещи | **A Maria está em casa. O livro está na mesa.** |\n| действие в процессе | **Estou a trabalhar.** |\n\n## Местонахождение: estar, ficar, ser\n\n- Люди и подвижные предметы — **estar**: **O telemóvel está no carro.**\n- Неподвижные объекты (города, здания, улицы) — обычно **ficar**: **Onde fica a estação?** В разговоре можно и **Onde é a estação?**\n- События — **ser**: **O concerto é no Coliseu.**\n\n## Одно прилагательное — два смысла\n\n| ser | estar |\n|---|---|\n| **Ele é aborrecido.** — Он зануда. | **Ele está aborrecido.** — Ему скучно / он раздосадован. |\n| **A sopa é boa.** — Этот суп вкусный (вообще). | **A sopa está boa.** — Суп (сегодня) вкусный. |\n| **Ela é nervosa.** — Она нервная по натуре. | **Ela está nervosa.** — Она сейчас волнуется. |\n\n## Estar a + инфинитив\n\nДействие «прямо сейчас» в Португалии выражается конструкцией **estar a + инфинитив**: **Estou a estudar português.** — Я (сейчас) учу португальский. Подробно — в отдельной теме.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Estou a falar.** | Estou falando. | герундий после *estar* в Португалии звучит по-бразильски |\n| **Tu és / tu estás** | Você é / você está | в Португалии с друзьями — **tu**; *você* звучит формально, а иногда даже невежливо |\n| **Onde fica** a estação? | Onde fica / Onde é a estação? | в обоих вариантах *ficar* для зданий; в pt-PT это особенно частотно |\n| **Está calor.** | Está calor / Faz calor. | |\n\nСами формы **ser** и **estar** не различаются; разница — в обращении (**tu**) и в длительном виде (**estar a**).",
+  "commonErrors": "- **Пропуск связки** по русской привычке: *Eu russo* ✗ → **Eu sou russo** ✓.\n- **Ser для самочувствия**: *Sou cansado* ✗ → **Estou cansado** ✓ (если речь о том, что вы устали сейчас).\n- **Ser для местонахождения человека**: *O João é em casa* ✗ → **O João está em casa** ✓.\n- **Estar для профессии**: *Estou médico* ✗ → **Sou médico** ✓ — даже если вы работаете врачом недавно.\n- **Estar для времени**: *Estão três horas* ✗ → **São três horas** ✓.\n- **Estar для происхождения**: *Estou de Moscovo* ✗ → **Sou de Moscovo** ✓.\n- **Бразильский герундий**: *Estou estudando* ✗ → **Estou a estudar** ✓.",
+  "examples": [
+    {
+      "pt": "Eu sou da Rússia, mas agora estou em Lisboa.",
+      "ru": "Я из России, но сейчас я в Лиссабоне.",
+      "audio": true
+    },
+    {
+      "pt": "A sopa está muito quente.",
+      "ru": "Суп очень горячий.",
+      "audio": true
+    },
+    {
+      "pt": "O meu irmão é engenheiro.",
+      "ru": "Мой брат — инженер.",
+      "audio": true
+    },
+    {
+      "pt": "Onde fica a estação de comboios?",
+      "ru": "Где находится железнодорожный вокзал?",
+      "audio": true
+    },
+    {
+      "pt": "Estou a estudar português.",
+      "ru": "Я (сейчас) учу португальский.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-ser-estar-ex-01",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Eu ___ russo, mas vivo em Portugal.",
+      "answer": [
+        "sou"
+      ],
+      "hint": "национальность",
+      "ru": "Я русский, но живу в Португалии.",
+      "tags": [
+        "ser",
+        "presente"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-02",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Hoje a Joana ___ doente e não vai trabalhar.",
+      "answer": [
+        "está"
+      ],
+      "hint": "самочувствие",
+      "ru": "Сегодня Жоана болеет и не пойдёт на работу.",
+      "tags": [
+        "estar",
+        "presente"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-03",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "O Rui ___ muito simpático.",
+      "answer": [
+        "é"
+      ],
+      "hint": "характер",
+      "ru": "Руй очень приятный человек."
+    },
+    {
+      "id": "a1-ser-estar-ex-04",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Nós ___ de Braga.",
+      "answer": [
+        "somos"
+      ],
+      "hint": "происхождение",
+      "ru": "Мы из Браги."
+    },
+    {
+      "id": "a1-ser-estar-ex-05",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Tu ___ cansada? Queres sentar-te?",
+      "answer": [
+        "estás"
+      ],
+      "ru": "Ты устала? Хочешь присесть?",
+      "explanation": "Усталость — временное состояние: estar."
+    },
+    {
+      "id": "a1-ser-estar-ex-06",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Hoje ___ muito calor em Lisboa.",
+      "answer": [
+        "está",
+        "faz"
+      ],
+      "hint": "погода",
+      "ru": "Сегодня в Лиссабоне очень жарко.",
+      "explanation": "Погода — estar: está calor. Возможно и faz calor, но в pt-PT чаще está."
+    },
+    {
+      "id": "a1-ser-estar-ex-07",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "A festa ___ em casa da Rita.",
+      "answer": [
+        "é"
+      ],
+      "hint": "событие",
+      "ru": "Вечеринка — у Риты дома.",
+      "explanation": "Место события — ser."
+    },
+    {
+      "id": "a1-ser-estar-ex-08",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "O café ___ frio. Queres outro?",
+      "options": [
+        "é",
+        "está",
+        "fica"
+      ],
+      "correct": 1,
+      "explanation": "Кофе остыл — это временное состояние, поэтому estar.",
+      "tags": [
+        "estar"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-09",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "Как сказать «Я (сейчас) работаю» в Португалии?",
+      "options": [
+        "Estou trabalhando.",
+        "Estou a trabalhar.",
+        "Sou a trabalhar."
+      ],
+      "correct": 1,
+      "explanation": "В pt-PT длительное действие — estar a + infinitivo. Герундий — бразильский вариант.",
+      "tags": [
+        "estar-a-inf",
+        "pt-vs-br"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-10",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "Que dia ___ hoje?",
+      "options": [
+        "está",
+        "fica",
+        "é",
+        "são"
+      ],
+      "correct": 2,
+      "explanation": "Дата и день недели — ser."
+    },
+    {
+      "id": "a1-ser-estar-ex-11",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "A Inês ___ alta e loira.",
+      "options": [
+        "é",
+        "está",
+        "estão",
+        "fica"
+      ],
+      "correct": 0,
+      "explanation": "Внешность — постоянная характеристика: ser."
+    },
+    {
+      "id": "a1-ser-estar-ex-12",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "O jantar ___ pronto!",
+      "options": [
+        "é",
+        "são",
+        "fica",
+        "está"
+      ],
+      "correct": 3,
+      "explanation": "Готов (сейчас) — estar pronto."
+    },
+    {
+      "id": "a1-ser-estar-ex-13",
+      "topicId": "a1-ser-estar",
+      "type": "transform",
+      "prompt": "Eu estou cansado.",
+      "instruction": "Перепишите для «nós».",
+      "answer": [
+        "Nós estamos cansados.",
+        "Estamos cansados."
+      ],
+      "tags": [
+        "estar",
+        "conjugação"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-14",
+      "topicId": "a1-ser-estar",
+      "type": "transform",
+      "prompt": "Ela é portuguesa.",
+      "instruction": "Замените ela на eles.",
+      "answer": [
+        "Eles são portugueses."
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-15",
+      "topicId": "a1-ser-estar",
+      "type": "transform",
+      "prompt": "O Pedro está em casa.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "O Pedro não está em casa."
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-16",
+      "topicId": "a1-ser-estar",
+      "type": "order-words",
+      "words": [
+        "professora",
+        "A",
+        "é",
+        "Ana"
+      ],
+      "answer": "A Ana é professora",
+      "ru": "Ана — учительница.",
+      "tags": [
+        "ser",
+        "profissão"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-17",
+      "topicId": "a1-ser-estar",
+      "type": "order-words",
+      "words": [
+        "estamos",
+        "Somos",
+        "Lisboa",
+        "de",
+        "em",
+        "Moscovo,",
+        "mas"
+      ],
+      "answer": "Somos de Moscovo, mas estamos em Lisboa",
+      "ru": "Мы из Москвы, но сейчас в Лиссабоне."
+    },
+    {
+      "id": "a1-ser-estar-ex-18",
+      "topicId": "a1-ser-estar",
+      "type": "translate-ru-pt",
+      "ru": "Мы дома.",
+      "answer": [
+        "Estamos em casa.",
+        "Nós estamos em casa."
+      ],
+      "tags": [
+        "estar",
+        "localização"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-19",
+      "topicId": "a1-ser-estar",
+      "type": "translate-ru-pt",
+      "ru": "Мой брат — врач.",
+      "answer": [
+        "O meu irmão é médico."
+      ],
+      "explanation": "Профессия — ser; притяжательное с артиклем: o meu irmão."
+    },
+    {
+      "id": "a1-ser-estar-ex-20",
+      "topicId": "a1-ser-estar",
+      "type": "listen-type",
+      "text": "A Maria está em casa.",
+      "answer": [
+        "A Maria está em casa."
+      ],
+      "tags": [
+        "estar",
+        "ditado"
+      ]
+    },
+    {
+      "id": "a1-ser-estar-ex-21",
+      "topicId": "a1-ser-estar",
+      "type": "match",
+      "prompt": "Соедините местоимение с формой глагола ser.",
+      "pairs": [
+        {
+          "left": "eu",
+          "right": "sou"
+        },
+        {
+          "left": "tu",
+          "right": "és"
+        },
+        {
+          "left": "ele",
+          "right": "é"
+        },
+        {
+          "left": "nós",
+          "right": "somos"
+        },
+        {
+          "left": "eles",
+          "right": "são"
+        }
+      ],
+      "tags": [
+        "ser",
+        "conjugação"
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-ser-estar-mt-01",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "Tu ___ de onde?",
+      "options": [
+        "és",
+        "estás",
+        "é"
+      ],
+      "correct": 0,
+      "explanation": "Происхождение — ser; с tu форма és."
+    },
+    {
+      "id": "a1-ser-estar-mt-02",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Os meus pais ___ em Coimbra esta semana.",
+      "answer": [
+        "estão"
+      ],
+      "ru": "Мои родители на этой неделе в Коимбре."
+    },
+    {
+      "id": "a1-ser-estar-mt-03",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "A sopa ___ fria, vou aquecê-la.",
+      "answer": [
+        "está"
+      ],
+      "ru": "Суп остыл, я его подогрею."
+    },
+    {
+      "id": "a1-ser-estar-mt-04",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Eles ___ muito simpáticos.",
+      "answer": [
+        "são"
+      ],
+      "ru": "Они очень приятные люди."
+    },
+    {
+      "id": "a1-ser-estar-mt-05",
+      "topicId": "a1-ser-estar",
+      "type": "fill-gap",
+      "prompt": "Eu ___ a ler um livro muito bom.",
+      "answer": [
+        "estou"
+      ],
+      "ru": "Я сейчас читаю очень хорошую книгу."
+    },
+    {
+      "id": "a1-ser-estar-mt-06",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "Que horas ___?",
+      "options": [
+        "estão",
+        "é",
+        "são",
+        "ficam"
+      ],
+      "correct": 2,
+      "explanation": "Время — ser; во мн. ч. são (são três horas)."
+    },
+    {
+      "id": "a1-ser-estar-mt-07",
+      "topicId": "a1-ser-estar",
+      "type": "choice",
+      "prompt": "O Duarte ___ médico no hospital de Santa Maria.",
+      "options": [
+        "está",
+        "é",
+        "fica",
+        "estão"
+      ],
+      "correct": 1,
+      "explanation": "Профессия — ser."
+    },
+    {
+      "id": "a1-ser-estar-mt-08",
+      "topicId": "a1-ser-estar",
+      "type": "transform",
+      "prompt": "Tu és de Moscovo.",
+      "instruction": "Замените tu на vocês.",
+      "answer": [
+        "Vocês são de Moscovo."
+      ]
+    },
+    {
+      "id": "a1-ser-estar-mt-09",
+      "topicId": "a1-ser-estar",
+      "type": "translate-ru-pt",
+      "ru": "Я устал.",
+      "answer": [
+        "Estou cansado.",
+        "Estou cansada.",
+        "Eu estou cansado.",
+        "Eu estou cansada."
+      ]
+    },
+    {
+      "id": "a1-ser-estar-mt-10",
+      "topicId": "a1-ser-estar",
+      "type": "listen-choice",
+      "text": "Hoje estamos muito contentes.",
+      "prompt": "Что вы услышали?",
+      "options": [
+        "Сегодня они очень довольны.",
+        "Мы всегда очень довольны.",
+        "Сегодня мы очень довольны."
+      ],
+      "correct": 2
+    }
+  ]
+}

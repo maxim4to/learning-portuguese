@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#047857"/>
+  <rect x="0" y="0" width="205" height="512" rx="0" fill="#065f46"/>
+  <circle cx="205" cy="256" r="92" fill="#facc15"/>
+  <circle cx="205" cy="256" r="56" fill="#dc2626"/>
+  <text x="360" y="300" font-family="system-ui, sans-serif" font-size="140" font-weight="700" fill="#fff" text-anchor="middle">PT</text>
+</svg>

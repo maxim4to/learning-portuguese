@@ -1,0 +1,381 @@
+{
+  "id": "saude",
+  "title": "Здоровье и медицина",
+  "titlePt": "Saúde",
+  "level": "A2",
+  "words": [
+    {
+      "pt": "a saúde",
+      "ru": "здоровье",
+      "gender": "f",
+      "example": "A saúde está em primeiro lugar.",
+      "audio": true
+    },
+    {
+      "pt": "o SNS",
+      "ru": "Национальная служба здравоохранения (Serviço Nacional de Saúde)",
+      "gender": "m",
+      "example": "No SNS, a consulta no centro de saúde é gratuita.",
+      "audio": true
+    },
+    {
+      "pt": "o utente / a utente",
+      "ru": "пациент (пользователь госуслуги)",
+      "gender": "mf",
+      "example": "O utente deve chegar dez minutos antes da consulta.",
+      "audio": true
+    },
+    {
+      "pt": "o número de utente",
+      "ru": "номер пациента в SNS",
+      "gender": "m",
+      "example": "Para marcar consulta, preciso do número de utente.",
+      "audio": true
+    },
+    {
+      "pt": "o centro de saúde",
+      "ru": "районная поликлиника",
+      "gender": "m",
+      "example": "Fui ao centro de saúde por causa da tosse.",
+      "audio": true
+    },
+    {
+      "pt": "o médico de família / a médica de família",
+      "ru": "семейный врач, терапевт",
+      "gender": "mf",
+      "example": "A minha médica de família é muito atenciosa.",
+      "audio": true
+    },
+    {
+      "pt": "o médico / a médica",
+      "ru": "врач",
+      "gender": "mf",
+      "example": "O médico disse-me para descansar.",
+      "audio": true
+    },
+    {
+      "pt": "o enfermeiro / a enfermeira",
+      "ru": "медбрат, медсестра",
+      "gender": "mf",
+      "example": "A enfermeira mediu-me a tensão.",
+      "audio": true
+    },
+    {
+      "pt": "o hospital",
+      "ru": "больница",
+      "gender": "m",
+      "example": "O hospital mais perto fica a vinte minutos.",
+      "audio": true
+    },
+    {
+      "pt": "as urgências",
+      "ru": "приёмное отделение неотложной помощи",
+      "gender": "f",
+      "example": "Fomos às urgências às duas da manhã.",
+      "audio": true
+    },
+    {
+      "pt": "a Linha SNS 24",
+      "ru": "медицинская горячая линия",
+      "gender": "f",
+      "example": "Antes de ir às urgências, ligue para a Linha SNS 24.",
+      "audio": true
+    },
+    {
+      "pt": "o INEM",
+      "ru": "служба скорой помощи",
+      "gender": "m",
+      "example": "Liguei para o 112 e o INEM chegou depressa.",
+      "audio": true
+    },
+    {
+      "pt": "a ambulância",
+      "ru": "машина скорой помощи",
+      "gender": "f",
+      "example": "A ambulância levou-o para o hospital.",
+      "audio": true
+    },
+    {
+      "pt": "a consulta",
+      "ru": "приём у врача",
+      "gender": "f",
+      "example": "Tenho consulta às dez no centro de saúde.",
+      "audio": true
+    },
+    {
+      "pt": "marcar uma consulta",
+      "ru": "записаться к врачу",
+      "example": "Quero marcar uma consulta para esta semana.",
+      "audio": true
+    },
+    {
+      "pt": "a receita",
+      "ru": "рецепт",
+      "gender": "f",
+      "example": "A médica enviou-me a receita por SMS.",
+      "audio": true
+    },
+    {
+      "pt": "passar uma receita",
+      "ru": "выписать рецепт",
+      "example": "O médico passou-me uma receita para o antibiótico.",
+      "audio": true
+    },
+    {
+      "pt": "a farmácia",
+      "ru": "аптека",
+      "gender": "f",
+      "example": "A farmácia fecha às oito.",
+      "audio": true
+    },
+    {
+      "pt": "a farmácia de serviço",
+      "ru": "дежурная аптека",
+      "gender": "f",
+      "example": "À noite, só a farmácia de serviço está aberta.",
+      "audio": true
+    },
+    {
+      "pt": "o farmacêutico / a farmacêutica",
+      "ru": "фармацевт",
+      "gender": "mf",
+      "example": "O farmacêutico recomendou-me um xarope.",
+      "audio": true
+    },
+    {
+      "pt": "o medicamento",
+      "ru": "лекарство",
+      "gender": "m",
+      "example": "Este medicamento só se vende com receita.",
+      "audio": true
+    },
+    {
+      "pt": "o comprimido",
+      "ru": "таблетка",
+      "gender": "m",
+      "example": "Tome um comprimido de oito em oito horas.",
+      "audio": true
+    },
+    {
+      "pt": "o xarope",
+      "ru": "сироп",
+      "gender": "m",
+      "example": "O xarope para a tosse sabe mal.",
+      "audio": true
+    },
+    {
+      "pt": "a pomada",
+      "ru": "мазь",
+      "gender": "f",
+      "example": "Ponha esta pomada duas vezes por dia.",
+      "audio": true
+    },
+    {
+      "pt": "tomar",
+      "ru": "принимать (лекарство)",
+      "example": "Já tomou o medicamento hoje?",
+      "audio": true
+    },
+    {
+      "pt": "o seguro de saúde",
+      "ru": "медицинская страховка",
+      "gender": "m",
+      "example": "Com o seguro de saúde, vou a um médico privado.",
+      "audio": true
+    },
+    {
+      "pt": "a baixa médica",
+      "ru": "больничный лист",
+      "gender": "f",
+      "example": "O médico deu-me baixa médica por uma semana.",
+      "audio": true
+    },
+    {
+      "pt": "estar de baixa",
+      "ru": "быть на больничном",
+      "example": "A Joana está de baixa até sexta-feira.",
+      "audio": true
+    },
+    {
+      "pt": "o atestado médico",
+      "ru": "медицинская справка",
+      "gender": "m",
+      "example": "A escola pediu um atestado médico.",
+      "audio": true
+    },
+    {
+      "pt": "os sintomas",
+      "ru": "симптомы",
+      "gender": "m",
+      "example": "Quais são os sintomas?",
+      "audio": true
+    },
+    {
+      "pt": "a febre",
+      "ru": "высокая температура, жар",
+      "gender": "f",
+      "example": "O miúdo tem febre desde ontem.",
+      "audio": true
+    },
+    {
+      "pt": "a tosse",
+      "ru": "кашель",
+      "gender": "f",
+      "example": "Tenho tosse há duas semanas.",
+      "audio": true
+    },
+    {
+      "pt": "a constipação",
+      "ru": "простуда",
+      "gender": "f",
+      "example": "Apanhei uma constipação no fim de semana.",
+      "audio": true
+    },
+    {
+      "pt": "constipado",
+      "ru": "простуженный",
+      "example": "Estou constipado, hoje não vou trabalhar.",
+      "audio": true
+    },
+    {
+      "pt": "a gripe",
+      "ru": "грипп",
+      "gender": "f",
+      "example": "Este ano levei a vacina da gripe.",
+      "audio": true
+    },
+    {
+      "pt": "a dor de cabeça",
+      "ru": "головная боль",
+      "gender": "f",
+      "example": "Tenho uma dor de cabeça horrível.",
+      "audio": true
+    },
+    {
+      "pt": "a dor de garganta",
+      "ru": "боль в горле",
+      "gender": "f",
+      "example": "Com esta dor de garganta, quase não consigo falar.",
+      "audio": true
+    },
+    {
+      "pt": "doer",
+      "ru": "болеть (о части тела)",
+      "example": "Doem-me as costas desde ontem.",
+      "audio": true
+    },
+    {
+      "pt": "o nariz entupido",
+      "ru": "заложенный нос",
+      "gender": "m",
+      "example": "Durmo mal com o nariz entupido.",
+      "audio": true
+    },
+    {
+      "pt": "as tonturas",
+      "ru": "головокружение",
+      "gender": "f",
+      "example": "Tenho tonturas quando me levanto depressa.",
+      "audio": true
+    },
+    {
+      "pt": "enjoado",
+      "ru": "испытывающий тошноту",
+      "example": "Estou enjoado desde o almoço.",
+      "audio": true
+    },
+    {
+      "pt": "a alergia",
+      "ru": "аллергия",
+      "gender": "f",
+      "example": "Na primavera, a minha alergia piora.",
+      "audio": true
+    },
+    {
+      "pt": "ser alérgico a",
+      "ru": "иметь аллергию на",
+      "example": "Sou alérgico à penicilina.",
+      "audio": true
+    },
+    {
+      "pt": "as análises",
+      "ru": "анализы",
+      "gender": "f",
+      "example": "Fiz análises ao sangue de manhã, em jejum.",
+      "audio": true
+    },
+    {
+      "pt": "a radiografia",
+      "ru": "рентгеновский снимок",
+      "gender": "f",
+      "example": "A radiografia mostra que não está partido.",
+      "audio": true
+    },
+    {
+      "pt": "a vacina",
+      "ru": "прививка, вакцина",
+      "gender": "f",
+      "example": "As vacinas das crianças são gratuitas.",
+      "audio": true
+    },
+    {
+      "pt": "a tensão arterial",
+      "ru": "кровяное давление",
+      "gender": "f",
+      "example": "A minha tensão arterial está um pouco alta.",
+      "audio": true
+    },
+    {
+      "pt": "o penso",
+      "ru": "пластырь, повязка",
+      "gender": "m",
+      "example": "Põe um penso no dedo.",
+      "audio": true
+    },
+    {
+      "pt": "o dentista / a dentista",
+      "ru": "стоматолог",
+      "gender": "mf",
+      "example": "Tenho dentista amanhã à tarde.",
+      "audio": true
+    },
+    {
+      "pt": "magoar-se",
+      "ru": "ушибиться, пораниться",
+      "example": "Magoei-me no joelho a jogar futebol.",
+      "audio": true
+    },
+    {
+      "pt": "partir",
+      "ru": "сломать (кость)",
+      "example": "O Rui partiu o braço a andar de bicicleta.",
+      "audio": true
+    },
+    {
+      "pt": "o gesso",
+      "ru": "гипс",
+      "gender": "m",
+      "example": "Ela vai ter o gesso durante um mês.",
+      "audio": true
+    },
+    {
+      "pt": "sentir-se",
+      "ru": "чувствовать себя",
+      "example": "Hoje sinto-me muito melhor.",
+      "audio": true
+    },
+    {
+      "pt": "as melhoras",
+      "ru": "«Поправляйся!» (пожелание выздоровления)",
+      "gender": "f",
+      "example": "Soube que estás doente. As melhoras!",
+      "audio": true
+    },
+    {
+      "pt": "grávida",
+      "ru": "беременная",
+      "example": "A Inês está grávida de cinco meses.",
+      "audio": true
+    }
+  ]
+}

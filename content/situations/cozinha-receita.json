@@ -1,0 +1,181 @@
+{
+  "id": "cozinha-receita",
+  "title": "На кухне: рецепт",
+  "titlePt": "Na cozinha: uma receita",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Hoje vou ensinar-te a fazer bacalhau à Brás. Já demolhaste o bacalhau?", "ru": "Сегодня научу тебя готовить бакаляу-а-браш. Ты уже вымочил треску?" },
+    { "speaker": "B", "pt": "Já. Esteve de molho dois dias, como a senhora disse, e mudei a água várias vezes.", "ru": "Да. Она мокла два дня, как вы сказали, и я несколько раз менял воду." },
+    { "speaker": "A", "pt": "Muito bem. Agora tira-lhe as peles e as espinhas e desfia-o em lascas finas.", "ru": "Отлично. Теперь сними с неё кожу, вынь кости и разбери на тонкие волокна." },
+    { "speaker": "B", "pt": "Assim está bem? Quanto bacalhau é que usamos?", "ru": "Так нормально? Сколько трески берём?" },
+    { "speaker": "A", "pt": "Para quatro pessoas, chegam uns quatrocentos gramas. Agora corta duas cebolas às rodelas finas e pica dois dentes de alho.", "ru": "На четверых хватит граммов четырёхсот. Теперь нарежь две луковицы тонкими кольцами и измельчи два зубчика чеснока." },
+    { "speaker": "B", "pt": "Já está. Quanto azeite é que ponho na frigideira?", "ru": "Готово. Сколько оливкового масла налить на сковороду?" },
+    { "speaker": "A", "pt": "Um bom fio de azeite, não tenhas medo! Deixa a cebola alourar em lume brando.", "ru": "Хорошую струйку, не бойся! Дай луку зарумяниться на слабом огне." },
+    { "speaker": "B", "pt": "Cheira tão bem! Junto já o bacalhau?", "ru": "Как вкусно пахнет! Уже добавлять треску?" },
+    { "speaker": "A", "pt": "Junta e mexe durante uns cinco minutos. Depois juntas a batata palha.", "ru": "Добавляй и помешивай минут пять. Потом добавишь картофель пай." },
+    { "speaker": "B", "pt": "E os ovos? Bato-os primeiro?", "ru": "А яйца? Сначала их взбить?" },
+    { "speaker": "A", "pt": "Sim, bate seis ovos com uma pitada de sal e pimenta. Desliga o lume antes de os deitares.", "ru": "Да, взбей шесть яиц со щепоткой соли и перца. Выключи огонь, прежде чем их выливать." },
+    { "speaker": "B", "pt": "Porque é que se desliga o lume?", "ru": "А зачем выключать огонь?" },
+    { "speaker": "A", "pt": "Para os ovos ficarem cremosos e não secos. Mexe sempre, até estar tudo envolvido.", "ru": "Чтобы яйца получились кремовыми, а не сухими. Всё время помешивай, пока всё не перемешается." },
+    { "speaker": "B", "pt": "Pronto! Agora só faltam a salsa picada e as azeitonas pretas.", "ru": "Готово! Осталось только рубленая петрушка и чёрные оливки." },
+    { "speaker": "A", "pt": "Isso mesmo. Prova lá... Está bom de sal?", "ru": "Именно. Ну-ка попробуй... Соли достаточно?" }
+  ],
+  "phrases": [
+    { "pt": "Quanto é que ponho?", "ru": "Сколько класть?" },
+    { "pt": "Para quantas pessoas é?", "ru": "На сколько человек?" },
+    { "pt": "Corta a cebola às rodelas.", "ru": "Нарежь лук кольцами." },
+    { "pt": "Deixa cozinhar em lume brando.", "ru": "Пусть готовится на слабом огне." },
+    { "pt": "Mexe sempre.", "ru": "Постоянно помешивай." },
+    { "pt": "Junta uma pitada de sal.", "ru": "Добавь щепотку соли." },
+    { "pt": "Está bom de sal?", "ru": "Соли хватает?" },
+    { "pt": "Cheira tão bem!", "ru": "Как вкусно пахнет!" },
+    { "pt": "Q.b. — quanto baste.", "ru": "По вкусу (сколько потребуется)." },
+    { "pt": "Já está pronto?", "ru": "Уже готово?" }
+  ],
+  "vocab": [
+    { "pt": "a receita", "ru": "рецепт", "example": "Esta receita é da minha avó." },
+    { "pt": "os ingredientes", "ru": "ингредиенты", "example": "Tens todos os ingredientes?" },
+    { "pt": "o bacalhau", "ru": "бакаляу (солёная сушёная треска)", "example": "Dizem que há mil receitas de bacalhau." },
+    { "pt": "demolhar", "ru": "вымачивать (треску от соли)", "example": "É preciso demolhar o bacalhau durante dois dias." },
+    { "pt": "estar de molho", "ru": "отмокать", "example": "O feijão está de molho desde ontem." },
+    { "pt": "desfiar", "ru": "разбирать на волокна", "example": "Desfia o frango com um garfo." },
+    { "pt": "a espinha", "ru": "рыбья кость", "example": "Cuidado, o peixe tem espinhas." },
+    { "pt": "a pele", "ru": "кожа, шкурка", "example": "Tira a pele ao bacalhau." },
+    { "pt": "a lasca", "ru": "волокно, пластинка (рыбы)", "example": "O bacalhau separa-se em lascas." },
+    { "pt": "a cebola", "ru": "лук", "example": "A cebola faz-me chorar." },
+    { "pt": "o dente de alho", "ru": "зубчик чеснока", "example": "Junta dois dentes de alho picados." },
+    { "pt": "o azeite", "ru": "оливковое масло", "example": "Em Portugal cozinha-se muito com azeite." },
+    { "pt": "o óleo", "ru": "растительное масло", "example": "Para fritar uso óleo de girassol." },
+    { "pt": "a batata palha", "ru": "картофель пай (соломкой)", "example": "Comprei um pacote de batata palha." },
+    { "pt": "os ovos", "ru": "яйца", "example": "Bate os ovos com um garfo." },
+    { "pt": "a salsa", "ru": "петрушка", "example": "Decora com salsa picada." },
+    { "pt": "os coentros", "ru": "кинза", "example": "Na açorda põem-se coentros." },
+    { "pt": "as azeitonas", "ru": "оливки, маслины", "example": "Gosto de azeitonas pretas." },
+    { "pt": "uma pitada de", "ru": "щепотка", "example": "Uma pitada de sal chega." },
+    { "pt": "q.b. (quanto baste)", "ru": "по вкусу, сколько нужно", "example": "Sal e pimenta q.b." },
+    { "pt": "a colher de sopa / de chá", "ru": "столовая / чайная ложка", "example": "Junta uma colher de sopa de farinha." },
+    { "pt": "o fio de azeite", "ru": "струйка оливкового масла", "example": "Rega com um fio de azeite." },
+    { "pt": "a frigideira", "ru": "сковорода", "example": "Aquece a frigideira primeiro." },
+    { "pt": "o tacho", "ru": "кастрюля", "example": "Põe a água a ferver num tacho." },
+    { "pt": "o forno", "ru": "духовка", "example": "Leva ao forno a 180 graus." },
+    { "pt": "o lume", "ru": "огонь (на плите)", "example": "Baixa o lume, senão queima." },
+    { "pt": "em lume brando", "ru": "на слабом огне", "example": "Deixa cozinhar em lume brando." },
+    { "pt": "cortar às rodelas / aos cubos", "ru": "нарезать кружками / кубиками", "example": "Corta as batatas aos cubos." },
+    { "pt": "picar", "ru": "мелко рубить", "example": "Pica a salsa muito fina." },
+    { "pt": "bater", "ru": "взбивать", "example": "Bate as claras em castelo." },
+    { "pt": "mexer", "ru": "помешивать", "example": "Mexe para não pegar ao fundo." },
+    { "pt": "juntar", "ru": "добавлять", "example": "Junta o arroz e a água." },
+    { "pt": "alourar", "ru": "слегка зарумянить", "example": "Deixa a cebola alourar." },
+    { "pt": "refogar", "ru": "пассеровать, обжаривать на масле", "example": "Primeiro faz-se um refogado com cebola e alho." },
+    { "pt": "ferver", "ru": "кипеть, кипятить", "example": "Quando a água ferver, junta a massa." },
+    { "pt": "provar", "ru": "пробовать (на вкус)", "example": "Prova e vê se falta sal." },
+    { "pt": "temperar", "ru": "приправлять, солить", "example": "Tempera a carne com alho e louro." }
+  ],
+  "exercises": [
+    {
+      "id": "cozinha-receita-ex-01",
+      "topicId": "cozinha-receita",
+      "type": "choice",
+      "prompt": "Antes de cozinhar o bacalhau, é preciso tirar-lhe o sal. Como se diz?",
+      "options": ["Desfiar o bacalhau.", "Refogar o bacalhau.", "Temperar o bacalhau.", "Demolhar o bacalhau."],
+      "correct": 3,
+      "explanation": "**Demolhar** — вымачивать солёную треску в холодной воде (обычно 24–48 часов, меняя воду). **Desfiar** — разбирать на волокна, **refogar** — пассеровать, **temperar** — приправлять."
+    },
+    {
+      "id": "cozinha-receita-ex-02",
+      "topicId": "cozinha-receita",
+      "type": "match",
+      "prompt": "Соедини глаголы с переводом",
+      "pairs": [
+        { "left": "bater", "right": "взбивать" },
+        { "left": "mexer", "right": "помешивать" },
+        { "left": "picar", "right": "мелко рубить" },
+        { "left": "juntar", "right": "добавлять" },
+        { "left": "provar", "right": "пробовать" }
+      ]
+    },
+    {
+      "id": "cozinha-receita-ex-03",
+      "topicId": "cozinha-receita",
+      "type": "fill-gap",
+      "prompt": "Um bom fio de azeite, não ___ (ter) medo!",
+      "answer": ["tenhas"],
+      "hint": "отрицательный imperativo на «ты»",
+      "ru": "Хорошую струйку масла, не бойся!",
+      "explanation": "Отрицательный imperativo берёт форму presente do conjuntivo: **não tenhas**, **não ponhas**, **não mexas**. Утвердительный — другой: **tem calma!**"
+    },
+    {
+      "id": "cozinha-receita-ex-04",
+      "topicId": "cozinha-receita",
+      "type": "listen-type",
+      "text": "Cheira tão bem! Junto já o bacalhau?",
+      "answer": ["Cheira tão bem! Junto já o bacalhau?"],
+      "explanation": "**Cheirar bem** — вкусно пахнуть. **Junto já…?** — «уже добавлять…?»: presente в значении «мне сделать…?»."
+    },
+    {
+      "id": "cozinha-receita-ex-05",
+      "topicId": "cozinha-receita",
+      "type": "listen-choice",
+      "text": "Sim, bate seis ovos com uma pitada de sal e pimenta. Desliga o lume antes de os deitares.",
+      "prompt": "Что нужно сделать перед тем, как вылить яйца?",
+      "options": ["Добавить ещё масла.", "Выключить огонь.", "Посолить треску.", "Убавить огонь до среднего."],
+      "correct": 1,
+      "explanation": "**Desliga o lume** — выключи огонь. Яйца в бакаляу-а-браш должны остаться кремовыми, поэтому их добавляют на выключенном огне."
+    },
+    {
+      "id": "cozinha-receita-ex-06",
+      "topicId": "cozinha-receita",
+      "type": "order-words",
+      "words": ["Para", "quatro", "pessoas,", "chegam", "uns", "quatrocentos", "gramas."],
+      "answer": "Para quatro pessoas, chegam uns quatrocentos gramas.",
+      "ru": "На четверых хватит граммов четырёхсот."
+    },
+    {
+      "id": "cozinha-receita-ex-07",
+      "topicId": "cozinha-receita",
+      "type": "translate-ru-pt",
+      "ru": "Нарежь лук кольцами.",
+      "answer": ["Corta a cebola às rodelas.", "Corta a cebola em rodelas.", "Corta as cebolas às rodelas.", "Corta as cebolas em rodelas.", "Corta a cebola em anéis.", "Corta a cebola às rodelas finas."],
+      "explanation": "Способ нарезки: **às rodelas** (кружками/кольцами), **aos cubos** (кубиками), **às tiras** (полосками). Вариант с **em** тоже правильный."
+    },
+    {
+      "id": "cozinha-receita-ex-08",
+      "topicId": "cozinha-receita",
+      "type": "choice",
+      "prompt": "Numa receita escrita lê-se: «Sal e pimenta q.b.» O que quer dizer «q.b.»?",
+      "options": ["quanto baste", "quilo e meio", "queijo branco", "quente e batido"],
+      "correct": 0,
+      "explanation": "**Q.b. = quanto baste** — «сколько потребуется, по вкусу». Встречается почти в каждом португальском рецепте."
+    },
+    {
+      "id": "cozinha-receita-ex-09",
+      "topicId": "cozinha-receita",
+      "type": "fill-gap",
+      "prompt": "E os ovos? ___ primeiro?",
+      "answer": ["Bato-os"],
+      "hint": "«Взбить их?» — bater + местоимение «их»",
+      "ru": "А яйца? Сначала их взбить?",
+      "explanation": "Местоимение **os** после глагола: **bato-os**. В начале фразы клитика не ставится (*Os bato* ✗)."
+    },
+    {
+      "id": "cozinha-receita-ex-10",
+      "topicId": "cozinha-receita",
+      "type": "transform",
+      "prompt": "Bate os ovos com uma pitada de sal.",
+      "instruction": "Перепиши как строчку из кулинарной книги: инфинитив вместо imperativo",
+      "answer": ["Bater os ovos com uma pitada de sal."],
+      "explanation": "В письменных рецептах в Португалии часто используется инфинитив: **Bater os ovos**, **Juntar a cebola**, **Levar ao forno**. Устно, обращаясь к человеку, — imperativo: **bate, junta, leva**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Португальская подруга попросила рецепт вашего любимого русского блюда (например, сырников или борща). Напишите рецепт по-португальски: список ингредиентов с количеством, 5–6 шагов приготовления (инфинитивом, как в кулинарной книге), на сколько человек и сколько времени это занимает, плюс один совет.",
+    "sample": "Sirniki (panquecas de requeijão)\nPara 4 pessoas — 30 minutos\nIngredientes:\n500 g de requeijão\n2 ovos\n3 colheres de sopa de açúcar\n5 colheres de sopa de farinha\nUma pitada de sal\nÓleo q.b.\nPreparação:\n1. Esmagar o requeijão com um garfo.\n2. Juntar os ovos, o açúcar e o sal e mexer bem.\n3. Acrescentar a farinha aos poucos, até a massa ficar firme.\n4. Fazer bolinhas e achatá-las com as mãos.\n5. Fritar em lume médio, três minutos de cada lado.\n6. Servir com natas ou compota.\nDica: não ponhas farinha a mais, senão os sirniki ficam secos.",
+    "checklist": [
+      "Ингредиенты с количеством: g, colheres de sopa, uma pitada de, q.b.",
+      "Шаги написаны инфинитивом: juntar, mexer, fritar, servir",
+      "Указано, на сколько человек и сколько времени",
+      "Есть кулинарные глаголы и выражения: lume brando/médio, às rodelas, mexer, juntar",
+      "В совете — отрицательный imperativo на tu: não ponhas, não deixes"
+    ]
+  }
+}

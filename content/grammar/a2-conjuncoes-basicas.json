@@ -1,0 +1,438 @@
+{
+  "id": "a2-conjuncoes-basicas",
+  "level": "A2",
+  "module": "a2-frase",
+  "title": "Основные союзы",
+  "titlePt": "Conjunções básicas",
+  "requires": [
+    "a1-presente-indicativo-regulares",
+    "a1-negacao"
+  ],
+  "theory": "## Сочинительные союзы\n\n| союз | перевод | пример |\n|---|---|---|\n| **e** | и, а | **Eu bebo chá e ela bebe café.** |\n| **mas** | но, а | **É caro, mas é bom.** |\n| **ou** | или | **Queres chá ou café?** |\n| **ou … ou** | либо … либо | **Ou vens agora, ou vou sozinho.** |\n| **nem … nem** | ни … ни | **Não gosto nem de café nem de chá.** |\n| **por isso** | поэтому | **Estava a chover, por isso fiquei em casa.** |\n| **portanto** | итак, следовательно | **Não tenho carro, portanto vou de comboio.** |\n\nРусское «а» отдельного союза не имеет: при сопоставлении — **e**, при противопоставлении — **mas**. После отрицания «не …, а …» — **mas sim** или просто **mas**: **Não é o Rui, mas sim o Pedro.** Никогда не переводите «а» как *a*.\n\n## nem … nem, também não, nem eu\n\n- Если **nem** стоит **перед** глаголом, **não** не нужно: **Nem o Rui nem a Ana vieram.**\n- Если глагол впереди — **não … nem … nem**: **Não comi nem bebi nada.**\n- Реакция на отрицание: **— Não gosto de futebol. — Nem eu. / Eu também não.** (не *Eu também*).\n\n## Подчинительные союзы\n\n| союз | перевод | пример |\n|---|---|---|\n| **que** | что | **Acho que vai chover.** |\n| **porque** | потому что | **Não fui porque estava doente.** |\n| **como** (в начале) | так как | **Como estava cansado, fui dormir.** |\n| **quando** | когда | **Quando chego a casa, janto.** |\n| **se** | если; ли | **Se tenho tempo, leio.** **Não sei se ele vem.** |\n| **enquanto** | пока, в то время как | **Ouço música enquanto cozinho.** |\n| **embora** | хотя | **Embora esteja cansado, vou sair.** |\n\n## Porque, porquê, porque é que\n\n- Вопрос в начале: **Porque é que não vieste?** — разговорная норма pt-PT (короче: **Porque não vieste?**).\n- В конце вопроса или отдельно — **porquê** с ударением: **Não vieste porquê? — Porquê?**\n- Ответ — **porque**: **Porque estava doente.**\n\nРаздельное *por que* — бразильская орфография.\n\n## Что идёт после союза\n\n- После **e, mas, ou, porque, quando** (привычка), **enquanto** — обычный **presente / pretérito**.\n- После **embora** — всегда **conjuntivo**: **embora seja, embora tenha, embora esteja**. На A2 запомните эти три формы как готовые блоки.\n- Если **quando** и **se** говорят о будущем, нужен **futuro do conjuntivo** (тема B1): **Quando chegares, liga-me. Se puderes, vem.** Не *quando vou chegar*.\n\n## Союзы и клитики\n\nПодчинительные союзы (**que, se, quando, porque, embora**) — «магниты»: **Quando me ligas, estou sempre ocupado. Não sei se o conheço.** После **e, mas, ou** — обычная ênclise: **Liguei-lhe, mas ele não atendeu.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Porque é que** não vieste? | **Por que** você não veio? | раздельное *por que* — бразильская орфография |\n| **Quando chegares, diz-me.** | Quando você chegar, me diz. | tu + ênclise в главном |\n| **Se calhar** chove. | **Talvez** chova. / De repente chove. | **se calhar** — «может быть», очень португальское |\n| **Pois.** / **Pois é.** | É. / Né? | **pois** — согласие в разговоре |\n\nВ Португалии **se calhar** + индикатив звучит на каждом шагу: **Se calhar vou amanhã.** — Может, пойду завтра.",
+  "commonErrors": "- **«А» как a**: *Eu bebo chá, a ela café* ✗ → **Eu bebo chá e ela (bebe) café** ✓.\n- **Лишнее não после nem**: *Nem o Rui nem a Ana não vieram* ✗ → **Nem o Rui nem a Ana vieram** ✓.\n- **Реакция на отрицание**: — Não gosto. — *Eu também* ✗ → **Eu também não / Nem eu** ✓.\n- **Будущее после quando/se**: *Quando vou chegar, ligo-te* ✗ → **Quando chegar, ligo-te** ✓; *Se vai chover* ✗ → **Se chover** ✓.\n- **Индикатив после embora**: *Embora estou cansado* ✗ → **Embora esteja cansado** ✓.\n- **Клитика после магнита**: *Quando ligas-me* ✗ → **Quando me ligas** ✓.\n- **Porquê / porque**: *Porquê não vieste?* ✗ → **Porque é que não vieste?** ✓.",
+  "examples": [
+    {
+      "pt": "Estava a chover, por isso apanhámos um táxi.",
+      "ru": "Шёл дождь, поэтому мы взяли такси.",
+      "audio": true
+    },
+    {
+      "pt": "Porque é que não vieste ontem? — Porque estava doente.",
+      "ru": "Почему ты вчера не пришёл? — Потому что болел.",
+      "audio": true
+    },
+    {
+      "pt": "Ouço podcasts em português enquanto conduzo.",
+      "ru": "Я слушаю подкасты на португальском, пока веду машину.",
+      "audio": true
+    },
+    {
+      "pt": "Não gosto nem de frio nem de chuva.",
+      "ru": "Я не люблю ни холод, ни дождь.",
+      "audio": true
+    },
+    {
+      "pt": "Embora seja caro, este restaurante vale a pena.",
+      "ru": "Хотя этот ресторан дорогой, он того стоит.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-conjuncoes-basicas-ex-01",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "match",
+      "prompt": "Соедините союз с переводом.",
+      "pairs": [
+        {
+          "left": "e",
+          "right": "и"
+        },
+        {
+          "left": "mas",
+          "right": "но"
+        },
+        {
+          "left": "ou",
+          "right": "или"
+        },
+        {
+          "left": "porque",
+          "right": "потому что"
+        },
+        {
+          "left": "enquanto",
+          "right": "пока, в то время как"
+        },
+        {
+          "left": "embora",
+          "right": "хотя"
+        }
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-02",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Gosto de café, ___ prefiro chá.",
+      "answer": [
+        "mas"
+      ],
+      "ru": "Я люблю кофе, но предпочитаю чай."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-03",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Queres chá ___ café?",
+      "answer": [
+        "ou"
+      ],
+      "ru": "Хочешь чай или кофе?"
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-04",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Não fui à aula ___ estava doente.",
+      "answer": [
+        "porque"
+      ],
+      "ru": "Я не пошёл на урок, потому что болел."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-05",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Estava a chover, ___ ficámos em casa.",
+      "answer": [
+        "por isso",
+        "portanto",
+        "então",
+        "e por isso"
+      ],
+      "ru": "Шёл дождь, поэтому мы остались дома."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-06",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "___ chego a casa, tomo um duche.",
+      "answer": [
+        "quando",
+        "sempre que",
+        "mal",
+        "assim que"
+      ],
+      "ru": "Когда я прихожу домой, я принимаю душ."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-07",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Não gosto ___ de peixe ___ de carne.",
+      "answer": [
+        "nem / nem"
+      ],
+      "ru": "Я не люблю ни рыбу, ни мясо."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-08",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Ouço podcasts ___ conduzo.",
+      "answer": [
+        "enquanto",
+        "quando"
+      ],
+      "ru": "Я слушаю подкасты, пока веду машину."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-09",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Não sei ___ ele vem amanhã.",
+      "answer": [
+        "se"
+      ],
+      "ru": "Не знаю, придёт ли он завтра.",
+      "explanation": "«ли» в косвенном вопросе — se."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-10",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "choice",
+      "prompt": "— Não gosto de futebol. — ___",
+      "options": [
+        "Eu também.",
+        "Nem eu.",
+        "Eu também sim.",
+        "Eu não também."
+      ],
+      "correct": 1,
+      "explanation": "Согласие с отрицанием — Nem eu / Eu também não."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-11",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "choice",
+      "prompt": "Как спросить «Почему ты не пришёл?» в pt-PT:",
+      "options": [
+        "Por que você não veio?",
+        "Porquê não vieste?",
+        "Porque é que não vieste?",
+        "Por quê não vieste?"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-12",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "choice",
+      "prompt": "___ esteja cansado, vou ao ginásio.",
+      "options": [
+        "Porque",
+        "Quando",
+        "Se",
+        "Embora"
+      ],
+      "correct": 3,
+      "explanation": "esteja — conjuntivo, который требует embora."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-13",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Quando me ligas, estou sempre ocupado.",
+        "Quando ligas-me, estou sempre ocupado.",
+        "Quando tu ligas-me, estou sempre ocupado.",
+        "Me ligas quando, estou sempre ocupado."
+      ],
+      "correct": 0,
+      "explanation": "quando — магнит: клитика перед глаголом."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-14",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "transform",
+      "prompt": "Estou cansado. Vou dormir.",
+      "instruction": "Объедините с помощью por isso.",
+      "answer": [
+        "Estou cansado, por isso vou dormir.",
+        "Estou cansada, por isso vou dormir."
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-15",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "transform",
+      "prompt": "Não vou à praia. Está frio.",
+      "instruction": "Объедините с помощью porque.",
+      "answer": [
+        "Não vou à praia porque está frio."
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-16",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "transform",
+      "prompt": "Não bebo café. Não bebo chá.",
+      "instruction": "Объедините через nem … nem.",
+      "answer": [
+        "Não bebo nem café nem chá.",
+        "Não bebo café nem chá."
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-17",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "order-words",
+      "words": [
+        "de",
+        "Gosto",
+        "ler",
+        "enquanto",
+        "como"
+      ],
+      "answer": "Gosto de ler enquanto como"
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-18",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "order-words",
+      "words": [
+        "se",
+        "Não",
+        "sei",
+        "posso",
+        "ir"
+      ],
+      "answer": "Não sei se posso ir"
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-19",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "translate-ru-pt",
+      "ru": "Я устал, но счастлив.",
+      "answer": [
+        "Estou cansado, mas feliz.",
+        "Estou cansada, mas feliz.",
+        "Estou cansado, mas estou feliz.",
+        "Estou cansada, mas estou feliz.",
+        "Eu estou cansado, mas feliz.",
+        "Eu estou cansada, mas feliz."
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-20",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "translate-ru-pt",
+      "ru": "Ни Руй, ни Инеш не пришли.",
+      "answer": [
+        "Nem o Rui nem a Inês vieram.",
+        "Nem o Rui nem a Inês apareceram.",
+        "Não vieram nem o Rui nem a Inês."
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-21",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "listen-type",
+      "text": "Leva o guarda-chuva, porque vai chover.",
+      "answer": [
+        "Leva o guarda-chuva, porque vai chover."
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-ex-22",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "listen-choice",
+      "text": "Embora seja caro, vale a pena.",
+      "options": [
+        "Так как это дорого, оно того стоит.",
+        "Хотя это дорого, оно того стоит.",
+        "Если это дорого, оно того не стоит.",
+        "Это дорого, поэтому не стоит."
+      ],
+      "correct": 1
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-conjuncoes-basicas-mt-01",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Fiquei em casa ___ estava a chover.",
+      "answer": [
+        "porque"
+      ],
+      "ru": "Я остался дома, потому что шёл дождь."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-02",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Faço o jantar ___ tu pões a mesa.",
+      "answer": [
+        "enquanto"
+      ],
+      "hint": "пока, в то время как",
+      "ru": "Я готовлю ужин, пока ты накрываешь на стол."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-03",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "Queres ir ao cinema ___ ficar em casa?",
+      "answer": [
+        "ou"
+      ],
+      "ru": "Хочешь пойти в кино или остаться дома?"
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-04",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "fill-gap",
+      "prompt": "___ tiveres tempo, liga-me.",
+      "answer": [
+        "se"
+      ],
+      "hint": "если",
+      "ru": "Если будет время, позвони мне."
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-05",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "choice",
+      "prompt": "— Não percebo nada. — ___",
+      "options": [
+        "Eu também.",
+        "Nem também.",
+        "Eu também não.",
+        "Eu não também."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-06",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Nem a Rita nem o Duarte não sabem.",
+        "Nem a Rita nem o Duarte sabem.",
+        "Não a Rita nem o Duarte sabem.",
+        "Nem a Rita ou o Duarte sabem."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-07",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "choice",
+      "prompt": "Há dinheiro, ___ não há tempo.",
+      "options": [
+        "mas",
+        "porque",
+        "ou",
+        "se"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-08",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "transform",
+      "prompt": "Tenho fome. Vou comer.",
+      "instruction": "Объедините с помощью por isso.",
+      "answer": [
+        "Tenho fome, por isso vou comer."
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-09",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "translate-ru-pt",
+      "ru": "Почему ты мне не звонишь?",
+      "answer": [
+        "Porque é que não me ligas?",
+        "Porque é que tu não me ligas?",
+        "Porque não me ligas?",
+        "Porque é que não me telefonas?",
+        "Porque não me telefonas?"
+      ]
+    },
+    {
+      "id": "a2-conjuncoes-basicas-mt-10",
+      "topicId": "a2-conjuncoes-basicas",
+      "type": "listen-type",
+      "text": "Não gosto nem de frio nem de chuva.",
+      "answer": [
+        "Não gosto nem de frio nem de chuva."
+      ]
+    }
+  ]
+}

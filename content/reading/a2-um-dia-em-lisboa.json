@@ -1,0 +1,190 @@
+{
+  "id": "a2-um-dia-em-lisboa",
+  "level": "A2",
+  "title": "Um dia em Lisboa",
+  "paragraphs": [
+    "No sábado passado, a Inês e o namorado, o Rui, passaram o dia em Lisboa. Moram em Almada, do outro lado do rio, por isso apanharam o barco em Cacilhas e chegaram ao Cais do Sodré em dez minutos.",
+    "Primeiro, tomaram o pequeno-almoço numa pastelaria da Baixa. A Inês pediu uma bica e uma torrada; o Rui preferiu um galão e um pastel de nata.",
+    "Depois, subiram a pé até ao Chiado. As ruas são estreitas e há muitas escadas, mas a vista vale a pena.",
+    "Ao meio-dia, apanharam o elétrico 28. Estava cheio de turistas e tiveram de ir de pé até à Graça. Lá, sentaram-se no miradouro e olharam para os telhados vermelhos e para o Tejo.",
+    "Almoçaram numa tasca em Alfama: sardinhas assadas, salada e um copo de vinho verde. A conta foi barata e o empregado foi muito simpático.",
+    "À tarde, foram a Belém de autocarro e passearam junto ao rio até à torre. Ao fim do dia, estavam cansados, mas contentes. «Temos de voltar mais vezes», disse o Rui no barco."
+  ],
+  "glossary": [
+    {
+      "word": "do outro lado do rio",
+      "ru": "на другом берегу реки"
+    },
+    {
+      "word": "apanharam o barco",
+      "ru": "сели на паром (apanhar — садиться на транспорт)"
+    },
+    {
+      "word": "pastelaria",
+      "ru": "кондитерская-кафе"
+    },
+    {
+      "word": "bica",
+      "ru": "эспрессо (лиссабонское название)"
+    },
+    {
+      "word": "torrada",
+      "ru": "тост с маслом"
+    },
+    {
+      "word": "galão",
+      "ru": "кофе с молоком в высоком стакане"
+    },
+    {
+      "word": "subiram a pé",
+      "ru": "поднялись пешком"
+    },
+    {
+      "word": "estreitas",
+      "ru": "узкие"
+    },
+    {
+      "word": "vale a pena",
+      "ru": "стоит того"
+    },
+    {
+      "word": "elétrico",
+      "ru": "трамвай"
+    },
+    {
+      "word": "tiveram de",
+      "ru": "пришлось, должны были"
+    },
+    {
+      "word": "ir de pé",
+      "ru": "ехать стоя"
+    },
+    {
+      "word": "miradouro",
+      "ru": "смотровая площадка"
+    },
+    {
+      "word": "telhados",
+      "ru": "крыши"
+    },
+    {
+      "word": "tasca",
+      "ru": "простой ресторанчик, таверна"
+    },
+    {
+      "word": "sardinhas assadas",
+      "ru": "жареные (на углях) сардины"
+    },
+    {
+      "word": "A conta",
+      "ru": "счёт"
+    },
+    {
+      "word": "passearam",
+      "ru": "гуляли"
+    },
+    {
+      "word": "cansados",
+      "ru": "уставшие"
+    }
+  ],
+  "questions": [
+    {
+      "id": "a2-um-dia-em-lisboa-q-01",
+      "topicId": "a2-um-dia-em-lisboa",
+      "type": "choice",
+      "prompt": "Como é que a Inês e o Rui chegaram a Lisboa?",
+      "options": [
+        "De comboio",
+        "De carro",
+        "De barco",
+        "De autocarro"
+      ],
+      "correct": 2,
+      "explanation": "В тексте: **apanharam o barco em Cacilhas** — они живут в Almada, на другом берегу Тежу, и переплыли реку на пароме."
+    },
+    {
+      "id": "a2-um-dia-em-lisboa-q-02",
+      "topicId": "a2-um-dia-em-lisboa",
+      "type": "choice",
+      "prompt": "O que é que o Rui tomou ao pequeno-almoço?",
+      "options": [
+        "Uma bica e uma torrada",
+        "Um galão e um pastel de nata",
+        "Um sumo e um bolo"
+      ],
+      "correct": 1,
+      "explanation": "**Bica e torrada** заказала Inês, а Rui — **um galão e um pastel de nata**."
+    },
+    {
+      "id": "a2-um-dia-em-lisboa-q-03",
+      "topicId": "a2-um-dia-em-lisboa",
+      "type": "fill-gap",
+      "prompt": "As ruas são estreitas e há muitas escadas, mas a vista ___ a pena.",
+      "answer": [
+        "vale"
+      ],
+      "hint": "стоит того",
+      "ru": "Улицы узкие и много лестниц, но вид того стоит.",
+      "explanation": "**Valer a pena** — «стоить того». Здесь настоящее время: **vale a pena**."
+    },
+    {
+      "id": "a2-um-dia-em-lisboa-q-04",
+      "topicId": "a2-um-dia-em-lisboa",
+      "type": "choice",
+      "prompt": "Porque é que tiveram de ir de pé no elétrico?",
+      "options": [
+        "Porque estava cheio de turistas",
+        "Porque a viagem era curta",
+        "Porque queriam ver a vista",
+        "Porque não tinham bilhete"
+      ],
+      "correct": 0,
+      "explanation": "**Estava cheio de turistas** — трамвай 28 был набит туристами, поэтому пришлось ехать стоя (**ir de pé**)."
+    },
+    {
+      "id": "a2-um-dia-em-lisboa-q-05",
+      "topicId": "a2-um-dia-em-lisboa",
+      "type": "fill-gap",
+      "prompt": "Almoçaram numa ___ em Alfama.",
+      "answer": [
+        "tasca"
+      ],
+      "hint": "простой ресторанчик",
+      "ru": "Они пообедали в таверне в Алфаме.",
+      "explanation": "**Tasca** — простой недорогой ресторанчик с домашней кухней."
+    },
+    {
+      "id": "a2-um-dia-em-lisboa-q-06",
+      "topicId": "a2-um-dia-em-lisboa",
+      "type": "translate-ru-pt",
+      "ru": "Нам надо приезжать почаще.",
+      "answer": [
+        "Temos de voltar mais vezes.",
+        "Nós temos de voltar mais vezes.",
+        "Temos que voltar mais vezes.",
+        "Nós temos que voltar mais vezes.",
+        "Temos de vir mais vezes.",
+        "Temos de vir cá mais vezes.",
+        "Temos de cá voltar mais vezes.",
+        "Temos de voltar cá mais vezes."
+      ],
+      "explanation": "«Надо, должны» — **ter de** + инфинитив (в pt-PT предпочтительнее, чем *ter que*). «Приезжать снова, возвращаться» — **voltar**."
+    },
+    {
+      "id": "a2-um-dia-em-lisboa-q-07",
+      "topicId": "a2-um-dia-em-lisboa",
+      "type": "listen-choice",
+      "text": "Ao fim do dia, estavam cansados, mas contentes.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "В конце дня они были голодные, но довольные.",
+        "В начале дня они были уставшие.",
+        "В конце дня они устали, но были довольны.",
+        "Весь день они были недовольны."
+      ],
+      "correct": 2,
+      "explanation": "**Ao fim do dia** — в конце дня; **cansados** — уставшие; **contentes** — довольные."
+    }
+  ]
+}

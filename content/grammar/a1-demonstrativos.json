@@ -1,0 +1,440 @@
+{
+  "id": "a1-demonstrativos",
+  "level": "A1",
+  "module": "a1-basics",
+  "title": "Указательные местоимения",
+  "titlePt": "Determinantes e pronomes demonstrativos",
+  "requires": [
+    "a1-artigos-genero-numero",
+    "a1-ser-estar"
+  ],
+  "theory": "## Три степени удалённости\n\nВ русском два указательных слова («этот» и «тот»), в португальском — три. Каждое связано с лицом и наречием места:\n\n| | близко ко мне (**aqui / cá**) | близко к тебе (**aí**) | далеко от обоих (**ali / lá**) |\n|---|---|---|---|\n| муж. ед. | **este** | **esse** | **aquele** |\n| жен. ед. | **esta** | **essa** | **aquela** |\n| муж. мн. | **estes** | **esses** | **aqueles** |\n| жен. мн. | **estas** | **essas** | **aquelas** |\n| средний (без сущ.) | **isto** | **isso** | **aquilo** |\n\n- **Este livro aqui é ótimo.** — Эта книга (у меня) отличная.\n- **Essa mala aí é tua?** — Эта сумка (возле тебя) твоя?\n- **Aquele elétrico vai para Belém.** — Тот трамвай идёт в Белен.\n\nУказательное согласуется с существительным в роде и числе и ставится **без артикля**: **esta casa**, **aqueles rapazes**.\n\n## isto, isso, aquilo — «это» без существительного\n\nСредний род не изменяется и **никогда не стоит перед существительным**. Его используют, когда предмет не назван или речь о ситуации, идее:\n\n- **O que é isto?** — Что это (у меня в руках)?\n- **Isso é verdade.** — Это правда (то, что ты сказал).\n- **Aquilo ali é o quê?** — А вон то что такое?\n\n**isso** часто относится к словам собеседника: **Isso mesmo!** — Именно! **Por isso** — поэтому.\n\nПредставляя людей, используем согласованную форму: **Este é o Rui. Esta é a Inês.**\n\n## Слияние с предлогами de, em, a\n\n| | este | esse | aquele | isto / isso / aquilo |\n|---|---|---|---|---|\n| **de** | **deste, desta** | **desse, dessa** | **daquele, daquela** | **disto, disso, daquilo** |\n| **em** | **neste, nesta** | **nesse, nessa** | **naquele, naquela** | **nisto, nisso, naquilo** |\n| **a** | — | — | **àquele, àquela** | **àquilo** |\n\nСлияние обязательно: **Moro neste prédio** (не *em este*). **Gosto daquele restaurante.** **Não sei nada disso.** **Vou àquela loja.**\n\n## Усиление наречием\n\nВ речи указательное часто подкрепляют наречием места: **este aqui, esse aí, aquele ali**. **Quero esse aí, por favor.** — Мне вот этот (возле вас), пожалуйста. Так удобно в кафе, в **pastelaria** и на рынке, когда показываете на товар пальцем и не знаете, как он называется.\n\n## Полезные выражения\n\n| выражение | значение |\n|---|---|\n| **Isso mesmo!** | Именно так! |\n| **por isso** | поэтому |\n| **isto é** | то есть |\n| **É só isso?** | Это всё? (вопрос продавца) |\n| **E depois disso?** | А после этого? |\n| **nisso** | в этот момент, тут |\n\n## Время\n\n- **este / esta** — текущее: **esta semana, este ano** (на этой неделе, в этом году).\n- **esse / nesse** — момент, о котором только что говорили: **Nesse dia estava a chover.**\n- **aquele / naquele** — далёкое прошлое: **Naquele tempo não havia telemóveis.**",
+  "ptVsBr": "| pt-PT | pt-BR (разг.) | комментарий |\n|---|---|---|\n| **Este** livro aqui | **Esse** livro aqui | в Бразилии в речи **este** и **esse** почти слились; в Португалии различие живое |\n| **O que é isto?** (у меня) | O que é isso? | |\n| **Gosto desta** cidade. | Gosto dessa cidade. | |\n| **cá / aqui**, **lá / ali** | aqui, lá | **cá** («сюда, здесь») в pt-PT очень частотно: **Anda cá!** |\n\nВ Португалии три ступени (**este — esse — aquele**) по-прежнему соотносятся с **aqui — aí — ali**. Если сомневаетесь, для «рядом со мной» берите **este / isto**.",
+  "commonErrors": "- **Средний род перед существительным**: *isto livro* ✗ → **este livro** ✓; *isso casa* ✗ → **essa casa** ✓.\n- **Нет слияния с предлогом**: *em este prédio* ✗ → **neste prédio** ✓; *de aquele restaurante* ✗ → **daquele restaurante** ✓; *de isso* ✗ → **disso** ✓.\n- **Нет согласования**: *este casa* ✗ → **esta casa** ✓; *aquele pessoas* ✗ → **aquelas pessoas** ✓.\n- **Артикль после указательного**: *este o livro* ✗ → **este livro** ✓.\n- **Представление людей через «это»** (калька с русского «Это Руй»): *Isto é o Rui* ✗ → **Este é o Rui** ✓.\n- **esse для предмета у себя в руках** (бразильская привычка): *Esse livro aqui é meu* → **Este livro aqui é meu** ✓.",
+  "examples": [
+    {
+      "pt": "Este pastel de nata está ótimo!",
+      "ru": "Этот паштел-де-ната просто отличный!",
+      "audio": true
+    },
+    {
+      "pt": "O que é isso que tens na mão?",
+      "ru": "Что это у тебя в руке?",
+      "audio": true
+    },
+    {
+      "pt": "Aquele elétrico vai para Belém.",
+      "ru": "Тот трамвай идёт в Белен.",
+      "audio": true
+    },
+    {
+      "pt": "Moro neste prédio há dois anos.",
+      "ru": "Я живу в этом доме два года.",
+      "audio": true
+    },
+    {
+      "pt": "Não sei nada disso.",
+      "ru": "Я ничего об этом не знаю.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-demonstrativos-ex-01",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "___ livro aqui é muito bom.",
+      "answer": [
+        "Este"
+      ],
+      "hint": "рядом со мной",
+      "ru": "Эта книга (у меня) очень хорошая."
+    },
+    {
+      "id": "a1-demonstrativos-ex-02",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "O que é ___?",
+      "answer": [
+        "isto"
+      ],
+      "hint": "неизвестный предмет рядом со мной",
+      "ru": "Что это (у меня в руках)?",
+      "explanation": "Предмет не назван — средний род isto."
+    },
+    {
+      "id": "a1-demonstrativos-ex-03",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "___ casa ali ao fundo é do Rui.",
+      "answer": [
+        "Aquela"
+      ],
+      "hint": "далеко от нас обоих",
+      "ru": "Вон тот дом в конце — Руя."
+    },
+    {
+      "id": "a1-demonstrativos-ex-04",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "Moro ___ prédio.",
+      "answer": [
+        "neste"
+      ],
+      "hint": "em + este",
+      "ru": "Я живу в этом доме.",
+      "explanation": "em + este = neste, слияние обязательно."
+    },
+    {
+      "id": "a1-demonstrativos-ex-05",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "Gosto muito ___ cidade.",
+      "answer": [
+        "desta"
+      ],
+      "hint": "de + esta",
+      "ru": "Мне очень нравится этот город."
+    },
+    {
+      "id": "a1-demonstrativos-ex-06",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "— Vamos ao cinema amanhã? — ___ é uma boa ideia!",
+      "answer": [
+        "Isso",
+        "Essa"
+      ],
+      "ru": "— Пойдём завтра в кино? — Это хорошая идея!",
+      "explanation": "Отсылка к словам собеседника — isso. Можно и Essa (é uma boa ideia), согласуя с ideia."
+    },
+    {
+      "id": "a1-demonstrativos-ex-07",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "Lembras-te ___ restaurante em Sintra?",
+      "answer": [
+        "daquele"
+      ],
+      "hint": "de + aquele",
+      "ru": "Помнишь тот ресторан в Синтре?"
+    },
+    {
+      "id": "a1-demonstrativos-ex-08",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "___ ali ao longe é o quê?",
+      "options": [
+        "Isto",
+        "Isso",
+        "Aquilo",
+        "Este"
+      ],
+      "correct": 2,
+      "explanation": "Далеко от обоих, предмет не назван — aquilo."
+    },
+    {
+      "id": "a1-demonstrativos-ex-09",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "Gostas ___ sapatos? (на мне)",
+      "options": [
+        "destes",
+        "de estes",
+        "deste",
+        "destas"
+      ],
+      "correct": 0,
+      "explanation": "de + estes = destes; sapatos — муж. мн."
+    },
+    {
+      "id": "a1-demonstrativos-ex-10",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "(хлеб рядом с продавцом) Pode dar-me ___ pão, por favor?",
+      "options": [
+        "isso",
+        "esse",
+        "essa",
+        "este"
+      ],
+      "correct": 1,
+      "explanation": "Рядом с собеседником — esse; перед существительным нельзя isso."
+    },
+    {
+      "id": "a1-demonstrativos-ex-11",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "Quem é ___ rapaz ali?",
+      "options": [
+        "aquilo",
+        "isso",
+        "aquela",
+        "aquele"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a1-demonstrativos-ex-12",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "Não quero falar ___.",
+      "options": [
+        "de isso",
+        "isso",
+        "dessa",
+        "disso"
+      ],
+      "correct": 3,
+      "explanation": "falar de + isso = disso."
+    },
+    {
+      "id": "a1-demonstrativos-ex-13",
+      "topicId": "a1-demonstrativos",
+      "type": "transform",
+      "prompt": "Este livro é caro.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "Estes livros são caros."
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-ex-14",
+      "topicId": "a1-demonstrativos",
+      "type": "transform",
+      "prompt": "Moro em aquele prédio.",
+      "instruction": "Исправьте ошибку: слейте предлог с указательным.",
+      "answer": [
+        "Moro naquele prédio."
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-ex-15",
+      "topicId": "a1-demonstrativos",
+      "type": "transform",
+      "prompt": "Esta mala é tua?",
+      "instruction": "Теперь сумка стоит рядом с собеседником (aí).",
+      "answer": [
+        "Essa mala é tua?",
+        "Essa mala aí é tua?"
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-ex-16",
+      "topicId": "a1-demonstrativos",
+      "type": "order-words",
+      "words": [
+        "aquela",
+        "Quem",
+        "senhora?",
+        "é"
+      ],
+      "answer": "Quem é aquela senhora?",
+      "ru": "Кто та женщина?"
+    },
+    {
+      "id": "a1-demonstrativos-ex-17",
+      "topicId": "a1-demonstrativos",
+      "type": "order-words",
+      "words": [
+        "desta",
+        "Gosto",
+        "muito",
+        "praia"
+      ],
+      "answer": "Gosto muito desta praia",
+      "ru": "Мне очень нравится этот пляж."
+    },
+    {
+      "id": "a1-demonstrativos-ex-18",
+      "topicId": "a1-demonstrativos",
+      "type": "translate-ru-pt",
+      "ru": "Что это? (предмет у меня в руке)",
+      "answer": [
+        "O que é isto?",
+        "Que é isto?",
+        "O que é que é isto?"
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-ex-19",
+      "topicId": "a1-demonstrativos",
+      "type": "translate-ru-pt",
+      "ru": "Этот поезд идёт в Лиссабон?",
+      "answer": [
+        "Este comboio vai para Lisboa?",
+        "Este comboio vai a Lisboa?"
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-ex-20",
+      "topicId": "a1-demonstrativos",
+      "type": "translate-ru-pt",
+      "ru": "Мне не нравится тот ресторан.",
+      "answer": [
+        "Não gosto daquele restaurante.",
+        "Eu não gosto daquele restaurante."
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-ex-21",
+      "topicId": "a1-demonstrativos",
+      "type": "listen-type",
+      "text": "Aquele autocarro vai para o centro.",
+      "answer": [
+        "Aquele autocarro vai para o centro."
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-ex-22",
+      "topicId": "a1-demonstrativos",
+      "type": "match",
+      "pairs": [
+        {
+          "left": "de + este",
+          "right": "deste"
+        },
+        {
+          "left": "em + esse",
+          "right": "nesse"
+        },
+        {
+          "left": "de + aquilo",
+          "right": "daquilo"
+        },
+        {
+          "left": "em + aquela",
+          "right": "naquela"
+        },
+        {
+          "left": "a + aquele",
+          "right": "àquele"
+        },
+        {
+          "left": "de + isto",
+          "right": "disto"
+        }
+      ],
+      "prompt": "Соедините предлог и указательное с их слиянием."
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-demonstrativos-mt-01",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "Os bilhetes estão ___ mala que tens na mão.",
+      "answer": [
+        "nessa"
+      ],
+      "hint": "em + essa (у тебя)"
+    },
+    {
+      "id": "a1-demonstrativos-mt-02",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "___ prédio alto ali é um hotel.",
+      "answer": [
+        "Aquele"
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-mt-03",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "O que é ___ que tens aí?",
+      "answer": [
+        "isso"
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-mt-04",
+      "topicId": "a1-demonstrativos",
+      "type": "fill-gap",
+      "prompt": "(представляю двух друзей рядом со мной) Esta é a Inês e ___ é o Pedro.",
+      "answer": [
+        "este"
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-mt-05",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "Gosto muito ___ quadro aqui.",
+      "options": [
+        "neste",
+        "deste",
+        "daquele",
+        "disto"
+      ],
+      "correct": 1,
+      "explanation": "aqui → este; gostar de + este = deste."
+    },
+    {
+      "id": "a1-demonstrativos-mt-06",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "Quem mora ___ casa ali?",
+      "options": [
+        "nesta",
+        "em aquela",
+        "naquilo",
+        "naquela"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a1-demonstrativos-mt-07",
+      "topicId": "a1-demonstrativos",
+      "type": "choice",
+      "prompt": "___ não é justo!",
+      "options": [
+        "Isso",
+        "Esse",
+        "Essa",
+        "Esto"
+      ],
+      "correct": 0,
+      "explanation": "Оценка ситуации — средний род isso."
+    },
+    {
+      "id": "a1-demonstrativos-mt-08",
+      "topicId": "a1-demonstrativos",
+      "type": "transform",
+      "prompt": "Aquela rapariga é espanhola.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "Aquelas raparigas são espanholas."
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-mt-09",
+      "topicId": "a1-demonstrativos",
+      "type": "translate-ru-pt",
+      "ru": "Я живу в этом доме.",
+      "answer": [
+        "Moro nesta casa.",
+        "Eu moro nesta casa.",
+        "Vivo nesta casa.",
+        "Eu vivo nesta casa.",
+        "Moro neste prédio.",
+        "Eu moro neste prédio.",
+        "Vivo neste prédio.",
+        "Eu vivo neste prédio."
+      ]
+    },
+    {
+      "id": "a1-demonstrativos-mt-10",
+      "topicId": "a1-demonstrativos",
+      "type": "listen-choice",
+      "text": "Gostas daquele restaurante?",
+      "options": [
+        "Тебе нравится этот ресторан?",
+        "Ты был в том ресторане?",
+        "Тебе нравится тот ресторан?",
+        "Тебе нравится эта еда?"
+      ],
+      "correct": 2
+    }
+  ]
+}

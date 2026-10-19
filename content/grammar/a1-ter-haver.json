@@ -1,0 +1,445 @@
+{
+  "id": "a1-ter-haver",
+  "level": "A1",
+  "module": "a1-verbo-presente",
+  "title": "Ter и haver: «иметь» и «есть, имеется»",
+  "titlePt": "Ter e haver (há)",
+  "requires": [
+    "a1-ser-estar",
+    "a1-artigos-genero-numero"
+  ],
+  "theory": "## Ter — «иметь»\n\nРусское «у меня есть» в португальском передаётся глаголом **ter**: обладатель — подлежащее.\n\n| | ter |\n|---|---|\n| eu | tenho |\n| tu | tens |\n| ele / ela / você | tem |\n| nós | temos |\n| eles / elas / vocês | **têm** |\n\n- **Tenho um carro.** — У меня есть машина.\n- **A Inês tem dois irmãos.** — У Инеш два брата.\n- **Eles têm uma casa no Algarve.** — У них дом в Алгарве.\n\n## Возраст и состояния: ter + существительное\n\nТам, где по-русски «мне холодно» или «мне 30 лет», по-португальски **«я имею»**:\n\n| выражение | перевод |\n|---|---|\n| **ter ... anos** | быть в возрасте: **Tenho trinta anos.** |\n| **ter fome / sede** | хотеть есть / пить |\n| **ter frio / calor** | мёрзнуть / страдать от жары |\n| **ter sono** | хотеть спать |\n| **ter medo (de)** | бояться |\n| **ter pressa** | торопиться |\n| **ter razão** | быть правым |\n\nВ разговоре также говорят **estou com fome / estou com frio** — это тоже нормально для Португалии.\n\n## Ter de + инфинитив — «нужно, приходится»\n\n**Tenho de trabalhar amanhã.** — Завтра мне нужно работать. В Португалии норма — **ter de**; *ter que* тоже встречается в речи, но в письменном языке предпочтительнее **de**.\n\n## Há — «есть, имеется»\n\nБезличное **há** (от *haver*) сообщает, что что-то где-то **существует**. Форма одна для единственного и множественного числа:\n\n- **Há um multibanco ao lado do café.** — Рядом с кафе есть банкомат.\n- **Há muitas pessoas na praia.** — На пляже много людей.\n- **Não há leite.** — Молока нет.\n- **Há uma farmácia aqui perto?** — Здесь рядом есть аптека?\n\nСравните: **A cidade tem um museu** (у города есть музей — обладание) и **Na cidade há um museu** (в городе есть музей — наличие). Если фраза начинается с места (**aqui, no centro, na rua**), нужен **há**.\n\n## Há + время\n\n1. **«назад»** с прошедшим временем: **Cheguei há três dias.** — Я приехал три дня назад.\n2. **«уже ... (и до сих пор)»** с настоящим: **Vivo em Portugal há dois anos.** — Я живу в Португалии уже два года.\n\n## Короткие ответы\n\nВ ответе на вопрос «да» обычно не говорят, а повторяют глагол: **— Tens carro? — Tenho.** (Есть.) **— Há pão? — Não há.** (Нет.) Отрицание **não** ставится перед глаголом: **Não tenho tempo. Não há bilhetes.**\n\nНе путайте на письме: **há** (глагол, «есть / назад»), **à** (предлог + артикль: **à praia**) и **a** (предлог или артикль).",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Há** muita gente. | Tem muita gente. | безличное *tem* = «есть» — яркий бразилизм |\n| **Não há** problema. | Não tem problema. | |\n| **Tenho de** sair. | Tenho que sair. | в Португалии нормативно **ter de** |\n| **Há** dois anos. | Faz dois anos / Há dois anos. | в pt-PT для «назад» обычно **há** |\n\nВ бразильской разговорной речи *tem* вытеснил *há* почти полностью; в Португалии **há** — обычное живое слово.",
+  "commonErrors": "- **Возраст через ser**: *Sou trinta anos* ✗ → **Tenho trinta anos** ✓ (возраст «имеют»).\n- **Состояние через estar без com**: *Estou frio* ✗ (= «я холодный на ощупь») → **Tenho frio** / **Estou com frio** ✓.\n- **Há во множественном числе**: *Hão muitas pessoas* ✗ → **Há muitas pessoas** ✓ — форма не меняется.\n- **Бразильское tem вместо há**: *Tem um multibanco aqui?* ✗ → **Há um multibanco aqui?** ✓.\n- **Пропуск de**: *Tenho trabalhar* ✗ → **Tenho de trabalhar** ✓.\n- **Путаница há / à**: *Cheguei à dois dias* ✗ → **Cheguei há dois dias** ✓.\n- **Нет циркумфлекса**: *Eles tem* ✗ → **Eles têm** ✓.",
+  "examples": [
+    {
+      "pt": "Tenho fome. Há algum restaurante aqui perto?",
+      "ru": "Я голоден. Здесь рядом есть какой-нибудь ресторан?",
+      "audio": true
+    },
+    {
+      "pt": "A minha filha tem sete anos.",
+      "ru": "Моей дочери семь лет.",
+      "audio": true
+    },
+    {
+      "pt": "Não há pão, tenho de ir à padaria.",
+      "ru": "Хлеба нет, мне надо сходить в булочную.",
+      "audio": true
+    },
+    {
+      "pt": "Vivo em Lisboa há três anos.",
+      "ru": "Я живу в Лиссабоне уже три года.",
+      "audio": true
+    },
+    {
+      "pt": "Tens razão, hoje há muito trânsito.",
+      "ru": "Ты прав, сегодня много машин на дорогах.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-ter-haver-ex-01",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "A Inês ___ (ter) dois irmãos.",
+      "answer": [
+        "tem"
+      ],
+      "ru": "У Инеш два брата."
+    },
+    {
+      "id": "a1-ter-haver-ex-02",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Quantos anos ___ (ter), Rui?",
+      "answer": [
+        "tens"
+      ],
+      "hint": "обращение на tu",
+      "ru": "Сколько тебе лет, Руй?",
+      "explanation": "К другу обращаемся на tu: tu tens."
+    },
+    {
+      "id": "a1-ter-haver-ex-03",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "___ (haver) um multibanco aqui perto?",
+      "answer": [
+        "Há"
+      ],
+      "ru": "Здесь рядом есть банкомат?",
+      "explanation": "«Есть, имеется» — безличное há."
+    },
+    {
+      "id": "a1-ter-haver-ex-04",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Hoje não ___ (haver) aulas, é feriado.",
+      "answer": [
+        "há"
+      ],
+      "ru": "Сегодня нет занятий, праздник."
+    },
+    {
+      "id": "a1-ter-haver-ex-05",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (ter) uma casa no Algarve.",
+      "answer": [
+        "têm"
+      ],
+      "hint": "мн. ч. — с циркумфлексом",
+      "ru": "У них дом в Алгарве."
+    },
+    {
+      "id": "a1-ter-haver-ex-06",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Cheguei a Lisboa ___ três meses.",
+      "answer": [
+        "há"
+      ],
+      "hint": "«назад»",
+      "ru": "Я приехал в Лиссабон три месяца назад.",
+      "explanation": "há + отрезок времени с прошедшим временем = «назад». Не путать с à."
+    },
+    {
+      "id": "a1-ter-haver-ex-07",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Amanhã tenho ___ acordar às seis.",
+      "answer": [
+        "de",
+        "que"
+      ],
+      "ru": "Завтра мне надо встать в шесть.",
+      "explanation": "Обязанность — ter de + инфинитив. Разговорное ter que тоже встречается, но в pt-PT нормативно de."
+    },
+    {
+      "id": "a1-ter-haver-ex-08",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "No centro de Lisboa ___ muitos turistas.",
+      "options": [
+        "tem",
+        "há",
+        "hão",
+        "têm"
+      ],
+      "correct": 1,
+      "explanation": "После обстоятельства места — безличное há; оно не изменяется по числу. «Tem» в этом значении — бразилизм."
+    },
+    {
+      "id": "a1-ter-haver-ex-09",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "Queres água? — Sim, ___ muita sede.",
+      "options": [
+        "estou",
+        "sou",
+        "tenho",
+        "há"
+      ],
+      "correct": 2,
+      "explanation": "Жажда, голод, холод — ter + существительное: tenho sede."
+    },
+    {
+      "id": "a1-ter-haver-ex-10",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "Как сказать «Мне 30 лет»?",
+      "options": [
+        "Sou 30 anos.",
+        "Sou de 30 anos.",
+        "Há 30 anos.",
+        "Tenho 30 anos."
+      ],
+      "correct": 3,
+      "explanation": "Возраст — ter ... anos."
+    },
+    {
+      "id": "a1-ter-haver-ex-11",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "Obrigado pela ajuda! — Não ___ problema!",
+      "options": [
+        "há",
+        "tem",
+        "está",
+        "é"
+      ],
+      "correct": 0,
+      "explanation": "В pt-PT — «Não há problema». «Não tem problema» звучит по-бразильски."
+    },
+    {
+      "id": "a1-ter-haver-ex-12",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "Vivo em Portugal ___ cinco anos.",
+      "options": [
+        "à",
+        "a",
+        "há",
+        "desde"
+      ],
+      "correct": 2,
+      "explanation": "«Уже пять лет» — há + время с настоящим. desde требует точки отсчёта: desde 2020."
+    },
+    {
+      "id": "a1-ter-haver-ex-13",
+      "topicId": "a1-ter-haver",
+      "type": "transform",
+      "prompt": "Eu tenho fome.",
+      "instruction": "Замените подлежащее на «nós».",
+      "answer": [
+        "Nós temos fome.",
+        "Temos fome."
+      ]
+    },
+    {
+      "id": "a1-ter-haver-ex-14",
+      "topicId": "a1-ter-haver",
+      "type": "transform",
+      "prompt": "Ela tem um gato.",
+      "instruction": "Замените ela на eles.",
+      "answer": [
+        "Eles têm um gato."
+      ],
+      "explanation": "Мн. ч. от tem — têm, с циркумфлексом."
+    },
+    {
+      "id": "a1-ter-haver-ex-15",
+      "topicId": "a1-ter-haver",
+      "type": "transform",
+      "prompt": "Tenho que trabalhar amanhã.",
+      "instruction": "Перепишите в варианте, нормативном для Португалии (ter de).",
+      "answer": [
+        "Tenho de trabalhar amanhã.",
+        "Eu tenho de trabalhar amanhã."
+      ]
+    },
+    {
+      "id": "a1-ter-haver-ex-16",
+      "topicId": "a1-ter-haver",
+      "type": "order-words",
+      "words": [
+        "leite",
+        "Não",
+        "frigorífico",
+        "há",
+        "no"
+      ],
+      "answer": "Não há leite no frigorífico",
+      "ru": "В холодильнике нет молока."
+    },
+    {
+      "id": "a1-ter-haver-ex-17",
+      "topicId": "a1-ter-haver",
+      "type": "order-words",
+      "words": [
+        "apanhar",
+        "Tenho",
+        "das",
+        "autocarro",
+        "de",
+        "o",
+        "oito"
+      ],
+      "answer": "Tenho de apanhar o autocarro das oito",
+      "ru": "Мне надо успеть на автобус в восемь."
+    },
+    {
+      "id": "a1-ter-haver-ex-18",
+      "topicId": "a1-ter-haver",
+      "type": "translate-ru-pt",
+      "ru": "Мне холодно.",
+      "answer": [
+        "Tenho frio.",
+        "Eu tenho frio.",
+        "Estou com frio.",
+        "Eu estou com frio."
+      ],
+      "explanation": "Не «estou frio»: это значило бы «я холодный на ощупь»."
+    },
+    {
+      "id": "a1-ter-haver-ex-19",
+      "topicId": "a1-ter-haver",
+      "type": "translate-ru-pt",
+      "ru": "Здесь есть аптека?",
+      "answer": [
+        "Há uma farmácia aqui?",
+        "Há alguma farmácia aqui?",
+        "Há uma farmácia aqui perto?",
+        "Há alguma farmácia aqui perto?",
+        "Há farmácia aqui?",
+        "Aqui há uma farmácia?",
+        "Há uma farmácia por aqui?",
+        "Há alguma farmácia por aqui?"
+      ],
+      "explanation": "«Есть» в смысле наличия — há."
+    },
+    {
+      "id": "a1-ter-haver-ex-20",
+      "topicId": "a1-ter-haver",
+      "type": "listen-type",
+      "text": "Há muita gente na praia hoje.",
+      "answer": [
+        "Há muita gente na praia hoje."
+      ]
+    },
+    {
+      "id": "a1-ter-haver-ex-21",
+      "topicId": "a1-ter-haver",
+      "type": "match",
+      "prompt": "Соедините выражение с переводом.",
+      "pairs": [
+        {
+          "left": "ter fome",
+          "right": "хотеть есть"
+        },
+        {
+          "left": "ter sede",
+          "right": "хотеть пить"
+        },
+        {
+          "left": "ter sono",
+          "right": "хотеть спать"
+        },
+        {
+          "left": "ter medo",
+          "right": "бояться"
+        },
+        {
+          "left": "ter pressa",
+          "right": "торопиться"
+        },
+        {
+          "left": "ter razão",
+          "right": "быть правым"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-ter-haver-mt-01",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (ter) aulas de português à segunda-feira.",
+      "answer": [
+        "temos"
+      ],
+      "ru": "По понедельникам у нас уроки португальского."
+    },
+    {
+      "id": "a1-ter-haver-mt-02",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Na minha rua ___ (haver) duas pastelarias.",
+      "answer": [
+        "há"
+      ],
+      "ru": "На моей улице две кондитерские.",
+      "explanation": "há не меняется во мн. ч."
+    },
+    {
+      "id": "a1-ter-haver-mt-03",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "O Pedro saiu ___ dez minutos.",
+      "answer": [
+        "há"
+      ],
+      "ru": "Педру вышел десять минут назад."
+    },
+    {
+      "id": "a1-ter-haver-mt-04",
+      "topicId": "a1-ter-haver",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (ter) de ir às Finanças amanhã.",
+      "answer": [
+        "tens"
+      ],
+      "ru": "Тебе завтра надо идти в налоговую."
+    },
+    {
+      "id": "a1-ter-haver-mt-05",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "Fecha a janela, por favor. ___ frio.",
+      "options": [
+        "Tenho",
+        "Estou",
+        "Sou",
+        "Há"
+      ],
+      "correct": 0,
+      "explanation": "Мне холодно — tenho frio."
+    },
+    {
+      "id": "a1-ter-haver-mt-06",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "Neste hotel ___ quartos livres?",
+      "options": [
+        "tem",
+        "hão",
+        "têm",
+        "há"
+      ],
+      "correct": 3,
+      "explanation": "Фраза начинается с места (neste hotel) — нужен há."
+    },
+    {
+      "id": "a1-ter-haver-mt-07",
+      "topicId": "a1-ter-haver",
+      "type": "choice",
+      "prompt": "Tenho ___ estudar para o exame.",
+      "options": [
+        "em",
+        "a",
+        "de",
+        "por"
+      ],
+      "correct": 2,
+      "explanation": "ter de + инфинитив."
+    },
+    {
+      "id": "a1-ter-haver-mt-08",
+      "topicId": "a1-ter-haver",
+      "type": "transform",
+      "prompt": "Ele tem razão.",
+      "instruction": "Замените ele на eles.",
+      "answer": [
+        "Eles têm razão."
+      ]
+    },
+    {
+      "id": "a1-ter-haver-mt-09",
+      "topicId": "a1-ter-haver",
+      "type": "translate-ru-pt",
+      "ru": "У меня нет времени.",
+      "answer": [
+        "Não tenho tempo.",
+        "Eu não tenho tempo."
+      ]
+    },
+    {
+      "id": "a1-ter-haver-mt-10",
+      "topicId": "a1-ter-haver",
+      "type": "listen-choice",
+      "text": "Moro aqui há dois anos.",
+      "prompt": "Что вы услышали?",
+      "options": [
+        "Я жил здесь два года назад.",
+        "Я живу здесь уже два года.",
+        "Я буду жить здесь два года.",
+        "Здесь есть два дома."
+      ],
+      "correct": 1,
+      "explanation": "há + время с настоящим = «уже столько-то»."
+    }
+  ]
+}

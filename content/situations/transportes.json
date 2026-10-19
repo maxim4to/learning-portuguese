@@ -1,0 +1,177 @@
+{
+  "id": "transportes",
+  "title": "Транспорт: поезд, метро, автобус",
+  "titlePt": "Nos transportes",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia, diga.", "ru": "Доброе утро, слушаю вас." },
+    { "speaker": "B", "pt": "Bom dia. Queria carregar o passe Navegante para este mês, se faz favor.", "ru": "Доброе утро. Я хотел бы пополнить проездной Navegante на этот месяц, пожалуйста." },
+    { "speaker": "A", "pt": "É o Navegante Metropolitano? São quarenta euros.", "ru": "Navegante Metropolitano? С вас сорок евро." },
+    { "speaker": "B", "pt": "Sim. E com o passe posso apanhar o comboio da CP para Sintra?", "ru": "Да. А с проездным я могу ехать на электричке CP в Синтру?" },
+    { "speaker": "A", "pt": "Pode, o passe dá para o metro, a Carris e os comboios urbanos.", "ru": "Можете, проездной действует в метро, на автобусах Carris и в пригородных поездах." },
+    { "speaker": "B", "pt": "Ótimo. E tenho de validar sempre o cartão?", "ru": "Отлично. А карту нужно каждый раз валидировать?" },
+    { "speaker": "A", "pt": "Tem, sim, sempre que entra. Se não validar, pode levar uma multa.", "ru": "Да, каждый раз при входе. Если не провалидируете, могут оштрафовать." },
+    { "speaker": "B", "pt": "Percebi. De que plataforma parte o comboio para Sintra?", "ru": "Понял. С какой платформы отправляется поезд на Синтру?" },
+    { "speaker": "A", "pt": "Do Rossio, linha dois. Mas hoje há perturbações na linha.", "ru": "С вокзала Россиу, путь второй. Но сегодня на линии сбои." },
+    { "speaker": "B", "pt": "O que é que aconteceu? O comboio está atrasado?", "ru": "Что случилось? Поезд опаздывает?" },
+    { "speaker": "A", "pt": "Está com um atraso de vinte minutos, por causa de uma avaria no túnel.", "ru": "Задерживается на двадцать минут из-за поломки в тоннеле." },
+    { "speaker": "B", "pt": "E há alternativa? Tenho de estar em Sintra às dez.", "ru": "А есть альтернатива? Мне нужно быть в Синтре к десяти." },
+    { "speaker": "A", "pt": "Pode apanhar o metro até Sete Rios e mudar para a linha de Sintra.", "ru": "Можете доехать на метро до Сете-Риуш и пересесть на синтрскую линию." },
+    { "speaker": "B", "pt": "E onde é que saio do metro? Em Jardim Zoológico?", "ru": "А где мне выйти из метро? На Жардин-Зоолошику?" },
+    { "speaker": "A", "pt": "Exatamente. A estação de comboios fica mesmo ao lado. Boa viagem!", "ru": "Именно. Железнодорожная станция прямо рядом. Счастливого пути!" }
+  ],
+  "phrases": [
+    { "pt": "Queria carregar o passe, se faz favor.", "ru": "Я хотел бы пополнить проездной, пожалуйста." },
+    { "pt": "Um bilhete para o Porto, ida e volta.", "ru": "Один билет до Порту, туда и обратно." },
+    { "pt": "De que plataforma parte o comboio?", "ru": "С какой платформы отправляется поезд?" },
+    { "pt": "Este autocarro vai para o Marquês?", "ru": "Этот автобус идёт до Маркеш?" },
+    { "pt": "Onde é que tenho de mudar?", "ru": "Где мне нужно пересесть?" },
+    { "pt": "O comboio está atrasado.", "ru": "Поезд опаздывает." },
+    { "pt": "A que horas passa o próximo?", "ru": "Во сколько следующий?" },
+    { "pt": "Tem de validar o cartão.", "ru": "Нужно провалидировать карту." },
+    { "pt": "Desculpe, a próxima paragem é a minha?", "ru": "Извините, следующая остановка — это моя?" },
+    { "pt": "Quanto tempo demora até ao aeroporto?", "ru": "Сколько ехать до аэропорта?" }
+  ],
+  "vocab": [
+    { "pt": "o comboio", "ru": "поезд, электричка", "example": "O comboio para Cascais parte do Cais do Sodré." },
+    { "pt": "o autocarro", "ru": "автобус", "example": "Apanho o autocarro em frente à escola." },
+    { "pt": "o metro", "ru": "метро", "example": "O metro fecha à uma da manhã." },
+    { "pt": "o elétrico", "ru": "трамвай", "example": "O elétrico 28 está sempre cheio de turistas." },
+    { "pt": "o barco / o ferry", "ru": "паром", "example": "Vou de barco para o Barreiro." },
+    { "pt": "a CP", "ru": "CP (португальские железные дороги)", "example": "Comprei o bilhete no site da CP." },
+    { "pt": "a Carris", "ru": "Carris (автобусы и трамваи Лиссабона)", "example": "A Carris tem uma aplicação com os horários." },
+    { "pt": "o passe Navegante", "ru": "проездной Navegante (Лиссабонская агломерация)", "example": "O passe Navegante é válido em todos os transportes." },
+    { "pt": "o bilhete", "ru": "билет", "example": "Ainda não comprei o bilhete." },
+    { "pt": "ida e volta", "ru": "туда и обратно", "example": "Um bilhete de ida e volta fica mais barato." },
+    { "pt": "só ida", "ru": "только туда", "example": "Para Coimbra, só ida, se faz favor." },
+    { "pt": "carregar o cartão", "ru": "пополнить карту", "example": "Carrego o cartão na máquina do metro." },
+    { "pt": "validar", "ru": "валидировать, пробить билет", "example": "Não se esqueça de validar o bilhete." },
+    { "pt": "a máquina de venda", "ru": "билетный автомат", "example": "A máquina de venda aceita cartão." },
+    { "pt": "a bilheteira", "ru": "билетная касса", "example": "A bilheteira abre às seis." },
+    { "pt": "a plataforma / a linha", "ru": "платформа / путь", "example": "O comboio parte da linha três." },
+    { "pt": "a estação", "ru": "станция, вокзал", "example": "A estação de Santa Apolónia fica perto do rio." },
+    { "pt": "a paragem", "ru": "остановка (автобуса, трамвая)", "example": "A paragem do 742 é ali à esquina." },
+    { "pt": "o horário", "ru": "расписание", "example": "Vi o horário no site da CP." },
+    { "pt": "o atraso", "ru": "опоздание, задержка", "example": "Há atrasos na linha de Sintra." },
+    { "pt": "estar atrasado", "ru": "опаздывать, задерживаться", "example": "O autocarro está atrasado outra vez." },
+    { "pt": "a greve", "ru": "забастовка", "example": "Amanhã há greve na CP." },
+    { "pt": "as perturbações", "ru": "сбои в движении", "example": "Há perturbações na linha verde do metro." },
+    { "pt": "a avaria", "ru": "поломка", "example": "O comboio parou por causa de uma avaria." },
+    { "pt": "mudar de linha", "ru": "пересесть на другую линию", "example": "Em Alameda muda para a linha vermelha." },
+    { "pt": "a correspondência", "ru": "пересадка (стыковка)", "example": "Perdi a correspondência no Entroncamento." },
+    { "pt": "apanhar", "ru": "сесть на (транспорт), успеть на", "example": "Vou apanhar o comboio das oito." },
+    { "pt": "perder", "ru": "опоздать на (транспорт)", "example": "Perdi o autocarro por um minuto." },
+    { "pt": "sair", "ru": "выходить", "example": "Saio na próxima paragem." },
+    { "pt": "o revisor", "ru": "контролёр", "example": "O revisor pediu-me o bilhete." },
+    { "pt": "a multa", "ru": "штраф", "example": "Sem bilhete válido, a multa é alta." },
+    { "pt": "o Alfa Pendular", "ru": "скоростной поезд Alfa Pendular", "example": "O Alfa Pendular vai de Lisboa ao Porto em três horas." },
+    { "pt": "o lugar", "ru": "место", "example": "Este lugar está ocupado?" },
+    { "pt": "a carruagem", "ru": "вагон", "example": "O meu lugar é na carruagem cinco." }
+  ],
+  "exercises": [
+    {
+      "id": "transportes-ex-01",
+      "topicId": "transportes",
+      "type": "choice",
+      "prompt": "Como se diz «сесть на автобус» em Portugal?",
+      "options": ["pegar o ônibus", "tomar o autocarro", "apanhar o autocarro", "entrar no ônibus"],
+      "correct": 2,
+      "explanation": "В Португалии транспорт **apanha-se**: **apanhar o autocarro, o comboio, o metro**. *Pegar o ônibus* — бразильский вариант."
+    },
+    {
+      "id": "transportes-ex-02",
+      "topicId": "transportes",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a paragem", "right": "остановка" },
+        { "left": "a bilheteira", "right": "билетная касса" },
+        { "left": "o atraso", "right": "задержка" },
+        { "left": "a greve", "right": "забастовка" },
+        { "left": "a carruagem", "right": "вагон" }
+      ]
+    },
+    {
+      "id": "transportes-ex-03",
+      "topicId": "transportes",
+      "type": "fill-gap",
+      "prompt": "Não se esqueça de ___ o bilhete quando entra no autocarro.",
+      "answer": ["validar"],
+      "hint": "приложить карту к валидатору",
+      "ru": "Не забудьте провалидировать билет, когда входите в автобус.",
+      "explanation": "**Validar** — приложить карту к валидатору. В Лиссабоне это нужно делать даже с месячным проездным, иначе контролёр (**o revisor**) может выписать штраф."
+    },
+    {
+      "id": "transportes-ex-04",
+      "topicId": "transportes",
+      "type": "listen-type",
+      "text": "Percebi. De que plataforma parte o comboio para Sintra?",
+      "answer": ["Percebi. De que plataforma parte o comboio para Sintra?"],
+      "explanation": "**Partir de** — отправляться откуда-то. На табло вокзала путь часто обозначен как **linha**."
+    },
+    {
+      "id": "transportes-ex-05",
+      "topicId": "transportes",
+      "type": "listen-choice",
+      "text": "Está com um atraso de vinte minutos, por causa de uma avaria no túnel.",
+      "prompt": "Что случилось с поездом?",
+      "options": ["Его отменили из-за забастовки", "Он ушёл на двадцать минут раньше", "Он задерживается на двадцать минут из-за поломки", "Он приходит на другую платформу"],
+      "correct": 2,
+      "explanation": "**Atraso** — задержка, **avaria** — поломка. Забастовка — **greve**."
+    },
+    {
+      "id": "transportes-ex-06",
+      "topicId": "transportes",
+      "type": "order-words",
+      "words": ["Um", "bilhete", "para", "o", "Porto,", "ida", "e", "volta."],
+      "answer": "Um bilhete para o Porto, ida e volta.",
+      "ru": "Один билет до Порту, туда и обратно."
+    },
+    {
+      "id": "transportes-ex-07",
+      "topicId": "transportes",
+      "type": "translate-ru-pt",
+      "ru": "Где мне нужно пересесть?",
+      "answer": ["Onde é que tenho de mudar?", "Onde tenho de mudar?", "Onde é que tenho que mudar?", "Onde tenho que mudar?", "Onde é que devo mudar?", "Onde devo mudar?"]
+    },
+    {
+      "id": "transportes-ex-08",
+      "topicId": "transportes",
+      "type": "choice",
+      "prompt": "Ficou a ver o autocarro partir sem si. O que diz?",
+      "options": ["Perdi o autocarro.", "Faltei o autocarro.", "Atrasei o autocarro.", "Deixei o autocarro."],
+      "correct": 0,
+      "explanation": "Опоздать на транспорт — **perder** (**perdi o comboio**). *Faltar* — пропустить (занятие, работу), *atrasar* — задержать кого-то/что-то."
+    },
+    {
+      "id": "transportes-ex-09",
+      "topicId": "transportes",
+      "type": "fill-gap",
+      "prompt": "Desculpe, este autocarro ___ (ir) para o Marquês de Pombal?",
+      "answer": ["vai"],
+      "hint": "ir, 3-е лицо",
+      "ru": "Извините, этот автобус идёт до Маркеш-де-Помбал?",
+      "explanation": "Транспорт **vai para** (идёт до) или **passa por** (проезжает через). Предлог движения — **para**/**a**, не *em*."
+    },
+    {
+      "id": "transportes-ex-10",
+      "topicId": "transportes",
+      "type": "transform",
+      "prompt": "O comboio chega atrasado.",
+      "instruction": "Перефразируй через estar: «поезд опаздывает (сейчас)»",
+      "answer": ["O comboio está atrasado.", "Está atrasado.", "O comboio está com atraso.", "Está com atraso."],
+      "explanation": "**Estar atrasado** — состояние «задерживается» прямо сейчас. Также можно сказать **O comboio está com atraso** или **Há um atraso**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вам нужно попасть из Лиссабона в Порту на работу к 11:00, но на вокзале объявили задержку. Напишите диалог из 8–10 реплик с сотрудником CP в кассе: купите билет туда и обратно на Alfa Pendular, спросите, с какой платформы отправляется поезд, узнайте, насколько он задерживается и почему, и спросите про альтернативу.",
+    "sample": "— Bom dia, diga.\n— Bom dia. Queria um bilhete de ida e volta para o Porto, no Alfa Pendular das sete e meia.\n— São cinquenta e seis euros. Quer lugar à janela?\n— Sim, se faz favor. De que plataforma parte o comboio?\n— Da linha quatro. Mas atenção: hoje há perturbações.\n— O comboio está atrasado?\n— Está com um atraso de quarenta minutos, por causa de uma avaria na linha.\n— Tenho de estar no Porto às onze. Há alternativa?\n— Pode apanhar o Intercidades das sete e quinze, que parte a horas.\n— Então troque-me o bilhete, se faz favor. Obrigado!",
+    "checklist": [
+      "Есть покупка билета: куда, туда и обратно (ida e volta), какой поезд",
+      "Есть вопрос о платформе (De que plataforma parte…?)",
+      "Использованы слова про задержку: atraso, estar atrasado, avaria / greve / perturbações",
+      "Транспорт назван по-португальски: comboio, autocarro, apanhar (не trem, ônibus, pegar)",
+      "Есть вежливая просьба и вопрос про альтернативу (Há alternativa?)"
+    ]
+  }
+}

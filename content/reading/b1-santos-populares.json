@@ -1,0 +1,203 @@
+{
+  "id": "b1-santos-populares",
+  "level": "B1",
+  "title": "Os Santos Populares",
+  "paragraphs": [
+    "Em junho, Portugal enche-se de festa. Os Santos Populares celebram três santos: Santo António, a 13, sobretudo em Lisboa; São João, a 24, sobretudo no Porto e em Braga; e São Pedro, no fim do mês, em várias cidades do país.",
+    "Em Lisboa, a noite mais animada é a de 12 para 13 de junho. Os bairros históricos, como Alfama, a Mouraria e a Bica, enfeitam-se com fitas e balões de papel coloridos. Nas ruas montam-se arraiais, com música pimba, bancas de comes e bebes e grelhadores onde se assam sardinhas, que se comem em cima de uma fatia de pão.",
+    "Na mesma noite, as marchas populares desfilam na Avenida da Liberdade. Cada bairro prepara durante meses a sua marcha, com trajes, música e coreografia próprios, e no fim um júri escolhe a melhor.",
+    "Santo António é também conhecido como santo casamenteiro. Por isso, todos os anos a câmara municipal organiza os Casamentos de Santo António, em que vários casais se casam no mesmo dia. Outra tradição é oferecer um manjerico, um pequeno vaso de manjericão com um cravo de papel e uma quadra popular.",
+    "No Porto, a grande noite é a de São João, de 23 para 24. Milhares de pessoas descem até à Ribeira e andam pelas ruas a bater na cabeça umas das outras com martelinhos de plástico. Antigamente usava-se um alho-porro, e ainda há quem o faça. À meia-noite, o céu enche-se de fogo de artifício sobre o Douro.",
+    "Para muitos portugueses, estas festas são o verdadeiro início do verão: noites quentes, cheiro a sardinha e conversas que só acabam de madrugada."
+  ],
+  "glossary": [
+    {
+      "word": "enche-se de festa",
+      "ru": "наполняется праздником"
+    },
+    {
+      "word": "enfeitam-se",
+      "ru": "украшаются"
+    },
+    {
+      "word": "fitas",
+      "ru": "ленты"
+    },
+    {
+      "word": "arraiais",
+      "ru": "народные гулянья под открытым небом"
+    },
+    {
+      "word": "música pimba",
+      "ru": "попса, народная эстрада"
+    },
+    {
+      "word": "comes e bebes",
+      "ru": "еда и напитки"
+    },
+    {
+      "word": "grelhadores",
+      "ru": "грили, мангалы"
+    },
+    {
+      "word": "fatia de pão",
+      "ru": "ломоть хлеба"
+    },
+    {
+      "word": "desfilam",
+      "ru": "идут парадом, шествуют"
+    },
+    {
+      "word": "trajes",
+      "ru": "костюмы"
+    },
+    {
+      "word": "santo casamenteiro",
+      "ru": "святой-покровитель сватовства"
+    },
+    {
+      "word": "casais",
+      "ru": "пары"
+    },
+    {
+      "word": "manjerico",
+      "ru": "горшочек с базиликом (символ праздника)"
+    },
+    {
+      "word": "cravo de papel",
+      "ru": "бумажная гвоздика"
+    },
+    {
+      "word": "quadra popular",
+      "ru": "народное четверостишие"
+    },
+    {
+      "word": "martelinhos de plástico",
+      "ru": "пластмассовые молоточки"
+    },
+    {
+      "word": "alho-porro",
+      "ru": "лук-порей"
+    },
+    {
+      "word": "ainda há quem o faça",
+      "ru": "и сейчас есть те, кто так делает"
+    },
+    {
+      "word": "fogo de artifício",
+      "ru": "фейерверк"
+    },
+    {
+      "word": "de madrugada",
+      "ru": "под утро, на рассвете"
+    }
+  ],
+  "questions": [
+    {
+      "id": "b1-santos-populares-q-01",
+      "topicId": "b1-santos-populares",
+      "type": "choice",
+      "prompt": "Qual é o santo mais festejado em Lisboa?",
+      "options": [
+        "São João",
+        "Santo António",
+        "São Pedro",
+        "São Martinho"
+      ],
+      "correct": 1,
+      "explanation": "**Santo António, a 13, sobretudo em Lisboa.** São João — праздник Порту и Браги."
+    },
+    {
+      "id": "b1-santos-populares-q-02",
+      "topicId": "b1-santos-populares",
+      "type": "fill-gap",
+      "prompt": "Nas ruas montam-se ___, com música, bancas de comes e bebes e grelhadores.",
+      "answer": [
+        "arraiais"
+      ],
+      "hint": "народные гулянья (мн. ч.)",
+      "ru": "На улицах устраивают народные гулянья с музыкой, лотками с едой и напитками и грилями.",
+      "explanation": "**Arraial** (мн. **arraiais**) — уличное народное гулянье с музыкой, едой и танцами."
+    },
+    {
+      "id": "b1-santos-populares-q-03",
+      "topicId": "b1-santos-populares",
+      "type": "choice",
+      "prompt": "O que acontece na Avenida da Liberdade na noite de Santo António?",
+      "options": [
+        "Há um concerto de fado",
+        "Lançam-se balões de papel",
+        "Desfilam as marchas populares",
+        "Assam-se sardinhas"
+      ],
+      "correct": 2,
+      "explanation": "**As marchas populares desfilam na Avenida da Liberdade** — каждый квартал готовит свой парад, жюри выбирает лучший."
+    },
+    {
+      "id": "b1-santos-populares-q-04",
+      "topicId": "b1-santos-populares",
+      "type": "choice",
+      "prompt": "O que é um manjerico?",
+      "options": [
+        "Um vaso de manjericão com um cravo de papel e uma quadra",
+        "Um bolo típico de junho",
+        "Um martelo de plástico",
+        "Uma dança tradicional"
+      ],
+      "correct": 0,
+      "explanation": "**Manjerico** — горшочек с мелколистным базиликом, в который втыкают бумажную гвоздику и флажок с четверостишием (**quadra**)."
+    },
+    {
+      "id": "b1-santos-populares-q-05",
+      "topicId": "b1-santos-populares",
+      "type": "fill-gap",
+      "prompt": "Antigamente usava-se um alho-porro, e ainda há quem o ___.",
+      "answer": [
+        "faça"
+      ],
+      "hint": "fazer, conjuntivo",
+      "ru": "Раньше использовали лук-порей, и до сих пор кто-то так делает.",
+      "explanation": "**Há quem** + presente do conjuntivo: **há quem o faça** — «есть те, кто так делает». **Fazer → faça**."
+    },
+    {
+      "id": "b1-santos-populares-q-06",
+      "topicId": "b1-santos-populares",
+      "type": "choice",
+      "prompt": "Porque é que Santo António é chamado «casamenteiro»?",
+      "options": [
+        "Porque se casou em Lisboa",
+        "Porque protege os pescadores",
+        "Porque nasceu em junho",
+        "Porque, segundo a tradição, ajuda as pessoas a casar"
+      ],
+      "correct": 3,
+      "explanation": "**Casamenteiro** — «сват»: по традиции святой Антоний помогает найти пару, поэтому в его день мэрия устраивает коллективные свадьбы."
+    },
+    {
+      "id": "b1-santos-populares-q-07",
+      "topicId": "b1-santos-populares",
+      "type": "translate-ru-pt",
+      "ru": "В июне Португалия наполняется праздником.",
+      "answer": [
+        "Em junho, Portugal enche-se de festa.",
+        "Portugal enche-se de festa em junho."
+      ],
+      "explanation": "Возвратный глагол **encher-se de** — «наполняться». В утвердительной фразе — энклиза: **enche-se**. Месяцы пишутся со строчной: **junho**."
+    },
+    {
+      "id": "b1-santos-populares-q-08",
+      "topicId": "b1-santos-populares",
+      "type": "listen-choice",
+      "text": "À meia-noite, o céu enche-se de fogo de artifício sobre o Douro.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "В полночь над рекой запускают воздушные шары.",
+        "В полдень небо над Доуру затягивают тучи.",
+        "В полночь небо над Доуру озаряется фейерверком.",
+        "В полночь люди спускаются к реке Доуру."
+      ],
+      "correct": 2,
+      "explanation": "**À meia-noite** — в полночь (полдень — **meio-dia**); **fogo de artifício** — фейерверк."
+    }
+  ]
+}

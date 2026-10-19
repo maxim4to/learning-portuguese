@@ -1,0 +1,444 @@
+{
+  "id": "a2-por-para",
+  "level": "A2",
+  "module": "a2-frase",
+  "title": "Предлоги por и para",
+  "titlePt": "Por e para",
+  "requires": [
+    "a1-preposicoes-lugar-contracoes"
+  ],
+  "theory": "## Слияния с артиклем\n\n| | o | a | os | as |\n|---|---|---|---|---|\n| **por** | **pelo** | **pela** | **pelos** | **pelas** |\n| **para** | para o | para a | para os | para as |\n\nСлияние **por + артикль** обязательно: **pelo centro**, а не *por o centro*. **Para** на письме не сливается; в быстрой речи звучит «pró», «prà», но писать нужно **para o**, **para a**.\n\n## PARA — цель, направление, адресат\n\n| значение | пример |\n|---|---|\n| цель: «чтобы» + инфинитив | **Estudo português para trabalhar em Lisboa.** |\n| направление, пункт назначения | **Vou para casa.** **O comboio para Coimbra parte às dez.** |\n| адресат: «для, кому» | **Este presente é para ti.** |\n| срок: «к» | **O relatório é para sexta-feira.** |\n| мнение: «для меня, по-моему» | **Para mim, é demasiado caro.** |\n| «на следующей …» (разг. pt-PT) | **para a semana** (на следующей неделе), **para o ano** (в следующем году) |\n| «вот-вот»: estar para + инф. | **O comboio está para partir.** — Поезд вот-вот отправится. |\n\n## POR — путь, причина, обмен, средство\n\n| значение | пример |\n|---|---|\n| через, по (маршрут) | **Passei pelo mercado.** **Vamos pela praia.** |\n| причина: «за, из-за» | **Obrigado pela ajuda.** **Foi multado por excesso de velocidade.** |\n| обмен, цена: «за» | **Comprei o bilhete por dez euros.** **Troquei o carro por uma mota.** |\n| средство: «по» | **por email, por telefone, por correio** |\n| частота: «в» | **duas vezes por semana**, **50 km por hora** |\n| приблизительное время | **por volta das oito** (около восьми) |\n| деятель в пассиве | **O livro foi escrito por Saramago.** |\n| «ради, вместо» | **Fiz isto por ti.** — ради тебя / за тебя. |\n\n## Пары, где смысл меняется\n\n| por | para |\n|---|---|\n| **Fiz isto por ti.** — ради тебя | **Fiz isto para ti.** — для тебя (тебе) |\n| **Passei pelo Porto.** — проездом через Порту | **Fui para o Porto.** — уехал в Порту |\n| **Por mim, tudo bem.** — я не против | **Para mim, está bem.** — по-моему, нормально |\n\n## ir a или ir para?\n\nВ pt-PT это разные вещи:\n\n- **ir a** — ненадолго, с возвратом: **Vou a Lisboa amanhã** (съезжу и вернусь). **Vou ao médico.**\n- **ir para** — надолго, насовсем или подчёркивая направление: **Em setembro vou para Londres** (переезжаю). **Vou para casa.**\n\n*Ir em* — бразильская разговорная форма, в pt-PT это ошибка.\n\n## Как выбрать\n\nСпросите себя: «зачем? кому? куда?» → **para**. «Почему? за что? через что? каким способом?» → **por**. Русское «за» почти всегда **por**: **obrigado pelo jantar** (спасибо за ужин), **paguei vinte euros pela camisola** (заплатил двадцать евро за свитер).",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Vou a** Lisboa. / **Vou para** Lisboa. | Vou **pra** Lisboa. / Vou **em** Lisboa. | в pt-PT различают ir a / ir para; *ir em* — ошибка |\n| **para o** cinema (на письме) | **pro** cinema | *pra, pro* — бразильская разговорная орфография |\n| **Isto é para ti.** | Isto é para você. | tu в неформальной речи |\n| Liga-me **por volta das** seis. | Me liga **lá pelas** seis. | ênclise + por volta de |\n\nВ pt-PT сокращения *pra/pro* на письме выглядят как бразильский сленг.",
+  "commonErrors": "- **«Спасибо за» через para**: *Obrigado para a ajuda* ✗ → **Obrigado pela ajuda** ✓.\n- **Без слияния**: *por o centro*, *por a praia* ✗ → **pelo centro**, **pela praia** ✓.\n- **Цель через por**: *Estudo por trabalhar* ✗ → **Estudo para trabalhar** ✓.\n- **Цена**: *Paguei dez euros para o bilhete* ✗ → **Paguei dez euros pelo bilhete** ✓.\n- **«Раз в неделю»**: *duas vezes em semana* ✗ → **duas vezes por semana** ✓.\n- **Бразильское ir em**: *Vou no Porto* ✗ → **Vou ao Porto** ✓.\n- **Para + местоимение**: *para eu* в значении «для меня» ✗ → **para mim** ✓ (но **para eu fazer** — «чтобы я сделал»).",
+  "examples": [
+    {
+      "pt": "Obrigado pela ajuda com as Finanças!",
+      "ru": "Спасибо за помощь с налоговой!",
+      "audio": true
+    },
+    {
+      "pt": "Este autocarro vai para o aeroporto?",
+      "ru": "Этот автобус идёт в аэропорт?",
+      "audio": true
+    },
+    {
+      "pt": "Passámos pela Baixa a caminho do rio.",
+      "ru": "По дороге к реке мы прошли через Байшу.",
+      "audio": true
+    },
+    {
+      "pt": "Comprei esta bicicleta por cem euros.",
+      "ru": "Я купил этот велосипед за сто евро.",
+      "audio": true
+    },
+    {
+      "pt": "Estou a poupar para ir aos Açores no verão.",
+      "ru": "Я коплю, чтобы летом поехать на Азоры.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-por-para-ex-01",
+      "topicId": "a2-por-para",
+      "type": "match",
+      "prompt": "Соедините предлог с артиклем и слитную форму.",
+      "pairs": [
+        {
+          "left": "por + o",
+          "right": "pelo"
+        },
+        {
+          "left": "por + a",
+          "right": "pela"
+        },
+        {
+          "left": "por + os",
+          "right": "pelos"
+        },
+        {
+          "left": "por + as",
+          "right": "pelas"
+        },
+        {
+          "left": "para + o",
+          "right": "para o"
+        }
+      ]
+    },
+    {
+      "id": "a2-por-para-ex-02",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Obrigado ___ ajuda!",
+      "answer": [
+        "pela"
+      ],
+      "ru": "Спасибо за помощь!",
+      "explanation": "«Спасибо за» — obrigado por; por + a = pela."
+    },
+    {
+      "id": "a2-por-para-ex-03",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Este presente é ___ ti.",
+      "answer": [
+        "para"
+      ],
+      "ru": "Этот подарок для тебя."
+    },
+    {
+      "id": "a2-por-para-ex-04",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Estudo português ___ trabalhar em Portugal.",
+      "answer": [
+        "para"
+      ],
+      "ru": "Я учу португальский, чтобы работать в Португалии.",
+      "explanation": "Цель («чтобы») — para + инфинитив."
+    },
+    {
+      "id": "a2-por-para-ex-05",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Passámos ___ centro da cidade.",
+      "answer": [
+        "pelo"
+      ],
+      "ru": "Мы проехали через центр города.",
+      "explanation": "Маршрут — por; por + o = pelo."
+    },
+    {
+      "id": "a2-por-para-ex-06",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Comprei esta camisola ___ vinte euros.",
+      "answer": [
+        "por"
+      ],
+      "ru": "Я купил этот свитер за двадцать евро."
+    },
+    {
+      "id": "a2-por-para-ex-07",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Mandei-te o documento ___ email.",
+      "answer": [
+        "por"
+      ],
+      "ru": "Я отправил тебе документ по электронной почте."
+    },
+    {
+      "id": "a2-por-para-ex-08",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "O relatório é ___ sexta-feira.",
+      "answer": [
+        "para"
+      ],
+      "ru": "Отчёт нужен к пятнице.",
+      "explanation": "Срок — para."
+    },
+    {
+      "id": "a2-por-para-ex-09",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Vou ao ginásio três vezes ___ semana.",
+      "answer": [
+        "por"
+      ],
+      "ru": "Я хожу в спортзал три раза в неделю."
+    },
+    {
+      "id": "a2-por-para-ex-10",
+      "topicId": "a2-por-para",
+      "type": "choice",
+      "prompt": "Ele foi multado ___ excesso de velocidade.",
+      "options": [
+        "para",
+        "por",
+        "pelo",
+        "em"
+      ],
+      "correct": 1,
+      "explanation": "Причина — por. Перед excesso нет артикля, поэтому не pelo."
+    },
+    {
+      "id": "a2-por-para-ex-11",
+      "topicId": "a2-por-para",
+      "type": "choice",
+      "prompt": "Em setembro vamos ___ Londres de vez: arranjei lá emprego.",
+      "options": [
+        "para",
+        "em",
+        "no",
+        "por"
+      ],
+      "correct": 0,
+      "explanation": "Переезд надолго — ir para. Ir em — бразилизм."
+    },
+    {
+      "id": "a2-por-para-ex-12",
+      "topicId": "a2-por-para",
+      "type": "choice",
+      "prompt": "O livro «Memorial do Convento» foi escrito ___ José Saramago.",
+      "options": [
+        "para",
+        "em",
+        "por",
+        "a"
+      ],
+      "correct": 2,
+      "explanation": "Деятель в пассиве — por."
+    },
+    {
+      "id": "a2-por-para-ex-13",
+      "topicId": "a2-por-para",
+      "type": "choice",
+      "prompt": "O comboio ___ Coimbra parte da linha 3.",
+      "options": [
+        "por",
+        "pelo",
+        "em",
+        "para"
+      ],
+      "correct": 3,
+      "explanation": "Пункт назначения — para."
+    },
+    {
+      "id": "a2-por-para-ex-14",
+      "topicId": "a2-por-para",
+      "type": "transform",
+      "prompt": "Estudo muito porque quero passar no exame.",
+      "instruction": "Перефразируйте через para + инфинитив.",
+      "answer": [
+        "Estudo muito para passar no exame.",
+        "Eu estudo muito para passar no exame."
+      ]
+    },
+    {
+      "id": "a2-por-para-ex-15",
+      "topicId": "a2-por-para",
+      "type": "transform",
+      "prompt": "Obrigado. Convidaste-me.",
+      "instruction": "Скажите одной фразой «спасибо за приглашение» (o convite).",
+      "answer": [
+        "Obrigado pelo convite.",
+        "Obrigada pelo convite."
+      ]
+    },
+    {
+      "id": "a2-por-para-ex-16",
+      "topicId": "a2-por-para",
+      "type": "transform",
+      "prompt": "Vou a Lisboa.",
+      "instruction": "Скажите, что вы переезжаете в Лиссабон насовсем.",
+      "answer": [
+        "Vou para Lisboa.",
+        "Vou mudar-me para Lisboa.",
+        "Mudo-me para Lisboa.",
+        "Vou viver para Lisboa.",
+        "Vou morar para Lisboa."
+      ]
+    },
+    {
+      "id": "a2-por-para-ex-17",
+      "topicId": "a2-por-para",
+      "type": "order-words",
+      "words": [
+        "é",
+        "Este",
+        "para",
+        "bolo",
+        "a",
+        "avó"
+      ],
+      "answer": "Este bolo é para a avó"
+    },
+    {
+      "id": "a2-por-para-ex-18",
+      "topicId": "a2-por-para",
+      "type": "order-words",
+      "words": [
+        "por",
+        "Liga-me",
+        "volta",
+        "das",
+        "seis"
+      ],
+      "answer": "Liga-me por volta das seis"
+    },
+    {
+      "id": "a2-por-para-ex-19",
+      "topicId": "a2-por-para",
+      "type": "translate-ru-pt",
+      "ru": "Спасибо за всё!",
+      "answer": [
+        "Obrigado por tudo!",
+        "Obrigada por tudo!"
+      ]
+    },
+    {
+      "id": "a2-por-para-ex-20",
+      "topicId": "a2-por-para",
+      "type": "translate-ru-pt",
+      "ru": "Я учу португальский, чтобы жить в Португалии.",
+      "answer": [
+        "Estudo português para viver em Portugal.",
+        "Eu estudo português para viver em Portugal.",
+        "Aprendo português para viver em Portugal.",
+        "Eu aprendo português para viver em Portugal.",
+        "Estou a aprender português para viver em Portugal.",
+        "Estou a estudar português para viver em Portugal.",
+        "Estudo português para morar em Portugal.",
+        "Aprendo português para morar em Portugal.",
+        "Estou a aprender português para morar em Portugal."
+      ]
+    },
+    {
+      "id": "a2-por-para-ex-21",
+      "topicId": "a2-por-para",
+      "type": "translate-ru-pt",
+      "ru": "Мы прогулялись по пляжу.",
+      "answer": [
+        "Passeámos pela praia.",
+        "Nós passeámos pela praia.",
+        "Demos um passeio pela praia.",
+        "Caminhámos pela praia.",
+        "Demos uma volta pela praia.",
+        "Fomos dar um passeio pela praia.",
+        "Nós demos um passeio pela praia."
+      ]
+    },
+    {
+      "id": "a2-por-para-ex-22",
+      "topicId": "a2-por-para",
+      "type": "listen-type",
+      "text": "O autocarro para o aeroporto passa pela Baixa.",
+      "answer": [
+        "O autocarro para o aeroporto passa pela Baixa."
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-por-para-mt-01",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Muito obrigado ___ jantar!",
+      "answer": [
+        "pelo"
+      ],
+      "ru": "Большое спасибо за ужин!"
+    },
+    {
+      "id": "a2-por-para-mt-02",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Saio cedo ___ não apanhar trânsito.",
+      "answer": [
+        "para"
+      ],
+      "ru": "Я выхожу рано, чтобы не попасть в пробку."
+    },
+    {
+      "id": "a2-por-para-mt-03",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Troquei o meu telemóvel velho ___ um novo.",
+      "answer": [
+        "por"
+      ],
+      "ru": "Я обменял свой старый телефон на новый."
+    },
+    {
+      "id": "a2-por-para-mt-04",
+      "topicId": "a2-por-para",
+      "type": "fill-gap",
+      "prompt": "Estes documentos são ___ as Finanças.",
+      "answer": [
+        "para"
+      ],
+      "ru": "Эти документы — для налоговой."
+    },
+    {
+      "id": "a2-por-para-mt-05",
+      "topicId": "a2-por-para",
+      "type": "choice",
+      "prompt": "Vamos ___ autoestrada ou ___ estrada nacional?",
+      "options": [
+        "para a / para a",
+        "por a / por a",
+        "pela / pela",
+        "em / em"
+      ],
+      "correct": 2,
+      "explanation": "Маршрут — por; por + a = pela."
+    },
+    {
+      "id": "a2-por-para-mt-06",
+      "topicId": "a2-por-para",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Vou ao cinema duas vezes em mês.",
+        "Vou ao cinema duas vezes por mês.",
+        "Vou ao cinema duas vezes para mês.",
+        "Vou ao cinema duas vezes pelo mês."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-por-para-mt-07",
+      "topicId": "a2-por-para",
+      "type": "choice",
+      "prompt": "«Для меня это слишком дорого.»",
+      "options": [
+        "Por mim, é demasiado caro.",
+        "Pra mim é caro demais.",
+        "Pela mim, é demasiado caro.",
+        "Para mim, é demasiado caro."
+      ],
+      "correct": 3,
+      "explanation": "Мнение — para mim. Por mim значит «я не против»."
+    },
+    {
+      "id": "a2-por-para-mt-08",
+      "topicId": "a2-por-para",
+      "type": "transform",
+      "prompt": "Paguei 15 euros. Comprei o livro.",
+      "instruction": "Объедините: «Я заплатил за книгу 15 евро» (pagar ... por).",
+      "answer": [
+        "Paguei 15 euros pelo livro.",
+        "Paguei quinze euros pelo livro.",
+        "Paguei pelo livro 15 euros.",
+        "Paguei pelo livro quinze euros."
+      ]
+    },
+    {
+      "id": "a2-por-para-mt-09",
+      "topicId": "a2-por-para",
+      "type": "translate-ru-pt",
+      "ru": "Это для тебя.",
+      "answer": [
+        "Isto é para ti.",
+        "É para ti.",
+        "Isso é para ti."
+      ]
+    },
+    {
+      "id": "a2-por-para-mt-10",
+      "topicId": "a2-por-para",
+      "type": "listen-choice",
+      "text": "Obrigada pela paciência.",
+      "options": [
+        "Спасибо за терпение.",
+        "Спасибо, это для пациента.",
+        "Спасибо за помощь.",
+        "Спасибо, что пришли."
+      ],
+      "correct": 0
+    }
+  ]
+}

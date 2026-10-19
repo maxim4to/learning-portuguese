@@ -1,0 +1,439 @@
+{
+  "id": "b1-expressoes-idiomaticas",
+  "level": "B1",
+  "module": "b1-lexico-estilo",
+  "title": "Идиоматические выражения",
+  "titlePt": "Expressões idiomáticas",
+  "requires": [
+    "a2-haver-ter-expressoes",
+    "a2-pronomes-cliticos-colocacao"
+  ],
+  "theory": "## Как работают идиомы\n\nИдиома — устойчивое выражение, смысл которого не складывается из слов. Глагол внутри идиомы спрягается как обычно, остальное не меняется: **Hoje ela está com os azeites.** → **Ontem estive com os azeites.** → **Ficámos a ver navios.** Клитики подчиняются обычным правилам: **Põe-te a andar!**, но **Não te ponhas a andar já!**; **Estou-me nas tintas**, но **Não me estou nas tintas.**\n\n## Настроение и поведение\n\n| выражение | значение |\n|---|---|\n| **estar com os azeites** | быть не в духе, злиться |\n| **fazer uma fita** | устроить сцену, закатить истерику |\n| **ter lata** | быть наглым (**Que lata!** — Вот нахал!) |\n| **armar-se em esperto** | строить из себя умника |\n| **meter água** | облажаться, сморозить глупость |\n| **dar com a língua nos dentes** | проболтаться |\n| **não ter papas na língua** | говорить прямо, без обиняков |\n| **ir aos arames** | взбеситься |\n| **estar-se nas tintas (para)** | плевать (на что-то) |\n| **fazer ouvidos de mercador** | пропускать мимо ушей |\n| **estar com a pulga atrás da orelha** | подозревать неладное |\n\n## Ситуации и результаты\n\n| выражение | значение |\n|---|---|\n| **ficar a ver navios** | остаться ни с чем |\n| **pagar o pato** | отдуваться за чужую вину |\n| **estar feito ao bife** | влипнуть, пропасть |\n| **cair que nem um patinho** | попасться, как простак |\n| **tirar o cavalinho da chuva** | оставить надежду, «и не мечтай» |\n| **ver-se grego (para)** | еле-еле справиться |\n| **dar o braço a torcer** | признать неправоту (обычно с отрицанием) |\n| **engolir sapos** | молча сносить обиды |\n| **puxar a brasa à sua sardinha** | тянуть одеяло на себя |\n| **pôr as mãos no fogo por alguém** | ручаться за кого-то |\n\n## Деньги, лёгкость, повседневное\n\n| выражение | значение |\n|---|---|\n| **custar os olhos da cara** | стоить бешеных денег |\n| **à grande e à francesa** | на широкую ногу, с размахом |\n| **é canja** | проще простого |\n| **não faz mal** | ничего страшного |\n| **chover a potes** | лить как из ведра |\n| **à última da hora** | в последний момент |\n| **de mão beijada** | на блюдечке, даром |\n| **andar nas nuvens** | витать в облаках |\n| **estar nas suas sete quintas** | быть в своей стихии |\n| **dar uma volta** | прогуляться, прокатиться |\n| **pôr-se a andar** | уйти, смыться |\n\n## Осторожно: интонация решает\n\n- **Vamos dar uma volta?** — Пойдём прогуляемся? (нейтрально). Но **Vai dar uma volta!** — Отстань! (грубовато).\n- **Pus-me a andar.** — Я ушёл (нейтрально). **Põe-te a andar!** — Проваливай!\n- **dar a volta a** — переломить, изменить: **A equipa deu a volta ao resultado.** — Команда переломила ход игры.\n\n## Регистр\n\nБольшинство идиом разговорные: в письме в Finanças или начальнику они неуместны. **Não faz mal** и **é canja** нейтральны и годятся почти везде; **estar-se nas tintas**, **pôr-se a andar** — только с друзьями.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **estar com os azeites** | estar de mau humor / estar bravo | в Бразилии выражение не знают |\n| **é canja** | é moleza / é mamão com açúcar | *canja* понятна и в BR, но *moleza* там частотнее |\n| **estar-se nas tintas** | não estar nem aí | бразильский вариант в Португалии звучит чуждо |\n| **meter água** | pisar na bola | в BR *meter água* почти не используют |\n| **armar-se em esperto** | bancar o esperto | конструкция **armar-se em** + сущ./прил. — типично португальская |\n| **Ficámos a ver navios.** | Ficamos a ver navios. | идиома общая, но в pt-PT прошедшее 1 л. мн. ч. — **ficámos** |\n\nМногие идиомы общие (**pagar o pato**, **custar os olhos da cara**), но выбор частотных вариантов сильно различается — учите португальские.",
+  "commonErrors": "- **Дословный перевод русских идиом**: *custar como uma asa de avião* (калька с «стоить как крыло самолёта») ✗ → **custar os olhos da cara** ✓.\n- **Изменение «застывшей» части**: *ficar a ver barcos*, *custar os olhos do rosto* ✗ → **ficar a ver navios**, **custar os olhos da cara** ✓.\n- **Клитика в начале фразы**: *Me estou nas tintas* ✗ → **Estou-me nas tintas** ✓; с отрицанием — **Não me estou nas tintas** ✓.\n- **Отрицательный императив индикативом**: *Não te pões a andar!* ✗ → **Não te ponhas a andar!** ✓.\n- **Бразильские замены**: *É moleza!* ✗ → **É canja!** ✓; *Não estou nem aí* ✗ → **Estou-me nas tintas** ✓.\n- **Не тот регистр**: *Vai dar uma volta!* в ответ коллеге звучит как «отвали»; для приглашения — **Vamos dar uma volta?** ✓.\n- **ter lata ≠ «иметь банку»**: *Ele tem uma lata de cerveja* — буквально; идиома — **Ele tem (cá) uma lata!** — Ну и наглец!",
+  "examples": [
+    {
+      "pt": "Hoje não lhe peças nada, está com os azeites.",
+      "ru": "Сегодня ничего у него не проси, он не в духе.",
+      "audio": true
+    },
+    {
+      "pt": "Os bilhetes para o concerto custaram os olhos da cara.",
+      "ru": "Билеты на концерт стоили бешеных денег.",
+      "audio": true
+    },
+    {
+      "pt": "Cheguei atrasado e fiquei a ver navios: o comboio já tinha partido.",
+      "ru": "Я опоздал и остался ни с чем: поезд уже ушёл.",
+      "audio": true
+    },
+    {
+      "pt": "Fizeram o casamento à grande e à francesa.",
+      "ru": "Свадьбу сыграли на широкую ногу.",
+      "audio": true
+    },
+    {
+      "pt": "— Desculpa o atraso. — Não faz mal!",
+      "ru": "— Извини за опоздание. — Ничего страшного!",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-expressoes-idiomaticas-ex-01",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Hoje o chefe está com os ___. Não lhe peças férias.",
+      "answer": [
+        "azeites"
+      ],
+      "ru": "Сегодня начальник не в духе. Не проси у него отпуск.",
+      "explanation": "estar com os azeites — быть не в духе."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-02",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Cheguei tarde à promoção e fiquei a ver ___.",
+      "answer": [
+        "navios"
+      ],
+      "ru": "Я опоздал на распродажу и остался ни с чем."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-03",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Este exercício é ___: faço-o em dois minutos.",
+      "answer": [
+        "canja"
+      ],
+      "ru": "Это упражнение — проще простого: сделаю за две минуты.",
+      "explanation": "é canja — очень легко."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-04",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "O telemóvel novo custou os olhos da ___.",
+      "answer": [
+        "cara"
+      ],
+      "ru": "Новый телефон стоил бешеных денег."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-05",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Ontem a miúda ___ (fazer) uma fita no supermercado.",
+      "answer": [
+        "fez"
+      ],
+      "ru": "Вчера девочка устроила истерику в супермаркете.",
+      "explanation": "Глагол в идиоме спрягается: fazer → fez (perfeito)."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-06",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Ele pediu-me dinheiro outra vez? Que ___!",
+      "answer": [
+        "lata"
+      ],
+      "ru": "Он опять попросил у меня денег? Вот наглость!",
+      "explanation": "Que lata! — Вот нахальство!"
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-07",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Ontem ___ (chover) a potes e ficámos em casa.",
+      "answer": [
+        "choveu"
+      ],
+      "ru": "Вчера лило как из ведра, и мы остались дома."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-08",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "Fizeram a festa ___: duzentos convidados e fogo de artifício.",
+      "options": [
+        "de mão beijada",
+        "à última da hora",
+        "à grande e à francesa",
+        "nas suas sete quintas"
+      ],
+      "correct": 2,
+      "explanation": "à grande e à francesa — с размахом, на широкую ногу."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-09",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "— Desculpe, pisei-o sem querer! — ___",
+      "options": [
+        "Que lata!",
+        "É canja.",
+        "Estou-me nas tintas.",
+        "Não faz mal."
+      ],
+      "correct": 3,
+      "explanation": "Вежливый ответ на извинение — Não faz mal (ничего страшного)."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-10",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "O que significa «meter água»?",
+      "options": [
+        "налить воды",
+        "облажаться, сказать глупость",
+        "расплакаться",
+        "сменить тему"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-11",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "O Rui contou o segredo aos colegas todos. Deu com a ___ nos dentes.",
+      "options": [
+        "boca",
+        "cabeça",
+        "mão",
+        "língua"
+      ],
+      "correct": 3,
+      "explanation": "dar com a língua nos dentes — проболтаться."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-12",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "Como se diz «Это проще простого!» em Portugal?",
+      "options": [
+        "É canja!",
+        "É moleza!",
+        "É mamão com açúcar!"
+      ],
+      "correct": 0,
+      "explanation": "moleza и mamão com açúcar — бразильские варианты."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-13",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "transform",
+      "prompt": "O Pedro saiu de repente.",
+      "instruction": "Замените «saiu de repente» идиомой с pôr-se (perfeito).",
+      "answer": [
+        "O Pedro pôs-se a andar.",
+        "Pôs-se a andar.",
+        "O Pedro pôs-se a andar de repente."
+      ],
+      "explanation": "pôr-se a andar — уйти; ênclise: pôs-se."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-14",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "transform",
+      "prompt": "A Joana está muito irritada hoje.",
+      "instruction": "Используйте идиому estar com os azeites.",
+      "answer": [
+        "A Joana está com os azeites hoje.",
+        "Hoje a Joana está com os azeites.",
+        "A Joana hoje está com os azeites."
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-15",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "transform",
+      "prompt": "Estou-me nas tintas para isso.",
+      "instruction": "Поставьте в отрицание (Não...).",
+      "answer": [
+        "Não me estou nas tintas para isso.",
+        "Eu não me estou nas tintas para isso."
+      ],
+      "explanation": "После não клитика переходит перед глаголом: não me estou."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-16",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "order-words",
+      "words": [
+        "ver",
+        "Ficámos",
+        "a",
+        "navios"
+      ],
+      "answer": "Ficámos a ver navios",
+      "ru": "Мы остались ни с чем."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-17",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "order-words",
+      "words": [
+        "braço",
+        "a",
+        "o",
+        "nunca",
+        "torcer",
+        "dá",
+        "Ele"
+      ],
+      "answer": "Ele nunca dá o braço a torcer",
+      "ru": "Он никогда не признаёт свою неправоту."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-18",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "translate-ru-pt",
+      "ru": "Не переживай, ничего страшного.",
+      "answer": [
+        "Não te preocupes, não faz mal.",
+        "Não faz mal, não te preocupes.",
+        "Não se preocupe, não faz mal.",
+        "Não faz mal, não se preocupe."
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-19",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "translate-ru-pt",
+      "ru": "Этот ресторан стоит бешеных денег.",
+      "answer": [
+        "Este restaurante custa os olhos da cara.",
+        "Esse restaurante custa os olhos da cara."
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-20",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "listen-type",
+      "text": "Vamos dar uma volta à beira-rio?",
+      "answer": [
+        "Vamos dar uma volta à beira-rio?"
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-21",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "listen-choice",
+      "text": "Põe-te a andar daqui!",
+      "options": [
+        "Иди сюда!",
+        "Проваливай отсюда!",
+        "Давай прогуляемся.",
+        "Садись, поехали."
+      ],
+      "correct": 1,
+      "explanation": "pôr-se a andar в императиве — грубое «проваливай»."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-ex-22",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "match",
+      "prompt": "Соедините идиому со значением.",
+      "pairs": [
+        {
+          "left": "pagar o pato",
+          "right": "отдуваться за других"
+        },
+        {
+          "left": "ter lata",
+          "right": "быть наглым"
+        },
+        {
+          "left": "ficar a ver navios",
+          "right": "остаться ни с чем"
+        },
+        {
+          "left": "tirar o cavalinho da chuva",
+          "right": "оставить надежду"
+        },
+        {
+          "left": "andar nas nuvens",
+          "right": "витать в облаках"
+        },
+        {
+          "left": "à última da hora",
+          "right": "в последний момент"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-expressoes-idiomaticas-mt-01",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Ninguém me ajudou e eu fiquei a ___ navios.",
+      "answer": [
+        "ver"
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-02",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Tens cá uma ___! Comeste o meu gelado todo.",
+      "answer": [
+        "lata"
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-03",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "O casaco era bonito, mas custava os ___ da cara.",
+      "answer": [
+        "olhos"
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-04",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "fill-gap",
+      "prompt": "Os outros partiram o vidro e fui eu que paguei o ___.",
+      "answer": [
+        "pato"
+      ],
+      "explanation": "pagar o pato — отдуваться за чужую вину."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-05",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "«A Rita está nas suas sete quintas.» significa:",
+      "options": [
+        "У Риты семь домов.",
+        "Рита очень богата.",
+        "Рита в своей стихии.",
+        "Рита на седьмом небе."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-06",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "— Esqueci-me do teu livro. — ___, trazes amanhã.",
+      "options": [
+        "Não faz mal",
+        "Que lata",
+        "É canja",
+        "Fiquei a ver navios"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-07",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "choice",
+      "prompt": "Выберите европейский вариант «мне плевать»:",
+      "options": [
+        "Não estou nem aí.",
+        "Estou-me nas tintas.",
+        "Me estou nas tintas."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-08",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "transform",
+      "prompt": "Põe-te a andar!",
+      "instruction": "Сделайте отрицательным: «Не уходи!» (Não ...)",
+      "answer": [
+        "Não te ponhas a andar!"
+      ],
+      "explanation": "Отрицательный императив — conjuntivo, клитика перед глаголом."
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-09",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "translate-ru-pt",
+      "ru": "Проще простого!",
+      "answer": [
+        "É canja!",
+        "Isso é canja!"
+      ]
+    },
+    {
+      "id": "b1-expressoes-idiomaticas-mt-10",
+      "topicId": "b1-expressoes-idiomaticas",
+      "type": "listen-choice",
+      "text": "Hoje está com os azeites.",
+      "options": [
+        "Сегодня он готовит на оливковом масле.",
+        "Сегодня он не в духе.",
+        "Сегодня он в отличном настроении.",
+        "Сегодня он покупает масло."
+      ],
+      "correct": 1
+    }
+  ]
+}

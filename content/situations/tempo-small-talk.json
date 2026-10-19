@@ -1,0 +1,184 @@
+{
+  "id": "tempo-small-talk",
+  "title": "Погода и small talk",
+  "titlePt": "O tempo e conversa de circunstância",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Olá, bom dia! Então, tudo bem?", "ru": "Привет, доброе утро! Ну как, всё хорошо?" },
+    { "speaker": "B", "pt": "Olá, Inês! Tudo bem, e contigo?", "ru": "Привет, Инеш! Всё хорошо, а у тебя?" },
+    { "speaker": "A", "pt": "Vai-se andando. Que frio está hoje, não está?", "ru": "Потихоньку. Какой сегодня холод, правда?" },
+    { "speaker": "B", "pt": "Está mesmo! E ontem estava tanto calor. Este tempo anda maluco.", "ru": "И не говори! А вчера было так жарко. Погода совсем с ума сошла." },
+    { "speaker": "A", "pt": "Pois é. E dizem que amanhã vai chover o dia todo.", "ru": "Да уж. И говорят, что завтра весь день будет дождь." },
+    { "speaker": "B", "pt": "A sério? Eu ia à praia no sábado com a minha mulher.", "ru": "Серьёзно? А я собирался в субботу с женой на пляж." },
+    { "speaker": "A", "pt": "No sábado já deve estar sol. Vi a previsão no site do IPMA.", "ru": "В субботу уже должно быть солнечно. Я смотрела прогноз на сайте IPMA." },
+    { "speaker": "B", "pt": "Ainda bem! E tu, o que é que vais fazer no fim de semana?", "ru": "Вот и хорошо! А ты что будешь делать в выходные?" },
+    { "speaker": "A", "pt": "Vou à terra visitar os meus pais. Há uma festa na aldeia.", "ru": "Поеду на родину к родителям. В деревне праздник." },
+    { "speaker": "B", "pt": "Que giro! Fica longe?", "ru": "Как здорово! Это далеко?" },
+    { "speaker": "A", "pt": "Fica perto de Viseu, a umas três horas de carro. Já conheces?", "ru": "Под Визеу, около трёх часов на машине. Ты там бывал?" },
+    { "speaker": "B", "pt": "Ainda não, mas tenho muita vontade de conhecer o interior.", "ru": "Ещё нет, но очень хочу посмотреть глубинку." },
+    { "speaker": "A", "pt": "Tens de ir! Bem, vou andando, que estou atrasada.", "ru": "Обязательно съезди! Ладно, я побежала, опаздываю." },
+    { "speaker": "B", "pt": "Vai lá. Bom fim de semana e boa viagem!", "ru": "Беги. Хороших выходных и счастливого пути!" },
+    { "speaker": "A", "pt": "Obrigada, igualmente! Até à próxima!", "ru": "Спасибо, и тебе того же! До встречи!" }
+  ],
+  "phrases": [
+    { "pt": "Então, tudo bem?", "ru": "Ну как, всё хорошо? (типичное приветствие)" },
+    { "pt": "Tudo bem, e contigo?", "ru": "Всё хорошо, а у тебя?" },
+    { "pt": "Vai-se andando.", "ru": "Потихоньку. / Помаленьку." },
+    { "pt": "Que frio está hoje!", "ru": "Какой сегодня холод!" },
+    { "pt": "Está um dia lindo!", "ru": "Какой чудесный день!" },
+    { "pt": "Parece que vai chover.", "ru": "Похоже, будет дождь." },
+    { "pt": "Pois é.", "ru": "Да уж. / Вот именно." },
+    { "pt": "O que é que vais fazer no fim de semana?", "ru": "Что будешь делать в выходные?" },
+    { "pt": "Bem, vou andando.", "ru": "Ну, я пойду." },
+    { "pt": "Bom fim de semana! — Igualmente!", "ru": "Хороших выходных! — И тебе того же!" }
+  ],
+  "vocab": [
+    { "pt": "o tempo", "ru": "погода; время", "example": "Como está o tempo aí em Lisboa?" },
+    { "pt": "a previsão do tempo", "ru": "прогноз погоды", "example": "A previsão do tempo diz que vai fazer sol." },
+    { "pt": "o IPMA", "ru": "португальская метеослужба", "example": "O IPMA emitiu aviso amarelo por causa do vento." },
+    { "pt": "o aviso amarelo", "ru": "жёлтый уровень опасности (погода)", "example": "Há aviso amarelo para chuva forte no Porto." },
+    { "pt": "o sol", "ru": "солнце", "example": "Hoje está muito sol." },
+    { "pt": "a chuva", "ru": "дождь", "example": "A chuva não parou a noite toda." },
+    { "pt": "chover", "ru": "идти (о дожде)", "example": "Está a chover desde manhã." },
+    { "pt": "os aguaceiros", "ru": "ливни, кратковременные дожди", "example": "Para amanhã estão previstos aguaceiros." },
+    { "pt": "a trovoada", "ru": "гроза", "example": "Ontem à noite houve trovoada." },
+    { "pt": "o vento", "ru": "ветер", "example": "Está muito vento na praia." },
+    { "pt": "o nevoeiro", "ru": "туман", "example": "De manhã havia nevoeiro na ponte." },
+    { "pt": "nublado", "ru": "облачно, пасмурно", "example": "O céu está nublado, mas não chove." },
+    { "pt": "o frio", "ru": "холод", "example": "As casas portuguesas são frias no inverno." },
+    { "pt": "o calor", "ru": "жара, тепло", "example": "Em agosto está um calor insuportável." },
+    { "pt": "a onda de calor", "ru": "волна жары", "example": "Esta semana há uma onda de calor no Alentejo." },
+    { "pt": "a humidade", "ru": "влажность, сырость", "example": "Com esta humidade, a roupa não seca." },
+    { "pt": "os graus", "ru": "градусы", "example": "Hoje estão trinta e cinco graus em Évora." },
+    { "pt": "o guarda-chuva", "ru": "зонт", "example": "Não te esqueças do guarda-chuva." },
+    { "pt": "o casaco", "ru": "куртка, пальто", "example": "Leva um casaco, que à noite arrefece." },
+    { "pt": "arrefecer", "ru": "холодать, остывать", "example": "Ao fim da tarde arrefece bastante." },
+    { "pt": "estar encharcado", "ru": "промокнуть до нитки", "example": "Cheguei a casa encharcado." },
+    { "pt": "o fim de semana", "ru": "выходные", "example": "O que fizeste no fim de semana?" },
+    { "pt": "o feriado", "ru": "праздничный выходной день", "example": "Segunda-feira é feriado." },
+    { "pt": "fazer ponte", "ru": "сделать «мост» (взять выходной между праздником и выходными)", "example": "Vou fazer ponte e ficar quatro dias em casa." },
+    { "pt": "a terra", "ru": "родные места, малая родина", "example": "No verão vou sempre à terra." },
+    { "pt": "a aldeia", "ru": "деревня", "example": "Os meus avós vivem numa aldeia no Minho." },
+    { "pt": "o interior", "ru": "внутренние районы страны, глубинка", "example": "O interior é mais frio no inverno." },
+    { "pt": "a praia", "ru": "пляж", "example": "Vamos à praia se estiver bom tempo." },
+    { "pt": "giro / gira", "ru": "классный, милый, симпатичный", "example": "Que vestido tão giro!" },
+    { "pt": "fixe", "ru": "классно, круто", "example": "O concerto foi mesmo fixe." },
+    { "pt": "atrasado / atrasada", "ru": "опаздывающий", "example": "Desculpa, estou atrasado." },
+    { "pt": "Igualmente!", "ru": "И вам/тебе того же!", "example": "— Boas férias! — Igualmente!" },
+    { "pt": "A sério?", "ru": "Серьёзно? Правда?", "example": "A sério? Não sabia nada." }
+  ],
+  "exercises": [
+    {
+      "id": "tempo-small-talk-ex-01",
+      "topicId": "tempo-small-talk",
+      "type": "choice",
+      "prompt": "Uma vizinha pergunta: «Então, tudo bem?». Qual é a resposta mais natural?",
+      "options": ["Tudo bem, e contigo?", "Estou bem, graças.", "Tudo bom, e você?", "Sim, eu estou."],
+      "correct": 0,
+      "explanation": "**Tudo bem, e contigo?** — естественный ответ соседке на «ты». *Tudo bom, e você?* звучит по-бразильски, *graças* без **obrigado** так не говорят."
+    },
+    {
+      "id": "tempo-small-talk-ex-02",
+      "topicId": "tempo-small-talk",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a chuva", "right": "дождь" },
+        { "left": "o nevoeiro", "right": "туман" },
+        { "left": "a trovoada", "right": "гроза" },
+        { "left": "o guarda-chuva", "right": "зонт" },
+        { "left": "a previsão do tempo", "right": "прогноз погоды" }
+      ]
+    },
+    {
+      "id": "tempo-small-talk-ex-03",
+      "topicId": "tempo-small-talk",
+      "type": "fill-gap",
+      "prompt": "Que frio ___ hoje!",
+      "answer": ["está", "faz"],
+      "hint": "estar или fazer, 3-е лицо",
+      "ru": "Какой сегодня холод!",
+      "explanation": "О погоде в Португалии чаще говорят через **estar**: **está frio, está calor, está sol, está vento**. **Faz frio** тоже правильно."
+    },
+    {
+      "id": "tempo-small-talk-ex-04",
+      "topicId": "tempo-small-talk",
+      "type": "listen-type",
+      "text": "Vai lá. Bom fim de semana e boa viagem!",
+      "answer": ["Vai lá. Bom fim de semana e boa viagem!"],
+      "explanation": "**Vai lá** — дружеское «давай, беги». **Bom fim de semana** — стандартное пожелание в пятницу."
+    },
+    {
+      "id": "tempo-small-talk-ex-05",
+      "topicId": "tempo-small-talk",
+      "type": "listen-choice",
+      "text": "No sábado já deve estar sol. Vi a previsão no site do IPMA.",
+      "prompt": "Какая погода ожидается в субботу?",
+      "options": ["Дождь весь день", "Сильный ветер", "Холодно, но сухо", "Скорее всего, солнце"],
+      "correct": 3,
+      "explanation": "**Já deve estar sol** — уже, скорее всего, будет солнечно (**dever** = вероятность). **IPMA** — португальская метеослужба."
+    },
+    {
+      "id": "tempo-small-talk-ex-06",
+      "topicId": "tempo-small-talk",
+      "type": "order-words",
+      "words": ["O", "que", "é", "que", "vais", "fazer", "no", "fim", "de", "semana?"],
+      "answer": "O que é que vais fazer no fim de semana?",
+      "ru": "Что ты будешь делать в выходные?"
+    },
+    {
+      "id": "tempo-small-talk-ex-07",
+      "topicId": "tempo-small-talk",
+      "type": "translate-ru-pt",
+      "ru": "Похоже, завтра будет дождь.",
+      "answer": [
+        "Parece que amanhã vai chover.",
+        "Parece que vai chover amanhã.",
+        "Acho que amanhã vai chover.",
+        "Acho que vai chover amanhã.",
+        "Parece que amanhã chove.",
+        "Amanhã parece que vai chover."
+      ],
+      "explanation": "**Parece que…** — «похоже, что…», **acho que…** — «думаю, что…». Будущее о погоде — **vai chover**."
+    },
+    {
+      "id": "tempo-small-talk-ex-08",
+      "topicId": "tempo-small-talk",
+      "type": "choice",
+      "prompt": "Como se diz «Как здорово!» em Portugal, de forma informal?",
+      "options": ["Que legal!", "Que bacana!", "Que giro!", "Que maneiro!"],
+      "correct": 2,
+      "explanation": "В Португалии говорят **Que giro!** или **Que fixe!**. *Legal*, *bacana*, *maneiro* в этом значении — бразильские слова."
+    },
+    {
+      "id": "tempo-small-talk-ex-09",
+      "topicId": "tempo-small-talk",
+      "type": "fill-gap",
+      "prompt": "No sábado já deve ___ sol.",
+      "answer": ["estar", "fazer"],
+      "hint": "глагол погоды в инфинитиве",
+      "ru": "В субботу уже должно быть солнечно.",
+      "explanation": "**Estar sol / fazer sol** — «солнечно». После модального **dever** — инфинитив."
+    },
+    {
+      "id": "tempo-small-talk-ex-10",
+      "topicId": "tempo-small-talk",
+      "type": "transform",
+      "prompt": "Amanhã chove o dia todo.",
+      "instruction": "Поставь в ближайшее будущее (ir + infinitivo)",
+      "answer": ["Amanhã vai chover o dia todo.", "Amanhã vai chover todo o dia.", "Vai chover o dia todo amanhã."],
+      "explanation": "Прогнозы в разговоре обычно через **ir + infinitivo**: **vai chover**, **vai estar calor**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "В пятницу утром вы встречаете соседа Руя у лифта. Напишите диалог из 8–10 реплик на «ты»: поздоровайтесь, обменяйтесь репликами о погоде (сравните с вчерашней), спросите о планах на выходные, расскажите о своих (с учётом прогноза), попрощайтесь и пожелайте хороших выходных.",
+    "sample": "— Olá, Rui! Então, tudo bem?\n— Olá! Tudo bem, e contigo?\n— Vai-se andando. Que vento está hoje!\n— Pois é. E ontem estava um dia tão bonito.\n— Dizem que amanhã vai chover. O que é que vais fazer no fim de semana?\n— Vou ao Porto ver um jogo de futebol com uns amigos. E tu?\n— Eu queria ir à praia, mas com esta chuva vou ficar em casa a ver séries.\n— No domingo já deve estar sol. Vi a previsão do IPMA.\n— Ainda bem! Bem, vou andando, que estou atrasado.\n— Vai lá. Bom fim de semana!\n— Igualmente!",
+    "checklist": [
+      "Приветствие в португальском стиле: Então, tudo bem? / Vai-se andando",
+      "Погода описана через estar: está frio, está vento, estava calor",
+      "Есть вопрос о выходных: O que é que vais fazer no fim de semana?",
+      "Будущее выражено через ir + infinitivo (vou ficar, vai chover)",
+      "Есть прощание и пожелание: Bom fim de semana! — Igualmente!"
+    ]
+  }
+}

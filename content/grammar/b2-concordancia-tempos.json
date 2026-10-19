@@ -1,0 +1,452 @@
+{
+  "id": "b2-concordancia-tempos",
+  "level": "B2",
+  "module": "b2-tempos-compostos",
+  "title": "Согласование времён",
+  "titlePt": "Concordância dos tempos verbais",
+  "requires": [
+    "b1-imperfeito-conjuntivo-condicional",
+    "b1-futuro-conjuntivo",
+    "b1-discurso-indireto"
+  ],
+  "theory": "## Главный принцип\n\nВремя в придаточном зависит от времени главного предложения. В русском так не бывает («сказал, что устал», «хотел, чтобы ты пришёл»), поэтому согласование — одна из самых частых ошибок русскоязычных на уровне B2.\n\n## 1. Conjuntivo после que\n\n| главное предложение | одновременно / после | раньше |\n|---|---|---|\n| presente, futuro, imperativo: **Quero**, **Vou pedir**, **Pede-lhe** | presente do conj.: **que venhas** | perfeito do conj.: **que tenhas vindo** |\n| perfeito, imperfeito, mais-que-perfeito, condicional: **Quis**, **Queria**, **Pedi**, **Gostava** | imperfeito do conj.: **que viesses** | mais-que-perfeito do conj.: **que tivesses vindo** |\n\n**É importante que saibas. → Era importante que soubesses.**\n**Espero que tenhas gostado. → Esperava que tivesses gostado.**\n**Gostava que viesses jantar connosco.** — imperfeito в главной (вежливое «хотел бы») тоже требует imperfeito do conjuntivo.\n\nТо же правило работает после союзов и в относительных придаточных:\n\n| настоящее | прошедшее |\n|---|---|\n| **Explico devagar para que percebas.** | **Expliquei devagar para que percebesses.** |\n| **Procuro alguém que fale alemão.** | **Procurava alguém que falasse alemão.** |\n| **Saio antes que comece a chover.** | **Saí antes que começasse a chover.** |\n\nНо если главное в настоящем, а событие придаточного уже в прошлом, берите **perfeito do conjuntivo**, а не imperfeito: **É pena que não tenhas vindo ontem.** (Для фона/состояния в прошлом допустим и imperfeito: **Duvido que ele estivesse em casa àquela hora.**)\n\n## 2. Futuro do conjuntivo после se, quando, assim que, enquanto\n\nПока главное в настоящем / будущем / императиве — **futuro do conjuntivo**. Если всё переносится в прошлое (чаще всего в косвенной речи), он превращается в **imperfeito do conjuntivo**:\n\n| «сейчас» | «в прошлом» |\n|---|---|\n| **Quando chegares, liga-me.** | **Pediu-me que lhe ligasse quando chegasse.** |\n| **Se puder, vou.** | **Disse que, se pudesse, ia.** |\n| **Assim que tiver acabado, aviso.** | **Disse que, assim que tivesse acabado, avisava.** |\n\n## 3. Сводная таблица сдвига\n\n| после presente | после прошедшего |\n|---|---|\n| presente do conj. (**venha**) | imperfeito do conj. (**viesse**) |\n| futuro do conj. (**vier**) | imperfeito do conj. (**viesse**) |\n| perfeito do conj. (**tenha vindo**) | mais-que-perfeito do conj. (**tivesse vindo**) |\n| futuro composto do conj. (**tiver vindo**) | mais-que-perfeito do conj. (**tivesse vindo**) |\n| presente ind. (**vem**) | imperfeito (**vinha**) |\n| perfeito (**veio**) | mais-que-perfeito (**tinha vindo**) |\n| futuro (**virá**) | condicional / imperfeito (**viria / vinha**) |\n| futuro composto (**terá vindo**) | condicional composto (**teria vindo**) |\n| imperativo (**vem!**) | imperfeito do conj. (**que viesse**) |\n\nНижняя часть таблицы — повторение косвенной речи: **«Estou cansada.» → Disse que estava cansada.**\n\n## Когда сдвига нет\n\n- Общеизвестные истины и то, что верно до сих пор: **Ele explicou que a Terra gira à volta do Sol. Disse-me que mora em Braga** (живёт там и сейчас).\n- Главное в настоящем: **Ele diz que vem amanhã.**\n\n## Русские ловушки\n\n**Не знал, что ты здесь** → **Não sabia que estavas cá**, а не *estás*.\n**Он обещал, что позвонит** → **Prometeu que ligava / ligaria**, а не *ligará* (futuro после прошедшего встречается только в книжном стиле, когда событие и сейчас ещё впереди).",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Gostava que viesses.** | **Gostaria que você viesse.** | в pt-PT вежливое пожелание — через imperfeito |\n| **Pediu-me que lhe ligasse.** | **Me pediu que ligasse para ele.** | ênclise и **lhe** в pt-PT |\n| Disse que **ligava** / **ligaria**. | Disse que **ia ligar** / **ligaria**. | в pt-PT в речи часто imperfeito вместо condicional |\n| Pedi que **viesses**. | разг. Pedi que você **viesse** / **venha** | в бразильской разговорной речи согласование нарушается чаще |\n\nПравила согласования одни и те же; в pt-PT их соблюдают последовательнее, а вместо condicional охотно берут imperfeito.",
+  "commonErrors": "- **Presente do conjuntivo после прошедшего**: *Queria que venhas* ✗ → **Queria que viesses** ✓.\n- **То же с просьбами**: *Pedi-lhe que me ajude* ✗ → **Pedi-lhe que me ajudasse** ✓.\n- **Futuro do conjuntivo в прошлом**: *Disse que, quando chegar, ligava* ✗ → **quando chegasse, ligava** ✓.\n- **Imperfeito вместо perfeito do conjuntivo после настоящего**: *É pena que não viesses ontem* ✗ → **É pena que não tenhas vindo ontem** ✓.\n- **Русская модель «не знал, что ты здесь»**: *Não sabia que estás cá* ✗ → **Não sabia que estavas cá** ✓.\n- **Futuro после прошедшего**: *Prometeu que acabará* ✗ → **Prometeu que acabava / acabaria** ✓.\n- **Esperava + perfeito do conj.**: *Esperava que tenhas gostado* ✗ → **Esperava que tivesses gostado** ✓.",
+  "examples": [
+    {
+      "pt": "Pedi ao Duarte que me ajudasse com a mudança.",
+      "ru": "Я попросил Дуарте помочь мне с переездом.",
+      "audio": true
+    },
+    {
+      "pt": "Gostava que viesses jantar connosco no sábado.",
+      "ru": "Я бы хотел, чтобы ты пришёл к нам на ужин в субботу.",
+      "audio": true
+    },
+    {
+      "pt": "A Rita disse que, quando chegasse ao Porto, nos ligava.",
+      "ru": "Рита сказала, что позвонит нам, когда приедет в Порту.",
+      "audio": true
+    },
+    {
+      "pt": "É pena que não tenhas visto o fogo de artifício.",
+      "ru": "Жаль, что ты не видел фейерверк.",
+      "audio": true
+    },
+    {
+      "pt": "Não sabia que estavas em Lisboa!",
+      "ru": "Я не знал, что ты в Лиссабоне!",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-concordancia-tempos-ex-01",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Queria que tu ___ (vir) à festa.",
+      "answer": [
+        "viesses"
+      ],
+      "ru": "Я хотел, чтобы ты пришёл на праздник.",
+      "explanation": "Queria (прошедшее) → imperfeito do conjuntivo."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-02",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "O médico aconselhou-me que ___ (descansar) mais.",
+      "answer": [
+        "descansasse"
+      ],
+      "ru": "Врач посоветовал мне больше отдыхать."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-03",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Vou pedir-lhe que me ___ (ajudar).",
+      "answer": [
+        "ajude"
+      ],
+      "ru": "Я попрошу его мне помочь.",
+      "explanation": "Главное в будущем (vou pedir) → presente do conjuntivo."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-04",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "É pena que tu não ___ (ir) à festa ontem.",
+      "answer": [
+        "tenhas ido"
+      ],
+      "ru": "Жаль, что ты не пошёл вчера на праздник.",
+      "explanation": "Главное в настоящем, событие в прошлом → perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-05",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Ele disse que, se ___ (ter) tempo, passava cá.",
+      "answer": [
+        "tivesse"
+      ],
+      "ru": "Он сказал, что, если будет время, зайдёт.",
+      "explanation": "«Se tiver tempo» в косвенной речи после disse → se tivesse."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-06",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Disse-lhe que me ligasse quando ___ (chegar).",
+      "answer": [
+        "chegasse"
+      ],
+      "ru": "Я сказал ему, чтобы он позвонил мне, когда приедет.",
+      "explanation": "Futuro do conjuntivo → imperfeito do conjuntivo."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-07",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Esperávamos que vocês já ___ (acabar).",
+      "answer": [
+        "tivessem acabado"
+      ],
+      "ru": "Мы надеялись, что вы уже закончили."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-08",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Não sabia que tu ___ (falar) russo!",
+      "answer": [
+        "falavas"
+      ],
+      "ru": "Я не знал, что ты говоришь по-русски!",
+      "explanation": "После прошедшего presente → imperfeito, хотя по-русски «говоришь»."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-09",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "Duvido que ele ___ ontem.",
+      "options": [
+        "veio",
+        "viesse",
+        "tenha vindo",
+        "venha"
+      ],
+      "correct": 2,
+      "explanation": "Duvido (настоящее) + событие в прошлом → perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-10",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "A professora pediu que os alunos ___ silêncio.",
+      "options": [
+        "façam",
+        "fizessem",
+        "fazem",
+        "fizerem"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-11",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "Quando ___ ao Porto, liga-me.",
+      "options": [
+        "chegares",
+        "chegasses",
+        "chegues",
+        "chegarás"
+      ],
+      "correct": 0,
+      "explanation": "Главное — императив → futuro do conjuntivo."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-12",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "Ele prometeu que ___ o relatório até sexta.",
+      "options": [
+        "acabe",
+        "acabar",
+        "acabasse",
+        "acabaria"
+      ],
+      "correct": 3,
+      "explanation": "Futuro после прошедшего → condicional (или imperfeito: acabava). Conjuntivo здесь не нужен: prometer que вводит утверждение, а не желание."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-13",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "Gostava que me ___ a verdade.",
+      "options": [
+        "dizes",
+        "digas",
+        "dissesses",
+        "disseres"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-14",
+      "topicId": "b2-concordancia-tempos",
+      "type": "transform",
+      "prompt": "Peço-te que fales mais devagar.",
+      "instruction": "Перенесите главное в прошлое: «Pedi-te...».",
+      "answer": [
+        "Pedi-te que falasses mais devagar."
+      ]
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-15",
+      "topicId": "b2-concordancia-tempos",
+      "type": "transform",
+      "prompt": "«Se puder, vou.» (o Rui)",
+      "instruction": "Передайте косвенной речью: «O Rui disse que...».",
+      "answer": [
+        "O Rui disse que, se pudesse, ia.",
+        "O Rui disse que, se pudesse, iria."
+      ]
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-16",
+      "topicId": "b2-concordancia-tempos",
+      "type": "transform",
+      "prompt": "«Quando acabares, avisa-me.» (a chefe)",
+      "instruction": "Передайте косвенной речью: «A chefe pediu-me que...».",
+      "answer": [
+        "A chefe pediu-me que a avisasse quando acabasse.",
+        "A chefe pediu-me que, quando acabasse, a avisasse.",
+        "A chefe pediu-me que a avisasse quando tivesse acabado.",
+        "A chefe pediu-me que, quando tivesse acabado, a avisasse."
+      ],
+      "explanation": "Imperativo → imperfeito do conjuntivo, futuro do conj. → imperfeito do conj.; -me → a (её)."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-17",
+      "topicId": "b2-concordancia-tempos",
+      "type": "order-words",
+      "words": [
+        "que",
+        "Pedi-lhe",
+        "ajudasse",
+        "me"
+      ],
+      "answer": "Pedi-lhe que me ajudasse",
+      "ru": "Я попросил его помочь мне."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-18",
+      "topicId": "b2-concordancia-tempos",
+      "type": "order-words",
+      "words": [
+        "sabia",
+        "que",
+        "Não",
+        "estavas",
+        "em",
+        "Lisboa"
+      ],
+      "answer": "Não sabia que estavas em Lisboa",
+      "ru": "Я не знал, что ты в Лиссабоне."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-19",
+      "topicId": "b2-concordancia-tempos",
+      "type": "translate-ru-pt",
+      "ru": "Я хотел, чтобы ты знал правду.",
+      "answer": [
+        "Queria que soubesses a verdade.",
+        "Queria que tu soubesses a verdade.",
+        "Eu queria que soubesses a verdade.",
+        "Eu queria que tu soubesses a verdade."
+      ]
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-20",
+      "topicId": "b2-concordancia-tempos",
+      "type": "translate-ru-pt",
+      "ru": "Жаль, что ты не пришёл.",
+      "answer": [
+        "É pena que não tenhas vindo.",
+        "É pena que tu não tenhas vindo.",
+        "É uma pena que não tenhas vindo.",
+        "É pena não teres vindo.",
+        "É pena tu não teres vindo."
+      ],
+      "explanation": "Настоящее в главном + прошлое событие → perfeito do conjuntivo (или infinitivo pessoal composto)."
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-21",
+      "topicId": "b2-concordancia-tempos",
+      "type": "listen-type",
+      "text": "Disse-me que ligava quando chegasse.",
+      "answer": [
+        "Disse-me que ligava quando chegasse."
+      ]
+    },
+    {
+      "id": "b2-concordancia-tempos-ex-22",
+      "topicId": "b2-concordancia-tempos",
+      "type": "match",
+      "prompt": "Соедините форму после настоящего с формой после прошедшего (сдвиг времён).",
+      "pairs": [
+        {
+          "left": "que venhas",
+          "right": "que viesses"
+        },
+        {
+          "left": "quando chegares",
+          "right": "quando chegasses"
+        },
+        {
+          "left": "que tenhas visto",
+          "right": "que tivesses visto"
+        },
+        {
+          "left": "faço",
+          "right": "fazia"
+        },
+        {
+          "left": "farei",
+          "right": "faria"
+        },
+        {
+          "left": "fiz",
+          "right": "tinha feito"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-concordancia-tempos-mt-01",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "A mãe pediu-me que ___ (comprar) pão.",
+      "answer": [
+        "comprasse"
+      ],
+      "ru": "Мама попросила меня купить хлеб."
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-02",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Espero que tu ___ (gostar) do jantar de ontem.",
+      "answer": [
+        "tenhas gostado"
+      ],
+      "ru": "Надеюсь, тебе понравился вчерашний ужин."
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-03",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Ele disse que, quando ___ (saber) o resultado, nos dizia.",
+      "answer": [
+        "soubesse"
+      ],
+      "ru": "Он сказал, что сообщит нам, когда узнает результат."
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-04",
+      "topicId": "b2-concordancia-tempos",
+      "type": "fill-gap",
+      "prompt": "Era importante que todos ___ (estar) presentes.",
+      "answer": [
+        "estivessem"
+      ],
+      "ru": "Было важно, чтобы все присутствовали."
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-05",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "Não acreditei que ela ___ isso.",
+      "options": [
+        "tenha dito",
+        "diga",
+        "tivesse dito",
+        "disser"
+      ],
+      "correct": 2,
+      "explanation": "Главное в прошедшем, событие раньше → mais-que-perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-06",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "Gostava que vocês ___ connosco.",
+      "options": [
+        "venham",
+        "viessem",
+        "vierem",
+        "vêm"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-07",
+      "topicId": "b2-concordancia-tempos",
+      "type": "choice",
+      "prompt": "Se ___ tempo amanhã, passo por tua casa.",
+      "options": [
+        "terei",
+        "tenha",
+        "tivesse",
+        "tiver"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-08",
+      "topicId": "b2-concordancia-tempos",
+      "type": "transform",
+      "prompt": "«Telefona-me quando chegares.» (a Joana)",
+      "instruction": "Передайте косвенной речью: «A Joana pediu-me que...».",
+      "answer": [
+        "A Joana pediu-me que lhe telefonasse quando chegasse.",
+        "A Joana pediu-me que lhe ligasse quando chegasse.",
+        "A Joana pediu-me que, quando chegasse, lhe telefonasse.",
+        "A Joana pediu-me que, quando chegasse, lhe ligasse."
+      ]
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-09",
+      "topicId": "b2-concordancia-tempos",
+      "type": "translate-ru-pt",
+      "ru": "Он попросил, чтобы мы подождали.",
+      "answer": [
+        "Ele pediu que esperássemos.",
+        "Ele pediu para esperarmos.",
+        "Pediu que esperássemos.",
+        "Pediu para esperarmos.",
+        "Ele pediu-nos que esperássemos.",
+        "Ele pediu-nos para esperarmos.",
+        "Pediu-nos que esperássemos.",
+        "Pediu-nos para esperarmos."
+      ]
+    },
+    {
+      "id": "b2-concordancia-tempos-mt-10",
+      "topicId": "b2-concordancia-tempos",
+      "type": "listen-choice",
+      "text": "Queria que me ajudasses.",
+      "options": [
+        "Я хотел тебе помочь.",
+        "Ты хотел, чтобы я тебе помог.",
+        "Я бы хотел, чтобы ты мне помог.",
+        "Я хочу помочь тебе."
+      ],
+      "correct": 2
+    }
+  ]
+}

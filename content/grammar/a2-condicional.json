@@ -1,0 +1,475 @@
+{
+  "id": "a2-condicional",
+  "level": "A2",
+  "module": "a2-imperativo-futuro-condicional",
+  "title": "Условное наклонение",
+  "titlePt": "Condicional",
+  "requires": [
+    "a2-futuro-simples",
+    "a2-preterito-imperfeito"
+  ],
+  "theory": "## Образование\n\nКак и futuro: **инфинитив + окончание**. Окончания одинаковы для всех спряжений:\n\n| | falar | comer | partir |\n|---|---|---|---|\n| eu | falar**ia** | comer**ia** | partir**ia** |\n| tu | falar**ias** | comer**ias** | partir**ias** |\n| ele / você | falar**ia** | comer**ia** | partir**ia** |\n| nós | falar**íamos** | comer**íamos** | partir**íamos** |\n| eles / vocês | falar**iam** | comer**iam** | partir**iam** |\n\nТе же три неправильных, что и в futuro: fazer → **faria**, dizer → **diria**, trazer → **traria**. Остальные правильные: **seria, estaria, teria, iria, poderia**.\n\n## Употребление\n\n### 1. Вежливость\n\n**Gostaria de marcar uma consulta.** — Я хотел бы записаться на приём.\n**Poderia ajudar-me?** — Не могли бы вы мне помочь?\n**Seria possível pagar com cartão?** — Можно было бы заплатить картой?\n\n### 2. Гипотеза и совет — русское «бы»\n\n**Eu, no teu lugar, não faria isso.** — Я бы на твоём месте этого не делал.\n**Com mais tempo, viajaríamos mais.** — Будь у нас больше времени, мы бы больше путешествовали.\n\nПолное условное предложение (**Se tivesse tempo, viajaria**) требует imperfeito do conjuntivo — это тема B1.\n\n### 3. Будущее в прошедшем\n\n**Ele disse que viria às oito.** — Он сказал, что придёт в восемь.\n\n### 4. Догадка о прошлом\n\n**Seriam onze horas quando ele chegou.** — Было, наверное, около одиннадцати, когда он пришёл.\n\n## Главное для pt-PT: в речи — imperfeito\n\nВ разговорном европейском португальском вместо condicional обычно звучит **imperfeito**:\n\n| condicional (нейтрально, письменно) | разговорный pt-PT |\n|---|---|\n| **Gostaria de** um café. | **Gostava de** um café. |\n| **Poderia** ajudar-me? | **Podia** ajudar-me? |\n| Eu não **faria** isso. | Eu não **fazia** isso. |\n| **Seria** melhor ir de comboio. | **Era** melhor ir de comboio. |\n| Ele disse que **viria**. | Ele disse que **vinha**. |\n\n**Gostava** — это и «мне нравилось», и «я бы хотел»; смысл ясен из контекста. В кафе естественнее всего **Queria um galão** или **Gostava de um pastel de nata**. Condicional при этом не ошибка: он чуть формальнее (письма, разговор с незнакомыми, официальная речь).\n\n## Местоимения\n\nБез «магнита» — mesóclise: **dar-te-ia, dir-lhe-ia, poder-se-ia**. После магнита — перед глаголом: **Não te diria.** В речи проще перейти на imperfeito, где клитика просто стоит после глагола: **Dava-te. Dizia-lhe.**\n\n## Не путать\n\n**Ia ligar-te** — «я как раз собирался тебе позвонить» (imperfeito от ir + инфинитив), а **Ligar-te-ia** — «я бы тебе позвонил».",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Gostava de** um café. | **Gostaria de** um café. | в BR в вежливой речи чаще condicional; pt-PT предпочитает imperfeito |\n| **Podia** dizer-me...? | **Poderia** me dizer...? | + в BR клитика перед инфинитивом |\n| **Dar-te-ia** / **Dava-te** | **Te daria** | mesóclise / клитика в начале |\n| Eu, no teu lugar, **fazia** isso. | Eu, no seu lugar, **faria** isso. | tu vs você |\n\nОба варианта (**gostaria / gostava**) понятны везде, но разговорное **gostava de** в значении «хотел бы» — характерная примета Португалии.",
+  "commonErrors": "- **Неправильные по аналогии**: *fazeria, dizeria, trazeria* ✗ → **faria, diria, traria** ✓.\n- **Клитика после формы condicional**: *Poderia-me ajudar?* ✗ → **Poderia ajudar-me?** / **Podia ajudar-me?** ✓.\n- **Gostar без de**: *Eu gostaria um café* ✗ → **Gostava de um café** ✓.\n- **Ударение в nós**: *falariamos* ✗ → **falaríamos** ✓.\n- **Калька русского «если бы»**: *Se eu teria tempo...* ✗ → **Se eu tivesse tempo...** ✓ (B1).\n- **Смешение «собирался» и «сделал бы»**: *Eu iria telefonar-te agora* (в смысле «как раз собирался») ✗ → **Ia telefonar-te agora** ✓.\n- **Непонимание gostava**: **Gostava de ir** — не только «мне нравилось ходить», но и «я бы хотел пойти».",
+  "examples": [
+    {
+      "pt": "Gostava de marcar uma consulta para amanhã.",
+      "ru": "Я хотел бы записаться на приём на завтра.",
+      "audio": true
+    },
+    {
+      "pt": "Poderia dizer-me onde fica a estação?",
+      "ru": "Не могли бы вы сказать, где вокзал?",
+      "audio": true
+    },
+    {
+      "pt": "Eu, no teu lugar, não faria isso.",
+      "ru": "Я бы на твоём месте этого не делал.",
+      "audio": true
+    },
+    {
+      "pt": "Ele disse que traria o vinho.",
+      "ru": "Он сказал, что принесёт вино.",
+      "audio": true
+    },
+    {
+      "pt": "Seria ótimo passar o verão no Algarve.",
+      "ru": "Было бы здорово провести лето в Алгарве.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-condicional-ex-01",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (gostar) de falar com o gerente.",
+      "answer": [
+        "gostaria",
+        "gostava"
+      ],
+      "ru": "Я хотел бы поговорить с управляющим.",
+      "explanation": "Подходит и condicional (gostaria), и разговорное imperfeito (gostava)."
+    },
+    {
+      "id": "a2-condicional-ex-02",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (fazer) isso por mim?",
+      "answer": [
+        "farias",
+        "fazias"
+      ],
+      "ru": "Ты бы сделал это для меня?",
+      "explanation": "fazer → far-ias; в речи часто fazias."
+    },
+    {
+      "id": "a2-condicional-ex-03",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (preferir) ficar em casa.",
+      "answer": [
+        "preferiríamos"
+      ],
+      "hint": "форма condicional",
+      "ru": "Мы бы предпочли остаться дома.",
+      "explanation": "preferir + íamos (с ударением)."
+    },
+    {
+      "id": "a2-condicional-ex-04",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Ele disse que ___ (vir) mais tarde.",
+      "answer": [
+        "viria",
+        "vinha"
+      ],
+      "ru": "Он сказал, что придёт позже.",
+      "explanation": "Будущее в прошедшем: viria; в разговоре — vinha."
+    },
+    {
+      "id": "a2-condicional-ex-05",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Eu não ___ (dizer) isso à tua mãe.",
+      "answer": [
+        "diria",
+        "dizia"
+      ],
+      "ru": "Я бы не стал говорить это твоей маме."
+    },
+    {
+      "id": "a2-condicional-ex-06",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "___ (ser) possível mudar a reserva?",
+      "answer": [
+        "Seria",
+        "Era"
+      ],
+      "ru": "Можно было бы изменить бронь?"
+    },
+    {
+      "id": "a2-condicional-ex-07",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Com mais dinheiro, nós ___ (viajar) mais.",
+      "answer": [
+        "viajaríamos"
+      ],
+      "hint": "форма condicional",
+      "ru": "Будь у нас больше денег, мы бы больше путешествовали."
+    },
+    {
+      "id": "a2-condicional-ex-08",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "O senhor ___ (poder) fechar a janela?",
+      "answer": [
+        "poderia",
+        "podia"
+      ],
+      "ru": "Не могли бы вы закрыть окно?"
+    },
+    {
+      "id": "a2-condicional-ex-09",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "Как естественнее всего заказать в кафе в Лиссабоне?",
+      "options": [
+        "Eu gostaria um café.",
+        "Queria um café, por favor.",
+        "Eu quero café.",
+        "Me dá um café."
+      ],
+      "correct": 1,
+      "explanation": "Queria / Gostava de — типичные вежливые формы в Португалии. Gostar требует de."
+    },
+    {
+      "id": "a2-condicional-ex-10",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Poderia-me ajudar?",
+        "Me poderia ajudar?",
+        "Poderia me ajudar?",
+        "Poderia ajudar-me?"
+      ],
+      "correct": 3,
+      "explanation": "Через дефис после формы condicional клитику не ставят (*poderia-me* ✗), и фраза не начинается с клитики. Обычно её присоединяют к инфинитиву: poderia ajudar-me (книжный вариант — mesóclise: poder-me-ia ajudar)."
+    },
+    {
+      "id": "a2-condicional-ex-11",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "Eu, no teu lugar, ___ o comboio.",
+      "options": [
+        "apanharia",
+        "apanharei",
+        "apanhei",
+        "apanho-o"
+      ],
+      "correct": 0,
+      "explanation": "«Я бы на твоём месте» — гипотеза, condicional."
+    },
+    {
+      "id": "a2-condicional-ex-12",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "Ele prometeu que ___ às oito.",
+      "options": [
+        "chegará",
+        "chegou",
+        "chegaria",
+        "chegue"
+      ],
+      "correct": 2,
+      "explanation": "Будущее с точки зрения прошлого — condicional."
+    },
+    {
+      "id": "a2-condicional-ex-13",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "Nós ___ muito gosto em ajudar.",
+      "options": [
+        "teriamos",
+        "teremos",
+        "tivemos",
+        "teríamos"
+      ],
+      "correct": 3,
+      "explanation": "Форма nós пишется с ударением: teríamos."
+    },
+    {
+      "id": "a2-condicional-ex-14",
+      "topicId": "a2-condicional",
+      "type": "transform",
+      "prompt": "Quero um copo de água.",
+      "instruction": "Сделайте просьбу вежливее с помощью gostar de в condicional.",
+      "answer": [
+        "Gostaria de um copo de água.",
+        "Eu gostaria de um copo de água."
+      ]
+    },
+    {
+      "id": "a2-condicional-ex-15",
+      "topicId": "a2-condicional",
+      "type": "transform",
+      "prompt": "Ele diz que vem amanhã.",
+      "instruction": "Начните с «Ele disse que...».",
+      "answer": [
+        "Ele disse que viria amanhã.",
+        "Ele disse que vinha amanhã.",
+        "Ele disse que viria no dia seguinte.",
+        "Ele disse que vinha no dia seguinte."
+      ]
+    },
+    {
+      "id": "a2-condicional-ex-16",
+      "topicId": "a2-condicional",
+      "type": "transform",
+      "prompt": "Podes emprestar-me o carro?",
+      "instruction": "Сделайте вопрос вежливее (condicional или imperfeito).",
+      "answer": [
+        "Poderias emprestar-me o carro?",
+        "Podias emprestar-me o carro?"
+      ],
+      "explanation": "В pt-PT разговорное Podias... звучит естественнее всего."
+    },
+    {
+      "id": "a2-condicional-ex-17",
+      "topicId": "a2-condicional",
+      "type": "order-words",
+      "words": [
+        "Gostava",
+        "de",
+        "marcar",
+        "uma",
+        "mesa",
+        "para",
+        "dois"
+      ],
+      "answer": "Gostava de marcar uma mesa para dois"
+    },
+    {
+      "id": "a2-condicional-ex-18",
+      "topicId": "a2-condicional",
+      "type": "order-words",
+      "words": [
+        "Seria",
+        "melhor",
+        "apanhar",
+        "um",
+        "táxi"
+      ],
+      "answer": "Seria melhor apanhar um táxi"
+    },
+    {
+      "id": "a2-condicional-ex-19",
+      "topicId": "a2-condicional",
+      "type": "translate-ru-pt",
+      "ru": "Я бы хотел поговорить с вами. (o senhor / a senhora)",
+      "answer": [
+        "Gostaria de falar consigo.",
+        "Gostaria de falar com o senhor.",
+        "Gostaria de falar com a senhora.",
+        "Gostava de falar consigo.",
+        "Gostava de falar com o senhor.",
+        "Gostava de falar com a senhora.",
+        "Eu gostaria de falar consigo.",
+        "Eu gostaria de falar com o senhor.",
+        "Eu gostaria de falar com a senhora.",
+        "Eu gostava de falar consigo.",
+        "Eu gostava de falar com o senhor.",
+        "Eu gostava de falar com a senhora.",
+        "Queria falar consigo.",
+        "Queria falar com o senhor.",
+        "Queria falar com a senhora."
+      ]
+    },
+    {
+      "id": "a2-condicional-ex-20",
+      "topicId": "a2-condicional",
+      "type": "translate-ru-pt",
+      "ru": "Что бы ты сделал на моём месте?",
+      "answer": [
+        "O que farias no meu lugar?",
+        "O que é que farias no meu lugar?",
+        "O que farias tu no meu lugar?",
+        "No meu lugar, o que farias?",
+        "O que fazias no meu lugar?",
+        "O que é que fazias no meu lugar?",
+        "No meu lugar, o que fazias?",
+        "O que é que tu farias no meu lugar?",
+        "Que farias no meu lugar?"
+      ]
+    },
+    {
+      "id": "a2-condicional-ex-21",
+      "topicId": "a2-condicional",
+      "type": "listen-type",
+      "text": "Podia dizer-me as horas, por favor?",
+      "answer": [
+        "Podia dizer-me as horas, por favor?"
+      ]
+    },
+    {
+      "id": "a2-condicional-ex-22",
+      "topicId": "a2-condicional",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой eu в condicional.",
+      "pairs": [
+        {
+          "left": "fazer",
+          "right": "faria"
+        },
+        {
+          "left": "dizer",
+          "right": "diria"
+        },
+        {
+          "left": "trazer",
+          "right": "traria"
+        },
+        {
+          "left": "ser",
+          "right": "seria"
+        },
+        {
+          "left": "ter",
+          "right": "teria"
+        },
+        {
+          "left": "ir",
+          "right": "iria"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-condicional-mt-01",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (comprar) esta casa, mas é muito cara.",
+      "answer": [
+        "compraria",
+        "comprava"
+      ],
+      "ru": "Я бы купил этот дом, но он очень дорогой."
+    },
+    {
+      "id": "a2-condicional-mt-02",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "No lugar dele, vocês ___ (dizer) a verdade?",
+      "answer": [
+        "diriam",
+        "diziam"
+      ],
+      "ru": "Вы бы на его месте сказали правду?"
+    },
+    {
+      "id": "a2-condicional-mt-03",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Ela disse que ___ (fazer) o jantar mais logo.",
+      "answer": [
+        "faria",
+        "fazia"
+      ],
+      "ru": "Она сказала, что приготовит ужин попозже."
+    },
+    {
+      "id": "a2-condicional-mt-04",
+      "topicId": "a2-condicional",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (gostar) de visitar Sintra.",
+      "answer": [
+        "gostaríamos",
+        "gostávamos"
+      ],
+      "hint": "«хотели бы»",
+      "ru": "Мы бы хотели побывать в Синтре."
+    },
+    {
+      "id": "a2-condicional-mt-05",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "Se pudesse, eu ___ o meu cão para o escritório.",
+      "options": [
+        "trazeria",
+        "trazería",
+        "traria",
+        "trairia"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-condicional-mt-06",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "В кафе естественнее всего сказать:",
+      "options": [
+        "Gostava de um galão, por favor.",
+        "Gostaria um galão.",
+        "Eu gosto de um galão, por favor.",
+        "Me daria um galão?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a2-condicional-mt-07",
+      "topicId": "a2-condicional",
+      "type": "choice",
+      "prompt": "Eu não ___ isso a ninguém.",
+      "options": [
+        "diria-o",
+        "o diria",
+        "di-lo-ia",
+        "dizeria"
+      ],
+      "correct": 1,
+      "explanation": "Não — «магнит», поэтому без mesóclise: não o diria."
+    },
+    {
+      "id": "a2-condicional-mt-08",
+      "topicId": "a2-condicional",
+      "type": "transform",
+      "prompt": "Ele diz que traz o vinho.",
+      "instruction": "Начните с «Ele disse que...».",
+      "answer": [
+        "Ele disse que traria o vinho.",
+        "Ele disse que trazia o vinho."
+      ]
+    },
+    {
+      "id": "a2-condicional-mt-09",
+      "topicId": "a2-condicional",
+      "type": "translate-ru-pt",
+      "ru": "Было бы здорово!",
+      "answer": [
+        "Seria ótimo!",
+        "Era ótimo!",
+        "Seria fantástico!",
+        "Era fantástico!",
+        "Seria excelente!",
+        "Era excelente!",
+        "Seria fixe!",
+        "Era fixe!",
+        "Seria espetacular!",
+        "Era espetacular!"
+      ]
+    },
+    {
+      "id": "a2-condicional-mt-10",
+      "topicId": "a2-condicional",
+      "type": "listen-type",
+      "text": "Eu, no teu lugar, não iria.",
+      "answer": [
+        "Eu, no teu lugar, não iria."
+      ]
+    }
+  ]
+}

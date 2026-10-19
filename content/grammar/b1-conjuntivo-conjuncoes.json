@@ -1,0 +1,488 @@
+{
+  "id": "b1-conjuntivo-conjuncoes",
+  "level": "B1",
+  "module": "b1-conjuntivo",
+  "title": "Союзы с сослагательным наклонением",
+  "titlePt": "Conjunções com conjuntivo",
+  "requires": [
+    "b1-presente-conjuntivo",
+    "b1-futuro-conjuntivo"
+  ],
+  "theory": "## Союзы, которые всегда требуют conjuntivo\n\nЕсть группа союзов, после которых глагол **всегда** стоит в conjuntivo — независимо от смысла. Их проще выучить списком.\n\n| союз | значение | пример |\n|---|---|---|\n| **para que**, a fim de que | чтобы | **Explico outra vez para que percebas.** — Объясню ещё раз, чтобы ты понял. |\n| **embora**, ainda que | хотя | **Embora esteja a chover, vamos sair.** — Хотя идёт дождь, мы пойдём. |\n| **mesmo que** | даже если | **Mesmo que me peças, não vou.** — Даже если попросишь, не пойду. |\n| **antes que** | прежде чем, пока не | **Vamos embora antes que chova.** — Пойдём, пока не начался дождь. |\n| **até que** | пока не, до тех пор пока | **Espero até que voltes.** — Подожду, пока ты не вернёшься. |\n| **sem que** | так, чтобы не; без того чтобы | **Saí sem que ninguém me visse.** — Я вышел так, что никто меня не видел. |\n| **caso** | в случае если | **Caso precises, liga-me.** — Если понадобится, звони. |\n| **a não ser que** | если только не | **Vamos a pé, a não ser que estejas cansado.** — Пойдём пешком, если только ты не устал. |\n| **desde que** (условие) | при условии, что | **Podes ir, desde que voltes cedo.** — Можешь идти, если вернёшься рано. |\n\nЕсли главное предложение в прошедшем, conjuntivo переходит в **imperfeito**: **Expliquei para que percebesses.** (подробно — в теме про imperfeito do conjuntivo).\n\n## Caso и se\n\nОба значат «если», но управляют разными формами:\n\n- **caso** + presente do conjuntivo: **Caso chova, fico em casa.**\n- **se** + futuro do conjuntivo: **Se chover, fico em casa.**\n\n*Caso chover* ✗ и *se chova* ✗ — ошибки.\n\n## Одно подлежащее → предлог + инфинитив\n\nЕсли подлежащее в обеих частях одно и то же, вместо союза с **que** берём предлог с инфинитивом:\n\n| разные подлежащие | одно подлежащее |\n|---|---|\n| **para que** tu percebas | **para** perceber (я — чтобы я понял) |\n| **antes que** eles saiam | **antes de** sair |\n| **sem que** ninguém saiba | **sem** dizer nada |\n| **embora** seja caro | **apesar de** ser caro |\n\nС разными подлежащими часто вместо conjuntivo используют личный инфинитив: **para perceberes**, **antes de eles saírem**.\n\n## Союзы с индикативом\n\nНе всякий союз требует conjuntivo. Причина и реальный факт → **индикатив**:\n\n| союз | пример |\n|---|---|\n| **porque** | **Não vou porque estou doente.** |\n| **já que**, **visto que**, **como** (в начале) | **Já que estás aqui, ajuda-me.** |\n| **quando**, **sempre que** (привычка) | **Quando chove, fico em casa.** |\n| **enquanto** (настоящее/прошлое) | **Enquanto cozinho, ouço rádio.** |\n| **logo que**, **assim que** (прошлое) | **Logo que cheguei, liguei-te.** |\n\nСравните: **Embora esteja cansado** (хотя устал — conjuntivo) и **Porque estou cansado** (потому что устал — индикатив).",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Caso precises**, liga-me. | **Caso você precise**, me liga. | tu и ênclise в pt-PT |\n| **Embora esteja a chover**... | **Embora esteja chovendo**... | estar a + infinitivo |\n| **antes de eles saírem** | **antes de eles saírem** / **antes que eles saiam** | личный инфинитив в pt-PT особенно частотен |\n| **Vou-me embora antes que chova.** | **Vou embora antes que chova.** | в pt-PT **ir-se embora** с клитикой |\n\nСами союзы и правило conjuntivo совпадают. В бразильской разговорной речи встречается *embora* + индикатив (*embora ele é rico*), в pt-PT это ошибка.",
+  "commonErrors": "- **Индикатив после embora**: *Embora está frio, vou à praia* ✗ → **Embora esteja frio, vou à praia** ✓.\n- **«Чтобы» с одним подлежащим**: *Estudo para que eu passe* ✗ → **Estudo para passar** ✓.\n- **Caso + futuro**: *Caso chover, não vamos* ✗ → **Caso chova** ✓ или **Se chover** ✓.\n- **Se + presente do conjuntivo**: *Se chova* ✗ → **Se chover** ✓ (будущее) / **Se chove** (привычка).\n- **Conjuntivo после porque**: *Não vou porque esteja doente* ✗ → **porque estou doente** ✓.\n- **Русское «пока не» с отрицанием**: *Espero até que não chegues* ✗ → **Espero até que chegues** ✓ — в португальском отрицание не нужно.\n- **Perfeito после antes que** по русской модели «прежде чем ушёл»: *antes que saiu* ✗ → **antes que saísse** / **antes de sair** ✓.",
+  "examples": [
+    {
+      "pt": "Explico outra vez para que percebas.",
+      "ru": "Объясню ещё раз, чтобы ты понял.",
+      "audio": true
+    },
+    {
+      "pt": "Embora esteja a chover, vamos dar uma volta.",
+      "ru": "Хотя идёт дождь, давай пройдёмся.",
+      "audio": true
+    },
+    {
+      "pt": "Leva o casaco, caso faça frio à noite.",
+      "ru": "Возьми куртку на случай, если вечером будет холодно.",
+      "audio": true
+    },
+    {
+      "pt": "Vamos sair antes que comece o trânsito.",
+      "ru": "Давай выедем, пока не начались пробки.",
+      "audio": true
+    },
+    {
+      "pt": "Vamos a pé, a não ser que estejas cansada.",
+      "ru": "Пойдём пешком, если только ты не устала.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-01",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Vou explicar outra vez para que tu ___ (perceber).",
+      "answer": [
+        "percebas"
+      ],
+      "ru": "Объясню ещё раз, чтобы ты понял."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-02",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Embora ___ (estar) a chover, vamos à praia.",
+      "answer": [
+        "esteja"
+      ],
+      "ru": "Хотя идёт дождь, мы идём на пляж.",
+      "explanation": "Embora всегда требует conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-03",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Leva o casaco, caso ___ (fazer) frio à noite.",
+      "answer": [
+        "faça"
+      ],
+      "ru": "Возьми куртку на случай, если вечером будет холодно.",
+      "explanation": "Caso + presente do conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-04",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Não saias sem que a mãe ___ (saber).",
+      "answer": [
+        "saiba"
+      ],
+      "ru": "Не уходи так, чтобы мама не знала."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-05",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Fala com ele antes que ___ (ser) tarde demais.",
+      "answer": [
+        "seja"
+      ],
+      "ru": "Поговори с ним, пока не стало слишком поздно."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-06",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Vou esperar aqui até que vocês ___ (voltar).",
+      "answer": [
+        "voltem"
+      ],
+      "ru": "Я подожду здесь, пока вы не вернётесь.",
+      "explanation": "Действие ещё не произошло → conjuntivo. Отрицание «не» в португальском не нужно."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-07",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Mesmo que nós ___ (sair) agora, não chegamos a tempo.",
+      "answer": [
+        "saiamos"
+      ],
+      "ru": "Даже если мы выйдем сейчас, мы не успеем."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-08",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Vou contigo, a não ser que ___ (preferir) ir sozinho.",
+      "answer": [
+        "prefiras"
+      ],
+      "hint": "tu",
+      "ru": "Я пойду с тобой, если только ты не предпочитаешь пойти один."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-09",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Não vou à festa porque ___ muito cansado.",
+      "options": [
+        "esteja",
+        "estou",
+        "estiver",
+        "estar"
+      ],
+      "correct": 1,
+      "explanation": "Porque вводит реальную причину → индикатив."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-10",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Embora ele ___ rico, vive de forma simples.",
+      "options": [
+        "é",
+        "for",
+        "seja",
+        "ser"
+      ],
+      "correct": 2,
+      "explanation": "Embora + conjuntivo. *Embora é* — разговорная ошибка."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-11",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Já que ___ aqui, ajuda-me com as caixas.",
+      "options": [
+        "estejas",
+        "estiveres",
+        "estares",
+        "estás"
+      ],
+      "correct": 3,
+      "explanation": "Já que (раз уж) вводит известный факт → индикатив."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-12",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Telefona-me ___ precisares de alguma coisa.",
+      "options": [
+        "caso",
+        "embora",
+        "para que",
+        "se"
+      ],
+      "correct": 3,
+      "explanation": "Форма precisares — futuro do conjuntivo, она идёт после se. После caso было бы precises."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-13",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Vou sair cedo para ___ o comboio das oito.",
+      "options": [
+        "apanhar",
+        "que apanhe",
+        "apanho",
+        "que apanho"
+      ],
+      "correct": 0,
+      "explanation": "Подлежащее одно (я выйду — я успею) → para + инфинитив."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-14",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "transform",
+      "prompt": "Está frio. Ela vai à praia.",
+      "instruction": "Объедините в одно предложение, начав с «Embora...».",
+      "answer": [
+        "Embora esteja frio, ela vai à praia.",
+        "Embora esteja frio, vai à praia."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-15",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "transform",
+      "prompt": "Ela sai de casa. Os filhos não acordam.",
+      "instruction": "Объедините через «sem que»: она уходит так, что дети не просыпаются.",
+      "answer": [
+        "Ela sai de casa sem que os filhos acordem.",
+        "Sai de casa sem que os filhos acordem."
+      ],
+      "explanation": "Sem que уже содержит отрицание, поэтому não не нужно."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-16",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "transform",
+      "prompt": "Se chover, ficamos em casa.",
+      "instruction": "Замените se на caso.",
+      "answer": [
+        "Caso chova, ficamos em casa."
+      ],
+      "explanation": "Se + futuro do conjuntivo → caso + presente do conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-17",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "order-words",
+      "words": [
+        "janela",
+        "não",
+        "a",
+        "que",
+        "gato",
+        "o",
+        "para",
+        "fuja",
+        "Fecha"
+      ],
+      "answer": "Fecha a janela para que o gato não fuja",
+      "ru": "Закрой окно, чтобы кот не убежал."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-18",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "order-words",
+      "words": [
+        "vale",
+        "Embora",
+        "seja",
+        "a",
+        "caro,",
+        "pena"
+      ],
+      "answer": "Embora seja caro, vale a pena",
+      "ru": "Хотя это дорого, оно того стоит."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-19",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "translate-ru-pt",
+      "ru": "Хотя идёт дождь, мы пойдём гулять.",
+      "answer": [
+        "Embora esteja a chover, vamos passear.",
+        "Embora esteja a chover, vamos dar um passeio.",
+        "Embora esteja a chover, vamos dar uma volta.",
+        "Embora chova, vamos passear.",
+        "Embora chova, vamos dar um passeio.",
+        "Embora chova, vamos dar uma volta.",
+        "Apesar de estar a chover, vamos passear.",
+        "Apesar de estar a chover, vamos dar uma volta.",
+        "Apesar de estar a chover, vamos dar um passeio."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-20",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "translate-ru-pt",
+      "ru": "Я объясню тебе, чтобы ты понял.",
+      "answer": [
+        "Vou explicar-te para que percebas.",
+        "Vou explicar-te para que entendas.",
+        "Vou explicar-te para que compreendas.",
+        "Vou-te explicar para que percebas.",
+        "Vou-te explicar para que entendas.",
+        "Vou-te explicar para que compreendas.",
+        "Explico-te para que percebas.",
+        "Explico-te para que entendas.",
+        "Explico-te para que compreendas.",
+        "Vou explicar-te para perceberes.",
+        "Vou explicar-te para entenderes.",
+        "Vou explicar-te para compreenderes.",
+        "Vou-te explicar para perceberes.",
+        "Vou-te explicar para entenderes.",
+        "Vou-te explicar para compreenderes.",
+        "Explico-te para perceberes.",
+        "Explico-te para entenderes.",
+        "Explico-te para compreenderes.",
+        "Eu vou explicar-te para que percebas.",
+        "Eu vou explicar-te para que entendas.",
+        "Eu vou explicar-te para que compreendas.",
+        "Eu vou-te explicar para que percebas.",
+        "Eu vou-te explicar para que entendas.",
+        "Eu vou-te explicar para que compreendas.",
+        "Eu explico-te para que percebas.",
+        "Eu explico-te para que entendas.",
+        "Eu explico-te para que compreendas.",
+        "Eu vou explicar-te para perceberes.",
+        "Eu vou explicar-te para entenderes.",
+        "Eu vou explicar-te para compreenderes.",
+        "Eu vou-te explicar para perceberes.",
+        "Eu vou-te explicar para entenderes.",
+        "Eu vou-te explicar para compreenderes.",
+        "Eu explico-te para perceberes.",
+        "Eu explico-te para entenderes.",
+        "Eu explico-te para compreenderes."
+      ],
+      "explanation": "Подходит и личный инфинитив: para perceberes."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-21",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "listen-type",
+      "text": "Vou esperar até que chegues.",
+      "answer": [
+        "Vou esperar até que chegues."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-ex-22",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "match",
+      "prompt": "Соедините союз с переводом.",
+      "pairs": [
+        {
+          "left": "para que",
+          "right": "чтобы"
+        },
+        {
+          "left": "embora",
+          "right": "хотя"
+        },
+        {
+          "left": "caso",
+          "right": "в случае если"
+        },
+        {
+          "left": "antes que",
+          "right": "прежде чем"
+        },
+        {
+          "left": "a não ser que",
+          "right": "если только не"
+        },
+        {
+          "left": "mesmo que",
+          "right": "даже если"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-01",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Embora não ___ (ter) muito tempo, vou ajudar-te.",
+      "answer": [
+        "tenha"
+      ],
+      "ru": "Хотя у меня мало времени, я тебе помогу."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-02",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Fecha a porta para que o cão não ___ (sair).",
+      "answer": [
+        "saia"
+      ],
+      "ru": "Закрой дверь, чтобы собака не вышла."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-03",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Caso o senhor ___ (querer), posso enviar o recibo por e-mail.",
+      "answer": [
+        "queira"
+      ],
+      "ru": "Если хотите, я могу отправить квитанцию по e-mail."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-04",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "fill-gap",
+      "prompt": "Vamos sair antes que ___ (começar) a chover.",
+      "answer": [
+        "comece"
+      ],
+      "hint": "ç → c перед e",
+      "ru": "Давай выйдем, пока не начался дождь."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-05",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Mesmo que me ___, não vou.",
+      "options": [
+        "pedes",
+        "peças",
+        "pedires",
+        "pedir"
+      ],
+      "correct": 1,
+      "explanation": "Mesmo que + presente do conjuntivo; основа от peço."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-06",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Fico em casa porque ___ doente.",
+      "options": [
+        "esteja",
+        "estiver",
+        "estivesse",
+        "estou"
+      ],
+      "correct": 3,
+      "explanation": "Porque → индикатив."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-07",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "choice",
+      "prompt": "Saímos sem ___ adeus.",
+      "options": [
+        "que dizemos",
+        "dizer",
+        "digamos",
+        "que dissemos"
+      ],
+      "correct": 1,
+      "explanation": "Одно подлежащее → sem + инфинитив."
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-08",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "transform",
+      "prompt": "Ele vem. Não começamos.",
+      "instruction": "Объедините: «Não começamos até que...».",
+      "answer": [
+        "Não começamos até que ele venha.",
+        "Não começamos até que venha."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-09",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "translate-ru-pt",
+      "ru": "Мы поедем на пляж, если только не пойдёт дождь.",
+      "answer": [
+        "Vamos à praia, a não ser que chova.",
+        "Vamos para a praia, a não ser que chova.",
+        "A não ser que chova, vamos à praia.",
+        "A não ser que chova, vamos para a praia."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-conjuncoes-mt-10",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "type": "listen-choice",
+      "text": "Embora seja tarde, ainda há autocarros.",
+      "options": [
+        "Так как уже поздно, автобусов нет.",
+        "Если будет поздно, поедем на автобусе.",
+        "Хотя уже поздно, автобусы ещё ходят.",
+        "Хотя автобусы ходят, уже поздно."
+      ],
+      "correct": 2
+    }
+  ]
+}

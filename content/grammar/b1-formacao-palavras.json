@@ -1,0 +1,436 @@
+{
+  "id": "b1-formacao-palavras",
+  "level": "B1",
+  "module": "b1-lexico-estilo",
+  "title": "Словообразование: суффиксы и приставки",
+  "titlePt": "Formação de palavras",
+  "requires": [
+    "a1-artigos-genero-numero",
+    "a2-adverbios"
+  ],
+  "theory": "## Зачем это нужно\n\nЗная несколько суффиксов и приставок, из одного корня вы получаете целую семью слов: **organizar → a organização → o organizador → organizado → desorganizado**. Суффикс к тому же подсказывает **род** существительного.\n\n## Существительные от глаголов\n\n| суффикс | род | примеры |\n|---|---|---|\n| **-ção / -são** | ж. | informar → **a informação**, organizar → **a organização**, decidir → **a decisão** |\n| **-mento** | м. | pagar → **o pagamento**, conhecer → **o conhecimento**, tratar → **o tratamento** |\n| **-dor / -dora** | деятель или прибор | trabalhar → **o trabalhador**, utilizar → **o utilizador**, aspirar → **o aspirador** |\n| **-agem** | ж. | lavar → **a lavagem**, aprender → **a aprendizagem** (бр. *aprendizado*) |\n\nПо AO 1990 в pt-PT непроизносимые согласные исчезли: **ação, direção, receção, coleção**.\n\n## Существительные от прилагательных\n\n| суффикс | род | примеры |\n|---|---|---|\n| **-dade** | ж. | feliz → **a felicidade**, possível → **a possibilidade**, responsável → **a responsabilidade** |\n| **-eza** | ж. | triste → **a tristeza**, belo → **a beleza**, certo → **a certeza**, limpo → **a limpeza** |\n| **-ura** | ж. | alto → **a altura**, doce → **a doçura** |\n\n## Люди, профессии, предметы\n\n| суффикс | значение | примеры |\n|---|---|---|\n| **-ista** | профессия, приверженец; форма одна для м. и ж. | **o/a dentista**, **jornalista**, **taxista**, **turista** |\n| **-eiro / -eira** | ремесло, дерево, ёмкость | pão → **padeiro**, sapato → **sapateiro**, laranja → **laranjeira**, açúcar → **açucareiro** |\n| **-ês / -esa** | национальность, происхождение | **português / portuguesa**, **inglês / inglesa**, **francês / francesa** |\n\n## Прилагательные\n\n| суффикс | значение | примеры |\n|---|---|---|\n| **-ável / -ível** | «который можно...» | aceitar → **aceitável**, lavar → **lavável**, ler → **legível**, crer → **credível** |\n| **-oso / -osa** | «обладающий качеством» | perigo → **perigoso**, sabor → **saboroso**, cuidado → **cuidadoso**, preguiça → **preguiçoso** |\n\nВ **-oso** во множественном числе и в женском роде гласная открытая: **perigoso** [о], но **perigosa, perigosos** [ɔ]. От женской формы прилагательного образуется наречие на **-mente**: **cuidadosa → cuidadosamente**.\n\n## Приставки\n\n| приставка | значение | примеры |\n|---|---|---|\n| **des-** | обратное действие, отсутствие | **desfazer, desligar, desconhecido, desemprego** |\n| **in- / im- / i-** | «не-» у прилагательных | **incapaz, impossível, ilegal, irresponsável** |\n| **re-** | снова | **refazer, reabrir, reler** |\n| **sobre-** | над, сверх | **sobremesa, sobrelotado, sobreviver** |\n| **sub-** | под, ниже | **subterrâneo, subestimar, subdiretor** |\n\nПравило для **in-**: перед **p/b** → **im-** (**impossível**), перед **l/r** → **i-** (**ilegal**, **irregular** — с удвоением r), в остальных случаях **in-** (**incapaz, inútil**).\n\n## Суффикс подсказывает род\n\n- Женский: **-ção, -são, -dade, -eza, -agem, -ura** — **a estação, a cidade, a beleza, a garagem**. Исключения единичны: **o coração**.\n- Мужской: **-mento, -dor, -eiro** — **o momento, o computador, o cozinheiro**.\n- Общий: **-ista** — **o dentista / a dentista**; род показывает только артикль.\n\n## Семьи слов\n\n- **conhecer → conhecimento → conhecido → desconhecido → reconhecer**\n- **responder → resposta → responsável → responsabilidade → irresponsável**\n- **limpar → limpeza → limpo → limpador**\n\nТак легко угадывать незнакомые слова: **desarrumado** = des + arrumado = «неубранный».",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **receção** | recepção | в pt-PT непроизносимое p исчезло |\n| **utilizador** | usuário | разные суффиксы от разных глаголов |\n| **contacto** | contato | в pt-PT c произносится и сохраняется |\n| **eletrónico, económico** | eletrônico, econômico | ударение/акцент, не суффикс |\n| **treinador** (футбол) | técnico | -dor продуктивнее в pt-PT |\n\nСуффиксы и приставки в двух нормах одни и те же; различаются орфография (AO 1990 в варианте Португалии) и выбор слова.",
+  "commonErrors": "- **Неверный род**: *o informação*, *a pagamento*, *o felicidade* ✗ → **a informação**, **o pagamento**, **a felicidade** ✓ (-ção, -dade, -eza — ж., -mento — м.).\n- **-ista как -o/-a**: *a dentisto*, *o jornalisto* ✗ → **a dentista**, **o jornalista** ✓.\n- **Не та приставка**: *inpossível*, *inlegal*, *inresponsável* ✗ → **impossível**, **ilegal**, **irresponsável** ✓.\n- **Механическое присоединение**: *felizdade*, *possívelidade* ✗ → **felicidade**, **possibilidade** ✓ (основа меняется).\n- **Бразильская или дореформенная орфография**: *recepção* (бр.), *direcção* (pt-PT до AO 1990) ✗ → **receção**, **direção** ✓.\n- **Бразильское слово**: *usuário* ✗ → **utilizador** ✓.\n- **des- с прилагательными «по-русски»**: *despossível* ✗ → **impossível** ✓; des- чаще с глаголами и причастиями.",
+  "examples": [
+    {
+      "pt": "O pagamento pode ser feito na receção.",
+      "ru": "Оплатить можно на ресепшене.",
+      "audio": true
+    },
+    {
+      "pt": "Não tenho a certeza de que a loja esteja aberta.",
+      "ru": "Я не уверен, что магазин открыт.",
+      "audio": true
+    },
+    {
+      "pt": "A minha irmã é jornalista e o marido é taxista.",
+      "ru": "Моя сестра — журналистка, а её муж — таксист.",
+      "audio": true
+    },
+    {
+      "pt": "Esta estrada é perigosa à noite.",
+      "ru": "Эта дорога опасна ночью.",
+      "audio": true
+    },
+    {
+      "pt": "Antes de sair, desliga o computador.",
+      "ru": "Перед уходом выключи компьютер.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-formacao-palavras-ex-01",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "O ___ (pagar) pode ser feito por multibanco.",
+      "answer": [
+        "pagamento"
+      ],
+      "ru": "Оплатить можно через Multibanco."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-02",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "Preciso de mais ___ (informar) sobre o curso.",
+      "answer": [
+        "informação",
+        "informações"
+      ],
+      "ru": "Мне нужно больше информации о курсе."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-03",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "Não tenho a ___ (certo) de que ele venha.",
+      "answer": [
+        "certeza"
+      ],
+      "ru": "Я не уверен, что он придёт.",
+      "explanation": "certo → certeza (-eza, ж. р.)."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-04",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "A ___ (feliz) não se compra.",
+      "answer": [
+        "felicidade"
+      ],
+      "ru": "Счастье не купишь.",
+      "explanation": "feliz → felic- + -idade."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-05",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "O meu irmão é ___ (jornal) no Público.",
+      "answer": [
+        "jornalista"
+      ],
+      "ru": "Мой брат — журналист в газете «Público»."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-06",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "Esta letra é ___ (não + legível): não percebo nada.",
+      "answer": [
+        "ilegível"
+      ],
+      "ru": "Этот почерк неразборчивый: ничего не понимаю.",
+      "explanation": "Перед l приставка in- → i-."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-07",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "Não te esqueças de ___ (o contrário de ligar) o computador.",
+      "answer": [
+        "desligar"
+      ],
+      "ru": "Не забудь выключить компьютер."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-08",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "O museu vai ___ (abrir de novo) em março.",
+      "answer": [
+        "reabrir"
+      ],
+      "ru": "Музей вновь откроется в марте."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-09",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "___ conhecimento de línguas é importante.",
+      "options": [
+        "A",
+        "O",
+        "As"
+      ],
+      "correct": 1,
+      "explanation": "-mento → мужской род."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-10",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "O contrário de «possível»:",
+      "options": [
+        "despossível",
+        "inpossível",
+        "impossível",
+        "dispossível"
+      ],
+      "correct": 2,
+      "explanation": "Перед p → im-."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-11",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "Quem faz pão é o ___.",
+      "options": [
+        "padeiro",
+        "paneiro",
+        "pãozeiro",
+        "panista"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-formacao-palavras-ex-12",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "No site, cada ___ tem uma palavra-passe.",
+      "options": [
+        "usuário",
+        "usador",
+        "utilizador",
+        "usante"
+      ],
+      "correct": 2,
+      "explanation": "pt-PT: utilizador (usuário — бразильское)."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-13",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "Uma estrada com muitos perigos é ___.",
+      "options": [
+        "perigável",
+        "periguenta",
+        "perigal",
+        "perigosa"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-formacao-palavras-ex-14",
+      "topicId": "b1-formacao-palavras",
+      "type": "transform",
+      "prompt": "Este casaco pode ser lavado à máquina.",
+      "instruction": "Замените «pode ser lavado» прилагательным на -ável.",
+      "answer": [
+        "Este casaco é lavável à máquina."
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-ex-15",
+      "topicId": "b1-formacao-palavras",
+      "type": "transform",
+      "prompt": "Ele não é responsável.",
+      "instruction": "Скажите одним прилагательным с приставкой.",
+      "answer": [
+        "Ele é irresponsável.",
+        "É irresponsável."
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-ex-16",
+      "topicId": "b1-formacao-palavras",
+      "type": "transform",
+      "prompt": "É possível que chova.",
+      "instruction": "Используйте существительное от possível: «Há a ... de ...».",
+      "answer": [
+        "Há a possibilidade de chover.",
+        "Há possibilidade de chover.",
+        "Há a possibilidade de que chova."
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-ex-17",
+      "topicId": "b1-formacao-palavras",
+      "type": "order-words",
+      "words": [
+        "demorou",
+        "horas",
+        "limpeza",
+        "duas",
+        "da",
+        "A",
+        "casa"
+      ],
+      "answer": "A limpeza da casa demorou duas horas",
+      "ru": "Уборка дома заняла два часа."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-18",
+      "topicId": "b1-formacao-palavras",
+      "type": "order-words",
+      "words": [
+        "muito",
+        "sopa",
+        "está",
+        "saborosa",
+        "Esta"
+      ],
+      "answer": "Esta sopa está muito saborosa",
+      "ru": "Этот суп очень вкусный."
+    },
+    {
+      "id": "b1-formacao-palavras-ex-19",
+      "topicId": "b1-formacao-palavras",
+      "type": "translate-ru-pt",
+      "ru": "Это невозможно!",
+      "answer": [
+        "É impossível!",
+        "Isso é impossível!",
+        "Isto é impossível!"
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-ex-20",
+      "topicId": "b1-formacao-palavras",
+      "type": "translate-ru-pt",
+      "ru": "Оплата картой невозможна.",
+      "answer": [
+        "O pagamento com cartão não é possível.",
+        "O pagamento com cartão é impossível.",
+        "O pagamento por cartão não é possível.",
+        "O pagamento por cartão é impossível.",
+        "Não é possível pagar com cartão.",
+        "Não é possível pagar por cartão."
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-ex-21",
+      "topicId": "b1-formacao-palavras",
+      "type": "listen-type",
+      "text": "A organização do evento foi excelente.",
+      "answer": [
+        "A organização do evento foi excelente."
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-ex-22",
+      "topicId": "b1-formacao-palavras",
+      "type": "match",
+      "prompt": "Соедините слово с производным.",
+      "pairs": [
+        {
+          "left": "triste",
+          "right": "tristeza"
+        },
+        {
+          "left": "pagar",
+          "right": "pagamento"
+        },
+        {
+          "left": "decidir",
+          "right": "decisão"
+        },
+        {
+          "left": "dente",
+          "right": "dentista"
+        },
+        {
+          "left": "aceitar",
+          "right": "aceitável"
+        },
+        {
+          "left": "perigo",
+          "right": "perigoso"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-formacao-palavras-mt-01",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "A ___ (belo) desta praia é incrível.",
+      "answer": [
+        "beleza"
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-mt-02",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "O Rui trabalha muito, é muito ___ (trabalhar).",
+      "answer": [
+        "trabalhador"
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-mt-03",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "O ___ (tratar) dura duas semanas.",
+      "answer": [
+        "tratamento"
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-mt-04",
+      "topicId": "b1-formacao-palavras",
+      "type": "fill-gap",
+      "prompt": "Esta informação está ___ (não + correta).",
+      "answer": [
+        "incorreta"
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-mt-05",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "Desejo-te muita ___.",
+      "options": [
+        "felicidadeza",
+        "felicitude",
+        "felicidade",
+        "feliceza"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-formacao-palavras-mt-06",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "Quem conduz um táxi é ___.",
+      "options": [
+        "o taxeiro",
+        "o taxista",
+        "o taxador",
+        "o taxente"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-formacao-palavras-mt-07",
+      "topicId": "b1-formacao-palavras",
+      "type": "choice",
+      "prompt": "Выберите правильное написание (pt-PT):",
+      "options": [
+        "receção",
+        "recepção",
+        "recessão"
+      ],
+      "correct": 0,
+      "explanation": "recessão — это «рецессия», другое слово."
+    },
+    {
+      "id": "b1-formacao-palavras-mt-08",
+      "topicId": "b1-formacao-palavras",
+      "type": "transform",
+      "prompt": "Ninguém conhece este autor.",
+      "instruction": "Скажите «Этот автор неизвестен» через прилагательное с des-.",
+      "answer": [
+        "Este autor é desconhecido.",
+        "É um autor desconhecido.",
+        "Este é um autor desconhecido."
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-mt-09",
+      "topicId": "b1-formacao-palavras",
+      "type": "translate-ru-pt",
+      "ru": "Эта улица опасная.",
+      "answer": [
+        "Esta rua é perigosa.",
+        "É uma rua perigosa.",
+        "Esta é uma rua perigosa."
+      ]
+    },
+    {
+      "id": "b1-formacao-palavras-mt-10",
+      "topicId": "b1-formacao-palavras",
+      "type": "listen-choice",
+      "text": "O pagamento é feito na receção.",
+      "options": [
+        "Платёж поступил вчера.",
+        "Получение оплачивается отдельно.",
+        "Оплатите при доставке.",
+        "Оплата производится на ресепшене."
+      ],
+      "correct": 3
+    }
+  ]
+}

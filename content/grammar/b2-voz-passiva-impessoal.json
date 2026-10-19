@@ -1,0 +1,446 @@
+{
+  "id": "b2-voz-passiva-impessoal",
+  "level": "B2",
+  "module": "b2-discurso-estilo",
+  "title": "Пассив с se и безличные конструкции",
+  "titlePt": "Voz passiva pronominal e «se» impessoal",
+  "requires": [
+    "b1-voz-passiva",
+    "a2-pronomes-cliticos-colocacao"
+  ],
+  "theory": "## Два «se»: пассивное и безличное\n\nС частицей **se** португальский говорит о действии, не называя, кто его совершает. Но за одной формой стоят две разные конструкции.\n\n| | **se** пассивное (apassivante) | **se** безличное (impessoal) |\n|---|---|---|\n| глагол | переходный, дополнение без предлога | непереходный, с предлогом или связка |\n| подлежащее | есть (то, что продаётся, сдаётся…) | нет |\n| число глагола | **согласуется**: ед. / мн. ч. | **всегда 3-е л. ед. ч.** |\n| примеры | **Vende-se casa. Vendem-se casas.** | **Vive-se bem aqui. Precisa-se de empregados.** |\n\n**Arrendam-se quartos** — Сдаются комнаты. Здесь **quartos** — грамматическое подлежащее (= *quartos são arrendados*), поэтому глагол во мн. ч. Простой тест: если фразу можно переделать в пассив с **ser**, согласуйте глагол.\n\n**Precisa-se de cozinheiros.** **Trata-se de problemas antigos.** **Confia-se nos médicos.** — после глагола идёт предлог, подлежащего нет, поэтому глагол остаётся в ед. ч. даже при существительном во мн. ч.\n\nВ объявлениях часто пишут *Vende-se casas*, но норма (и экзамены CAPLE) требует **Vendem-se casas**.\n\n## É-se, está-se: безличное со связкой\n\n**Quando se é jovem, tudo parece possível.** — Когда ты молод, всё кажется возможным.\n**Nunca se está satisfeito.** — Человек никогда не бывает доволен.\n**Fica-se cansado só de olhar.** — Устаёшь, просто глядя на это.\n\nПрилагательное при этом — в м. р. ед. ч.\n\n## Где стоит se\n\nПо умолчанию — после глагола: **Diz-se que...**, **Come-se bem no Porto.** Перед глаголом — после «магнитов» (**não, já, nunca, que, como, onde, quando**…): **Aqui não se fuma.** **Já se sabe.** **Como se diz isto em português?** **Acho que se paga à entrada.**\n\nС модальными глаголами возможны оба варианта: **Pode-se pagar / Pode pagar-se com cartão.** В отрицании — только **Não se pode estacionar aqui.**\n\nБезличное **se** не сочетается с возвратным глаголом: *Em Portugal deita-se-se tarde* ✗. Используйте **as pessoas** или **nós**: **Em Portugal, as pessoas deitam-se tarde.**\n\n## Другие способы промолчать об агенте\n\n| способ | пример | регистр |\n|---|---|---|\n| 3-е л. мн. ч. | **Dizem que vai chover. Roubaram-me a carteira.** | разговорный, нейтральный |\n| **uma pessoa** | **Uma pessoa trabalha, trabalha e nunca chega ao fim do mês.** | разговорный (очень pt-PT) |\n| **nós** | **Em Portugal jantamos tarde.** | нейтральный |\n| ser + particípio | **O edifício foi renovado em 2020.** | нейтральный, письменный |\n| **se** | **Renovou-se o edifício. Estima-se que...** | письменный |\n\nПассив с **se** не допускает агента: *Venderam-se as casas pela agência* ✗ → **As casas foram vendidas pela agência** ✓.\n\n## Формальный регистр\n\nВ отчётах, новостях и официальных объявлениях безличные формулы — норма:\n\n- **Diz-se que / Sabe-se que / Considera-se que / Verifica-se que / Constata-se que** + индикатив: **Verifica-se que os preços subiram.** **Estima-se que** в прогнозах — обычно с будущим: **Estima-se que a obra custará cinco milhões.**\n- Объявления: **Informa-se que a loja estará encerrada no feriado.** **Pede-se silêncio.** **Agradece-se a compreensão.**\n- **Solicita-se aos clientes que não fumem.** — **aos clientes** с предлогом, поэтому глагол в ед. ч.; после **solicitar que** — conjuntivo.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Diz-se que...** | Se diz que... / Dizem que... | в pt-PT фраза не начинается с клитики |\n| **Vendem-se casas** | Vendem-se casas; разг. *Vende-se casas* | норма одна, но в BR несогласованный вариант гораздо частотнее |\n| **Pode-se pagar / Pode pagar-se** | Pode-se pagar / Se pode pagar | второй бразильский вариант в pt-PT невозможен |\n| **as pessoas / nós / uma pessoa** | a gente | *a gente* в значении «мы, люди» — типично бразильское |\n| **Precisa-se de empregados** | Precisa-se de funcionários | конструкция одна, лексика разная |\n\nВ целом конструкции совпадают; различаются позиция **se** и разговорные замены безличности.",
+  "commonErrors": "- **Нет согласования в пассиве с se**: *Aluga-se quartos* ✗ → **Alugam-se quartos** ✓ (quartos — подлежащее).\n- **Лишнее согласование при предлоге**: *Precisam-se de empregados* ✗ → **Precisa-se de empregados** ✓; *Tratam-se de erros* ✗ → **Trata-se de erros** ✓.\n- **Клитика в начале фразы**: *Se diz que vai chover* ✗ → **Diz-se que vai chover** ✓.\n- **Ênclise после отрицания**: *Aqui não fuma-se* ✗ → **Aqui não se fuma** ✓.\n- **Агент при se**: *Construiu-se a ponte pelos engenheiros* ✗ → **A ponte foi construída pelos engenheiros** ✓.\n- **Двойное se с возвратным глаголом**: *Aqui levanta-se-se cedo* ✗ → **Aqui as pessoas levantam-se cedo** ✓.\n- **Калька русского «говорят» с местоимением**: *Eles dizem que...* (когда «они» неизвестны) ✗ → **Dizem que... / Diz-se que...** ✓.",
+  "examples": [
+    {
+      "pt": "Vendem-se apartamentos T2 no centro de Braga.",
+      "ru": "Продаются квартиры с двумя спальнями в центре Браги.",
+      "audio": true
+    },
+    {
+      "pt": "Em Lisboa vive-se bem, mas as rendas são caras.",
+      "ru": "В Лиссабоне хорошо живётся, но аренда дорогая.",
+      "audio": true
+    },
+    {
+      "pt": "Precisa-se de empregados de mesa para o verão.",
+      "ru": "Требуются официанты на лето.",
+      "audio": true
+    },
+    {
+      "pt": "Diz-se que o novo aeroporto vai custar milhões.",
+      "ru": "Говорят, новый аэропорт обойдётся в миллионы.",
+      "audio": true
+    },
+    {
+      "pt": "Quando se é estrangeiro, tudo é mais difícil no início.",
+      "ru": "Когда ты иностранец, поначалу всё сложнее.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-voz-passiva-impessoal-ex-01",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "___ (vender) apartamentos no centro.",
+      "answer": [
+        "Vendem-se"
+      ],
+      "ru": "Продаются квартиры в центре.",
+      "explanation": "apartamentos — подлежащее, глагол во мн. ч."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-02",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "Nesta aldeia ___ (viver) muito bem.",
+      "answer": [
+        "vive-se"
+      ],
+      "ru": "В этой деревне очень хорошо живётся.",
+      "explanation": "Непереходный глагол → безличное se, ед. ч."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-03",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "___ (precisar) de empregados de mesa.",
+      "answer": [
+        "Precisa-se"
+      ],
+      "ru": "Требуются официанты.",
+      "explanation": "precisar de — глагол с предлогом, поэтому всегда ед. ч."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-04",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "Aqui não ___ (fumar).",
+      "answer": [
+        "se fuma"
+      ],
+      "ru": "Здесь не курят.",
+      "explanation": "После não — próclise."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-05",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "Quando ___ (ser) novo, não se pensa no futuro.",
+      "answer": [
+        "se é"
+      ],
+      "ru": "Когда ты молод, не думаешь о будущем.",
+      "explanation": "После quando — próclise: se é."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-06",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "___ (arrendar) quartos a estudantes.",
+      "answer": [
+        "Arrendam-se"
+      ],
+      "ru": "Сдаются комнаты студентам."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-07",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "Já ___ (saber) quem ganhou as eleições.",
+      "answer": [
+        "se sabe"
+      ],
+      "ru": "Уже известно, кто победил на выборах.",
+      "explanation": "já притягивает клитику."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-08",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "Em Portugal ___ (comer) muito bacalhau.",
+      "answer": [
+        "come-se"
+      ],
+      "ru": "В Португалии едят много трески.",
+      "explanation": "bacalhau — ед. ч., поэтому come-se."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-09",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "___ bicicletas.",
+      "options": [
+        "Aluga-se de",
+        "Alugam-se",
+        "Se alugam",
+        "Alugando-se"
+      ],
+      "correct": 1,
+      "explanation": "bicicletas — подлежащее → мн. ч.; клитика не может открывать фразу."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-10",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "___ de cozinheiro com experiência.",
+      "options": [
+        "Precisam-se",
+        "Se precisa",
+        "Precisa-se",
+        "Precisando-se"
+      ],
+      "correct": 2,
+      "explanation": "С предлогом de — только ед. ч."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-11",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "Выберите правильную фразу:",
+      "options": [
+        "Diz-se que o Rui vai casar.",
+        "Se diz que o Rui vai casar.",
+        "Dizem-se que o Rui vai casar.",
+        "Diz-se de que o Rui vai casar."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-12",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "Não ___ estacionar em frente à garagem.",
+      "options": [
+        "pode-se",
+        "podem-se",
+        "se podem",
+        "se pode"
+      ],
+      "correct": 3,
+      "explanation": "После não — próclise; estacionar без дополнения → ед. ч."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-13",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "Выберите фразу для официального объявления:",
+      "options": [
+        "Solicitam-se aos passageiros que não fumem.",
+        "Solicita-se aos passageiros que não fumem.",
+        "Solicita-se aos passageiros que não fumam.",
+        "Se solicita aos passageiros que não fumem."
+      ],
+      "correct": 1,
+      "explanation": "aos passageiros — с предлогом, глагол в ед. ч.; solicitar que + conjuntivo."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-14",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "transform",
+      "prompt": "As pessoas dizem que o restaurante é caro.",
+      "instruction": "Перепишите с безличным se.",
+      "answer": [
+        "Diz-se que o restaurante é caro."
+      ]
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-15",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "transform",
+      "prompt": "Os bilhetes são vendidos na bilheteira.",
+      "instruction": "Перепишите с пассивным se.",
+      "answer": [
+        "Vendem-se os bilhetes na bilheteira.",
+        "Os bilhetes vendem-se na bilheteira.",
+        "Na bilheteira vendem-se os bilhetes.",
+        "Vendem-se bilhetes na bilheteira.",
+        "Na bilheteira vendem-se bilhetes."
+      ]
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-16",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "transform",
+      "prompt": "Vende-se casas com jardim.",
+      "instruction": "Исправьте по норме.",
+      "answer": [
+        "Vendem-se casas com jardim."
+      ],
+      "explanation": "casas — подлежащее, нужен мн. ч."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-17",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "order-words",
+      "words": [
+        "diz",
+        "Como",
+        "isto",
+        "se",
+        "em",
+        "português?"
+      ],
+      "answer": "Como se diz isto em português?",
+      "ru": "Как это сказать по-португальски?",
+      "explanation": "После вопросительного слова — próclise: como se diz."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-18",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "order-words",
+      "words": [
+        "que",
+        "Sabe-se",
+        "vai",
+        "a",
+        "crise",
+        "continuar"
+      ],
+      "answer": "Sabe-se que a crise vai continuar",
+      "ru": "Известно, что кризис продолжится."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-19",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "translate-ru-pt",
+      "ru": "Здесь говорят по-английски.",
+      "answer": [
+        "Aqui fala-se inglês.",
+        "Fala-se inglês aqui.",
+        "Fala-se inglês."
+      ]
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-20",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "translate-ru-pt",
+      "ru": "Требуется официант.",
+      "answer": [
+        "Precisa-se de empregado de mesa.",
+        "Precisa-se de um empregado de mesa.",
+        "Precisa-se de empregado.",
+        "Procura-se empregado de mesa.",
+        "Procura-se um empregado de mesa."
+      ]
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-21",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "listen-type",
+      "text": "Não se pode estacionar em frente à garagem.",
+      "answer": [
+        "Não se pode estacionar em frente à garagem."
+      ]
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-ex-22",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "match",
+      "prompt": "Соедините фразу с переводом.",
+      "pairs": [
+        {
+          "left": "Vendem-se casas",
+          "right": "продаются дома"
+        },
+        {
+          "left": "Vive-se bem aqui",
+          "right": "здесь хорошо живётся"
+        },
+        {
+          "left": "Diz-se que...",
+          "right": "говорят, что..."
+        },
+        {
+          "left": "Precisa-se de ajuda",
+          "right": "нужна помощь"
+        },
+        {
+          "left": "Quando se é novo",
+          "right": "когда ты молод"
+        },
+        {
+          "left": "Pede-se silêncio",
+          "right": "просьба соблюдать тишину"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-voz-passiva-impessoal-mt-01",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "___ (alugar) carros no aeroporto.",
+      "answer": [
+        "Alugam-se"
+      ],
+      "ru": "В аэропорту сдаются машины напрокат."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-02",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "Nesta empresa ___ (trabalhar) muito.",
+      "answer": [
+        "trabalha-se"
+      ],
+      "ru": "В этой компании много работают."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-03",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "Ainda não ___ (conhecer) as causas do acidente.",
+      "answer": [
+        "se conhecem"
+      ],
+      "ru": "Причины аварии пока неизвестны.",
+      "explanation": "as causas — подлежащее (мн. ч.), после não — próclise."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-04",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "fill-gap",
+      "prompt": "___ (tratar) de problemas muito antigos.",
+      "answer": [
+        "Trata-se"
+      ],
+      "ru": "Речь идёт об очень старых проблемах.",
+      "explanation": "tratar-se de — всегда ед. ч."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-05",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "Nunca ___ satisfeito com o que se tem.",
+      "options": [
+        "se está",
+        "está-se de",
+        "estão-se",
+        "se estão"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-06",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "Выберите правильную фразу:",
+      "options": [
+        "Os prémios entregaram-se pelo presidente.",
+        "Entregou-se os prémios pelo presidente.",
+        "Os prémios foram entregues pelo presidente.",
+        "Se entregaram os prémios pelo presidente."
+      ],
+      "correct": 2,
+      "explanation": "С агентом — только пассив с ser."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-07",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "choice",
+      "prompt": "Em Portugal, ___ tarde.",
+      "options": [
+        "deita-se-se",
+        "se deita-se",
+        "deitam-se-se",
+        "as pessoas deitam-se"
+      ],
+      "correct": 3,
+      "explanation": "С возвратным глаголом безличное se невозможно."
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-08",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "transform",
+      "prompt": "Dizem que o novo aeroporto vai custar milhões.",
+      "instruction": "Перепишите с безличным se.",
+      "answer": [
+        "Diz-se que o novo aeroporto vai custar milhões."
+      ]
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-09",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "translate-ru-pt",
+      "ru": "Говорят, что в Порту хорошо едят.",
+      "answer": [
+        "Diz-se que no Porto se come bem.",
+        "Dizem que no Porto se come bem.",
+        "Diz-se que se come bem no Porto.",
+        "Dizem que se come bem no Porto."
+      ]
+    },
+    {
+      "id": "b2-voz-passiva-impessoal-mt-10",
+      "topicId": "b2-voz-passiva-impessoal",
+      "type": "listen-type",
+      "text": "Quando se é jovem, tudo parece possível.",
+      "answer": [
+        "Quando se é jovem, tudo parece possível."
+      ]
+    }
+  ]
+}

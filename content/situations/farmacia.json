@@ -1,0 +1,179 @@
+{
+  "id": "farmacia",
+  "title": "В аптеке",
+  "titlePt": "Na farmácia",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Boa tarde. Em que posso ajudar?", "ru": "Добрый день. Чем могу помочь?" },
+    { "speaker": "B", "pt": "Boa tarde. Tenho uma receita. Recebi os códigos por SMS.", "ru": "Добрый день. У меня рецепт. Коды пришли по SMS." },
+    { "speaker": "A", "pt": "Mostre-me, se faz favor. Quer o medicamento de marca ou o genérico?", "ru": "Покажите, пожалуйста. Вам оригинальное лекарство или дженерик?" },
+    { "speaker": "B", "pt": "O genérico, que é mais barato.", "ru": "Дженерик, он дешевле." },
+    { "speaker": "A", "pt": "Muito bem. São os comprimidos para a tensão, uma caixa. Mais alguma coisa?", "ru": "Хорошо. Это таблетки от давления, одна упаковка. Что-нибудь ещё?" },
+    { "speaker": "B", "pt": "Sim, queria alguma coisa para a garganta. Dói-me muito.", "ru": "Да, мне бы что-нибудь для горла. Очень болит." },
+    { "speaker": "A", "pt": "Tem febre ou tosse?", "ru": "Температура или кашель есть?" },
+    { "speaker": "B", "pt": "Febre não tenho, mas tenho um pouco de tosse seca.", "ru": "Температуры нет, но немного сухой кашель." },
+    { "speaker": "A", "pt": "Pode levar estas pastilhas para a garganta e este xarope para a tosse seca.", "ru": "Можете взять эти пастилки для горла и этот сироп от сухого кашля." },
+    { "speaker": "B", "pt": "Como é que tomo o xarope?", "ru": "Как принимать сироп?" },
+    { "speaker": "A", "pt": "Dez mililitros três vezes por dia, depois das refeições.", "ru": "По десять миллилитров три раза в день, после еды." },
+    { "speaker": "B", "pt": "Posso tomar o xarope com os comprimidos da tensão?", "ru": "Сироп можно пить вместе с таблетками от давления?" },
+    { "speaker": "A", "pt": "Pode, não há problema. Mas se a tosse não passar numa semana, vá ao médico.", "ru": "Можно, ничего страшного. Но если кашель не пройдёт за неделю, сходите к врачу." },
+    { "speaker": "B", "pt": "Está bem. Quanto é tudo? Quero fatura com contribuinte, se faz favor.", "ru": "Хорошо. Сколько всего? Мне чек с налоговым номером, пожалуйста." },
+    { "speaker": "A", "pt": "São catorze euros e vinte. Diga-me o seu número de contribuinte.", "ru": "Четырнадцать евро двадцать. Назовите ваш налоговый номер." }
+  ],
+  "phrases": [
+    { "pt": "Tenho uma receita.", "ru": "У меня рецепт." },
+    { "pt": "Queria alguma coisa para a dor de cabeça.", "ru": "Мне бы что-нибудь от головной боли." },
+    { "pt": "É preciso receita?", "ru": "Нужен рецепт?" },
+    { "pt": "Tem o genérico?", "ru": "Есть дженерик?" },
+    { "pt": "Como é que se toma?", "ru": "Как это принимать?" },
+    { "pt": "Quantas vezes por dia?", "ru": "Сколько раз в день?" },
+    { "pt": "É antes ou depois das refeições?", "ru": "До еды или после?" },
+    { "pt": "Tem efeitos secundários?", "ru": "Есть побочные эффекты?" },
+    { "pt": "Qual é a farmácia de serviço hoje?", "ru": "Какая аптека сегодня дежурная?" },
+    { "pt": "Quero fatura com contribuinte, se faz favor.", "ru": "Мне чек с налоговым номером, пожалуйста." }
+  ],
+  "vocab": [
+    { "pt": "a farmácia", "ru": "аптека", "example": "A farmácia fecha às oito." },
+    { "pt": "a farmácia de serviço", "ru": "дежурная аптека", "example": "Ao domingo só abre a farmácia de serviço." },
+    { "pt": "o farmacêutico / a farmacêutica", "ru": "фармацевт", "example": "A farmacêutica explicou-me como tomar o xarope." },
+    { "pt": "a receita", "ru": "рецепт", "example": "Este antibiótico só se vende com receita." },
+    { "pt": "sem receita", "ru": "без рецепта", "example": "O paracetamol vende-se sem receita." },
+    { "pt": "o medicamento", "ru": "лекарство", "example": "Guarde os medicamentos longe das crianças." },
+    { "pt": "o genérico", "ru": "дженерик", "example": "O genérico é mais barato e faz o mesmo efeito." },
+    { "pt": "de marca", "ru": "оригинальный, брендовый", "example": "Prefiro o medicamento de marca." },
+    { "pt": "o comprimido", "ru": "таблетка", "example": "Tome um comprimido de manhã." },
+    { "pt": "a cápsula", "ru": "капсула", "example": "As cápsulas tomam-se com água." },
+    { "pt": "o xarope", "ru": "сироп", "example": "O xarope para a tosse tem sabor a laranja." },
+    { "pt": "as gotas", "ru": "капли", "example": "Estas gotas são para os olhos." },
+    { "pt": "a pomada", "ru": "мазь", "example": "Ponha a pomada duas vezes por dia." },
+    { "pt": "as pastilhas para a garganta", "ru": "пастилки для горла", "example": "As pastilhas para a garganta são de mel e limão." },
+    { "pt": "o penso rápido", "ru": "пластырь", "example": "Preciso de pensos rápidos para o miúdo." },
+    { "pt": "a ligadura", "ru": "бинт", "example": "A farmacêutica pôs-me uma ligadura no pulso." },
+    { "pt": "o termómetro", "ru": "градусник", "example": "Comprei um termómetro digital." },
+    { "pt": "o protetor solar", "ru": "солнцезащитный крем", "example": "No verão uso sempre protetor solar." },
+    { "pt": "a caixa", "ru": "коробка, упаковка", "example": "Queria duas caixas, se faz favor." },
+    { "pt": "o folheto informativo", "ru": "инструкция (вкладыш)", "example": "Leia o folheto informativo antes de tomar." },
+    { "pt": "a dose", "ru": "доза", "example": "Não tome mais do que a dose indicada." },
+    { "pt": "em jejum", "ru": "натощак", "example": "Este comprimido toma-se em jejum." },
+    { "pt": "as refeições", "ru": "приёмы пищи", "example": "Tome depois das refeições." },
+    { "pt": "a tosse seca", "ru": "сухой кашель", "example": "Tenho tosse seca há uma semana." },
+    { "pt": "a dor de garganta", "ru": "боль в горле", "example": "Para a dor de garganta, recomendo estas pastilhas." },
+    { "pt": "a dor de cabeça", "ru": "головная боль", "example": "Tem alguma coisa para a dor de cabeça?" },
+    { "pt": "a febre", "ru": "температура, жар", "example": "Se tiver febre, tome paracetamol." },
+    { "pt": "a alergia", "ru": "аллергия", "example": "Tenho alergia aos ácaros." },
+    { "pt": "a picada", "ru": "укус (насекомого)", "example": "Tem alguma coisa para picadas de mosquito?" },
+    { "pt": "o efeito secundário", "ru": "побочный эффект", "example": "Este xarope pode dar sono como efeito secundário." },
+    { "pt": "o analgésico", "ru": "обезболивающее", "example": "O médico disse para tomar um analgésico." },
+    { "pt": "o anti-inflamatório", "ru": "противовоспалительное", "example": "O ibuprofeno é um anti-inflamatório." },
+    { "pt": "a comparticipação", "ru": "частичная оплата лекарства государством", "example": "Com a comparticipação, paga só metade do preço." },
+    { "pt": "a tensão", "ru": "давление (кровяное)", "example": "Tomo comprimidos para a tensão." }
+  ],
+  "exercises": [
+    {
+      "id": "farmacia-ex-01",
+      "topicId": "farmacia",
+      "type": "choice",
+      "prompt": "Quer um medicamento igual, mas mais barato. Pergunta:",
+      "options": ["Tem o genérico?", "Tem o original barato?", "Tem a receita?", "Tem a marca?"],
+      "correct": 0,
+      "explanation": "**O genérico** — дженерик, аналог с тем же действующим веществом. Фармацевт часто сам спрашивает: **Quer o de marca ou o genérico?**"
+    },
+    {
+      "id": "farmacia-ex-02",
+      "topicId": "farmacia",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "o penso rápido", "right": "пластырь" },
+        { "left": "o xarope", "right": "сироп" },
+        { "left": "a pomada", "right": "мазь" },
+        { "left": "as gotas", "right": "капли" },
+        { "left": "a ligadura", "right": "бинт" }
+      ]
+    },
+    {
+      "id": "farmacia-ex-03",
+      "topicId": "farmacia",
+      "type": "fill-gap",
+      "prompt": "Dez mililitros três vezes por dia, depois das ___.",
+      "answer": ["refeições"],
+      "hint": "«после еды»",
+      "ru": "По десять миллилитров три раза в день, после еды.",
+      "explanation": "**Depois das refeições** — после еды, **antes das refeições** — до еды, **em jejum** — натощак."
+    },
+    {
+      "id": "farmacia-ex-04",
+      "topicId": "farmacia",
+      "type": "listen-type",
+      "text": "Como é que tomo o xarope?",
+      "answer": ["Como é que tomo o xarope?"],
+      "explanation": "**Como é que…?** — разговорная форма вопроса. Лекарства «принимают» глаголом **tomar**."
+    },
+    {
+      "id": "farmacia-ex-05",
+      "topicId": "farmacia",
+      "type": "listen-choice",
+      "text": "Pode, não há problema. Mas se a tosse não passar numa semana, vá ao médico.",
+      "prompt": "Что советует фармацевт?",
+      "options": ["Пить сироп неделю, потом сделать перерыв", "Сразу идти к врачу", "Если кашель не пройдёт за неделю, обратиться к врачу", "Не смешивать сироп с таблетками"],
+      "correct": 2,
+      "explanation": "**Se a tosse não passar** — «если кашель не пройдёт» (futuro do conjuntivo). **Vá ao médico** — «сходите к врачу»."
+    },
+    {
+      "id": "farmacia-ex-06",
+      "topicId": "farmacia",
+      "type": "order-words",
+      "words": ["para", "Queria", "coisa", "garganta", "alguma", "a"],
+      "answer": "Queria alguma coisa para a garganta",
+      "ru": "Мне бы что-нибудь для горла.",
+      "explanation": "**Queria alguma coisa para…** — универсальная фраза в аптеке: **para a tosse, para a dor de cabeça, para as picadas**."
+    },
+    {
+      "id": "farmacia-ex-07",
+      "topicId": "farmacia",
+      "type": "translate-ru-pt",
+      "ru": "Нужен рецепт?",
+      "answer": ["É preciso receita?", "Precisa de receita?", "É necessário receita?", "Preciso de receita?", "É preciso receita médica?", "Preciso de receita médica?", "É preciso ter receita?", "É necessária receita?"],
+      "explanation": "Безлично — **É preciso receita?** или с глаголом **precisar de**: **Preciso de receita?** Не забудьте предлог **de**."
+    },
+    {
+      "id": "farmacia-ex-08",
+      "topicId": "farmacia",
+      "type": "choice",
+      "prompt": "É domingo à noite e precisa de um medicamento. Procura…",
+      "options": ["a farmácia aberta", "a farmácia de serviço", "a farmácia de urgência", "a drogaria"],
+      "correct": 1,
+      "explanation": "**A farmácia de serviço** — дежурная аптека, работает ночью и в выходные. Список висит на двери любой аптеки. **Drogaria** — магазин бытовой химии, лекарств там нет."
+    },
+    {
+      "id": "farmacia-ex-09",
+      "topicId": "farmacia",
+      "type": "fill-gap",
+      "prompt": "Febre não tenho, mas tenho um pouco de tosse ___.",
+      "answer": ["seca"],
+      "hint": "«сухой» кашель",
+      "ru": "Температуры нет, но немного сухой кашель.",
+      "explanation": "**A tosse seca** — сухой кашель, **a tosse com expetoração** — влажный. **Tosse** — женского рода, поэтому **seca**."
+    },
+    {
+      "id": "farmacia-ex-10",
+      "topicId": "farmacia",
+      "type": "transform",
+      "prompt": "Tenho dor de cabeça.",
+      "instruction": "Перефразируй через глагол doer",
+      "answer": ["Dói-me a cabeça.", "Está-me a doer a cabeça.", "A cabeça dói-me."],
+      "explanation": "**Doer** согласуется с тем, что болит: **Dói-me a cabeça**, **Doem-me os dentes**. Клитика **-me** после глагола."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы простудились и зашли в аптеку. Напишите диалог из 8–10 реплик с фармацевтом: опишите симптомы; спросите, нужен ли рецепт; уточните, как и сколько раз в день принимать лекарство; спросите, до еды или после; попросите чек с налоговым номером.",
+    "sample": "— Boa tarde. Em que posso ajudar?\n— Boa tarde. Estou constipado. Tenho febre e dói-me a cabeça.\n— Tem tosse?\n— Não, só tenho o nariz entupido.\n— Pode tomar este medicamento para a constipação.\n— É preciso receita?\n— Não, vende-se sem receita.\n— Como é que se toma? Quantas vezes por dia?\n— Um comprimido de oito em oito horas.\n— É antes ou depois das refeições?\n— Depois das refeições. Mais alguma coisa?\n— Não, obrigado. Quero fatura com contribuinte, se faz favor.",
+    "checklist": [
+      "Симптомы описаны: Tenho febre / tosse, Dói-me…, Estou constipado",
+      "Есть вопрос о рецепте: É preciso receita?",
+      "Есть вопросы о приёме: Como é que se toma? Quantas vezes por dia?",
+      "Есть уточнение: antes ou depois das refeições",
+      "Просьба о чеке: fatura com contribuinte, se faz favor"
+    ]
+  }
+}

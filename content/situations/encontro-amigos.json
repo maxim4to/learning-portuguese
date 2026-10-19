@@ -1,0 +1,175 @@
+{
+  "id": "encontro-amigos",
+  "title": "Встреча с друзьями, планы",
+  "titlePt": "Combinar com amigos",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Olá! Então, tudo bem? Estás livre no sábado?", "ru": "Привет! Ну как ты? В субботу свободен?" },
+    { "speaker": "B", "pt": "Olá, Inês! Tudo fixe. Sábado à tarde estou livre. Porquê?", "ru": "Привет, Инеш! Всё классно. В субботу днём я свободен. А что?" },
+    { "speaker": "A", "pt": "Estava a pensar irmos à praia, à Costa da Caparica. Bora?", "ru": "Я думала съездить на пляж, в Кошта-да-Капарику. Погнали?" },
+    { "speaker": "B", "pt": "Bora! Mas como é que vamos? Eu não tenho carro.", "ru": "Погнали! А как поедем? У меня нет машины." },
+    { "speaker": "A", "pt": "O Rui leva o carro dele. Passamos por tua casa às dez, pode ser?", "ru": "Руй возьмёт свою машину. Заедем за тобой в десять, нормально?" },
+    { "speaker": "B", "pt": "Às dez é um bocado cedo... Pode ser às onze?", "ru": "В десять рановато... Может, в одиннадцать?" },
+    { "speaker": "A", "pt": "Pode, mas depois há muito trânsito na ponte, tás a ver?", "ru": "Можно, но тогда на мосту будут жуткие пробки, понимаешь?" },
+    { "speaker": "B", "pt": "Tá bem, tens razão. Então às dez. Levo alguma coisa?", "ru": "Ладно, ты права. Тогда в десять. Мне что-нибудь взять?" },
+    { "speaker": "A", "pt": "Leva umas bebidas e a tua toalha. Eu faço umas sandes.", "ru": "Возьми что-нибудь попить и своё полотенце. Я сделаю бутерброды." },
+    { "speaker": "B", "pt": "Combinado. E à noite? Querem jantar fora?", "ru": "Договорились. А вечером? Хотите поужинать где-нибудь?" },
+    { "speaker": "A", "pt": "Pode ser. Há uma tasca fixe ao pé da praia, com peixe grelhado.", "ru": "Можно. Рядом с пляжем есть классная таверна с рыбой на гриле." },
+    { "speaker": "B", "pt": "Ótimo! Então combinamos assim: às dez em minha casa.", "ru": "Отлично! Тогда договорились: в десять у меня." },
+    { "speaker": "A", "pt": "Isso. Se houver alguma mudança, mando-te mensagem.", "ru": "Именно. Если что-то поменяется, я тебе напишу." },
+    { "speaker": "B", "pt": "Fixe. Até sábado, beijinhos!", "ru": "Класс. До субботы, целую!" }
+  ],
+  "phrases": [
+    { "pt": "Estás livre no sábado?", "ru": "Ты свободен в субботу?" },
+    { "pt": "Bora?", "ru": "Пойдём? / Погнали?" },
+    { "pt": "Pode ser.", "ru": "Можно. / Давай." },
+    { "pt": "Combinado!", "ru": "Договорились!" },
+    { "pt": "Então combinamos assim.", "ru": "Тогда так и договоримся." },
+    { "pt": "A que horas é que nos encontramos?", "ru": "Во сколько встречаемся?" },
+    { "pt": "Passo por tua casa às oito.", "ru": "Зайду за тобой в восемь." },
+    { "pt": "Hoje não dá, fica para a próxima.", "ru": "Сегодня не получится, давай в другой раз." },
+    { "pt": "Mando-te mensagem.", "ru": "Я тебе напишу." },
+    { "pt": "Tás a ver?", "ru": "Понимаешь? / Видишь?" }
+  ],
+  "vocab": [
+    { "pt": "combinar", "ru": "договариваться (о встрече)", "example": "Combinámos jantar às oito." },
+    { "pt": "combinado", "ru": "договорились", "example": "Às nove no Rossio? Combinado!" },
+    { "pt": "bora", "ru": "пошли, погнали (разг., от «vamos embora»)", "example": "Bora tomar um café?" },
+    { "pt": "fixe", "ru": "классный, клёвый (разг.)", "example": "O concerto foi mesmo fixe." },
+    { "pt": "tás a ver", "ru": "понимаешь, видишь ли (разг.)", "example": "Não posso ir, tenho de trabalhar, tás a ver?" },
+    { "pt": "tá bem", "ru": "ладно, окей (разг. от «está bem»)", "example": "Tá bem, eu levo o bolo." },
+    { "pt": "pode ser", "ru": "можно, давай", "example": "Às sete? Pode ser." },
+    { "pt": "não dá", "ru": "не получается, не выйдет", "example": "Amanhã não dá, tenho um jantar." },
+    { "pt": "estar livre", "ru": "быть свободным", "example": "Estás livre na sexta à noite?" },
+    { "pt": "o plano", "ru": "план", "example": "Qual é o plano para o fim de semana?" },
+    { "pt": "o fim de semana", "ru": "выходные", "example": "Este fim de semana vou ao Porto." },
+    { "pt": "encontrar-se", "ru": "встречаться", "example": "Encontramo-nos à porta do cinema." },
+    { "pt": "passar por casa de alguém", "ru": "заехать/зайти за кем-то", "example": "Passo por tua casa às nove." },
+    { "pt": "a boleia", "ru": "подвезти, поездка на чужой машине", "example": "Dás-me boleia até ao metro?" },
+    { "pt": "o trânsito", "ru": "движение; пробки", "example": "À sexta há sempre muito trânsito." },
+    { "pt": "a ponte", "ru": "мост", "example": "A ponte 25 de Abril estava cheia de carros." },
+    { "pt": "a praia", "ru": "пляж", "example": "Vamos à praia no domingo?" },
+    { "pt": "a toalha", "ru": "полотенце", "example": "Esqueci-me da toalha em casa." },
+    { "pt": "a tasca", "ru": "простая таверна, забегаловка", "example": "Naquela tasca come-se muito bem e barato." },
+    { "pt": "jantar fora", "ru": "ужинать вне дома", "example": "Hoje apetece-me jantar fora." },
+    { "pt": "o jantarinho", "ru": "ужин в компании (ласк.)", "example": "Vamos fazer um jantarinho lá em casa." },
+    { "pt": "um bocado", "ru": "немного, слегка (разг.)", "example": "Estou um bocado cansado." },
+    { "pt": "a mensagem", "ru": "сообщение", "example": "Manda-me uma mensagem quando chegares." },
+    { "pt": "mandar mensagem", "ru": "написать сообщение", "example": "Mando-te mensagem amanhã." },
+    { "pt": "ligar a alguém", "ru": "позвонить кому-то", "example": "Liga-me quando saíres de casa." },
+    { "pt": "a malta", "ru": "компания, ребята (разг.)", "example": "A malta vai toda ao arraial." },
+    { "pt": "o arraial", "ru": "народное гулянье", "example": "Em junho há arraiais em Alfama." },
+    { "pt": "atrasar-se", "ru": "опаздывать", "example": "Desculpa, vou atrasar-me dez minutos." },
+    { "pt": "desmarcar", "ru": "отменить (встречу)", "example": "Tive de desmarcar o jantar." },
+    { "pt": "fica para a próxima", "ru": "в другой раз", "example": "Hoje não posso, fica para a próxima." },
+    { "pt": "beijinhos", "ru": "целую (прощание в переписке и устно)", "example": "Até amanhã, beijinhos!" },
+    { "pt": "ao pé de", "ru": "рядом с", "example": "O café fica ao pé da estação." }
+  ],
+  "exercises": [
+    {
+      "id": "encontro-amigos-ex-01",
+      "topicId": "encontro-amigos",
+      "type": "choice",
+      "prompt": "Um amigo pergunta: «Vamos ao cinema hoje?» Respondes que sim, de forma informal:",
+      "options": ["Legal, vamos!", "Bora!", "Sim, senhor.", "Com certeza, o senhor."],
+      "correct": 1,
+      "explanation": "**Bora!** (от *vamos embora*) — живое португальское «погнали!». *Legal* в значении «классно» — бразилизм, в Португалии говорят **fixe**."
+    },
+    {
+      "id": "encontro-amigos-ex-02",
+      "topicId": "encontro-amigos",
+      "type": "match",
+      "prompt": "Соедини разговорные выражения с переводом",
+      "pairs": [
+        { "left": "fixe", "right": "классный" },
+        { "left": "combinado", "right": "договорились" },
+        { "left": "não dá", "right": "не получается" },
+        { "left": "um bocado", "right": "немного" },
+        { "left": "fica para a próxima", "right": "в другой раз" }
+      ]
+    },
+    {
+      "id": "encontro-amigos-ex-03",
+      "topicId": "encontro-amigos",
+      "type": "fill-gap",
+      "prompt": "Olá! ___ (estar) livre no sábado?",
+      "answer": ["Estás", "Tu estás"],
+      "hint": "обращение на «ты»",
+      "ru": "Привет! Ты свободен в субботу?",
+      "explanation": "С друзьями — **tu**: **estás, tens, queres**. *Você está…* в разговоре с другом звучит холодно."
+    },
+    {
+      "id": "encontro-amigos-ex-04",
+      "topicId": "encontro-amigos",
+      "type": "listen-type",
+      "text": "Isso. Se houver alguma mudança, mando-te mensagem.",
+      "answer": ["Isso. Se houver alguma mudança, mando-te mensagem."],
+      "explanation": "**Se houver** — futuro do conjuntivo от **haver**; **mando-te** — местоимение после глагола (ênclise). **Isso** — «именно, точно»."
+    },
+    {
+      "id": "encontro-amigos-ex-05",
+      "topicId": "encontro-amigos",
+      "type": "listen-choice",
+      "text": "Pode, mas depois há muito trânsito na ponte, tás a ver?",
+      "prompt": "Почему Инеш не хочет выезжать в одиннадцать?",
+      "options": ["Мост закрыт на ремонт.", "Руй работает до одиннадцати.", "Пляж закрывается рано.", "Позже на мосту будут пробки."],
+      "correct": 3,
+      "explanation": "**Trânsito** — движение, пробки. **Tás a ver?** — разговорное «понимаешь?» (от *estás a ver*)."
+    },
+    {
+      "id": "encontro-amigos-ex-06",
+      "topicId": "encontro-amigos",
+      "type": "order-words",
+      "words": ["Passamos", "por", "tua", "casa", "às", "dez."],
+      "answer": "Passamos por tua casa às dez.",
+      "ru": "Мы заедем за тобой в десять."
+    },
+    {
+      "id": "encontro-amigos-ex-07",
+      "topicId": "encontro-amigos",
+      "type": "translate-ru-pt",
+      "ru": "Сегодня не получится, давай в другой раз.",
+      "answer": ["Hoje não dá, fica para a próxima.", "Hoje não posso, fica para a próxima.", "Hoje não dá, fica para outra vez.", "Hoje não posso, fica para outra vez.", "Hoje não dá, fica para a próxima vez.", "Hoje não posso, fica para a próxima vez.", "Hoje não consigo, fica para a próxima."],
+      "explanation": "**Não dá** — очень частое «не выйдет». **Fica para a próxima** — вежливый способ отказаться, не обижая."
+    },
+    {
+      "id": "encontro-amigos-ex-08",
+      "topicId": "encontro-amigos",
+      "type": "choice",
+      "prompt": "Como dizes ao teu amigo que lhe vais escrever mais tarde?",
+      "options": ["Mando-te mensagem.", "Te mando mensagem.", "Eu te mando mensagem.", "Mando mensagem para você."],
+      "correct": 0,
+      "explanation": "В pt-PT фраза не начинается с клитики, и без «магнитов» местоимение стоит после глагола: **Mando-te**. *Te mando*, *para você* — бразильский вариант."
+    },
+    {
+      "id": "encontro-amigos-ex-09",
+      "topicId": "encontro-amigos",
+      "type": "fill-gap",
+      "prompt": "Ótimo! Então ___ assim: às dez em minha casa.",
+      "answer": ["combinamos"],
+      "hint": "договариваемся (мы)",
+      "ru": "Отлично! Тогда договорились: в десять у меня.",
+      "explanation": "**Combinar** — договариваться о встрече. **Então combinamos assim** — «тогда так и решили». В прошедшем — **combinámos** (с акцентом)."
+    },
+    {
+      "id": "encontro-amigos-ex-10",
+      "topicId": "encontro-amigos",
+      "type": "transform",
+      "prompt": "Trazes umas bebidas e a tua toalha.",
+      "instruction": "Преврати в просьбу-указание (imperativo, «ты»)",
+      "answer": ["Traz umas bebidas e a tua toalha."],
+      "explanation": "Утвердительный imperativo на «ты» = форма 3-го лица ед. ч.: **tu trazes → traz!**, **tu levas → leva!**, **tu fazes → faz!**"
+    }
+  ],
+  "writingTask": {
+    "prompt": "Друг пишет вам в WhatsApp и зовёт в пятницу вечером на арраял (народный праздник) в Алфаме. Напишите переписку из 6–8 сообщений: согласитесь, предложите другое время встречи, договоритесь, где встретиться, спросите, что взять с собой, и попрощайтесь.",
+    "sample": "— Olá! Sexta à noite há arraial em Alfama. Bora?\n— Bora! Mas só saio do trabalho às sete. Pode ser às oito e meia?\n— Pode ser. Encontramo-nos onde?\n— Que tal à porta da Sé? É fácil de encontrar.\n— Fixe. Vêm também a Rita e o namorado.\n— Ótimo! Levo alguma coisa?\n— Não é preciso, lá comemos sardinhas e bebemos uma imperial.\n— Combinado. Se me atrasar, mando-te mensagem. Beijinhos!",
+    "checklist": [
+      "Обращение на tu: estás, queres, podes",
+      "Есть разговорные слова: bora, fixe, combinado, pode ser",
+      "Назначены время и место встречи",
+      "Клитики после глагола: mando-te, encontramo-nos (и перед глаголом только после «магнитов»: se me atrasar)",
+      "Нет бразилизмов: legal, a gente, você в дружеской переписке"
+    ]
+  }
+}

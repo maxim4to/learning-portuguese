@@ -1,0 +1,439 @@
+{
+  "id": "a1-possessivos",
+  "level": "A1",
+  "module": "a1-basics",
+  "title": "Притяжательные местоимения",
+  "titlePt": "Determinantes e pronomes possessivos",
+  "requires": [
+    "a1-artigos-genero-numero",
+    "a1-pronomes-pessoais-tratamento"
+  ],
+  "theory": "## Формы\n\nПритяжательное согласуется в роде и числе **с тем, чем владеют**, а не с владельцем: Maxim говорит **a minha casa**, Inês — **o meu carro**.\n\n| владелец | муж. ед. | жен. ед. | муж. мн. | жен. мн. |\n|---|---|---|---|---|\n| eu | **o meu** | **a minha** | **os meus** | **as minhas** |\n| tu | **o teu** | **a tua** | **os teus** | **as tuas** |\n| o senhor / a senhora / você | **o seu** | **a sua** | **os seus** | **as suas** |\n| nós | **o nosso** | **a nossa** | **os nossos** | **as nossas** |\n| vocês | **o vosso** | **a vossa** | **os vossos** | **as vossas** |\n\n## Артикль обязателен\n\nВ pt-PT перед притяжательным почти всегда стоит артикль: **o meu pai, a minha mãe, os nossos amigos**. Артикль сливается с предлогом: **do meu, na minha, ao teu, à nossa**.\n\n- **Moro com a minha irmã.** — Я живу с сестрой.\n- **Gosto da tua camisola.** — Мне нравится твой свитер.\n\nБез артикля: в обращении (**Meu amor!**) и после **ser**, когда говорим «чьё»: **Este livro é meu.** — Эта книга моя.\n\n## Его, её, их: dele, dela, deles, delas\n\nФорма **seu / sua** в Португалии обычно означает **«ваш»** (вежливое): **Senhor Duarte, esta é a sua mala?** Чтобы сказать «его / её / их», используют **de + ele**, которое ставится **после** существительного:\n\n| | пример | перевод |\n|---|---|---|\n| **dele** | **o carro dele** | его машина |\n| **dela** | **a casa dela** | её дом |\n| **deles** | **os filhos deles** | их дети (м. или смеш.) |\n| **delas** | **a mãe delas** | их мама (только ж.) |\n\nЗдесь **dele / dela** зависят от владельца, а артикль — от предмета: **a casa dele** (его дом), **o carro dela** (её машина).\n\n## vosso — живое слово\n\nХотя **vós** устарело, **vosso / vossa** — обычное притяжательное для **vocês**: **Onde é o vosso hotel?** — Где ваш отель? Можно и **o hotel de vocês**.\n\n## «Один из моих»: um amigo meu\n\n**um amigo meu** — мой друг (один из), **uma colega minha** — моя коллега. Здесь притяжательное ставится после существительного, без артикля.\n\n## Без существительного\n\nЕсли предмет уже назван, притяжательное с артиклем заменяет его: **— É o teu carro? — Não, o meu é azul.** (Нет, моя — синяя.) **A vossa casa é grande, a nossa é pequena.**\n\n## Русское «свой»\n\nВ португальском нет отдельного «свой» — используем форму нужного лица: **Levo a minha mala.** — Я беру свою сумку. **Ela vem com o marido.** — Она приходит со своим мужем (если ясно, чей муж, притяжательное часто не нужно).",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **O meu** carro é azul. | **Meu** carro é azul. | в pt-PT артикль перед притяжательным обязателен |\n| **o teu** livro (tu) | **seu** livro (você) | в Бразилии **seu** — обычное «твой» |\n| **a sua** mala = «ваша» (вежл.) | **sua** mala = «твоя / ваша» | в pt-PT **seu** — вежливое «ваш» |\n| **o vosso** apartamento | o apartamento **de vocês** | в pt-PT **vosso** живое и частотное |\n| **o carro dele** | o carro dele / seu carro | «его / её» — через **dele / dela** |\n\nЕсли вы учились по бразильским материалам, переучите два рефлекса: ставить артикль (**o meu, a minha**) и говорить другу **teu**, а не *seu*.",
+  "commonErrors": "- **Согласование с владельцем, а не с предметом**: *o minha casa*, *a meu carro* ✗ → **a minha casa, o meu carro** ✓.\n- **Нет артикля** (русская модель + бразильские материалы): *Minha mãe é professora* ✗ → **A minha mãe é professora** ✓.\n- **seu для «его»**: *Ele vem com sua mulher* (двусмысленно: «с вашей женой»?) ✗ → **Ele vem com a mulher dele** / **com a mulher** ✓.\n- **dele перед существительным**: *dele carro* ✗ → **o carro dele** ✓.\n- **seu другу**: *Rui, este é o seu telemóvel?* (звучит официально) → **Rui, este é o teu telemóvel?** ✓\n- **Калька «свой»**: *Levo a sua mala* (= «вашу сумку»!) ✗ → **Levo a minha mala** ✓.",
+  "examples": [
+    {
+      "pt": "A minha mulher é do Porto.",
+      "ru": "Моя жена из Порту.",
+      "audio": true
+    },
+    {
+      "pt": "Onde está o teu telemóvel?",
+      "ru": "Где твой телефон?",
+      "audio": true
+    },
+    {
+      "pt": "O carro dela é novo.",
+      "ru": "Её машина новая.",
+      "audio": true
+    },
+    {
+      "pt": "O vosso apartamento é muito giro!",
+      "ru": "Ваша квартира очень милая!",
+      "audio": true
+    },
+    {
+      "pt": "Um amigo meu trabalha nas Finanças.",
+      "ru": "Мой друг работает в налоговой.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-possessivos-ex-01",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "___ casa fica perto da praia.",
+      "answer": [
+        "A minha"
+      ],
+      "hint": "мой (с артиклем)",
+      "ru": "Мой дом недалеко от пляжа.",
+      "explanation": "casa — женский род: a minha."
+    },
+    {
+      "id": "a1-possessivos-ex-02",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Onde estão ___ chaves?",
+      "answer": [
+        "as minhas"
+      ],
+      "hint": "мои",
+      "ru": "Где мои ключи?"
+    },
+    {
+      "id": "a1-possessivos-ex-03",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Rui, ___ irmã está em Lisboa?",
+      "answer": [
+        "a tua"
+      ],
+      "hint": "твоя",
+      "ru": "Руй, твоя сестра в Лиссабоне?"
+    },
+    {
+      "id": "a1-possessivos-ex-04",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Este é o carro ___.",
+      "answer": [
+        "dela"
+      ],
+      "hint": "её",
+      "ru": "Это её машина."
+    },
+    {
+      "id": "a1-possessivos-ex-05",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Os ___ pais vivem em Faro.",
+      "answer": [
+        "nossos"
+      ],
+      "hint": "наши",
+      "ru": "Наши родители живут в Фару."
+    },
+    {
+      "id": "a1-possessivos-ex-06",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Meninos, onde estão os ___ livros?",
+      "answer": [
+        "vossos"
+      ],
+      "hint": "ваши (к группе)",
+      "ru": "Дети, где ваши книги?",
+      "explanation": "Для vocês в pt-PT — vosso / vossa."
+    },
+    {
+      "id": "a1-possessivos-ex-07",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Senhor Duarte, esta é a ___ mala?",
+      "answer": [
+        "sua"
+      ],
+      "hint": "ваш (вежливо)",
+      "ru": "Господин Дуарте, это ваш чемодан?"
+    },
+    {
+      "id": "a1-possessivos-ex-08",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "(говорит Maxim) ___ mulher é portuguesa.",
+      "options": [
+        "O meu",
+        "A minha",
+        "Minha",
+        "A meu"
+      ],
+      "correct": 1,
+      "explanation": "Согласуем с предметом (mulher — ж. р.), в pt-PT — с артиклем."
+    },
+    {
+      "id": "a1-possessivos-ex-09",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "O Pedro e a Rita? Conheço a casa ___.",
+      "options": [
+        "deles",
+        "dele",
+        "delas",
+        "seus"
+      ],
+      "correct": 0,
+      "explanation": "Владельцы — мужчина и женщина → deles."
+    },
+    {
+      "id": "a1-possessivos-ex-10",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "(другу) Este telemóvel é ___?",
+      "options": [
+        "seu",
+        "tua",
+        "vosso",
+        "teu"
+      ],
+      "correct": 3,
+      "explanation": "Другу — teu; telemóvel — мужской род."
+    },
+    {
+      "id": "a1-possessivos-ex-11",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "A Inês procura as chaves. Estas chaves são ___?",
+      "options": [
+        "dele",
+        "dela",
+        "suas",
+        "delas"
+      ],
+      "correct": 1,
+      "explanation": "Владелец — Инес (одна женщина) → dela."
+    },
+    {
+      "id": "a1-possessivos-ex-12",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "Este é um amigo ___.",
+      "options": [
+        "minha",
+        "o meu",
+        "meu",
+        "de mim"
+      ],
+      "correct": 2,
+      "explanation": "«Один из моих друзей» — um amigo meu."
+    },
+    {
+      "id": "a1-possessivos-ex-13",
+      "topicId": "a1-possessivos",
+      "type": "transform",
+      "prompt": "O meu irmão é alto.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "Os meus irmãos são altos."
+      ]
+    },
+    {
+      "id": "a1-possessivos-ex-14",
+      "topicId": "a1-possessivos",
+      "type": "transform",
+      "prompt": "A casa do Rui é grande.",
+      "instruction": "Замените «do Rui» на притяжательное «его».",
+      "answer": [
+        "A casa dele é grande."
+      ]
+    },
+    {
+      "id": "a1-possessivos-ex-15",
+      "topicId": "a1-possessivos",
+      "type": "transform",
+      "prompt": "A tua amiga é simpática.",
+      "instruction": "Скажите то же самое вежливо (обращаясь к o senhor / a senhora).",
+      "answer": [
+        "A sua amiga é simpática."
+      ]
+    },
+    {
+      "id": "a1-possessivos-ex-16",
+      "topicId": "a1-possessivos",
+      "type": "order-words",
+      "words": [
+        "pais",
+        "Os",
+        "em",
+        "vivem",
+        "meus",
+        "Braga"
+      ],
+      "answer": "Os meus pais vivem em Braga",
+      "ru": "Мои родители живут в Браге."
+    },
+    {
+      "id": "a1-possessivos-ex-17",
+      "topicId": "a1-possessivos",
+      "type": "order-words",
+      "words": [
+        "dela",
+        "O",
+        "é",
+        "carro",
+        "vermelho"
+      ],
+      "answer": "O carro dela é vermelho",
+      "ru": "Её машина красная."
+    },
+    {
+      "id": "a1-possessivos-ex-18",
+      "topicId": "a1-possessivos",
+      "type": "translate-ru-pt",
+      "ru": "Это мой паспорт.",
+      "answer": [
+        "Este é o meu passaporte.",
+        "É o meu passaporte.",
+        "Isto é o meu passaporte."
+      ]
+    },
+    {
+      "id": "a1-possessivos-ex-19",
+      "topicId": "a1-possessivos",
+      "type": "translate-ru-pt",
+      "ru": "Где твой телефон?",
+      "answer": [
+        "Onde está o teu telemóvel?",
+        "Onde é que está o teu telemóvel?",
+        "Onde está o teu telefone?",
+        "Onde é que está o teu telefone?"
+      ]
+    },
+    {
+      "id": "a1-possessivos-ex-20",
+      "topicId": "a1-possessivos",
+      "type": "translate-ru-pt",
+      "ru": "Её брат живёт в Порту.",
+      "answer": [
+        "O irmão dela vive no Porto.",
+        "O irmão dela mora no Porto."
+      ]
+    },
+    {
+      "id": "a1-possessivos-ex-21",
+      "topicId": "a1-possessivos",
+      "type": "listen-type",
+      "text": "A nossa casa tem um jardim pequeno.",
+      "answer": [
+        "A nossa casa tem um jardim pequeno."
+      ]
+    },
+    {
+      "id": "a1-possessivos-ex-22",
+      "topicId": "a1-possessivos",
+      "type": "match",
+      "pairs": [
+        {
+          "left": "eu",
+          "right": "o meu livro"
+        },
+        {
+          "left": "tu",
+          "right": "o teu livro"
+        },
+        {
+          "left": "ele",
+          "right": "o livro dele"
+        },
+        {
+          "left": "ela",
+          "right": "o livro dela"
+        },
+        {
+          "left": "nós",
+          "right": "o nosso livro"
+        },
+        {
+          "left": "vocês",
+          "right": "o vosso livro"
+        }
+      ],
+      "prompt": "Соедините владельца с формой."
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-possessivos-mt-01",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "___ filhos andam na escola.",
+      "answer": [
+        "Os meus"
+      ],
+      "hint": "мои (с артиклем)"
+    },
+    {
+      "id": "a1-possessivos-mt-02",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Eles vêm com os filhos ___.",
+      "answer": [
+        "deles"
+      ],
+      "hint": "их"
+    },
+    {
+      "id": "a1-possessivos-mt-03",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Joana, ___ mãe é professora?",
+      "answer": [
+        "a tua"
+      ],
+      "hint": "твоя"
+    },
+    {
+      "id": "a1-possessivos-mt-04",
+      "topicId": "a1-possessivos",
+      "type": "fill-gap",
+      "prompt": "Senhora Rita, este é o ___ casaco?",
+      "answer": [
+        "seu"
+      ],
+      "hint": "ваш (вежливо)"
+    },
+    {
+      "id": "a1-possessivos-mt-05",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "___ apartamento fica no terceiro andar.",
+      "options": [
+        "Nossa",
+        "O nosso",
+        "A nossa",
+        "Nosso"
+      ],
+      "correct": 1,
+      "explanation": "apartamento — мужской род, нужен артикль."
+    },
+    {
+      "id": "a1-possessivos-mt-06",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "Meninos, onde está o ___ professor?",
+      "options": [
+        "vossos",
+        "teu",
+        "vosso",
+        "vossa"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-possessivos-mt-07",
+      "topicId": "a1-possessivos",
+      "type": "choice",
+      "prompt": "O Rui e o irmão? A casa ___ é ali.",
+      "options": [
+        "dele",
+        "seus",
+        "delas",
+        "deles"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a1-possessivos-mt-08",
+      "topicId": "a1-possessivos",
+      "type": "transform",
+      "prompt": "A minha amiga é russa.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "As minhas amigas são russas."
+      ]
+    },
+    {
+      "id": "a1-possessivos-mt-09",
+      "topicId": "a1-possessivos",
+      "type": "translate-ru-pt",
+      "ru": "Наша дочь говорит по-португальски.",
+      "answer": [
+        "A nossa filha fala português."
+      ]
+    },
+    {
+      "id": "a1-possessivos-mt-10",
+      "topicId": "a1-possessivos",
+      "type": "listen-choice",
+      "text": "O carro dela está na garagem.",
+      "options": [
+        "Её машина в гараже.",
+        "Его машина в гараже.",
+        "Их машина в гараже.",
+        "Моя машина в гараже."
+      ],
+      "correct": 0
+    }
+  ]
+}

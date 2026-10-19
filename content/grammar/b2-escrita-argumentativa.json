@@ -1,0 +1,457 @@
+{
+  "id": "b2-escrita-argumentativa",
+  "level": "B2",
+  "module": "b2-discurso-estilo",
+  "title": "Аргументативное письмо",
+  "titlePt": "Escrita argumentativa",
+  "requires": [
+    "b2-conectores-argumentativos",
+    "b1-email-formal-informal"
+  ],
+  "theory": "## Три жанра B2\n\nНа экзамене (DIPLE) и в жизни в Португалии пригодятся: **texto de opinião** (эссе-мнение, 160–200 слов), **carta / e-mail de reclamação** (жалоба) и **e-mail formal** (запрос). Логика у всех одна: тезис → доводы → ответ на возражения → вывод.\n\n## Схема эссе\n\n| часть | функция | рамки |\n|---|---|---|\n| **introdução** | тема + **tese** | **Hoje em dia, ... A meu ver / Na minha opinião / Defendo que...** |\n| **desenvolvimento** | 2–3 довода с примерами | **Em primeiro lugar, ... Além disso, ... Por exemplo, ...** |\n| **contra-argumento** | признать чужую позицию и опровергнуть | **Há quem defenda que... É certo que...; no entanto, ...** |\n| **conclusão** | итог, тезис другими словами | **Em suma, ... Posto isto, ... Assim sendo, ...** |\n\nОдин абзац — одна мысль. Каждый абзац начинается с коннектора.\n\n## Мнение и наклонение\n\n| индикатив | conjuntivo |\n|---|---|\n| **Acho / Penso / Parece-me que é...** | **Não acho / Não penso / Não me parece que seja...** |\n| **É evidente / É certo / É inegável que** + ind. | **É importante / urgente / fundamental que** + conj. |\n| **Está provado que...** | **Há quem** + conj.: **Há quem diga que...** |\n| | **Por muito que** + conj.: **Por muito que custe, ...** |\n\n## Письмо-жалоба\n\nОбращение → цель (**Venho por este meio apresentar reclamação relativamente a...**) → факты по порядку (дата, номер заказа, что случилось) → требование (**Solicito, assim, a substituição do artigo / o reembolso**) → последствия (**Caso não obtenha resposta no prazo de dez dias úteis, recorrerei a...**) → прощание. В любом кафе и магазине Португалии есть **Livro de Reclamações** (есть и онлайн-версия).\n\n## Образец 1: texto de opinião\n\n> **O teletrabalho veio para ficar?**\n> Hoje em dia, muitas empresas portuguesas adotaram o teletrabalho. **A meu ver**, trata-se de uma mudança positiva. *(тезис)*\n> **Em primeiro lugar**, poupa-se tempo nas deslocações. *(довод 1, безличное se)* **Além disso**, os trabalhadores conseguem conciliar melhor a vida familiar e profissional. *(довод 2)*\n> **Há quem diga que** o teletrabalho isola as pessoas. *(контраргумент: há quem + conj.)* **No entanto**, uma reunião presencial por semana resolve esse problema. *(опровержение)*\n> **Em suma**, as vantagens superam as desvantagens. *(вывод)*\n\n## Образец 2: reclamação\n\n> Exmos. Senhores, *(обращение к организации)*\n> **Venho por este meio apresentar reclamação relativamente à** encomenda n.º 4521. *(цель)*\n> **No dia** 3 de março, adquiri na vossa loja online um aspirador que chegou avariado. *(факты)* **Apesar de** ter contactado o apoio ao cliente duas vezes, não obtive qualquer resposta. *(уступка)*\n> **Solicito, assim, que** me **seja devolvido** o valor pago. *(требование + conj.)* **Caso não obtenha** resposta no prazo de dez dias úteis, recorrerei à DECO. *(последствие: caso + conj.)*\n> Com os melhores cumprimentos,\n> Rui Ferreira\n\n## Советы по стилю\n\n- Без **tu** и без разговорных слов (**fixe, bué, tipo**).\n- Не начинайте каждую фразу с **Eu acho que** — чередуйте **A meu ver**, **Parece-me que**, **Considero que**.\n- Безличные формы (**poupa-se, verifica-se, é de salientar que**) делают текст объективнее.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Exmos. Senhores** | Prezados Senhores | *Prezados* в Португалии звучит по-бразильски |\n| **Venho por este meio...** | Venho por meio desta... | формулы различаются |\n| **Com os melhores cumprimentos** | Atenciosamente | прощание |\n| **Livro de Reclamações, DECO** | Procon, Reclame Aqui | реалии разные |\n| **Fico a aguardar uma resposta.** | Fico aguardando um retorno. | a + инфинитив вместо герундия |\n| **na minha perspetiva** | na minha perspectiva | орфография по AO90 в варианте pt-PT |\n\nСтруктура аргументации одинакова; различаются формулы писем, реалии и орфография.",
+  "commonErrors": "- **Индикатив после отрицательного мнения**: *Não acho que é justo* ✗ → **Não acho que seja justo** ✓.\n- **Há quem + индикатив**: *Há quem diz que...* ✗ → **Há quem diga que...** ✓.\n- **Conjuntivo после «уверенных» оборотов**: *É evidente que seja caro* ✗ → **É evidente que é caro** ✓.\n- **Монотонное «Eu acho que...»** в каждом абзаце — варьируйте рамки мнения.\n- **Бразильские формулы**: *Prezados senhores*, *Atenciosamente*, *Fico aguardando* ✗ → **Exmos. Senhores**, **Com os melhores cumprimentos**, **Fico a aguardar** ✓.\n- **Нет требования в жалобе**: письмо без **Solicito...** — просто жалоба на жизнь; чётко сформулируйте, чего вы хотите.\n- **Эмоции вместо фактов**: *O vosso serviço é uma vergonha!* ✗ → **O serviço prestado não correspondeu ao anunciado.** ✓",
+  "examples": [
+    {
+      "pt": "A meu ver, o teletrabalho é uma mudança positiva.",
+      "ru": "На мой взгляд, удалённая работа — позитивная перемена.",
+      "audio": true
+    },
+    {
+      "pt": "Há quem diga que o turismo está a descaracterizar Lisboa.",
+      "ru": "Некоторые считают, что туризм лишает Лиссабон его самобытности.",
+      "audio": true
+    },
+    {
+      "pt": "Não me parece que esta medida seja suficiente.",
+      "ru": "Мне не кажется, что этой меры достаточно.",
+      "audio": true
+    },
+    {
+      "pt": "Venho por este meio apresentar reclamação relativamente à encomenda n.º 4521.",
+      "ru": "Настоящим подаю жалобу в отношении заказа № 4521.",
+      "audio": true
+    },
+    {
+      "pt": "Caso não obtenha resposta, recorrerei ao Livro de Reclamações.",
+      "ru": "Если я не получу ответа, обращусь к книге жалоб.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-escrita-argumentativa-ex-01",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Na minha ___, o teletrabalho veio para ficar.",
+      "answer": [
+        "opinião"
+      ],
+      "ru": "По моему мнению, удалённая работа — это надолго."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-02",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Há quem ___ (defender) que o turismo prejudica Lisboa.",
+      "answer": [
+        "defenda"
+      ],
+      "ru": "Некоторые утверждают, что туризм вредит Лиссабону.",
+      "explanation": "há quem + conjuntivo."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-03",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Não me parece que esta medida ___ (ser) eficaz.",
+      "answer": [
+        "seja"
+      ],
+      "ru": "Мне не кажется, что эта мера эффективна."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-04",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Parece-me que o problema ___ (ser) mais complexo.",
+      "answer": [
+        "é"
+      ],
+      "ru": "Мне кажется, что проблема сложнее.",
+      "explanation": "Утвердительное мнение → индикатив."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-05",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "É certo que o metro é caro; ___, é o meio de transporte mais rápido.",
+      "answer": [
+        "no entanto",
+        "contudo",
+        "todavia",
+        "porém",
+        "ainda assim",
+        "não obstante",
+        "em contrapartida"
+      ],
+      "ru": "Да, метро дорогое; однако это самый быстрый транспорт.",
+      "hint": "опровержение: «однако»"
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-06",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Venho por este meio apresentar ___ relativamente ao serviço prestado.",
+      "answer": [
+        "reclamação",
+        "uma reclamação",
+        "queixa",
+        "uma queixa"
+      ],
+      "ru": "Настоящим подаю жалобу на оказанную услугу."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-07",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Por muito que ___ (custar), temos de reduzir o consumo de plástico.",
+      "answer": [
+        "custe"
+      ],
+      "ru": "Как бы трудно ни было, мы должны сократить потребление пластика."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-08",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Caso não ___ (obter) resposta no prazo de dez dias úteis, recorrerei à DECO.",
+      "answer": [
+        "obtenha"
+      ],
+      "ru": "Если в течение десяти рабочих дней я не получу ответа, обращусь в DECO.",
+      "explanation": "caso + conjuntivo."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-09",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Расставьте части эссе по порядку. A) Em suma, as vantagens são claras. B) Hoje em dia, muitas empresas adotaram o teletrabalho; defendo que é positivo. C) Há quem diga que isola as pessoas; no entanto, há soluções. D) Em primeiro lugar, poupa-se tempo.",
+      "options": [
+        "D – B – A – C",
+        "B – C – A – D",
+        "B – D – C – A",
+        "C – D – B – A"
+      ],
+      "correct": 2,
+      "explanation": "Тезис → довод → контраргумент → вывод."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-10",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Какая фраза вводит контраргумент?",
+      "options": [
+        "Em suma, a medida é positiva.",
+        "Em primeiro lugar, a medida é barata.",
+        "Com os melhores cumprimentos,",
+        "Há quem considere que a medida é injusta."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-11",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Как закончить письмо-жалобу?",
+      "options": [
+        "Beijinhos e até breve!",
+        "Fico a aguardar uma resposta célere.",
+        "Fico aguardando um retorno.",
+        "Dá notícias!"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-12",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "___ que o governo tome medidas.",
+      "options": [
+        "É urgente",
+        "É verdade",
+        "Sabe-se",
+        "Acho"
+      ],
+      "correct": 0,
+      "explanation": "tome — conjuntivo, его требует только «É urgente que»."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-13",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Какой коннектор вводит вывод?",
+      "options": [
+        "Por um lado",
+        "Em contrapartida",
+        "Visto que",
+        "Posto isto"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-14",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Порядок частей жалобы. A) Solicito, assim, o reembolso. B) Exmos. Senhores, C) No dia 3 de março, adquiri um aspirador que chegou avariado. D) Com os melhores cumprimentos, E) Venho por este meio apresentar reclamação relativamente à encomenda n.º 4521.",
+      "options": [
+        "B – E – C – A – D",
+        "B – C – E – D – A",
+        "E – B – C – A – D",
+        "B – E – A – C – D"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-15",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "match",
+      "prompt": "Соедините фразу с её функцией в эссе.",
+      "pairs": [
+        {
+          "left": "Defendo que o teletrabalho deve ser regulado.",
+          "right": "тезис"
+        },
+        {
+          "left": "Em primeiro lugar, poupa-se tempo nas deslocações.",
+          "right": "довод"
+        },
+        {
+          "left": "Há quem diga que isola os trabalhadores.",
+          "right": "контраргумент"
+        },
+        {
+          "left": "No entanto, uma reunião semanal resolve esse problema.",
+          "right": "опровержение"
+        },
+        {
+          "left": "Em suma, as vantagens superam as desvantagens.",
+          "right": "вывод"
+        }
+      ]
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-16",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "transform",
+      "prompt": "Acho que o turismo é bom para a cidade.",
+      "instruction": "Начните с «Não acho que...».",
+      "answer": [
+        "Não acho que o turismo seja bom para a cidade."
+      ]
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-17",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "transform",
+      "prompt": "Algumas pessoas defendem que as propinas devem acabar.",
+      "instruction": "Начните с «Há quem...».",
+      "answer": [
+        "Há quem defenda que as propinas devem acabar.",
+        "Há quem defenda que as propinas deviam acabar.",
+        "Há quem defenda que as propinas devam acabar."
+      ]
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-18",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "order-words",
+      "words": [
+        "o",
+        "quem",
+        "Há",
+        "contrário",
+        "defenda"
+      ],
+      "answer": "Há quem defenda o contrário",
+      "ru": "Есть те, кто утверждает обратное."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-19",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "order-words",
+      "words": [
+        "assim,",
+        "valor",
+        "Solicito,",
+        "devolução",
+        "a",
+        "do",
+        "pago"
+      ],
+      "answer": "Solicito, assim, a devolução do valor pago",
+      "ru": "В связи с этим прошу вернуть уплаченную сумму."
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-20",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "translate-ru-pt",
+      "ru": "С моей точки зрения, эта мера несправедлива.",
+      "answer": [
+        "Do meu ponto de vista, esta medida é injusta.",
+        "A meu ver, esta medida é injusta.",
+        "Na minha opinião, esta medida é injusta.",
+        "Na minha perspetiva, esta medida é injusta."
+      ]
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-21",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "translate-ru-pt",
+      "ru": "Прошу вернуть мне деньги. (официально)",
+      "answer": [
+        "Solicito o reembolso.",
+        "Solicito a devolução do dinheiro.",
+        "Solicito a devolução do valor pago.",
+        "Peço o reembolso.",
+        "Solicito que me devolvam o dinheiro.",
+        "Peço que me devolvam o dinheiro.",
+        "Solicito que me seja devolvido o dinheiro."
+      ]
+    },
+    {
+      "id": "b2-escrita-argumentativa-ex-22",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "listen-type",
+      "text": "Em suma, as vantagens superam as desvantagens.",
+      "answer": [
+        "Em suma, as vantagens superam as desvantagens."
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-escrita-argumentativa-mt-01",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "A meu ___, a proposta é positiva.",
+      "answer": [
+        "ver"
+      ],
+      "ru": "На мой взгляд, предложение хорошее."
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-02",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Há quem ___ (achar) que o centro histórico perdeu a alma.",
+      "answer": [
+        "ache"
+      ],
+      "ru": "Некоторые считают, что исторический центр потерял душу."
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-03",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "É fundamental que a câmara municipal ___ (tomar) medidas.",
+      "answer": [
+        "tome"
+      ],
+      "ru": "Крайне важно, чтобы мэрия приняла меры."
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-04",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "fill-gap",
+      "prompt": "Por ___ que se esforce, não consegue convencer ninguém.",
+      "answer": [
+        "muito",
+        "mais"
+      ],
+      "ru": "Как он ни старается, никого не может убедить."
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-05",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Какая фраза — уступка перед опровержением?",
+      "options": [
+        "Em suma, a medida é necessária.",
+        "É certo que a medida tem custos elevados.",
+        "Em primeiro lugar, a medida cria emprego.",
+        "Defendo que a medida é necessária."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-06",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Начало официальной жалобы:",
+      "options": [
+        "Olá, a vossa encomenda é uma porcaria.",
+        "Prezados senhores, venho reclamar.",
+        "Venho por este meio apresentar reclamação relativamente à encomenda n.º 4521.",
+        "Escrevo para fazer queixa, ok?"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-07",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "choice",
+      "prompt": "Não me parece que ___ razão.",
+      "options": [
+        "tens",
+        "tiveste",
+        "terás",
+        "tenhas"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-08",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "transform",
+      "prompt": "Acredito que a medida resulta.",
+      "instruction": "Сделайте фразу отрицательной: «Não acredito que...».",
+      "answer": [
+        "Não acredito que a medida resulte."
+      ]
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-09",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "translate-ru-pt",
+      "ru": "Некоторые считают, что это ошибка.",
+      "answer": [
+        "Há quem pense que é um erro.",
+        "Há quem pense que isto é um erro.",
+        "Há quem pense que isso é um erro.",
+        "Há quem ache que é um erro.",
+        "Há quem ache que isto é um erro.",
+        "Há quem ache que isso é um erro.",
+        "Há quem considere que é um erro.",
+        "Há quem considere que isto é um erro.",
+        "Há quem considere que isso é um erro.",
+        "Há quem julgue que é um erro.",
+        "Há quem julgue que isto é um erro.",
+        "Há quem julgue que isso é um erro."
+      ]
+    },
+    {
+      "id": "b2-escrita-argumentativa-mt-10",
+      "topicId": "b2-escrita-argumentativa",
+      "type": "listen-choice",
+      "text": "Posto isto, concluo que a proposta deve ser rejeitada.",
+      "options": [
+        "Несмотря на это, предложение приняли.",
+        "С учётом сказанного я делаю вывод, что предложение следует отклонить.",
+        "Поэтому я предлагаю отложить решение.",
+        "Поставив это, я закончу предложение."
+      ],
+      "correct": 1
+    }
+  ]
+}

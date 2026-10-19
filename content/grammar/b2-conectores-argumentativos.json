@@ -1,0 +1,473 @@
+{
+  "id": "b2-conectores-argumentativos",
+  "level": "B2",
+  "module": "b2-discurso-estilo",
+  "title": "Аргументативные коннекторы",
+  "titlePt": "Conectores argumentativos",
+  "requires": [
+    "b1-conectores-discursivos",
+    "b1-conjuntivo-conjuncoes"
+  ],
+  "theory": "## Что добавляет B2\n\nНа B1 вы освоили **no entanto, além disso, por isso**. Для эссе, письма-жалобы или делового e-mail нужен более книжный набор — и точное знание, какое наклонение требует каждый союз. Правило: **причина и следствие → индикатив; уступка, цель, условие → conjuntivo**.\n\n## Структура и добавление\n\n| коннектор | значение |\n|---|---|\n| **em primeiro lugar / em segundo lugar / por último** | во-первых / во-вторых / наконец |\n| **por um lado... por outro (lado)...** | с одной стороны... с другой... |\n| **além disso / acresce que** + ind. | кроме того / к этому добавляется то, что |\n| **não só... como também...** | не только... но и... |\n\n## Противопоставление и уступка\n\n| коннектор | значение | конструкция |\n|---|---|---|\n| **não obstante** | однако; несмотря на | отдельно, + сущ., + инф. |\n| **ainda assim** | и всё же, тем не менее | отдельно |\n| **em contrapartida** | зато, взамен | отдельно |\n| **pelo contrário** | напротив | отдельно |\n| **embora, ainda que, mesmo que, se bem que** | хотя, даже если | **+ conjuntivo** |\n| **posto que** | хотя (книжн.) | **+ conjuntivo** |\n\n**Não obstante o atraso, a obra foi concluída.** — Несмотря на задержку, работы завершили.\n**O preço subiu; não obstante, a procura manteve-se.** — Цена выросла; тем не менее спрос сохранился.\n**A casa é pequena; em contrapartida, tem uma vista fantástica.** — Дом маленький, зато вид фантастический.\n**Choveu o dia todo; ainda assim, o festival correu bem.**\n\n**Posto que** в нормативном языке — уступительный союз: **Posto que seja difícil, não é impossível.** В юридических и газетных текстах он встречается и в значении «поскольку» + индикатив, но этот узус критикуется: для причины берите **visto que / dado que**.\n\n## Причина: индикатив\n\n**visto que, dado que, uma vez que, já que** + **индикатив**: **Visto que o prazo terminou, o pedido foi recusado.** **Dado** также + сущ.: **dado o atraso** — ввиду задержки. **Como** («так как») — только в начале фразы: **Como estava a chover, ficámos em casa.**\n\nЛовушка: **uma vez que** + **conjuntivo** = «как только, после того как»: **Uma vez que o pagamento seja confirmado, enviamos a encomenda.** Так же **desde que** + conjuntivo = «при условии что»: **Pode sair, desde que volte cedo.**\n\n## Следствие\n\n**por conseguinte, consequentemente, pelo que** + индикатив: **O comboio atrasou-se, pelo que perdi a reunião.**\n\n**de modo que / de forma que**: + индикатив — результат («так что»): **Chegou tarde, de modo que perdeu o início.** + conjuntivo — цель («так, чтобы»): **Fale devagar, de modo que todos percebam.**\n\n## Цель\n\n| тот же субъект | разные субъекты |\n|---|---|\n| **a fim de / de modo a / com vista a / para** + инф. | **a fim de que / para que / de modo que** + conj. |\n| **Liguei a fim de esclarecer a situação.** | **Envio o contrato a fim de que o possa analisar.** |\n\n## Подтверждение и итог\n\n**com efeito** — «действительно, и в самом деле», подтверждает сказанное (а **не** «в результате»): **Disseram que o serviço era lento. Com efeito, esperámos uma hora.**\n\n**em suma, em síntese, em conclusão, assim sendo, posto isto** — подводят итог: **Em suma, a proposta é viável.** **Posto isto, passemos à votação.**\n\n## Пунктуация\n\nВводные коннекторы выделяются запятыми; перед связкой, соединяющей две независимые части, ставится точка с запятой: **A proposta é cara; não obstante, merece ser analisada.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **com efeito** | com efeito / de fato | в pt-PT **de facto**; *fato* — «костюм» |\n| **posto que** + conj. (= embora) | posto que + ind. (= porque) | в BR причинное значение частотнее, но и там критикуется |\n| **uma vez que** + ind. | uma vez que + ind. | одинаково; в обеих нормах + conj. = «как только» |\n| **Envio o contrato a fim de que o possa analisar.** | Envio o contrato a fim de que você possa analisá-lo. | клитика ставится по-разному |\n| **pelo que** | por isso / pelo que | в BR **pelo que** («поэтому») встречается редко |\n\nНабор коннекторов почти общий; отличаются частотность, орфография (**facto, efetivamente**) и место клитик.",
+  "commonErrors": "- **Conjuntivo после причинных союзов**: *Visto que esteja doente, não vou* ✗ → **Visto que estou doente, não vou** ✓.\n- **Индикатив после целевых союзов**: *Falo devagar para que todos percebem* ✗ → **para que todos percebam** ✓.\n- **a fim de que + инфинитив** при одном субъекте: *Liguei a fim de que esclarecer* ✗ → **Liguei a fim de esclarecer** ✓.\n- **com efeito = «в результате»** (калька с англ. «in effect»): *Perdi o comboio; com efeito, cheguei tarde* ✗ → **Perdi o comboio; por conseguinte, cheguei tarde** ✓.\n- **em contrapartida = «напротив, однако» без компенсации**: используйте его, когда вторая часть уравновешивает первую: **é caro; em contrapartida, é rápido** ✓.\n- **não obstante de**: *Não obstante do atraso* ✗ → **Não obstante o atraso** ✓ (без предлога).\n- **como в середине фразы**: *Ficámos em casa como chovia* ✗ → **Como chovia, ficámos em casa** / **Ficámos em casa porque chovia** ✓.",
+  "examples": [
+    {
+      "pt": "Visto que o prazo terminou, o pedido foi recusado.",
+      "ru": "Поскольку срок истёк, заявку отклонили.",
+      "audio": true
+    },
+    {
+      "pt": "A casa é pequena; em contrapartida, tem uma vista fantástica.",
+      "ru": "Дом маленький, зато у него фантастический вид.",
+      "audio": true
+    },
+    {
+      "pt": "Não obstante o atraso, a obra foi concluída dentro do orçamento.",
+      "ru": "Несмотря на задержку, работы завершили в рамках бюджета.",
+      "audio": true
+    },
+    {
+      "pt": "Envio o contrato a fim de que o possa analisar com calma.",
+      "ru": "Отправляю договор, чтобы вы могли спокойно его изучить.",
+      "audio": true
+    },
+    {
+      "pt": "Em suma, a proposta é viável, mas exige investimento.",
+      "ru": "Итак, предложение осуществимо, но требует вложений.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-conectores-argumentativos-ex-01",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "A casa é pequena; ___, tem uma vista fantástica.",
+      "answer": [
+        "em contrapartida",
+        "no entanto",
+        "contudo",
+        "todavia",
+        "porém",
+        "ainda assim"
+      ],
+      "hint": "«зато»",
+      "ru": "Дом маленький, зато вид фантастический."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-02",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Visto que o prazo ___ (terminar) ontem, o pedido foi recusado.",
+      "answer": [
+        "terminou"
+      ],
+      "ru": "Поскольку срок истёк вчера, заявку отклонили.",
+      "explanation": "visto que — причина → индикатив."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-03",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Posto que ___ (ser) arriscado, o plano foi aprovado.",
+      "answer": [
+        "fosse"
+      ],
+      "ru": "Хотя план был рискованным, его одобрили.",
+      "explanation": "posto que = embora → conjuntivo; главная часть в прошедшем → imperfeito do conjuntivo."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-04",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Uma vez que o pagamento ___ (ser) confirmado, enviaremos a encomenda.",
+      "answer": [
+        "seja"
+      ],
+      "ru": "Как только платёж будет подтверждён, мы отправим заказ.",
+      "explanation": "uma vez que + conjuntivo = «как только»."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-05",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Uma vez que já ___ (ter) os documentos, pode avançar com o pedido.",
+      "answer": [
+        "tem"
+      ],
+      "ru": "Поскольку у вас уже есть документы, можете подавать заявление.",
+      "explanation": "Здесь uma vez que = «поскольку» → индикатив."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-06",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Pode usar o carro, desde que o ___ (devolver) amanhã.",
+      "answer": [
+        "devolva"
+      ],
+      "ru": "Можете взять машину при условии, что вернёте её завтра.",
+      "explanation": "desde que = «при условии что» → conjuntivo."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-07",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Fale mais alto, de modo que todos ___ (ouvir).",
+      "answer": [
+        "ouçam"
+      ],
+      "ru": "Говорите громче, чтобы все слышали.",
+      "explanation": "de modo que + conj. = цель."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-08",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "O comboio atrasou-se, ___ que perdi a reunião.",
+      "answer": [
+        "pelo"
+      ],
+      "ru": "Поезд опоздал, поэтому я пропустил совещание."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-09",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Disseram que o serviço era lento. Com ___, esperámos uma hora.",
+      "answer": [
+        "efeito"
+      ],
+      "ru": "Говорили, что обслуживание медленное. И действительно, мы ждали час."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-10",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "___ o mau tempo, o voo partiu a horas.",
+      "options": [
+        "Visto que",
+        "Não obstante",
+        "Em contrapartida",
+        "Com efeito"
+      ],
+      "correct": 1,
+      "explanation": "não obstante + сущ. = «несмотря на»."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-11",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "Escrevo-lhe ___ esclarecer a situação.",
+      "options": [
+        "a fim de",
+        "a fim de que",
+        "posto que",
+        "dado que"
+      ],
+      "correct": 0,
+      "explanation": "Один субъект → a fim de + инфинитив."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-12",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "Envio o contrato ___ o possa analisar com calma.",
+      "options": [
+        "de modo a",
+        "a fim de",
+        "para que",
+        "visto que"
+      ],
+      "correct": 2,
+      "explanation": "Разные субъекты (я отправляю, вы анализируете) → para que + conj."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-13",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "«Com efeito, o relatório confirma os números.» Com efeito значит:",
+      "options": [
+        "в результате",
+        "напротив",
+        "во-первых",
+        "действительно"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-14",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "Choveu o dia todo; ___, o festival foi um sucesso.",
+      "options": [
+        "por conseguinte",
+        "dado que",
+        "ainda assim",
+        "a fim de"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-15",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "transform",
+      "prompt": "Como não havia quórum, a reunião foi adiada.",
+      "instruction": "Замените como на visto que.",
+      "answer": [
+        "Visto que não havia quórum, a reunião foi adiada.",
+        "A reunião foi adiada, visto que não havia quórum."
+      ]
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-16",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "transform",
+      "prompt": "Apesar do atraso, a obra foi concluída.",
+      "instruction": "Перепишите с não obstante.",
+      "answer": [
+        "Não obstante o atraso, a obra foi concluída.",
+        "A obra foi concluída, não obstante o atraso."
+      ]
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-17",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "transform",
+      "prompt": "Contactámos o cliente para esclarecer a situação.",
+      "instruction": "Замените para на a fim de.",
+      "answer": [
+        "Contactámos o cliente a fim de esclarecer a situação.",
+        "A fim de esclarecer a situação, contactámos o cliente."
+      ]
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-18",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "order-words",
+      "words": [
+        "proposta",
+        "Em",
+        "é",
+        "suma,",
+        "a",
+        "viável"
+      ],
+      "answer": "Em suma, a proposta é viável",
+      "ru": "Итак, предложение осуществимо."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-19",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "order-words",
+      "words": [
+        "que",
+        "o",
+        "Dado",
+        "pedido",
+        "prazo",
+        "terminou,",
+        "o",
+        "recusado",
+        "foi"
+      ],
+      "answer": "Dado que o prazo terminou, o pedido foi recusado",
+      "ru": "Поскольку срок истёк, заявку отклонили."
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-20",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "translate-ru-pt",
+      "ru": "Поскольку магазин закрыт, мы вернёмся завтра.",
+      "answer": [
+        "Visto que a loja está fechada, voltamos amanhã.",
+        "Visto que a loja está fechada, voltaremos amanhã.",
+        "Visto que a loja está fechada, vamos voltar amanhã.",
+        "Dado que a loja está fechada, voltamos amanhã.",
+        "Dado que a loja está fechada, voltaremos amanhã.",
+        "Dado que a loja está fechada, vamos voltar amanhã.",
+        "Uma vez que a loja está fechada, voltamos amanhã.",
+        "Uma vez que a loja está fechada, voltaremos amanhã.",
+        "Uma vez que a loja está fechada, vamos voltar amanhã.",
+        "Já que a loja está fechada, voltamos amanhã.",
+        "Já que a loja está fechada, voltaremos amanhã.",
+        "Já que a loja está fechada, vamos voltar amanhã.",
+        "Como a loja está fechada, voltamos amanhã.",
+        "Como a loja está fechada, voltaremos amanhã.",
+        "Como a loja está fechada, vamos voltar amanhã."
+      ]
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-21",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "listen-type",
+      "text": "Não obstante, a procura manteve-se elevada.",
+      "answer": [
+        "Não obstante, a procura manteve-se elevada."
+      ]
+    },
+    {
+      "id": "b2-conectores-argumentativos-ex-22",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "match",
+      "prompt": "Соедините коннектор с переводом.",
+      "pairs": [
+        {
+          "left": "não obstante",
+          "right": "тем не менее"
+        },
+        {
+          "left": "em contrapartida",
+          "right": "зато"
+        },
+        {
+          "left": "com efeito",
+          "right": "действительно"
+        },
+        {
+          "left": "por conseguinte",
+          "right": "следовательно"
+        },
+        {
+          "left": "a fim de",
+          "right": "с целью"
+        },
+        {
+          "left": "em suma",
+          "right": "итак, короче говоря"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-conectores-argumentativos-mt-01",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Dado que o senhor não ___ (apresentar) o recibo, não podemos trocar o artigo.",
+      "answer": [
+        "apresentou"
+      ],
+      "ru": "Поскольку вы не предъявили чек, мы не можем обменять товар."
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-02",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Vou deixar a chave com a vizinha, a fim de que tu ___ (poder) entrar.",
+      "answer": [
+        "possas"
+      ],
+      "ru": "Оставлю ключ соседке, чтобы ты мог войти."
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-03",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "Uma vez que ___ (chegar) ao hotel, liga-me.",
+      "answer": [
+        "chegues"
+      ],
+      "ru": "Как только доберёшься до отеля, позвони мне."
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-04",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "fill-gap",
+      "prompt": "O orçamento é limitado; ___, temos de cortar despesas.",
+      "answer": [
+        "por conseguinte",
+        "consequentemente",
+        "portanto",
+        "por isso",
+        "assim sendo",
+        "assim"
+      ],
+      "hint": "«следовательно»"
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-05",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "Tem razão. ___, os números confirmam a sua tese.",
+      "options": [
+        "Com efeito",
+        "Em contrapartida",
+        "Posto que",
+        "A fim de"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-06",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "O salário é baixo; ___, o horário é flexível.",
+      "options": [
+        "por conseguinte",
+        "visto que",
+        "em contrapartida",
+        "a fim de"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-07",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "choice",
+      "prompt": "Выберите правильную фразу:",
+      "options": [
+        "Visto que esteja cansado, vou deitar-me.",
+        "Dado que esteja cansado, vou deitar-me.",
+        "Já que esteja cansado, vou deitar-me.",
+        "Visto que estou cansado, vou deitar-me."
+      ],
+      "correct": 3,
+      "explanation": "Причинные союзы требуют индикатива."
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-08",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "transform",
+      "prompt": "Estudou muito para passar no exame.",
+      "instruction": "Замените para на de modo a.",
+      "answer": [
+        "Estudou muito de modo a passar no exame."
+      ]
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-09",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "translate-ru-pt",
+      "ru": "Тем не менее проект одобрили.",
+      "answer": [
+        "Não obstante, o projeto foi aprovado.",
+        "Ainda assim, o projeto foi aprovado.",
+        "No entanto, o projeto foi aprovado.",
+        "Contudo, o projeto foi aprovado.",
+        "Mesmo assim, o projeto foi aprovado.",
+        "Todavia, o projeto foi aprovado.",
+        "Não obstante, aprovaram o projeto.",
+        "Ainda assim, aprovaram o projeto.",
+        "No entanto, aprovaram o projeto.",
+        "Contudo, aprovaram o projeto.",
+        "Mesmo assim, aprovaram o projeto.",
+        "Todavia, aprovaram o projeto."
+      ]
+    },
+    {
+      "id": "b2-conectores-argumentativos-mt-10",
+      "topicId": "b2-conectores-argumentativos",
+      "type": "listen-choice",
+      "text": "A casa é cara; em contrapartida, fica perto do metro.",
+      "options": [
+        "Дом дорогой, поэтому далеко от метро.",
+        "Дом дорогой, зато рядом с метро.",
+        "Дом дорогой, потому что рядом с метро.",
+        "Дом недорогой и рядом с метро."
+      ],
+      "correct": 1
+    }
+  ]
+}

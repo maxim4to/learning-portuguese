@@ -1,0 +1,997 @@
+{
+  "questions": [
+    {
+      "id": "diag-001",
+      "topicId": "a1-artigos-genero-numero",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "___ problema é sério.",
+      "options": [
+        "As",
+        "O",
+        "A",
+        "Os"
+      ],
+      "correct": 1,
+      "explanation": "problema — мужского рода, несмотря на -a (как sistema, mapa, dia)."
+    },
+    {
+      "id": "diag-002",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Вы говорите с пожилой соседкой. Как вежливо спросить «Как вы?»",
+      "options": [
+        "Como você está?",
+        "Como estais?",
+        "Como estás?",
+        "Como está a senhora?"
+      ],
+      "correct": 3,
+      "explanation": "В Португалии вежливо — o senhor / a senhora + 3-е лицо; você в лицо звучит суховато."
+    },
+    {
+      "id": "diag-003",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Вы спрашиваете друга: «Ты говоришь по-английски?»",
+      "options": [
+        "Falas inglês?",
+        "Fala inglês tu?",
+        "Vocês fala inglês?",
+        "Você fala inglês?"
+      ],
+      "correct": 0,
+      "explanation": "С друзьями в pt-PT — tu + форма 2-го лица (falas)."
+    },
+    {
+      "id": "diag-004",
+      "topicId": "a1-possessivos",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Este é ___ carro.",
+      "options": [
+        "meu",
+        "o meu",
+        "a minha",
+        "o meus"
+      ],
+      "correct": 1,
+      "explanation": "В pt-PT перед притяжательным обычно ставится артикль: o meu carro."
+    },
+    {
+      "id": "diag-005",
+      "topicId": "a1-demonstrativos",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "___ livro que tens na mão é meu.",
+      "options": [
+        "Isto",
+        "Este",
+        "Esse",
+        "Aquele"
+      ],
+      "correct": 2,
+      "explanation": "esse — рядом с собеседником; este — рядом со мной; aquele — далеко от обоих."
+    },
+    {
+      "id": "diag-006",
+      "topicId": "a1-interrogativos",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "___ é que não vieste ontem?",
+      "options": [
+        "Porquê",
+        "Por quê",
+        "Por que",
+        "Porque"
+      ],
+      "correct": 3,
+      "explanation": "В pt-PT вопрос «почему» в начале фразы — porque (Porque é que...?). Por que — бразильская орфография."
+    },
+    {
+      "id": "diag-007",
+      "topicId": "a1-negacao",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "— Queres alguma coisa? — Não, não quero ___.",
+      "options": [
+        "algo",
+        "nenhum",
+        "alguma coisa",
+        "nada"
+      ],
+      "correct": 3,
+      "explanation": "Двойное отрицание нормально: não quero nada."
+    },
+    {
+      "id": "diag-008",
+      "topicId": "a1-ser-estar",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "A Ana ___ cansada hoje.",
+      "options": [
+        "é",
+        "está",
+        "fica",
+        "tem"
+      ],
+      "correct": 1,
+      "explanation": "Временное состояние — estar."
+    },
+    {
+      "id": "diag-009",
+      "topicId": "a1-ser-estar",
+      "level": "A1",
+      "type": "fill-gap",
+      "prompt": "O meu pai ___ médico.",
+      "answer": [
+        "é"
+      ],
+      "hint": "профессия"
+    },
+    {
+      "id": "diag-010",
+      "topicId": "a1-ter-haver",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "___ muitas pessoas na praia hoje.",
+      "options": [
+        "Têm",
+        "Hão",
+        "Tem",
+        "Há"
+      ],
+      "correct": 3,
+      "explanation": "«Есть, имеется» в pt-PT — há, форма не меняется по числу (не *hão*). Tem в этом значении — бразильская разговорная норма."
+    },
+    {
+      "id": "diag-011",
+      "topicId": "a1-presente-indicativo-regulares",
+      "level": "A1",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (morar) perto daqui?",
+      "answer": [
+        "moras"
+      ]
+    },
+    {
+      "id": "diag-012",
+      "topicId": "a1-presente-irregulares",
+      "level": "A1",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (fazer) o jantar hoje.",
+      "answer": [
+        "faço"
+      ]
+    },
+    {
+      "id": "diag-013",
+      "topicId": "a1-presente-irregulares",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Eles ___ dois filhos.",
+      "options": [
+        "tens",
+        "tem",
+        "têm",
+        "teem"
+      ],
+      "correct": 2,
+      "explanation": "ter: ele tem — eles têm."
+    },
+    {
+      "id": "diag-014",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "— O que estás a fazer? — ___",
+      "options": [
+        "Leio agora.",
+        "Estou ler.",
+        "Estou lendo.",
+        "Estou a ler."
+      ],
+      "correct": 3,
+      "explanation": "В pt-PT — estar a + infinitivo; герундий — бразильский вариант."
+    },
+    {
+      "id": "diag-015",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "level": "A1",
+      "type": "fill-gap",
+      "prompt": "Amanhã eu ___ (ir) visitar os meus pais.",
+      "answer": [
+        "vou"
+      ],
+      "hint": "ir + infinitivo"
+    },
+    {
+      "id": "diag-016",
+      "topicId": "a1-gostar-de",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Eu gosto ___ dançar.",
+      "options": [
+        "de",
+        "a",
+        "—",
+        "do"
+      ],
+      "correct": 0,
+      "explanation": "gostar всегда с предлогом de."
+    },
+    {
+      "id": "diag-017",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Moro ___ Porto.",
+      "options": [
+        "ao",
+        "em",
+        "no",
+        "na"
+      ],
+      "correct": 2,
+      "explanation": "em + o = no; o Porto — с артиклем."
+    },
+    {
+      "id": "diag-018",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Hoje à noite vou ___ cinema.",
+      "options": [
+        "à",
+        "em",
+        "no",
+        "ao"
+      ],
+      "correct": 3,
+      "explanation": "Направление в pt-PT — a: vou ao cinema. «Vou no cinema» — бразильское разговорное."
+    },
+    {
+      "id": "diag-019",
+      "topicId": "a1-numeros-horas-datas",
+      "level": "A1",
+      "type": "choice",
+      "prompt": "Как сказать «в половине девятого»?",
+      "options": [
+        "às nove e meia",
+        "às oito e meio",
+        "na oito e meia",
+        "às oito e meia"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "diag-020",
+      "topicId": "a2-preterito-perfeito-simples",
+      "level": "A2",
+      "type": "fill-gap",
+      "prompt": "Ontem eu ___ (ir) ao médico.",
+      "answer": [
+        "fui"
+      ]
+    },
+    {
+      "id": "diag-021",
+      "topicId": "a2-preterito-perfeito-simples",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "O que é que tu ___ ontem à noite?",
+      "options": [
+        "fizestes",
+        "fazeste",
+        "fizeste",
+        "fez"
+      ],
+      "correct": 2,
+      "explanation": "fazer → tu fizeste."
+    },
+    {
+      "id": "diag-022",
+      "topicId": "a2-preterito-imperfeito",
+      "level": "A2",
+      "type": "fill-gap",
+      "prompt": "Quando eu era criança, ___ (brincar) muito na rua.",
+      "answer": [
+        "brincava"
+      ],
+      "hint": "привычка в прошлом"
+    },
+    {
+      "id": "diag-023",
+      "topicId": "a2-preterito-imperfeito",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Antigamente nós ___ em Coimbra.",
+      "options": [
+        "morávamos",
+        "moramos",
+        "moraremos",
+        "morámos"
+      ],
+      "correct": 0,
+      "explanation": "Antigamente — фон/привычка в прошлом → imperfeito."
+    },
+    {
+      "id": "diag-024",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Eu ___ a jantar quando o telefone tocou.",
+      "options": [
+        "estive",
+        "estava",
+        "estou",
+        "estivesse"
+      ],
+      "correct": 1,
+      "explanation": "Фоновое действие — imperfeito; прерывающее событие — perfeito."
+    },
+    {
+      "id": "diag-025",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Quando era pequena, a Rita ___ medo do escuro.",
+      "options": [
+        "tivesse",
+        "teve",
+        "tinha",
+        "tem"
+      ],
+      "correct": 2,
+      "explanation": "Длительное состояние в прошлом — imperfeito."
+    },
+    {
+      "id": "diag-026",
+      "topicId": "a2-preterito-perfeito-composto",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Ultimamente ___ muito cansado.",
+      "options": [
+        "estou estado",
+        "tinha estado",
+        "estive",
+        "tenho estado"
+      ],
+      "correct": 3,
+      "explanation": "Повторяющееся/длящееся до сих пор — pretérito perfeito composto."
+    },
+    {
+      "id": "diag-027",
+      "topicId": "a2-preterito-perfeito-composto",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Как сказать «Я уже видел этот фильм»?",
+      "options": [
+        "Já vi este filme.",
+        "Já tinha visto este filme.",
+        "Já estou visto este filme.",
+        "Já tenho visto este filme."
+      ],
+      "correct": 0,
+      "explanation": "Однократное законченное действие — perfeito simples. Tenho visto = «в последнее время смотрю»."
+    },
+    {
+      "id": "diag-028",
+      "topicId": "a2-mais-que-perfeito",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Quando cheguei à estação, o comboio já ___.",
+      "options": [
+        "partiu",
+        "tinha partido",
+        "tem partido",
+        "partia"
+      ],
+      "correct": 1,
+      "explanation": "Действие раньше другого прошедшего — mais-que-perfeito composto."
+    },
+    {
+      "id": "diag-029",
+      "topicId": "a2-pronomes-complemento",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "— Conheces o Rui? — Sim, ___.",
+      "options": [
+        "o conheço",
+        "conheço ele",
+        "conheço-o",
+        "conheço-lhe"
+      ],
+      "correct": 2,
+      "explanation": "Прямое дополнение — o; в утвердительной фразе — после глагола."
+    },
+    {
+      "id": "diag-030",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Chamo me Pedro.",
+        "Eu me chamo Pedro.",
+        "Me chamo Pedro.",
+        "Chamo-me Pedro."
+      ],
+      "correct": 3,
+      "explanation": "В pt-PT без «магнита» — ênclise."
+    },
+    {
+      "id": "diag-031",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Não o conheço.",
+        "Não conheço ele.",
+        "O não conheço.",
+        "Não conheço-o."
+      ],
+      "correct": 0,
+      "explanation": "não притягивает местоимение — próclise."
+    },
+    {
+      "id": "diag-032",
+      "topicId": "a2-verbos-reflexos",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Todos os dias ___ às sete.",
+      "options": [
+        "levanto-me",
+        "me levanto",
+        "levanto",
+        "levanto-se"
+      ],
+      "correct": 0,
+      "explanation": "Возвратный глагол, местоимение после глагола."
+    },
+    {
+      "id": "diag-033",
+      "topicId": "a2-imperativo",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Pedro, ___ a porta, por favor!",
+      "options": [
+        "fechar",
+        "fecha",
+        "feche",
+        "fechas"
+      ],
+      "correct": 1,
+      "explanation": "Утвердительный императив для tu = форма ele наст. времени: fecha. Feche — для você/o senhor."
+    },
+    {
+      "id": "diag-034",
+      "topicId": "a2-imperativo",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Não ___ isso, Rita!",
+      "options": [
+        "fazes",
+        "fazer",
+        "faz",
+        "faças"
+      ],
+      "correct": 3,
+      "explanation": "Отрицательный императив — conjuntivo: não faças."
+    },
+    {
+      "id": "diag-035",
+      "topicId": "a2-futuro-simples",
+      "level": "A2",
+      "type": "fill-gap",
+      "prompt": "Amanhã ___ (fazer) muito frio.",
+      "answer": [
+        "fará",
+        "vai fazer"
+      ],
+      "hint": "будущее"
+    },
+    {
+      "id": "diag-036",
+      "topicId": "a2-condicional",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Вежливая просьба: «___ ajudar-me com isto?»",
+      "options": [
+        "Poderia",
+        "Puder",
+        "Pôde",
+        "Possa"
+      ],
+      "correct": 0,
+      "explanation": "Вежливость — condicional (poderia); в речи часто podia."
+    },
+    {
+      "id": "diag-037",
+      "topicId": "a2-condicional",
+      "level": "A2",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (gostar) de reservar uma mesa para dois.",
+      "answer": [
+        "gostaria",
+        "gostava"
+      ],
+      "hint": "вежливость",
+      "explanation": "В pt-PT в речи очень частотно gostava (imperfeito в значении condicional)."
+    },
+    {
+      "id": "diag-038",
+      "topicId": "a2-comparativos-superlativos",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "O Porto é ___ que Braga.",
+      "options": [
+        "mais maior",
+        "o maior",
+        "mais grande",
+        "maior"
+      ],
+      "correct": 3,
+      "explanation": "grande → maior."
+    },
+    {
+      "id": "diag-039",
+      "topicId": "a2-adverbios",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Ela canta muito ___.",
+      "options": [
+        "bem",
+        "boa",
+        "boas",
+        "bom"
+      ],
+      "correct": 0,
+      "explanation": "Наречие (как?) — bem; bom — прилагательное."
+    },
+    {
+      "id": "diag-040",
+      "topicId": "a2-adverbios-frequencia",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Как сказать «Я почти никогда не смотрю телевизор»?",
+      "options": [
+        "Quase nunca vejo televisão.",
+        "Não quase nunca vejo televisão.",
+        "Vejo quase nunca televisão.",
+        "Nunca quase vejo televisão."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "diag-041",
+      "topicId": "a2-por-para",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Obrigado ___ ajuda!",
+      "options": [
+        "pra a",
+        "para a",
+        "pela",
+        "por a"
+      ],
+      "correct": 2,
+      "explanation": "Благодарность за что-то — por; por + a = pela."
+    },
+    {
+      "id": "diag-042",
+      "topicId": "a2-por-para",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Este presente é ___ ti.",
+      "options": [
+        "pra",
+        "pelo",
+        "por",
+        "para"
+      ],
+      "correct": 3,
+      "explanation": "Адресат — para."
+    },
+    {
+      "id": "diag-043",
+      "topicId": "a2-preposicoes-tempo",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Vou de férias ___ agosto.",
+      "options": [
+        "em",
+        "a",
+        "de",
+        "no"
+      ],
+      "correct": 0,
+      "explanation": "С месяцами — em без артикля."
+    },
+    {
+      "id": "diag-044",
+      "topicId": "a2-haver-ter-expressoes",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Tenho muitas ___ tuas.",
+      "options": [
+        "saudades",
+        "falta",
+        "saudade de",
+        "faltas"
+      ],
+      "correct": 0,
+      "explanation": "В pt-PT — ter saudades (мн. ч.)."
+    },
+    {
+      "id": "diag-045",
+      "topicId": "a2-conjuncoes-basicas",
+      "level": "A2",
+      "type": "choice",
+      "prompt": "Não fui à praia ___ estava a chover.",
+      "options": [
+        "para que",
+        "porque",
+        "porquê",
+        "por que"
+      ],
+      "correct": 1,
+      "explanation": "Союз «потому что» — porque."
+    },
+    {
+      "id": "diag-046",
+      "topicId": "b1-presente-conjuntivo",
+      "level": "B1",
+      "type": "fill-gap",
+      "prompt": "Espero que tu ___ (estar) bem.",
+      "answer": [
+        "estejas"
+      ]
+    },
+    {
+      "id": "diag-047",
+      "topicId": "b1-presente-conjuntivo",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Acho que ele ___ razão.",
+      "options": [
+        "tem",
+        "tiver",
+        "tivesse",
+        "tenha"
+      ],
+      "correct": 0,
+      "explanation": "Утвердительное achar que — индикатив."
+    },
+    {
+      "id": "diag-048",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Embora ___ frio, vamos à praia.",
+      "options": [
+        "está",
+        "esteja",
+        "estiver",
+        "estar"
+      ],
+      "correct": 1,
+      "explanation": "embora + conjuntivo."
+    },
+    {
+      "id": "diag-049",
+      "topicId": "b1-conjuntivo-conjuncoes",
+      "level": "B1",
+      "type": "fill-gap",
+      "prompt": "Fala mais alto para que todos te ___ (ouvir).",
+      "answer": [
+        "ouçam",
+        "oiçam"
+      ]
+    },
+    {
+      "id": "diag-050",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "level": "B1",
+      "type": "fill-gap",
+      "prompt": "Se eu ___ (ter) dinheiro, comprava uma casa.",
+      "answer": [
+        "tivesse"
+      ]
+    },
+    {
+      "id": "diag-051",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Se tu ___ mais cedo, apanhavas o comboio.",
+      "options": [
+        "saías",
+        "saíres",
+        "sais",
+        "saísses"
+      ],
+      "correct": 3,
+      "explanation": "Нереальное условие — se + imperfeito do conjuntivo."
+    },
+    {
+      "id": "diag-052",
+      "topicId": "b1-futuro-conjuntivo",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Quando ___ a Lisboa, liga-me.",
+      "options": [
+        "chegas",
+        "chegarás",
+        "chegares",
+        "chegues"
+      ],
+      "correct": 2,
+      "explanation": "Будущее после quando — futuro do conjuntivo."
+    },
+    {
+      "id": "diag-053",
+      "topicId": "b1-futuro-conjuntivo",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Se eu ___ o Rui, digo-lhe.",
+      "options": [
+        "veja",
+        "ver",
+        "vir",
+        "vier"
+      ],
+      "correct": 2,
+      "explanation": "ver → futuro do conjuntivo vir. *Se eu ver* — ошибка (часто встречается в бразильской речи)."
+    },
+    {
+      "id": "diag-054",
+      "topicId": "b1-conjuntivo-relativas",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Procuro alguém que ___ falar alemão.",
+      "options": [
+        "souber",
+        "saber",
+        "sabe",
+        "saiba"
+      ],
+      "correct": 3,
+      "explanation": "Неизвестный/гипотетический антецедент — conjuntivo."
+    },
+    {
+      "id": "diag-055",
+      "topicId": "b1-infinitivo-pessoal",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "É melhor ___ cedo, para não apanharmos trânsito.",
+      "options": [
+        "sairemos",
+        "saímos",
+        "sair nós",
+        "sairmos"
+      ],
+      "correct": 3,
+      "explanation": "Личный инфинитив: sair + -mos."
+    },
+    {
+      "id": "diag-056",
+      "topicId": "b1-infinitivo-pessoal",
+      "level": "B1",
+      "type": "fill-gap",
+      "prompt": "O professor deu-nos o texto para o ___ (ler) em casa.",
+      "answer": [
+        "lermos"
+      ]
+    },
+    {
+      "id": "diag-057",
+      "topicId": "b1-voz-passiva",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "A ponte ___ construída em 1966.",
+      "options": [
+        "está",
+        "foi",
+        "esteve",
+        "era"
+      ],
+      "correct": 1,
+      "explanation": "Пассив действия — ser + particípio: foi construída."
+    },
+    {
+      "id": "diag-058",
+      "topicId": "b1-discurso-indireto",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Ele disse: «Estou cansado». → Ele disse que ___ cansado.",
+      "options": [
+        "esteve",
+        "estará",
+        "está",
+        "estava"
+      ],
+      "correct": 3,
+      "explanation": "Согласование времён: presente → imperfeito."
+    },
+    {
+      "id": "diag-059",
+      "topicId": "b1-pronomes-relativos",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "A senhora ___ filho estuda comigo é médica.",
+      "options": [
+        "cujo",
+        "cuja",
+        "de quem o",
+        "que"
+      ],
+      "correct": 0,
+      "explanation": "cujo согласуется с тем, что следует (filho — м. р.)."
+    },
+    {
+      "id": "diag-060",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Passei a tarde ___.",
+      "options": [
+        "a estudar",
+        "estudando",
+        "estudar",
+        "a estudando"
+      ],
+      "correct": 0,
+      "explanation": "В стандартном pt-PT — a + infinitivo; герундий звучит по-бразильски (или по-алентежански)."
+    },
+    {
+      "id": "diag-061",
+      "topicId": "b1-participios-duplos",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "A luz já foi ___.",
+      "options": [
+        "acendeu",
+        "acendida",
+        "acesa",
+        "acender"
+      ],
+      "correct": 2,
+      "explanation": "С ser/estar — краткое причастие (aceso/acesa)."
+    },
+    {
+      "id": "diag-062",
+      "topicId": "b1-ordem-palavras-enfase",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Onde ___ moras?",
+      "options": [
+        "é qual",
+        "foi que",
+        "é que",
+        "que é"
+      ],
+      "correct": 2,
+      "explanation": "Вопрос с é que после вопросительного слова — нейтральная и очень типичная для pt-PT конструкция."
+    },
+    {
+      "id": "diag-063",
+      "topicId": "b1-ha-desde-durante",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Estudo português ___ 2020.",
+      "options": [
+        "desde",
+        "durante",
+        "faz",
+        "há"
+      ],
+      "correct": 0,
+      "explanation": "desde + момент начала; há + промежуток."
+    },
+    {
+      "id": "diag-064",
+      "topicId": "b1-verbos-preposicao",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Ontem sonhei ___ ti.",
+      "options": [
+        "com",
+        "de",
+        "em",
+        "por"
+      ],
+      "correct": 0,
+      "explanation": "sonhar com."
+    },
+    {
+      "id": "diag-065",
+      "topicId": "b1-expressoes-idiomaticas",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "«Estar com os azeites» значит…",
+      "options": [
+        "разбогатеть",
+        "быть не в духе, раздражённым",
+        "быть пьяным",
+        "много готовить"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "diag-066",
+      "topicId": "b1-conectores-discursivos",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "O plano é bom; ___, é muito caro.",
+      "options": [
+        "além disso",
+        "por isso",
+        "no entanto",
+        "portanto"
+      ],
+      "correct": 2,
+      "explanation": "Противопоставление — no entanto."
+    },
+    {
+      "id": "diag-067",
+      "topicId": "b1-verbos-mudanca",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Quando ouviu a notícia, ___ muito triste.",
+      "options": [
+        "ficou",
+        "fez-se",
+        "pôs-se a",
+        "tornou-se"
+      ],
+      "correct": 0,
+      "explanation": "Изменение эмоционального состояния — ficar."
+    },
+    {
+      "id": "diag-068",
+      "topicId": "b1-formacao-palavras",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Антоним к «feliz»:",
+      "options": [
+        "infeliz",
+        "desfeliz",
+        "anfeliz",
+        "malfeliz"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "diag-069",
+      "topicId": "b1-diminutivos-aumentativos",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Уменьшительная форма от «mesa»:",
+      "options": [
+        "mesão",
+        "mesinha",
+        "mesazinha",
+        "meseta"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "diag-070",
+      "topicId": "b1-email-formal-informal",
+      "level": "B1",
+      "type": "choice",
+      "prompt": "Как начать официальное письмо в câmara municipal?",
+      "options": [
+        "Querida Câmara,",
+        "Oi, pessoal,",
+        "Olá!",
+        "Exmos. Senhores,"
+      ],
+      "correct": 3
+    }
+  ]
+}

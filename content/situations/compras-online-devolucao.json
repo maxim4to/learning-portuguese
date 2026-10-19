@@ -1,0 +1,179 @@
+{
+  "id": "compras-online-devolucao",
+  "title": "Онлайн-покупка и возврат",
+  "titlePt": "Compras online e devolução",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Linha de apoio ao cliente, bom dia, fala a Sofia. Em que posso ajudar?", "ru": "Служба поддержки клиентов, доброе утро, это София. Чем могу помочь?" },
+    { "speaker": "B", "pt": "Bom dia. Fiz uma encomenda no vosso site na semana passada e há um problema.", "ru": "Доброе утро. На прошлой неделе я сделал заказ на вашем сайте, и с ним проблема." },
+    { "speaker": "A", "pt": "Diga-me o número da encomenda, se faz favor.", "ru": "Назовите, пожалуйста, номер заказа." },
+    { "speaker": "B", "pt": "É o 458271. O estafeta entregou-a ontem, mas o casaco veio no tamanho errado. Pedi um M e recebi um XL.", "ru": "458271. Курьер доставил его вчера, но куртка пришла не того размера. Я заказывал M, а получил XL." },
+    { "speaker": "A", "pt": "Peço desculpa pelo incómodo. Prefere trocar pelo tamanho certo ou devolver o artigo?", "ru": "Извините за неудобство. Вы предпочитаете обменять на нужный размер или вернуть товар?" },
+    { "speaker": "B", "pt": "Preferia trocar, mas se não tiverem o M em stock, quero o reembolso.", "ru": "Лучше обменять, но если размера M нет в наличии, я хочу вернуть деньги." },
+    { "speaker": "A", "pt": "Deixe-me verificar... Infelizmente, o tamanho M está esgotado neste momento.", "ru": "Сейчас проверю... К сожалению, размер M сейчас распродан." },
+    { "speaker": "B", "pt": "Nesse caso, queria devolver o casaco. Como é que faço?", "ru": "В таком случае я хотел бы вернуть куртку. Как это сделать?" },
+    { "speaker": "A", "pt": "Tem catorze dias para devolver, sem custos. Pode entregá-lo num ponto de recolha ou o estafeta vai buscá-lo a casa.", "ru": "У вас 14 дней на возврат, бесплатно. Можете сдать её в пункт выдачи, или курьер заберёт её у вас дома." },
+    { "speaker": "B", "pt": "Prefiro que o venham buscar. Estou em casa a partir das seis.", "ru": "Пусть лучше заберут. Я дома с шести." },
+    { "speaker": "A", "pt": "Muito bem. Vai receber um e-mail com a etiqueta de devolução. Tem de imprimi-la e colá-la na embalagem.", "ru": "Хорошо. Вам придёт письмо с этикеткой для возврата. Её нужно распечатать и наклеить на упаковку." },
+    { "speaker": "B", "pt": "E quando é que recebo o dinheiro?", "ru": "А когда я получу деньги?" },
+    { "speaker": "A", "pt": "O reembolso é feito pelo mesmo método de pagamento, até catorze dias depois de recebermos o artigo.", "ru": "Деньги возвращаются тем же способом оплаты, в течение 14 дней после того, как мы получим товар." },
+    { "speaker": "B", "pt": "Está bem. E se houver algum problema, posso fazer uma reclamação no livro de reclamações eletrónico?", "ru": "Хорошо. А если возникнут проблемы, я могу подать жалобу в электронную книгу жалоб?" },
+    { "speaker": "A", "pt": "Claro, tem esse direito. Mas tenho a certeza de que vai correr tudo bem.", "ru": "Конечно, это ваше право. Но я уверена, что всё пройдёт хорошо." }
+  ],
+  "phrases": [
+    { "pt": "Fiz uma encomenda e há um problema.", "ru": "Я сделал заказ, и с ним проблема." },
+    { "pt": "Qual é o número da encomenda?", "ru": "Какой номер заказа?" },
+    { "pt": "A encomenda ainda não chegou.", "ru": "Заказ ещё не пришёл." },
+    { "pt": "O artigo veio danificado.", "ru": "Товар пришёл повреждённым." },
+    { "pt": "Queria trocar este artigo por outro tamanho.", "ru": "Я хотел бы обменять этот товар на другой размер." },
+    { "pt": "Queria devolver o artigo e pedir o reembolso.", "ru": "Я хотел бы вернуть товар и получить деньги назад." },
+    { "pt": "Infelizmente, está esgotado.", "ru": "К сожалению, товара нет в наличии." },
+    { "pt": "Quanto tempo demora o reembolso?", "ru": "Сколько времени занимает возврат денег?" },
+    { "pt": "Podem vir buscar a encomenda a casa?", "ru": "Можете забрать посылку из дома?" },
+    { "pt": "Quero fazer uma reclamação no livro de reclamações.", "ru": "Я хочу оставить жалобу в книге жалоб." }
+  ],
+  "vocab": [
+    { "pt": "a encomenda", "ru": "заказ; посылка", "example": "A minha encomenda já foi enviada." },
+    { "pt": "encomendar", "ru": "заказывать", "example": "Encomendei uns ténis pela internet." },
+    { "pt": "o estafeta", "ru": "курьер", "example": "O estafeta deixou a encomenda na portaria." },
+    { "pt": "a entrega", "ru": "доставка", "example": "A entrega demora dois a três dias úteis." },
+    { "pt": "a transportadora", "ru": "транспортная (курьерская) компания", "example": "A transportadora ligou-me antes de vir." },
+    { "pt": "o ponto de recolha", "ru": "пункт выдачи (и приёма) посылок", "example": "Fui levantar a encomenda ao ponto de recolha." },
+    { "pt": "levantar uma encomenda", "ru": "забрать посылку (на почте, в пункте выдачи)", "example": "Posso levantar a encomenda nos CTT amanhã." },
+    { "pt": "o código de seguimento", "ru": "трек-номер", "example": "Com o código de seguimento vejo onde está a encomenda." },
+    { "pt": "a morada de entrega", "ru": "адрес доставки", "example": "Enganei-me na morada de entrega." },
+    { "pt": "os portes", "ru": "стоимость доставки", "example": "Acima de cinquenta euros, os portes são grátis." },
+    { "pt": "o carrinho de compras", "ru": "корзина (в интернет-магазине)", "example": "Tenho três artigos no carrinho de compras." },
+    { "pt": "finalizar a compra", "ru": "оформить заказ", "example": "Cliquei em «finalizar a compra» e paguei com MB Way." },
+    { "pt": "o artigo", "ru": "товар, позиция", "example": "Este artigo não tem devolução." },
+    { "pt": "o tamanho", "ru": "размер", "example": "O tamanho M ficou-me pequeno." },
+    { "pt": "esgotado", "ru": "распроданный, нет в наличии", "example": "O modelo azul está esgotado." },
+    { "pt": "em stock", "ru": "в наличии", "example": "Ainda têm este casaco em stock?" },
+    { "pt": "danificado", "ru": "повреждённый", "example": "A caixa chegou danificada." },
+    { "pt": "a embalagem", "ru": "упаковка", "example": "Guarde a embalagem original." },
+    { "pt": "a etiqueta de devolução", "ru": "этикетка для возврата", "example": "A etiqueta de devolução vem por e-mail." },
+    { "pt": "a devolução", "ru": "возврат (товара)", "example": "A devolução é gratuita." },
+    { "pt": "devolver", "ru": "возвращать", "example": "Quero devolver estas calças." },
+    { "pt": "trocar", "ru": "обменять", "example": "Posso trocar por outra cor?" },
+    { "pt": "a troca", "ru": "обмен", "example": "A troca é feita na loja ou por correio." },
+    { "pt": "o reembolso", "ru": "возврат денег", "example": "Já recebi o reembolso na conta." },
+    { "pt": "reembolsar", "ru": "вернуть деньги", "example": "Vão reembolsar-me em cinco dias." },
+    { "pt": "o vale de compras", "ru": "подарочный сертификат, купон на покупку", "example": "Em vez do reembolso, deram-me um vale de compras." },
+    { "pt": "o código de desconto", "ru": "промокод", "example": "Usei um código de desconto de dez por cento." },
+    { "pt": "o método de pagamento", "ru": "способ оплаты", "example": "Qual é o método de pagamento que prefere?" },
+    { "pt": "o prazo", "ru": "срок", "example": "O prazo para devolver é de catorze dias." },
+    { "pt": "o direito de livre resolução", "ru": "право отказаться от онлайн-покупки (14 дней)", "example": "Nas compras online, tem direito de livre resolução." },
+    { "pt": "o apoio ao cliente", "ru": "служба поддержки клиентов", "example": "Liguei para o apoio ao cliente." },
+    { "pt": "o incómodo", "ru": "неудобство", "example": "Pedimos desculpa pelo incómodo." },
+    { "pt": "o livro de reclamações", "ru": "книга жалоб (обязательна для всех компаний)", "example": "O livro de reclamações também existe em versão eletrónica." },
+    { "pt": "a reclamação", "ru": "жалоба, претензия", "example": "Fiz uma reclamação e responderam-me em dez dias." },
+    { "pt": "ir buscar", "ru": "заехать за чем-то, забрать", "example": "O estafeta vem buscar a caixa amanhã." }
+  ],
+  "exercises": [
+    {
+      "id": "compras-online-devolucao-ex-01",
+      "topicId": "compras-online-devolucao",
+      "type": "choice",
+      "prompt": "A transportadora vai entregar a encomenda. Quem a traz a casa é o ___.",
+      "options": ["porteiro", "estafeta", "rececionista", "motoboy"],
+      "correct": 1,
+      "explanation": "**O estafeta** — курьер. *Motoboy* — бразильское слово, **o porteiro** — консьерж/вахтёр, **o/a rececionista** — администратор на ресепшене."
+    },
+    {
+      "id": "compras-online-devolucao-ex-02",
+      "topicId": "compras-online-devolucao",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "o reembolso", "right": "возврат денег" },
+        { "left": "esgotado", "right": "нет в наличии" },
+        { "left": "os portes", "right": "стоимость доставки" },
+        { "left": "o ponto de recolha", "right": "пункт выдачи посылок" },
+        { "left": "a embalagem", "right": "упаковка" }
+      ]
+    },
+    {
+      "id": "compras-online-devolucao-ex-03",
+      "topicId": "compras-online-devolucao",
+      "type": "fill-gap",
+      "prompt": "Preferia trocar, mas se não ___ (ter) o M em stock, quero o reembolso.",
+      "answer": ["tiverem"],
+      "hint": "futuro do conjuntivo после se",
+      "ru": "Лучше обменять, но если размера M не будет в наличии, я хочу вернуть деньги.",
+      "explanation": "После **se** о будущем — futuro do conjuntivo: **se não tiverem** (они = магазин). Русскоязычные часто ставят *se não têm* по аналогии с «если нет»."
+    },
+    {
+      "id": "compras-online-devolucao-ex-04",
+      "topicId": "compras-online-devolucao",
+      "type": "listen-type",
+      "text": "E quando é que recebo o dinheiro?",
+      "answer": ["E quando é que recebo o dinheiro?"],
+      "explanation": "Вопрос с **é que** после вопросительного слова — очень типичен для pt-PT: **Quando é que…?**, **Onde é que…?**"
+    },
+    {
+      "id": "compras-online-devolucao-ex-05",
+      "topicId": "compras-online-devolucao",
+      "type": "listen-choice",
+      "text": "Deixe-me verificar... Infelizmente, o tamanho M está esgotado neste momento.",
+      "prompt": "Что говорит сотрудница?",
+      "options": ["Размер M придёт завтра.", "Курьер уже в пути.", "Размер M закончился.", "Обмен невозможен по правилам магазина."],
+      "correct": 2,
+      "explanation": "**Esgotado** — «распродан, закончился». **Neste momento** — «сейчас, на данный момент»."
+    },
+    {
+      "id": "compras-online-devolucao-ex-06",
+      "topicId": "compras-online-devolucao",
+      "type": "order-words",
+      "words": ["Tem", "de", "imprimir", "a", "etiqueta", "de", "devolução."],
+      "answer": "Tem de imprimir a etiqueta de devolução.",
+      "ru": "Вам нужно распечатать этикетку для возврата."
+    },
+    {
+      "id": "compras-online-devolucao-ex-07",
+      "topicId": "compras-online-devolucao",
+      "type": "translate-ru-pt",
+      "ru": "Заказ пришёл повреждённым.",
+      "answer": ["A encomenda chegou danificada.", "A encomenda veio danificada.", "A minha encomenda chegou danificada.", "A minha encomenda veio danificada.", "Recebi a encomenda danificada.", "A encomenda chegou estragada."],
+      "explanation": "**Encomenda** — женского рода, поэтому **danificada**. Глагол **vir** («прийти» о посылке) звучит очень естественно: **veio danificada**."
+    },
+    {
+      "id": "compras-online-devolucao-ex-08",
+      "topicId": "compras-online-devolucao",
+      "type": "choice",
+      "prompt": "A loja online recusa-se a resolver o problema. O que é que pode fazer?",
+      "options": ["Fazer uma reclamação no livro de reclamações eletrónico.", "Ligar para o 112.", "Pedir um código de seguimento.", "Ir à junta de freguesia."],
+      "correct": 0,
+      "explanation": "**Livro de reclamações** обязан быть у каждой компании в Португалии, для онлайн-покупок есть электронная версия (livroreclamacoes.pt). Жалоба уходит в надзорный орган."
+    },
+    {
+      "id": "compras-online-devolucao-ex-09",
+      "topicId": "compras-online-devolucao",
+      "type": "fill-gap",
+      "prompt": "Tem catorze dias para devolver. Pode entregá-lo num ponto de ___.",
+      "answer": ["recolha"],
+      "hint": "пункт выдачи/приёма посылок",
+      "ru": "У вас 14 дней на возврат. Можете сдать его в пункт выдачи.",
+      "explanation": "**Ponto de recolha** — пункт, где забирают и сдают посылки (магазины, киоски, CTT)."
+    },
+    {
+      "id": "compras-online-devolucao-ex-10",
+      "topicId": "compras-online-devolucao",
+      "type": "transform",
+      "prompt": "Tem de imprimir a etiqueta e colar a etiqueta na embalagem.",
+      "instruction": "Замени повторяющееся «a etiqueta» местоимением",
+      "answer": ["Tem de imprimir a etiqueta e colá-la na embalagem.", "Tem de imprimir a etiqueta e de a colar na embalagem."],
+      "explanation": "Местоимение **a** после инфинитива на -r: **colar + a → colá-la** (r выпадает, появляется l, ставится ударение)."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы заказали в интернет-магазине кофемолку, но она пришла с треснувшим корпусом. Напишите письмо в службу поддержки: укажите номер заказа и дату доставки, опишите проблему, попросите обмен или возврат денег, спросите, может ли курьер забрать посылку из дома, и упомяните, что при необходимости оставите жалобу в книге жалоб.",
+    "sample": "Exmos. Senhores,\nNo dia 3 de outubro recebi a encomenda n.º 512904, mas o moinho de café chegou danificado: a caixa estava amolgada e o aparelho tem uma racha na parte de cima.\nGostaria de trocar o artigo por um novo. Se não houver em stock, peço o reembolso pelo mesmo método de pagamento.\nPodem enviar um estafeta para recolher a encomenda em minha casa? Estou disponível todos os dias depois das 18h.\nEm anexo envio fotografias do artigo e da embalagem.\nCaso não seja possível resolver a situação, terei de apresentar uma reclamação no livro de reclamações eletrónico.\nCom os melhores cumprimentos,\nDmitri Petrov",
+    "checklist": [
+      "Указаны номер заказа (encomenda n.º) и дата доставки",
+      "Проблема описана словами danificado / com defeito / tamanho errado",
+      "Есть вежливая просьба: Gostaria de… / Queria… — обмен (trocar) или возврат денег (reembolso)",
+      "Есть вопрос про курьера (estafeta) или пункт выдачи (ponto de recolha)",
+      "Письмо начинается с Exmos. Senhores и заканчивается Com os melhores cumprimentos"
+    ]
+  }
+}

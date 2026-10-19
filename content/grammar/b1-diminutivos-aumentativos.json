@@ -1,0 +1,426 @@
+{
+  "id": "b1-diminutivos-aumentativos",
+  "level": "B1",
+  "module": "b1-lexico-estilo",
+  "title": "Уменьшительные и увеличительные суффиксы",
+  "titlePt": "Diminutivos e aumentativos",
+  "requires": [
+    "a1-artigos-genero-numero"
+  ],
+  "theory": "## Не только «маленький»\n\nДиминутивы в португальском — прежде всего способ выразить **отношение**: нежность, вежливость, иронию. Размер — далеко не главное: «маленький дом» часто проще сказать **uma casa pequena**. Носители употребляют диминутивы постоянно — в магазине, с детьми, с друзьями, — но почти никогда в официальной речи и письме.\n\n## Образование диминутивов\n\n| суффикс | когда | примеры |\n|---|---|---|\n| **-inho / -inha** | слова на безударные **-o / -a** (гласная отпадает) | casa → **casinha**, gato → **gatinho**, pouco → **pouquinho**, amigo → **amiguinho** |\n| **-zinho / -zinha** | ударная гласная, носовой звук, дифтонг, согласная | café → **cafezinho**, pão → **pãozinho**, mãe → **mãezinha**, flor → **florzinha**, avó → **avozinha** |\n| **-ito / -ita** | разговорное, ласковое, часто в pt-PT | rapaz → **rapazito**, bocado → **bocadito**, Ana → **Anita** |\n\n- Орфография: **c → qu**, **g → gu** перед i: **pouquinho, amiguinho, barquinho**.\n- Ударение переходит на суффикс, поэтому графический акцент основы исчезает: **café → cafezinho**, **avó → avozinha**, **só → sozinho** («один, в одиночку»).\n- Род сохраняется: **a mão → a mãozinha**, **o dia → o diazinho**.\n- Множественное число с **-zinho**: множественное основы без **-s** + **-zinhos**: **pão → pães → pãezinhos**, **flor → flores → florezinhas**, **animal → animais → animaizinhos**. В разговорной речи встречаются и *florzinhas*, *animalzinhos*, но норма — формы от множественного числа.\n\n## Аугментативы\n\n| суффикс | примеры |\n|---|---|\n| **-ão** | carro → **carrão**, casa → **casarão**, pé → **pezão** |\n| **-arrão / -zarrão** | homem → **homenzarrão**, cão → **canzarrão** |\n| **-aço / -aça** | rico → **ricaço** («богатей», пренебр.) |\n\nАугментатив на **-ão** часто мужского рода даже от женских слов: **a mulher → um mulherão**.\n\n## Слова, которые «застыли»\n\nНекоторые формы стали отдельными словами: **o portão** (ворота), **o cartão** (карточка), **o cadeirão** (кресло), **o fogão** (плита), **o palavrão** (ругательство), **sozinho** (один). Их значение уже не «большой» или «маленький».\n\n## Прагматика: зачем это говорят\n\n1. **Нежность**: **a minha avozinha**, **o meu filhinho**.\n2. **Смягчение просьбы**: **Espere só um minutinho.** **Dá-me um bocadinho de pão?** **Obrigadinho!**\n3. **Усиление** у наречий и прилагательных: **cedinho** (совсем рано), **pertinho** (совсем рядом), **devagarinho**, **a sopa está quentinha**.\n4. **Пренебрежение, ирония**: **um empregozinho** (работёнка), **um livreco** (книжонка), **gentinha**.\n\n## Частые формы в повседневной речи\n\n| форма | значение |\n|---|---|\n| **um bocadinho** | немножко, чуть-чуть |\n| **um minutinho / um momentinho** | минуточку |\n| **obrigadinho / obrigadinha** | спасибочки (разг.) |\n| **beijinhos** | целую (в конце письма или сообщения) |\n| **devagarinho** | потихонечку |\n| **Joãozinho, Ritinha, Anita** | ласковые формы имён |\n\n## Осторожно с бразилизмами\n\nВ Бразилии диминутивы ещё частотнее, и некоторые звучат в Португалии чуждо. В кафе в pt-PT просят **um café** или (в Лиссабоне) **uma bica**, а не *um cafezinho*. Вместо бразильского *agorinha* говорят **agora mesmo**, **há bocadinho**, **já**. «Чуть-чуть» — чаще **um bocadinho**, чем *um pouquinho*. В официальном письме диминутивы неуместны.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Um café, por favor.** / **Uma bica.** | Um cafezinho, por favor. | *cafezinho* — визитная карточка Бразилии; в pt-PT слово есть (**Vamos tomar um cafezinho?**), но заказывают **um café** |\n| **um bocadinho** | um pouquinho | в pt-PT *pouquinho* есть, но *bocadinho* частотнее |\n| **agora mesmo**, **há bocadinho** | agorinha | *agorinha* в Португалии не используют |\n| **rapazito**, **bocadito** | rapazinho, pouquinho | -ito живой в pt-PT, в BR почти исчез |\n| **Beijinhos!** (прощание) | Beijos! | в pt-PT уменьшительная форма — норма |\n\nМеханизм образования одинаков; различается, **какие** диминутивы привычны и как часто их используют.",
+  "commonErrors": "- **Лишний акцент**: *cafézinho*, *avózinha* ✗ → **cafezinho**, **avozinha** ✓.\n- **-inho вместо -zinho**: *pãoinho*, *caféinho* ✗ → **pãozinho**, **cafezinho** ✓.\n- **Множественное число**: *pãozinhos*, *animalzinhos* ✗ → **pãezinhos**, **animaizinhos** ✓.\n- **Орфография**: *poucinho*, *amigoinho* ✗ → **pouquinho**, **amiguinho** ✓.\n- **Смена рода**: *o mãozinho* ✗ → **a mãozinha** ✓.\n- **Бразилизмы**: *Um cafezinho, por favor* (при заказе), *agorinha* ✗ → **Um café / Uma bica, por favor**, **agora mesmo / há bocadinho** ✓.\n- **Диминутив вместо прилагательного**: в описании размеров (*Quero alugar um apartamentinho*) лучше **um apartamento pequeno** ✓; диминутив добавляет эмоцию.",
+  "examples": [
+    {
+      "pt": "Espere só um minutinho, por favor.",
+      "ru": "Подождите минуточку, пожалуйста.",
+      "audio": true
+    },
+    {
+      "pt": "Dá-me um bocadinho de pão?",
+      "ru": "Дашь мне кусочек хлеба?",
+      "audio": true
+    },
+    {
+      "pt": "A minha avozinha faz uns bolos ótimos.",
+      "ru": "Моя бабуля печёт отличные пироги.",
+      "audio": true
+    },
+    {
+      "pt": "Moramos pertinho da estação.",
+      "ru": "Мы живём совсем рядом со станцией.",
+      "audio": true
+    },
+    {
+      "pt": "Amanhã temos de acordar cedinho.",
+      "ru": "Завтра нам надо встать пораньше.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-diminutivos-aumentativos-ex-01",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Espere só um ___ (minuto), por favor.",
+      "answer": [
+        "minutinho"
+      ],
+      "ru": "Подождите минуточку, пожалуйста."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-02",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Queria um ___ (bocado) de queijo.",
+      "answer": [
+        "bocadinho",
+        "bocadito"
+      ],
+      "ru": "Я бы хотел кусочек сыра."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-03",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Dá-me a tua ___ (mão), filho.",
+      "answer": [
+        "mãozinha"
+      ],
+      "ru": "Дай мне ручку, сынок.",
+      "explanation": "mão — ударный носовой → -zinha; род женский сохраняется."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-04",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Vou comprar ___ (pão, мн. ч., дим.) para o pequeno-almoço.",
+      "answer": [
+        "pãezinhos"
+      ],
+      "ru": "Куплю булочек к завтраку.",
+      "explanation": "pães → pãe- + -zinhos."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-05",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "A minha ___ (avó, дим.) faz oitenta anos.",
+      "answer": [
+        "avozinha"
+      ],
+      "ru": "Моей бабуле исполняется восемьдесят.",
+      "explanation": "Акцент основы исчезает: avozinha."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-06",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "O hotel fica ___ (perto, дим.) da praia.",
+      "answer": [
+        "pertinho"
+      ],
+      "ru": "Отель совсем рядом с пляжем."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-07",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Tenho um ___ (amigo, дим.) novo na escola!",
+      "answer": [
+        "amiguinho"
+      ],
+      "ru": "У меня новый дружочек в школе!",
+      "explanation": "g → gu перед i."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-08",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "A sopa está ___ (quente, дим.), come já!",
+      "answer": [
+        "quentinha"
+      ],
+      "ru": "Суп тёпленький, ешь сразу!"
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-09",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "choice",
+      "prompt": "Num café em Lisboa pede-se:",
+      "options": [
+        "Um cafezinho, por favor.",
+        "Uma bica, por favor.",
+        "Um cafezão, por favor."
+      ],
+      "correct": 1,
+      "explanation": "bica — лиссабонское название эспрессо; cafezinho звучит по-бразильски."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-10",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "choice",
+      "prompt": "Нормативный диминутив мн. ч. от «flor»:",
+      "options": [
+        "florzinhas",
+        "flórzinhas",
+        "florezinhas",
+        "floresinhas"
+      ],
+      "correct": 2,
+      "explanation": "flores → flore- + -zinhas. В разговорной речи слышно и florzinhas, но норма — florezinhas."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-11",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "choice",
+      "prompt": "«Arranjou um empregozinho qualquer.» Здесь «empregozinho» — это:",
+      "options": [
+        "большая должность",
+        "маленький офис",
+        "любимая работа",
+        "работёнка (пренебр.)"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-12",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "choice",
+      "prompt": "«Um homenzarrão» é:",
+      "options": [
+        "огромный мужчина",
+        "маленький человек",
+        "старик",
+        "мужской голос"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-13",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "transform",
+      "prompt": "Ela mora numa casa pequena e acolhedora.",
+      "instruction": "Замените «casa pequena e acolhedora» диминутивом.",
+      "answer": [
+        "Ela mora numa casinha.",
+        "Mora numa casinha."
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-14",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "transform",
+      "prompt": "Chegámos muito cedo.",
+      "instruction": "Выразите «очень рано» диминутивом от cedo.",
+      "answer": [
+        "Chegámos cedinho.",
+        "Nós chegámos cedinho."
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-15",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "transform",
+      "prompt": "Dá-me um pouco de água.",
+      "instruction": "Смягчите просьбу: используйте bocadinho.",
+      "answer": [
+        "Dá-me um bocadinho de água."
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-16",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "order-words",
+      "words": [
+        "só",
+        "um",
+        "bocadinho",
+        "Espera"
+      ],
+      "answer": "Espera só um bocadinho",
+      "ru": "Подожди чуть-чуть."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-17",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "order-words",
+      "words": [
+        "tão",
+        "Que",
+        "casinha",
+        "bonita!"
+      ],
+      "answer": "Que casinha tão bonita!",
+      "ru": "Какой красивый домик!"
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-18",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "translate-ru-pt",
+      "ru": "Подождите минуточку, пожалуйста.",
+      "answer": [
+        "Espere um minutinho, por favor.",
+        "Espere só um minutinho, por favor.",
+        "Um minutinho, por favor.",
+        "Aguarde um minutinho, por favor.",
+        "Só um minutinho, por favor."
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-19",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "translate-ru-pt",
+      "ru": "Хочешь кофе? (pt-PT)",
+      "answer": [
+        "Queres um café?",
+        "Queres tomar um café?",
+        "Queres uma bica?",
+        "Queres beber um café?"
+      ],
+      "explanation": "В pt-PT — um café / uma bica; cafezinho — бразильское."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-20",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "listen-type",
+      "text": "Moramos pertinho da estação de comboios.",
+      "answer": [
+        "Moramos pertinho da estação de comboios."
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-21",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "listen-choice",
+      "text": "Obrigadinho pela ajuda!",
+      "options": [
+        "Спасибо за небольшую помощь.",
+        "Помоги чуть-чуть!",
+        "Большое спасибо за помощь!",
+        "Спасибо, помогать не надо."
+      ],
+      "correct": 2,
+      "explanation": "obrigadinho — тёплое разговорное «спасибочки», а не «маленькое спасибо»."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-ex-22",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "match",
+      "prompt": "Соедините слово с диминутивом.",
+      "pairs": [
+        {
+          "left": "casa",
+          "right": "casinha"
+        },
+        {
+          "left": "café",
+          "right": "cafezinho"
+        },
+        {
+          "left": "pão",
+          "right": "pãozinho"
+        },
+        {
+          "left": "mãe",
+          "right": "mãezinha"
+        },
+        {
+          "left": "pouco",
+          "right": "pouquinho"
+        },
+        {
+          "left": "flor",
+          "right": "florzinha"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-diminutivos-aumentativos-mt-01",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Só um ___ (momento), já volto.",
+      "answer": [
+        "momentinho"
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-02",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "O ___ (gato, дим.) dorme no sofá.",
+      "answer": [
+        "gatinho"
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-03",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Comprei dois ___ (pão, мн. ч., дим.).",
+      "answer": [
+        "pãezinhos"
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-04",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "fill-gap",
+      "prompt": "Vamos ___ (devagar, дим.), não há pressa.",
+      "answer": [
+        "devagarinho"
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-05",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "choice",
+      "prompt": "Как в pt-PT сказать «только что»?",
+      "options": [
+        "agorinha",
+        "agorinha mesmo",
+        "há bocadinho"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-06",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "choice",
+      "prompt": "Нормативный диминутив мн. ч. от «animal»:",
+      "options": [
+        "animalzinhos",
+        "animaizinhos",
+        "animalinhos"
+      ],
+      "correct": 1,
+      "explanation": "animais → animai- + -zinhos."
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-07",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "choice",
+      "prompt": "«O portão» — это:",
+      "options": [
+        "ворота",
+        "большая дверь в квартире",
+        "портье"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-08",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "transform",
+      "prompt": "Ela tem um cão pequeno e muito querido.",
+      "instruction": "Замените «cão pequeno e muito querido» диминутивом.",
+      "answer": [
+        "Ela tem um cãozinho.",
+        "Tem um cãozinho."
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-09",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "translate-ru-pt",
+      "ru": "Дай мне чуть-чуть хлеба.",
+      "answer": [
+        "Dá-me um bocadinho de pão.",
+        "Dá-me um bocadito de pão.",
+        "Dá-me um pouquinho de pão.",
+        "Dá-me um pouco de pão."
+      ]
+    },
+    {
+      "id": "b1-diminutivos-aumentativos-mt-10",
+      "topicId": "b1-diminutivos-aumentativos",
+      "type": "listen-type",
+      "text": "A minha avozinha faz uns bolos ótimos.",
+      "answer": [
+        "A minha avozinha faz uns bolos ótimos."
+      ]
+    }
+  ]
+}

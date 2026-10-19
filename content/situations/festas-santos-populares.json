@@ -1,0 +1,184 @@
+{
+  "id": "festas-santos-populares",
+  "title": "Праздники: Santos Populares, Natal",
+  "titlePt": "Festas: Santos Populares e Natal",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Então, vens connosco ao arraial em Alfama na noite de Santo António?", "ru": "Ну что, пойдёшь с нами на гулянье в Алфаме в ночь Святого Антония?" },
+    { "speaker": "B", "pt": "Vou, claro! É a primeira vez. O que é que se faz num arraial?", "ru": "Конечно пойду! Я впервые. А что делают на арраяле?" },
+    { "speaker": "A", "pt": "Come-se sardinha assada no pão, bebe-se sangria e dança-se até de manhã.", "ru": "Едят жареную сардину на хлебе, пьют сангрию и танцуют до утра." },
+    { "speaker": "B", "pt": "E é verdade que as ruas ficam cheias de gente?", "ru": "А правда, что улицы забиты людьми?" },
+    { "speaker": "A", "pt": "É! Na véspera do dia 13 desfilam as marchas populares na Avenida da Liberdade, e depois toda a gente vai para os bairros.", "ru": "Правда! Накануне 13-го на Авениде да Либердаде проходят народные шествия, а потом все расходятся по кварталам." },
+    { "speaker": "B", "pt": "E o que é aquele vaso pequeno com uma planta que estão a vender em todo o lado?", "ru": "А что это за маленький горшок с растением, который продают на каждом углу?" },
+    { "speaker": "A", "pt": "É um manjerico. Oferece-se à pessoa de quem se gosta, com uma quadra num papel.", "ru": "Это манжерику (кустовой базилик). Его дарят тому, кто нравится, с бумажкой со стихотворным четверостишием." },
+    { "speaker": "B", "pt": "Que bonito. Posso cheirá-lo?", "ru": "Как мило. Можно понюхать?" },
+    { "speaker": "A", "pt": "Não se cheira com o nariz! Passa-se a mão por cima e depois cheira-se a mão.", "ru": "Носом не нюхают! Проводят по нему ладонью, а потом нюхают ладонь." },
+    { "speaker": "B", "pt": "Estou a gostar muito destas tradições. E no Natal, o que é que fazem?", "ru": "Мне очень нравятся эти традиции. А на Рождество что вы делаете?" },
+    { "speaker": "A", "pt": "Na consoada, no dia 24 à noite, janta-se bacalhau com couves e batatas com a família toda.", "ru": "В сочельник, 24-го вечером, всей семьёй едят треску с капустой и картошкой." },
+    { "speaker": "B", "pt": "E à sobremesa? Ouvi falar do Bolo-Rei.", "ru": "А на десерт? Я слышал про Боло-Рей." },
+    { "speaker": "A", "pt": "Há Bolo-Rei, rabanadas e filhoses. Antigamente o Bolo-Rei tinha uma fava, e quem a encontrava pagava o bolo no ano seguinte.", "ru": "Есть Боло-Рей, рабанадаш и фильозеш. Раньше в Боло-Рей запекали боб, и кому он попадался, тот покупал торт в следующем году." },
+    { "speaker": "B", "pt": "Então, se me calhar a fava, já sei o que me espera!", "ru": "Значит, если мне попадётся боб, я уже знаю, что меня ждёт!" },
+    { "speaker": "A", "pt": "Se vieres passar o Natal connosco, logo vês! Mas primeiro, as sardinhas!", "ru": "Приезжай к нам на Рождество — там и увидишь! Но сначала — сардины!" }
+  ],
+  "phrases": [
+    { "pt": "Vens connosco ao arraial?", "ru": "Пойдёшь с нами на гулянье?" },
+    { "pt": "O que é que se faz no Santo António?", "ru": "Что делают на праздник Святого Антония?" },
+    { "pt": "Uma sardinha no pão e uma sangria, se faz favor.", "ru": "Сардину на хлебе и сангрию, пожалуйста." },
+    { "pt": "Ofereço-te este manjerico.", "ru": "Дарю тебе этот манжерику." },
+    { "pt": "Onde vais passar a consoada?", "ru": "Где будешь встречать сочельник?" },
+    { "pt": "Vamos passar o Natal com a família.", "ru": "Мы будем встречать Рождество с семьёй." },
+    { "pt": "Feliz Natal e um bom Ano Novo!", "ru": "Счастливого Рождества и хорошего Нового года!" },
+    { "pt": "Boas Festas!", "ru": "С праздниками!" },
+    { "pt": "Obrigado pelo convite, levo a sobremesa.", "ru": "Спасибо за приглашение, я принесу десерт." },
+    { "pt": "Quem encontrar a fava paga o Bolo-Rei.", "ru": "Кому попадётся боб, тот покупает Боло-Рей." }
+  ],
+  "vocab": [
+    { "pt": "os Santos Populares", "ru": "народные праздники святых (июнь)", "example": "Os Santos Populares enchem Lisboa de música." },
+    { "pt": "o Santo António", "ru": "Святой Антоний (13 июня, праздник Лиссабона)", "example": "O dia de Santo António é feriado em Lisboa." },
+    { "pt": "o São João", "ru": "Святой Иоанн (24 июня, праздник Порту)", "example": "No São João, o Porto não dorme." },
+    { "pt": "o arraial", "ru": "народное гулянье с музыкой и едой", "example": "Há um arraial na praça ao lado da igreja." },
+    { "pt": "as marchas populares", "ru": "праздничные шествия кварталов", "example": "Cada bairro tem a sua marcha popular." },
+    { "pt": "o bairro", "ru": "квартал, район", "example": "Alfama é o bairro mais animado nos Santos." },
+    { "pt": "a véspera", "ru": "канун", "example": "A festa é na véspera do feriado." },
+    { "pt": "a sardinha assada", "ru": "жареная на углях сардина", "example": "A sardinha assada come-se em cima de uma fatia de pão." },
+    { "pt": "a bifana", "ru": "бифана (свиная отбивная в булочке)", "example": "Prefiro uma bifana a sardinhas." },
+    { "pt": "o manjerico", "ru": "манжерику, кустовой базилик в горшочке", "example": "Comprei um manjerico com um cravo de papel." },
+    { "pt": "a quadra", "ru": "четверостишие", "example": "Cada manjerico tem uma quadra popular." },
+    { "pt": "as bandeirinhas", "ru": "праздничные флажки-гирлянды", "example": "As ruas estão cheias de bandeirinhas coloridas." },
+    { "pt": "o martelinho", "ru": "пластиковый молоточек (традиция São João)", "example": "No São João, as pessoas batem com martelinhos na cabeça umas das outras." },
+    { "pt": "a fogueira", "ru": "костёр", "example": "Saltámos a fogueira à meia-noite." },
+    { "pt": "o fogo de artifício", "ru": "фейерверк", "example": "À meia-noite há fogo de artifício no rio." },
+    { "pt": "o feriado municipal", "ru": "местный (городской) праздничный выходной", "example": "O dia 24 de junho é feriado municipal no Porto." },
+    { "pt": "o Natal", "ru": "Рождество", "example": "Passamos o Natal em casa dos meus sogros." },
+    { "pt": "a consoada", "ru": "рождественский ужин 24 декабря, сочельник", "example": "Na consoada a família toda janta junta." },
+    { "pt": "o bacalhau com couves", "ru": "треска с капустой (блюдо сочельника)", "example": "O bacalhau com couves é o prato da consoada." },
+    { "pt": "a Missa do Galo", "ru": "рождественская полуночная месса", "example": "Os meus avós vão sempre à Missa do Galo." },
+    { "pt": "o Bolo-Rei", "ru": "Боло-Рей (рождественский кекс с цукатами)", "example": "Comprámos um Bolo-Rei na pastelaria." },
+    { "pt": "a fava", "ru": "боб (запекали в Боло-Рей)", "example": "Quem encontrava a fava tinha de pagar o bolo." },
+    { "pt": "as rabanadas", "ru": "рабанадаш (жареный хлеб в молоке и сахаре)", "example": "A minha avó faz as melhores rabanadas." },
+    { "pt": "as filhoses", "ru": "фильозеш (жареные пончики-лепёшки)", "example": "As filhoses polvilham-se com açúcar e canela." },
+    { "pt": "o presépio", "ru": "рождественский вертеп", "example": "Montámos o presépio na sala." },
+    { "pt": "a árvore de Natal", "ru": "рождественская ёлка", "example": "A árvore de Natal já está enfeitada." },
+    { "pt": "o Pai Natal", "ru": "Пай Натал (португальский Санта-Клаус)", "example": "O Pai Natal traz as prendas à meia-noite." },
+    { "pt": "as prendas", "ru": "подарки", "example": "Abrimos as prendas depois da consoada." },
+    { "pt": "o Dia de Reis", "ru": "День волхвов, Богоявление (6 января)", "example": "O Bolo-Rei come-se até ao Dia de Reis." },
+    { "pt": "a passagem de ano", "ru": "встреча Нового года", "example": "Onde vais estar na passagem de ano?" },
+    { "pt": "as doze passas", "ru": "двенадцать изюминок (съедают в полночь на Новый год)", "example": "À meia-noite comem-se doze passas e pedem-se desejos." },
+    { "pt": "calhar", "ru": "выпасть, достаться (случайно)", "example": "Calhou-me a fava este ano." },
+    { "pt": "o convite", "ru": "приглашение", "example": "Obrigado pelo convite para a consoada." }
+  ],
+  "exercises": [
+    {
+      "id": "festas-santos-populares-ex-01",
+      "topicId": "festas-santos-populares",
+      "type": "choice",
+      "prompt": "Que planta se oferece tradicionalmente no Santo António?",
+      "options": ["o alecrim", "o manjerico", "a salsa", "o cravo"],
+      "correct": 1,
+      "explanation": "**O manjerico** — горшочек кустового базилика с бумажным цветком и четверостишием. **O cravo** (гвоздика) — символ 25 апреля."
+    },
+    {
+      "id": "festas-santos-populares-ex-02",
+      "topicId": "festas-santos-populares",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a consoada", "right": "рождественский ужин 24 декабря" },
+        { "left": "o presépio", "right": "вертеп" },
+        { "left": "as prendas", "right": "подарки" },
+        { "left": "a véspera", "right": "канун" },
+        { "left": "o arraial", "right": "народное гулянье" }
+      ]
+    },
+    {
+      "id": "festas-santos-populares-ex-03",
+      "topicId": "festas-santos-populares",
+      "type": "fill-gap",
+      "prompt": "No arraial, ___ (comer) sardinha assada no pão.",
+      "answer": ["come-se"],
+      "hint": "безличная конструкция с se: «едят»",
+      "ru": "На гулянье едят жареную сардину на хлебе.",
+      "explanation": "Безличное «едят, принято есть» — глагол в 3-м лице + **se**: **come-se**, **bebe-se**, **dança-se**. Местоимение после глагола (ênclise)."
+    },
+    {
+      "id": "festas-santos-populares-ex-04",
+      "topicId": "festas-santos-populares",
+      "type": "listen-type",
+      "text": "E à sobremesa? Ouvi falar do Bolo-Rei.",
+      "answer": ["E à sobremesa? Ouvi falar do Bolo-Rei."],
+      "explanation": "**À sobremesa** — «на десерт» (с предлогом **a**). **Ouvir falar de** — «слышать о»."
+    },
+    {
+      "id": "festas-santos-populares-ex-05",
+      "topicId": "festas-santos-populares",
+      "type": "listen-choice",
+      "text": "Na consoada, no dia 24 à noite, janta-se bacalhau com couves e batatas com a família toda.",
+      "prompt": "Что едят на consoada?",
+      "options": ["Жареные сардины", "Индейку с картофелем", "Свинину с капустой", "Треску с капустой и картофелем"],
+      "correct": 3,
+      "explanation": "Классический ужин сочельника — **bacalhau com couves e batatas**. Индейку (**peru**) в некоторых семьях едят 25-го."
+    },
+    {
+      "id": "festas-santos-populares-ex-06",
+      "topicId": "festas-santos-populares",
+      "type": "order-words",
+      "words": ["Onde", "vais", "passar", "a", "consoada?"],
+      "answer": "Onde vais passar a consoada?",
+      "ru": "Где ты будешь встречать сочельник?"
+    },
+    {
+      "id": "festas-santos-populares-ex-07",
+      "topicId": "festas-santos-populares",
+      "type": "translate-ru-pt",
+      "ru": "Счастливого Рождества и хорошего Нового года!",
+      "answer": [
+        "Feliz Natal e um bom Ano Novo!",
+        "Feliz Natal e bom Ano Novo!",
+        "Bom Natal e um bom Ano Novo!",
+        "Bom Natal e bom Ano Novo!",
+        "Feliz Natal e um feliz Ano Novo!",
+        "Feliz Natal e feliz Ano Novo!"
+      ],
+      "explanation": "В Португалии говорят и **Feliz Natal**, и **Bom Natal**. Новый год — **Ano Novo**; ещё универсальное **Boas Festas!**"
+    },
+    {
+      "id": "festas-santos-populares-ex-08",
+      "topicId": "festas-santos-populares",
+      "type": "choice",
+      "prompt": "Se me ___ a fava, pago o Bolo-Rei no próximo ano.",
+      "options": ["calhar", "calhe", "calhasse", "calhará"],
+      "correct": 0,
+      "explanation": "Условие в будущем после **se** → **futuro do conjuntivo**: **se me calhar**. У правильных глаголов он совпадает с инфинитивом. *Calhe* (presente do conjuntivo) и *calhará* (futuro do indicativo) после **se** не ставятся, *calhasse* потребовал бы **pagaria**."
+    },
+    {
+      "id": "festas-santos-populares-ex-09",
+      "topicId": "festas-santos-populares",
+      "type": "fill-gap",
+      "prompt": "Se ___ (tu / vir) passar o Natal connosco, logo vês!",
+      "answer": ["vieres"],
+      "hint": "futuro do conjuntivo от vir",
+      "ru": "Приедешь к нам на Рождество — там и увидишь!",
+      "explanation": "Futuro do conjuntivo строится от основы прошедшего **vieram → vier-**: **se eu vier, se tu vieres, se ele vier**. Частая ошибка — *se tu vires* (это от **ver**)."
+    },
+    {
+      "id": "festas-santos-populares-ex-10",
+      "topicId": "festas-santos-populares",
+      "type": "transform",
+      "prompt": "Passamos a mão por cima e cheiramos a mão.",
+      "instruction": "Перепиши безлично с se: «так принято делать»",
+      "answer": ["Passa-se a mão por cima e cheira-se a mão.", "Passa-se a mão por cima e depois cheira-se a mão."],
+      "explanation": "Безличное **se** описывает обычаи: **passa-se**, **cheira-se**, **oferece-se**. Местоимение ставится после глагола через дефис."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Португальская коллега Joana пригласила вас на consoada к своей семье. Напишите ей сообщение (на «ты»): поблагодарите за приглашение и примите его, спросите, во сколько приходить и что принести, коротко расскажите, как празднуют Новый год в России (ёлка, подарки, оливье), предложите в июне вместе сходить на арраял, закончите праздничным пожеланием.",
+    "sample": "Olá, Joana!\n\nMuito obrigado pelo convite para a consoada! Aceito com muito gosto.\nA que horas é que devo chegar? E o que é que posso levar? Posso levar vinho ou uma sobremesa.\nNa Rússia, a festa mais importante é a passagem de ano. Monta-se a árvore, come-se salada russa e as crianças recebem as prendas do Avô Gelo à meia-noite.\nE em junho, se quiseres, vamos juntos ao arraial do Santo António. Quero muito provar a sardinha no pão!\n\nBoas Festas e até breve!\nUm abraço,\nAlexei",
+    "checklist": [
+      "Есть благодарность за приглашение: Muito obrigado pelo convite",
+      "Есть вопросы: A que horas…? O que é que posso levar?",
+      "Традиции описаны безлично с se: come-se, monta-se",
+      "После se для будущего использован futuro do conjuntivo (se quiseres)",
+      "Есть праздничное пожелание: Boas Festas / Feliz Natal"
+    ]
+  }
+}

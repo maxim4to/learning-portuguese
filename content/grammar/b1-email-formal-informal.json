@@ -1,0 +1,456 @@
+{
+  "id": "b1-email-formal-informal",
+  "level": "B1",
+  "module": "b1-lexico-estilo",
+  "title": "Формальное и неформальное письмо (e-mail)",
+  "titlePt": "E-mail formal e informal",
+  "requires": [
+    "a1-pronomes-pessoais-tratamento",
+    "a2-condicional"
+  ],
+  "theory": "## Структура письма\n\n| часть | формально | неформально |\n|---|---|---|\n| **Assunto** (тема) | **Pedido de informação — curso de português** | **Jantar no sábado?** |\n| **Saudação** (обращение) | **Exmo. Senhor / Exma. Senhora**, **Exmos. Senhores** (в организацию), **Caro Dr. Silva / Cara Dra. Ana Costa** | **Olá Rita!**, **Cara Ana**, **Querida Joana** |\n| **Abertura** (начало) | **Venho por este meio solicitar...**, **Escrevo-lhe a propósito de...**, **Na sequência da nossa conversa telefónica...** | **Tudo bem?** **Espero que estejas bem.** |\n| **Corpo** (суть) | 3-е лицо без местоимения: **Poderia enviar-me...?** **Agradecia que me informasse...** | **tu**: **Podes mandar-me...?** |\n| **Fecho** (завершение) | **Agradeço desde já a atenção.** **Fico a aguardar a sua resposta.** **Estou ao dispor para qualquer esclarecimento.** | **Fico à espera de notícias!** **Dá notícias!** |\n| **Despedida** (прощание) | **Com os melhores cumprimentos**, **Atentamente** (сухо, официально), **Cumprimentos** (коротко) | **Beijinhos**, **Um abraço / Abraço**, **Até breve**, **Até já** |\n\nПосле обращения ставится запятая, текст начинается с новой строки с заглавной буквы.\n\n## Регистр\n\n- **Exmo./Exma.** (= Excelentíssimo) — стандарт официального письма: в Finanças, câmara municipal, незнакомому человеку. **Caro/Cara** — вежливо, но теплее; годится для коллег и знакомых по работе.\n- Титулы в Португалии употребляют охотно: **Dr./Dra.** (любой человек с высшим образованием), **Eng.**, **Prof.**\n- В формальном письме — без **tu** и без прямого **você**: глагол в 3-м лице (**Poderia...?**), при необходимости **o senhor / a senhora**; очень официально — **V. Exa.**\n- Вежливые формы глагола: **Poderia / Podia...?**, **Gostaria de...**, **Agradecia que** + imperfeito do conjuntivo (**Agradecia que me enviasse...**).\n- Клитики — по общим правилам pt-PT: **Escrevo-lhe**, **Envio-lhe**, **Agradeço-lhe**.\n\n## Полезные формулы\n\n| формула | значение |\n|---|---|\n| **Venho por este meio informar / solicitar...** | Настоящим сообщаю / прошу... |\n| **Envio em anexo / Junto envio...** | Прилагаю... |\n| **Em resposta ao seu e-mail de 3 de maio...** | В ответ на ваше письмо от 3 мая... |\n| **Peço desculpa pelo incómodo / pela demora.** | Извините за беспокойство / задержку. |\n| **Agradeço desde já.** | Заранее благодарю. |\n| **Fico a aguardar (a sua resposta).** | Жду (вашего ответа). |\n| **Sem outro assunto de momento,** | На этом всё (очень официально). |\n\n## Неформальное письмо\n\n**Olá Pedro! Tudo bem por aí? Olha, queria perguntar-te uma coisa...** Прощание зависит от близости: **Beijinhos** — друзьям и родным (особенно между женщинами и в смешанных парах), мужчины между собой чаще пишут **Abraço**. Для коллег в неформальном тоне — **Cumprimentos** или **Obrigado e bom trabalho**. В неформальном письме обращаются на **tu**, а тон задают короткие фразы: **Diz qualquer coisa!** — Дай знать! **Até já!** — До скорого!",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Exmo. Senhor / Caro Senhor** | Prezado Senhor | *Prezado* в Португалии звучит по-бразильски |\n| **Com os melhores cumprimentos / Atentamente** | Atenciosamente | *Atenciosamente* — типично бразильское прощание |\n| **Olá!** | Oi! | *Oi* в pt-PT — разговорный бразилизм |\n| **Beijinhos** | Beijos | в pt-PT уменьшительная форма |\n| **Fico a aguardar a sua resposta.** | Fico aguardando seu retorno. | a + инфинитив; притяжательное с артиклем |\n| **incómodo, telefónica** | incômodo, telefônica | европейские акценты |\n\nСтруктура письма одинакова; различаются формулы, акценты и форма обращения (tu / 3-е лицо).",
+  "commonErrors": "- **Бразильские формулы**: *Prezado Senhor*, *Atenciosamente*, *Oi* ✗ → **Exmo. Senhor**, **Com os melhores cumprimentos**, **Olá** ✓.\n- **tu в официальном письме**: *Podes enviar-me o formulário?* (в Finanças) ✗ → **Poderia enviar-me o formulário?** ✓.\n- **Герундий**: *Fico aguardando a sua resposta* ✗ → **Fico a aguardar a sua resposta** ✓.\n- **Клитика в начале**: *Lhe escrevo a propósito...* ✗ → **Escrevo-lhe a propósito...** ✓.\n- **Калька с русского «С уважением»**: *Com respeito* ✗ → **Com os melhores cumprimentos / Atentamente** ✓.\n- **Смешение регистров**: *Exmo. Senhor Diretor, ... Beijinhos* ✗ — прощание должно соответствовать обращению.\n- **Акценты**: *incômodo, telefônica* ✗ → **incómodo, telefónica** ✓.",
+  "examples": [
+    {
+      "pt": "Exma. Senhora, venho por este meio solicitar informações sobre o curso de português.",
+      "ru": "Уважаемая госпожа, настоящим прошу предоставить информацию о курсе португальского языка.",
+      "audio": true
+    },
+    {
+      "pt": "Envio em anexo o meu currículo.",
+      "ru": "Прилагаю своё резюме.",
+      "audio": true
+    },
+    {
+      "pt": "Agradeço desde já a atenção e fico a aguardar a sua resposta.",
+      "ru": "Заранее благодарю за внимание и жду вашего ответа.",
+      "audio": true
+    },
+    {
+      "pt": "Olá Rita! Tudo bem? Estás livre no sábado?",
+      "ru": "Привет, Рита! Как дела? Ты свободна в субботу?",
+      "audio": true
+    },
+    {
+      "pt": "Com os melhores cumprimentos, Pedro Almeida",
+      "ru": "С уважением, Педру Алмейда",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-email-formal-informal-ex-01",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Exmo. ___, venho por este meio solicitar uma reunião.",
+      "answer": [
+        "Senhor"
+      ],
+      "ru": "Уважаемый господин, настоящим прошу о встрече."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-02",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Venho por este ___ informar que não poderei estar presente.",
+      "answer": [
+        "meio"
+      ],
+      "ru": "Настоящим сообщаю, что не смогу присутствовать."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-03",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Agradeço ___ já a sua atenção.",
+      "answer": [
+        "desde"
+      ],
+      "ru": "Заранее благодарю за внимание."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-04",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Fico a ___ a sua resposta.",
+      "answer": [
+        "aguardar"
+      ],
+      "ru": "Жду вашего ответа.",
+      "explanation": "ficar a + инфинитив; не *fico aguardando*."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-05",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Com os melhores ___, Ana Costa",
+      "answer": [
+        "cumprimentos"
+      ],
+      "ru": "С уважением, Ана Кошта"
+    },
+    {
+      "id": "b1-email-formal-informal-ex-06",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "___ em anexo o formulário preenchido.",
+      "answer": [
+        "Envio",
+        "Segue",
+        "Remeto"
+      ],
+      "ru": "Прилагаю заполненную форму."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-07",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Peço desculpa pelo ___ (incomodar → сущ.).",
+      "answer": [
+        "incómodo"
+      ],
+      "ru": "Извините за беспокойство.",
+      "explanation": "В pt-PT — incómodo (с острым акцентом)."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-08",
+      "topicId": "b1-email-formal-informal",
+      "type": "choice",
+      "prompt": "Письмо в câmara municipal начинаем с:",
+      "options": [
+        "Olá,",
+        "Exmos. Senhores,",
+        "Prezados Senhores,",
+        "Oi pessoal,"
+      ],
+      "correct": 1,
+      "explanation": "Prezados — бразильская формула."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-09",
+      "topicId": "b1-email-formal-informal",
+      "type": "choice",
+      "prompt": "Прощание в письме близкой подруге:",
+      "options": [
+        "Atentamente,",
+        "Com os melhores cumprimentos,",
+        "Sem outro assunto,",
+        "Beijinhos,"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-email-formal-informal-ex-10",
+      "topicId": "b1-email-formal-informal",
+      "type": "choice",
+      "prompt": "Самое типичное прощание в профессиональном письме в Португалии:",
+      "options": [
+        "Atenciosamente,",
+        "Beijos,",
+        "Com os melhores cumprimentos,",
+        "Abraços,"
+      ],
+      "correct": 2,
+      "explanation": "Atenciosamente — бразильское."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-11",
+      "topicId": "b1-email-formal-informal",
+      "type": "choice",
+      "prompt": "Начальнику, чтобы попросить документ:",
+      "options": [
+        "Poderia enviar-me o relatório?",
+        "Podes mandar-me o relatório?",
+        "Manda aí o relatório!",
+        "Você me envia o relatório?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-email-formal-informal-ex-12",
+      "topicId": "b1-email-formal-informal",
+      "type": "transform",
+      "prompt": "Olá! Podes mandar-me o horário?",
+      "instruction": "Перепишите формально (Poderia..., без tu).",
+      "answer": [
+        "Poderia enviar-me o horário?",
+        "Poderia mandar-me o horário?",
+        "Podia enviar-me o horário?",
+        "Podia mandar-me o horário?",
+        "Poderia enviar-me o horário, por favor?",
+        "Podia enviar-me o horário, por favor?"
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-ex-13",
+      "topicId": "b1-email-formal-informal",
+      "type": "transform",
+      "prompt": "Espero a tua resposta.",
+      "instruction": "Сделайте формальную формулу с ficar a aguardar.",
+      "answer": [
+        "Fico a aguardar a sua resposta.",
+        "Fico a aguardar resposta."
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-ex-14",
+      "topicId": "b1-email-formal-informal",
+      "type": "transform",
+      "prompt": "Obrigado antecipadamente.",
+      "instruction": "Перепишите типичной pt-PT формулой с desde já.",
+      "answer": [
+        "Agradeço desde já.",
+        "Desde já agradeço.",
+        "Obrigado desde já.",
+        "Desde já, obrigado.",
+        "Obrigada desde já.",
+        "Desde já, obrigada."
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-ex-15",
+      "topicId": "b1-email-formal-informal",
+      "type": "order-words",
+      "words": [
+        "a",
+        "anúncio",
+        "do",
+        "Escrevo-lhe",
+        "propósito"
+      ],
+      "answer": "Escrevo-lhe a propósito do anúncio",
+      "ru": "Пишу вам по поводу объявления."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-16",
+      "topicId": "b1-email-formal-informal",
+      "type": "order-words",
+      "words": [
+        "ao",
+        "dispor",
+        "qualquer",
+        "esclarecimento",
+        "Estou",
+        "para"
+      ],
+      "answer": "Estou ao dispor para qualquer esclarecimento",
+      "ru": "Готов ответить на любые вопросы."
+    },
+    {
+      "id": "b1-email-formal-informal-ex-17",
+      "topicId": "b1-email-formal-informal",
+      "type": "translate-ru-pt",
+      "ru": "Прилагаю своё резюме.",
+      "answer": [
+        "Envio em anexo o meu currículo.",
+        "Junto envio o meu currículo.",
+        "Envio em anexo o meu CV.",
+        "Segue em anexo o meu currículo.",
+        "Envio o meu currículo em anexo.",
+        "Junto envio o meu CV.",
+        "Segue em anexo o meu CV.",
+        "Envio o meu CV em anexo.",
+        "Em anexo envio o meu currículo."
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-ex-18",
+      "topicId": "b1-email-formal-informal",
+      "type": "translate-ru-pt",
+      "ru": "Привет, Рита! Как дела?",
+      "answer": [
+        "Olá Rita! Tudo bem?",
+        "Olá Rita! Como estás?",
+        "Olá Rita! Está tudo bem?",
+        "Olá Rita! Como vais?",
+        "Olá Rita! Tudo bem contigo?"
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-ex-19",
+      "topicId": "b1-email-formal-informal",
+      "type": "translate-ru-pt",
+      "ru": "Извините за задержку.",
+      "answer": [
+        "Peço desculpa pela demora.",
+        "Desculpe a demora.",
+        "Peço desculpa pelo atraso.",
+        "Desculpe o atraso.",
+        "Lamento a demora.",
+        "Peço desculpa pela demora na resposta."
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-ex-20",
+      "topicId": "b1-email-formal-informal",
+      "type": "listen-type",
+      "text": "Fico a aguardar notícias suas.",
+      "answer": [
+        "Fico a aguardar notícias suas."
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-ex-21",
+      "topicId": "b1-email-formal-informal",
+      "type": "listen-choice",
+      "text": "Na sequência da nossa conversa telefónica, envio os documentos.",
+      "options": [
+        "Прошу перезвонить мне по поводу документов.",
+        "После нашего телефонного разговора отправляю документы.",
+        "Документы отправлю после звонка.",
+        "В ответ на ваше письмо прилагаю документы."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-email-formal-informal-ex-22",
+      "topicId": "b1-email-formal-informal",
+      "type": "match",
+      "prompt": "Соедините формулу с переводом.",
+      "pairs": [
+        {
+          "left": "Venho por este meio",
+          "right": "Настоящим (сообщаю / прошу)"
+        },
+        {
+          "left": "Agradeço desde já",
+          "right": "Заранее благодарю"
+        },
+        {
+          "left": "Fico a aguardar",
+          "right": "Жду (ответа)"
+        },
+        {
+          "left": "Envio em anexo",
+          "right": "Прилагаю"
+        },
+        {
+          "left": "Com os melhores cumprimentos",
+          "right": "С уважением"
+        },
+        {
+          "left": "Beijinhos",
+          "right": "Целую"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-email-formal-informal-mt-01",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "___ Senhora Dra. Marta Silva,",
+      "answer": [
+        "Exma."
+      ],
+      "hint": "официальное обращение"
+    },
+    {
+      "id": "b1-email-formal-informal-mt-02",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Venho por este meio ___ (pedir, формально) informações.",
+      "answer": [
+        "solicitar",
+        "pedir"
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-mt-03",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Envio ___ anexo a fatura.",
+      "answer": [
+        "em"
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-mt-04",
+      "topicId": "b1-email-formal-informal",
+      "type": "fill-gap",
+      "prompt": "Um ___ e até breve!",
+      "answer": [
+        "abraço"
+      ],
+      "hint": "дружеское прощание"
+    },
+    {
+      "id": "b1-email-formal-informal-mt-05",
+      "topicId": "b1-email-formal-informal",
+      "type": "choice",
+      "prompt": "Начало письма в компанию:",
+      "options": [
+        "Oi,",
+        "Exmos. Senhores,",
+        "Querida empresa,"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-email-formal-informal-mt-06",
+      "topicId": "b1-email-formal-informal",
+      "type": "choice",
+      "prompt": "Какой вариант европейский?",
+      "options": [
+        "Fico aguardando seu retorno.",
+        "Aguardo seu retorno.",
+        "Fico a aguardar a sua resposta."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-email-formal-informal-mt-07",
+      "topicId": "b1-email-formal-informal",
+      "type": "choice",
+      "prompt": "«Beijinhos» уместно в письме:",
+      "options": [
+        "близкой подруге",
+        "директору школы",
+        "в Finanças"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-email-formal-informal-mt-08",
+      "topicId": "b1-email-formal-informal",
+      "type": "transform",
+      "prompt": "Manda-me a morada, por favor.",
+      "instruction": "Перепишите формально (Poderia...).",
+      "answer": [
+        "Poderia enviar-me a morada, por favor?",
+        "Poderia mandar-me a morada, por favor?",
+        "Podia enviar-me a morada, por favor?",
+        "Podia mandar-me a morada, por favor?"
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-mt-09",
+      "topicId": "b1-email-formal-informal",
+      "type": "translate-ru-pt",
+      "ru": "Заранее благодарю за внимание.",
+      "answer": [
+        "Agradeço desde já a atenção.",
+        "Agradeço desde já a sua atenção.",
+        "Desde já agradeço a atenção.",
+        "Desde já agradeço a sua atenção.",
+        "Agradeço desde já a vossa atenção."
+      ]
+    },
+    {
+      "id": "b1-email-formal-informal-mt-10",
+      "topicId": "b1-email-formal-informal",
+      "type": "listen-choice",
+      "text": "Com os melhores cumprimentos.",
+      "options": [
+        "Поздравляю с праздником.",
+        "Искренне ваш друг.",
+        "С уважением.",
+        "Передайте всем привет."
+      ],
+      "correct": 2,
+      "explanation": "Com os melhores cumprimentos — стандартная концовка делового письма, русское «С уважением»."
+    }
+  ]
+}

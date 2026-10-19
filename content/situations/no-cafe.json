@@ -1,0 +1,173 @@
+{
+  "id": "no-cafe",
+  "title": "В кафе",
+  "titlePt": "No café",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia! Diga, faz favor.", "ru": "Доброе утро! Слушаю вас." },
+    { "speaker": "B", "pt": "Bom dia. Queria uma bica e um pastel de nata, se faz favor.", "ru": "Доброе утро. Мне, пожалуйста, эспрессо и паштел-де-ната." },
+    { "speaker": "A", "pt": "É para levar ou para tomar aqui?", "ru": "С собой или здесь?" },
+    { "speaker": "B", "pt": "É para tomar aqui. Posso sentar-me na esplanada?", "ru": "Здесь. Можно сесть на террасе?" },
+    { "speaker": "A", "pt": "Claro, sente-se onde quiser. Eu já lá levo.", "ru": "Конечно, садитесь где хотите. Я сейчас принесу." },
+    { "speaker": "A", "pt": "Aqui tem a bica e o pastel de nata. Quer canela?", "ru": "Вот ваш эспрессо и паштел-де-ната. Корицу добавить?" },
+    { "speaker": "B", "pt": "Sim, obrigado. Já agora, também queria uma torrada e um galão.", "ru": "Да, спасибо. И ещё: мне бы тост и галан." },
+    { "speaker": "A", "pt": "Com certeza. Quer o galão claro ou escuro?", "ru": "Конечно. Галан посветлее или покрепче?" },
+    { "speaker": "B", "pt": "Escuro, se faz favor. Têm sumo de laranja natural?", "ru": "Покрепче, пожалуйста. А свежевыжатый апельсиновый сок у вас есть?" },
+    { "speaker": "A", "pt": "Temos, sim. Quer um grande ou um pequeno?", "ru": "Есть. Вам большой или маленький?" },
+    { "speaker": "B", "pt": "Um pequeno. É tudo, obrigado.", "ru": "Маленький. Это всё, спасибо." },
+    { "speaker": "B", "pt": "Desculpe! A conta, se faz favor.", "ru": "Извините! Счёт, пожалуйста." },
+    { "speaker": "A", "pt": "São sete euros e noventa. Quer fatura com número de contribuinte?", "ru": "С вас семь евро девяносто. Чек с налоговым номером?" },
+    { "speaker": "B", "pt": "Não é preciso, obrigado. Posso pagar com cartão?", "ru": "Не нужно, спасибо. Можно заплатить картой?" },
+    { "speaker": "A", "pt": "Pode, com certeza. Obrigada e bom dia!", "ru": "Конечно. Спасибо и хорошего дня!" }
+  ],
+  "phrases": [
+    { "pt": "Queria uma bica, se faz favor.", "ru": "Мне эспрессо, пожалуйста." },
+    { "pt": "É para levar ou para tomar aqui?", "ru": "С собой или здесь?" },
+    { "pt": "Mais alguma coisa?", "ru": "Что-нибудь ещё?" },
+    { "pt": "É tudo, obrigado.", "ru": "Это всё, спасибо." },
+    { "pt": "Já agora, traga-me um copo de água, se faz favor.", "ru": "И ещё — принесите, пожалуйста, стакан воды." },
+    { "pt": "Desculpe, onde é a casa de banho?", "ru": "Извините, где туалет?" },
+    { "pt": "A conta, se faz favor.", "ru": "Счёт, пожалуйста." },
+    { "pt": "Quanto é?", "ru": "Сколько с меня?" },
+    { "pt": "Posso pagar com cartão?", "ru": "Можно заплатить картой?" },
+    { "pt": "Quer fatura com número de contribuinte?", "ru": "Вам чек с налоговым номером (NIF)?" }
+  ],
+  "vocab": [
+    { "pt": "a bica", "ru": "эспрессо (лиссабонское слово)", "example": "Uma bica e um copo de água, se faz favor." },
+    { "pt": "o café", "ru": "кофе; эспрессо; кафе", "example": "Tomo sempre um café depois do almoço." },
+    { "pt": "o galão", "ru": "галан (кофе с молоком в высоком стакане)", "example": "O galão vem num copo alto." },
+    { "pt": "a meia de leite", "ru": "кофе с молоком в чашке", "example": "Queria uma meia de leite escura." },
+    { "pt": "o abatanado", "ru": "американо (эспрессо с водой)", "example": "Para mim é um abatanado sem açúcar." },
+    { "pt": "o descafeinado", "ru": "кофе без кофеина", "example": "Já é tarde, prefiro um descafeinado." },
+    { "pt": "a torrada", "ru": "тост (с маслом)", "example": "A torrada aqui é feita com pão caseiro." },
+    { "pt": "o pastel de nata", "ru": "паштел-де-ната (пирожное с заварным кремом)", "example": "Os pastéis de nata ainda estão quentes." },
+    { "pt": "o bolo", "ru": "пирожное; торт", "example": "Que bolos é que têm hoje?" },
+    { "pt": "a sandes", "ru": "сэндвич, бутерброд", "example": "Queria uma sandes de fiambre e queijo." },
+    { "pt": "o sumo de laranja natural", "ru": "свежевыжатый апельсиновый сок", "example": "O sumo de laranja natural é feito na hora." },
+    { "pt": "a água com gás", "ru": "газированная вода", "example": "Tem água com gás fresca?" },
+    { "pt": "a água sem gás", "ru": "негазированная вода", "example": "Uma garrafa de água sem gás, se faz favor." },
+    { "pt": "o chá", "ru": "чай", "example": "Queria um chá de camomila." },
+    { "pt": "o açúcar", "ru": "сахар", "example": "O açúcar está em cima da mesa." },
+    { "pt": "a canela", "ru": "корица", "example": "Ponho sempre canela no pastel de nata." },
+    { "pt": "a manteiga", "ru": "сливочное масло", "example": "A torrada leva muita manteiga." },
+    { "pt": "o leite", "ru": "молоко", "example": "Pode trazer mais um pouco de leite?" },
+    { "pt": "a chávena", "ru": "чашка", "example": "A meia de leite vem numa chávena grande." },
+    { "pt": "o copo", "ru": "стакан", "example": "O galão é servido num copo." },
+    { "pt": "a colher", "ru": "ложка", "example": "Desculpe, falta-me uma colher." },
+    { "pt": "o guardanapo", "ru": "салфетка", "example": "Pode dar-me um guardanapo?" },
+    { "pt": "a esplanada", "ru": "летняя терраса кафе", "example": "Vamos sentar-nos na esplanada?" },
+    { "pt": "o balcão", "ru": "стойка, барная стойка", "example": "Tomo o café ao balcão, é mais rápido." },
+    { "pt": "a mesa", "ru": "столик, стол", "example": "Esta mesa está livre?" },
+    { "pt": "o empregado / a empregada de mesa", "ru": "официант / официантка", "example": "A empregada de mesa já vem." },
+    { "pt": "a conta", "ru": "счёт", "example": "Pedimos a conta?" },
+    { "pt": "a fatura", "ru": "чек, счёт-фактура", "example": "Quer o NIF na fatura?" },
+    { "pt": "o troco", "ru": "сдача", "example": "Pode ficar com o troco." },
+    { "pt": "a gorjeta", "ru": "чаевые", "example": "Em Portugal, a gorjeta não é obrigatória." }
+  ],
+  "exercises": [
+    {
+      "id": "no-cafe-ex-01",
+      "topicId": "no-cafe",
+      "type": "choice",
+      "prompt": "Em Lisboa, um café expresso pede-se assim: «Queria ___, se faz favor.»",
+      "options": ["um cafezinho", "uma bica", "um galão", "uma meia de leite"],
+      "correct": 1,
+      "explanation": "**Bica** — лиссабонское название эспрессо (на севере говорят **um cimbalino** или просто **um café**). *Cafezinho* — бразильское слово; **galão** и **meia de leite** — кофе с молоком."
+    },
+    {
+      "id": "no-cafe-ex-02",
+      "topicId": "no-cafe",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a chávena", "right": "чашка" },
+        { "left": "o guardanapo", "right": "салфетка" },
+        { "left": "o troco", "right": "сдача" },
+        { "left": "a esplanada", "right": "летняя терраса" },
+        { "left": "o balcão", "right": "стойка" }
+      ]
+    },
+    {
+      "id": "no-cafe-ex-03",
+      "topicId": "no-cafe",
+      "type": "fill-gap",
+      "prompt": "A conta, se ___ favor.",
+      "answer": ["faz"],
+      "hint": "вежливое «пожалуйста» в Португалии",
+      "ru": "Счёт, пожалуйста.",
+      "explanation": "**Se faz favor** — самое португальское «пожалуйста» (буквально «если сделаете одолжение»). **Por favor** тоже правильно."
+    },
+    {
+      "id": "no-cafe-ex-04",
+      "topicId": "no-cafe",
+      "type": "listen-type",
+      "text": "É para levar ou para tomar aqui?",
+      "answer": ["É para levar ou para tomar aqui?"],
+      "explanation": "Стандартный вопрос у стойки: **para levar** — с собой, **para tomar aqui** — здесь."
+    },
+    {
+      "id": "no-cafe-ex-05",
+      "topicId": "no-cafe",
+      "type": "listen-choice",
+      "text": "Com certeza. Quer o galão claro ou escuro?",
+      "prompt": "Что спрашивает официантка?",
+      "options": ["Галан маленький или большой?", "Галан с сахаром или без?", "Галан посветлее или покрепче?", "Галан здесь или с собой?"],
+      "correct": 2,
+      "explanation": "**Claro** — больше молока, **escuro** — больше кофе. Так же уточняют и про **meia de leite**."
+    },
+    {
+      "id": "no-cafe-ex-06",
+      "topicId": "no-cafe",
+      "type": "order-words",
+      "words": ["Desculpe,", "onde", "é", "a", "casa", "de", "banho?"],
+      "answer": "Desculpe, onde é a casa de banho?",
+      "ru": "Извините, где туалет?"
+    },
+    {
+      "id": "no-cafe-ex-07",
+      "topicId": "no-cafe",
+      "type": "translate-ru-pt",
+      "ru": "С собой, пожалуйста.",
+      "answer": ["Para levar, se faz favor.", "Para levar, por favor.", "É para levar, se faz favor.", "É para levar, por favor.", "Para levar, faz favor.", "É para levar, faz favor."]
+    },
+    {
+      "id": "no-cafe-ex-08",
+      "topicId": "no-cafe",
+      "type": "choice",
+      "prompt": "Qual é a forma mais natural de pedir num café em Portugal?",
+      "options": ["Me vê um café.", "Eu quero café agora.", "Me dá um cafezinho.", "Queria um café, se faz favor."],
+      "correct": 3,
+      "explanation": "В Португалии просят через вежливый imperfeito: **Queria…** *Me dá / Me vê* — бразильские обороты (в pt-PT фраза не начинается с клитики: **Dê-me…**), а *Eu quero… agora* звучит грубо."
+    },
+    {
+      "id": "no-cafe-ex-09",
+      "topicId": "no-cafe",
+      "type": "fill-gap",
+      "prompt": "São sete euros e noventa. Quer fatura com número de ___?",
+      "answer": ["contribuinte"],
+      "hint": "налоговый номер (NIF)",
+      "ru": "С вас семь евро девяносто. Чек с налоговым номером?",
+      "explanation": "**Número de contribuinte** (NIF) — налоговый номер. Его спрашивают почти при каждой покупке: чеки с NIF дают налоговый вычет."
+    },
+    {
+      "id": "no-cafe-ex-10",
+      "topicId": "no-cafe",
+      "type": "transform",
+      "prompt": "Quero um galão.",
+      "instruction": "Сделай просьбу вежливой: «хотел бы» + «пожалуйста»",
+      "answer": ["Queria um galão, se faz favor.", "Queria um galão, por favor.", "Queria um galão, faz favor."],
+      "explanation": "**Queria** (imperfeito) в Португалии звучит как вежливое «я бы хотел». *Quero* без смягчения — слишком прямолинейно."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы с другом зашли в пастелариу в Лиссабоне. Напишите диалог из 6–8 реплик с официантом: закажите напиток и что-нибудь поесть, ответьте, здесь вы будете есть или с собой, попросите счёт и спросите, можно ли заплатить картой.",
+    "sample": "— Boa tarde! Diga, faz favor.\n— Boa tarde. Queria uma meia de leite clara e uma torrada, se faz favor. O meu amigo quer um abatanado e um pastel de nata.\n— É para levar ou para tomar aqui?\n— Para tomar aqui. Podemos sentar-nos na esplanada?\n— Claro, estejam à vontade. Mais alguma coisa?\n— Não, é tudo, obrigado.\n— Desculpe! A conta, se faz favor.\n— São cinco euros e quarenta. Quer fatura com contribuinte?\n— Não é preciso. Posso pagar com cartão?\n— Pode, com certeza. Obrigada!",
+    "checklist": [
+      "Просьбы начинаются с вежливого Queria…, а не с Quero…",
+      "Есть se faz favor или por favor в заказе и при просьбе о счёте",
+      "Напитки названы по-португальски: bica, galão, meia de leite, abatanado",
+      "Есть вопрос или ответ про «здесь или с собой» (para levar / para tomar aqui) и про оплату картой",
+      "Нет бразилизмов: cafezinho, xícara, suco, banheiro, фраз с клитикой в начале (Me dá…)"
+    ]
+  }
+}

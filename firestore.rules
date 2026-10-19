@@ -1,0 +1,31 @@
+rules_version = '2';
+
+// Single-user app: only the owner's Google account (matched by verified email) may read/write,
+// and only under users/{their own uid}.
+//
+// The allowed Google account email is NOT committed: keep the REPLACE_WITH_YOUR_EMAIL placeholder here.
+// `npm run deploy` (scripts/deploy-rules.ts) substitutes ALLOWED_EMAIL from .env into the line marked
+// ALLOWED_EMAIL and deploys the generated copy; scripts/rules.test.ts rewrites the same line, so keep the marker comment.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function allowedEmail() {
+      return 'REPLACE_WITH_YOUR_EMAIL'; // ALLOWED_EMAIL
+    }
+
+    function isOwner(uid) {
+      return request.auth != null
+        && request.auth.uid == uid
+        && request.auth.token.email == allowedEmail()
+        && request.auth.token.email_verified == true;
+    }
+
+    match /users/{uid}/{document=**} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

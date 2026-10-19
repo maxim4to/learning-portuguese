@@ -1,0 +1,456 @@
+{
+  "id": "b2-conjuntivo-tempos-compostos",
+  "level": "B2",
+  "module": "b2-tempos-compostos",
+  "title": "Составные времена conjuntivo",
+  "titlePt": "Tempos compostos do conjuntivo",
+  "requires": [
+    "b1-presente-conjuntivo",
+    "b1-imperfeito-conjuntivo-condicional",
+    "b1-futuro-conjuntivo"
+  ],
+  "theory": "## Образование\n\nВсе три составных времени conjuntivo строятся одинаково: **ter** в нужном времени conjuntivo + **particípio passado** (не изменяется по роду и числу).\n\n| | perfeito (presente de ter) | mais-que-perfeito (imperfeito de ter) | futuro composto (futuro de ter) |\n|---|---|---|---|\n| eu | **tenha feito** | **tivesse feito** | **tiver feito** |\n| tu | tenhas feito | tivesses feito | tiveres feito |\n| ele / você | tenha feito | tivesse feito | tiver feito |\n| nós | tenhamos feito | **tivéssemos** feito | tivermos feito |\n| eles / vocês | tenham feito | tivessem feito | tiverem feito |\n\nНеправильные причастия — те же, что в **tenho feito**: **feito, dito, visto, vindo, posto, escrito, aberto, pago, ganho, gasto**.\n\n## 1. Pretérito perfeito do conjuntivo — tenha feito\n\nГлавное предложение в **настоящем** (или будущем), триггер требует conjuntivo, а действие придаточного **уже совершилось**:\n\n**Duvido que ele tenha percebido.** — Сомневаюсь, что он понял.\n**Espero que tenhas dormido bem.** — Надеюсь, ты хорошо выспался.\n**É pena que não tenham vindo.** — Жаль, что они не пришли.\n**Talvez já tenham chegado.** — Возможно, они уже приехали.\n\nСравните: **Duvido que ele venha.** (что он придёт) — **Duvido que ele tenha vindo.** (что он пришёл).\n\nТа же форма — для действия, которое завершится к моменту в будущем: **Espero que até sexta tenhas acabado o relatório.**\n\n## 2. Mais-que-perfeito do conjuntivo — tivesse feito\n\n**а) Нереальное условие в прошлом** («если бы тогда…»):\n**Se tivesse sabido, tinha ido / teria ido.** — Если бы я знал, я бы пошёл.\n\n**б) Главное в прошедшем, действие придаточного — ещё раньше:**\n**Duvidei que ele tivesse percebido.** — Я сомневался, что он понял.\n**Fiquei contente que tivesses vindo.** — Я был рад, что ты пришёл.\n\n**в) Como se** — «как будто уже случилось»: **Falou como se nada tivesse acontecido.**\n\n**г) Сожаление о прошлом:** **Quem me dera ter ido!** / **Oxalá tivesse ouvido os teus conselhos.**\n\n## 3. Futuro composto do conjuntivo — tiver feito\n\nПосле **se, quando, assim que, logo que, depois que, enquanto não** — когда действие должно **завершиться** до действия главного предложения (в будущем):\n\n**Quando tiveres acabado, avisa-me.** — Когда закончишь, скажи мне.\n**Se até às oito não tiver chegado, começamos sem ele.** — Если к восьми он не придёт, начнём без него.\n**Assim que tivermos recebido a resposta, ligamos-lhe.** — Как только получим ответ, позвоним вам.\n**Enquanto não tiveres pago a conta, não podes sair.** — Пока не оплатишь счёт, уйти нельзя.\n\nЧасто взаимозаменяемо с простой формой (**quando acabares**), но **tiver feito** подчёркивает завершённость.\n\n## Как выбрать\n\n| главное предложение | действие придаточного раньше |\n|---|---|\n| presente / futuro / imperativo + **que** | **tenha feito** |\n| прошедшее / condicional + **que**, **como se**, нереальное **se** | **tivesse feito** |\n| **se / quando / assim que** о будущем | **tiver feito** |\n\n## Местоимения\n\nConjuntivo стоит после **que, se, quando**, поэтому клитика — перед **ter**: **Não creio que o tenha visto. Quando o tiveres lido, empresta-mo.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| Duvido que ele **me tenha ligado**. | Duvido que ele **tenha me ligado**. | в pt-PT клитика перед ter, в Бразилии — перед причастием |\n| Se tivesse sabido, **tinha ido**. | Se tivesse sabido, **teria ido**. | в разговорном pt-PT в главной части чаще tinha + particípio |\n| Espero que **tenhas gostado**. | Espero que **você tenha gostado**. | в pt-PT неформально — tu |\n| Quando **o tiveres lido**... | Quando **tiver lido ele**... | в pt-PT «его» — только клитика **o** |\n\nСами формы conjuntivo в обеих нормах одинаковы.",
+  "commonErrors": "- **Индикатив после триггера**: *Duvido que ele tem feito isso* ✗ → **Duvido que ele tenha feito isso** ✓.\n- **Путаница tenho feito / tenha feito**: *tenho feito* — индикатив «в последнее время делаю»; после **que**-триггера нужно **tenha feito** ✓.\n- **Простой conjuntivo вместо составного** по русской модели «надеюсь, ты выспался»: *Espero que durmas bem* (это «надеюсь, выспишься») → **Espero que tenhas dormido bem** ✓.\n- **Futuro do indicativo после quando/se**: *Quando terás acabado, liga-me* ✗ → **Quando tiveres acabado, liga-me** ✓.\n- **Индикатив в нереальном условии**: *Se eu tinha sabido* ✗ → **Se eu tivesse sabido** ✓.\n- **Нарушение согласования**: *Duvidei que ele tenha percebido* ✗ → **Duvidei que ele tivesse percebido** ✓.\n- **Согласование причастия**: *Espero que tenhas recebida a carta* ✗ → **tenhas recebido** ✓.\n- **Без ударения**: *tivessemos* ✗ → **tivéssemos** ✓.",
+  "examples": [
+    {
+      "pt": "Espero que tenhas feito boa viagem.",
+      "ru": "Надеюсь, ты хорошо доехал.",
+      "audio": true
+    },
+    {
+      "pt": "Duvido que o Rui já tenha saído de casa.",
+      "ru": "Сомневаюсь, что Руй уже вышел из дома.",
+      "audio": true
+    },
+    {
+      "pt": "Se eu tivesse sabido da greve, tinha apanhado o metro.",
+      "ru": "Если бы я знал о забастовке, я бы поехал на метро.",
+      "audio": true
+    },
+    {
+      "pt": "Quando tiveres acabado o relatório, manda-mo por e-mail.",
+      "ru": "Когда закончишь отчёт, пришли мне его по почте.",
+      "audio": true
+    },
+    {
+      "pt": "Ela falou como se nada tivesse acontecido.",
+      "ru": "Она говорила так, будто ничего не случилось.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-01",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Bom dia! Espero que tu ___ (dormir) bem.",
+      "answer": [
+        "tenhas dormido"
+      ],
+      "ru": "Надеюсь, ты хорошо выспался.",
+      "explanation": "Надежда о уже совершившемся действии → perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-02",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Duvido que ele já ___ (chegar) a casa.",
+      "answer": [
+        "tenha chegado"
+      ],
+      "ru": "Сомневаюсь, что он уже добрался домой."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-03",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Ontem, na reunião? Não acredito que a Inês ___ (dizer) isso!",
+      "answer": [
+        "tenha dito"
+      ],
+      "ru": "Вчера, на совещании? Не верю, что Инеш это сказала!",
+      "explanation": "Dizer → dito (неправильное причастие)."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-04",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "É possível que eles já ___ (perder) o comboio.",
+      "answer": [
+        "tenham perdido"
+      ],
+      "ru": "Возможно, они уже опоздали на поезд."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-05",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Se nós ___ (sair) mais cedo, não tínhamos apanhado trânsito.",
+      "answer": [
+        "tivéssemos saído"
+      ],
+      "hint": "ударение в форме nós",
+      "ru": "Если бы мы выехали пораньше, мы бы не попали в пробку.",
+      "explanation": "Нереальное условие в прошлом → se + mais-que-perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-06",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Ele olhava para mim como se ___ (ver) um fantasma.",
+      "answer": [
+        "tivesse visto",
+        "visse"
+      ],
+      "ru": "Он смотрел на меня так, будто увидел привидение.",
+      "explanation": "Como se + действие, которое «как будто уже произошло» → tivesse + particípio. Simple visse («как будто видел») тоже возможно."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-07",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Quando tu ___ (acabar) o trabalho, liga-me.",
+      "answer": [
+        "tiveres acabado"
+      ],
+      "hint": "futuro composto do conjuntivo",
+      "ru": "Когда закончишь работу, позвони мне."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-08",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Se até às dez não ___ (receber) resposta, voltamos a escrever.",
+      "answer": [
+        "tivermos recebido"
+      ],
+      "hint": "nós, futuro composto do conjuntivo",
+      "ru": "Если к десяти мы не получим ответа, напишем ещё раз."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-09",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Fiquei muito contente que vocês ___ (vir) à festa.",
+      "answer": [
+        "tivessem vindo"
+      ],
+      "hint": "главное в прошедшем, приход — раньше",
+      "ru": "Я был очень рад, что вы пришли на праздник.",
+      "explanation": "Fiquei (прошедшее) + действие раньше → mais-que-perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-10",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "choice",
+      "prompt": "Duvido que ela ___ a mensagem ontem.",
+      "options": [
+        "recebeu",
+        "tenha recebido",
+        "tivesse recebido",
+        "tiver recebido"
+      ],
+      "correct": 1,
+      "explanation": "Duvido (настоящее) + действие в прошлом → perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-11",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "choice",
+      "prompt": "Na altura, duvidei que ela ___ a mensagem.",
+      "options": [
+        "tenha recebido",
+        "recebeu",
+        "tiver recebido",
+        "tivesse recebido"
+      ],
+      "correct": 3,
+      "explanation": "Duvidei (прошедшее) → согласование: mais-que-perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-12",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "choice",
+      "prompt": "Assim que ___ o contrato, enviamos-lhe as chaves.",
+      "options": [
+        "tivermos assinado",
+        "tenhamos assinado",
+        "teremos assinado",
+        "tivéssemos assinado"
+      ],
+      "correct": 0,
+      "explanation": "Assim que о будущем → futuro (composto) do conjuntivo."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-13",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "choice",
+      "prompt": "Não creio que ele ___.",
+      "options": [
+        "tenha-o visto",
+        "tenha o visto",
+        "o tenha visto",
+        "tenha visto-o"
+      ],
+      "correct": 2,
+      "explanation": "После que — próclise, клитика перед вспомогательным ter."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-14",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "transform",
+      "prompt": "Duvido que ele perceba.",
+      "instruction": "Сделайте действие придаточного уже совершившимся.",
+      "answer": [
+        "Duvido que ele tenha percebido.",
+        "Duvido que tenha percebido."
+      ]
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-15",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "transform",
+      "prompt": "Espero que tenham gostado do jantar.",
+      "instruction": "Перенесите главное предложение в прошлое: «Esperava que...».",
+      "answer": [
+        "Esperava que tivessem gostado do jantar.",
+        "Eu esperava que tivessem gostado do jantar."
+      ],
+      "explanation": "Главное в прошедшем → tenham gostado меняется на tivessem gostado."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-16",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "transform",
+      "prompt": "Quando leres o livro, empresta-mo.",
+      "instruction": "Подчеркните завершённость: используйте futuro composto do conjuntivo.",
+      "answer": [
+        "Quando tiveres lido o livro, empresta-mo."
+      ]
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-17",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "order-words",
+      "words": [
+        "Duvido",
+        "tenha",
+        "ela",
+        "que",
+        "percebido"
+      ],
+      "answer": "Duvido que ela tenha percebido",
+      "ru": "Сомневаюсь, что она поняла."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-18",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "order-words",
+      "words": [
+        "como",
+        "nada",
+        "se",
+        "acontecido",
+        "tivesse",
+        "Ele",
+        "sorriu"
+      ],
+      "answer": "Ele sorriu como se nada tivesse acontecido",
+      "ru": "Он улыбнулся, как будто ничего не случилось."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-19",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "translate-ru-pt",
+      "ru": "Надеюсь, вы хорошо доехали. (vocês)",
+      "answer": [
+        "Espero que tenham feito boa viagem.",
+        "Espero que tenham tido boa viagem.",
+        "Espero que tenham chegado bem.",
+        "Espero que vocês tenham feito boa viagem.",
+        "Espero que vocês tenham tido boa viagem.",
+        "Espero que vocês tenham chegado bem.",
+        "Espero que tenham feito uma boa viagem.",
+        "Espero que tenham tido uma boa viagem.",
+        "Espero que vocês tenham feito uma boa viagem.",
+        "Espero que vocês tenham tido uma boa viagem."
+      ]
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-20",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "translate-ru-pt",
+      "ru": "Когда прочитаешь письмо, позвони мне.",
+      "answer": [
+        "Quando tiveres lido a carta, liga-me.",
+        "Quando tiveres lido a carta, telefona-me.",
+        "Quando leres a carta, liga-me.",
+        "Quando leres a carta, telefona-me."
+      ],
+      "explanation": "Оба варианта верны; tiveres lido подчёркивает, что чтение должно быть закончено."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-21",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "listen-type",
+      "text": "Não acredito que ele tenha dito isso.",
+      "answer": [
+        "Não acredito que ele tenha dito isso."
+      ]
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-ex-22",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "match",
+      "prompt": "Соедините начало и конец фразы.",
+      "pairs": [
+        {
+          "left": "Duvido que ela",
+          "right": "tenha recebido o e-mail."
+        },
+        {
+          "left": "Ela falou como se",
+          "right": "tivesse visto um fantasma."
+        },
+        {
+          "left": "Quando tu",
+          "right": "tiveres acabado, avisa-me."
+        },
+        {
+          "left": "Se nós",
+          "right": "tivéssemos sabido, tínhamos ficado em casa."
+        },
+        {
+          "left": "Quem me dera que eles",
+          "right": "tivessem ficado mais tempo."
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-01",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Espero que vocês ___ (gostar) do filme de ontem.",
+      "answer": [
+        "tenham gostado"
+      ],
+      "ru": "Надеюсь, вам понравился вчерашний фильм."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-02",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Se eu ___ (estudar) mais, tinha passado no exame.",
+      "answer": [
+        "tivesse estudado"
+      ],
+      "ru": "Если бы я больше занимался, я бы сдал экзамен."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-03",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Logo que ___ (terminar) as obras, mudamo-nos para a casa nova.",
+      "answer": [
+        "tivermos terminado",
+        "terminarmos"
+      ],
+      "hint": "nós",
+      "ru": "Как только закончим ремонт, переедем в новый дом.",
+      "explanation": "Tivermos terminado подчёркивает завершённость; простая форма terminarmos тоже верна."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-04",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "fill-gap",
+      "prompt": "Já acabaste? Não acredito que tu ___ (fazer) isso sozinho!",
+      "answer": [
+        "tenhas feito"
+      ],
+      "ru": "Ты уже закончил? Не верю, что ты сделал это сам!"
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-05",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "choice",
+      "prompt": "Ela duvidava que nós ___ o caminho.",
+      "options": [
+        "tenhamos encontrado",
+        "tivéssemos encontrado",
+        "tivermos encontrado",
+        "encontrámos"
+      ],
+      "correct": 1,
+      "explanation": "Duvidava (прошедшее) → mais-que-perfeito do conjuntivo."
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-06",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "choice",
+      "prompt": "Quando ___ o livro, devolve-mo.",
+      "options": [
+        "tiveres lido",
+        "tenhas lido",
+        "tivesses lido",
+        "terás lido"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-07",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "choice",
+      "prompt": "É pena que ele não ___ vindo.",
+      "options": [
+        "tem",
+        "tivesse",
+        "tenha",
+        "tiver"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-08",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "transform",
+      "prompt": "Duvido que eles venham.",
+      "instruction": "Сделайте действие совершившимся: «...что они (уже) пришли».",
+      "answer": [
+        "Duvido que eles já tenham vindo.",
+        "Duvido que já tenham vindo.",
+        "Duvido que eles tenham vindo.",
+        "Duvido que tenham vindo."
+      ]
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-09",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "translate-ru-pt",
+      "ru": "Сомневаюсь, что она это сказала.",
+      "answer": [
+        "Duvido que ela tenha dito isso.",
+        "Duvido que tenha dito isso.",
+        "Duvido que ela tenha dito isto.",
+        "Duvido que tenha dito isto.",
+        "Duvido que ela o tenha dito.",
+        "Duvido que o tenha dito."
+      ]
+    },
+    {
+      "id": "b2-conjuntivo-tempos-compostos-mt-10",
+      "topicId": "b2-conjuntivo-tempos-compostos",
+      "type": "listen-choice",
+      "text": "Quando tiveres acabado, avisa-me.",
+      "options": [
+        "Если бы ты закончил, ты бы мне сказал.",
+        "Когда ты закончил, ты мне сказал.",
+        "Пока не закончишь, ничего не говори.",
+        "Когда закончишь, скажи мне."
+      ],
+      "correct": 3
+    }
+  ]
+}

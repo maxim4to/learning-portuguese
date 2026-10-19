@@ -1,0 +1,178 @@
+{
+  "id": "oficina-automovel",
+  "title": "В автомастерской",
+  "titlePt": "Na oficina",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia, em que posso ajudar?", "ru": "Доброе утро, чем могу помочь?" },
+    { "speaker": "B", "pt": "Bom dia. O meu carro está a fazer um barulho estranho quando travo.", "ru": "Доброе утро. Моя машина странно шумит, когда я торможу." },
+    { "speaker": "A", "pt": "Há quanto tempo é que isso acontece?", "ru": "И давно это происходит?" },
+    { "speaker": "B", "pt": "Há uma semana, mais ou menos. E acendeu-se uma luz no painel.", "ru": "Примерно неделю. И на приборной панели загорелась лампочка." },
+    { "speaker": "A", "pt": "Pode ser das pastilhas dos travões. Temos de fazer um diagnóstico.", "ru": "Возможно, тормозные колодки. Нужно провести диагностику." },
+    { "speaker": "B", "pt": "Antes de fazerem a reparação, podiam dar-me um orçamento?", "ru": "Прежде чем делать ремонт, могли бы вы дать мне смету?" },
+    { "speaker": "A", "pt": "Claro. Ligamos-lhe ainda hoje com o orçamento e só avançamos se o senhor aprovar.", "ru": "Конечно. Позвоним вам сегодня же со сметой и начнём, только если вы одобрите." },
+    { "speaker": "B", "pt": "Ótimo. Já agora, tenho de fazer a inspeção periódica no próximo mês.", "ru": "Отлично. Кстати, в следующем месяце мне нужно проходить техосмотр." },
+    { "speaker": "A", "pt": "Então convém verificar também os pneus. Os da frente estão bastante gastos.", "ru": "Тогда стоит проверить и шины. Передние довольно сильно изношены." },
+    { "speaker": "B", "pt": "Se for preciso, troquem-nos. Quanto tempo vai demorar?", "ru": "Если нужно, поменяйте их. Сколько времени это займёт?" },
+    { "speaker": "A", "pt": "Se tivermos as peças em stock, fica pronto amanhã à tarde.", "ru": "Если запчасти есть на складе, будет готово завтра после обеда." },
+    { "speaker": "B", "pt": "E será que a reparação está coberta pela garantia ou pelo seguro?", "ru": "А может быть, ремонт покрывается гарантией или страховкой?" },
+    { "speaker": "A", "pt": "Traga os documentos do carro e a apólice do seguro, que nós vemos isso.", "ru": "Принесите документы на машину и страховой полис, мы это проверим." },
+    { "speaker": "B", "pt": "Está bem. Deixo-lhe a chave e o meu número de telemóvel.", "ru": "Хорошо. Оставляю вам ключ и номер моего мобильного." },
+    { "speaker": "A", "pt": "Obrigada. Assim que tivermos o orçamento, entramos em contacto.", "ru": "Спасибо. Как только будет смета, мы с вами свяжемся." }
+  ],
+  "phrases": [
+    { "pt": "O carro está a fazer um barulho estranho.", "ru": "Машина странно шумит." },
+    { "pt": "Acendeu-se uma luz no painel.", "ru": "На панели загорелась лампочка." },
+    { "pt": "O carro não pega.", "ru": "Машина не заводится." },
+    { "pt": "Podiam dar-me um orçamento antes da reparação?", "ru": "Могли бы вы дать мне смету до ремонта?" },
+    { "pt": "Só avancem depois de eu aprovar o orçamento.", "ru": "Начинайте только после того, как я одобрю смету." },
+    { "pt": "Quanto tempo vai demorar?", "ru": "Сколько времени это займёт?" },
+    { "pt": "Quando é que o carro fica pronto?", "ru": "Когда машина будет готова?" },
+    { "pt": "Isto está coberto pela garantia?", "ru": "Это покрывается гарантией?" },
+    { "pt": "Tenho de marcar a inspeção.", "ru": "Мне нужно записаться на техосмотр." },
+    { "pt": "Preciso de chamar o reboque / a assistência em viagem.", "ru": "Мне нужно вызвать эвакуатор / помощь на дороге." }
+  ],
+  "vocab": [
+    { "pt": "a oficina", "ru": "автомастерская, автосервис", "example": "Levei o carro à oficina do bairro." },
+    { "pt": "o mecânico / a mecânica", "ru": "механик, автослесарь", "example": "O mecânico já viu o motor." },
+    { "pt": "a avaria", "ru": "поломка, неисправность", "example": "O carro teve uma avaria na autoestrada." },
+    { "pt": "avariar", "ru": "сломаться", "example": "O ar condicionado avariou outra vez." },
+    { "pt": "o orçamento", "ru": "смета, предварительная оценка стоимости", "example": "Pedi três orçamentos antes de decidir." },
+    { "pt": "a reparação", "ru": "ремонт", "example": "A reparação ficou mais cara do que pensava." },
+    { "pt": "o diagnóstico", "ru": "диагностика", "example": "O diagnóstico custa trinta euros." },
+    { "pt": "a revisão", "ru": "плановое ТО", "example": "Faço a revisão a cada quinze mil quilómetros." },
+    { "pt": "a inspeção (periódica obrigatória)", "ru": "техосмотр", "example": "O carro chumbou na inspeção por causa das luzes." },
+    { "pt": "chumbar / passar na inspeção", "ru": "не пройти / пройти техосмотр", "example": "Felizmente, passei na inspeção à primeira." },
+    { "pt": "o pneu", "ru": "шина", "example": "Tenho um pneu furado." },
+    { "pt": "o furo", "ru": "прокол", "example": "Tive um furo a caminho do trabalho." },
+    { "pt": "gasto", "ru": "изношенный", "example": "Os pneus de trás estão gastos." },
+    { "pt": "os travões", "ru": "тормоза", "example": "Os travões estão a chiar." },
+    { "pt": "as pastilhas dos travões", "ru": "тормозные колодки", "example": "Mudei as pastilhas dos travões." },
+    { "pt": "travar", "ru": "тормозить", "example": "Travou a fundo e evitou o acidente." },
+    { "pt": "o motor", "ru": "двигатель", "example": "O motor aquece demasiado." },
+    { "pt": "a bateria", "ru": "аккумулятор", "example": "A bateria descarregou durante a noite." },
+    { "pt": "o óleo", "ru": "масло (моторное)", "example": "Tem de mudar o óleo e o filtro." },
+    { "pt": "o painel", "ru": "приборная панель", "example": "Apareceu uma luz amarela no painel." },
+    { "pt": "a embraiagem", "ru": "сцепление", "example": "A embraiagem está a patinar." },
+    { "pt": "a caixa de velocidades", "ru": "коробка передач", "example": "O problema é da caixa de velocidades." },
+    { "pt": "os faróis", "ru": "фары", "example": "Fundiu-se a lâmpada de um dos faróis." },
+    { "pt": "a peça", "ru": "запчасть, деталь", "example": "A peça tem de vir de Espanha." },
+    { "pt": "a mão de obra", "ru": "стоимость работы", "example": "A mão de obra é cobrada à hora." },
+    { "pt": "o seguro automóvel", "ru": "автостраховка", "example": "O seguro automóvel é obrigatório." },
+    { "pt": "a apólice", "ru": "страховой полис", "example": "O número da apólice está na carta verde." },
+    { "pt": "a carta verde", "ru": "«зелёная карта» (документ страховки)", "example": "Tenho sempre a carta verde no porta-luvas." },
+    { "pt": "a garantia", "ru": "гарантия", "example": "O carro ainda está na garantia." },
+    { "pt": "o reboque", "ru": "эвакуатор", "example": "Tive de chamar o reboque." },
+    { "pt": "a assistência em viagem", "ru": "помощь на дороге (услуга страховки)", "example": "A assistência em viagem chegou em meia hora." },
+    { "pt": "o certificado de matrícula / o DUA", "ru": "свидетельство о регистрации ТС (DUA — старое название, до сих пор в ходу)", "example": "Traga o certificado de matrícula e a carta de condução." },
+    { "pt": "a carta de condução", "ru": "водительские права", "example": "Já troquei a minha carta de condução no IMT." },
+    { "pt": "ficar pronto", "ru": "быть готовым", "example": "O carro fica pronto na sexta-feira." },
+    { "pt": "pegar (o carro)", "ru": "заводиться (о машине)", "example": "Hoje de manhã o carro não pegou." }
+  ],
+  "exercises": [
+    {
+      "id": "oficina-automovel-ex-01",
+      "topicId": "oficina-automovel",
+      "type": "choice",
+      "prompt": "Antes da reparação, quer saber quanto vai custar. O que pede?",
+      "options": ["uma fatura", "um recibo", "um orçamento", "uma apólice"],
+      "correct": 2,
+      "explanation": "**O orçamento** — предварительная смета. **Fatura** и **recibo** выдают после оплаты, **apólice** — страховой полис."
+    },
+    {
+      "id": "oficina-automovel-ex-02",
+      "topicId": "oficina-automovel",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "os travões", "right": "тормоза" },
+        { "left": "a embraiagem", "right": "сцепление" },
+        { "left": "o pneu furado", "right": "проколотая шина" },
+        { "left": "a bateria", "right": "аккумулятор" },
+        { "left": "o reboque", "right": "эвакуатор" }
+      ]
+    },
+    {
+      "id": "oficina-automovel-ex-03",
+      "topicId": "oficina-automovel",
+      "type": "fill-gap",
+      "prompt": "Se ___ (ter) as peças em stock, o carro fica pronto amanhã.",
+      "answer": ["tivermos"],
+      "hint": "futuro do conjuntivo, nós",
+      "ru": "Если запчасти будут на складе, машина будет готова завтра.",
+      "explanation": "После **se** о реальном будущем — **futuro do conjuntivo**: **se tivermos**, **se for preciso**, **assim que tivermos**."
+    },
+    {
+      "id": "oficina-automovel-ex-04",
+      "topicId": "oficina-automovel",
+      "type": "listen-type",
+      "text": "Há uma semana, mais ou menos. E acendeu-se uma luz no painel.",
+      "answer": ["Há uma semana, mais ou menos. E acendeu-se uma luz no painel."],
+      "explanation": "**Acender-se** — загореться (о лампочке). Ênclise: **acendeu-se**, а не *se acendeu* в начале предложения."
+    },
+    {
+      "id": "oficina-automovel-ex-05",
+      "topicId": "oficina-automovel",
+      "type": "listen-choice",
+      "text": "Então convém verificar também os pneus. Os da frente estão bastante gastos.",
+      "prompt": "Что советует сотрудница мастерской?",
+      "options": ["Поменять задние шины, они проколоты", "Проверить шины: передние сильно изношены", "Подкачать шины перед техосмотром", "Шины в порядке, менять не нужно"],
+      "correct": 1,
+      "explanation": "**Convém** — «стоит, желательно». **Os da frente** — передние, **gastos** — изношенные."
+    },
+    {
+      "id": "oficina-automovel-ex-06",
+      "topicId": "oficina-automovel",
+      "type": "order-words",
+      "words": ["O", "meu", "carro", "não", "pega", "de", "manhã."],
+      "answer": "O meu carro não pega de manhã.",
+      "ru": "Моя машина не заводится по утрам."
+    },
+    {
+      "id": "oficina-automovel-ex-07",
+      "topicId": "oficina-automovel",
+      "type": "translate-ru-pt",
+      "ru": "Когда машина будет готова?",
+      "answer": ["Quando é que o carro fica pronto?", "Quando fica pronto o carro?", "Quando é que o carro vai ficar pronto?", "Quando é que o carro está pronto?", "Quando é que o carro estará pronto?", "Quando fica o carro pronto?"]
+    },
+    {
+      "id": "oficina-automovel-ex-08",
+      "topicId": "oficina-automovel",
+      "type": "choice",
+      "prompt": "O carro não passou na inspeção. Como se diz isto de forma coloquial em Portugal?",
+      "options": ["O carro reprovou a inspeção.", "O carro chumbou na inspeção.", "O carro falhou a inspeção.", "O carro perdeu a inspeção."],
+      "correct": 1,
+      "explanation": "В Португалии говорят **chumbar** — «провалиться» (на экзамене, техосмотре). Противоположное — **passar na inspeção**."
+    },
+    {
+      "id": "oficina-automovel-ex-09",
+      "topicId": "oficina-automovel",
+      "type": "fill-gap",
+      "prompt": "Os travões ___ (estar) a chiar desde ontem.",
+      "answer": ["estão"],
+      "hint": "estar a + infinitivo",
+      "ru": "Тормоза скрипят со вчерашнего дня.",
+      "explanation": "Длительное действие в pt-PT — **estar a + infinitivo**: **estão a chiar**, а не *estão chiando*."
+    },
+    {
+      "id": "oficina-automovel-ex-10",
+      "topicId": "oficina-automovel",
+      "type": "transform",
+      "prompt": "Dão-me um orçamento?",
+      "instruction": "Сделай просьбу вежливее с глаголом poder в imperfeito (вы — мн. ч.)",
+      "answer": ["Podiam dar-me um orçamento?", "Podiam-me dar um orçamento?"],
+      "explanation": "**Podiam + infinitivo** — вежливая просьба к нескольким людям (сотрудникам мастерской). Клитика обычно присоединяется к инфинитиву: **dar-me**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Ваша машина сломалась по дороге на работу, и её эвакуатором отвезли в мастерскую. Напишите диалог из 8–10 реплик с сотрудником мастерской: опишите проблему (что произошло и когда), попросите смету до начала ремонта, спросите, сколько времени займёт ремонт, уточните, покрывает ли это страховка или гарантия, и оставьте контакт.",
+    "sample": "— Bom dia, em que posso ajudar?\n— Bom dia. O meu carro avariou ontem na A5 e veio de reboque. O motor começou a aquecer e depois foi-se abaixo.\n— Já tinha acontecido antes?\n— Não, mas há uns dias acendeu-se uma luz vermelha no painel.\n— Pode ser do sistema de refrigeração. Vamos fazer um diagnóstico.\n— Podiam dar-me um orçamento antes da reparação? Só quero que avancem depois de eu aprovar.\n— Claro. Ligamos-lhe amanhã de manhã.\n— Quanto tempo vai demorar, se for preciso trocar peças?\n— Se tivermos as peças em stock, dois ou três dias.\n— E isto está coberto pela garantia? O carro tem só dois anos.\n— Traga os documentos e nós verificamos.\n— Está bem. Deixo-lhe o meu número de telemóvel.",
+    "checklist": [
+      "Проблема описана конкретно: что случилось и когда (avariou, acendeu-se uma luz, está a fazer barulho)",
+      "Есть вежливая просьба о смете: Podiam dar-me um orçamento…?",
+      "После se / quando / assim que о будущем стоит futuro do conjuntivo (se for preciso, se tivermos)",
+      "Есть вопрос о сроках (Quanto tempo vai demorar? / Quando fica pronto?) и о гарантии или страховке",
+      "Длительное действие — estar a + infinitivo, клитики после глагола (acendeu-se, deixo-lhe)"
+    ]
+  }
+}

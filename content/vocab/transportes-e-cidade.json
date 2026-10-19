@@ -1,0 +1,393 @@
+{
+  "id": "transportes-e-cidade",
+  "title": "Транспорт и город",
+  "titlePt": "Transportes e cidade",
+  "level": "A2",
+  "words": [
+    {
+      "pt": "a CP",
+      "ru": "CP, португальские железные дороги (Comboios de Portugal)",
+      "gender": "f",
+      "example": "Comprei o bilhete no site da CP.",
+      "audio": true
+    },
+    {
+      "pt": "o comboio",
+      "ru": "поезд",
+      "gender": "m",
+      "example": "O comboio para Sintra sai de meia em meia hora.",
+      "audio": true
+    },
+    {
+      "pt": "o Alfa Pendular",
+      "ru": "скоростной поезд Alfa Pendular",
+      "gender": "m",
+      "example": "De Alfa Pendular, Lisboa–Porto faz-se em menos de três horas.",
+      "audio": true
+    },
+    {
+      "pt": "o comboio regional",
+      "ru": "региональный поезд",
+      "gender": "m",
+      "example": "O comboio regional para em todas as estações.",
+      "audio": true
+    },
+    {
+      "pt": "a estação",
+      "ru": "станция, вокзал",
+      "gender": "f",
+      "example": "Encontramo-nos na estação de Santa Apolónia.",
+      "audio": true
+    },
+    {
+      "pt": "a linha",
+      "ru": "линия; путь (платформа) на вокзале",
+      "gender": "f",
+      "example": "O comboio para Cascais parte da linha três.",
+      "audio": true
+    },
+    {
+      "pt": "o metro",
+      "ru": "метро",
+      "gender": "m",
+      "example": "Vou de metro, é mais rápido.",
+      "audio": true
+    },
+    {
+      "pt": "o autocarro",
+      "ru": "автобус",
+      "gender": "m",
+      "example": "Apanho o autocarro ali na esquina.",
+      "audio": true
+    },
+    {
+      "pt": "a paragem",
+      "ru": "остановка",
+      "gender": "f",
+      "example": "Onde é a paragem do 728?",
+      "audio": true
+    },
+    {
+      "pt": "o elétrico",
+      "ru": "трамвай",
+      "gender": "m",
+      "example": "O elétrico 28 está sempre cheio de turistas.",
+      "audio": true
+    },
+    {
+      "pt": "o barco",
+      "ru": "паром, катер",
+      "gender": "m",
+      "example": "Apanho o barco para o Barreiro no Terreiro do Paço.",
+      "audio": true
+    },
+    {
+      "pt": "o bilhete",
+      "ru": "билет",
+      "gender": "m",
+      "example": "Já comprou o bilhete?",
+      "audio": true
+    },
+    {
+      "pt": "o bilhete de ida e volta",
+      "ru": "билет туда и обратно",
+      "gender": "m",
+      "example": "Um bilhete de ida e volta para Coimbra, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "o passe",
+      "ru": "проездной",
+      "gender": "m",
+      "example": "Com o passe, ando em todos os transportes da cidade.",
+      "audio": true
+    },
+    {
+      "pt": "o passe Navegante",
+      "ru": "проездной Navegante (Лиссабон)",
+      "gender": "m",
+      "example": "O passe Navegante metropolitano custa quarenta euros.",
+      "audio": true
+    },
+    {
+      "pt": "carregar o cartão",
+      "ru": "пополнить транспортную карту",
+      "example": "Tenho de carregar o cartão antes de entrar no metro.",
+      "audio": true
+    },
+    {
+      "pt": "validar o bilhete",
+      "ru": "прокомпостировать, провалидировать билет",
+      "example": "Não se esqueça de validar o bilhete à entrada.",
+      "audio": true
+    },
+    {
+      "pt": "apanhar",
+      "ru": "сесть на (транспорт), успеть на",
+      "example": "Apanhei o último comboio por um triz.",
+      "audio": true
+    },
+    {
+      "pt": "perder o autocarro",
+      "ru": "опоздать на автобус",
+      "example": "Perdi o autocarro e cheguei atrasado.",
+      "audio": true
+    },
+    {
+      "pt": "sair",
+      "ru": "выходить (из транспорта)",
+      "example": "Saia na próxima paragem.",
+      "audio": true
+    },
+    {
+      "pt": "o transbordo",
+      "ru": "пересадка",
+      "gender": "m",
+      "example": "Para chegar ao aeroporto, faz transbordo na Alameda.",
+      "audio": true
+    },
+    {
+      "pt": "o horário",
+      "ru": "расписание",
+      "gender": "m",
+      "example": "Vê o horário dos autocarros na aplicação.",
+      "audio": true
+    },
+    {
+      "pt": "o atraso",
+      "ru": "опоздание, задержка",
+      "gender": "m",
+      "example": "O comboio tem um atraso de quinze minutos.",
+      "audio": true
+    },
+    {
+      "pt": "a greve",
+      "ru": "забастовка",
+      "gender": "f",
+      "example": "Amanhã há greve dos maquinistas.",
+      "audio": true
+    },
+    {
+      "pt": "o TVDE",
+      "ru": "такси по приложению (Uber, Bolt)",
+      "gender": "m",
+      "example": "Chamei um TVDE porque já não havia metro.",
+      "audio": true
+    },
+    {
+      "pt": "o táxi",
+      "ru": "такси",
+      "gender": "m",
+      "example": "A praça de táxis fica em frente à estação.",
+      "audio": true
+    },
+    {
+      "pt": "a autoestrada",
+      "ru": "автомагистраль",
+      "gender": "f",
+      "example": "Pela autoestrada chegamos mais depressa.",
+      "audio": true
+    },
+    {
+      "pt": "a portagem",
+      "ru": "дорожный сбор; пункт оплаты",
+      "gender": "f",
+      "example": "A portagem até ao Porto é cara.",
+      "audio": true
+    },
+    {
+      "pt": "a Via Verde",
+      "ru": "Via Verde (система автоматической оплаты дорог)",
+      "gender": "f",
+      "example": "Com a Via Verde, não paro nas portagens.",
+      "audio": true
+    },
+    {
+      "pt": "o estacionamento",
+      "ru": "парковка",
+      "gender": "m",
+      "example": "No centro, o estacionamento é muito difícil.",
+      "audio": true
+    },
+    {
+      "pt": "estacionar",
+      "ru": "парковаться",
+      "example": "Aqui não pode estacionar, é zona de cargas e descargas.",
+      "audio": true
+    },
+    {
+      "pt": "o parquímetro",
+      "ru": "паркомат",
+      "gender": "m",
+      "example": "Paguei o parquímetro por duas horas.",
+      "audio": true
+    },
+    {
+      "pt": "a bomba de gasolina",
+      "ru": "автозаправка",
+      "gender": "f",
+      "example": "Há uma bomba de gasolina à saída da cidade.",
+      "audio": true
+    },
+    {
+      "pt": "o gasóleo",
+      "ru": "дизельное топливо",
+      "gender": "m",
+      "example": "O meu carro é a gasóleo.",
+      "audio": true
+    },
+    {
+      "pt": "o semáforo",
+      "ru": "светофор",
+      "gender": "m",
+      "example": "Vire à esquerda no segundo semáforo.",
+      "audio": true
+    },
+    {
+      "pt": "a passadeira",
+      "ru": "пешеходный переход",
+      "gender": "f",
+      "example": "Atravesse sempre na passadeira.",
+      "audio": true
+    },
+    {
+      "pt": "o passeio",
+      "ru": "тротуар",
+      "gender": "m",
+      "example": "Não estacione em cima do passeio.",
+      "audio": true
+    },
+    {
+      "pt": "a rotunda",
+      "ru": "круговой перекрёсток",
+      "gender": "f",
+      "example": "Na rotunda, saia na terceira saída.",
+      "audio": true
+    },
+    {
+      "pt": "o cruzamento",
+      "ru": "перекрёсток",
+      "gender": "m",
+      "example": "Há um acidente no cruzamento.",
+      "audio": true
+    },
+    {
+      "pt": "a esquina",
+      "ru": "угол улицы",
+      "gender": "f",
+      "example": "A farmácia fica na esquina.",
+      "audio": true
+    },
+    {
+      "pt": "virar à direita",
+      "ru": "повернуть направо",
+      "example": "No fim da rua, vire à direita.",
+      "audio": true
+    },
+    {
+      "pt": "virar à esquerda",
+      "ru": "повернуть налево",
+      "example": "Depois da igreja, vire à esquerda.",
+      "audio": true
+    },
+    {
+      "pt": "seguir em frente",
+      "ru": "идти прямо",
+      "example": "Siga em frente até à praça.",
+      "audio": true
+    },
+    {
+      "pt": "ao fundo da rua",
+      "ru": "в конце улицы",
+      "example": "O café fica ao fundo da rua.",
+      "audio": true
+    },
+    {
+      "pt": "em frente a",
+      "ru": "напротив",
+      "example": "Moro em frente ao mercado.",
+      "audio": true
+    },
+    {
+      "pt": "ao lado de",
+      "ru": "рядом с",
+      "example": "A paragem é ao lado do banco.",
+      "audio": true
+    },
+    {
+      "pt": "perto de",
+      "ru": "недалеко от",
+      "example": "Fica perto da estação, a cinco minutos a pé.",
+      "audio": true
+    },
+    {
+      "pt": "a pé",
+      "ru": "пешком",
+      "example": "Vou a pé, é já ali.",
+      "audio": true
+    },
+    {
+      "pt": "o quarteirão",
+      "ru": "квартал",
+      "gender": "m",
+      "example": "O correio fica dois quarteirões mais à frente.",
+      "audio": true
+    },
+    {
+      "pt": "a praça",
+      "ru": "площадь",
+      "gender": "f",
+      "example": "A praça está cheia de esplanadas.",
+      "audio": true
+    },
+    {
+      "pt": "o largo",
+      "ru": "небольшая площадь",
+      "gender": "m",
+      "example": "Encontramo-nos no largo da igreja.",
+      "audio": true
+    },
+    {
+      "pt": "a travessa",
+      "ru": "переулок",
+      "gender": "f",
+      "example": "A loja fica numa travessa da avenida.",
+      "audio": true
+    },
+    {
+      "pt": "o miradouro",
+      "ru": "смотровая площадка",
+      "gender": "m",
+      "example": "Do miradouro vê-se o rio todo.",
+      "audio": true
+    },
+    {
+      "pt": "a calçada",
+      "ru": "мостовая (португальская брусчатка)",
+      "gender": "f",
+      "example": "Cuidado, a calçada escorrega quando chove.",
+      "audio": true
+    },
+    {
+      "pt": "o bairro",
+      "ru": "район, квартал",
+      "gender": "m",
+      "example": "Gosto muito do meu bairro.",
+      "audio": true
+    },
+    {
+      "pt": "a baixa",
+      "ru": "исторический центр города",
+      "gender": "f",
+      "example": "Vou à baixa fazer compras.",
+      "audio": true
+    },
+    {
+      "pt": "a trotinete",
+      "ru": "самокат (электросамокат)",
+      "gender": "f",
+      "example": "Há trotinetes elétricas por toda a cidade.",
+      "audio": true
+    }
+  ]
+}

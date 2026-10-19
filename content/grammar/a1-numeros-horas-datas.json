@@ -1,0 +1,462 @@
+{
+  "id": "a1-numeros-horas-datas",
+  "level": "A1",
+  "module": "a1-preposicoes-numeros",
+  "title": "Числа, время, даты и цены",
+  "titlePt": "Números, horas e datas",
+  "requires": [
+    "a1-ser-estar",
+    "a1-artigos-genero-numero"
+  ],
+  "theory": "## Количественные числительные\n\n| | | | | |\n|---|---|---|---|---|\n| 0 zero | 1 **um / uma** | 2 **dois / duas** | 3 três | 4 quatro |\n| 5 cinco | 6 seis | 7 sete | 8 oito | 9 nove |\n| 10 dez | 11 onze | 12 doze | 13 treze | 14 catorze |\n| 15 quinze | 16 **dezasseis** | 17 **dezassete** | 18 dezoito | 19 **dezanove** |\n| 20 vinte | 30 trinta | 40 quarenta | 50 cinquenta | 60 sessenta |\n| 70 setenta | 80 oitenta | 90 noventa | 100 **cem** | 1000 **mil** |\n\n- Десятки и единицы соединяются через **e**: **vinte e um**, **trinta e cinco**.\n- **100** — **cem**, но **101** — **cento e um**. Дальше: **duzentos, trezentos, quatrocentos, quinhentos**...\n- **mil** — без «um»: **mil euros**, **dois mil e vinte e seis**.\n\n**Род**: **um/uma**, **dois/duas** и сотни изменяются: **um café, uma cerveja; dois filhos, duas filhas; duzentos euros, duzentas pessoas.**\n\n## Порядковые\n\n| 1.º | 2.º | 3.º | 4.º | 5.º | 6.º | 7.º | 8.º | 9.º | 10.º |\n|---|---|---|---|---|---|---|---|---|---|\n| primeiro | segundo | terceiro | quarto | quinto | sexto | sétimo | oitavo | nono | décimo |\n\nСогласуются в роде: **o primeiro andar**, **a primeira vez** (1.ª). Русский «первый этаж» — это **rés-do-chão**, а «второй» — **primeiro andar**.\n\n## Время\n\n**Que horas são?** — Который час? С часом — **é**, с остальными — **são**, слово **horas** женского рода:\n\n| | |\n|---|---|\n| 1:00 | **É uma (hora).** |\n| 2:00 | **São duas (horas).** |\n| 3:15 | **São três e um quarto.** / **três e quinze** |\n| 3:30 | **São três e meia.** |\n| 2:45 | **É um quarto para as três.** / **São três menos um quarto.** |\n| 4:50 | **São dez para as cinco.** / **cinco menos dez** |\n| 12:00 / 0:00 | **É meio-dia.** / **É meia-noite.** |\n\n**A que horas?** — **às oito**, **à uma**, **ao meio-dia**. В расписаниях — 24-часовой формат: **às 18h30** = **às dezoito e trinta**.\n\n## Даты\n\n**Hoje é dia cinco de maio de dois mil e vinte e seis.** Месяцы и дни недели — со строчной: **janeiro, março, segunda-feira**. «Какого числа?» — **no dia 12** или **a 12 de dezembro**. Первое число в обычной речи — **dia um**.\n\n## Цены\n\n**Quanto custa?** / **Quanto é?** — **São três euros e cinquenta (cêntimos).** На письме: **3,50 €** — дробная часть через запятую. Один евро — **um euro**, два — **dois euros**.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **dezasseis, dezassete, dezanove** | dezesseis, dezessete, dezenove | разное написание и произношение |\n| **catorze** | catorze / quatorze | |\n| **cêntimos** | centavos | |\n| **É um quarto para as três.** | São quinze para as três. | в pt-PT «четверть» — **um quarto** |\n| **seis** (в номере телефона) | meia (= meia dúzia) | в Бразилии 6 при диктовке цифр часто — *meia* |\n| **dia um de maio** | primeiro de maio | в pt-PT *Primeiro de Maio* — только название праздника |",
+  "commonErrors": "- **Род часов**: *dois horas* ✗ → **duas horas** ✓ (hora — ж. р.).\n- **São с часом**: *São uma hora* ✗ → **É uma hora** ✓; *às uma* ✗ → **à uma** ✓.\n- **Бразильское написание**: *dezesseis, dezenove* ✗ → **dezasseis, dezanove** ✓.\n- **Cem / cento**: *cento euros* ✗ → **cem euros** ✓; но **cento e vinte** ✓.\n- **«Один» перед тысячей**: *um mil* ✗ → **mil** ✓.\n- **Род сотен**: *duzentos pessoas* ✗ → **duzentas pessoas** ✓.\n- **Месяц с большой буквы**: *5 de Maio* ✗ → **5 de maio** ✓.\n- **Калька «полвторого»**: русское «половина второго» = **uma e meia** (1:30), а не *duas e meia*.\n- **Бразильские копейки**: *centavos* ✗ → **cêntimos** ✓.",
+  "examples": [
+    {
+      "pt": "Desculpe, que horas são? — São duas e meia.",
+      "ru": "Извините, который час? — Половина третьего.",
+      "audio": true
+    },
+    {
+      "pt": "O comboio para o Porto parte às dez e um quarto.",
+      "ru": "Поезд в Порту отправляется в четверть одиннадцатого.",
+      "audio": true
+    },
+    {
+      "pt": "Tenho duas filhas e um filho.",
+      "ru": "У меня две дочери и сын.",
+      "audio": true
+    },
+    {
+      "pt": "Hoje é dia vinte e cinco de abril.",
+      "ru": "Сегодня двадцать пятое апреля.",
+      "audio": true
+    },
+    {
+      "pt": "Quanto é? — São três euros e cinquenta.",
+      "ru": "Сколько с меня? — Три евро пятьдесят.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-numeros-horas-datas-ex-01",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "Tenho ___ (2) irmãs.",
+      "answer": [
+        "duas"
+      ],
+      "ru": "У меня две сестры.",
+      "explanation": "irmãs — ж. р., поэтому duas."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-02",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "É ___ (1) hora da tarde.",
+      "answer": [
+        "uma"
+      ],
+      "ru": "Час дня."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-03",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "O bilhete custa ___ (16) euros.",
+      "answer": [
+        "dezasseis"
+      ],
+      "ru": "Билет стоит шестнадцать евро.",
+      "explanation": "В pt-PT — dezasseis (бр. dezesseis)."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-04",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "A aula começa ___ nove horas.",
+      "answer": [
+        "às"
+      ],
+      "ru": "Урок начинается в девять.",
+      "explanation": "a + as (horas) = às."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-05",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "São três e ___ (30).",
+      "answer": [
+        "meia"
+      ],
+      "ru": "Половина четвёртого.",
+      "explanation": "meia = meia hora."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-06",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "Moro no ___ (3.º) andar.",
+      "answer": [
+        "terceiro"
+      ],
+      "ru": "Я живу на четвёртом этаже (3.º andar).",
+      "explanation": "Отсчёт этажей начинается с rés-do-chão."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-07",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "O meu aniversário é no dia 12 de ___ (декабрь).",
+      "answer": [
+        "dezembro"
+      ],
+      "ru": "Мой день рождения 12 декабря.",
+      "explanation": "Месяцы — со строчной буквы."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-08",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "Esta é a ___ (1.ª) vez que venho a Portugal.",
+      "answer": [
+        "primeira"
+      ],
+      "ru": "Я в Португалии впервые."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-09",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "Que horas são? (14:45)",
+      "options": [
+        "São duas e um quarto.",
+        "São três e um quarto.",
+        "É um quarto para as três.",
+        "É três menos um quarto."
+      ],
+      "correct": 2,
+      "explanation": "14:45 — без четверти три: é um quarto para as três / são três menos um quarto."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-10",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "A reunião é ___ uma hora.",
+      "options": [
+        "às",
+        "à",
+        "a",
+        "ao"
+      ],
+      "correct": 1,
+      "explanation": "a + a (uma hora) = à."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-11",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "Na sala há ___ pessoas. (200)",
+      "options": [
+        "duzentos",
+        "duzentas",
+        "dois cem",
+        "duas cem"
+      ],
+      "correct": 1,
+      "explanation": "Сотни согласуются в роде: pessoas — ж. р."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-12",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "Как сказать 100 €?",
+      "options": [
+        "cento euros",
+        "um cem euros",
+        "cento de euros",
+        "cem euros"
+      ],
+      "correct": 3,
+      "explanation": "Ровно сто — cem; cento — только в составе: cento e dez."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-13",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "1 € = 100 ___",
+      "options": [
+        "cêntimos",
+        "centavos",
+        "céntimos",
+        "cents"
+      ],
+      "correct": 0,
+      "explanation": "В Португалии — cêntimos; centavos — в Бразилии."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-14",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "transform",
+      "prompt": "São oito e quinze.",
+      "instruction": "Скажите то же время со словом quarto.",
+      "answer": [
+        "São oito e um quarto.",
+        "São oito e quarto."
+      ]
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-15",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "transform",
+      "prompt": "É meio-dia.",
+      "instruction": "Скажите, что сейчас 12:30.",
+      "answer": [
+        "É meio-dia e meia."
+      ]
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-16",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "transform",
+      "prompt": "Tenho um filho.",
+      "instruction": "Скажите, что у вас две дочери (filha).",
+      "answer": [
+        "Tenho duas filhas.",
+        "Eu tenho duas filhas."
+      ]
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-17",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "order-words",
+      "words": [
+        "dia",
+        "Hoje",
+        "de",
+        "é",
+        "vinte",
+        "março"
+      ],
+      "answer": "Hoje é dia vinte de março",
+      "ru": "Сегодня двадцатое марта."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-18",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "order-words",
+      "words": [
+        "parte",
+        "O",
+        "às",
+        "comboio",
+        "meia",
+        "dez",
+        "e"
+      ],
+      "answer": "O comboio parte às dez e meia",
+      "ru": "Поезд отправляется в половине одиннадцатого."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-19",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "translate-ru-pt",
+      "ru": "Сейчас половина второго.",
+      "answer": [
+        "É uma e meia.",
+        "Agora é uma e meia.",
+        "É uma e trinta.",
+        "São treze e trinta.",
+        "É uma hora e meia.",
+        "Agora são treze e trinta."
+      ],
+      "explanation": "1:30 — é uma e meia (час — единственное число)."
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-20",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "translate-ru-pt",
+      "ru": "Это стоит три евро пятьдесят.",
+      "answer": [
+        "Custa três euros e cinquenta.",
+        "Isto custa três euros e cinquenta.",
+        "Custa três euros e cinquenta cêntimos.",
+        "Isto custa três euros e cinquenta cêntimos.",
+        "São três euros e cinquenta.",
+        "São três euros e cinquenta cêntimos.",
+        "Custa três e cinquenta.",
+        "Isto custa três e cinquenta."
+      ]
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-21",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "listen-type",
+      "text": "Nasci no dia dois de maio.",
+      "answer": [
+        "Nasci no dia dois de maio.",
+        "Nasci no dia 2 de maio."
+      ]
+    },
+    {
+      "id": "a1-numeros-horas-datas-ex-22",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "match",
+      "prompt": "Соедините цифру и слово.",
+      "pairs": [
+        {
+          "left": "15",
+          "right": "quinze"
+        },
+        {
+          "left": "16",
+          "right": "dezasseis"
+        },
+        {
+          "left": "19",
+          "right": "dezanove"
+        },
+        {
+          "left": "50",
+          "right": "cinquenta"
+        },
+        {
+          "left": "100",
+          "right": "cem"
+        },
+        {
+          "left": "500",
+          "right": "quinhentos"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-numeros-horas-datas-mt-01",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "São ___ (2) horas em ponto.",
+      "answer": [
+        "duas"
+      ],
+      "ru": "Ровно два часа."
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-02",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "Ela tem ___ (17) anos.",
+      "answer": [
+        "dezassete"
+      ],
+      "ru": "Ей семнадцать лет."
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-03",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "O jantar é ___ oito.",
+      "answer": [
+        "às"
+      ],
+      "ru": "Ужин в восемь."
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-04",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "fill-gap",
+      "prompt": "O escritório fica no ___ (2.º) andar.",
+      "answer": [
+        "segundo"
+      ],
+      "ru": "Офис на третьем этаже (2.º andar)."
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-05",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "Que horas são? (18:40)",
+      "options": [
+        "São vinte para as sete.",
+        "São sete e vinte.",
+        "São seis e vinte.",
+        "São vinte para as seis."
+      ],
+      "correct": 0,
+      "explanation": "18:40 — без двадцати семь."
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-06",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "Custa ___ euros. (300)",
+      "options": [
+        "trezentas",
+        "três cem",
+        "trezentos",
+        "três cento"
+      ],
+      "correct": 2,
+      "explanation": "euros — м. р.: trezentos."
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-07",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "choice",
+      "prompt": "Какая форма правильная?",
+      "options": [
+        "São uma hora.",
+        "São um hora.",
+        "É um hora.",
+        "É uma hora."
+      ],
+      "correct": 3,
+      "explanation": "Час — единственное число и ж. р.: é uma hora."
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-08",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "transform",
+      "prompt": "São três menos um quarto.",
+      "instruction": "Скажите то же время с конструкцией «para as».",
+      "answer": [
+        "É um quarto para as três.",
+        "São um quarto para as três."
+      ]
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-09",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "translate-ru-pt",
+      "ru": "Мой день рождения пятого марта.",
+      "answer": [
+        "O meu aniversário é no dia cinco de março.",
+        "O meu aniversário é a cinco de março.",
+        "O meu aniversário é dia cinco de março.",
+        "O meu aniversário é no dia 5 de março.",
+        "O meu aniversário é a 5 de março.",
+        "O meu aniversário é dia 5 de março.",
+        "Faço anos a cinco de março.",
+        "Faço anos no dia cinco de março.",
+        "Faço anos a 5 de março.",
+        "Faço anos no dia 5 de março."
+      ]
+    },
+    {
+      "id": "a1-numeros-horas-datas-mt-10",
+      "topicId": "a1-numeros-horas-datas",
+      "type": "listen-choice",
+      "text": "São vinte e cinco euros, por favor.",
+      "prompt": "Сколько нужно заплатить?",
+      "options": [
+        "15 €",
+        "25 €",
+        "35 €",
+        "205 €"
+      ],
+      "correct": 1
+    }
+  ]
+}

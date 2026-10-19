@@ -1,0 +1,384 @@
+{
+  "id": "documentos-e-servicos",
+  "title": "Документы и госуслуги",
+  "titlePt": "Documentos e serviços públicos",
+  "level": "B1",
+  "words": [
+    {
+      "pt": "o NIF",
+      "ru": "налоговый номер (número de identificação fiscal)",
+      "gender": "m",
+      "example": "Para abrir conta no banco, precisa do NIF.",
+      "audio": true
+    },
+    {
+      "pt": "o número de contribuinte",
+      "ru": "налоговый номер (разг. = NIF)",
+      "gender": "m",
+      "example": "Quer número de contribuinte na fatura?",
+      "audio": true
+    },
+    {
+      "pt": "o NISS",
+      "ru": "номер соцстрахования",
+      "gender": "m",
+      "example": "O patrão pediu-me o NISS para me inscrever.",
+      "audio": true
+    },
+    {
+      "pt": "a Segurança Social",
+      "ru": "Служба социального обеспечения",
+      "gender": "f",
+      "example": "Fui à Segurança Social pedir o NISS.",
+      "audio": true
+    },
+    {
+      "pt": "as Finanças",
+      "ru": "налоговая служба",
+      "gender": "f",
+      "example": "Tenho de ir às Finanças atualizar a morada.",
+      "audio": true
+    },
+    {
+      "pt": "o Portal das Finanças",
+      "ru": "портал налоговой службы",
+      "gender": "m",
+      "example": "Entreguei a declaração no Portal das Finanças.",
+      "audio": true
+    },
+    {
+      "pt": "a declaração de IRS",
+      "ru": "налоговая декларация по подоходному налогу",
+      "gender": "f",
+      "example": "A declaração de IRS entrega-se na primavera.",
+      "audio": true
+    },
+    {
+      "pt": "a AIMA",
+      "ru": "AIMA, агентство по миграции (сменило SEF)",
+      "gender": "f",
+      "example": "A AIMA substituiu o SEF em 2023.",
+      "audio": true
+    },
+    {
+      "pt": "o SEF",
+      "ru": "SEF, бывшая миграционная служба",
+      "gender": "m",
+      "example": "Antigamente a residência tratava-se no SEF.",
+      "audio": true
+    },
+    {
+      "pt": "a autorização de residência",
+      "ru": "вид на жительство",
+      "gender": "f",
+      "example": "A minha autorização de residência é válida por dois anos.",
+      "audio": true
+    },
+    {
+      "pt": "o título de residência",
+      "ru": "карточка вида на жительство",
+      "gender": "m",
+      "example": "Ainda estou à espera do título de residência.",
+      "audio": true
+    },
+    {
+      "pt": "renovar",
+      "ru": "продлевать",
+      "example": "Tenho de renovar o passaporte este ano.",
+      "audio": true
+    },
+    {
+      "pt": "a renovação",
+      "ru": "продление",
+      "gender": "f",
+      "example": "Pedi a renovação três meses antes do fim.",
+      "audio": true
+    },
+    {
+      "pt": "caducar",
+      "ru": "истекать (о сроке документа)",
+      "example": "O meu cartão caduca em maio.",
+      "audio": true
+    },
+    {
+      "pt": "a validade",
+      "ru": "срок действия",
+      "gender": "f",
+      "example": "Veja a validade do documento antes de viajar.",
+      "audio": true
+    },
+    {
+      "pt": "o cartão de cidadão",
+      "ru": "удостоверение личности гражданина Португалии",
+      "gender": "m",
+      "example": "Os portugueses viajam na Europa com o cartão de cidadão.",
+      "audio": true
+    },
+    {
+      "pt": "o passaporte",
+      "ru": "паспорт",
+      "gender": "m",
+      "example": "Traga o passaporte e uma fotocópia.",
+      "audio": true
+    },
+    {
+      "pt": "o documento de identificação",
+      "ru": "удостоверение личности",
+      "gender": "m",
+      "example": "Apresente um documento de identificação válido.",
+      "audio": true
+    },
+    {
+      "pt": "a Câmara Municipal",
+      "ru": "мэрия, муниципалитет",
+      "gender": "f",
+      "example": "Fui à Câmara Municipal pedir uma licença de obras.",
+      "audio": true
+    },
+    {
+      "pt": "a junta de freguesia",
+      "ru": "районная управа",
+      "gender": "f",
+      "example": "O atestado de residência pede-se na junta de freguesia.",
+      "audio": true
+    },
+    {
+      "pt": "a freguesia",
+      "ru": "район (административная единица)",
+      "gender": "f",
+      "example": "Em que freguesia mora?",
+      "audio": true
+    },
+    {
+      "pt": "o atestado de residência",
+      "ru": "справка о месте жительства",
+      "gender": "m",
+      "example": "Para a escola dos miúdos, pediram um atestado de residência.",
+      "audio": true
+    },
+    {
+      "pt": "a Loja do Cidadão",
+      "ru": "центр госуслуг",
+      "gender": "f",
+      "example": "Na Loja do Cidadão há balcões de vários serviços.",
+      "audio": true
+    },
+    {
+      "pt": "o balcão",
+      "ru": "окно, стойка обслуживания",
+      "gender": "m",
+      "example": "Dirija-se ao balcão número quatro, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "a senha",
+      "ru": "талон электронной очереди",
+      "gender": "f",
+      "example": "Tire uma senha e aguarde a sua vez.",
+      "audio": true
+    },
+    {
+      "pt": "o atendimento",
+      "ru": "приём, обслуживание посетителей",
+      "gender": "m",
+      "example": "O atendimento é só com marcação prévia.",
+      "audio": true
+    },
+    {
+      "pt": "o agendamento",
+      "ru": "запись на приём",
+      "gender": "m",
+      "example": "Fiz o agendamento online para dia doze.",
+      "audio": true
+    },
+    {
+      "pt": "a marcação",
+      "ru": "запись (к врачу, в учреждение)",
+      "gender": "f",
+      "example": "Tem marcação ou veio sem marcação?",
+      "audio": true
+    },
+    {
+      "pt": "marcar",
+      "ru": "записаться, назначить (встречу)",
+      "example": "Liguei para marcar atendimento nas Finanças.",
+      "audio": true
+    },
+    {
+      "pt": "o requerimento",
+      "ru": "официальное заявление",
+      "gender": "m",
+      "example": "Preencha este requerimento e assine no fim.",
+      "audio": true
+    },
+    {
+      "pt": "o formulário",
+      "ru": "бланк, анкета",
+      "gender": "m",
+      "example": "O formulário está disponível no site.",
+      "audio": true
+    },
+    {
+      "pt": "preencher",
+      "ru": "заполнять",
+      "example": "Preencha o formulário com letras maiúsculas.",
+      "audio": true
+    },
+    {
+      "pt": "a assinatura",
+      "ru": "подпись",
+      "gender": "f",
+      "example": "Falta a sua assinatura na segunda página.",
+      "audio": true
+    },
+    {
+      "pt": "assinar",
+      "ru": "подписывать",
+      "example": "Tem de assinar igual ao documento de identificação.",
+      "audio": true
+    },
+    {
+      "pt": "o comprovativo",
+      "ru": "подтверждающий документ, квитанция",
+      "gender": "m",
+      "example": "Guarde o comprovativo de pagamento.",
+      "audio": true
+    },
+    {
+      "pt": "o comprovativo de morada",
+      "ru": "подтверждение адреса",
+      "gender": "m",
+      "example": "Uma fatura da luz serve como comprovativo de morada.",
+      "audio": true
+    },
+    {
+      "pt": "a morada",
+      "ru": "адрес",
+      "gender": "f",
+      "example": "Já atualizei a morada nas Finanças.",
+      "audio": true
+    },
+    {
+      "pt": "a certidão",
+      "ru": "официальное свидетельство, выписка",
+      "gender": "f",
+      "example": "A certidão pede-se online e chega por email.",
+      "audio": true
+    },
+    {
+      "pt": "a certidão de nascimento",
+      "ru": "свидетельство о рождении",
+      "gender": "f",
+      "example": "Pediram-me a certidão de nascimento com apostila.",
+      "audio": true
+    },
+    {
+      "pt": "a apostila",
+      "ru": "апостиль",
+      "gender": "f",
+      "example": "O documento russo precisa de apostila.",
+      "audio": true
+    },
+    {
+      "pt": "a tradução certificada",
+      "ru": "заверенный перевод",
+      "gender": "f",
+      "example": "Mandei fazer a tradução certificada do diploma.",
+      "audio": true
+    },
+    {
+      "pt": "a cópia certificada",
+      "ru": "заверенная копия",
+      "gender": "f",
+      "example": "Entregue uma cópia certificada do contrato.",
+      "audio": true
+    },
+    {
+      "pt": "o prazo",
+      "ru": "срок",
+      "gender": "m",
+      "example": "O prazo para responder é de dez dias.",
+      "audio": true
+    },
+    {
+      "pt": "os dias úteis",
+      "ru": "рабочие дни",
+      "gender": "m",
+      "example": "A resposta demora até trinta dias úteis.",
+      "audio": true
+    },
+    {
+      "pt": "a taxa",
+      "ru": "пошлина, сбор",
+      "gender": "f",
+      "example": "A emissão do documento tem uma taxa.",
+      "audio": true
+    },
+    {
+      "pt": "a Chave Móvel Digital",
+      "ru": "цифровой ключ для госуслуг",
+      "gender": "f",
+      "example": "Com a Chave Móvel Digital entro no Portal das Finanças.",
+      "audio": true
+    },
+    {
+      "pt": "o pedido",
+      "ru": "заявка, запрос",
+      "gender": "m",
+      "example": "O meu pedido ainda está em análise.",
+      "audio": true
+    },
+    {
+      "pt": "ser deferido",
+      "ru": "быть одобренным (о заявлении)",
+      "example": "O pedido foi deferido ontem.",
+      "audio": true
+    },
+    {
+      "pt": "ser indeferido",
+      "ru": "получить отказ (о заявлении)",
+      "example": "Se o pedido for indeferido, pode recorrer.",
+      "audio": true
+    },
+    {
+      "pt": "tratar de",
+      "ru": "заниматься (делом), оформлять",
+      "example": "Amanhã vou tratar dos papéis da residência.",
+      "audio": true
+    },
+    {
+      "pt": "os papéis",
+      "ru": "бумаги, документы",
+      "gender": "m",
+      "example": "Os papéis estão todos em ordem.",
+      "audio": true
+    },
+    {
+      "pt": "entregar",
+      "ru": "сдавать, подавать (документы)",
+      "example": "Entreguei os documentos ao balcão.",
+      "audio": true
+    },
+    {
+      "pt": "o livro de reclamações",
+      "ru": "книга жалоб",
+      "gender": "m",
+      "example": "Se o atendimento for mau, peça o livro de reclamações.",
+      "audio": true
+    },
+    {
+      "pt": "a burocracia",
+      "ru": "бюрократия",
+      "gender": "f",
+      "example": "A burocracia aqui exige muita paciência.",
+      "audio": true
+    },
+    {
+      "pt": "a carta de condução",
+      "ru": "водительские права",
+      "gender": "f",
+      "example": "Já troquei a carta de condução no IMT.",
+      "audio": true
+    }
+  ]
+}

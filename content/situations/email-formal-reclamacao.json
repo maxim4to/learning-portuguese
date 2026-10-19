@@ -1,0 +1,177 @@
+{
+  "id": "email-formal-reclamacao",
+  "title": "Жалоба по email",
+  "titlePt": "Email formal: reclamação",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Apoio ao Cliente, bom dia. Fala a Joana. Em que posso ajudar?", "ru": "Служба поддержки, доброе утро. Это Жуана. Чем могу помочь?" },
+    { "speaker": "B", "pt": "Bom dia. Queria apresentar uma reclamação sobre uma encomenda.", "ru": "Доброе утро. Я хотел бы подать жалобу по поводу заказа." },
+    { "speaker": "A", "pt": "Lamento. Pode indicar-me o número da encomenda, se faz favor?", "ru": "Сожалею. Можете назвать номер заказа, пожалуйста?" },
+    { "speaker": "B", "pt": "É o 48213. Comprei uma máquina de lavar roupa no vosso site.", "ru": "48213. Я купил стиральную машину на вашем сайте." },
+    { "speaker": "A", "pt": "Já encontrei. Foi entregue no dia 7. Qual é o problema?", "ru": "Нашла. Её доставили седьмого числа. В чём проблема?" },
+    { "speaker": "B", "pt": "Chegou com a porta partida e, além disso, não funciona.", "ru": "Она пришла со сломанной дверцей, и к тому же не работает." },
+    { "speaker": "A", "pt": "Peço desculpa pelo incómodo. Tirou fotografias aos danos?", "ru": "Приношу извинения за неудобства. Вы сфотографировали повреждения?" },
+    { "speaker": "B", "pt": "Tirei, sim. Já liguei duas vezes e ninguém me deu resposta.", "ru": "Да, сфотографировал. Я уже дважды звонил, и никто мне не ответил." },
+    { "speaker": "A", "pt": "Compreendo. Nesse caso, o melhor é enviar uma reclamação por escrito para o nosso email.", "ru": "Понимаю. В таком случае лучше всего отправить письменную жалобу на нашу почту." },
+    { "speaker": "B", "pt": "Está bem. O que é que devo incluir no email?", "ru": "Хорошо. Что мне нужно указать в письме?" },
+    { "speaker": "A", "pt": "O número da encomenda, as fotografias, a fatura e o que pretende: troca ou reembolso.", "ru": "Номер заказа, фотографии, чек и что вы хотите: обмен или возврат денег." },
+    { "speaker": "B", "pt": "Pretendo a troca por uma máquina nova. Quanto tempo demoram a responder?", "ru": "Я хочу обмен на новую машину. Сколько времени у вас занимает ответ?" },
+    { "speaker": "A", "pt": "Respondemos no prazo de cinco dias úteis.", "ru": "Мы отвечаем в течение пяти рабочих дней." },
+    { "speaker": "B", "pt": "E se não tiver resposta, posso recorrer ao Livro de Reclamações?", "ru": "А если ответа не будет, я могу написать жалобу в Livro de Reclamações (Книгу жалоб)?" },
+    { "speaker": "A", "pt": "Pode, claro, é um direito seu. Mas tenho a certeza de que vamos resolver a situação.", "ru": "Конечно, это ваше право. Но я уверена, что мы решим вопрос." }
+  ],
+  "phrases": [
+    { "pt": "Queria apresentar uma reclamação.", "ru": "Я хотел бы подать жалобу." },
+    { "pt": "Exmos. Senhores,", "ru": "Уважаемые господа, (обращение в официальном письме)" },
+    { "pt": "Venho por este meio apresentar uma reclamação relativa a…", "ru": "Настоящим подаю жалобу относительно…" },
+    { "pt": "No dia 3 de março efetuei uma encomenda…", "ru": "3 марта я оформил заказ…" },
+    { "pt": "Até à data, não obtive qualquer resposta.", "ru": "На сегодняшний день я не получил никакого ответа." },
+    { "pt": "Junto envio a fatura e as fotografias.", "ru": "Прилагаю чек и фотографии." },
+    { "pt": "Solicito a troca do artigo ou o reembolso do valor pago.", "ru": "Прошу заменить товар или вернуть уплаченную сумму." },
+    { "pt": "Caso não obtenha resposta, recorrerei ao Livro de Reclamações.", "ru": "Если я не получу ответа, я подам жалобу через Livro de Reclamações (Книгу жалоб)." },
+    { "pt": "Aguardo uma resposta breve.", "ru": "Жду скорого ответа." },
+    { "pt": "Com os melhores cumprimentos,", "ru": "С наилучшими пожеланиями, (подпись в письме)" }
+  ],
+  "vocab": [
+    { "pt": "a reclamação", "ru": "жалоба, претензия", "example": "Fiz uma reclamação por escrito." },
+    { "pt": "reclamar", "ru": "жаловаться, предъявлять претензию", "example": "Reclamei porque a encomenda nunca chegou." },
+    { "pt": "o Livro de Reclamações", "ru": "Книга жалоб (обязательна во всех заведениях, есть онлайн-версия)", "example": "Pedi o Livro de Reclamações no restaurante." },
+    { "pt": "o apoio ao cliente", "ru": "служба поддержки клиентов", "example": "Liguei para o apoio ao cliente da operadora." },
+    { "pt": "a encomenda", "ru": "заказ", "example": "A minha encomenda ainda não chegou." },
+    { "pt": "a entrega", "ru": "доставка", "example": "A entrega estava prevista para segunda-feira." },
+    { "pt": "o artigo / o produto", "ru": "товар", "example": "O artigo chegou danificado." },
+    { "pt": "danificado", "ru": "повреждённый", "example": "A caixa estava danificada." },
+    { "pt": "partido", "ru": "разбитый, сломанный", "example": "O ecrã veio partido." },
+    { "pt": "com defeito", "ru": "с дефектом, бракованный", "example": "O aspirador veio com defeito." },
+    { "pt": "os danos", "ru": "повреждения, ущерб", "example": "Tirei fotografias aos danos." },
+    { "pt": "a troca", "ru": "обмен", "example": "Pedi a troca do artigo." },
+    { "pt": "o reembolso", "ru": "возврат денег", "example": "O reembolso demora até catorze dias." },
+    { "pt": "a devolução", "ru": "возврат (товара)", "example": "A devolução é gratuita." },
+    { "pt": "a fatura", "ru": "счёт-фактура, чек", "example": "Guarde a fatura para a garantia." },
+    { "pt": "a garantia", "ru": "гарантия", "example": "Em Portugal a garantia é de três anos." },
+    { "pt": "o prazo", "ru": "срок", "example": "O prazo para responder já terminou." },
+    { "pt": "os dias úteis", "ru": "рабочие дни", "example": "Respondemos em dois dias úteis." },
+    { "pt": "o incómodo", "ru": "неудобство", "example": "Pedimos desculpa pelo incómodo." },
+    { "pt": "lamentar", "ru": "сожалеть", "example": "Lamento muito o sucedido." },
+    { "pt": "pretender", "ru": "хотеть, намереваться (офиц.)", "example": "Pretendo cancelar o contrato." },
+    { "pt": "solicitar", "ru": "просить, запрашивать (офиц.)", "example": "Solicito o envio de um técnico." },
+    { "pt": "efetuar", "ru": "осуществлять, совершать (офиц.)", "example": "Efetuei o pagamento por MB Way." },
+    { "pt": "obter", "ru": "получать", "example": "Não obtive resposta ao meu email." },
+    { "pt": "recorrer a", "ru": "обращаться к (инстанции)", "example": "Vou recorrer à DECO." },
+    { "pt": "anexar / em anexo", "ru": "прикреплять / во вложении", "example": "Envio a fatura em anexo." },
+    { "pt": "o assunto", "ru": "тема (письма)", "example": "No assunto escreva o número da encomenda." },
+    { "pt": "o remetente / o destinatário", "ru": "отправитель / получатель", "example": "Verifique o endereço do destinatário." },
+    { "pt": "Exmos. Senhores / Exma. Senhora", "ru": "Уважаемые господа / Уважаемая госпожа", "example": "Exmos. Senhores, venho por este meio reclamar." },
+    { "pt": "Com os melhores cumprimentos", "ru": "С наилучшими пожеланиями (формальная подпись)", "example": "Com os melhores cumprimentos, Dmitri Volkov." },
+    { "pt": "a DECO", "ru": "DECO (ассоциация защиты прав потребителей)", "example": "A DECO ajuda os consumidores a resolver conflitos." },
+    { "pt": "o consumidor", "ru": "потребитель", "example": "Os direitos do consumidor estão protegidos por lei." },
+    { "pt": "até à data", "ru": "на сегодняшний день, до сих пор", "example": "Até à data, ninguém me contactou." }
+  ],
+  "exercises": [
+    {
+      "id": "email-formal-reclamacao-ex-01",
+      "topicId": "email-formal-reclamacao",
+      "type": "choice",
+      "prompt": "Como se começa um email formal para uma empresa em Portugal?",
+      "options": ["Olá, pessoal!", "Exmos. Senhores,", "Querida empresa,", "Oi, tudo bem?"],
+      "correct": 1,
+      "explanation": "Официальное письмо организации начинают с **Exmos. Senhores,** (Excelentíssimos), конкретному человеку — **Exma. Senhora / Exmo. Senhor**. *Oi* — бразильское и неформальное."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-02",
+      "topicId": "email-formal-reclamacao",
+      "type": "match",
+      "prompt": "Соедини официальные слова с разговорными синонимами",
+      "pairs": [
+        { "left": "solicitar", "right": "pedir" },
+        { "left": "efetuar", "right": "fazer" },
+        { "left": "obter", "right": "receber" },
+        { "left": "pretender", "right": "querer" },
+        { "left": "contactar", "right": "ligar / escrever" }
+      ],
+      "explanation": "В официальном письме выбирайте левый столбец: **solicito** вместо *peço*, **efetuei** вместо *fiz*."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-03",
+      "topicId": "email-formal-reclamacao",
+      "type": "fill-gap",
+      "prompt": "Caso não ___ (obter) resposta, recorrerei ao Livro de Reclamações.",
+      "answer": ["obtenha"],
+      "hint": "после caso — presente do conjuntivo",
+      "ru": "Если я не получу ответа, я подам жалобу через Livro de Reclamações (Книгу жалоб).",
+      "explanation": "После **caso** («в случае если») всегда **presente do conjuntivo**: **caso obtenha**, **caso não seja possível**. С **se** было бы **se não obtiver** (futuro do conjuntivo)."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-04",
+      "topicId": "email-formal-reclamacao",
+      "type": "listen-type",
+      "text": "Bom dia. Queria apresentar uma reclamação sobre uma encomenda.",
+      "answer": ["Bom dia. Queria apresentar uma reclamação sobre uma encomenda."],
+      "explanation": "**Apresentar uma reclamação** — подать жалобу; **a encomenda** — заказ (в интернете или магазине)."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-05",
+      "topicId": "email-formal-reclamacao",
+      "type": "listen-choice",
+      "text": "O número da encomenda, as fotografias, a fatura e o que pretende: troca ou reembolso.",
+      "prompt": "Что нужно указать в письме?",
+      "options": ["Только номер заказа и адрес доставки", "Номер заказа, фотографии, чек и желаемое решение", "Номер карты и фотографии упаковки", "Чек и номер телефона курьера"],
+      "correct": 1,
+      "explanation": "**A fatura** — чек/счёт, **troca** — обмен, **reembolso** — возврат денег. **Pretende** — официальное «хотите»."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-06",
+      "topicId": "email-formal-reclamacao",
+      "type": "order-words",
+      "words": ["Até", "à", "data,", "não", "obtive", "qualquer", "resposta."],
+      "answer": "Até à data, não obtive qualquer resposta.",
+      "ru": "На сегодняшний день я не получил никакого ответа."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-07",
+      "topicId": "email-formal-reclamacao",
+      "type": "translate-ru-pt",
+      "ru": "Прилагаю чек и фотографии.",
+      "answer": ["Junto envio a fatura e as fotografias.", "Envio em anexo a fatura e as fotografias.", "Em anexo envio a fatura e as fotografias.", "Envio a fatura e as fotografias em anexo.", "Anexo a fatura e as fotografias.", "Junto envio a fatura e as fotos.", "Envio em anexo a fatura e as fotos.", "Junto a fatura e as fotografias.", "Segue em anexo a fatura e as fotografias.", "Seguem em anexo a fatura e as fotografias."]
+    },
+    {
+      "id": "email-formal-reclamacao-ex-08",
+      "topicId": "email-formal-reclamacao",
+      "type": "choice",
+      "prompt": "Qual é a despedida adequada num email de reclamação?",
+      "options": ["Beijinhos,", "Abraço,", "Até logo!", "Com os melhores cumprimentos,"],
+      "correct": 3,
+      "explanation": "Нейтрально-официальная подпись — **Com os melhores cumprimentos,** (или **Atenciosamente,**). **Beijinhos** и **abraço** — только для близких."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-09",
+      "topicId": "email-formal-reclamacao",
+      "type": "fill-gap",
+      "prompt": "Venho por este ___ apresentar uma reclamação relativa à encomenda n.º 48213.",
+      "answer": ["meio"],
+      "hint": "«настоящим» — устойчивая формула",
+      "ru": "Настоящим подаю жалобу относительно заказа № 48213.",
+      "explanation": "**Venho por este meio + infinitivo** — классическое начало официального письма в Португалии («настоящим сообщаю/прошу…»)."
+    },
+    {
+      "id": "email-formal-reclamacao-ex-10",
+      "topicId": "email-formal-reclamacao",
+      "type": "transform",
+      "prompt": "Quero o meu dinheiro de volta.",
+      "instruction": "Перепиши в официальном стиле: «прошу вернуть уплаченную сумму» (solicitar + o reembolso)",
+      "answer": ["Solicito o reembolso do valor pago.", "Solicito o reembolso do montante pago.", "Venho solicitar o reembolso do valor pago.", "Solicito o reembolso da quantia paga."],
+      "explanation": "В письме вместо разговорного *quero o dinheiro de volta* пишут **solicito o reembolso do valor pago**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы купили в интернет-магазине стиральную машину (заказ № 48213, 3 марта). Её привезли со сломанной дверцей, и она не работает; вы дважды звонили, но ответа нет. Напишите официальное письмо-жалобу (120–160 слов): укажите тему письма, опишите покупку и проблему с датами, упомяните, что прилагаете чек и фото, чётко сформулируйте требование (обмен или возврат денег) и срок, а также что будет, если ответа не будет.",
+    "sample": "Assunto: Reclamação – encomenda n.º 48213\n\nExmos. Senhores,\n\nVenho por este meio apresentar uma reclamação relativa à encomenda n.º 48213, efetuada no vosso site no dia 3 de março.\n\nA máquina de lavar roupa foi entregue no dia 7 de março com a porta partida e, além disso, não funciona. Contactei o apoio ao cliente por telefone nos dias 8 e 10 de março, mas, até à data, não obtive qualquer resposta.\n\nJunto envio a fatura e as fotografias dos danos.\n\nNos termos da garantia legal, solicito a troca do artigo por uma máquina nova no prazo de dez dias úteis. Caso a troca não seja possível, solicito o reembolso do valor pago.\n\nCaso não obtenha resposta dentro deste prazo, recorrerei ao Livro de Reclamações eletrónico e à DECO.\n\nAguardo uma resposta breve.\n\nCom os melhores cumprimentos,\nDmitri Volkov\nNIF: 123456789\nTelemóvel: 912 345 678",
+    "checklist": [
+      "Есть тема письма (Assunto) и официальное обращение Exmos. Senhores,",
+      "Указаны номер заказа, даты покупки, доставки и звонков",
+      "Использованы официальные формулы: Venho por este meio…, Até à data…, Junto envio…, Solicito…",
+      "После caso стоит presente do conjuntivo (Caso não obtenha…, Caso não seja possível…)",
+      "Письмо заканчивается Com os melhores cumprimentos, именем и контактами; нет разговорных quero, oi, abraço"
+    ]
+  }
+}

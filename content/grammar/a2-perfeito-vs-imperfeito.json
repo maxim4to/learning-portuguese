@@ -1,0 +1,466 @@
+{
+  "id": "a2-perfeito-vs-imperfeito",
+  "level": "A2",
+  "module": "a2-passado",
+  "title": "Perfeito или imperfeito: выбор прошедшего времени",
+  "titlePt": "Pretérito perfeito vs. pretérito imperfeito",
+  "requires": [
+    "a2-preterito-perfeito-simples",
+    "a2-preterito-imperfeito"
+  ],
+  "theory": "## Главная идея\n\nВ рассказе о прошлом португальский всё время выбирает между двумя временами:\n\n| perfeito simples (**fiz**) | imperfeito (**fazia**) |\n|---|---|\n| событие: что *произошло* | фон: что *было*, что *происходило* |\n| однократное или посчитанное действие (**três vezes**) | привычка, повторение (**todos os dias, sempre**) |\n| действие в рамках: **ontem, durante duas horas, em 2019** | действие без рамок, описание, состояние |\n| цепочка событий: **Acordei, tomei banho e saí.** | одновременные процессы: **Enquanto eu lia, ele dormia.** |\n| оценка законченного: **Foi ótimo!** | описание: **Era simpático. Fazia sol.** |\n\n## Схема «фон + событие»\n\nImperfeito рисует декорации, perfeito — то, что в них случилось:\n\n**Estava a tomar banho quando a campainha tocou.** — Я принимал душ, когда позвонили в дверь.\n**Quando cheguei, os miúdos dormiam.** — Когда я пришёл, дети спали.\n**Quando cheguei, os miúdos acordaram.** — Когда я пришёл, дети проснулись (от этого).\n\n## Ловушка для русскоязычных\n\nРусский вид помогает, но не всегда. Действие, ограниченное во времени, — это **perfeito**, даже если по-русски несовершенный вид:\n\n**Ontem trabalhei o dia todo.** — Вчера я весь день работал.\n**Vivi cinco anos em Faro.** — Я прожил (жил) пять лет в Фару (и больше там не живу).\n**Vivia em Faro quando conheci a Rita.** — Я жил в Фару, когда познакомился с Ритой (фон).\n\nВопрос не «совершенный или несовершенный вид», а «**есть ли у действия рамка** (начало-конец, количество) или это **фон/привычка**».\n\n## Глаголы, меняющие смысл\n\n| глагол | perfeito | imperfeito |\n|---|---|---|\n| saber | **soube** — узнал | **sabia** — знал |\n| conhecer | **conheci** — познакомился | **conhecia** — был знаком |\n| poder | **pude** — смог (удалось) | **podia** — мог (была возможность) |\n| querer | **quis** — захотел; **não quis** — отказался | **queria** — хотел |\n| ter | **tive** — получил, (у меня) случилось | **tinha** — имел, было |\n\n**Só soube ontem.** — Я узнал только вчера. **Já sabia.** — Я уже знал.\n**Tive uma ideia!** — Мне пришла идея! **Tinha uma ideia.** — У меня была идея (уже была).\n\n## Ser: foi или era?\n\n**Foi** — оценка законченного события: **A viagem foi fantástica.** **Era** — описание человека, места, ситуации: **O hotel era antigo, mas confortável.**\n\n## Маркеры-подсказки\n\nPerfeito: **ontem, de repente, uma vez, três vezes, durante, em 2019, depois**.\nImperfeito: **dantes, antigamente, sempre, todos os dias, enquanto, normalmente, às vezes**.\n\nМаркер — подсказка, а не закон: решает смысл (событие или фон).",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Estava a dormir** quando ligaste. | Estava dormindo quando você ligou. | фон-процесс: estar a + инфинитив |\n| Quando **cheguei**, **estavam a jantar**. | Quando cheguei, estavam jantando. | |\n| **Ia** contigo, mas não posso. | Iria com você, mas não posso. | разговорное imperfeito вместо condicional — особенно частое в pt-PT |\n\nЛогика выбора perfeito/imperfeito в обеих нормах одинакова; различия — в конструкциях процесса и в tu/você.",
+  "commonErrors": "- **Ограниченное действие в imperfeito** (калька с русского несовершенного вида): *Ontem trabalhava o dia todo* ✗ → **Ontem trabalhei o dia todo** ✓.\n- **Фон в perfeito**: *Quando cheguei, a Ana dormiu* ✗ (= уснула, когда я пришёл) → **a Ana dormia / estava a dormir** ✓.\n- **Знакомство как состояние**: *Conhecia a Rita em 2020* ✗ → **Conheci a Rita em 2020** ✓ (познакомился).\n- **Знание как событие**: *Soube que ele era casado* ✗, если имеется в виду «знал» → **Sabia que ele era casado** ✓.\n- **Оценка поездки через era**: *A viagem era fantástica* ✗ (об отдельной законченной поездке) → **A viagem foi fantástica** ✓.\n- **Привычка в perfeito**: *Em criança fui sempre de autocarro* ✗ → **ia sempre de autocarro** ✓.\n- **Герундий**: *Estava lendo quando...* ✗ → **Estava a ler quando...** ✓.",
+  "examples": [
+    {
+      "pt": "Estava a tomar banho quando a campainha tocou.",
+      "ru": "Я принимал душ, когда позвонили в дверь.",
+      "audio": true
+    },
+    {
+      "pt": "Quando era estudante, ia sempre de comboio para Coimbra.",
+      "ru": "Когда я был студентом, я всегда ездил в Коимбру на поезде.",
+      "audio": true
+    },
+    {
+      "pt": "Ontem trabalhei o dia todo e não tive tempo para almoçar.",
+      "ru": "Вчера я весь день работал и не успел пообедать.",
+      "audio": true
+    },
+    {
+      "pt": "Conheci a Rita quando vivia em Faro.",
+      "ru": "Я познакомился с Ритой, когда жил в Фару.",
+      "audio": true
+    },
+    {
+      "pt": "Só soube da notícia hoje de manhã; ninguém sabia de nada.",
+      "ru": "Я узнал новость только сегодня утром: никто ничего не знал.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-01",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Quando ___ (chegar) a casa, os miúdos já estavam a dormir.",
+      "answer": [
+        "cheguei"
+      ],
+      "ru": "Когда я пришёл домой, дети уже спали.",
+      "explanation": "Событие на фоне — perfeito: cheguei."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-02",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (ler) o jornal quando o telefone tocou.",
+      "answer": [
+        "lia",
+        "estava a ler"
+      ],
+      "ru": "Я читал газету, когда зазвонил телефон.",
+      "explanation": "Процесс-фон — imperfeito (lia или estava a ler)."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-03",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Ontem ___ (chover) o dia todo.",
+      "answer": [
+        "choveu"
+      ],
+      "ru": "Вчера весь день шёл дождь.",
+      "explanation": "Действие в рамке «весь вчерашний день» — perfeito, хотя по-русски «шёл»."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-04",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "A casa da minha avó ___ (ser) pequena, mas muito acolhedora.",
+      "answer": [
+        "era"
+      ],
+      "ru": "Дом моей бабушки был маленьким, но очень уютным.",
+      "explanation": "Описание — imperfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-05",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "No verão passado nós ___ (ir) três vezes a Sintra.",
+      "answer": [
+        "fomos"
+      ],
+      "ru": "Прошлым летом мы три раза ездили в Синтру.",
+      "explanation": "Посчитанное количество раз (três vezes) — perfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-06",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Enquanto eu ___ (cozinhar), o Rui punha a mesa.",
+      "answer": [
+        "cozinhava",
+        "estava a cozinhar"
+      ],
+      "ru": "Пока я готовил, Руй накрывал на стол.",
+      "explanation": "enquanto + одновременный процесс — imperfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-07",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Eu só ___ (saber) da notícia ontem à noite.",
+      "answer": [
+        "soube"
+      ],
+      "ru": "Я узнал новость только вчера вечером.",
+      "explanation": "saber в perfeito = «узнал»."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-08",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (viver) em Braga durante dez anos e depois mudaram-se para Lisboa.",
+      "answer": [
+        "viveram"
+      ],
+      "ru": "Они прожили в Браге десять лет, а потом переехали в Лиссабон.",
+      "explanation": "Период с чёткой рамкой (durante dez anos), который закончился, — perfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-09",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "Eu ___ a Joana numa festa em 2019.",
+      "options": [
+        "conhecia",
+        "conheci",
+        "conheço",
+        "tenho conhecido"
+      ],
+      "correct": 1,
+      "explanation": "conhecer в perfeito = «познакомился»."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-10",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "Quando era estudante, ___ sempre de autocarro.",
+      "options": [
+        "andei",
+        "ando",
+        "andava",
+        "tenho andado"
+      ],
+      "correct": 2,
+      "explanation": "Привычка в прошлом (sempre) — imperfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-11",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "Ontem ___ às sete, tomei um duche e saí.",
+      "options": [
+        "acordei",
+        "acordava",
+        "acordo",
+        "tenho acordado"
+      ],
+      "correct": 0,
+      "explanation": "Цепочка последовательных событий — perfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-12",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "Na altura eu já ___ que ele era casado, mas não disse nada.",
+      "options": [
+        "soube",
+        "sei",
+        "tenho sabido",
+        "sabia"
+      ],
+      "correct": 3,
+      "explanation": "Здесь «уже знал» (состояние на тот момент) — sabia. Soube = «узнал»."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-13",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "Quando abri a porta, ___ a chover.",
+      "options": [
+        "esteve",
+        "estava",
+        "estive",
+        "está"
+      ],
+      "correct": 1,
+      "explanation": "Дождь — фон к событию «открыл дверь»: estava a chover."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-14",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "transform",
+      "prompt": "Estou a jantar quando o Rui liga.",
+      "instruction": "Перескажите в прошедшем времени (фон + событие).",
+      "answer": [
+        "Estava a jantar quando o Rui ligou.",
+        "Eu estava a jantar quando o Rui ligou."
+      ],
+      "explanation": "Фон — estava a jantar, событие — ligou."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-15",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "transform",
+      "prompt": "Todos os dias vou ao café e peço uma bica.",
+      "instruction": "Расскажите о прошлой привычке (imperfeito).",
+      "answer": [
+        "Todos os dias ia ao café e pedia uma bica.",
+        "Todos os dias eu ia ao café e pedia uma bica."
+      ]
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-16",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "transform",
+      "prompt": "Hoje vou ao café e peço uma bica.",
+      "instruction": "Замените hoje на ontem и поставьте глаголы в нужное прошедшее время.",
+      "answer": [
+        "Ontem fui ao café e pedi uma bica.",
+        "Ontem eu fui ao café e pedi uma bica."
+      ],
+      "explanation": "Однократные события вчера — perfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-17",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "order-words",
+      "words": [
+        "cheguei,",
+        "Quando",
+        "estava",
+        "ela",
+        "dormir",
+        "a"
+      ],
+      "answer": "Quando cheguei, ela estava a dormir",
+      "explanation": "cheguei — событие, estava a dormir — фон."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-18",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "order-words",
+      "words": [
+        "era",
+        "Ele",
+        "simpático",
+        "muito",
+        "sempre",
+        "comigo"
+      ],
+      "answer": "Ele era sempre muito simpático comigo",
+      "explanation": "Описание характера — imperfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-19",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "translate-ru-pt",
+      "ru": "Вчера я весь день работал.",
+      "answer": [
+        "Ontem trabalhei o dia todo.",
+        "Ontem trabalhei todo o dia.",
+        "Ontem eu trabalhei o dia todo.",
+        "Ontem eu trabalhei todo o dia.",
+        "Trabalhei o dia todo ontem.",
+        "Trabalhei todo o dia ontem."
+      ],
+      "explanation": "У действия есть рамка (весь вчерашний день) — perfeito, несмотря на русский несовершенный вид."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-20",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "translate-ru-pt",
+      "ru": "Я знал, что она в Лиссабоне.",
+      "answer": [
+        "Eu sabia que ela estava em Lisboa.",
+        "Sabia que ela estava em Lisboa."
+      ],
+      "explanation": "Знание как состояние — sabia; «она в Лиссабоне» тоже переносится в прошлое — estava."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-21",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "listen-type",
+      "text": "Quando era pequena, vivia em Faro.",
+      "answer": [
+        "Quando era pequena, vivia em Faro."
+      ]
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-ex-22",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "match",
+      "prompt": "Соедините форму с её значением.",
+      "pairs": [
+        {
+          "left": "soube",
+          "right": "узнал"
+        },
+        {
+          "left": "sabia",
+          "right": "знал"
+        },
+        {
+          "left": "conheci",
+          "right": "познакомился"
+        },
+        {
+          "left": "conhecia",
+          "right": "был знаком"
+        },
+        {
+          "left": "pude",
+          "right": "смог, удалось"
+        },
+        {
+          "left": "podia",
+          "right": "мог, была возможность"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-01",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Quando ___ (sair) de casa, estava a chover.",
+      "answer": [
+        "saí"
+      ],
+      "ru": "Когда я вышел из дома, шёл дождь."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-02",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Em criança, eu ___ (passar) as férias em casa dos avós.",
+      "answer": [
+        "passava"
+      ],
+      "ru": "В детстве я проводил каникулы у бабушки с дедушкой."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-03",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Ontem nós ___ (jantar) fora.",
+      "answer": [
+        "jantámos"
+      ],
+      "ru": "Вчера мы ужинали в ресторане."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-04",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Ela ___ (conhecer) o marido na faculdade.",
+      "answer": [
+        "conheceu"
+      ],
+      "ru": "Она познакомилась с мужем в университете."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-05",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "Enquanto eu estudava, a minha irmã ___ música.",
+      "options": [
+        "ouviu",
+        "ouve",
+        "ouvia",
+        "tem ouvido"
+      ],
+      "correct": 2,
+      "explanation": "Два одновременных процесса — imperfeito."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-06",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "___ em Faro durante cinco anos e depois mudámo-nos para Lisboa.",
+      "options": [
+        "Vivíamos",
+        "Vivemos",
+        "Vivermos",
+        "Temos vivido"
+      ],
+      "correct": 1,
+      "explanation": "Законченный период с рамкой — perfeito: vivemos."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-07",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "choice",
+      "prompt": "— Como foi a viagem? — ___ fantástica!",
+      "options": [
+        "Foi",
+        "Era",
+        "Ia",
+        "Esteve"
+      ],
+      "correct": 0,
+      "explanation": "Оценка законченного события — foi."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-08",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "transform",
+      "prompt": "Estou a ver um filme quando adormeço.",
+      "instruction": "Перескажите в прошедшем времени.",
+      "answer": [
+        "Estava a ver um filme quando adormeci.",
+        "Eu estava a ver um filme quando adormeci."
+      ]
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-09",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "translate-ru-pt",
+      "ru": "Когда я был маленьким, я каждый день ходил в бассейн.",
+      "answer": [
+        "Quando era pequeno, ia à piscina todos os dias.",
+        "Quando era pequena, ia à piscina todos os dias.",
+        "Quando eu era pequeno, ia à piscina todos os dias.",
+        "Quando eu era pequena, ia à piscina todos os dias.",
+        "Quando era criança, ia à piscina todos os dias.",
+        "Quando eu era criança, ia à piscina todos os dias.",
+        "Em criança, ia à piscina todos os dias.",
+        "Em pequeno, ia à piscina todos os dias.",
+        "Em pequena, ia à piscina todos os dias.",
+        "Quando era miúdo, ia à piscina todos os dias.",
+        "Quando era miúda, ia à piscina todos os dias.",
+        "Quando era pequeno, ia todos os dias à piscina.",
+        "Quando era pequena, ia todos os dias à piscina."
+      ],
+      "explanation": "Привычка в прошлом — imperfeito: era, ia."
+    },
+    {
+      "id": "a2-perfeito-vs-imperfeito-mt-10",
+      "topicId": "a2-perfeito-vs-imperfeito",
+      "type": "listen-choice",
+      "text": "Eu sabia que ia chover.",
+      "options": [
+        "Я узнал, что пойдёт дождь.",
+        "Я знаю, что пойдёт дождь.",
+        "Я знал, что пойдёт дождь.",
+        "Я знал, что шёл дождь."
+      ],
+      "correct": 2,
+      "explanation": "sabia — «знал»; ia chover — «пойдёт дождь» с точки зрения прошлого."
+    }
+  ]
+}

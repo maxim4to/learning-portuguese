@@ -1,0 +1,193 @@
+{
+  "id": "financas-nif",
+  "title": "В Finanças: NIF и вопросы по налогам",
+  "titlePt": "Nas Finanças",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Senha cento e doze? Bom dia, faça favor de se sentar.", "ru": "Талон сто двенадцать? Доброе утро, присаживайтесь, пожалуйста." },
+    { "speaker": "B", "pt": "Bom dia. Queria alterar a minha morada fiscal, se faz favor.", "ru": "Доброе утро. Я хотел бы изменить свой налоговый адрес." },
+    { "speaker": "A", "pt": "Com certeza. Tem o número de contribuinte e um documento de identificação?", "ru": "Конечно. У вас есть налоговый номер и документ, удостоверяющий личность?" },
+    { "speaker": "B", "pt": "Tenho, sim. Aqui tem o passaporte e o título de residência.", "ru": "Да. Вот паспорт и вид на жительство." },
+    { "speaker": "A", "pt": "Vejo que o senhor tem um representante fiscal. Já vive em Portugal?", "ru": "Вижу, что у вас есть налоговый представитель. Вы уже живёте в Португалии?" },
+    { "speaker": "B", "pt": "Sim, moro em Lisboa há oito meses. Por isso queria deixar de ter representante.", "ru": "Да, я живу в Лиссабоне уже восемь месяцев. Поэтому хотел бы отказаться от представителя." },
+    { "speaker": "A", "pt": "Muito bem. Tem algum comprovativo de morada? Um contrato de arrendamento, uma fatura da luz…", "ru": "Хорошо. У вас есть подтверждение адреса? Договор аренды, счёт за электричество…" },
+    { "speaker": "B", "pt": "Trouxe o contrato de arrendamento. Também tinha uma pergunta sobre o IRS.", "ru": "Я принёс договор аренды. И ещё у меня вопрос по подоходному налогу." },
+    { "speaker": "A", "pt": "Diga, diga.", "ru": "Да, слушаю." },
+    { "speaker": "B", "pt": "Este ano tenho de entregar a declaração de IRS?", "ru": "Мне в этом году нужно подавать декларацию IRS?" },
+    { "speaker": "A", "pt": "Se é residente fiscal e teve rendimentos cá, tem de entregar entre um de abril e trinta de junho.", "ru": "Если вы налоговый резидент и у вас были доходы здесь, подавать нужно с первого апреля по тридцатое июня." },
+    { "speaker": "B", "pt": "E como é que faço isso? Tenho de vir cá outra vez?", "ru": "А как это сделать? Мне нужно приходить сюда ещё раз?" },
+    { "speaker": "A", "pt": "Não é preciso. Entrega pelo Portal das Finanças. Vou já pedir-lhe a senha de acesso.", "ru": "Не нужно. Подаёте через Portal das Finanças. Я сейчас запрошу для вас пароль для входа." },
+    { "speaker": "B", "pt": "E a senha chega quando?", "ru": "А когда придёт пароль?" },
+    { "speaker": "A", "pt": "Chega por carta à sua nova morada, dentro de uns cinco dias úteis.", "ru": "Придёт письмом на ваш новый адрес, примерно в течение пяти рабочих дней." }
+  ],
+  "phrases": [
+    { "pt": "Queria pedir o número de contribuinte.", "ru": "Я хотел бы получить налоговый номер (NIF)." },
+    { "pt": "Queria alterar a minha morada fiscal.", "ru": "Я хотел бы изменить налоговый адрес." },
+    { "pt": "Onde é que se tira a senha?", "ru": "Где берут талон очереди?" },
+    { "pt": "É preciso marcação?", "ru": "Нужна предварительная запись?" },
+    { "pt": "Qual é o prazo para entregar o IRS?", "ru": "До какого числа нужно подать декларацию IRS?" },
+    { "pt": "Pode passar-me uma certidão de domicílio fiscal?", "ru": "Можете выдать справку о налоговом адресе?" },
+    { "pt": "Recebi esta carta das Finanças e não percebo o que é.", "ru": "Я получил это письмо из налоговой и не понимаю, что это." },
+    { "pt": "Tenho alguma dívida às Finanças?", "ru": "У меня есть задолженность перед налоговой?" },
+    { "pt": "Ainda não recebi a senha de acesso ao Portal.", "ru": "Я ещё не получил пароль для входа на портал." },
+    { "pt": "Pode repetir mais devagar, se faz favor?", "ru": "Можете повторить помедленнее, пожалуйста?" }
+  ],
+  "vocab": [
+    { "pt": "as Finanças", "ru": "налоговая (разговорное название)", "example": "Amanhã tenho de ir às Finanças." },
+    { "pt": "o serviço de Finanças", "ru": "налоговая инспекция (отделение)", "example": "O serviço de Finanças do meu bairro abre às nove." },
+    { "pt": "a Autoridade Tributária (AT)", "ru": "Налоговая служба Португалии", "example": "Recebi um email da Autoridade Tributária." },
+    { "pt": "o NIF", "ru": "налоговый номер (ИНН)", "example": "Sem NIF não se consegue arrendar casa." },
+    { "pt": "o número de contribuinte", "ru": "налоговый номер (то же, что NIF)", "example": "Qual é o seu número de contribuinte?" },
+    { "pt": "o contribuinte", "ru": "налогоплательщик", "example": "O contribuinte tem de manter a morada atualizada." },
+    { "pt": "o representante fiscal", "ru": "налоговый представитель", "example": "Quem vive fora da UE pode precisar de um representante fiscal." },
+    { "pt": "a morada fiscal", "ru": "налоговый адрес", "example": "A morada fiscal tem de ser a da casa onde vive." },
+    { "pt": "o domicílio fiscal", "ru": "налоговое место жительства", "example": "Alterei o domicílio fiscal para Portugal." },
+    { "pt": "o residente fiscal / o não residente", "ru": "налоговый резидент / нерезидент", "example": "Este ano já sou residente fiscal em Portugal." },
+    { "pt": "o IRS", "ru": "подоходный налог с физических лиц", "example": "O IRS é descontado todos os meses do ordenado." },
+    { "pt": "a declaração de IRS", "ru": "налоговая декларация", "example": "Entreguei a declaração de IRS em abril." },
+    { "pt": "o IRS Automático", "ru": "автоматическая декларация IRS", "example": "Este ano posso usar o IRS Automático." },
+    { "pt": "o reembolso", "ru": "возврат налога", "example": "O reembolso chegou à minha conta em maio." },
+    { "pt": "a nota de liquidação", "ru": "налоговое уведомление (расчёт налога)", "example": "Recebi a nota de liquidação do IRS." },
+    { "pt": "o IVA", "ru": "НДС", "example": "O preço já inclui IVA." },
+    { "pt": "o IMI", "ru": "налог на недвижимость", "example": "Quem tem casa própria paga IMI." },
+    { "pt": "o IUC", "ru": "ежегодный налог на автомобиль", "example": "O IUC paga-se no mês da matrícula do carro." },
+    { "pt": "o Portal das Finanças", "ru": "сайт налоговой", "example": "Pode tratar disso no Portal das Finanças." },
+    { "pt": "a senha de acesso", "ru": "пароль для входа (на портал)", "example": "A senha de acesso chega por carta." },
+    { "pt": "a senha", "ru": "талон электронной очереди; пароль", "example": "Tirei a senha e esperei meia hora." },
+    { "pt": "a marcação", "ru": "предварительная запись", "example": "Hoje só atendem com marcação." },
+    { "pt": "o atendimento", "ru": "приём посетителей, обслуживание", "example": "O atendimento é das nove às quatro." },
+    { "pt": "o comprovativo de morada", "ru": "подтверждение адреса", "example": "Uma fatura da água serve de comprovativo de morada." },
+    { "pt": "a certidão", "ru": "официальная справка", "example": "Pedi uma certidão de domicílio fiscal para o banco." },
+    { "pt": "o e-fatura", "ru": "система учёта чеков с NIF", "example": "No e-fatura vejo as minhas despesas de saúde." },
+    { "pt": "a despesa dedutível", "ru": "расход, уменьшающий налог", "example": "As despesas de saúde são dedutíveis no IRS." },
+    { "pt": "a retenção na fonte", "ru": "удержание налога у источника", "example": "A empresa faz a retenção na fonte todos os meses." },
+    { "pt": "os rendimentos", "ru": "доходы", "example": "Tem de declarar todos os rendimentos do ano." },
+    { "pt": "o trabalhador independente", "ru": "самозанятый, фрилансер", "example": "Como trabalhador independente, passo recibos verdes." },
+    { "pt": "abrir atividade", "ru": "зарегистрироваться как самозанятый", "example": "Antes de faturar, tem de abrir atividade nas Finanças." },
+    { "pt": "a dívida", "ru": "долг, задолженность", "example": "Não tenho nenhuma dívida às Finanças." },
+    { "pt": "a coima", "ru": "административный штраф", "example": "Entregou fora do prazo e pagou uma coima." },
+    { "pt": "o prazo", "ru": "срок", "example": "O prazo acaba a trinta de junho." },
+    { "pt": "os dias úteis", "ru": "рабочие дни", "example": "A resposta demora dez dias úteis." }
+  ],
+  "exercises": [
+    {
+      "id": "financas-nif-ex-01",
+      "topicId": "financas-nif",
+      "type": "choice",
+      "prompt": "Para mudar o endereço nas Finanças, diz-se: «Queria alterar a minha ___.»",
+      "options": ["morada fiscal", "residência de impostos", "endereço tributário", "casa fiscal"],
+      "correct": 0,
+      "explanation": "Налоговый адрес — **a morada fiscal** (или официально **o domicílio fiscal**). В Португалии почтовый адрес — обычно **a morada** (*o endereço* тоже понятно, но в налоговой говорят **morada / domicílio fiscal**)."
+    },
+    {
+      "id": "financas-nif-ex-02",
+      "topicId": "financas-nif",
+      "type": "match",
+      "prompt": "Соедини налоги с их значением",
+      "pairs": [
+        { "left": "o IRS", "right": "подоходный налог" },
+        { "left": "o IVA", "right": "НДС" },
+        { "left": "o IMI", "right": "налог на недвижимость" },
+        { "left": "o IUC", "right": "налог на автомобиль" },
+        { "left": "a coima", "right": "штраф" }
+      ]
+    },
+    {
+      "id": "financas-nif-ex-03",
+      "topicId": "financas-nif",
+      "type": "fill-gap",
+      "prompt": "Tem algum ___ de morada? Um contrato de arrendamento, uma fatura da luz…",
+      "answer": ["comprovativo"],
+      "hint": "документ-подтверждение",
+      "ru": "У вас есть подтверждение адреса? Договор аренды, счёт за свет…",
+      "explanation": "**O comprovativo** — любой документ-подтверждение: **comprovativo de morada**, **comprovativo de pagamento**. Слово встречается в Португалии на каждом шагу."
+    },
+    {
+      "id": "financas-nif-ex-04",
+      "topicId": "financas-nif",
+      "type": "listen-type",
+      "text": "Este ano tenho de entregar a declaração de IRS?",
+      "answer": ["Este ano tenho de entregar a declaração de IRS?"],
+      "explanation": "**Entregar a declaração** — подать декларацию. Обратите внимание: **ter de + infinitivo**, в pt-PT предпочтительнее, чем *ter que*."
+    },
+    {
+      "id": "financas-nif-ex-05",
+      "topicId": "financas-nif",
+      "type": "listen-choice",
+      "text": "Chega por carta à sua nova morada, dentro de uns cinco dias úteis.",
+      "prompt": "Как и когда придёт пароль?",
+      "options": ["По SMS, сегодня же", "Письмом в налоговую, через пять дней", "По электронной почте, через неделю", "Письмом на новый адрес, примерно через пять рабочих дней"],
+      "correct": 3,
+      "explanation": "**Por carta** — письмом, **dentro de uns cinco dias úteis** — примерно в течение пяти рабочих дней. **Uns/umas** перед числом = «примерно»."
+    },
+    {
+      "id": "financas-nif-ex-06",
+      "topicId": "financas-nif",
+      "type": "order-words",
+      "words": ["o", "prazo", "Qual", "para", "entregar", "o", "é", "IRS?"],
+      "answer": "Qual é o prazo para entregar o IRS?",
+      "ru": "До какого числа нужно подать IRS?",
+      "explanation": "**O prazo** — срок. Декларацию по IRS подают с 1 апреля по 30 июня за прошлый год."
+    },
+    {
+      "id": "financas-nif-ex-07",
+      "topicId": "financas-nif",
+      "type": "translate-ru-pt",
+      "ru": "Я хотел бы получить налоговый номер.",
+      "answer": [
+        "Queria pedir o número de contribuinte.",
+        "Queria pedir o NIF.",
+        "Queria tirar o NIF.",
+        "Queria tirar o número de contribuinte.",
+        "Gostava de pedir o NIF.",
+        "Gostava de pedir o número de contribuinte.",
+        "Gostava de tirar o NIF.",
+        "Gostava de tirar o número de contribuinte.",
+        "Queria obter o NIF.",
+        "Queria obter o número de contribuinte.",
+        "Gostava de obter o NIF.",
+        "Gostava de obter o número de contribuinte."
+      ],
+      "explanation": "NIF в разговоре «берут» или «просят»: **tirar / pedir o NIF**. **Número de contribuinte** и **NIF** — одно и то же."
+    },
+    {
+      "id": "financas-nif-ex-08",
+      "topicId": "financas-nif",
+      "type": "choice",
+      "prompt": "Quando chega às Finanças sem marcação, o primeiro passo é…",
+      "options": ["pagar a coima", "entregar o IRS", "tirar a senha", "pedir a nota de liquidação"],
+      "correct": 2,
+      "explanation": "**Tirar a senha** — взять талон электронной очереди. Слово **senha** означает и талон, и пароль (**senha de acesso**)."
+    },
+    {
+      "id": "financas-nif-ex-09",
+      "topicId": "financas-nif",
+      "type": "fill-gap",
+      "prompt": "Vejo que o senhor tem um ___ fiscal. Já vive em Portugal?",
+      "answer": ["representante"],
+      "hint": "человек, который представляет нерезидента в налоговой",
+      "ru": "Вижу, что у вас есть налоговый представитель. Вы уже живёте в Португалии?",
+      "explanation": "**O representante fiscal** нужен, если NIF получали, ещё живя вне ЕС. Переехав в Португалию, адрес меняют на местный, и представитель больше не нужен."
+    },
+    {
+      "id": "financas-nif-ex-10",
+      "topicId": "financas-nif",
+      "type": "transform",
+      "prompt": "Vou pedir a senha de acesso para o senhor.",
+      "instruction": "Замени «para o senhor» местоимением-клитикой (lhe)",
+      "answer": ["Vou pedir-lhe a senha de acesso.", "Vou-lhe pedir a senha de acesso."],
+      "explanation": "Косвенное дополнение **ao senhor / para o senhor** → **lhe**. В pt-PT клитика по умолчанию ставится после инфинитива через дефис: **Vou pedir-lhe**; в разговорной речи можно и **Vou-lhe pedir**, но не *Vou lhe pedir* без дефиса."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы получили из налоговой письмо, которое не понимаете, и пришли в Serviço de Finanças. Напишите диалог из 8–10 реплик с сотрудницей: поздоровайтесь и объясните, что получили письмо; спросите, есть ли у вас задолженность; уточните срок подачи декларации IRS; скажите, что не получили пароль от Portal das Finanças, и попросите его заново; попросите говорить помедленнее.",
+    "sample": "— Bom dia. Faça favor.\n— Bom dia. Recebi esta carta das Finanças e não percebo o que é.\n— Deixe-me ver… É a nota de liquidação do seu IRS do ano passado.\n— Ah, então tenho alguma dívida?\n— Não, pelo contrário: vai receber um reembolso de duzentos euros.\n— Que bom! E qual é o prazo para entregar o IRS deste ano?\n— Entre um de abril e trinta de junho, pelo Portal das Finanças.\n— Pode repetir mais devagar, se faz favor?\n— Claro. De abril a junho, no Portal.\n— Obrigado. Mas eu ainda não recebi a senha de acesso.\n— Vou pedir-lhe uma nova. Chega por carta dentro de cinco dias úteis.",
+    "checklist": [
+      "Используются термины: carta, dívida, prazo, senha de acesso, declaração de IRS",
+      "Просьбы вежливые: Queria…, Pode…, se faz favor?",
+      "Есть просьба повторить медленнее (Pode repetir mais devagar?)",
+      "Клитики стоят после глагола: vou pedir-lhe, deixe-me ver",
+      "Используется ter de + infinitivo, а не ter que"
+    ]
+  }
+}

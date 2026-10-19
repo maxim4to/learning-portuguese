@@ -1,0 +1,438 @@
+{
+  "id": "a2-verbos-reflexos",
+  "level": "A2",
+  "module": "a2-pronomes",
+  "title": "Возвратные глаголы",
+  "titlePt": "Verbos reflexos (pronominais)",
+  "requires": [
+    "a1-presente-indicativo-regulares",
+    "a2-pronomes-cliticos-colocacao"
+  ],
+  "theory": "## Что это такое\n\nВозвратные глаголы — это глаголы с местоимением **-se** в инфинитиве: **levantar-se** (вставать), **chamar-se** (называться), **sentar-se** (садиться). Местоимение меняется по лицам и, как все клитики в pt-PT, по умолчанию стоит **после глагола через дефис**.\n\n## Спряжение: levantar-se\n\n| | утверждение | отрицание | прошедшее (perfeito) |\n|---|---|---|---|\n| eu | **levanto-me** | não **me** levanto | **levantei-me** |\n| tu | **levantas-te** | não **te** levantas | **levantaste-te** |\n| ele / ela / você | **levanta-se** | não **se** levanta | **levantou-se** |\n| nós | **levantamo-nos** | não **nos** levantamos | **levantámo-nos** |\n| eles / elas / vocês | **levantam-se** | não **se** levantam | **levantaram-se** |\n\nВ форме **nós** перед **-nos** выпадает конечное **-s**: levantamos + nos → **levantamo-nos**, sentámos + nos → **sentámo-nos**.\n\n**Chamo-me Inês. Como te chamas? Ele chama-se Rui.**\n\n## Где стоит местоимение\n\n- По умолчанию — после глагола: **Deito-me às onze.** Подлежащее не мешает: **Eu deito-me às onze.**\n- Перед глаголом — после «магнитов» (**não, nunca, já, também, sempre**, вопросительные слова, **que, quando, porque**): **Não me lembro. Já te sentaste? A que horas se levantam?**\n- С инфинитивом: **Vou deitar-me** или разговорное **Vou-me deitar** — оба варианта нормальны в pt-PT. После предлога: **Tenho de me despachar** / **Tenho de despachar-me**.\n\n## Частотные возвратные глаголы\n\n| глагол | значение | пример |\n|---|---|---|\n| levantar-se | вставать | **Levanto-me às sete.** |\n| deitar-se | ложиться | **Deitas-te tarde?** |\n| sentar-se | садиться | **Sentamo-nos aqui?** |\n| vestir-se | одеваться | **Visto-me depressa.** |\n| sentir-se | чувствовать себя | **Sinto-me cansado.** |\n| lembrar-se de | помнить | **Não me lembro do nome.** |\n| esquecer-se de | забывать | **Esqueci-me da chave.** |\n| preocupar-se com | волноваться | **Ela preocupa-se com tudo.** |\n| divertir-se | веселиться | **Divertimo-nos imenso.** |\n| mudar-se (para) | переезжать | **Mudei-me para Lisboa.** |\n| queixar-se de | жаловаться | **Ele queixa-se do trânsito.** |\n\nУ vestir-se и divertir-se в форме eu меняется гласная: **visto-me, divirto-me**; у sentir-se — **sinto-me**.\n\n## Русское «-ся» ≠ португальское -se\n\nНе всё, что в русском с «-ся», возвратно в португальском, и наоборот:\n\n- **acordar** — просыпаться: **Acordo às seis** (без se!).\n- **começar, acabar** — начинаться, заканчиваться: **A aula começa às nove.**\n- **estudar, aprender** — учиться; **gostar de** — нравиться.\n- Наоборот, **lembrar-se** (помнить) и **esquecer-se** (забывать) возвратны, хотя в русском «-ся» нет.\n\n## Взаимное действие\n\nВо множественном числе **-nos / -se** может значить «друг друга»: **Conhecemo-nos em 2020.** (Мы познакомились в 2020-м.) **Vemo-nos amanhã!** (Увидимся завтра!) **Eles falam-se todos os dias.** (Они общаются каждый день.)",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Levanto-me** às sete. | **Me levanto** / Eu levanto às sete. | в BR местоимение стоит перед глаголом или вовсе выпадает |\n| **Chamo-me** Rita. | **Me chamo** Rita. | начинать фразу с клитики в pt-PT нельзя |\n| **Vemo-nos** amanhã! | **A gente se vê** amanhã! | |\n| **Senta-te!** | **Senta aí!** / **Se senta!** | |\n| **Esqueci-me da** chave. | **Esqueci a** chave. / *Esqueci da chave.* | **esquecer + прямое дополнение** (Esqueci a chave) правильно и в pt-PT, но **esquecer-se de** там частотнее; гибрид *esqueci da* — ошибка |\n\nВ разговорном бразильском возвратное местоимение часто выпадает (*eu sentei*, *ele mudou para São Paulo*); в pt-PT это звучит неграмотно: **sentei-me**, **mudou-se**.",
+  "commonErrors": "- **Клитика в начале фразы**: *Me levanto às sete* ✗ → **Levanto-me às sete** ✓.\n- **Ênclise после отрицания или вопроса**: *Não lembro-me* ✗ → **Não me lembro** ✓; *Como chamas-te?* ✗ → **Como te chamas?** ✓.\n- **Лишнее -s в форме nós**: *levantamos-nos* ✗ → **levantamo-nos** ✓.\n- **Не то лицо местоимения**: *Eu chamo-se* ✗ → **Eu chamo-me** ✓; *Nós sentamo-se* ✗ → **Sentamo-nos** ✓.\n- **Калька с русского «-ся»**: *Acordo-me às seis* ✗ → **Acordo às seis** ✓; *A aula começa-se* ✗ → **A aula começa** ✓.\n- **Потерянное se** (бразильская разговорная речь): *Esqueci da chave* ✗ → **Esqueci-me da chave** ✓; *Mudei para Lisboa* ✗ → **Mudei-me para Lisboa** ✓.",
+  "examples": [
+    {
+      "pt": "Durante a semana levanto-me às sete.",
+      "ru": "В будни я встаю в семь.",
+      "audio": true
+    },
+    {
+      "pt": "Desculpe, não me lembro do seu nome.",
+      "ru": "Извините, я не помню, как вас зовут.",
+      "audio": true
+    },
+    {
+      "pt": "Como te chamas? — Chamo-me Duarte.",
+      "ru": "Как тебя зовут? — Меня зовут Дуарте.",
+      "audio": true
+    },
+    {
+      "pt": "Esqueci-me do telemóvel em casa.",
+      "ru": "Я забыл телефон дома.",
+      "audio": true
+    },
+    {
+      "pt": "Mudámo-nos para o Porto no ano passado.",
+      "ru": "В прошлом году мы переехали в Порту.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-verbos-reflexos-ex-01",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (chamar-se) Maxim.",
+      "answer": [
+        "chamo-me"
+      ],
+      "ru": "Меня зовут Максим.",
+      "explanation": "Подлежащее eu не притягивает местоимение: Eu chamo-me."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-02",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "A que horas ___ (levantar-se, tu) normalmente?",
+      "answer": [
+        "te levantas"
+      ],
+      "ru": "Во сколько ты обычно встаёшь?",
+      "explanation": "Вопросительное слово — «магнит»: местоимение перед глаголом."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-03",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (sentar-se) aqui, ao pé da janela.",
+      "answer": [
+        "sentamo-nos"
+      ],
+      "hint": "nós: -mos + nos → -mo-nos",
+      "ru": "Мы сядем здесь, у окна.",
+      "explanation": "Перед -nos выпадает -s: sentamos → sentamo-nos."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-04",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Ela não ___ (sentir-se) bem hoje.",
+      "answer": [
+        "se sente"
+      ],
+      "ru": "Ей сегодня нехорошо.",
+      "explanation": "После não — próclise."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-05",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Ontem eu ___ (deitar-se) muito tarde.",
+      "answer": [
+        "deitei-me"
+      ],
+      "ru": "Вчера я лёг очень поздно.",
+      "explanation": "Ontem не «магнит»: deitei-me."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-06",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Os miúdos já ___ (vestir-se) sozinhos.",
+      "answer": [
+        "se vestem"
+      ],
+      "ru": "Дети уже одеваются сами.",
+      "explanation": "Já — «магнит», местоимение перед глаголом."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-07",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Ela ___ (preocupar-se) muito com os filhos.",
+      "answer": [
+        "preocupa-se"
+      ],
+      "ru": "Она очень переживает за детей."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-08",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (mudar-se) para Braga em março.",
+      "answer": [
+        "mudaram-se"
+      ],
+      "hint": "pretérito perfeito",
+      "ru": "Они переехали в Брагу в марте."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-09",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "Как сказать «Увидимся завтра!»?",
+      "options": [
+        "Nos vemos amanhã!",
+        "A gente se vê amanhã!",
+        "Vemo-nos amanhã!",
+        "Vemos-nos amanhã!"
+      ],
+      "correct": 2,
+      "explanation": "Ênclise, и перед -nos выпадает -s: vemos → vemo-nos."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-10",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "Eu ___ às seis da manhã.",
+      "options": [
+        "acordo-me",
+        "acordo",
+        "me acordo",
+        "acordo-se"
+      ],
+      "correct": 1,
+      "explanation": "Acordar («просыпаться») в португальском не возвратный глагол."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-11",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "Já ___ do que te disse?",
+      "options": [
+        "te esqueceste",
+        "esqueceste-te",
+        "esqueceste",
+        "se esqueceu-te"
+      ],
+      "correct": 0,
+      "explanation": "Já — «магнит»; без se глагол звучит по-бразильски."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-12",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Ele se queixa do barulho.",
+        "Se queixa do barulho.",
+        "Ele queixa do barulho.",
+        "Ele queixa-se do barulho."
+      ],
+      "correct": 3,
+      "explanation": "Подлежащее ele — не «магнит»: Ele queixa-se."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-13",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "Hoje vou ___ cedo.",
+      "options": [
+        "me deitar-me",
+        "deitar-se",
+        "deitar-me",
+        "deitar me"
+      ],
+      "correct": 2,
+      "explanation": "Местоимение согласуется с подлежащим (eu → me). Можно и Vou-me deitar cedo."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-14",
+      "topicId": "a2-verbos-reflexos",
+      "type": "transform",
+      "prompt": "Levanto-me cedo.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "Não me levanto cedo.",
+        "Eu não me levanto cedo."
+      ],
+      "explanation": "После não местоимение переходит перед глаголом."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-15",
+      "topicId": "a2-verbos-reflexos",
+      "type": "transform",
+      "prompt": "Tu sentas-te aqui.",
+      "instruction": "Поставьте в pretérito perfeito simples.",
+      "answer": [
+        "Tu sentaste-te aqui.",
+        "Sentaste-te aqui."
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-16",
+      "topicId": "a2-verbos-reflexos",
+      "type": "transform",
+      "prompt": "Eu visto-me depressa.",
+      "instruction": "Замените подлежащее на «nós».",
+      "answer": [
+        "Nós vestimo-nos depressa.",
+        "Vestimo-nos depressa."
+      ],
+      "explanation": "vestimos + nos → vestimo-nos."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-17",
+      "topicId": "a2-verbos-reflexos",
+      "type": "order-words",
+      "words": [
+        "nunca",
+        "Ela",
+        "se",
+        "de",
+        "esquece",
+        "nada"
+      ],
+      "answer": "Ela nunca se esquece de nada",
+      "explanation": "Nunca притягивает местоимение."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-18",
+      "topicId": "a2-verbos-reflexos",
+      "type": "order-words",
+      "words": [
+        "me",
+        "Não",
+        "sinto",
+        "muito",
+        "bem"
+      ],
+      "answer": "Não me sinto muito bem"
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-19",
+      "topicId": "a2-verbos-reflexos",
+      "type": "translate-ru-pt",
+      "ru": "Меня зовут Рита, а тебя?",
+      "answer": [
+        "Chamo-me Rita, e tu?",
+        "Eu chamo-me Rita, e tu?",
+        "Chamo-me Rita, e tu, como te chamas?",
+        "Eu chamo-me Rita, e tu, como te chamas?"
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-20",
+      "topicId": "a2-verbos-reflexos",
+      "type": "translate-ru-pt",
+      "ru": "Я забыл ключи.",
+      "answer": [
+        "Esqueci-me das chaves.",
+        "Eu esqueci-me das chaves.",
+        "Esqueci as chaves.",
+        "Eu esqueci as chaves."
+      ],
+      "explanation": "esquecer-se de + артикль: das chaves. Без se глагол требует прямого дополнения: Esqueci as chaves (не *Esqueci das chaves*)."
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-21",
+      "topicId": "a2-verbos-reflexos",
+      "type": "listen-type",
+      "text": "Vemo-nos amanhã no café.",
+      "answer": [
+        "Vemo-nos amanhã no café."
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-ex-22",
+      "topicId": "a2-verbos-reflexos",
+      "type": "match",
+      "prompt": "Соедините глагол с переводом.",
+      "pairs": [
+        {
+          "left": "levantar-se",
+          "right": "вставать"
+        },
+        {
+          "left": "deitar-se",
+          "right": "ложиться"
+        },
+        {
+          "left": "lembrar-se de",
+          "right": "помнить"
+        },
+        {
+          "left": "esquecer-se de",
+          "right": "забывать"
+        },
+        {
+          "left": "sentir-se",
+          "right": "чувствовать себя"
+        },
+        {
+          "left": "mudar-se",
+          "right": "переезжать"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-verbos-reflexos-mt-01",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (chamar-se) Pedro?",
+      "answer": [
+        "chamas-te"
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-02",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Na festa nós ___ (divertir-se) imenso.",
+      "answer": [
+        "divertimo-nos"
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-03",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Porque é que não ___ (sentar-se, tu)?",
+      "answer": [
+        "te sentas"
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-04",
+      "topicId": "a2-verbos-reflexos",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (vestir-se) e saio.",
+      "answer": [
+        "visto-me"
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-05",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "Ontem ___ às oito.",
+      "options": [
+        "me levantei",
+        "levantei",
+        "levantei-me",
+        "levantou-me"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-06",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "A reunião ___ às dez.",
+      "options": [
+        "começa-se",
+        "se começa",
+        "começa"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-07",
+      "topicId": "a2-verbos-reflexos",
+      "type": "choice",
+      "prompt": "Nós ___ em 2019.",
+      "options": [
+        "conhecemos-nos",
+        "nos conhecemos",
+        "conhecemo-se",
+        "conhecemo-nos"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-08",
+      "topicId": "a2-verbos-reflexos",
+      "type": "transform",
+      "prompt": "Ele lembra-se de mim.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "Ele não se lembra de mim.",
+        "Não se lembra de mim."
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-09",
+      "topicId": "a2-verbos-reflexos",
+      "type": "translate-ru-pt",
+      "ru": "Я плохо себя чувствую.",
+      "answer": [
+        "Sinto-me mal.",
+        "Eu sinto-me mal.",
+        "Não me sinto bem.",
+        "Eu não me sinto bem."
+      ]
+    },
+    {
+      "id": "a2-verbos-reflexos-mt-10",
+      "topicId": "a2-verbos-reflexos",
+      "type": "listen-type",
+      "text": "Já te esqueceste de mim?",
+      "answer": [
+        "Já te esqueceste de mim?"
+      ]
+    }
+  ]
+}

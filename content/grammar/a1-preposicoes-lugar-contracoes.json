@@ -1,0 +1,463 @@
+{
+  "id": "a1-preposicoes-lugar-contracoes",
+  "level": "A1",
+  "module": "a1-preposicoes-numeros",
+  "title": "Предлоги места и их слияние с артиклем",
+  "titlePt": "Preposições de lugar e contrações",
+  "requires": [
+    "a1-artigos-genero-numero",
+    "a1-ser-estar"
+  ],
+  "theory": "## Четыре главных предлога\n\n| предлог | значение | пример |\n|---|---|---|\n| **em** | в, на (где?) | **Estou em Lisboa.** |\n| **a** | в, на (куда?) | **Vou a Braga.** |\n| **de** | из, от; принадлежность | **Sou de Moscovo.** **O carro do Pedro.** |\n| **por** | через, по (по пути) | **Passo por Coimbra.** |\n\n## Слияние с артиклем\n\nС определённым артиклем эти предлоги **обязательно** сливаются в одно слово:\n\n| | o | a | os | as |\n|---|---|---|---|---|\n| **em** | no | na | nos | nas |\n| **de** | do | da | dos | das |\n| **a** | ao | **à** | aos | **às** |\n| **por** | pelo | pela | pelos | pelas |\n\n- **O livro está na mesa.** — Книга на столе.\n- **Vamos ao cinema.** — Пойдём в кино.\n- **Vou à praia.** — Я иду на пляж (**a + a = à**, с грависом).\n- **O comboio passa pelo centro.** — Поезд идёт через центр.\n\nС неопределённым артиклем в Португалии тоже обычно сливают: **em + um = num**, **em + uma = numa**: **Trabalho num banco.**\n\n## Города, страны, «дома»\n\nБольшинство городов — **без артикля**, но некоторые — с ним:\n\n| без артикля | с артиклем |\n|---|---|\n| **em Lisboa, de Braga, a Faro** | **no Porto, do Porto, ao Porto** |\n| **em Moscovo, em Coimbra** | **no Algarve, na Madeira** |\n\nСтраны обычно с артиклем: **na Rússia, no Brasil, da Alemanha**. Исключение — **Portugal**: **em Portugal, de Portugal**.\n\n**Casa** в значении «свой дом» — без артикля: **Estou em casa** (я дома), **Vou para casa** (иду домой), **Saio de casa às oito**. Чужой дом — **em casa da Ana** (так чаще) или с артиклем **na casa da Ana**.\n\n## Куда: a или para\n\nПосле **ir, chegar, voltar** — **a** или **para**, **никогда не em**: **Vou ao supermercado**, **Chego a Lisboa às dez**. **Para** подчёркивает направление или более долгое пребывание: **Vou para o Algarve em agosto.**\n\n## Предлоги места\n\n| выражение | перевод | пример |\n|---|---|---|\n| **em cima de** | на, сверху | **em cima da mesa** |\n| **debaixo de** | под | **debaixo da cama** |\n| **ao lado de** | рядом с | **ao lado do banco** |\n| **em frente a / de** | напротив | **em frente à estação** |\n| **atrás de** | за, позади | **atrás do prédio** |\n| **dentro de** | внутри | **dentro da caixa** |\n| **perto de / longe de** | близко / далеко от | **perto do metro** |\n| **entre** | между | **entre a farmácia e o café** |\n\nВторая часть этих выражений (**de**, **a**) тоже сливается с артиклем.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Vou ao** cinema. | Vou no cinema. | в pt-PT движение — только **a / para** |\n| **Vou à** praia. | Vou na praia. | |\n| **em frente à** estação | em frente da estação | в pt-PT частотнее **em frente a** |\n| **num** café | em um café | в Португалии слитная форма — норма и на письме |\n\nБразильское *ir em* — одна из самых заметных ошибок: в Португалии его воспринимают как ошибку, а не как вариант.",
+  "commonErrors": "- **Нет слияния**: *em o banco* ✗ → **no banco** ✓; *de a Ana* ✗ → **da Ana** ✓.\n- **Ir em** (бразильский вариант и калька с «в»): *Vou em Lisboa* ✗ → **Vou a Lisboa** / **Vou para Lisboa** ✓.\n- **Артикль с casa в значении «дома»**: *Estou na casa* ✗ → **Estou em casa** ✓.\n- **Без артикля перед Porto**: *Moro em Porto* ✗ → **Moro no Porto** ✓.\n- **Артикль перед Portugal**: *Vivo na Portugal* ✗ → **Vivo em Portugal** ✓.\n- **à / há / a**: *Vou há praia* ✗ → **Vou à praia** ✓ (à = a + a).\n- **Русское «на»** не всегда **em**: «на работе» — **no trabalho**, «на пляж» — **à praia**, «в университет» — **à universidade**.\n- **Пропуск de**: *perto a estação* ✗ → **perto da estação** ✓.",
+  "examples": [
+    {
+      "pt": "Moro no Porto, mas trabalho em Braga.",
+      "ru": "Я живу в Порту, а работаю в Браге.",
+      "audio": true
+    },
+    {
+      "pt": "Hoje fico em casa, estou muito cansada.",
+      "ru": "Сегодня я дома, я очень устала.",
+      "audio": true
+    },
+    {
+      "pt": "Vamos à praia no domingo?",
+      "ru": "Поедем на пляж в воскресенье?",
+      "audio": true
+    },
+    {
+      "pt": "A farmácia fica em frente à estação.",
+      "ru": "Аптека напротив вокзала.",
+      "audio": true
+    },
+    {
+      "pt": "O elétrico 28 passa pela Baixa.",
+      "ru": "Трамвай 28 проходит через Байшу.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-01",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "O livro está ___ mesa.",
+      "answer": [
+        "na",
+        "em cima da"
+      ],
+      "hint": "em + a",
+      "ru": "Книга на столе."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-02",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Moro ___ Porto há dois anos.",
+      "answer": [
+        "no"
+      ],
+      "ru": "Я живу в Порту уже два года.",
+      "explanation": "Porto употребляется с артиклем: o Porto → no Porto."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-03",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "A Inês trabalha ___ Lisboa.",
+      "answer": [
+        "em"
+      ],
+      "ru": "Инеш работает в Лиссабоне.",
+      "explanation": "Lisboa — без артикля."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-04",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Hoje à noite vamos ___ cinema.",
+      "answer": [
+        "ao"
+      ],
+      "ru": "Сегодня вечером мы идём в кино.",
+      "explanation": "ir a + o = ao."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-05",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Amanhã vou ___ praia com os miúdos.",
+      "answer": [
+        "à",
+        "para a"
+      ],
+      "ru": "Завтра я поеду на пляж с детьми.",
+      "explanation": "a + a = à."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-06",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "O comboio passa ___ centro da cidade.",
+      "answer": [
+        "pelo"
+      ],
+      "hint": "por + o",
+      "ru": "Поезд проходит через центр города."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-07",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "A farmácia fica ao lado ___ banco.",
+      "answer": [
+        "do"
+      ],
+      "ru": "Аптека рядом с банком."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-08",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Hoje fico ___ casa, estou cansado.",
+      "answer": [
+        "em"
+      ],
+      "hint": "«дома»",
+      "ru": "Сегодня я останусь дома, я устал.",
+      "explanation": "«Дома» — em casa, без артикля."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-09",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "Sou ___ Rússia, mas vivo ___ Portugal.",
+      "options": [
+        "de / em",
+        "da / em",
+        "da / no",
+        "de / na"
+      ],
+      "correct": 1,
+      "explanation": "a Rússia — с артиклем (da); Portugal — без (em)."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-10",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "Os meus pais estão ___ Algarve.",
+      "options": [
+        "em",
+        "na",
+        "ao",
+        "no"
+      ],
+      "correct": 3,
+      "explanation": "o Algarve → no Algarve."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-11",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "Vamos ___ supermercado?",
+      "options": [
+        "no",
+        "em o",
+        "ao",
+        "em"
+      ],
+      "correct": 2,
+      "explanation": "Движение — ir a: a + o = ao. «Vamos no» — бразилизм."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-12",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "Encontramo-nos ___ café da esquina.",
+      "options": [
+        "no",
+        "ao",
+        "em o",
+        "à"
+      ],
+      "correct": 0,
+      "explanation": "Место встречи (где?) — em + o = no."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-13",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "Passeamos ___ ruas de Alfama.",
+      "options": [
+        "pelos",
+        "pela",
+        "pelas",
+        "por as"
+      ],
+      "correct": 2,
+      "explanation": "por + as = pelas (as ruas — ж. р. мн. ч.)."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-14",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "transform",
+      "prompt": "Vou para a escola.",
+      "instruction": "Замените para на a (со слиянием).",
+      "answer": [
+        "Vou à escola.",
+        "Eu vou à escola."
+      ]
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-15",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "transform",
+      "prompt": "Venho de + o Porto.",
+      "instruction": "Соедините предлог с артиклем и запишите фразу.",
+      "answer": [
+        "Venho do Porto.",
+        "Eu venho do Porto."
+      ]
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-16",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "transform",
+      "prompt": "Moro em Lisboa.",
+      "instruction": "Замените Lisboa на Porto.",
+      "answer": [
+        "Moro no Porto.",
+        "Eu moro no Porto."
+      ],
+      "explanation": "Porto — с артиклем."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-17",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "order-words",
+      "words": [
+        "para",
+        "O",
+        "frente",
+        "autocarro",
+        "em",
+        "hospital",
+        "ao"
+      ],
+      "answer": "O autocarro para em frente ao hospital",
+      "ru": "Автобус останавливается напротив больницы."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-18",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "order-words",
+      "words": [
+        "casa",
+        "Ela",
+        "banho",
+        "na",
+        "está",
+        "de"
+      ],
+      "answer": "Ela está na casa de banho",
+      "ru": "Она в ванной."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-19",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "translate-ru-pt",
+      "ru": "Я на работе.",
+      "answer": [
+        "Estou no trabalho.",
+        "Eu estou no trabalho.",
+        "Estou no emprego.",
+        "Eu estou no emprego."
+      ],
+      "explanation": "«На работе» — no trabalho (em + o)."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-20",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "translate-ru-pt",
+      "ru": "Мы идём на пляж.",
+      "answer": [
+        "Vamos à praia.",
+        "Nós vamos à praia.",
+        "Vamos para a praia.",
+        "Nós vamos para a praia."
+      ],
+      "explanation": "Направление — a / para, не em."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-21",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "listen-type",
+      "text": "O banco fica em frente à estação.",
+      "answer": [
+        "O banco fica em frente à estação."
+      ]
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-ex-22",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "match",
+      "prompt": "Соедините предлог с артиклем и слитную форму.",
+      "pairs": [
+        {
+          "left": "em + o",
+          "right": "no"
+        },
+        {
+          "left": "em + as",
+          "right": "nas"
+        },
+        {
+          "left": "a + a",
+          "right": "à"
+        },
+        {
+          "left": "a + os",
+          "right": "aos"
+        },
+        {
+          "left": "de + a",
+          "right": "da"
+        },
+        {
+          "left": "por + o",
+          "right": "pelo"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-01",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Os documentos estão ___ gaveta.",
+      "answer": [
+        "na"
+      ],
+      "ru": "Документы в ящике."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-02",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Ela vem ___ Moscovo.",
+      "answer": [
+        "de"
+      ],
+      "ru": "Она приезжает из Москвы."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-03",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Vou ___ Finanças tratar do NIF.",
+      "answer": [
+        "às"
+      ],
+      "hint": "as Finanças",
+      "ru": "Я иду в налоговую оформить NIF.",
+      "explanation": "a + as = às."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-04",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "fill-gap",
+      "prompt": "Ele passa ___ parque todos os dias.",
+      "answer": [
+        "pelo"
+      ],
+      "ru": "Он каждый день проходит через парк."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-05",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "— Onde estás? — Estou ___.",
+      "options": [
+        "na casa",
+        "em casa",
+        "no casa",
+        "à casa"
+      ],
+      "correct": 1,
+      "explanation": "«Дома» — em casa, без артикля."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-06",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "A minha família mora ___ Rússia.",
+      "options": [
+        "em",
+        "no",
+        "à",
+        "na"
+      ],
+      "correct": 3,
+      "explanation": "a Rússia → na Rússia."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-07",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "choice",
+      "prompt": "O teu telemóvel está ___ sofá.",
+      "options": [
+        "debaixo do",
+        "debaixo o",
+        "debaixo de o",
+        "debaixo no"
+      ],
+      "correct": 0,
+      "explanation": "debaixo de + o = debaixo do."
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-08",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "transform",
+      "prompt": "Estou no Porto.",
+      "instruction": "Скажите, что вы едете туда (ir a).",
+      "answer": [
+        "Vou ao Porto.",
+        "Eu vou ao Porto.",
+        "Vou para o Porto.",
+        "Eu vou para o Porto."
+      ]
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-09",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "translate-ru-pt",
+      "ru": "Аптека рядом с вокзалом.",
+      "answer": [
+        "A farmácia fica perto da estação.",
+        "A farmácia é perto da estação.",
+        "A farmácia está perto da estação.",
+        "A farmácia fica ao lado da estação.",
+        "A farmácia é ao lado da estação.",
+        "A farmácia está ao lado da estação.",
+        "A farmácia fica junto à estação."
+      ]
+    },
+    {
+      "id": "a1-preposicoes-lugar-contracoes-mt-10",
+      "topicId": "a1-preposicoes-lugar-contracoes",
+      "type": "listen-choice",
+      "text": "Estamos no centro de Lisboa.",
+      "prompt": "Что вы услышали?",
+      "options": [
+        "Мы едем в центр Лиссабона.",
+        "Мы в центре Лиссабона.",
+        "Мы из центра Лиссабона.",
+        "Мы гуляем по центру Лиссабона."
+      ],
+      "correct": 1
+    }
+  ]
+}

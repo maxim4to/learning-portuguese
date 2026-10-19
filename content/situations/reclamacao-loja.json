@@ -1,0 +1,178 @@
+{
+  "id": "reclamacao-loja",
+  "title": "Претензия в магазине",
+  "titlePt": "Reclamação numa loja",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Boa tarde. Em que posso ajudar?", "ru": "Добрый день. Чем могу помочь?" },
+    { "speaker": "B", "pt": "Boa tarde. Comprei esta máquina de café aqui há três meses e deixou de funcionar.", "ru": "Добрый день. Я купил здесь эту кофемашину три месяца назад, и она перестала работать." },
+    { "speaker": "A", "pt": "Tem o talão de compra?", "ru": "У вас есть чек?" },
+    { "speaker": "B", "pt": "Tenho, está aqui. Também tenho a fatura com o meu NIF.", "ru": "Есть, вот он. Ещё у меня есть счёт-фактура с моим NIF." },
+    { "speaker": "A", "pt": "Obrigada. Qual é exatamente o problema?", "ru": "Спасибо. В чём именно проблема?" },
+    { "speaker": "B", "pt": "Liga-se, mas não aquece a água. Parece-me um defeito de fábrica.", "ru": "Она включается, но не греет воду. По-моему, это заводской брак." },
+    { "speaker": "A", "pt": "Está dentro da garantia, por isso vamos enviá-la para a assistência técnica. Demora cerca de um mês.", "ru": "Она на гарантии, поэтому мы отправим её в сервисный центр. Это займёт около месяца." },
+    { "speaker": "B", "pt": "Um mês? Não podem trocá-la por uma nova?", "ru": "Месяц? Вы не можете обменять её на новую?" },
+    { "speaker": "A", "pt": "Lamento, mas a política da loja é enviar sempre primeiro para reparação.", "ru": "Сожалею, но по правилам магазина сначала всегда отправляем в ремонт." },
+    { "speaker": "B", "pt": "Pelo que sei, o consumidor pode escolher entre a reparação e a substituição. Posso falar com o gerente?", "ru": "Насколько я знаю, покупатель может выбрать между ремонтом и заменой. Могу я поговорить с управляющим?" },
+    { "speaker": "A", "pt": "O gerente não está neste momento. Só volta amanhã de manhã.", "ru": "Управляющего сейчас нет. Он вернётся только завтра утром." },
+    { "speaker": "B", "pt": "Então queria o livro de reclamações, se faz favor.", "ru": "Тогда дайте, пожалуйста, книгу жалоб." },
+    { "speaker": "A", "pt": "Com certeza, é um direito seu. Mas deixe-me primeiro ligar ao gerente... Pronto, ele autorizou a troca.", "ru": "Конечно, это ваше право. Но позвольте, я сначала ему позвоню... Всё, он разрешил обмен." },
+    { "speaker": "B", "pt": "Ótimo! Nesse caso, já não é preciso fazer a reclamação. Obrigado pela ajuda.", "ru": "Отлично! Тогда жалоба уже не нужна. Спасибо за помощь." },
+    { "speaker": "A", "pt": "Não tem de quê. Pode ir buscar uma máquina igual à prateleira e trazê-la à caixa.", "ru": "Не за что. Можете взять такую же машину с полки и подойти с ней к кассе." }
+  ],
+  "phrases": [
+    { "pt": "Comprei isto aqui e deixou de funcionar.", "ru": "Я купил это здесь, и оно перестало работать." },
+    { "pt": "Aqui tem o talão de compra.", "ru": "Вот чек." },
+    { "pt": "Tem um defeito de fábrica.", "ru": "Это заводской брак." },
+    { "pt": "Ainda está dentro da garantia.", "ru": "Он ещё на гарантии." },
+    { "pt": "Queria trocar por um novo.", "ru": "Я хотел бы обменять на новый." },
+    { "pt": "Prefiro o reembolso.", "ru": "Я предпочитаю вернуть деньги." },
+    { "pt": "Posso falar com o gerente?", "ru": "Могу я поговорить с управляющим?" },
+    { "pt": "Queria o livro de reclamações, se faz favor.", "ru": "Дайте, пожалуйста, книгу жалоб." },
+    { "pt": "Isto não está em condições.", "ru": "Это в неподобающем состоянии." },
+    { "pt": "Quanto tempo demora a reparação?", "ru": "Сколько займёт ремонт?" }
+  ],
+  "vocab": [
+    { "pt": "a reclamação", "ru": "жалоба, претензия", "example": "Fiz uma reclamação por escrito." },
+    { "pt": "reclamar", "ru": "жаловаться, предъявлять претензию", "example": "Vou reclamar ao gerente." },
+    { "pt": "o livro de reclamações", "ru": "книга жалоб", "example": "Todas as lojas são obrigadas a ter livro de reclamações." },
+    { "pt": "o duplicado", "ru": "копия (листа жалобы для клиента)", "example": "O cliente fica com o duplicado da reclamação." },
+    { "pt": "a ASAE", "ru": "ASAE — надзор за торговлей и безопасностью продуктов", "example": "A reclamação é enviada para a ASAE." },
+    { "pt": "a garantia", "ru": "гарантия", "example": "Os eletrodomésticos têm três anos de garantia." },
+    { "pt": "dentro da garantia", "ru": "на гарантии", "example": "O telemóvel ainda está dentro da garantia." },
+    { "pt": "o talão de compra", "ru": "кассовый чек", "example": "Guarde sempre o talão de compra." },
+    { "pt": "o talão de troca", "ru": "чек для обмена (без цены, для подарков)", "example": "Pode dar-me um talão de troca? É para oferecer." },
+    { "pt": "a fatura", "ru": "счёт-фактура (с NIF)", "example": "A fatura serve de prova de compra." },
+    { "pt": "o defeito", "ru": "дефект, брак", "example": "As calças têm um defeito na costura." },
+    { "pt": "o defeito de fábrica", "ru": "заводской брак", "example": "É claramente um defeito de fábrica." },
+    { "pt": "estragado", "ru": "сломанный, испорченный", "example": "O aspirador já está estragado." },
+    { "pt": "avariado", "ru": "неисправный (о технике)", "example": "A máquina de lavar está avariada." },
+    { "pt": "a avaria", "ru": "поломка", "example": "A avaria não foi causada por mau uso." },
+    { "pt": "deixar de funcionar", "ru": "перестать работать", "example": "O secador deixou de funcionar ao fim de um mês." },
+    { "pt": "o mau uso", "ru": "неправильное использование", "example": "A garantia não cobre o mau uso." },
+    { "pt": "a assistência técnica", "ru": "сервисный центр, техподдержка", "example": "Enviaram o portátil para a assistência técnica." },
+    { "pt": "a reparação", "ru": "ремонт", "example": "A reparação é gratuita dentro da garantia." },
+    { "pt": "reparar", "ru": "ремонтировать", "example": "Conseguem reparar isto numa semana?" },
+    { "pt": "a substituição", "ru": "замена", "example": "Pedi a substituição do aparelho." },
+    { "pt": "substituir", "ru": "заменить", "example": "Vão substituir o ecrã sem custos." },
+    { "pt": "a troca", "ru": "обмен", "example": "A troca só é possível com o talão." },
+    { "pt": "o reembolso", "ru": "возврат денег", "example": "Não fazemos reembolsos, só trocas." },
+    { "pt": "o vale", "ru": "купон, ваучер (вместо денег)", "example": "Deram-me um vale no valor do artigo." },
+    { "pt": "o gerente / a gerente", "ru": "управляющий / управляющая магазином", "example": "A gerente resolveu o problema." },
+    { "pt": "o funcionário / a funcionária", "ru": "сотрудник / сотрудница", "example": "O funcionário foi muito simpático." },
+    { "pt": "a caixa", "ru": "касса", "example": "Pague na caixa número três." },
+    { "pt": "a prateleira", "ru": "полка", "example": "Os secadores estão naquela prateleira." },
+    { "pt": "o consumidor", "ru": "потребитель, покупатель", "example": "O consumidor tem direitos." },
+    { "pt": "os direitos do consumidor", "ru": "права потребителя", "example": "Informei-me sobre os direitos do consumidor na DECO." },
+    { "pt": "a política da loja", "ru": "правила магазина", "example": "A política da loja permite trocas em trinta dias." },
+    { "pt": "a prova de compra", "ru": "доказательство покупки", "example": "O extrato bancário também serve de prova de compra." },
+    { "pt": "lamentar", "ru": "сожалеть", "example": "Lamento, mas não posso aceitar a devolução." }
+  ],
+  "exercises": [
+    {
+      "id": "reclamacao-loja-ex-01",
+      "topicId": "reclamacao-loja",
+      "type": "choice",
+      "prompt": "O empregado pergunta: «Tem o ___ de compra?»",
+      "options": ["recibo fiscal", "cupom", "talão", "nota"],
+      "correct": 2,
+      "explanation": "**O talão** (de compra) — кассовый чек. *Cupom (fiscal)* и *nota (fiscal)* — бразильские слова, а *recibo fiscal* так не говорят."
+    },
+    {
+      "id": "reclamacao-loja-ex-02",
+      "topicId": "reclamacao-loja",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a garantia", "right": "гарантия" },
+        { "left": "o defeito", "right": "дефект, брак" },
+        { "left": "avariado", "right": "неисправный" },
+        { "left": "a substituição", "right": "замена" },
+        { "left": "a assistência técnica", "right": "сервисный центр" }
+      ]
+    },
+    {
+      "id": "reclamacao-loja-ex-03",
+      "topicId": "reclamacao-loja",
+      "type": "fill-gap",
+      "prompt": "Comprei esta máquina aqui há três meses e ___ de funcionar.",
+      "answer": ["deixou"],
+      "hint": "«перестала» — прошедшее от deixar",
+      "ru": "Я купил эту машину здесь три месяца назад, и она перестала работать.",
+      "explanation": "**Deixar de + infinitivo** — «перестать что-то делать»: **deixou de funcionar**. Обратите внимание на **há três meses** — «три месяца назад»."
+    },
+    {
+      "id": "reclamacao-loja-ex-04",
+      "topicId": "reclamacao-loja",
+      "type": "listen-type",
+      "text": "Então queria o livro de reclamações, se faz favor.",
+      "answer": ["Então queria o livro de reclamações, se faz favor."],
+      "explanation": "Отказать в **livro de reclamações** магазин не вправе — это нарушение, за которое штрафуют."
+    },
+    {
+      "id": "reclamacao-loja-ex-05",
+      "topicId": "reclamacao-loja",
+      "type": "listen-choice",
+      "text": "Está dentro da garantia, por isso vamos enviá-la para a assistência técnica. Demora cerca de um mês.",
+      "prompt": "Что предлагает сотрудница?",
+      "options": ["Вернуть деньги сразу.", "Отправить машину в ремонт примерно на месяц.", "Обменять машину на новую.", "Купить новую со скидкой."],
+      "correct": 1,
+      "explanation": "**Dentro da garantia** — на гарантии; **a assistência técnica** — сервисный центр; **cerca de** — около."
+    },
+    {
+      "id": "reclamacao-loja-ex-06",
+      "topicId": "reclamacao-loja",
+      "type": "order-words",
+      "words": ["Não", "podem", "trocá-la", "por", "uma", "nova?"],
+      "answer": "Não podem trocá-la por uma nova?",
+      "ru": "Вы не можете обменять её на новую?"
+    },
+    {
+      "id": "reclamacao-loja-ex-07",
+      "topicId": "reclamacao-loja",
+      "type": "translate-ru-pt",
+      "ru": "Могу я поговорить с управляющим?",
+      "answer": ["Posso falar com o gerente?", "Podia falar com o gerente?", "Posso falar com o gerente, se faz favor?", "Podia falar com o gerente, se faz favor?", "Posso falar com a gerente?", "Podia falar com a gerente?", "Gostava de falar com o gerente.", "Queria falar com o gerente."],
+      "explanation": "**Falar com alguém** — «говорить с кем-то», предлог **com** обязателен. **Podia…?** звучит ещё вежливее."
+    },
+    {
+      "id": "reclamacao-loja-ex-08",
+      "topicId": "reclamacao-loja",
+      "type": "choice",
+      "prompt": "O cliente escreveu no livro de reclamações. Com que folha é que ele fica?",
+      "options": ["Com o original.", "Com nenhuma, fica tudo na loja.", "Com o triplicado.", "Com o duplicado."],
+      "correct": 3,
+      "explanation": "Лист жалобы заполняется в трёх экземплярах: **o original** магазин отправляет в надзорный орган (например, ASAE), **o duplicado** получает клиент, **o triplicado** остаётся в книге."
+    },
+    {
+      "id": "reclamacao-loja-ex-09",
+      "topicId": "reclamacao-loja",
+      "type": "fill-gap",
+      "prompt": "Liga-se, mas não aquece a água. Parece-me um defeito de ___.",
+      "answer": ["fábrica"],
+      "hint": "заводской брак",
+      "ru": "Она включается, но не греет воду. По-моему, это заводской брак.",
+      "explanation": "**Defeito de fábrica** — заводской брак. **Parece-me** — «мне кажется» (ênclise в начале фразы)."
+    },
+    {
+      "id": "reclamacao-loja-ex-10",
+      "topicId": "reclamacao-loja",
+      "type": "transform",
+      "prompt": "Quero falar com o gerente.",
+      "instruction": "Сделай просьбу вежливой: используй «gostar de» в imperfeito",
+      "answer": ["Gostava de falar com o gerente.", "Eu gostava de falar com o gerente."],
+      "explanation": "**Gostava de…** (imperfeito) — типично португальское вежливое «я бы хотел». Твёрдо, но корректно — как раз для претензии."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы купили в магазине пылесос, через два месяца он сломался, а магазин предлагает ремонт на шесть недель. Напишите текст жалобы для книги жалоб: что, когда и где вы купили (с чеком), в чём неисправность, что предложил магазин, чего вы требуете (замена или возврат денег) и что вас не устроило в обслуживании.",
+    "sample": "No dia 12 de agosto comprei nesta loja um aspirador sem fios, no valor de 149 euros (talão n.º 2231, em anexo).\nAo fim de dois meses, o aspirador deixou de funcionar: a bateria não carrega, apesar de ter sido sempre usado de acordo com as instruções.\nO artigo está dentro da garantia. A loja propôs enviá-lo para a assistência técnica, com um prazo de seis semanas.\nNão aceito este prazo, porque preciso do aparelho todos os dias. Peço a substituição do aspirador por um novo ou, se não for possível, o reembolso do valor pago.\nTambém lamento que o funcionário se tenha recusado a chamar a gerente.\nAguardo uma resposta no prazo legal.",
+    "checklist": [
+      "Указаны дата, место покупки, цена и номер чека (talão)",
+      "Неисправность описана: deixou de funcionar, avariado, defeito",
+      "Упомянута гарантия (dentro da garantia) и предложение магазина",
+      "Чёткое требование: substituição или reembolso",
+      "Тон твёрдый, но вежливый, без грубостей"
+    ]
+  }
+}

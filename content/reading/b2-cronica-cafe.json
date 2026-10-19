@@ -1,0 +1,205 @@
+{
+  "id": "b2-cronica-cafe",
+  "level": "B2",
+  "title": "Crónica: a bica e o balcão",
+  "paragraphs": [
+    "Há quem diga que os portugueses não tomam café: tomam uma bica, um cimbalino, um pingado, um garoto, um abatanado. Cada pedido é uma pequena declaração de identidade, e o empregado, que já nos conhece, nem precisa de ouvir até ao fim.",
+    "No café do meu bairro — chamemos-lhe Café Central, porque todos os bairros têm um — o senhor Armando serve a mesma bica desde que eu andava na escola primária. Mudou o preço, mudou a máquina, mudaram os clientes. Ele não mudou. Continua a pousar a chávena no pires com aquele tilintar seco que, para mim, é o som oficial das manhãs.",
+    "O café, por cá, toma-se depressa e de pé, em três goles, ainda a escaldar. Ninguém se senta para beber uma bica às oito da manhã: encosta-se ao balcão, troca dois dedos de conversa sobre o tempo ou sobre o jogo de ontem, paga uns cêntimos e segue caminho. Quem passa a manhã sentado à mesa é, desconfia-se, reformado ou turista.",
+    "E, no entanto, «vamos tomar um café?» raramente tem a ver com café. É a fórmula com que se reata uma amizade, se pede um favor, se começa um namoro ou se dá uma má notícia com delicadeza. Já vi negócios fecharem-se e casamentos desfazerem-se à volta de uma mesa de fórmica, entre dois pastéis de nata.",
+    "Ultimamente, abriram na minha rua dois espaços de café de especialidade, com nomes em inglês, plantas penduradas no teto e um flat white a quatro euros e meio. Não tenho nada contra; às vezes até lá vou, por curiosidade. Mas sinto falta da pressa honesta do balcão, onde ninguém nos pergunta a origem do grão.",
+    "Talvez seja nostalgia. Ou talvez o café, entre nós, nunca tenha sido uma bebida, mas um pretexto: para sair de casa, para ver gente, para lembrar que ainda pertencemos a algum lado. Amanhã, às oito, lá estarei. O senhor Armando vai ver-me entrar e, antes de eu abrir a boca, já terá a chávena na mão."
+  ],
+  "glossary": [
+    {
+      "word": "pingado",
+      "ru": "эспрессо с каплей молока"
+    },
+    {
+      "word": "garoto",
+      "ru": "маленький кофе с молоком (в чашечке)"
+    },
+    {
+      "word": "abatanado",
+      "ru": "разбавленный эспрессо, «американо»"
+    },
+    {
+      "word": "chamemos-lhe",
+      "ru": "назовём его"
+    },
+    {
+      "word": "desde que eu andava na escola primária",
+      "ru": "с тех пор, как я ходил в начальную школу"
+    },
+    {
+      "word": "pousar a chávena no pires",
+      "ru": "ставить чашку на блюдце"
+    },
+    {
+      "word": "tilintar",
+      "ru": "звяканье"
+    },
+    {
+      "word": "encosta-se ao balcão",
+      "ru": "прислоняется к стойке"
+    },
+    {
+      "word": "troca dois dedos de conversa",
+      "ru": "перекидывается парой слов"
+    },
+    {
+      "word": "segue caminho",
+      "ru": "идёт дальше"
+    },
+    {
+      "word": "desconfia-se",
+      "ru": "подозревают, есть подозрение"
+    },
+    {
+      "word": "reformado",
+      "ru": "пенсионер"
+    },
+    {
+      "word": "se reata uma amizade",
+      "ru": "возобновляют дружбу"
+    },
+    {
+      "word": "namoro",
+      "ru": "роман, отношения"
+    },
+    {
+      "word": "desfazerem-se",
+      "ru": "распадаться"
+    },
+    {
+      "word": "penduradas no teto",
+      "ru": "подвешенные к потолку"
+    },
+    {
+      "word": "sinto falta da",
+      "ru": "мне не хватает"
+    },
+    {
+      "word": "um pretexto",
+      "ru": "предлог, повод"
+    },
+    {
+      "word": "pertencemos a algum lado",
+      "ru": "мы где-то свои, нам есть куда принадлежать"
+    }
+  ],
+  "questions": [
+    {
+      "id": "b2-cronica-cafe-q-01",
+      "topicId": "b2-cronica-cafe",
+      "type": "choice",
+      "prompt": "Segundo o autor, o que significa normalmente «vamos tomar um café?»?",
+      "options": [
+        "Um convite para conversar, pedir algo ou encontrar alguém",
+        "Que a pessoa está com sono",
+        "Um convite para um pequeno-almoço completo",
+        "Que a pessoa quer experimentar um café novo"
+      ],
+      "correct": 0,
+      "explanation": "**Raramente tem a ver com café** — это формула, чтобы помириться, попросить об услуге, начать роман или мягко сообщить плохую новость."
+    },
+    {
+      "id": "b2-cronica-cafe-q-02",
+      "topicId": "b2-cronica-cafe",
+      "type": "choice",
+      "prompt": "O que é que NÃO mudou no Café Central?",
+      "options": [
+        "O preço",
+        "A máquina",
+        "Os clientes",
+        "O senhor Armando"
+      ],
+      "correct": 3,
+      "explanation": "**Mudou o preço, mudou a máquina, mudaram os clientes. Ele não mudou.**"
+    },
+    {
+      "id": "b2-cronica-cafe-q-03",
+      "topicId": "b2-cronica-cafe",
+      "type": "choice",
+      "prompt": "Como se toma, tipicamente, a bica da manhã, segundo o texto?",
+      "options": [
+        "Sentado à mesa, a ler o jornal",
+        "Depressa, de pé, ao balcão",
+        "Em casa, antes de sair",
+        "Num espaço de café de especialidade"
+      ],
+      "correct": 1,
+      "explanation": "**O café, por cá, toma-se depressa e de pé** — у стойки, на ходу."
+    },
+    {
+      "id": "b2-cronica-cafe-q-04",
+      "topicId": "b2-cronica-cafe",
+      "type": "fill-gap",
+      "prompt": "Encosta-se ao balcão, troca dois ___ de conversa e segue caminho.",
+      "answer": [
+        "dedos"
+      ],
+      "hint": "идиома: пара слов",
+      "ru": "Облокачивается на стойку, перекидывается парой слов и идёт дальше.",
+      "explanation": "**Dois dedos de conversa** — идиома «перекинуться парой слов» (буквально «два пальца разговора»)."
+    },
+    {
+      "id": "b2-cronica-cafe-q-05",
+      "topicId": "b2-cronica-cafe",
+      "type": "choice",
+      "prompt": "Qual é a atitude do autor em relação aos novos cafés de especialidade?",
+      "options": [
+        "Detesta-os e nunca lá entra",
+        "Prefere-os ao café do bairro",
+        "Não tem nada contra, mas sente falta do balcão tradicional",
+        "Acha que são demasiado baratos"
+      ],
+      "correct": 2,
+      "explanation": "**Não tenho nada contra; às vezes até lá vou... Mas sinto falta da pressa honesta do balcão.**"
+    },
+    {
+      "id": "b2-cronica-cafe-q-06",
+      "topicId": "b2-cronica-cafe",
+      "type": "fill-gap",
+      "prompt": "Ou talvez o café, entre nós, nunca ___ (ser) uma bebida, mas um pretexto.",
+      "answer": [
+        "tenha sido"
+      ],
+      "hint": "perfeito do conjuntivo",
+      "ru": "А может быть, кофе у нас никогда и не был напитком — только поводом.",
+      "explanation": "**Talvez** + conjuntivo; для прошлого, связанного с настоящим, — pretérito perfeito do conjuntivo: **tenha sido**."
+    },
+    {
+      "id": "b2-cronica-cafe-q-07",
+      "topicId": "b2-cronica-cafe",
+      "type": "translate-ru-pt",
+      "ru": "Мне не хватает старого кафе в моём районе.",
+      "answer": [
+        "Sinto falta do antigo café do meu bairro.",
+        "Eu sinto falta do antigo café do meu bairro.",
+        "Sinto falta do velho café do meu bairro.",
+        "Eu sinto falta do velho café do meu bairro.",
+        "Sinto a falta do antigo café do meu bairro.",
+        "Sinto a falta do velho café do meu bairro.",
+        "Tenho saudades do antigo café do meu bairro.",
+        "Tenho saudades do velho café do meu bairro."
+      ],
+      "explanation": "«Мне не хватает» — **sinto falta de** / **sinto a falta de** (+ артикль: **de + o = do**) или **tenho saudades de**. Русская безличная конструкция передаётся личной формой глагола."
+    },
+    {
+      "id": "b2-cronica-cafe-q-08",
+      "topicId": "b2-cronica-cafe",
+      "type": "listen-choice",
+      "text": "O senhor Armando vai ver-me entrar e, antes de eu abrir a boca, já terá a chávena na mão.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "Сеньор Арманду попросит меня открыть рот, прежде чем подать чашку.",
+        "Я войду и сам возьму чашку у сеньора Арманду.",
+        "Сеньор Арманду не заметит, как я войду.",
+        "Сеньор Арманду увидит, как я вхожу, и ещё до того, как я открою рот, чашка уже будет у него в руке."
+      ],
+      "correct": 3,
+      "explanation": "**Vai ver-me entrar** — увидит, как я вхожу; **antes de eu abrir a boca** — личный инфинитив: «прежде чем я открою рот»; **já terá** — будущее: «уже будет держать»."
+    }
+  ]
+}

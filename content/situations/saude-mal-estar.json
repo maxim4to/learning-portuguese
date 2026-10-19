@@ -1,0 +1,188 @@
+{
+  "id": "saude-mal-estar",
+  "title": "Плохое самочувствие: SNS 24 и urgências",
+  "titlePt": "Mal-estar: SNS 24 e urgências",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "SNS 24, bom dia. Fala a enfermeira Rita. Em que posso ajudar?", "ru": "SNS 24, доброе утро. Медсестра Рита. Чем могу помочь?" },
+    { "speaker": "B", "pt": "Bom dia. Não me sinto nada bem desde ontem à noite. Tenho febre e dores de garganta.", "ru": "Доброе утро. Мне очень плохо со вчерашнего вечера. Температура и болит горло." },
+    { "speaker": "A", "pt": "Lamento. Pode dar-me o seu número de utente do SNS?", "ru": "Сочувствую. Назовите, пожалуйста, ваш номер пациента SNS." },
+    { "speaker": "B", "pt": "Posso, tenho aqui o cartão. Já lhe digo o número.", "ru": "Конечно, карточка у меня. Сейчас скажу номер." },
+    { "speaker": "A", "pt": "Obrigada. Que temperatura é que tem neste momento?", "ru": "Спасибо. Какая у вас сейчас температура?" },
+    { "speaker": "B", "pt": "Há uma hora tinha trinta e nove e meio. Tomei um paracetamol, mas não baixou muito.", "ru": "Час назад было тридцать девять с половиной. Я выпил парацетамол, но она почти не упала." },
+    { "speaker": "A", "pt": "Tem dificuldade em respirar ou dores no peito?", "ru": "Вам трудно дышать, есть боль в груди?" },
+    { "speaker": "B", "pt": "Não, mas estou com muita tosse e dói-me o corpo todo.", "ru": "Нет, но сильный кашель и ломит всё тело." },
+    { "speaker": "A", "pt": "É alérgico a algum medicamento? Tem alguma doença crónica?", "ru": "У вас есть аллергия на лекарства? Хронические заболевания?" },
+    { "speaker": "B", "pt": "Não tenho, não. Devo ir às urgências?", "ru": "Нет, ничего такого. Мне ехать в приёмное отделение?" },
+    { "speaker": "A", "pt": "Não é necessário. Vou encaminhá-lo para o seu centro de saúde. Pode ter consulta hoje à tarde.", "ru": "Не нужно. Я направлю вас в ваш центр здоровья. Вас могут принять сегодня днём." },
+    { "speaker": "B", "pt": "E se a febre não baixar durante a noite?", "ru": "А если температура ночью не спадёт?" },
+    { "speaker": "A", "pt": "Se piorar, ligue outra vez para o SNS 24 ou vá às urgências do hospital. Lá fazem a triagem e põem-lhe uma pulseira de cor.", "ru": "Если станет хуже, перезвоните в SNS 24 или поезжайте в приёмное отделение больницы. Там проводят сортировку и надевают цветной браслет." },
+    { "speaker": "B", "pt": "Uma pulseira? E o que significa a cor?", "ru": "Браслет? А что означает цвет?" },
+    { "speaker": "A", "pt": "Indica a prioridade: vermelho é emergência, verde ou azul pode esperar várias horas. Melhoras!", "ru": "Он показывает срочность: красный — экстренный случай, с зелёным или синим можно ждать несколько часов. Выздоравливайте!" }
+  ],
+  "phrases": [
+    { "pt": "Não me sinto bem.", "ru": "Мне нехорошо." },
+    { "pt": "Tenho febre e dores de cabeça.", "ru": "У меня температура и болит голова." },
+    { "pt": "Dói-me a garganta.", "ru": "У меня болит горло." },
+    { "pt": "Estou com tosse há três dias.", "ru": "Я кашляю уже три дня." },
+    { "pt": "Sou alérgico à penicilina.", "ru": "У меня аллергия на пенициллин." },
+    { "pt": "Devo ir às urgências?", "ru": "Мне ехать в приёмное отделение?" },
+    { "pt": "Queria marcar uma consulta no centro de saúde.", "ru": "Я хотел бы записаться на приём в центр здоровья." },
+    { "pt": "O meu número de utente é…", "ru": "Мой номер пациента SNS…" },
+    { "pt": "Preciso de baixa médica para o trabalho.", "ru": "Мне нужен больничный для работы." },
+    { "pt": "Melhoras!", "ru": "Выздоравливайте! / Поправляйся!" }
+  ],
+  "vocab": [
+    { "pt": "o mal-estar", "ru": "недомогание, плохое самочувствие", "example": "Acordei com um mal-estar geral." },
+    { "pt": "sentir-se mal", "ru": "плохо себя чувствовать", "example": "Senti-me mal no metro e tive de sair." },
+    { "pt": "a febre", "ru": "температура, жар", "example": "A febre subiu durante a noite." },
+    { "pt": "a tosse", "ru": "кашель", "example": "Esta tosse não me deixa dormir." },
+    { "pt": "a dor de garganta", "ru": "боль в горле", "example": "Tenho uma dor de garganta muito forte." },
+    { "pt": "a dor de cabeça", "ru": "головная боль", "example": "Tomei um comprimido para a dor de cabeça." },
+    { "pt": "doer", "ru": "болеть (о части тела)", "example": "Dói-me muito o estômago." },
+    { "pt": "a gripe", "ru": "грипп", "example": "Este ano tomei a vacina da gripe." },
+    { "pt": "a constipação", "ru": "простуда", "example": "É só uma constipação, não é nada grave." },
+    { "pt": "as náuseas", "ru": "тошнота", "example": "Desde ontem que tenho náuseas." },
+    { "pt": "os vómitos", "ru": "рвота", "example": "A criança teve vómitos durante a noite." },
+    { "pt": "a diarreia", "ru": "диарея", "example": "Com diarreia é importante beber muita água." },
+    { "pt": "as tonturas", "ru": "головокружение", "example": "Quando me levanto tenho tonturas." },
+    { "pt": "a falta de ar", "ru": "одышка, нехватка воздуха", "example": "Se tiver falta de ar, ligue para o 112." },
+    { "pt": "a dor no peito", "ru": "боль в груди", "example": "Uma dor no peito forte é sempre urgente." },
+    { "pt": "a alergia", "ru": "аллергия", "example": "Tenho alergia ao pólen na primavera." },
+    { "pt": "a doença crónica", "ru": "хроническое заболевание", "example": "A asma é uma doença crónica." },
+    { "pt": "o medicamento", "ru": "лекарство", "example": "Está a tomar algum medicamento?" },
+    { "pt": "o comprimido", "ru": "таблетка", "example": "Tome um comprimido de oito em oito horas." },
+    { "pt": "o xarope", "ru": "сироп", "example": "Este xarope para a tosse vende-se sem receita." },
+    { "pt": "a receita", "ru": "рецепт", "example": "A médica passou-me uma receita para o antibiótico." },
+    { "pt": "a farmácia de serviço", "ru": "дежурная аптека", "example": "À noite tem de ir à farmácia de serviço." },
+    { "pt": "o SNS 24", "ru": "государственная линия медконсультаций (808 24 24 24)", "example": "Antes de ir às urgências, ligue para o SNS 24." },
+    { "pt": "o centro de saúde", "ru": "поликлиника, центр здоровья", "example": "O centro de saúde abre às oito." },
+    { "pt": "o médico de família", "ru": "семейный врач", "example": "Ainda não tenho médico de família." },
+    { "pt": "o número de utente", "ru": "номер пациента в системе SNS", "example": "Sem número de utente não consigo marcar consulta." },
+    { "pt": "as urgências", "ru": "приёмное отделение, неотложка", "example": "Esperei cinco horas nas urgências." },
+    { "pt": "a triagem", "ru": "сортировка пациентов по срочности", "example": "Na triagem mediram-me a tensão." },
+    { "pt": "a pulseira", "ru": "браслет (цвет срочности)", "example": "Deram-me uma pulseira amarela." },
+    { "pt": "a sala de espera", "ru": "зал ожидания", "example": "A sala de espera estava cheia." },
+    { "pt": "a taxa moderadora", "ru": "плата за услуги SNS (сейчас — в основном за urgências без направления)", "example": "Se for às urgências encaminhado pelo SNS 24, não paga taxa moderadora." },
+    { "pt": "o INEM / o 112", "ru": "служба скорой помощи / номер экстренных служб", "example": "Ligámos para o 112 e o INEM chegou em dez minutos." },
+    { "pt": "encaminhar", "ru": "направить (к врачу, в больницу)", "example": "A enfermeira encaminhou-me para o hospital." },
+    { "pt": "piorar / melhorar", "ru": "ухудшиться / улучшиться", "example": "Se piorar, volte cá." },
+    { "pt": "o certificado de incapacidade temporária", "ru": "больничный лист (разг. a baixa)", "example": "O médico passou-me um certificado de incapacidade temporária de três dias." }
+  ],
+  "exercises": [
+    {
+      "id": "saude-mal-estar-ex-01",
+      "topicId": "saude-mal-estar",
+      "type": "choice",
+      "prompt": "Em Portugal, para falar por telefone com um enfermeiro antes de ir ao médico, liga-se para ___.",
+      "options": ["o 112", "a farmácia", "o SNS 24", "o INEM"],
+      "correct": 2,
+      "explanation": "**SNS 24** (808 24 24 24) — круглосуточная линия: медсестра оценивает симптомы и направляет в центр здоровья или в urgências. **112** и **INEM** — только для экстренных случаев."
+    },
+    {
+      "id": "saude-mal-estar-ex-02",
+      "topicId": "saude-mal-estar",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a tosse", "right": "кашель" },
+        { "left": "a constipação", "right": "простуда" },
+        { "left": "a receita", "right": "рецепт" },
+        { "left": "o comprimido", "right": "таблетка" },
+        { "left": "a triagem", "right": "сортировка по срочности" }
+      ]
+    },
+    {
+      "id": "saude-mal-estar-ex-03",
+      "topicId": "saude-mal-estar",
+      "type": "fill-gap",
+      "prompt": "___ a garganta e tenho febre.",
+      "answer": ["Dói-me"],
+      "hint": "«у меня болит»: doer + местоимение",
+      "ru": "У меня болит горло и температура.",
+      "explanation": "Как в русском «мне больно»: **dói-me a garganta**, **doem-me as costas**. В начале фразы местоимение ставится после глагола."
+    },
+    {
+      "id": "saude-mal-estar-ex-04",
+      "topicId": "saude-mal-estar",
+      "type": "listen-type",
+      "text": "Não tenho, não. Devo ir às urgências?",
+      "answer": ["Não tenho, não. Devo ir às urgências?"],
+      "explanation": "**Não tenho, não** — типично португальский ответ с повтором глагола. **As urgências** — во множественном числе."
+    },
+    {
+      "id": "saude-mal-estar-ex-05",
+      "topicId": "saude-mal-estar",
+      "type": "listen-choice",
+      "text": "Não é necessário. Vou encaminhá-lo para o seu centro de saúde. Pode ter consulta hoje à tarde.",
+      "prompt": "Что советует медсестра?",
+      "options": ["Сразу ехать в приёмное отделение", "Обратиться в свой центр здоровья — приём сегодня днём", "Вызвать скорую помощь", "Купить лекарство в аптеке и ждать"],
+      "correct": 1,
+      "explanation": "**Encaminhar para o centro de saúde** — направить в поликлинику; **pode ter consulta hoje à tarde** — приём возможен сегодня днём."
+    },
+    {
+      "id": "saude-mal-estar-ex-06",
+      "topicId": "saude-mal-estar",
+      "type": "order-words",
+      "words": ["Queria", "marcar", "uma", "consulta", "no", "centro", "de", "saúde."],
+      "answer": "Queria marcar uma consulta no centro de saúde.",
+      "ru": "Я хотел бы записаться на приём в центр здоровья."
+    },
+    {
+      "id": "saude-mal-estar-ex-07",
+      "topicId": "saude-mal-estar",
+      "type": "translate-ru-pt",
+      "ru": "Мне плохо со вчерашнего дня.",
+      "answer": [
+        "Não me sinto bem desde ontem.",
+        "Desde ontem que não me sinto bem.",
+        "Desde ontem não me sinto bem.",
+        "Sinto-me mal desde ontem.",
+        "Desde ontem que me sinto mal.",
+        "Estou mal desde ontem.",
+        "Desde ontem que estou mal.",
+        "Não estou bem desde ontem."
+      ],
+      "explanation": "**Sentir-se**: после **não** и **que** местоимение перед глаголом (**não me sinto**), без «магнитов» — после (**sinto-me mal**)."
+    },
+    {
+      "id": "saude-mal-estar-ex-08",
+      "topicId": "saude-mal-estar",
+      "type": "choice",
+      "prompt": "Qual destas frases está correta em pt-PT?",
+      "options": ["Me sinto mal.", "Eu me sinto mal.", "Sinto mal-me.", "Sinto-me mal."],
+      "correct": 3,
+      "explanation": "В pt-PT фраза не начинается с местоимения: **Sinto-me mal**. *Me sinto* и *Eu me sinto* — бразильский порядок."
+    },
+    {
+      "id": "saude-mal-estar-ex-09",
+      "topicId": "saude-mal-estar",
+      "type": "fill-gap",
+      "prompt": "Se ___ (ter, o senhor) dificuldade em respirar, ligue logo para o 112.",
+      "answer": ["tiver"],
+      "hint": "условие в будущем → futuro do conjuntivo",
+      "ru": "Если вам станет трудно дышать, сразу звоните 112.",
+      "explanation": "Futuro do conjuntivo от **ter**: основа **tiver-** (от **tiveram**) → **se tiver**. Не *se tem* и не *se ter*."
+    },
+    {
+      "id": "saude-mal-estar-ex-10",
+      "topicId": "saude-mal-estar",
+      "type": "transform",
+      "prompt": "Ligas outra vez para o SNS 24.",
+      "instruction": "Преврати в вежливый совет пациенту на «вы» (o senhor): imperativo",
+      "answer": ["Ligue outra vez para o SNS 24."],
+      "explanation": "Вежливый императив для **o senhor / a senhora** = presente do conjuntivo: **ligue**, **vá**, **tome**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вашей дочери 4 года, ночью у неё поднялась температура. Напишите диалог из 8–10 реплик со SNS 24: представьтесь и назовите номер пациента дочери, опишите симптомы и с какого времени они начались, скажите, какое лекарство дали и какая сейчас температура, ответьте про аллергии, спросите, нужно ли ехать в urgências и что делать, если станет хуже.",
+    "sample": "— SNS 24, boa noite. Fala o enfermeiro Pedro. Em que posso ajudar?\n— Boa noite. Estou a ligar por causa da minha filha. Tem quatro anos e está com febre desde as dez da noite.\n— Tem aí o número de utente dela?\n— Tenho, sim. Está aqui no cartão de cidadão dela. Já lhe digo.\n— Que temperatura é que ela tem agora?\n— Tinha trinta e nove. Dei-lhe ben-u-ron há uma hora e agora tem trinta e oito.\n— Tem vómitos, manchas na pele ou dificuldade em respirar?\n— Não, só tosse e dói-lhe a garganta. E não é alérgica a nenhum medicamento.\n— Então não precisa de ir às urgências. Dê-lhe muitos líquidos e marque consulta no centro de saúde amanhã.\n— E se ela piorar durante a noite?\n— Se piorar, ligue outra vez ou vá às urgências pediátricas. Melhoras!",
+    "checklist": [
+      "Симптомы и их начало: está com febre desde…, tem tosse, dói-lhe a garganta",
+      "Названа температура и принятое лекарство (dei-lhe…, há uma hora)",
+      "Местоимения стоят правильно: não me sinto, dói-me / dói-lhe",
+      "Есть вопрос Devo ir às urgências? или похожий",
+      "После se для будущего — futuro do conjuntivo (se piorar, se tiver)"
+    ]
+  }
+}

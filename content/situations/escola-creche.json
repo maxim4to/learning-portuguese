@@ -1,0 +1,188 @@
+{
+  "id": "escola-creche",
+  "title": "Школа и детский сад",
+  "titlePt": "Na escola e na creche",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia. Secretaria do agrupamento, em que posso ajudar?", "ru": "Доброе утро. Секретариат школьного объединения, чем могу помочь?" },
+    { "speaker": "B", "pt": "Bom dia. Mudámo-nos para cá há pouco tempo e queria matricular o meu filho no primeiro ano.", "ru": "Доброе утро. Мы недавно сюда переехали, и я хотел бы записать сына в первый класс." },
+    { "speaker": "A", "pt": "Muito bem. As matrículas fazem-se no Portal das Matrículas, mas posso ajudá-lo aqui. Que idade tem o menino?", "ru": "Хорошо. Записывают через портал Portal das Matrículas, но я могу помочь вам здесь. Сколько лет мальчику?" },
+    { "speaker": "B", "pt": "Fez seis anos em agosto. Ainda não fala bem português.", "ru": "В августе исполнилось шесть. Он пока плохо говорит по-португальски." },
+    { "speaker": "A", "pt": "Não se preocupe. Temos apoio de Português Língua Não Materna.", "ru": "Не волнуйтесь. У нас есть занятия по программе «Португальский как неродной»." },
+    { "speaker": "B", "pt": "Ainda bem. Que documentos é que tenho de trazer?", "ru": "Как хорошо. Какие документы мне нужно принести?" },
+    { "speaker": "A", "pt": "O documento de identificação dele, o boletim de vacinas, o NIF, o NISS e um comprovativo de morada.", "ru": "Его документ, прививочный сертификат, NIF, NISS и подтверждение адреса." },
+    { "speaker": "B", "pt": "E qual é o horário das aulas?", "ru": "А какое расписание уроков?" },
+    { "speaker": "A", "pt": "As aulas são das nove às três e meia. Depois há o ATL, até às sete.", "ru": "Уроки с девяти до половины четвёртого. Потом продлёнка (ATL) до семи." },
+    { "speaker": "B", "pt": "O ATL é pago? Eu e a minha mulher trabalhamos os dois até às seis.", "ru": "Продлёнка платная? Мы с женой оба работаем до шести." },
+    { "speaker": "A", "pt": "É, mas o valor depende do escalão do abono de família. A inscrição faz-se na junta de freguesia.", "ru": "Платная, но сумма зависит от категории (escalão) детского пособия. Записываются в управе района (junta de freguesia)." },
+    { "speaker": "B", "pt": "Percebo. Também tenho uma filha de dois anos. Há vagas na creche?", "ru": "Понятно. У меня ещё дочка, ей два года. В яслях есть места?" },
+    { "speaker": "A", "pt": "A creche não é nossa, mas com a Creche Feliz é gratuita. Tem de inscrevê-la na lista de espera.", "ru": "Ясли не при нашей школе, но по программе Creche Feliz они бесплатные. Её нужно записать в лист ожидания." },
+    { "speaker": "B", "pt": "Ótimo. E quando é a primeira reunião de pais?", "ru": "Отлично. А когда первое родительское собрание?" },
+    { "speaker": "A", "pt": "Na primeira semana de aulas. A professora titular vai enviar a convocatória pela caderneta.", "ru": "В первую учебную неделю. Классный учитель пришлёт приглашение через дневник (caderneta)." }
+  ],
+  "phrases": [
+    { "pt": "Queria matricular o meu filho no primeiro ano.", "ru": "Я хотел бы записать сына в первый класс." },
+    { "pt": "Que documentos é que tenho de trazer?", "ru": "Какие документы мне нужно принести?" },
+    { "pt": "Qual é o horário das aulas?", "ru": "Какое расписание уроков?" },
+    { "pt": "A que horas tenho de ir buscá-lo?", "ru": "Во сколько мне нужно его забрать?" },
+    { "pt": "Há vagas na creche?", "ru": "В яслях есть места?" },
+    { "pt": "Sou o encarregado de educação.", "ru": "Я законный представитель ребёнка (перед школой)." },
+    { "pt": "Ele ainda não fala bem português.", "ru": "Он пока плохо говорит по-португальски." },
+    { "pt": "A minha filha vai faltar amanhã porque está doente.", "ru": "Дочь завтра не придёт, потому что болеет." },
+    { "pt": "Quando é a reunião de pais?", "ru": "Когда родительское собрание?" },
+    { "pt": "Podia marcar uma reunião com a professora titular?", "ru": "Можно назначить встречу с классным учителем?" }
+  ],
+  "vocab": [
+    { "pt": "a matrícula", "ru": "запись в школу (на учебный год)", "example": "A matrícula no primeiro ano faz-se entre abril e maio." },
+    { "pt": "matricular", "ru": "записать (в школу)", "example": "Já matriculámos a nossa filha." },
+    { "pt": "o agrupamento de escolas", "ru": "объединение школ под одной дирекцией", "example": "O agrupamento tem três escolas e dois jardins de infância." },
+    { "pt": "a secretaria", "ru": "секретариат, канцелярия школы", "example": "A secretaria fecha às quatro." },
+    { "pt": "a creche", "ru": "ясли (до 3 лет)", "example": "A creche aceita bebés a partir dos quatro meses." },
+    { "pt": "o jardim de infância", "ru": "детский сад (3–6 лет)", "example": "O mais novo anda no jardim de infância." },
+    { "pt": "a escola básica", "ru": "основная школа (1–9 классы)", "example": "A escola básica fica a cinco minutos de casa." },
+    { "pt": "o primeiro ciclo", "ru": "начальная школа (1–4 классы)", "example": "No primeiro ciclo há uma só professora por turma." },
+    { "pt": "o ano letivo", "ru": "учебный год", "example": "O ano letivo começa em meados de setembro." },
+    { "pt": "o período", "ru": "учебный триместр (в части школ — semestre)", "example": "As notas do primeiro período saem em dezembro." },
+    { "pt": "a turma", "ru": "класс (группа учеников)", "example": "Há vinte e dois alunos na turma." },
+    { "pt": "a professora titular", "ru": "классный учитель в начальной школе", "example": "A professora titular chama-se Joana." },
+    { "pt": "o diretor de turma", "ru": "классный руководитель (с 5 класса)", "example": "O diretor de turma recebe os pais às quartas." },
+    { "pt": "a educadora de infância", "ru": "воспитательница", "example": "A educadora de infância disse que ele já fala português." },
+    { "pt": "o encarregado de educação", "ru": "законный представитель ученика перед школой", "example": "O encarregado de educação tem de assinar a autorização." },
+    { "pt": "a reunião de pais", "ru": "родительское собрание", "example": "A reunião de pais é às seis e meia." },
+    { "pt": "a caderneta", "ru": "дневник для связи школы с родителями", "example": "Assinei o recado na caderneta." },
+    { "pt": "os trabalhos de casa (TPC)", "ru": "домашнее задание", "example": "Hoje não há trabalhos de casa." },
+    { "pt": "o recreio", "ru": "перемена; школьный двор", "example": "As crianças brincam no recreio." },
+    { "pt": "a cantina / o refeitório", "ru": "школьная столовая", "example": "Ele almoça na cantina todos os dias." },
+    { "pt": "a ementa", "ru": "меню", "example": "A ementa da semana está no site da câmara." },
+    { "pt": "o lanche", "ru": "перекус, полдник", "example": "Pus uma fruta no lanche." },
+    { "pt": "o ATL", "ru": "продлёнка, кружки после уроков", "example": "O ATL fecha às sete." },
+    { "pt": "as férias escolares", "ru": "школьные каникулы", "example": "Nas férias escolares o ATL está aberto todo o dia." },
+    { "pt": "a visita de estudo", "ru": "школьная экскурсия", "example": "A turma vai a uma visita de estudo ao Oceanário." },
+    { "pt": "o boletim de vacinas", "ru": "прививочный сертификат", "example": "Traga o boletim de vacinas atualizado." },
+    { "pt": "o comprovativo de morada", "ru": "подтверждение адреса", "example": "Serve um contrato de arrendamento como comprovativo de morada." },
+    { "pt": "o abono de família", "ru": "детское пособие", "example": "Pedimos o abono de família na Segurança Social." },
+    { "pt": "o escalão", "ru": "категория (по доходу семьи)", "example": "Com o escalão A, as refeições são gratuitas." },
+    { "pt": "a vaga", "ru": "свободное место", "example": "Já não há vagas para este ano." },
+    { "pt": "a lista de espera", "ru": "лист ожидания", "example": "O nosso filho está em terceiro lugar na lista de espera." },
+    { "pt": "faltar", "ru": "пропустить, отсутствовать", "example": "Ele faltou dois dias por causa da febre." },
+    { "pt": "justificar a falta", "ru": "объяснить пропуск (запиской)", "example": "Tenho de justificar a falta até sexta-feira." },
+    { "pt": "ir buscar / levar à escola", "ru": "забирать / отводить в школу", "example": "Eu levo-o à escola e a minha mulher vai buscá-lo." },
+    { "pt": "a junta de freguesia", "ru": "управа района (местная администрация)", "example": "A junta de freguesia organiza o ATL." }
+  ],
+  "exercises": [
+    {
+      "id": "escola-creche-ex-01",
+      "topicId": "escola-creche",
+      "type": "choice",
+      "prompt": "A pessoa responsável pelo aluno perante a escola chama-se ___.",
+      "options": ["o tutor legal", "o diretor de turma", "o encarregado de educação", "o padrinho"],
+      "correct": 2,
+      "explanation": "**O encarregado de educação** — родитель или другой взрослый, официально отвечающий за ученика перед школой. **O diretor de turma** — учитель, классный руководитель."
+    },
+    {
+      "id": "escola-creche-ex-02",
+      "topicId": "escola-creche",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a caderneta", "right": "дневник для связи с родителями" },
+        { "left": "o recreio", "right": "перемена" },
+        { "left": "a ementa", "right": "меню" },
+        { "left": "a turma", "right": "класс (группа учеников)" },
+        { "left": "os trabalhos de casa", "right": "домашнее задание" }
+      ]
+    },
+    {
+      "id": "escola-creche-ex-03",
+      "topicId": "escola-creche",
+      "type": "fill-gap",
+      "prompt": "___ (nós / mudar-se) para cá há pouco tempo.",
+      "answer": ["Mudámo-nos", "Nós mudámo-nos"],
+      "hint": "pretérito perfeito, nós + клитика",
+      "ru": "Мы недавно сюда переехали.",
+      "explanation": "**Mudámos** + **nos** → **mudámo-nos**: перед **-nos** выпадает конечная **-s**. Ударение в **mudámos** отличает прошедшее время от настоящего (**mudamos**)."
+    },
+    {
+      "id": "escola-creche-ex-04",
+      "topicId": "escola-creche",
+      "type": "listen-type",
+      "text": "E qual é o horário das aulas?",
+      "answer": ["E qual é o horário das aulas?"],
+      "explanation": "**O horário das aulas** — расписание уроков. Так же спрашивают **o horário do ATL**, **o horário da secretaria**."
+    },
+    {
+      "id": "escola-creche-ex-05",
+      "topicId": "escola-creche",
+      "type": "listen-choice",
+      "text": "As aulas são das nove às três e meia. Depois há o ATL, até às sete.",
+      "prompt": "До скольки работает продлёнка (ATL)?",
+      "options": ["До семи вечера", "До половины четвёртого", "До шести вечера", "До девяти"],
+      "correct": 0,
+      "explanation": "Уроки **das nove às três e meia** (9:00–15:30), продлёнка **até às sete** — до 19:00."
+    },
+    {
+      "id": "escola-creche-ex-06",
+      "topicId": "escola-creche",
+      "type": "order-words",
+      "words": ["A", "que", "horas", "tenho", "de", "ir", "buscá-lo?"],
+      "answer": "A que horas tenho de ir buscá-lo?",
+      "ru": "Во сколько мне нужно его забрать?"
+    },
+    {
+      "id": "escola-creche-ex-07",
+      "topicId": "escola-creche",
+      "type": "translate-ru-pt",
+      "ru": "Мой сын завтра не придёт в школу, потому что болеет.",
+      "answer": [
+        "O meu filho vai faltar amanhã porque está doente.",
+        "Amanhã o meu filho vai faltar porque está doente.",
+        "O meu filho não vai à escola amanhã porque está doente.",
+        "Amanhã o meu filho não vai à escola porque está doente.",
+        "O meu filho amanhã não vai à escola porque está doente.",
+        "O meu filho vai faltar à escola amanhã porque está doente.",
+        "O meu filho amanhã vai faltar porque está doente.",
+        "Amanhã o meu filho vai faltar à escola porque está doente."
+      ],
+      "explanation": "**Faltar (à escola)** — пропустить занятия. «Болеет» — **está doente** (временное состояние → **estar**). Притяжательное — с артиклем: **o meu filho**."
+    },
+    {
+      "id": "escola-creche-ex-08",
+      "topicId": "escola-creche",
+      "type": "choice",
+      "prompt": "Como se chama em Portugal o espaço onde as crianças ficam depois das aulas, até os pais as irem buscar?",
+      "options": ["a creche", "o recreio", "a cantina", "o ATL"],
+      "correct": 3,
+      "explanation": "**O ATL** (Atividades de Tempos Livres) — продлёнка и кружки после уроков. **A creche** — ясли, **o recreio** — перемена, **a cantina** — столовая."
+    },
+    {
+      "id": "escola-creche-ex-09",
+      "topicId": "escola-creche",
+      "type": "fill-gap",
+      "prompt": "O valor do ATL depende do ___ do abono de família.",
+      "answer": ["escalão"],
+      "hint": "категория по уровню дохода",
+      "ru": "Стоимость продлёнки зависит от категории детского пособия.",
+      "explanation": "**O escalão** (A, B, C…) определяет льготы: бесплатное питание, учебники, скидку на ATL."
+    },
+    {
+      "id": "escola-creche-ex-10",
+      "topicId": "escola-creche",
+      "type": "transform",
+      "prompt": "Tem de inscrever a sua filha na lista de espera.",
+      "instruction": "Замени «a sua filha» местоимением",
+      "answer": ["Tem de inscrevê-la na lista de espera.", "Tem de a inscrever na lista de espera."],
+      "explanation": "После инфинитива на **-r** местоимение **a** превращается в **-la**, а **r** выпадает: **inscrever + a → inscrevê-la**. Вариант **tem de a inscrever** тоже нормален."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Ваш сын учится в 1-м классе. Напишите e-mail классному учителю (professora titular): объясните, что он пропустил два дня из-за температуры, приложите справку от врача, спросите, какие домашние задания нужно сделать, и попросите встречу, чтобы поговорить о его португальском. Укажите, когда вам удобно.",
+    "sample": "Cara Professora Joana,\n\nSou o pai do Mikhail, do primeiro ano, turma B.\nO Mikhail faltou na segunda-feira e na terça-feira porque esteve com febre. Envio em anexo o atestado médico para justificar as faltas.\nPodia dizer-me que trabalhos de casa é que ele tem de fazer?\nGostava também de marcar uma reunião consigo para falarmos sobre o português dele. Em casa falamos russo e ele ainda tem algumas dificuldades.\nPosso ir à escola às quartas ou às sextas, depois das cinco e meia.\n\nObrigado pela atenção.\nCom os melhores cumprimentos,\nAndrei Volkov",
+    "checklist": [
+      "Указаны имя ребёнка, класс и turma",
+      "Пропуск объяснён: faltou… porque esteve com febre, есть atestado médico",
+      "Есть вопрос о trabalhos de casa",
+      "Просьба о встрече смягчена: Podia…? / Gostava de marcar…",
+      "Названы удобные дни и время, есть вежливая подпись"
+    ]
+  }
+}

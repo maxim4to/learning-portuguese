@@ -1,0 +1,444 @@
+{
+  "id": "b1-conjuntivo-relativas",
+  "level": "B1",
+  "module": "b1-conjuntivo",
+  "title": "Сослагательное наклонение в относительных придаточных",
+  "titlePt": "Conjuntivo em orações relativas",
+  "requires": [
+    "b1-presente-conjuntivo",
+    "b1-futuro-conjuntivo"
+  ],
+  "theory": "## Главная идея\n\nВ придаточном с **que** («который», «кто») наклонение зависит от того, **существует ли конкретный предмет** в голове говорящего.\n\n| индикатив — знаю, что есть | conjuntivo — ищу, хочу, не уверен |\n|---|---|\n| **Conheço alguém que sabe alemão.** — Я знаю человека, который говорит по-немецки. | **Procuro alguém que saiba alemão.** — Ищу кого-нибудь, кто говорил бы по-немецки. |\n| **Tenho uma casa que tem jardim.** | **Quero uma casa que tenha jardim.** |\n| **Há um café aqui que abre às sete.** | **Há algum café que abra às sete?** |\n\nПо-русски это часто передаётся частицей «бы» или словами «какой-нибудь», «кто-нибудь».\n\n## Когда в относительном придаточном conjuntivo\n\n| ситуация | пример |\n|---|---|\n| поиск, желание, потребность | **Precisamos de um técnico que perceba de redes.** |\n| отрицание существования | **Não há ninguém que perceba isto.** **Não conheço nenhum restaurante que abra à segunda.** |\n| вопрос о существовании | **Há alguém que possa ajudar-me?** |\n| требование, условие | **Os candidatos devem ter um curso que seja reconhecido em Portugal.** |\n\nВ прошедшем — **imperfeito do conjuntivo**: **Procurava um quarto que fosse barato.** — Я искал комнату подешевле.\n\n## Futuro do conjuntivo в относительных\n\nЕсли придаточное относится к будущему и значит «любой, кто / что / где», в pt-PT используется **futuro do conjuntivo**:\n\n**Quem chegar primeiro, abre a porta.** — Кто придёт первым, откроет дверь.\n**Podes convidar os amigos que quiseres.** — Можешь пригласить каких хочешь друзей.\n**Faz o que achares melhor.** — Делай, как считаешь лучше.\n\n## «Кто бы ни», «что бы ни», «где бы ни»\n\nКонструкции с **quer que** всегда требуют **presente do conjuntivo** (о прошлом — imperfeito):\n\n| конструкция | значение | пример |\n|---|---|---|\n| **o que quer que** | что бы ни | **O que quer que aconteça, estou contigo.** |\n| **quem quer que** | кто бы ни | **Quem quer que seja, diz que não estou.** |\n| **onde quer que** | где / куда бы ни | **Onde quer que vás, leva o telemóvel.** |\n| **como quer que** | как бы ни | **Como quer que seja, temos de decidir.** |\n| **qualquer que** | какой бы ни | **Qualquer que seja a resposta, avisa-me.** |\n\nУстойчивые выражения с удвоенным глаголом: **seja como for** (как бы то ни было), **seja o que for** (что бы то ни было), **custe o que custar** (чего бы это ни стоило), **aconteça o que acontecer** (что бы ни случилось).\n\n## Проверка себя\n\nСпросите: «Я говорю о конкретном, известном мне предмете?» Да → индикатив. Нет, это лишь описание того, что нужно или чего нет → conjuntivo.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Estou à procura de** alguém que saiba... | **Estou procurando** alguém que saiba... | estar a + infinitivo / estar à procura de |\n| Onde quer que **vás**, leva o **telemóvel**. | Aonde quer que **você vá**, leve o **celular**. | tu и лексика pt-PT |\n| **Faz o que quiseres.** | **Faça o que você quiser.** | |\n\nПравило выбора наклонения одинаково в обеих нормах. В бразильской разговорной речи conjuntivo в таких придаточных иногда заменяют индикативом (*procuro alguém que sabe*), в pt-PT это звучит как ошибка.",
+  "commonErrors": "- **Индикатив при поиске**: *Procuro um apartamento que tem varanda* ✗ → **que tenha varanda** ✓.\n- **Conjuntivo о знакомом предмете**: *Tenho um amigo que saiba cozinhar* ✗ → **que sabe cozinhar** ✓.\n- **Индикатив после отрицания**: *Não há ninguém que sabe* ✗ → **Não há ninguém que saiba** ✓.\n- **Русское «бы» → condicional**: *Procuro alguém que falaria inglês* ✗ → **que fale inglês** ✓.\n- **Индикатив после quer que**: *O que quer que acontece* ✗ → **O que quer que aconteça** ✓.\n- **Presente вместо futuro do conjuntivo**: *Podes trazer quem queres* — разговорно; норма **quem quiseres** ✓.\n- **Калька «что бы ни»**: *O que que aconteça* ✗ → **O que quer que aconteça** ✓ (не забывайте **quer**).",
+  "examples": [
+    {
+      "pt": "Procuro um apartamento que tenha varanda e seja perto do metro.",
+      "ru": "Ищу квартиру с балконом и недалеко от метро.",
+      "audio": true
+    },
+    {
+      "pt": "Conheço um mecânico que é muito honesto.",
+      "ru": "Я знаю очень честного механика.",
+      "audio": true
+    },
+    {
+      "pt": "Não há ninguém nesta empresa que saiba russo.",
+      "ru": "В этой компании никто не знает русского.",
+      "audio": true
+    },
+    {
+      "pt": "Há alguma farmácia que esteja aberta ao domingo?",
+      "ru": "Есть какая-нибудь аптека, которая работает в воскресенье?",
+      "audio": true
+    },
+    {
+      "pt": "O que quer que aconteça, liga-me.",
+      "ru": "Что бы ни случилось, звони мне.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-conjuntivo-relativas-ex-01",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Procuro um apartamento que ___ (ter) varanda.",
+      "answer": [
+        "tenha"
+      ],
+      "ru": "Ищу квартиру с балконом.",
+      "explanation": "Квартира ещё не найдена → conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-02",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Conheço um restaurante que ___ (ter) bom bacalhau.",
+      "answer": [
+        "tem"
+      ],
+      "ru": "Я знаю ресторан, где хорошая треска.",
+      "explanation": "Ресторан конкретный и известен → индикатив."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-03",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Não há ninguém aqui que ___ (falar) russo.",
+      "answer": [
+        "fale"
+      ],
+      "ru": "Здесь никто не говорит по-русски."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-04",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Precisamos de uma pessoa que ___ (saber) conduzir.",
+      "answer": [
+        "saiba"
+      ],
+      "ru": "Нам нужен человек, который умеет водить."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-05",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "O que quer que ___ (acontecer), liga-me.",
+      "answer": [
+        "aconteça"
+      ],
+      "ru": "Что бы ни случилось, звони мне."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-06",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Onde quer que tu ___ (ir), eu vou contigo.",
+      "answer": [
+        "vás"
+      ],
+      "ru": "Куда бы ты ни пошёл, я пойду с тобой."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-07",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Há alguém que ___ (poder) ajudar-me?",
+      "answer": [
+        "possa"
+      ],
+      "ru": "Кто-нибудь может мне помочь?"
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-08",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Podes convidar os amigos que ___ (querer).",
+      "answer": [
+        "quiseres"
+      ],
+      "hint": "futuro do conjuntivo",
+      "ru": "Можешь пригласить каких хочешь друзей.",
+      "explanation": "Будущее «любые, какие захочешь» → futuro do conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-09",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "Tenho uma vizinha que ___ cinco línguas.",
+      "options": [
+        "fale",
+        "falar",
+        "fala",
+        "falasse"
+      ],
+      "correct": 2,
+      "explanation": "Конкретная соседка → индикатив."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-10",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "Queremos uma casa que ___ perto do metro.",
+      "options": [
+        "fica",
+        "fique",
+        "ficar",
+        "ficasse"
+      ],
+      "correct": 1,
+      "explanation": "Дом ещё не найден → conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-11",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "Não conheço nenhum café que ___ aberto à meia-noite.",
+      "options": [
+        "está",
+        "estiver",
+        "estivesse",
+        "esteja"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-12",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "___ quer que telefone, diz que não estou.",
+      "options": [
+        "O que",
+        "Quem",
+        "Onde",
+        "Como"
+      ],
+      "correct": 1,
+      "explanation": "Quem quer que telefone — кто бы ни позвонил (речь о человеке)."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-13",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "No ano passado procurava um quarto que ___ barato.",
+      "options": [
+        "fosse",
+        "seja",
+        "é",
+        "for"
+      ],
+      "correct": 0,
+      "explanation": "Прошедшее → imperfeito do conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-14",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "transform",
+      "prompt": "Conheço alguém que sabe reparar bicicletas.",
+      "instruction": "Начните с «Procuro alguém que...».",
+      "answer": [
+        "Procuro alguém que saiba reparar bicicletas."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-15",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "transform",
+      "prompt": "Há um autocarro que vai para o aeroporto.",
+      "instruction": "Сделайте отрицание: «Não há nenhum autocarro que...».",
+      "answer": [
+        "Não há nenhum autocarro que vá para o aeroporto."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-16",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "transform",
+      "prompt": "Ela tem um chefe que a compreende.",
+      "instruction": "Начните с «Ela quer um chefe que...».",
+      "answer": [
+        "Ela quer um chefe que a compreenda."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-17",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "order-words",
+      "words": [
+        "saiba",
+        "ninguém",
+        "há",
+        "resposta",
+        "a",
+        "Não",
+        "que"
+      ],
+      "answer": "Não há ninguém que saiba a resposta",
+      "ru": "Никто не знает ответа."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-18",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "order-words",
+      "words": [
+        "que",
+        "quer",
+        "não",
+        "ideias",
+        "que",
+        "mudo",
+        "digas,",
+        "de",
+        "O"
+      ],
+      "answer": "O que quer que digas, não mudo de ideias",
+      "ru": "Что бы ты ни сказал, я не передумаю."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-19",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "translate-ru-pt",
+      "ru": "Я ищу кого-нибудь, кто говорит по-португальски.",
+      "answer": [
+        "Procuro alguém que fale português.",
+        "Eu procuro alguém que fale português.",
+        "Estou à procura de alguém que fale português.",
+        "Ando à procura de alguém que fale português.",
+        "Estou a procurar alguém que fale português."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-20",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "translate-ru-pt",
+      "ru": "Где бы ты ни был, звони мне.",
+      "answer": [
+        "Onde quer que estejas, liga-me.",
+        "Onde quer que estejas, telefona-me.",
+        "Estejas onde estiveres, liga-me."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-21",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "listen-type",
+      "text": "Não há nada que eu possa fazer.",
+      "answer": [
+        "Não há nada que eu possa fazer."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-ex-22",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "match",
+      "prompt": "Соедините выражение с переводом.",
+      "pairs": [
+        {
+          "left": "o que quer que",
+          "right": "что бы ни"
+        },
+        {
+          "left": "quem quer que",
+          "right": "кто бы ни"
+        },
+        {
+          "left": "onde quer que",
+          "right": "где бы ни"
+        },
+        {
+          "left": "como quer que",
+          "right": "как бы ни"
+        },
+        {
+          "left": "seja como for",
+          "right": "как бы то ни было"
+        },
+        {
+          "left": "custe o que custar",
+          "right": "чего бы это ни стоило"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-conjuntivo-relativas-mt-01",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Procuro um explicador que ___ (ter) paciência.",
+      "answer": [
+        "tenha"
+      ],
+      "ru": "Ищу репетитора с терпением."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-02",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Tenho um colega que ___ (viver) em Braga.",
+      "answer": [
+        "vive"
+      ],
+      "ru": "У меня есть коллега, который живёт в Браге."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-03",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Não conheço ninguém que ___ (gostar) de acordar cedo.",
+      "answer": [
+        "goste"
+      ],
+      "ru": "Я не знаю никого, кто любил бы рано вставать."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-04",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "fill-gap",
+      "prompt": "Quem quer que ___ (ligar), diz que estou numa reunião.",
+      "answer": [
+        "ligue"
+      ],
+      "hint": "g → gu перед e",
+      "ru": "Кто бы ни позвонил, скажи, что я на совещании."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-05",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "Há aqui alguém que ___ inglês?",
+      "options": [
+        "fale",
+        "fala",
+        "falar",
+        "falasse"
+      ],
+      "correct": 0,
+      "explanation": "Вопрос о существовании → conjuntivo."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-06",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "Comprei um telemóvel que ___ fotografias ótimas.",
+      "options": [
+        "tire",
+        "tira",
+        "tirar",
+        "tirasse"
+      ],
+      "correct": 1,
+      "explanation": "Конкретный купленный телефон → индикатив."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-07",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "choice",
+      "prompt": "Onde quer que ___, encontras portugueses.",
+      "options": [
+        "vais",
+        "fosses",
+        "vás",
+        "ires"
+      ],
+      "correct": 2,
+      "explanation": "Onde quer que + presente do conjuntivo: vás."
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-08",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "transform",
+      "prompt": "Conheço uma loja que vende isso.",
+      "instruction": "Начните с «Não conheço nenhuma loja que...».",
+      "answer": [
+        "Não conheço nenhuma loja que venda isso."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-09",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "translate-ru-pt",
+      "ru": "Мне нужен кто-нибудь, кто умеет готовить.",
+      "answer": [
+        "Preciso de alguém que saiba cozinhar.",
+        "Preciso de uma pessoa que saiba cozinhar.",
+        "Eu preciso de alguém que saiba cozinhar."
+      ]
+    },
+    {
+      "id": "b1-conjuntivo-relativas-mt-10",
+      "topicId": "b1-conjuntivo-relativas",
+      "type": "listen-choice",
+      "text": "Procuro alguém que perceba de computadores.",
+      "options": [
+        "Я знаю человека, который разбирается в компьютерах.",
+        "Никто не разбирается в компьютерах.",
+        "Я ищу компьютер для работы.",
+        "Я ищу кого-нибудь, кто разбирается в компьютерах."
+      ],
+      "correct": 3
+    }
+  ]
+}

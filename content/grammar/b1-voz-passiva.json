@@ -1,0 +1,426 @@
+{
+  "id": "b1-voz-passiva",
+  "level": "B1",
+  "module": "b1-sintaxe",
+  "title": "Страдательный залог",
+  "titlePt": "Voz passiva",
+  "requires": [
+    "a1-ser-estar",
+    "a2-preterito-perfeito-simples",
+    "a2-pronomes-cliticos-colocacao"
+  ],
+  "theory": "## Пассив с ser: ser + particípio\n\nПассив показывает, **что произошло с предметом**, а не кто действовал. Строится из глагола **ser** в нужном времени и **particípio**, который **согласуется** с подлежащим в роде и числе.\n\n**A ponte foi construída em 1966.** — Мост был построен в 1966 году.\n**Os bilhetes são vendidos online.** — Билеты продаются онлайн.\n\n| время | пример |\n|---|---|\n| presente | **A loja é aberta às nove.** |\n| perfeito | **O contrato foi assinado ontem.** |\n| imperfeito | **As cartas eram entregues de manhã.** |\n| futuro | **Os resultados serão publicados / vão ser publicados amanhã.** |\n| com modal | **O formulário tem de ser preenchido online.** |\n\nСогласование обязательно: **o bolo foi feito**, **a sopa foi feita**, **os bolos foram feitos**, **as sopas foram feitas**.\n\n## Агент: por → pelo, pela\n\nКто выполнил действие — через **por**, который сливается с артиклем:\n\n| por + | результат | пример |\n|---|---|---|\n| o / a | **pelo / pela** | **O livro foi escrito pelo Saramago.** |\n| os / as | **pelos / pelas** | **O jantar foi preparado pelos alunos.** |\n\n## Неправильные причастия\n\n| глагол | particípio | глагол | particípio |\n|---|---|---|---|\n| fazer | feito | abrir | aberto |\n| dizer | dito | cobrir | coberto |\n| escrever | escrito | pôr | posto |\n| ver | visto | vir | vindo |\n| pagar | pago | ganhar | ganho |\n| gastar | gasto | aceitar | **aceite** (pt-PT) |\n| entregar | entregue | eleger | eleito |\n\n## Estar + particípio: состояние\n\n**Ser** — действие, **estar** — его результат:\n**A porta foi fechada às dez.** — Дверь закрыли в десять (действие).\n**A porta está fechada.** — Дверь закрыта (состояние).\n\n## Пассив с se: vendem-se casas\n\nСамый частотный в живой речи способ — **passiva de -se** (pronominal). Глагол в 3-м лице **согласуется с существительным**:\n\n| ед. ч. | мн. ч. |\n|---|---|\n| **Vende-se casa.** — Продаётся дом. | **Vendem-se casas.** — Продаются дома. |\n| **Aluga-se quarto.** | **Alugam-se quartos.** |\n| **Procura-se empregado.** | **Procuram-se empregados.** |\n\nКлитика подчиняется общим правилам: **ênclise** по умолчанию (**Fala-se inglês**), **próclise** после магнитов: **Aqui não se aceitam cartões.** **Já se venderam todos os bilhetes.**\n\n## Что выбрать в pt-PT\n\n- В разговоре португальцы чаще используют **активный залог** или **se**-конструкцию: **Vendem-se bilhetes na estação**, **Construíram uma escola nova**.\n- **Ser + particípio** типичен для новостей, официальных текстов, музейных табличек: **O mosteiro foi mandado construir por D. Manuel I.**\n- Агент указывают, только если он важен; со **se**-пассивом агент не ставится.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| A proposta foi **aceite**. | A proposta foi **aceita**. | в pt-PT причастие **aceite** (и **entregue**) |\n| **Vendem-se** casas. | **Vende-se** casas (разг.) / **Vendem-se** casas (норма) | в pt-PT согласование соблюдается строго |\n| **Aqui não se aceitam** cartões. | **Aqui não aceitam** cartões. | |\n| O preço **foi pago**. | O preço **foi pago**. | *pagado* с ser в обеих нормах не используется |\n\nОбе нормы используют одинаковые конструкции, но pt-PT консервативнее: согласование в se-пассиве и короткие причастия (**aceite, entregue, pago, ganho, gasto**).",
+  "commonErrors": "- **Нет согласования причастия**: *A casa foi construído* ✗ → **A casa foi construída** ✓.\n- **Агент через de** по русской модели «написан кем»: *escrito do Saramago* ✗ → **escrito pelo Saramago** ✓.\n- **Правильная форма вместо неправильной**: *foi abrido, foi escrevido, foi fazido* ✗ → **foi aberto, escrito, feito** ✓.\n- **Бразильское причастие**: *foi aceito* ✗ → **foi aceite** ✓ (pt-PT).\n- **Нет согласования в se-пассиве**: *Vende-se apartamentos* ✗ → **Vendem-se apartamentos** ✓.\n- **Клитика в начале фразы**: *Se vendem casas* ✗ → **Vendem-se casas** ✓.\n- **Ser вместо estar для состояния**: *A loja é fechada agora* ✗ → **A loja está fechada** ✓.",
+  "examples": [
+    {
+      "pt": "O Mosteiro dos Jerónimos foi construído no século XVI.",
+      "ru": "Монастырь Жеронимуш был построен в XVI веке.",
+      "audio": true
+    },
+    {
+      "pt": "Os resultados vão ser publicados na segunda-feira.",
+      "ru": "Результаты опубликуют в понедельник.",
+      "audio": true
+    },
+    {
+      "pt": "A minha candidatura foi aceite!",
+      "ru": "Мою заявку приняли!",
+      "audio": true
+    },
+    {
+      "pt": "Vendem-se apartamentos T2 no centro.",
+      "ru": "Продаются двухкомнатные квартиры в центре.",
+      "audio": true
+    },
+    {
+      "pt": "Aqui não se aceitam cartões, só dinheiro.",
+      "ru": "Здесь карты не принимают, только наличные.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-voz-passiva-ex-01",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "Esta ponte foi ___ (construir) em 1966.",
+      "answer": [
+        "construída"
+      ],
+      "ru": "Этот мост был построен в 1966 году."
+    },
+    {
+      "id": "b1-voz-passiva-ex-02",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "As cartas foram ___ (escrever) pela avó.",
+      "answer": [
+        "escritas"
+      ],
+      "ru": "Письма написала бабушка.",
+      "explanation": "Неправильное причастие escrito + согласование: escritas."
+    },
+    {
+      "id": "b1-voz-passiva-ex-03",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "O contrato vai ser ___ (assinar) amanhã.",
+      "answer": [
+        "assinado"
+      ],
+      "ru": "Договор подпишут завтра."
+    },
+    {
+      "id": "b1-voz-passiva-ex-04",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "Os resultados serão ___ (publicar) na segunda-feira.",
+      "answer": [
+        "publicados"
+      ],
+      "ru": "Результаты будут опубликованы в понедельник."
+    },
+    {
+      "id": "b1-voz-passiva-ex-05",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "O prémio foi entregue ___ presidente da câmara.",
+      "answer": [
+        "pelo"
+      ],
+      "hint": "por + o",
+      "ru": "Премию вручил председатель муниципалитета."
+    },
+    {
+      "id": "b1-voz-passiva-ex-06",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "A minha candidatura foi ___ (aceitar).",
+      "answer": [
+        "aceite"
+      ],
+      "hint": "причастие pt-PT",
+      "ru": "Мою заявку приняли."
+    },
+    {
+      "id": "b1-voz-passiva-ex-07",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "Nesta loja ___ (aceitar + se) cartões de crédito.",
+      "answer": [
+        "aceitam-se"
+      ],
+      "ru": "В этом магазине принимают кредитные карты.",
+      "explanation": "Se-пассив: глагол согласуется с cartões; ênclise по умолчанию."
+    },
+    {
+      "id": "b1-voz-passiva-ex-08",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "Aqui não ___ (vender + se) bilhetes.",
+      "answer": [
+        "se vendem"
+      ],
+      "ru": "Здесь не продают билеты.",
+      "explanation": "После não — próclise: não se vendem."
+    },
+    {
+      "id": "b1-voz-passiva-ex-09",
+      "topicId": "b1-voz-passiva",
+      "type": "choice",
+      "prompt": "As janelas foram ___ pelo vento.",
+      "options": [
+        "aberto",
+        "abertas",
+        "abrido",
+        "aberta"
+      ],
+      "correct": 1,
+      "explanation": "Неправильное причастие aberto, согласовано с janelas (ж. р., мн. ч.)."
+    },
+    {
+      "id": "b1-voz-passiva-ex-10",
+      "topicId": "b1-voz-passiva",
+      "type": "choice",
+      "prompt": "___ quartos.",
+      "options": [
+        "Aluga-se",
+        "Se alugam",
+        "Alugam-se",
+        "Alugando"
+      ],
+      "correct": 2,
+      "explanation": "Quartos во множественном числе → alugam-se."
+    },
+    {
+      "id": "b1-voz-passiva-ex-11",
+      "topicId": "b1-voz-passiva",
+      "type": "choice",
+      "prompt": "A conta já foi ___.",
+      "options": [
+        "pagada",
+        "pagas",
+        "pagado",
+        "paga"
+      ],
+      "correct": 3,
+      "explanation": "С ser используется короткое причастие pago/paga."
+    },
+    {
+      "id": "b1-voz-passiva-ex-12",
+      "topicId": "b1-voz-passiva",
+      "type": "choice",
+      "prompt": "O ladrão foi preso ___ polícia.",
+      "options": [
+        "pela",
+        "pelo",
+        "por o",
+        "da"
+      ],
+      "correct": 0,
+      "explanation": "A polícia → por + a = pela."
+    },
+    {
+      "id": "b1-voz-passiva-ex-13",
+      "topicId": "b1-voz-passiva",
+      "type": "transform",
+      "prompt": "O Rui escreveu o relatório.",
+      "instruction": "Переведите в пассив (ser + particípio) с указанием агента.",
+      "answer": [
+        "O relatório foi escrito pelo Rui."
+      ]
+    },
+    {
+      "id": "b1-voz-passiva-ex-14",
+      "topicId": "b1-voz-passiva",
+      "type": "transform",
+      "prompt": "A câmara municipal vai fechar a rua.",
+      "instruction": "Переведите в пассив с агентом.",
+      "answer": [
+        "A rua vai ser fechada pela câmara municipal.",
+        "A rua será fechada pela câmara municipal."
+      ]
+    },
+    {
+      "id": "b1-voz-passiva-ex-15",
+      "topicId": "b1-voz-passiva",
+      "type": "transform",
+      "prompt": "Construíram muitas casas novas.",
+      "instruction": "Перепишите с se-пассивом.",
+      "answer": [
+        "Construíram-se muitas casas novas."
+      ]
+    },
+    {
+      "id": "b1-voz-passiva-ex-16",
+      "topicId": "b1-voz-passiva",
+      "type": "order-words",
+      "words": [
+        "foi",
+        "preparado",
+        "jantar",
+        "O",
+        "pelos",
+        "alunos"
+      ],
+      "answer": "O jantar foi preparado pelos alunos",
+      "ru": "Ужин приготовили ученики."
+    },
+    {
+      "id": "b1-voz-passiva-ex-17",
+      "topicId": "b1-voz-passiva",
+      "type": "order-words",
+      "words": [
+        "se",
+        "cartões",
+        "não",
+        "Aqui",
+        "aceitam"
+      ],
+      "answer": "Aqui não se aceitam cartões",
+      "ru": "Здесь не принимают карты."
+    },
+    {
+      "id": "b1-voz-passiva-ex-18",
+      "topicId": "b1-voz-passiva",
+      "type": "translate-ru-pt",
+      "ru": "Этот дом был построен в 1920 году.",
+      "answer": [
+        "Esta casa foi construída em 1920.",
+        "Este prédio foi construído em 1920.",
+        "Este edifício foi construído em 1920."
+      ]
+    },
+    {
+      "id": "b1-voz-passiva-ex-19",
+      "topicId": "b1-voz-passiva",
+      "type": "translate-ru-pt",
+      "ru": "Здесь сдаются комнаты.",
+      "answer": [
+        "Aqui alugam-se quartos.",
+        "Alugam-se quartos aqui."
+      ],
+      "explanation": "Aqui не «магнит», поэтому в pt-PT — ênclise: alugam-se. Глагол во мн. ч., потому что quartos во мн. ч."
+    },
+    {
+      "id": "b1-voz-passiva-ex-20",
+      "topicId": "b1-voz-passiva",
+      "type": "listen-type",
+      "text": "O museu foi inaugurado no ano passado.",
+      "answer": [
+        "O museu foi inaugurado no ano passado."
+      ]
+    },
+    {
+      "id": "b1-voz-passiva-ex-21",
+      "topicId": "b1-voz-passiva",
+      "type": "match",
+      "prompt": "Соедините глагол с причастием.",
+      "pairs": [
+        {
+          "left": "abrir",
+          "right": "aberto"
+        },
+        {
+          "left": "escrever",
+          "right": "escrito"
+        },
+        {
+          "left": "pôr",
+          "right": "posto"
+        },
+        {
+          "left": "ver",
+          "right": "visto"
+        },
+        {
+          "left": "dizer",
+          "right": "dito"
+        },
+        {
+          "left": "aceitar",
+          "right": "aceite"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-voz-passiva-mt-01",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "A Ponte Vasco da Gama foi ___ (inaugurar) em 1998.",
+      "answer": [
+        "inaugurada"
+      ],
+      "ru": "Мост Васко да Гама открыли в 1998 году."
+    },
+    {
+      "id": "b1-voz-passiva-mt-02",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "Os documentos foram ___ (entregar) ontem.",
+      "answer": [
+        "entregues"
+      ],
+      "hint": "причастие pt-PT",
+      "ru": "Документы сдали вчера."
+    },
+    {
+      "id": "b1-voz-passiva-mt-03",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "Este quadro foi pintado ___ minha tia.",
+      "answer": [
+        "pela"
+      ],
+      "ru": "Эту картину написала моя тётя."
+    },
+    {
+      "id": "b1-voz-passiva-mt-04",
+      "topicId": "b1-voz-passiva",
+      "type": "fill-gap",
+      "prompt": "Na loja do Pedro ___ (vender + se) bicicletas.",
+      "answer": [
+        "vendem-se"
+      ],
+      "ru": "В магазине Педру продаются велосипеды."
+    },
+    {
+      "id": "b1-voz-passiva-mt-05",
+      "topicId": "b1-voz-passiva",
+      "type": "choice",
+      "prompt": "As cartas foram ___ ontem.",
+      "options": [
+        "escrevidas",
+        "escrito",
+        "escritas",
+        "escritos"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-voz-passiva-mt-06",
+      "topicId": "b1-voz-passiva",
+      "type": "choice",
+      "prompt": "A proposta foi ___ pela direção.",
+      "options": [
+        "aceite",
+        "aceito",
+        "aceita",
+        "aceitada"
+      ],
+      "correct": 0,
+      "explanation": "В pt-PT — aceite (для обоих родов)."
+    },
+    {
+      "id": "b1-voz-passiva-mt-07",
+      "topicId": "b1-voz-passiva",
+      "type": "choice",
+      "prompt": "___ casas na aldeia.",
+      "options": [
+        "Vende-se",
+        "Vendem-se",
+        "Se vendem",
+        "Vendendo"
+      ],
+      "correct": 1,
+      "explanation": "Casas во мн. ч. → vendem-se; клитика не ставится в начало."
+    },
+    {
+      "id": "b1-voz-passiva-mt-08",
+      "topicId": "b1-voz-passiva",
+      "type": "transform",
+      "prompt": "Os bombeiros salvaram as crianças.",
+      "instruction": "Переведите в пассив с агентом.",
+      "answer": [
+        "As crianças foram salvas pelos bombeiros."
+      ]
+    },
+    {
+      "id": "b1-voz-passiva-mt-09",
+      "topicId": "b1-voz-passiva",
+      "type": "translate-ru-pt",
+      "ru": "Письмо было отправлено вчера.",
+      "answer": [
+        "A carta foi enviada ontem.",
+        "A carta foi mandada ontem.",
+        "Ontem a carta foi enviada."
+      ]
+    },
+    {
+      "id": "b1-voz-passiva-mt-10",
+      "topicId": "b1-voz-passiva",
+      "type": "listen-choice",
+      "text": "As obras serão concluídas em março.",
+      "options": [
+        "Работы были завершены в марте.",
+        "Работы завершатся в мае.",
+        "Работы начнутся в марте.",
+        "Работы будут завершены в марте."
+      ],
+      "correct": 3
+    }
+  ]
+}

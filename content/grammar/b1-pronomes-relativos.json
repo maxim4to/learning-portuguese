@@ -1,0 +1,451 @@
+{
+  "id": "b1-pronomes-relativos",
+  "level": "B1",
+  "module": "b1-sintaxe",
+  "title": "Относительные местоимения",
+  "titlePt": "Pronomes relativos",
+  "requires": [
+    "a1-preposicoes-lugar-contracoes",
+    "a2-pronomes-complemento"
+  ],
+  "theory": "## Русское «который» — несколько слов\n\nВ русском почти всё покрывает «который». В португальском выбор зависит от того, **кто** (человек или вещь), **есть ли предлог** и **что выражаем** (принадлежность, место).\n\n| слово | когда | пример |\n|---|---|---|\n| **que** | универсальное: люди и вещи, подлежащее и дополнение | **O livro que comprei é ótimo.** **A senhora que mora ao lado é simpática.** |\n| **quem** | только люди: после предлога или без антецедента | **A colega com quem almoço.** **Quem sabe, responde.** |\n| **o qual / a qual / os quais / as quais** | после предлога, особенно длинного; согласуется с антецедентом | **A empresa para a qual trabalho.** |\n| **cujo / cuja / cujos / cujas** | «чей», принадлежность; согласуется с тем, **чем владеют** | **O vizinho cujo carro está à porta.** |\n| **onde** | место (= **em que**) | **A cidade onde nasci.** |\n| **o que** | «то, что»; или отсылка ко всей фразе | **Não percebi o que disseste.** **Chegou tarde, o que me irritou.** |\n\n## Предлог — всегда перед относительным словом\n\nПо-русски «девушка, **с** которой я говорил» — предлог тоже впереди, так что логика та же. Предлог берётся из управления глагола придаточного: **falar com** → **com quem**, **precisar de** → **de que**, **confiar em** → **em quem**, **gostar de** → **de que / de quem**.\n\n| глагол | вещь | человек |\n|---|---|---|\n| precisar **de** | **o livro de que preciso** | **a pessoa de quem preciso** |\n| falar **de** | **o filme de que te falei** | **a rapariga de quem te falei** |\n| viver **em** | **a casa em que / onde vivo** | — |\n| confiar **em** | — | **o amigo em quem confio** |\n| trabalhar **para** | **a empresa para a qual trabalho** | **o chefe para quem trabalho** |\n\nПравило выбора:\n- с **короткими** предлогами (**a, de, em, com**) для вещей достаточно **que**: **a caneta com que escrevo**;\n- с **длинными** (**sobre, para, sem, durante, através de, perante**) — **o qual**: **a reunião durante a qual adormeci**;\n- с людьми после предлога — **quem** или **o qual**: **os amigos com quem / com os quais viajei**.\n\nСлитные формы: **do qual, da qual, no qual, na qual, ao qual, à qual, pelo qual, pela qual**.\n\n## Cujo — «чей»\n\n**Cujo** согласуется с существительным **после** него и никогда не берёт артикль:\n\n| | пример |\n|---|---|\n| cujo | **O escritor cujo livro li.** |\n| cuja | **A Joana, cuja irmã vive em Faro.** |\n| cujos | **A rapariga cujos pais conheceste.** |\n| cujas | **O professor cujas aulas adoro.** |\n\n## Onde и o que\n\n**Onde** — только о месте; для времени — **em que**: **o ano em que nasci** (не *onde*). С глаголами движения в норме **aonde**: **a cidade aonde vamos**.\n\n**O que** = «то, что»: **Faz o que quiseres.** После целой фразы (русское «что»): **Perdi o comboio, o que foi um desastre.**",
+  "ptVsBr": "| pt-PT | pt-BR (разг.) | комментарий |\n|---|---|---|\n| **o livro de que preciso** | *o livro que eu preciso* | выпадение предлога есть и в разговорной речи Португалии, но в норме предлог обязателен |\n| **o vizinho cujo carro...** | *o vizinho que o carro dele...* | в Бразилии **cujo** в речи почти исчезло; в Португалии оно живее, особенно в письме |\n| **a rapariga de quem te falei** | *a moça que te falei* | лексика (**rapariga**) и предлог |\n\nСама система относительных слов в обеих нормах одинакова; разница — в том, насколько строго соблюдают предлоги и **cujo**.",
+  "commonErrors": "- **quem как подлежащее после существительного**: *O homem quem me ajudou* ✗ → **O homem que me ajudou** ✓. **Quem** после существительного — только с предлогом.\n- **Артикль после cujo**: *o vizinho cujo o carro* ✗ → **o vizinho cujo carro** ✓.\n- **Согласование cujo с владельцем**: *a Ana, cujo irmão...* — верно, потому что **irmão** м. р.; *a Ana, cuja irmão* ✗.\n- **Предлог в конце (английская модель)**: *A pessoa que falei com* ✗ → **A pessoa com quem falei** ✓.\n- **Лишнее местоимение**: *A pessoa que falei com ela* ✗ → **A pessoa com quem falei** ✓.\n- **Потеря предлога из управления**: *o livro que preciso* → **o livro de que preciso** ✓.\n- **o qual не согласован**: *a empresa para o qual* ✗ → **a empresa para a qual** ✓.\n- **que вместо o que**: *Não sei que queres* ✗ → **Não sei o que queres** ✓.\n- **onde о времени**: *o dia onde nos conhecemos* ✗ → **o dia em que nos conhecemos** ✓.",
+  "examples": [
+    {
+      "pt": "A senhora que mora no rés-do-chão é muito simpática.",
+      "ru": "Женщина, которая живёт на первом этаже, очень милая.",
+      "audio": true
+    },
+    {
+      "pt": "Esta é a colega de quem te falei.",
+      "ru": "Это та коллега, о которой я тебе говорил.",
+      "audio": true
+    },
+    {
+      "pt": "O restaurante onde jantámos fica perto do rio.",
+      "ru": "Ресторан, где мы ужинали, находится у реки.",
+      "audio": true
+    },
+    {
+      "pt": "Tenho um vizinho cujo cão ladra a noite toda.",
+      "ru": "У меня есть сосед, чья собака лает всю ночь.",
+      "audio": true
+    },
+    {
+      "pt": "Perdi o último comboio, o que foi um desastre.",
+      "ru": "Я опоздал на последний поезд, что было катастрофой.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-pronomes-relativos-ex-01",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "O livro ___ estou a ler é muito bom.",
+      "answer": [
+        "que"
+      ],
+      "ru": "Книга, которую я читаю, очень хорошая."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-02",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "A senhora com ___ falei é a minha vizinha.",
+      "answer": [
+        "quem",
+        "a qual"
+      ],
+      "ru": "Женщина, с которой я говорил, — моя соседка.",
+      "explanation": "Человек после предлога → quem или a qual (согласование с senhora)."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-03",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "A cidade ___ nasci fica no norte.",
+      "answer": [
+        "onde",
+        "em que",
+        "na qual"
+      ],
+      "ru": "Город, где я родился, находится на севере."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-04",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "O vizinho ___ carro está à porta é médico.",
+      "answer": [
+        "cujo"
+      ],
+      "hint": "«чей»",
+      "ru": "Сосед, чья машина стоит у двери, — врач."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-05",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "A rapariga ___ pais conheceste ontem é a Inês.",
+      "answer": [
+        "cujos"
+      ],
+      "hint": "«чьих»",
+      "ru": "Девушка, с чьими родителями ты вчера познакомился, — Инеш.",
+      "explanation": "Cujo согласуется с тем, что после него: pais → cujos."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-06",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "Não percebi ___ disseste.",
+      "answer": [
+        "o que"
+      ],
+      "ru": "Я не понял, что ты сказал.",
+      "explanation": "«То, что» → o que."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-07",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "A empresa para ___ trabalho é portuguesa.",
+      "answer": [
+        "a qual"
+      ],
+      "ru": "Компания, на которую я работаю, португальская.",
+      "explanation": "После para с неодушевлённым антецедентом — o qual в нужном роде: empresa → a qual."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-08",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "O filme de ___ te falei passa hoje na televisão.",
+      "answer": [
+        "que",
+        "o qual"
+      ],
+      "ru": "Фильм, о котором я тебе говорил, сегодня идёт по телевизору.",
+      "explanation": "falar de → de que (с вещами после короткого предлога достаточно que)."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-09",
+      "topicId": "b1-pronomes-relativos",
+      "type": "choice",
+      "prompt": "O amigo ___ viajei para o Algarve é de Braga.",
+      "options": [
+        "que com",
+        "com quem",
+        "quem",
+        "com cujo"
+      ],
+      "correct": 1,
+      "explanation": "viajar com alguém → com quem; предлог стоит перед относительным словом."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-10",
+      "topicId": "b1-pronomes-relativos",
+      "type": "choice",
+      "prompt": "O professor, ___ aulas são ótimas, vai reformar-se.",
+      "options": [
+        "cujo as",
+        "que as",
+        "cujas",
+        "cujas as"
+      ],
+      "correct": 2,
+      "explanation": "Cujas согласуется с aulas и не берёт артикль."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-11",
+      "topicId": "b1-pronomes-relativos",
+      "type": "choice",
+      "prompt": "Ele chegou atrasado, ___ deixou todos irritados.",
+      "options": [
+        "que",
+        "quem",
+        "o qual",
+        "o que"
+      ],
+      "correct": 3,
+      "explanation": "Отсылка ко всей предыдущей фразе → o que."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-12",
+      "topicId": "b1-pronomes-relativos",
+      "type": "choice",
+      "prompt": "As colegas ___ confio são a Rita e a Joana.",
+      "options": [
+        "quem",
+        "que",
+        "de quem",
+        "em quem"
+      ],
+      "correct": 3,
+      "explanation": "confiar em alguém → em quem."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-13",
+      "topicId": "b1-pronomes-relativos",
+      "type": "transform",
+      "prompt": "Esta é a casa. Eu vivo nesta casa.",
+      "instruction": "Объедините в одно предложение с относительным словом.",
+      "answer": [
+        "Esta é a casa onde vivo.",
+        "Esta é a casa em que vivo.",
+        "Esta é a casa na qual vivo.",
+        "Esta é a casa onde eu vivo.",
+        "Esta é a casa em que eu vivo.",
+        "Esta é a casa na qual eu vivo."
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-14",
+      "topicId": "b1-pronomes-relativos",
+      "type": "transform",
+      "prompt": "Conheço um rapaz. O pai do rapaz é piloto.",
+      "instruction": "Объедините с помощью cujo.",
+      "answer": [
+        "Conheço um rapaz cujo pai é piloto."
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-15",
+      "topicId": "b1-pronomes-relativos",
+      "type": "transform",
+      "prompt": "A pessoa que falei com ela é simpática.",
+      "instruction": "Исправьте ошибку.",
+      "answer": [
+        "A pessoa com quem falei é simpática.",
+        "A pessoa com a qual falei é simpática."
+      ],
+      "explanation": "Предлог переносится перед относительным словом, лишнее ela убираем."
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-16",
+      "topicId": "b1-pronomes-relativos",
+      "type": "order-words",
+      "words": [
+        "é",
+        "Esta",
+        "a",
+        "colega",
+        "quem",
+        "com",
+        "almoço"
+      ],
+      "answer": "Esta é a colega com quem almoço"
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-17",
+      "topicId": "b1-pronomes-relativos",
+      "type": "order-words",
+      "words": [
+        "sei",
+        "Não",
+        "que",
+        "o",
+        "queres"
+      ],
+      "answer": "Não sei o que queres"
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-18",
+      "topicId": "b1-pronomes-relativos",
+      "type": "translate-ru-pt",
+      "ru": "Это девушка, о которой я тебе говорил.",
+      "answer": [
+        "Esta é a rapariga de quem te falei.",
+        "É a rapariga de quem te falei.",
+        "Esta é a rapariga da qual te falei.",
+        "É a rapariga da qual te falei.",
+        "Esta é a miúda de quem te falei.",
+        "É a miúda de quem te falei."
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-19",
+      "topicId": "b1-pronomes-relativos",
+      "type": "translate-ru-pt",
+      "ru": "Город, в котором я живу, очень красивый.",
+      "answer": [
+        "A cidade onde vivo é muito bonita.",
+        "A cidade onde moro é muito bonita.",
+        "A cidade onde eu vivo é muito bonita.",
+        "A cidade onde eu moro é muito bonita.",
+        "A cidade em que vivo é muito bonita.",
+        "A cidade em que moro é muito bonita.",
+        "A cidade em que eu vivo é muito bonita.",
+        "A cidade em que eu moro é muito bonita.",
+        "A cidade na qual vivo é muito bonita.",
+        "A cidade na qual moro é muito bonita.",
+        "A cidade na qual eu vivo é muito bonita.",
+        "A cidade na qual eu moro é muito bonita."
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-20",
+      "topicId": "b1-pronomes-relativos",
+      "type": "listen-type",
+      "text": "O homem cujo filho conheces é o meu chefe.",
+      "answer": [
+        "O homem cujo filho conheces é o meu chefe."
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-ex-21",
+      "topicId": "b1-pronomes-relativos",
+      "type": "match",
+      "prompt": "Соедините начало и конец предложения.",
+      "pairs": [
+        {
+          "left": "A amiga com",
+          "right": "quem jantei ontem"
+        },
+        {
+          "left": "O livro de",
+          "right": "que preciso"
+        },
+        {
+          "left": "O escritor cujos",
+          "right": "livros li"
+        },
+        {
+          "left": "A cidade onde",
+          "right": "passei as férias"
+        },
+        {
+          "left": "Ele não veio,",
+          "right": "o que é estranho"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-pronomes-relativos-mt-01",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "O autocarro ___ apanho todos os dias vem sempre cheio.",
+      "answer": [
+        "que"
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-02",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "É uma escritora ___ livros estão traduzidos em vinte línguas.",
+      "answer": [
+        "cujos"
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-03",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "Os amigos a ___ pedi ajuda não responderam.",
+      "answer": [
+        "quem",
+        "os quais"
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-04",
+      "topicId": "b1-pronomes-relativos",
+      "type": "fill-gap",
+      "prompt": "Explica-me ___ aconteceu.",
+      "answer": [
+        "o que"
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-05",
+      "topicId": "b1-pronomes-relativos",
+      "type": "choice",
+      "prompt": "A reunião durante ___ ele adormeceu foi longa.",
+      "options": [
+        "que",
+        "a qual",
+        "o qual",
+        "quem"
+      ],
+      "correct": 1,
+      "explanation": "После длинного предлога durante — o qual, согласованное с reunião."
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-06",
+      "topicId": "b1-pronomes-relativos",
+      "type": "choice",
+      "prompt": "A Joana, ___ irmã mora em Faro, vem jantar.",
+      "options": [
+        "cujo",
+        "que a",
+        "cuja",
+        "cuja a"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-07",
+      "topicId": "b1-pronomes-relativos",
+      "type": "choice",
+      "prompt": "Escolha a frase correta:",
+      "options": [
+        "O homem quem me ajudou é o Duarte.",
+        "O homem cujo me ajudou é o Duarte.",
+        "O homem o qual me ajudou é o Duarte.",
+        "O homem que me ajudou é o Duarte."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-08",
+      "topicId": "b1-pronomes-relativos",
+      "type": "transform",
+      "prompt": "Esta é a chave. Preciso desta chave.",
+      "instruction": "Объедините в одно предложение.",
+      "answer": [
+        "Esta é a chave de que preciso.",
+        "Esta é a chave da qual preciso.",
+        "Esta é a chave de que eu preciso.",
+        "Esta é a chave da qual eu preciso."
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-09",
+      "topicId": "b1-pronomes-relativos",
+      "type": "translate-ru-pt",
+      "ru": "Я не понимаю, что ты говоришь.",
+      "answer": [
+        "Não percebo o que dizes.",
+        "Não percebo o que estás a dizer.",
+        "Não entendo o que dizes.",
+        "Não entendo o que estás a dizer.",
+        "Não compreendo o que dizes.",
+        "Não compreendo o que estás a dizer.",
+        "Eu não percebo o que dizes.",
+        "Eu não percebo o que estás a dizer.",
+        "Eu não entendo o que dizes.",
+        "Eu não entendo o que estás a dizer.",
+        "Eu não compreendo o que dizes.",
+        "Eu não compreendo o que estás a dizer."
+      ]
+    },
+    {
+      "id": "b1-pronomes-relativos-mt-10",
+      "topicId": "b1-pronomes-relativos",
+      "type": "listen-choice",
+      "text": "A colega de quem te falei vem amanhã.",
+      "options": [
+        "Коллега, которая говорила с тобой, придёт завтра.",
+        "Коллега, о которой я тебе говорил, придёт завтра.",
+        "Коллега, которой я звонил, придёт завтра.",
+        "Я поговорю с коллегой завтра."
+      ],
+      "correct": 1
+    }
+  ]
+}

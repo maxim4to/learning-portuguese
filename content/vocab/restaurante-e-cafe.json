@@ -1,0 +1,397 @@
+{
+  "id": "restaurante-e-cafe",
+  "title": "Ресторан и кафе",
+  "titlePt": "No restaurante e no café",
+  "level": "A2",
+  "words": [
+    {
+      "pt": "o restaurante",
+      "ru": "ресторан",
+      "gender": "m",
+      "example": "Há um restaurante muito bom ao fundo da rua.",
+      "audio": true
+    },
+    {
+      "pt": "a tasca",
+      "ru": "таверна, простой недорогой ресторанчик",
+      "gender": "f",
+      "example": "Almoçámos numa tasca em Alfama.",
+      "audio": true
+    },
+    {
+      "pt": "a esplanada",
+      "ru": "открытая терраса кафе",
+      "gender": "f",
+      "example": "Vamos sentar-nos na esplanada?",
+      "audio": true
+    },
+    {
+      "pt": "a sandes",
+      "ru": "бутерброд, сэндвич",
+      "gender": "f",
+      "example": "Uma sandes mista e um galão, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "reservar uma mesa",
+      "ru": "забронировать столик",
+      "example": "Queria reservar uma mesa para quatro, às oito.",
+      "audio": true
+    },
+    {
+      "pt": "a mesa",
+      "ru": "стол, столик",
+      "gender": "f",
+      "example": "Tem mesa para dois?",
+      "audio": true
+    },
+    {
+      "pt": "a ementa",
+      "ru": "меню",
+      "gender": "f",
+      "example": "Pode trazer a ementa, por favor?",
+      "audio": true
+    },
+    {
+      "pt": "o prato do dia",
+      "ru": "блюдо дня",
+      "gender": "m",
+      "example": "O prato do dia é bacalhau com natas.",
+      "audio": true
+    },
+    {
+      "pt": "o couvert",
+      "ru": "закуски на стол (платные: хлеб, масло, оливки)",
+      "gender": "m",
+      "example": "Se não quiser o couvert, pode pedir para o levarem.",
+      "audio": true
+    },
+    {
+      "pt": "a entrada",
+      "ru": "закуска",
+      "gender": "f",
+      "example": "De entrada, queríamos queijo e chouriço assado.",
+      "audio": true
+    },
+    {
+      "pt": "o prato principal",
+      "ru": "основное блюдо",
+      "gender": "m",
+      "example": "Como prato principal, peço o polvo.",
+      "audio": true
+    },
+    {
+      "pt": "a sobremesa",
+      "ru": "десерт",
+      "gender": "f",
+      "example": "De sobremesa, há arroz-doce e mousse de chocolate.",
+      "audio": true
+    },
+    {
+      "pt": "a dose",
+      "ru": "порция",
+      "gender": "f",
+      "example": "Uma dose dá bem para duas pessoas.",
+      "audio": true
+    },
+    {
+      "pt": "a meia dose",
+      "ru": "полпорции",
+      "gender": "f",
+      "example": "Pode ser meia dose de bitoque?",
+      "audio": true
+    },
+    {
+      "pt": "o empregado de mesa / a empregada de mesa",
+      "ru": "официант, официантка",
+      "gender": "mf",
+      "example": "O empregado de mesa foi muito simpático.",
+      "audio": true
+    },
+    {
+      "pt": "pedir",
+      "ru": "заказывать; просить",
+      "example": "Já pediram?",
+      "audio": true
+    },
+    {
+      "pt": "Queria...",
+      "ru": "Я бы хотел(а)... (вежливый заказ)",
+      "example": "Queria uma sopa e um prego no pão.",
+      "audio": true
+    },
+    {
+      "pt": "se faz favor",
+      "ru": "пожалуйста (при просьбе; также чтобы позвать официанta)",
+      "example": "Se faz favor, pode trazer mais pão?",
+      "audio": true
+    },
+    {
+      "pt": "a conta",
+      "ru": "счёт",
+      "gender": "f",
+      "example": "A conta, se faz favor.",
+      "audio": true
+    },
+    {
+      "pt": "dividir a conta",
+      "ru": "разделить счёт",
+      "example": "Podemos dividir a conta?",
+      "audio": true
+    },
+    {
+      "pt": "a gorjeta",
+      "ru": "чаевые",
+      "gender": "f",
+      "example": "Deixámos dois euros de gorjeta.",
+      "audio": true
+    },
+    {
+      "pt": "o troco",
+      "ru": "сдача",
+      "gender": "m",
+      "example": "Pode ficar com o troco.",
+      "audio": true
+    },
+    {
+      "pt": "para levar",
+      "ru": "с собой (о еде)",
+      "example": "Dois pastéis de nata para levar.",
+      "audio": true
+    },
+    {
+      "pt": "o guardanapo",
+      "ru": "салфетка",
+      "gender": "m",
+      "example": "Falta um guardanapo nesta mesa.",
+      "audio": true
+    },
+    {
+      "pt": "os talheres",
+      "ru": "столовые приборы",
+      "gender": "m",
+      "example": "Pode trazer outros talheres?",
+      "audio": true
+    },
+    {
+      "pt": "mal passado",
+      "ru": "с кровью (о мясе)",
+      "example": "Gosto do bife mal passado.",
+      "audio": true
+    },
+    {
+      "pt": "bem passado",
+      "ru": "хорошо прожаренный",
+      "example": "Para mim, bem passado, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "picante",
+      "ru": "острый",
+      "example": "O frango piri-piri é bastante picante.",
+      "audio": true
+    },
+    {
+      "pt": "o café",
+      "ru": "эспрессо; кафе",
+      "gender": "m",
+      "example": "Um café e a conta, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "a bica",
+      "ru": "эспрессо (в Лиссабоне)",
+      "gender": "f",
+      "example": "Tomo uma bica depois do almoço.",
+      "audio": true
+    },
+    {
+      "pt": "o cimbalino",
+      "ru": "эспрессо (в Порту)",
+      "gender": "m",
+      "example": "No Porto, peço um cimbalino.",
+      "audio": true
+    },
+    {
+      "pt": "o galão",
+      "ru": "кофе с молоком в высоком стакане",
+      "gender": "m",
+      "example": "Um galão e uma torrada, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "a meia de leite",
+      "ru": "кофе с молоком в чашке",
+      "gender": "f",
+      "example": "Uma meia de leite escura, se faz favor.",
+      "audio": true
+    },
+    {
+      "pt": "o garoto",
+      "ru": "маленькая чашка кофе с молоком",
+      "gender": "m",
+      "example": "Queria um garoto e um bolo de arroz.",
+      "audio": true
+    },
+    {
+      "pt": "o abatanado",
+      "ru": "разбавленный эспрессо (≈ американо)",
+      "gender": "m",
+      "example": "Prefiro um abatanado, o café curto é forte demais.",
+      "audio": true
+    },
+    {
+      "pt": "o descafeinado",
+      "ru": "кофе без кофеина",
+      "gender": "m",
+      "example": "À noite só bebo descafeinado.",
+      "audio": true
+    },
+    {
+      "pt": "a chávena",
+      "ru": "чашка",
+      "gender": "f",
+      "example": "Uma chávena de chá, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "a imperial",
+      "ru": "бокал разливного пива (в Лиссабоне)",
+      "gender": "f",
+      "example": "Duas imperiais bem fresquinhas!",
+      "audio": true
+    },
+    {
+      "pt": "o fino",
+      "ru": "бокал разливного пива (на севере, в Порту)",
+      "gender": "m",
+      "example": "No Porto, ninguém pede imperial: pede-se um fino.",
+      "audio": true
+    },
+    {
+      "pt": "a caneca",
+      "ru": "пивная кружка (0,5 л)",
+      "gender": "f",
+      "example": "Para mim, uma caneca.",
+      "audio": true
+    },
+    {
+      "pt": "o vinho da casa",
+      "ru": "домашнее вино",
+      "gender": "m",
+      "example": "O vinho da casa é tinto ou branco?",
+      "audio": true
+    },
+    {
+      "pt": "o vinho verde",
+      "ru": "«зелёное» (молодое) вино",
+      "gender": "m",
+      "example": "Com peixe, um vinho verde fresquinho.",
+      "audio": true
+    },
+    {
+      "pt": "a água com gás",
+      "ru": "газированная вода",
+      "gender": "f",
+      "example": "Uma água com gás, sem gelo.",
+      "audio": true
+    },
+    {
+      "pt": "a água fresca",
+      "ru": "вода из холодильника",
+      "gender": "f",
+      "example": "Água fresca ou natural?",
+      "audio": true
+    },
+    {
+      "pt": "o bitoque",
+      "ru": "бифштекс с яйцом и картошкой фри",
+      "gender": "m",
+      "example": "O bitoque vem com ovo estrelado e batatas fritas.",
+      "audio": true
+    },
+    {
+      "pt": "a bifana",
+      "ru": "сэндвич с тушёной свининой",
+      "gender": "f",
+      "example": "Uma bifana e uma imperial, se faz favor.",
+      "audio": true
+    },
+    {
+      "pt": "o prego",
+      "ru": "сэндвич с говяжьим стейком",
+      "gender": "m",
+      "example": "O prego no pão leva bife e alho.",
+      "audio": true
+    },
+    {
+      "pt": "a tosta mista",
+      "ru": "горячий бутерброд с ветчиной и сыром",
+      "gender": "f",
+      "example": "Uma tosta mista e um sumo de laranja.",
+      "audio": true
+    },
+    {
+      "pt": "a torrada",
+      "ru": "тост с маслом",
+      "gender": "f",
+      "example": "A torrada é com muita manteiga.",
+      "audio": true
+    },
+    {
+      "pt": "a francesinha",
+      "ru": "франсезинья (сэндвич из Порту с соусом)",
+      "gender": "f",
+      "example": "A francesinha é o prato típico do Porto.",
+      "audio": true
+    },
+    {
+      "pt": "o caldo verde",
+      "ru": "суп из капусты с чоризо",
+      "gender": "m",
+      "example": "Começamos com um caldo verde.",
+      "audio": true
+    },
+    {
+      "pt": "o bacalhau à Brás",
+      "ru": "треска с картофелем-соломкой и яйцом",
+      "gender": "m",
+      "example": "O bacalhau à Brás é o meu prato favorito.",
+      "audio": true
+    },
+    {
+      "pt": "as sardinhas assadas",
+      "ru": "жареные сардины",
+      "gender": "f",
+      "example": "Nos Santos Populares comem-se sardinhas assadas.",
+      "audio": true
+    },
+    {
+      "pt": "o arroz de marisco",
+      "ru": "рис с морепродуктами",
+      "gender": "m",
+      "example": "O arroz de marisco é para duas pessoas.",
+      "audio": true
+    },
+    {
+      "pt": "o pastel de nata",
+      "ru": "пирожное с заварным кремом",
+      "gender": "m",
+      "example": "O pastel de nata come-se com canela.",
+      "audio": true
+    },
+    {
+      "pt": "o lanche",
+      "ru": "полдник",
+      "gender": "m",
+      "example": "Ao lanche, as crianças comem pão com queijo.",
+      "audio": true
+    },
+    {
+      "pt": "estar ótimo",
+      "ru": "быть очень вкусным",
+      "example": "O peixe estava ótimo, os meus parabéns ao cozinheiro!",
+      "audio": true
+    }
+  ]
+}

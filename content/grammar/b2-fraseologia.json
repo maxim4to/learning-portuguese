@@ -1,0 +1,439 @@
+{
+  "id": "b2-fraseologia",
+  "level": "B2",
+  "module": "b2-discurso-estilo",
+  "title": "Фразеология и устойчивые сочетания",
+  "titlePt": "Fraseologia e colocações",
+  "requires": [
+    "b1-expressoes-idiomaticas",
+    "b1-verbos-preposicao"
+  ],
+  "theory": "## Идиомы и коллокации\n\nНа B2 важно не только понимать идиомы, но и знать **коллокации** — слова, которые «дружат» друг с другом. По-русски «принимают решение», по-португальски — **tomar uma decisão**, а не *fazer*. Ошибка в коллокации сразу выдаёт иностранца, даже если грамматика безупречна. Глагол в идиоме спрягается как обычно: **Fiquei de pé atrás.** — **Ficámos de pé atrás.**\n\n## Отношение и характер\n\n| выражение | значение |\n|---|---|\n| **ficar de pé atrás (com)** | насторожиться, относиться с недоверием |\n| **estar nas suas sete quintas** | быть в своей стихии |\n| **dar o braço a torcer** | признать неправоту, уступить (обычно с отрицанием) |\n| **dar a mão à palmatória** | признать ошибку |\n| **ter o rei na barriga** | задирать нос |\n| **ter macaquinhos no sótão** | иметь тараканов в голове |\n| **ter dois dedos de testa** | иметь хоть каплю ума |\n| **ser unha com carne** | быть неразлучными |\n| **ter as costas quentes** | иметь покровителей |\n| **estar com a mosca** | быть не в духе |\n\n## Ситуации и проблемы\n\n| выражение | значение |\n|---|---|\n| **meter o Rossio na Betesga** | впихнуть невпихуемое (Rossio — огромная площадь в Лиссабоне, Betesga — крошечная улочка рядом) |\n| **fazer vista grossa (a)** | закрывать глаза (на) |\n| **andar à nora** | быть сбитым с толку, не понимать, что происходит |\n| **sem pés nem cabeça** | бессмысленный, без складу и ладу |\n| **estar entre a espada e a parede** | быть между молотом и наковальней |\n| **estar com a corda na garganta** | быть в безвыходном (часто финансовом) положении |\n| **ficar em águas de bacalhau** | заглохнуть, закончиться ничем |\n| **dar com os burrinhos na água** | провалиться (о планах) |\n| **chover no molhado** | толочь воду в ступе, повторять очевидное |\n| **deitar água na fervura** | разрядить обстановку |\n| **pôr os pontos nos is** | расставить точки над i |\n| **pôr as cartas na mesa** | раскрыть карты |\n| **ter a faca e o queijo na mão** | держать все козыри |\n| **bater com a porta** | хлопнуть дверью, демонстративно уйти |\n| **tirar nabos da púcara** | выпытывать, выведывать |\n\n## Жизнь, работа, отдых\n\n| выражение | значение |\n|---|---|\n| **ir desta para melhor** | отправиться в мир иной (эвфемизм, с юмором) |\n| **estar com os pés para a cova** | одной ногой в могиле |\n| **arregaçar as mangas** | засучить рукава |\n| **fazer das tripas coração** | собраться с силами, сделать через силу |\n| **queimar as pestanas** | корпеть над книгами |\n| **passar pelas brasas** | вздремнуть |\n| **dar à língua** | болтать, сплетничать |\n\n## Пословицы\n\n**Quem não arrisca não petisca.** — Кто не рискует, тот не пьёт шампанского. **Roma e Pavia não se fizeram num dia.** — Москва не сразу строилась. **A cavalo dado não se olha o dente.** — Дарёному коню в зубы не смотрят. **Mais vale tarde do que nunca.** — Лучше поздно, чем никогда. **Não há fome que não dê em fartura.** — После чёрной полосы будет белая.\n\n## Сильные коллокации\n\n| pt-PT ✓ | калька ✗ | перевод |\n|---|---|---|\n| **tomar uma decisão / medidas / nota** | *fazer uma decisão* | принять решение / меры, записать |\n| **prestar atenção (a)** / **ter atenção (a)** | *fazer atenção* | обращать внимание / быть внимательным |\n| **fazer questão de** + инф. | — | настаивать, считать делом чести: **Faço questão de pagar.** |\n| **fazer uma pergunta** | *perguntar uma pergunta* | задать вопрос |\n| **tirar uma fotografia / um curso / conclusões** | *fazer foto* | сфотографировать / окончить курс / сделать выводы |\n| **levantar dinheiro** | *sacar dinheiro* (бр.) | снять деньги (в разговоре также **tirar dinheiro**) |\n| **pôr em causa / em prática** | — | ставить под сомнение / претворять в жизнь |\n| **levar a cabo** | — | осуществить |\n| **dar conta de** | — | заметить, осознать; справиться |\n| **dar razão a alguém / ter razão** | *ter direito* | признать правоту / быть правым |\n| **correr um risco** | *fazer risco* | рисковать |\n| **cometer um erro** | — | совершить ошибку |\n| **marcar uma consulta / reunião** | — | записаться на приём / назначить встречу (также **fazer uma marcação**) |\n| **cumprir um prazo / uma promessa** | *fazer prazo* | уложиться в срок / сдержать обещание |\n| **desempenhar um papel** | *jogar um papel* | играть роль |",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **meter o Rossio na Betesga** | — | чисто лиссабонская идиома |\n| **ficar em águas de bacalhau** | acabar em pizza (≈) | в BR своя идиома: «закончиться без последствий» |\n| **passar pelas brasas** | tirar um cochilo | в BR выражение не используется |\n| **andar à nora** | estar perdido / boiando | **nora** — водяное колесо |\n| **tirar uma fotografia** | tirar / bater uma foto | *bater foto* — бразильское |\n| **levantar dinheiro** | sacar dinheiro | *sacar* в pt-PT — «вытащить» (разг.) |\n| **estar nas suas sete quintas** | estar em casa, estar à vontade | в BR почти неизвестно |\n\nМногие идиомы общие (**fazer vista grossa, dar o braço a torcer, pôr os pontos nos is**), но самые колоритные — только португальские.",
+  "commonErrors": "- **Кальки с русского в коллокациях**: *fazer uma decisão* ✗ → **tomar uma decisão** ✓; *fazer atenção* ✗ → **prestar atenção** ✓.\n- **«Играть роль»**: *jogar um papel* ✗ → **desempenhar um papel** ✓ (jogar — только об играх).\n- **Перевод идиом дословно**: *Ele está numa ponta da cova* ✗ → **Ele está com os pés para a cova** ✓.\n- **Предлог после fazer questão**: *Faço questão pagar* ✗ → **Faço questão de pagar** ✓.\n- **Бразильские варианты**: *bater uma foto*, *sacar dinheiro* ✗ → **tirar uma fotografia**, **levantar dinheiro** ✓.\n- **Изменение «застывших» слов**: *dar a mão a torcer* ✗ → **dar o braço a torcer** ✓; *sem pé nem cabeça* — допустимо в разговоре, но канон — **sem pés nem cabeça**.\n- **Регистр**: **ir desta para melhor** — шутливо; в соболезнованиях — **faleceu** ✓.",
+  "examples": [
+    {
+      "pt": "Quando ele me propôs o negócio, fiquei logo de pé atrás.",
+      "ru": "Когда он предложил мне сделку, я сразу насторожился.",
+      "audio": true
+    },
+    {
+      "pt": "Na cozinha, a avó está nas suas sete quintas.",
+      "ru": "На кухне бабушка в своей стихии.",
+      "audio": true
+    },
+    {
+      "pt": "Queres pôr vinte pessoas num T1? Isso é meter o Rossio na Betesga!",
+      "ru": "Хочешь поселить двадцать человек в однушке? Это как впихнуть невпихуемое!",
+      "audio": true
+    },
+    {
+      "pt": "O projeto ficou em águas de bacalhau.",
+      "ru": "Проект так ничем и не закончился.",
+      "audio": true
+    },
+    {
+      "pt": "Faço questão de pagar o jantar.",
+      "ru": "Я настаиваю на том, чтобы заплатить за ужин.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-fraseologia-ex-01",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Quando o chefe propôs o negócio, fiquei de pé ___.",
+      "answer": [
+        "atrás"
+      ],
+      "ru": "Когда начальник предложил сделку, я насторожился."
+    },
+    {
+      "id": "b2-fraseologia-ex-02",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Na cozinha, a avó está nas suas sete ___.",
+      "answer": [
+        "quintas"
+      ],
+      "ru": "На кухне бабушка в своей стихии."
+    },
+    {
+      "id": "b2-fraseologia-ex-03",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Ele nunca dá o braço a ___, mesmo quando não tem razão.",
+      "answer": [
+        "torcer"
+      ],
+      "ru": "Он никогда не признаёт неправоту, даже когда не прав."
+    },
+    {
+      "id": "b2-fraseologia-ex-04",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "O fiscal fez vista ___ às irregularidades.",
+      "answer": [
+        "grossa"
+      ],
+      "ru": "Инспектор закрыл глаза на нарушения."
+    },
+    {
+      "id": "b2-fraseologia-ex-05",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Queres pôr trinta pessoas nesta sala? Isso é meter o Rossio na ___!",
+      "answer": [
+        "Betesga"
+      ],
+      "ru": "Хочешь поместить тридцать человек в этот зал? Это невозможно!"
+    },
+    {
+      "id": "b2-fraseologia-ex-06",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Hoje ando à ___: não percebo nada do que se passa.",
+      "answer": [
+        "nora"
+      ],
+      "ru": "Сегодня я как в тумане: ничего не понимаю."
+    },
+    {
+      "id": "b2-fraseologia-ex-07",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Tens de ___ atenção às instruções.",
+      "answer": [
+        "prestar",
+        "ter"
+      ],
+      "ru": "Ты должен внимательно следить за инструкциями.",
+      "explanation": "Коллокации: prestar atenção (книжнее) или ter atenção (разговорно); не *fazer atenção*."
+    },
+    {
+      "id": "b2-fraseologia-ex-08",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Ainda não ___ (tomar) uma decisão sobre a mudança.",
+      "answer": [
+        "tomei"
+      ],
+      "ru": "Я ещё не принял решение о переезде.",
+      "hint": "eu"
+    },
+    {
+      "id": "b2-fraseologia-ex-09",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Faço ___ de pagar o jantar.",
+      "answer": [
+        "questão"
+      ],
+      "ru": "Я настаиваю на том, чтобы заплатить за ужин."
+    },
+    {
+      "id": "b2-fraseologia-ex-10",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "Esta história não tem pés nem ___.",
+      "options": [
+        "cabeça",
+        "mãos",
+        "pernas",
+        "sentido"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-fraseologia-ex-11",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "«O projeto ficou em águas de bacalhau» значит, что проект:",
+      "options": [
+        "принёс большую прибыль",
+        "оказался под угрозой",
+        "заглох и закончился ничем",
+        "был связан с рыболовством"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-fraseologia-ex-12",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "Vamos ___ uma fotografia ao grupo!",
+      "options": [
+        "fazer",
+        "bater",
+        "tirar",
+        "tomar"
+      ],
+      "correct": 2,
+      "explanation": "В pt-PT — tirar uma fotografia; bater uma foto — бразильское."
+    },
+    {
+      "id": "b2-fraseologia-ex-13",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "Vou ___ dinheiro ao multibanco.",
+      "options": [
+        "sacar",
+        "pegar",
+        "receber",
+        "levantar"
+      ],
+      "correct": 3,
+      "explanation": "Снять деньги — levantar dinheiro."
+    },
+    {
+      "id": "b2-fraseologia-ex-14",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "O colega admitiu finalmente que estava errado. Какая идиома подходит?",
+      "options": [
+        "Deu a mão à palmatória.",
+        "Fez vista grossa.",
+        "Passou pelas brasas.",
+        "Bateu com a porta."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b2-fraseologia-ex-15",
+      "topicId": "b2-fraseologia",
+      "type": "transform",
+      "prompt": "O avô morreu no ano passado.",
+      "instruction": "Замените глагол morrer шутливо-эвфемистической идиомой.",
+      "answer": [
+        "O avô foi desta para melhor no ano passado.",
+        "No ano passado, o avô foi desta para melhor."
+      ]
+    },
+    {
+      "id": "b2-fraseologia-ex-16",
+      "topicId": "b2-fraseologia",
+      "type": "transform",
+      "prompt": "Ela fingiu não ver o erro.",
+      "instruction": "Используйте fazer vista grossa.",
+      "answer": [
+        "Ela fez vista grossa ao erro.",
+        "Fez vista grossa ao erro."
+      ]
+    },
+    {
+      "id": "b2-fraseologia-ex-17",
+      "topicId": "b2-fraseologia",
+      "type": "order-words",
+      "words": [
+        "braço",
+        "Ele",
+        "torcer",
+        "nunca",
+        "a",
+        "dá",
+        "o"
+      ],
+      "answer": "Ele nunca dá o braço a torcer",
+      "ru": "Он никогда не признаёт своей неправоты."
+    },
+    {
+      "id": "b2-fraseologia-ex-18",
+      "topicId": "b2-fraseologia",
+      "type": "order-words",
+      "words": [
+        "questão",
+        "de",
+        "Faço",
+        "ajudar",
+        "te"
+      ],
+      "answer": "Faço questão de te ajudar",
+      "ru": "Я непременно тебе помогу.",
+      "explanation": "После предлога de клитика может стоять перед инфинитивом."
+    },
+    {
+      "id": "b2-fraseologia-ex-19",
+      "topicId": "b2-fraseologia",
+      "type": "translate-ru-pt",
+      "ru": "Это бессмыслица.",
+      "answer": [
+        "Isto não tem pés nem cabeça.",
+        "Isso não tem pés nem cabeça.",
+        "Isto é uma coisa sem pés nem cabeça.",
+        "Isso é uma coisa sem pés nem cabeça.",
+        "Isto não faz sentido.",
+        "Isso não faz sentido."
+      ]
+    },
+    {
+      "id": "b2-fraseologia-ex-20",
+      "topicId": "b2-fraseologia",
+      "type": "translate-ru-pt",
+      "ru": "Мы должны принять меры.",
+      "answer": [
+        "Temos de tomar medidas.",
+        "Temos que tomar medidas.",
+        "Devemos tomar medidas.",
+        "Nós temos de tomar medidas.",
+        "Precisamos de tomar medidas."
+      ]
+    },
+    {
+      "id": "b2-fraseologia-ex-21",
+      "topicId": "b2-fraseologia",
+      "type": "listen-type",
+      "text": "O projeto ficou em águas de bacalhau.",
+      "answer": [
+        "O projeto ficou em águas de bacalhau."
+      ]
+    },
+    {
+      "id": "b2-fraseologia-ex-22",
+      "topicId": "b2-fraseologia",
+      "type": "match",
+      "prompt": "Соедините идиому со значением.",
+      "pairs": [
+        {
+          "left": "andar à nora",
+          "right": "быть сбитым с толку"
+        },
+        {
+          "left": "ficar de pé atrás",
+          "right": "насторожиться"
+        },
+        {
+          "left": "passar pelas brasas",
+          "right": "вздремнуть"
+        },
+        {
+          "left": "queimar as pestanas",
+          "right": "корпеть над книгами"
+        },
+        {
+          "left": "ter o rei na barriga",
+          "right": "задирать нос"
+        },
+        {
+          "left": "deitar água na fervura",
+          "right": "разрядить обстановку"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-fraseologia-mt-01",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Depois de tanta discussão, o assunto ficou em águas de ___.",
+      "answer": [
+        "bacalhau"
+      ],
+      "ru": "После стольких споров дело так ничем и не закончилось."
+    },
+    {
+      "id": "b2-fraseologia-mt-02",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "O velhote já está com os pés para a ___.",
+      "answer": [
+        "cova"
+      ],
+      "ru": "Старик уже одной ногой в могиле."
+    },
+    {
+      "id": "b2-fraseologia-mt-03",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "É preciso ___ medidas urgentes.",
+      "answer": [
+        "tomar"
+      ],
+      "ru": "Нужно принять срочные меры."
+    },
+    {
+      "id": "b2-fraseologia-mt-04",
+      "topicId": "b2-fraseologia",
+      "type": "fill-gap",
+      "prompt": "Não sejas teimoso, dá o ___ a torcer!",
+      "answer": [
+        "braço"
+      ],
+      "ru": "Не упрямься, признай, что ты неправ!"
+    },
+    {
+      "id": "b2-fraseologia-mt-05",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "Tens de ___ atenção ao trânsito!",
+      "options": [
+        "fazer",
+        "prestar",
+        "meter",
+        "pôr"
+      ],
+      "correct": 1,
+      "explanation": "Prestar atenção (или ter atenção); *fazer atenção* — калька."
+    },
+    {
+      "id": "b2-fraseologia-mt-06",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "«Ela está nas suas sete quintas» значит:",
+      "options": [
+        "У неё семь домов.",
+        "Она в растерянности.",
+        "Она в своей стихии.",
+        "Она не в духе."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-fraseologia-mt-07",
+      "topicId": "b2-fraseologia",
+      "type": "choice",
+      "prompt": "«Isso é meter o Rossio na Betesga» говорят, когда:",
+      "options": [
+        "кто-то хвастается",
+        "кто-то сплетничает",
+        "всё идёт по плану",
+        "пытаются впихнуть слишком много в слишком малое"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-fraseologia-mt-08",
+      "topicId": "b2-fraseologia",
+      "type": "transform",
+      "prompt": "Ela está muito confusa hoje.",
+      "instruction": "Используйте andar à nora.",
+      "answer": [
+        "Ela anda à nora hoje.",
+        "Hoje ela anda à nora.",
+        "Ela hoje anda à nora.",
+        "Anda à nora hoje.",
+        "Hoje anda à nora."
+      ]
+    },
+    {
+      "id": "b2-fraseologia-mt-09",
+      "topicId": "b2-fraseologia",
+      "type": "translate-ru-pt",
+      "ru": "Он настаивает на том, чтобы заплатить.",
+      "answer": [
+        "Ele faz questão de pagar.",
+        "Faz questão de pagar."
+      ]
+    },
+    {
+      "id": "b2-fraseologia-mt-10",
+      "topicId": "b2-fraseologia",
+      "type": "listen-type",
+      "text": "Não faças vista grossa a estes erros.",
+      "answer": [
+        "Não faças vista grossa a estes erros."
+      ]
+    }
+  ]
+}

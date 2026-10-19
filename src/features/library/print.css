@@ -1,0 +1,74 @@
+/* Print stylesheet for cheat-sheets (loaded with the cheat-sheet page; only affects printing). */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+  /* App chrome (Layout: <header> before <main>, tab bar <nav> after it) and anything marked .no-print */
+  header:has(~ main),
+  main ~ nav,
+  .no-print {
+    display: none !important;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .cheatsheet,
+  .cheatsheet * {
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .cheatsheet h2,
+  .cheatsheet h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .cheatsheet h3 {
+    margin-top: 0.9em !important;
+  }
+  /* Tables: no horizontal scroll container on paper, compact cells, repeat header row */
+  .cheatsheet div:has(> table) {
+    overflow: visible !important;
+    border-color: #999 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .cheatsheet table {
+    font-size: 9pt;
+  }
+  .cheatsheet thead {
+    display: table-header-group;
+  }
+  .cheatsheet tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border-color: #bbb !important;
+  }
+  .cheatsheet th,
+  .cheatsheet td {
+    padding: 2pt 5pt !important;
+  }
+  .cheatsheet thead,
+  .cheatsheet tr:nth-child(even) {
+    background: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cheatsheet blockquote {
+    border-left: 3pt solid #888 !important;
+  }
+  .cheatsheet a {
+    text-decoration: none;
+  }
+}

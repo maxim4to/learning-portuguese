@@ -1,0 +1,177 @@
+{
+  "id": "futebol-cafe",
+  "title": "Футбол в кафе",
+  "titlePt": "Futebol no café",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Então, vens ver o jogo connosco? É o Benfica contra o Porto.", "ru": "Ну что, придёшь смотреть матч с нами? Бенфика против Порту." },
+    { "speaker": "B", "pt": "Venho, claro! A que horas é o jogo?", "ru": "Конечно приду! Во сколько матч?" },
+    { "speaker": "A", "pt": "Às oito e meia. O café vai estar cheio, por isso guardei-te uma cadeira.", "ru": "В половине девятого. В кафе будет битком, поэтому я заняла тебе стул." },
+    { "speaker": "B", "pt": "Obrigado! Tu és benfiquista, não és?", "ru": "Спасибо! Ты ведь болеешь за Бенфику?" },
+    { "speaker": "A", "pt": "Sou, desde pequena. E tu? Já escolheste um clube?", "ru": "Да, с детства. А ты? Уже выбрал клуб?" },
+    { "speaker": "B", "pt": "Ainda não. O meu vizinho é sportinguista e diz que tenho de ser do Sporting.", "ru": "Ещё нет. Мой сосед болеет за Спортинг и говорит, что я должен болеть за Спортинг." },
+    { "speaker": "A", "pt": "Nem pensar! Aqui no café quase todos são do Benfica.", "ru": "Даже не думай! Здесь в кафе почти все за Бенфику." },
+    { "speaker": "B", "pt": "Golo! Quem marcou?", "ru": "Гол! Кто забил?" },
+    { "speaker": "A", "pt": "Foi o número dez, de cabeça! Um a zero!", "ru": "Десятый номер, головой! Один — ноль!" },
+    { "speaker": "B", "pt": "Espera, o árbitro está a ver as imagens do VAR.", "ru": "Подожди, судья смотрит повтор VAR." },
+    { "speaker": "A", "pt": "Não acredito! Anulou o golo! Foi fora de jogo?", "ru": "Не может быть! Гол отменили! Это был офсайд?" },
+    { "speaker": "B", "pt": "Parece que sim. Que azar!", "ru": "Похоже, да. Вот невезение!" },
+    { "speaker": "A", "pt": "O árbitro hoje está a ser péssimo. Mas ainda falta a segunda parte.", "ru": "Судья сегодня ужасный. Но ещё впереди второй тайм." },
+    { "speaker": "B", "pt": "Vamos pedir mais duas imperiais para dar sorte?", "ru": "Закажем ещё по пиву на удачу?" },
+    { "speaker": "A", "pt": "Bora! Senhor Zé, mais duas imperiais, se faz favor!", "ru": "Давай! Сеньор Зе, ещё два пива, пожалуйста!" }
+  ],
+  "phrases": [
+    { "pt": "A que horas é o jogo?", "ru": "Во сколько матч?" },
+    { "pt": "És de que clube?", "ru": "Ты за какой клуб болеешь?" },
+    { "pt": "Sou do Benfica.", "ru": "Я болею за Бенфику." },
+    { "pt": "Quem é que está a ganhar?", "ru": "Кто выигрывает?" },
+    { "pt": "Quanto está o jogo?", "ru": "Какой счёт?" },
+    { "pt": "Golo!", "ru": "Гол!" },
+    { "pt": "Quem marcou?", "ru": "Кто забил?" },
+    { "pt": "Foi fora de jogo!", "ru": "Это был офсайд!" },
+    { "pt": "O árbitro está a ser péssimo.", "ru": "Судья сегодня ужасный." },
+    { "pt": "Que azar!", "ru": "Вот невезение!" }
+  ],
+  "vocab": [
+    { "pt": "o jogo", "ru": "матч, игра", "example": "O jogo começa às oito e meia." },
+    { "pt": "o clube", "ru": "клуб", "example": "Qual é o teu clube?" },
+    { "pt": "a equipa", "ru": "команда", "example": "A equipa jogou muito bem." },
+    { "pt": "o benfiquista", "ru": "болельщик «Бенфики»", "example": "O meu sogro é benfiquista ferrenho." },
+    { "pt": "o sportinguista", "ru": "болельщик «Спортинга»", "example": "Os sportinguistas estão contentes hoje." },
+    { "pt": "o portista", "ru": "болельщик «Порту»", "example": "No Porto há muitos portistas." },
+    { "pt": "o adepto", "ru": "болельщик", "example": "Os adeptos cantaram o jogo todo." },
+    { "pt": "ser do Benfica", "ru": "болеть за «Бенфику»", "example": "A Rita é do Benfica desde pequena." },
+    { "pt": "o golo", "ru": "гол", "example": "Foi um golo fantástico!" },
+    { "pt": "marcar", "ru": "забить (гол)", "example": "Ele marcou dois golos." },
+    { "pt": "o árbitro", "ru": "судья (рефери)", "example": "O árbitro mostrou cartão amarelo." },
+    { "pt": "o cartão amarelo / vermelho", "ru": "жёлтая / красная карточка", "example": "Levou cartão vermelho no fim do jogo." },
+    { "pt": "o fora de jogo", "ru": "офсайд", "example": "O golo foi anulado por fora de jogo." },
+    { "pt": "anular", "ru": "отменить (гол)", "example": "O árbitro anulou o golo." },
+    { "pt": "o penálti", "ru": "пенальти", "example": "Isso foi penálti!" },
+    { "pt": "a falta", "ru": "фол, нарушение", "example": "Foi falta clara!" },
+    { "pt": "o canto", "ru": "угловой", "example": "Marcaram de canto." },
+    { "pt": "a primeira / segunda parte", "ru": "первый / второй тайм", "example": "Na segunda parte jogaram melhor." },
+    { "pt": "o intervalo", "ru": "перерыв", "example": "No intervalo fomos buscar bifanas." },
+    { "pt": "o empate", "ru": "ничья", "example": "O jogo acabou empatado: um a um." },
+    { "pt": "ganhar", "ru": "выигрывать", "example": "Quem está a ganhar?" },
+    { "pt": "perder", "ru": "проигрывать", "example": "Perdemos três a um." },
+    { "pt": "o resultado", "ru": "счёт, результат", "example": "Qual foi o resultado?" },
+    { "pt": "o jogador", "ru": "игрок", "example": "É o melhor jogador da equipa." },
+    { "pt": "o guarda-redes", "ru": "вратарь", "example": "O guarda-redes defendeu o penálti." },
+    { "pt": "o treinador", "ru": "тренер", "example": "O treinador mudou dois jogadores." },
+    { "pt": "o estádio", "ru": "стадион", "example": "O Estádio da Luz é enorme." },
+    { "pt": "o campeonato", "ru": "чемпионат", "example": "Quem vai ganhar o campeonato este ano?" },
+    { "pt": "o dérbi / o clássico", "ru": "дерби (Бенфика—Спортинг) / классико (с «Порту»)", "example": "O dérbi de Lisboa é sempre tenso." },
+    { "pt": "a imperial", "ru": "маленькое разливное пиво (Лиссабон)", "example": "Duas imperiais, se faz favor!" },
+    { "pt": "o fino", "ru": "маленькое разливное пиво (Порту)", "example": "No Porto pede-se um fino." },
+    { "pt": "dar sorte", "ru": "приносить удачу", "example": "Esta camisola dá-me sorte." },
+    { "pt": "que azar", "ru": "вот невезение", "example": "Bola no poste, que azar!" }
+  ],
+  "exercises": [
+    {
+      "id": "futebol-cafe-ex-01",
+      "topicId": "futebol-cafe",
+      "type": "choice",
+      "prompt": "A bola entrou na baliza! Grita-se:",
+      "options": ["Gol!", "Golo!", "Ponto!", "Cesto!"],
+      "correct": 1,
+      "explanation": "В Португалии — **golo** (мн. ч. **golos**). *Gol* — бразильская форма."
+    },
+    {
+      "id": "futebol-cafe-ex-02",
+      "topicId": "futebol-cafe",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "benfiquista", "right": "болеет за «Бенфику»" },
+        { "left": "sportinguista", "right": "болеет за «Спортинг»" },
+        { "left": "portista", "right": "болеет за «Порту»" },
+        { "left": "o adepto", "right": "болельщик" },
+        { "left": "o guarda-redes", "right": "вратарь" }
+      ]
+    },
+    {
+      "id": "futebol-cafe-ex-03",
+      "topicId": "futebol-cafe",
+      "type": "fill-gap",
+      "prompt": "Espera, o árbitro está ___ ver as imagens do VAR.",
+      "answer": ["a"],
+      "hint": "estar ___ + infinitivo",
+      "ru": "Подожди, судья смотрит повтор VAR.",
+      "explanation": "Действие в процессе в pt-PT — **estar a + infinitivo**: **está a ver**. *Está vendo* — бразильский вариант."
+    },
+    {
+      "id": "futebol-cafe-ex-04",
+      "topicId": "futebol-cafe",
+      "type": "listen-type",
+      "text": "Golo! Quem marcou?",
+      "answer": ["Golo! Quem marcou?"],
+      "explanation": "**Marcar** — забить гол; **marcou** — perfeito simples, 3-е лицо."
+    },
+    {
+      "id": "futebol-cafe-ex-05",
+      "topicId": "futebol-cafe",
+      "type": "listen-choice",
+      "text": "Não acredito! Anulou o golo! Foi fora de jogo?",
+      "prompt": "Что случилось?",
+      "options": ["Судья отменил гол.", "Судья назначил пенальти.", "Игрок получил красную карточку.", "Матч закончился вничью."],
+      "correct": 0,
+      "explanation": "**Anular o golo** — отменить гол; **fora de jogo** — офсайд."
+    },
+    {
+      "id": "futebol-cafe-ex-06",
+      "topicId": "futebol-cafe",
+      "type": "order-words",
+      "words": ["Aqui", "no", "café", "quase", "todos", "são", "do", "Benfica."],
+      "answer": "Aqui no café quase todos são do Benfica.",
+      "ru": "Здесь в кафе почти все болеют за Бенфику."
+    },
+    {
+      "id": "futebol-cafe-ex-07",
+      "topicId": "futebol-cafe",
+      "type": "translate-ru-pt",
+      "ru": "Ты за какой клуб болеешь?",
+      "answer": ["És de que clube?", "De que clube és?", "De que clube é que és?", "Qual é o teu clube?", "Tu és de que clube?"],
+      "explanation": "«Болеть за» по-португальски — **ser de**: **sou do Benfica**, **és de que clube?**"
+    },
+    {
+      "id": "futebol-cafe-ex-08",
+      "topicId": "futebol-cafe",
+      "type": "choice",
+      "prompt": "Num café de Lisboa, pedes cerveja de pressão assim:",
+      "options": ["Um chope, por favor.", "Uma cerveja gelada, moço.", "Um fino, se faz favor.", "Uma imperial, se faz favor."],
+      "correct": 3,
+      "explanation": "В Лиссабоне маленькое разливное пиво — **uma imperial**, в Порту — **um fino**. *Chope* и обращение *moço* — бразильские."
+    },
+    {
+      "id": "futebol-cafe-ex-09",
+      "topicId": "futebol-cafe",
+      "type": "fill-gap",
+      "prompt": "O café vai estar cheio, por isso guardei-___ uma cadeira.",
+      "answer": ["te"],
+      "hint": "«тебе», местоимение после глагола",
+      "ru": "В кафе будет битком, поэтому я заняла тебе стул.",
+      "explanation": "Без «магнитов» местоимение после глагола через дефис: **guardei-te**. «Тебе» при обращении на tu — **te**, не *lhe*."
+    },
+    {
+      "id": "futebol-cafe-ex-10",
+      "topicId": "futebol-cafe",
+      "type": "transform",
+      "prompt": "O árbitro anula o golo.",
+      "instruction": "Поставь в прошедшее время (pretérito perfeito)",
+      "answer": ["O árbitro anulou o golo."],
+      "explanation": "Глаголы на -ar в perfeito, 3-е лицо ед. ч.: **anular → anulou**, **marcar → marcou**, **ganhar → ganhou**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Коллега-португалец спрашивает, как прошёл вчерашний матч, который вы смотрели в кафе. Напишите ему сообщение (6–8 предложений): кто играл, где и с кем вы смотрели, какой был счёт, кто забил, что сделал судья и за какой клуб вы теперь болеете.",
+    "sample": "Olá, Duarte!\nOntem vi o Sporting–Benfica no café ao pé de casa, com a Rita e uns vizinhos.\nO café estava cheio e havia adeptos dos dois clubes.\nNa primeira parte o Benfica marcou de cabeça, mas o árbitro anulou o golo por fora de jogo.\nNa segunda parte houve um penálti para o Sporting e eles ganharam um a zero.\nOs sportinguistas cantaram até ao fim, e nós bebemos mais umas imperiais para esquecer.\nAcho que agora sou do Benfica, que azar!\nUm abraço!",
+    "checklist": [
+      "Прошедшее время: vi, marcou, anulou, ganharam",
+      "Есть футбольная лексика: golo, árbitro, fora de jogo, primeira/segunda parte",
+      "«Болеть за» передано через ser do/da: sou do Benfica",
+      "Пиво названо по-португальски: imperial (Лиссабон) или fino (Порту)",
+      "Нет бразилизмов: gol, time, torcedor, chope"
+    ]
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "id": "a2-pronomes-cliticos-colocacao",
+  "level": "A2",
+  "module": "a2-pronomes",
+  "title": "Безударные местоимения и их место в предложении",
+  "titlePt": "Pronomes átonos: ênclise, próclise e mesóclise",
+  "requires": [
+    "a2-pronomes-complemento",
+    "a2-preterito-perfeito-simples"
+  ],
+  "theory": "## Формы\n\n| лицо | прямое дополнение (кого? что?) | косвенное (кому?) | возвратное |\n|---|---|---|---|\n| eu | me | me | me |\n| tu | te | te | te |\n| ele / ela / você | **o / a** | **lhe** | se |\n| nós | nos | nos | nos |\n| eles / elas / vocês | **os / as** | **lhes** | se |\n\n## Правило 1: по умолчанию — после глагола (ênclise)\n\nВ утвердительном предложении без «притягивающих» слов местоимение стоит **после глагола через дефис**. Это главная черта европейского португальского.\n\n**Chamo-me Maxim. Vejo-te amanhã. Ela deu-me o livro. Eu amo-te.**\n\nПодлежащее (**eu, ele, a Ana**) и обстоятельства (**hoje, amanhã, aqui**) местоимение **не притягивают**: **Hoje vi-o no café.**\n\n## Правило 2: перед глаголом (próclise) — после «магнитов»\n\n| магнит | пример |\n|---|---|\n| отрицание: não, nunca, ninguém, nada, nem | **Não te percebo.** **Ninguém me disse.** |\n| наречия: já, ainda, também, só, sempre, talvez | **Já te disse.** **Também me parece.** |\n| вопросительные слова: quem, onde, como, porque, o que | **Quem te disse?** **Onde o conheceste?** |\n| союзы придаточных: que, se, quando, porque, como | **Acho que o conheço.** **Se te apetecer...** |\n| кванторы-подлежащие: todos, tudo, alguém, ambos | **Alguém te ligou.** **Todos me ajudaram.** |\n\n## Правило 3: внутри глагола (mesóclise)\n\nВ **futuro** и **condicional**, если нет «магнита», местоимение вставляется перед окончанием: **dir-te-ei** (скажу тебе), **dar-lhe-ia** (дал бы ему), **far-se-á** (будет сделано). Это книжный стиль; в речи говорят **Vou dizer-te** или с магнитом: **Não te direi.**\n\n## Изменения формы o / a / os / as\n\n| глагол кончается на | что происходит | пример |\n|---|---|---|\n| -r, -s, -z | согласная выпадает, **o → lo** | comprar + o → **comprá-lo**; fazemos + o → **fazemo-lo**; fiz + a → **fi-la** |\n| -m, -ão, -õe | **o → no** | compram + o → **compram-no**; dão + a → **dão-na**; põe + o → **põe-no** |\n| гласная | без изменений | comprei + o → **comprei-o** |\n\nУдарение при выпадении -r: **comprá-lo, comê-lo, parti-lo, pô-lo**.\n\n## Слияния (contrações)\n\nКосвенное + прямое: **me + o = mo, te + o = to, lhe + o = lho** (lhe + a = lha, lhe + os = lhos). **Dá-mo!** — «Дай мне его!». **Já lho dei.** — «Я ему это уже дал».\n\n## С инфинитивом\n\nПосле предлога или модального глагола обычно ставят местоимение после инфинитива: **Vou ajudar-te. Quero vê-lo. Para o fazer / para fazê-lo** — в pt-PT нормально и то и другое.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Chamo-me** Ana. | **Me chamo** Ana. | начинать фразу с клитики в pt-PT нельзя |\n| **Eu amo-te.** | **Eu te amo.** | подлежащее не притягивает местоимение |\n| **Ele chama-se** Rui. | **Ele se chama** Rui. | |\n| **Vi-o** ontem. | **Vi ele** ontem. | *ele* как дополнение в pt-PT — грубая ошибка |\n| **Dá-me** isso. | **Me dá** isso. | |\n| **Dir-te-ei.** / Vou dizer-te. | Vou te dizer. | mesóclise в Бразилии практически исчезла |\n\nБразильская интонация «Me dá...» — первый признак бразильского португальского. В pt-PT в начале фразы — всегда **ênclise**.",
+  "commonErrors": "- **Клитика в начале предложения** (калька с бразильских материалов): *Me chamo...* ✗ → **Chamo-me...** ✓.\n- **Ênclise после отрицания**: *Não percebo-te* ✗ → **Não te percebo** ✓.\n- **Забыт магнит в придаточном**: *Acho que conheço-o* ✗ → **Acho que o conheço** ✓.\n- **Нет дефиса**: *Vejo te amanhã* ✗ → **Vejo-te amanhã** ✓.\n- **Неизменённая форма**: *comprar-o* ✗ → **comprá-lo**; *fazem-o* ✗ → **fazem-no**.\n- **Ele вместо o**: *Conheço ele* ✗ → **Conheço-o** ✓ (русское «знаю его» тянет к полной форме).\n- **lhe вместо o**: *Vi-lhe* ✗ → **Vi-o** ✓ (видеть кого? → прямое дополнение).\n- **Будущее время**: *Direi-te* ✗ → **Dir-te-ei** ✓ или **Vou dizer-te** ✓.",
+  "examples": [
+    {
+      "pt": "Chamo-me Maxim e moro em Lisboa.",
+      "ru": "Меня зовут Максим, и я живу в Лиссабоне.",
+      "audio": true
+    },
+    {
+      "pt": "Não te percebo, podes repetir?",
+      "ru": "Я тебя не понимаю, можешь повторить?",
+      "audio": true
+    },
+    {
+      "pt": "Acho que já o conheço.",
+      "ru": "Кажется, я его уже знаю.",
+      "audio": true
+    },
+    {
+      "pt": "O bilhete? Comprei-o ontem na estação.",
+      "ru": "Билет? Я купил его вчера на вокзале.",
+      "audio": true
+    },
+    {
+      "pt": "Se precisares de ajuda, diz-me.",
+      "ru": "Если понадобится помощь, скажи мне.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-01",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Как представиться в Португалии?",
+      "options": [
+        "Eu me chamo Maxim.",
+        "Me chamo Maxim.",
+        "Chamo-me Maxim.",
+        "Chamo me Maxim."
+      ],
+      "correct": 2,
+      "explanation": "Без «магнита» местоимение стоит после глагола через дефис."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-02",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Te não percebo.",
+        "Não percebo te.",
+        "Não percebo-te.",
+        "Não te percebo."
+      ],
+      "correct": 3,
+      "explanation": "não — магнит, местоимение перед глаголом."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-03",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Acho que a conheço.",
+        "Acho que conheço ela.",
+        "Acho que conheço-la.",
+        "Acho que conheço-a."
+      ],
+      "correct": 0,
+      "explanation": "Союз que притягивает местоимение."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-04",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Ele se chama Rui.",
+        "Ele chama-se Rui.",
+        "Ele chama se Rui.",
+        "Se chama Rui."
+      ],
+      "correct": 1,
+      "explanation": "Подлежащее ele не является магнитом."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-05",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Os sapatos? Eles ___ ontem.",
+      "options": [
+        "os compraram-nos",
+        "compraram-os",
+        "compraram-nos",
+        "compraram-los"
+      ],
+      "correct": 2,
+      "explanation": "После -m: o/os → no/nos."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-06",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "fill-gap",
+      "prompt": "Ontem vi o João, mas ele não ___ viu.",
+      "answer": [
+        "me"
+      ],
+      "ru": "Вчера я видел Жуана, но он меня не увидел."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-07",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "fill-gap",
+      "prompt": "Telefonei à Marta e disse-___ que chegava tarde.",
+      "answer": [
+        "lhe"
+      ],
+      "hint": "кому? → косвенное дополнение",
+      "ru": "Я позвонил Марте и сказал ей, что приду поздно."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-08",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "fill-gap",
+      "prompt": "Estes sapatos? Comprei-___ em Lisboa.",
+      "answer": [
+        "os"
+      ],
+      "ru": "Эти туфли? Я купил их в Лиссабоне."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-09",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "fill-gap",
+      "prompt": "As chaves? Os miúdos perderam-___.",
+      "answer": [
+        "nas"
+      ],
+      "hint": "глагол кончается на -m",
+      "ru": "Ключи? Дети их потеряли."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-10",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "fill-gap",
+      "prompt": "O livro? Vou lê-___ amanhã.",
+      "answer": [
+        "lo"
+      ],
+      "ru": "Книгу? Я прочитаю её завтра."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-11",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Vejo amanhã. (te)",
+      "instruction": "Вставьте местоимение в скобках в правильное место.",
+      "answer": [
+        "Vejo-te amanhã."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-12",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Quem disse isso? (te)",
+      "instruction": "Вставьте местоимение в скобках в правильное место.",
+      "answer": [
+        "Quem te disse isso?"
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-13",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Já disse mil vezes. (te)",
+      "instruction": "Вставьте местоимение в скобках в правильное место.",
+      "answer": [
+        "Já te disse mil vezes."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-14",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Vou comprar o bilhete.",
+      "instruction": "Замените «o bilhete» местоимением.",
+      "answer": [
+        "Vou comprá-lo.",
+        "Vou-o comprar."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-15",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Fizemos o bolo ontem.",
+      "instruction": "Замените «o bolo» местоимением.",
+      "answer": [
+        "Fizemo-lo ontem.",
+        "Ontem fizemo-lo.",
+        "Nós fizemo-lo ontem."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-16",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Direi a verdade. (te)",
+      "instruction": "Вставьте местоимение (mesóclise).",
+      "answer": [
+        "Dir-te-ei a verdade."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-17",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "order-words",
+      "words": [
+        "me",
+        "Ninguém",
+        "nada",
+        "disse"
+      ],
+      "answer": "Ninguém me disse nada"
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-18",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "order-words",
+      "words": [
+        "que",
+        "Espero",
+        "ajudes",
+        "me"
+      ],
+      "answer": "Espero que me ajudes"
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-19",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "translate-ru-pt",
+      "ru": "Дай мне воду, пожалуйста.",
+      "answer": [
+        "Dá-me a água, por favor.",
+        "Dá-me água, por favor.",
+        "Por favor, dá-me a água.",
+        "Por favor, dá-me água.",
+        "Dá-me a água, se faz favor.",
+        "Dá-me água, se faz favor.",
+        "Passa-me a água, por favor."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-20",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "translate-ru-pt",
+      "ru": "Я его не знаю.",
+      "answer": [
+        "Não o conheço.",
+        "Eu não o conheço."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-21",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "listen-type",
+      "text": "Já te disse que não posso.",
+      "answer": [
+        "Já te disse que não posso."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-ex-22",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "match",
+      "prompt": "Соедините глагол и местоимение с правильной формой.",
+      "pairs": [
+        {
+          "left": "comprar + o",
+          "right": "comprá-lo"
+        },
+        {
+          "left": "fazem + o",
+          "right": "fazem-no"
+        },
+        {
+          "left": "fiz + os",
+          "right": "fi-los"
+        },
+        {
+          "left": "dá + me + o",
+          "right": "dá-mo"
+        },
+        {
+          "left": "põe + a",
+          "right": "põe-na"
+        },
+        {
+          "left": "comprei + a",
+          "right": "comprei-a"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-01",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Dá-mo o sal, por favor.",
+        "Me dá o sal, por favor.",
+        "Dá-me o sal, por favor.",
+        "Dá me o sal, por favor."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-02",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Nunca vi ele.",
+        "O nunca vi.",
+        "Nunca vi-o.",
+        "Nunca o vi."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-03",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Hoje a encontrei-a no metro.",
+        "Hoje encontrei ela no metro.",
+        "Hoje encontrei-la no metro.",
+        "Hoje encontrei-a no metro."
+      ],
+      "correct": 3,
+      "explanation": "hoje не является магнитом."
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-04",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Onde conheceste-o?",
+        "Onde o conheceste?",
+        "Onde conheceste ele?",
+        "Onde lhe conheceste?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-05",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "fill-gap",
+      "prompt": "Os documentos? Eles enviaram-___ ontem.",
+      "answer": [
+        "nos"
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-06",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "fill-gap",
+      "prompt": "A carta? Tens de escrevê-___ hoje.",
+      "answer": [
+        "la"
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-07",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Se apetecer, vem jantar. (te)",
+      "instruction": "Вставьте местоимение в скобках в правильное место.",
+      "answer": [
+        "Se te apetecer, vem jantar."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-08",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "transform",
+      "prompt": "Eles põem o casaco.",
+      "instruction": "Замените «o casaco» местоимением.",
+      "answer": [
+        "Eles põem-no.",
+        "Põem-no."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-09",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "translate-ru-pt",
+      "ru": "Я тебя люблю.",
+      "answer": [
+        "Amo-te.",
+        "Eu amo-te."
+      ]
+    },
+    {
+      "id": "a2-pronomes-cliticos-colocacao-mt-10",
+      "topicId": "a2-pronomes-cliticos-colocacao",
+      "type": "listen-choice",
+      "text": "Ainda não lho dei.",
+      "options": [
+        "Он мне это ещё не дал.",
+        "Я его ещё не видел.",
+        "Я ему это ещё не дал.",
+        "Я тебе это уже дал."
+      ],
+      "correct": 2
+    }
+  ]
+}

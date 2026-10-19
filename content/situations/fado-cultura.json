@@ -1,0 +1,176 @@
+{
+  "id": "fado-cultura",
+  "title": "Фаду и культурный вечер",
+  "titlePt": "Uma noite de fado",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Chegámos! Esta é uma das casas de fado mais antigas de Alfama.", "ru": "Пришли! Это один из старейших домов фаду в Алфаме." },
+    { "speaker": "B", "pt": "Que ambiente tão bonito! É verdade que temos de jantar aqui?", "ru": "Какая красивая атмосфера! Правда, что здесь обязательно ужинать?" },
+    { "speaker": "A", "pt": "Há um consumo mínimo de trinta euros por pessoa, mas o jantar vale a pena.", "ru": "Есть минимальный заказ — тридцать евро с человека, но ужин того стоит." },
+    { "speaker": "B", "pt": "E quando é que começa o fado?", "ru": "А когда начинается фаду?" },
+    { "speaker": "A", "pt": "Daqui a pouco, entre os pratos. Quando as luzes baixarem, ninguém fala.", "ru": "Скоро, между блюдами. Когда приглушат свет, все замолкают." },
+    { "speaker": "B", "pt": "Ninguém? Nem para pedir mais vinho?", "ru": "Совсем никто? Даже чтобы заказать ещё вина?" },
+    { "speaker": "A", "pt": "Nem isso! Vais ouvir: «Silêncio, que se vai cantar o fado.»", "ru": "Даже этого нельзя! Вот услышишь: «Тишина, сейчас будут петь фаду»." },
+    { "speaker": "B", "pt": "Que voz incrível! Não percebi tudo, mas fiquei arrepiado.", "ru": "Какой невероятный голос! Я понял не всё, но у меня мурашки по коже." },
+    { "speaker": "A", "pt": "É a saudade. É uma palavra difícil de traduzir.", "ru": "Это саудаде. Это слово трудно перевести." },
+    { "speaker": "B", "pt": "Em russo também não há uma palavra exata. É uma espécie de tristeza doce, não é?", "ru": "В русском тоже нет точного слова. Это что-то вроде светлой грусти, да?" },
+    { "speaker": "A", "pt": "Exatamente. É sentir falta de alguma coisa ou de alguém que está longe.", "ru": "Именно. Это тоска по чему-то или по кому-то, кто далеко." },
+    { "speaker": "B", "pt": "E o instrumento com aquele som tão especial é a guitarra portuguesa?", "ru": "А инструмент с таким особенным звуком — это португальская гитара?" },
+    { "speaker": "A", "pt": "É. E a outra, que faz o acompanhamento, chama-se viola.", "ru": "Да. А другая, которая аккомпанирует, называется виола (классическая гитара)." },
+    { "speaker": "B", "pt": "Para a próxima, gostava de ir a uma tasca com fado vadio.", "ru": "В следующий раз я бы хотел сходить в таверну, где поют любители." },
+    { "speaker": "A", "pt": "Boa ideia! Conheço uma na Mouraria onde qualquer pessoa pode cantar.", "ru": "Хорошая идея! Я знаю одну в Моурарии, где петь может кто угодно." }
+  ],
+  "phrases": [
+    { "pt": "Silêncio, que se vai cantar o fado.", "ru": "Тишина, сейчас будут петь фаду." },
+    { "pt": "Há consumo mínimo?", "ru": "Есть минимальная сумма заказа?" },
+    { "pt": "Queria reservar uma mesa para o espetáculo de fado.", "ru": "Я хотел бы забронировать столик на выступление фаду." },
+    { "pt": "A que horas começa o fado?", "ru": "Во сколько начинается фаду?" },
+    { "pt": "Vale mesmo a pena.", "ru": "Это действительно того стоит." },
+    { "pt": "Fiquei arrepiado.", "ru": "У меня мурашки по коже." },
+    { "pt": "Que voz incrível!", "ru": "Какой невероятный голос!" },
+    { "pt": "Tenho saudades de casa.", "ru": "Я скучаю по дому." },
+    { "pt": "Quem é que está a cantar?", "ru": "Кто сейчас поёт?" },
+    { "pt": "É difícil de traduzir.", "ru": "Это трудно перевести." }
+  ],
+  "vocab": [
+    { "pt": "o fado", "ru": "фаду (португальский городской романс)", "example": "O fado é Património da Humanidade desde 2011." },
+    { "pt": "a casa de fado", "ru": "дом фаду (ресторан с живым фаду)", "example": "Jantámos numa casa de fado no Bairro Alto." },
+    { "pt": "o fadista / a fadista", "ru": "исполнитель / исполнительница фаду", "example": "A fadista cantou de olhos fechados." },
+    { "pt": "o fado vadio", "ru": "любительское фаду (поют все желающие)", "example": "À quinta há fado vadio nesta tasca." },
+    { "pt": "a guitarra portuguesa", "ru": "португальская гитара (12 струн, грушевидная)", "example": "A guitarra portuguesa tem um som muito agudo." },
+    { "pt": "a viola", "ru": "виола (классическая гитара в фаду)", "example": "O tocador de viola acompanha a fadista." },
+    { "pt": "o guitarrista", "ru": "гитарист", "example": "O guitarrista também compõe fados." },
+    { "pt": "o xaile", "ru": "шаль (символ фадисты)", "example": "A fadista usava um xaile preto." },
+    { "pt": "a saudade", "ru": "саудаде — светлая тоска, ностальгия", "example": "Este fado fala de saudade." },
+    { "pt": "ter saudades de", "ru": "скучать по", "example": "Tenho saudades da minha família." },
+    { "pt": "sentir falta de", "ru": "не хватать, тосковать по", "example": "Sinto falta do mar." },
+    { "pt": "o silêncio", "ru": "тишина", "example": "Durante o fado, pede-se silêncio." },
+    { "pt": "arrepiado", "ru": "с мурашками по коже", "example": "Aquela voz deixou-me arrepiado." },
+    { "pt": "comovente", "ru": "трогательный", "example": "Foi um concerto muito comovente." },
+    { "pt": "emocionar-se", "ru": "растрогаться", "example": "Emocionei-me no último fado." },
+    { "pt": "a letra", "ru": "текст песни", "example": "A letra é de um poema de Camões." },
+    { "pt": "o espetáculo", "ru": "представление, шоу", "example": "O espetáculo começa às nove e meia." },
+    { "pt": "o consumo mínimo", "ru": "минимальная сумма заказа", "example": "O consumo mínimo é de vinte e cinco euros." },
+    { "pt": "valer a pena", "ru": "стоить того", "example": "Vale a pena ir ao Museu do Fado." },
+    { "pt": "o ambiente", "ru": "атмосфера, обстановка", "example": "O ambiente da tasca é muito acolhedor." },
+    { "pt": "a tasca", "ru": "простая таверна", "example": "Comemos caracóis numa tasca da Graça." },
+    { "pt": "o bairro", "ru": "квартал, район", "example": "Alfama é o bairro mais antigo de Lisboa." },
+    { "pt": "as luzes", "ru": "свет, огни", "example": "As luzes apagaram-se e a fadista entrou." },
+    { "pt": "aplaudir", "ru": "аплодировать", "example": "Toda a sala aplaudiu de pé." },
+    { "pt": "o aplauso", "ru": "аплодисменты", "example": "O aplauso durou vários minutos." },
+    { "pt": "o bis", "ru": "бис", "example": "O público pediu bis." },
+    { "pt": "o concerto", "ru": "концерт", "example": "Comprei bilhetes para o concerto no Coliseu." },
+    { "pt": "a exposição", "ru": "выставка", "example": "Há uma exposição nova na Gulbenkian." },
+    { "pt": "a sessão", "ru": "сеанс", "example": "A sessão das nove já está esgotada." },
+    { "pt": "a bilheteira", "ru": "касса (театра, кино)", "example": "Os bilhetes compram-se na bilheteira." },
+    { "pt": "a agenda cultural", "ru": "афиша (программа мероприятий)", "example": "Vi o concerto na agenda cultural da câmara." },
+    { "pt": "a Mouraria", "ru": "Моурария — старинный квартал Лиссабона, родина фаду", "example": "A Mouraria é considerada o berço do fado." }
+  ],
+  "exercises": [
+    {
+      "id": "fado-cultura-ex-01",
+      "topicId": "fado-cultura",
+      "type": "choice",
+      "prompt": "Numa casa de fado, antes de a fadista cantar, ouve-se:",
+      "options": ["«Atenção, por favor, desliguem os celulares.»", "«Silêncio, que se vai cantar o fado.»", "«Agora podem falar à vontade.»", "«Bora dançar!»"],
+      "correct": 1,
+      "explanation": "Знаменитая фраза **Silêncio, que se vai cantar o fado** — во время пения не разговаривают и не звенят приборами. Кстати, телефон в Португалии — **telemóvel**, а не *celular*."
+    },
+    {
+      "id": "fado-cultura-ex-02",
+      "topicId": "fado-cultura",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a fadista", "right": "исполнительница фаду" },
+        { "left": "o xaile", "right": "шаль" },
+        { "left": "a letra", "right": "текст песни" },
+        { "left": "o consumo mínimo", "right": "минимальный заказ" },
+        { "left": "arrepiado", "right": "с мурашками по коже" }
+      ]
+    },
+    {
+      "id": "fado-cultura-ex-03",
+      "topicId": "fado-cultura",
+      "type": "fill-gap",
+      "prompt": "Daqui a pouco. Quando as luzes ___ (baixar), ninguém fala.",
+      "answer": ["baixarem"],
+      "hint": "futuro do conjuntivo после quando",
+      "ru": "Скоро. Когда приглушат свет, все замолкают.",
+      "explanation": "После **quando** о будущем — futuro do conjuntivo: **quando as luzes baixarem**. По-русски тут будущее время, поэтому легко ошибиться и сказать *quando as luzes vão baixar*."
+    },
+    {
+      "id": "fado-cultura-ex-04",
+      "topicId": "fado-cultura",
+      "type": "listen-type",
+      "text": "É a saudade. É uma palavra difícil de traduzir.",
+      "answer": ["É a saudade. É uma palavra difícil de traduzir."],
+      "explanation": "**Difícil de + infinitivo** — «трудно (что-то сделать)»: **difícil de traduzir**, **fácil de encontrar**."
+    },
+    {
+      "id": "fado-cultura-ex-05",
+      "topicId": "fado-cultura",
+      "type": "listen-choice",
+      "text": "Há um consumo mínimo de trinta euros por pessoa, mas o jantar vale a pena.",
+      "prompt": "Что объясняет подруга?",
+      "options": ["Вход бесплатный, ужин по желанию.", "Ужин стоит тридцать евро на двоих.", "Нужно заказать минимум на тридцать евро с человека.", "Тридцать евро стоит только вино."],
+      "correct": 2,
+      "explanation": "**Consumo mínimo** — минимальная сумма заказа, обычная практика в домах фаду. **Valer a pena** — «стоить того»."
+    },
+    {
+      "id": "fado-cultura-ex-06",
+      "topicId": "fado-cultura",
+      "type": "order-words",
+      "words": ["Não", "percebi", "tudo,", "mas", "fiquei", "arrepiado."],
+      "answer": "Não percebi tudo, mas fiquei arrepiado.",
+      "ru": "Я понял не всё, но у меня мурашки по коже."
+    },
+    {
+      "id": "fado-cultura-ex-07",
+      "topicId": "fado-cultura",
+      "type": "translate-ru-pt",
+      "ru": "Я очень скучаю по семье.",
+      "answer": ["Tenho muitas saudades da minha família.", "Tenho muitas saudades da família.", "Sinto muito a falta da minha família.", "Sinto muita falta da minha família.", "Tenho imensas saudades da minha família.", "Sinto muita falta da família.", "Sinto muito a falta da família."],
+      "explanation": "«Скучать по» — **ter saudades de** (обычно во множественном: **muitas saudades**) или **sentir falta de**. Не забудьте артикль: **da minha família**."
+    },
+    {
+      "id": "fado-cultura-ex-08",
+      "topicId": "fado-cultura",
+      "type": "choice",
+      "prompt": "Numa tasca, qualquer pessoa pode cantar. Como se chama este tipo de fado?",
+      "options": ["fado de Coimbra", "fado corrido", "fado clássico", "fado vadio"],
+      "correct": 3,
+      "explanation": "**Fado vadio** («бродячее фаду») — любительское: поют посетители, соседи, официанты. **Fado de Coimbra** — студенческая традиция, его поют мужчины."
+    },
+    {
+      "id": "fado-cultura-ex-09",
+      "topicId": "fado-cultura",
+      "type": "fill-gap",
+      "prompt": "E a outra, que faz o acompanhamento, ___ viola.",
+      "answer": ["chama-se"],
+      "hint": "«называется», местоимение после глагола",
+      "ru": "А другая, которая аккомпанирует, называется виола.",
+      "explanation": "Без «магнитов» местоимение идёт после глагола: **chama-se**. Слово **que** относится к придаточному, а не к главному глаголу, поэтому здесь ênclise."
+    },
+    {
+      "id": "fado-cultura-ex-10",
+      "topicId": "fado-cultura",
+      "type": "transform",
+      "prompt": "Para a próxima, quero ir a uma tasca com fado vadio.",
+      "instruction": "Смягчи желание: «я бы хотел» через gostar de в imperfeito",
+      "answer": ["Para a próxima, gostava de ir a uma tasca com fado vadio.", "Para a próxima, eu gostava de ir a uma tasca com fado vadio."],
+      "explanation": "**Gostava de + infinitivo** — вежливое «я бы хотел». Глагол движения — с **a**: **ir a uma tasca**, а не *ir em*."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вчера вы впервые были в доме фаду в Лиссабоне. Напишите сообщение португальской подруге (8–10 предложений): где вы были и с кем, что заказали и сколько это стоило (consumo mínimo), что вас удивило (тишина, свет), какие эмоции вызвала музыка, и предложите сходить вместе на fado vadio.",
+    "sample": "Olá, Joana!\nOntem fui com o Pedro a uma casa de fado em Alfama. Foi a primeira vez!\nHavia um consumo mínimo de trinta e cinco euros, mas jantámos muito bem: caldo verde e bacalhau.\nO que mais me surpreendeu foi o silêncio. Quando as luzes baixaram, ninguém falou, nem os empregados.\nA fadista tinha uma voz incrível e cantou um fado sobre a saudade. Não percebi a letra toda, mas fiquei arrepiado.\nO som da guitarra portuguesa é mesmo especial.\nGostava de experimentar o fado vadio. Conheces alguma tasca boa na Mouraria?\nSe quiseres, vamos juntos na próxima sexta.\nBeijinhos!",
+    "checklist": [
+      "Прошедшее время: fui, jantámos (с акцентом), cantou, fiquei",
+      "Есть слова темы: casa de fado, fadista, saudade, guitarra portuguesa, consumo mínimo",
+      "Описаны эмоции: fiquei arrepiado, emocionei-me, foi comovente",
+      "Предложение встретиться: Gostava de…, Se quiseres… (futuro do conjuntivo)",
+      "Обращение на tu и неформальное прощание (Beijinhos / Um abraço)"
+    ]
+  }
+}

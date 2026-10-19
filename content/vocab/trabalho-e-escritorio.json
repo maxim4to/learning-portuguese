@@ -1,0 +1,384 @@
+{
+  "id": "trabalho-e-escritorio",
+  "title": "Работа и офис",
+  "titlePt": "Trabalho e escritório",
+  "level": "B1",
+  "words": [
+    {
+      "pt": "o emprego",
+      "ru": "работа (место работы)",
+      "gender": "m",
+      "example": "Arranjei emprego numa empresa de software.",
+      "audio": true
+    },
+    {
+      "pt": "o desemprego",
+      "ru": "безработица",
+      "gender": "m",
+      "example": "Esteve seis meses no desemprego.",
+      "audio": true
+    },
+    {
+      "pt": "o contrato de trabalho",
+      "ru": "трудовой договор",
+      "gender": "m",
+      "example": "Ainda não assinei o contrato de trabalho.",
+      "audio": true
+    },
+    {
+      "pt": "o contrato a termo",
+      "ru": "срочный трудовой договор",
+      "gender": "m",
+      "example": "Tenho um contrato a termo de um ano.",
+      "audio": true
+    },
+    {
+      "pt": "o contrato sem termo",
+      "ru": "бессрочный трудовой договор",
+      "gender": "m",
+      "example": "Ao fim de dois anos, passei a contrato sem termo.",
+      "audio": true
+    },
+    {
+      "pt": "ficar efetivo",
+      "ru": "получить постоянную должность",
+      "example": "Fiquei efetivo no mês passado.",
+      "audio": true
+    },
+    {
+      "pt": "o período experimental",
+      "ru": "испытательный срок",
+      "gender": "m",
+      "example": "O período experimental é de três meses.",
+      "audio": true
+    },
+    {
+      "pt": "o recibo verde",
+      "ru": "«зелёная квитанция» (работа как самозанятый)",
+      "gender": "m",
+      "example": "Trabalho a recibos verdes há dois anos.",
+      "audio": true
+    },
+    {
+      "pt": "passar recibo",
+      "ru": "выставить квитанцию (самозанятому)",
+      "example": "No fim do projeto, passo recibo ao cliente.",
+      "audio": true
+    },
+    {
+      "pt": "o trabalhador independente",
+      "ru": "самозанятый",
+      "gender": "m",
+      "example": "Como trabalhador independente, pago a minha Segurança Social.",
+      "audio": true
+    },
+    {
+      "pt": "o ordenado",
+      "ru": "зарплата",
+      "gender": "m",
+      "example": "O ordenado cai no dia vinte e cinco.",
+      "audio": true
+    },
+    {
+      "pt": "o salário mínimo",
+      "ru": "минимальная зарплата",
+      "gender": "m",
+      "example": "O salário mínimo aumentou este ano.",
+      "audio": true
+    },
+    {
+      "pt": "o recibo de vencimento",
+      "ru": "расчётный лист",
+      "gender": "m",
+      "example": "Veja no recibo de vencimento quanto descontou.",
+      "audio": true
+    },
+    {
+      "pt": "os descontos",
+      "ru": "отчисления (налоги и соцстрах)",
+      "gender": "m",
+      "example": "Com os descontos, o ordenado líquido baixa bastante.",
+      "audio": true
+    },
+    {
+      "pt": "o subsídio de férias",
+      "ru": "отпускные",
+      "gender": "m",
+      "example": "O subsídio de férias paga-se em junho.",
+      "audio": true
+    },
+    {
+      "pt": "o subsídio de Natal",
+      "ru": "рождественская выплата («13-я зарплата»)",
+      "gender": "m",
+      "example": "Com o subsídio de Natal, comprei os presentes.",
+      "audio": true
+    },
+    {
+      "pt": "o subsídio de refeição",
+      "ru": "компенсация на питание",
+      "gender": "m",
+      "example": "Recebo o subsídio de refeição em cartão.",
+      "audio": true
+    },
+    {
+      "pt": "as férias",
+      "ru": "отпуск",
+      "gender": "f",
+      "example": "Este ano tiro as férias em setembro.",
+      "audio": true
+    },
+    {
+      "pt": "tirar férias",
+      "ru": "взять отпуск",
+      "example": "Vou tirar uma semana de férias na Páscoa.",
+      "audio": true
+    },
+    {
+      "pt": "o feriado",
+      "ru": "праздничный (нерабочий) день",
+      "gender": "m",
+      "example": "Quinta-feira é feriado.",
+      "audio": true
+    },
+    {
+      "pt": "fazer ponte",
+      "ru": "сделать «мост» (взять выходной между праздником и выходными)",
+      "example": "Como quinta é feriado, vou fazer ponte na sexta.",
+      "audio": true
+    },
+    {
+      "pt": "a reunião",
+      "ru": "совещание, встреча",
+      "gender": "f",
+      "example": "A reunião foi adiada para amanhã.",
+      "audio": true
+    },
+    {
+      "pt": "a reunião de equipa",
+      "ru": "командная встреча, планёрка",
+      "gender": "f",
+      "example": "Temos reunião de equipa todas as segundas.",
+      "audio": true
+    },
+    {
+      "pt": "o prazo",
+      "ru": "срок, дедлайн",
+      "gender": "m",
+      "example": "O prazo acaba na sexta-feira.",
+      "audio": true
+    },
+    {
+      "pt": "cumprir o prazo",
+      "ru": "уложиться в срок",
+      "example": "Fizemos tudo para cumprir o prazo.",
+      "audio": true
+    },
+    {
+      "pt": "o colega / a colega",
+      "ru": "коллега",
+      "gender": "mf",
+      "example": "A minha colega ajudou-me com o relatório.",
+      "audio": true
+    },
+    {
+      "pt": "a chefia",
+      "ru": "руководство",
+      "gender": "f",
+      "example": "Vou falar com a chefia sobre o teletrabalho.",
+      "audio": true
+    },
+    {
+      "pt": "o chefe / a chefe",
+      "ru": "начальник, начальница",
+      "gender": "mf",
+      "example": "A chefe aprovou as minhas férias.",
+      "audio": true
+    },
+    {
+      "pt": "o patrão / a patroa",
+      "ru": "работодатель, хозяин",
+      "gender": "mf",
+      "example": "O patrão paga sempre a horas.",
+      "audio": true
+    },
+    {
+      "pt": "os recursos humanos",
+      "ru": "отдел кадров, HR",
+      "gender": "m",
+      "example": "Envie a baixa para os recursos humanos.",
+      "audio": true
+    },
+    {
+      "pt": "a vaga",
+      "ru": "вакансия",
+      "gender": "f",
+      "example": "Há uma vaga para programador no Porto.",
+      "audio": true
+    },
+    {
+      "pt": "a oferta de emprego",
+      "ru": "предложение о работе, вакансия",
+      "gender": "f",
+      "example": "Vi a oferta de emprego numa rede social.",
+      "audio": true
+    },
+    {
+      "pt": "a candidatura",
+      "ru": "заявка, отклик на вакансию",
+      "gender": "f",
+      "example": "Já enviei a candidatura.",
+      "audio": true
+    },
+    {
+      "pt": "candidatar-se",
+      "ru": "подавать заявку, откликаться на вакансию",
+      "example": "Candidatei-me a três vagas esta semana.",
+      "audio": true
+    },
+    {
+      "pt": "o currículo",
+      "ru": "резюме",
+      "gender": "m",
+      "example": "Atualize o currículo antes de se candidatar.",
+      "audio": true
+    },
+    {
+      "pt": "a carta de motivação",
+      "ru": "мотивационное (сопроводительное) письмо",
+      "gender": "f",
+      "example": "Pedem currículo e carta de motivação.",
+      "audio": true
+    },
+    {
+      "pt": "a entrevista de emprego",
+      "ru": "собеседование",
+      "gender": "f",
+      "example": "A entrevista de emprego correu bem.",
+      "audio": true
+    },
+    {
+      "pt": "o horário de trabalho",
+      "ru": "рабочий график",
+      "gender": "m",
+      "example": "O meu horário de trabalho é das nove às seis.",
+      "audio": true
+    },
+    {
+      "pt": "o teletrabalho",
+      "ru": "удалённая работа",
+      "gender": "m",
+      "example": "Estou em teletrabalho às segundas e sextas.",
+      "audio": true
+    },
+    {
+      "pt": "o regime híbrido",
+      "ru": "гибридный формат работы",
+      "gender": "m",
+      "example": "A empresa funciona em regime híbrido.",
+      "audio": true
+    },
+    {
+      "pt": "o escritório",
+      "ru": "офис",
+      "gender": "m",
+      "example": "O escritório fica no Parque das Nações.",
+      "audio": true
+    },
+    {
+      "pt": "a secretária",
+      "ru": "письменный стол; секретарша",
+      "gender": "f",
+      "example": "Deixei o portátil em cima da secretária.",
+      "audio": true
+    },
+    {
+      "pt": "o computador portátil",
+      "ru": "ноутбук",
+      "gender": "m",
+      "example": "A empresa deu-me um computador portátil.",
+      "audio": true
+    },
+    {
+      "pt": "a impressora",
+      "ru": "принтер",
+      "gender": "f",
+      "example": "A impressora não tem papel.",
+      "audio": true
+    },
+    {
+      "pt": "o ecrã",
+      "ru": "экран",
+      "gender": "m",
+      "example": "Trabalho com dois ecrãs.",
+      "audio": true
+    },
+    {
+      "pt": "o anexo",
+      "ru": "вложение (в письме)",
+      "gender": "m",
+      "example": "Segue em anexo o relatório.",
+      "audio": true
+    },
+    {
+      "pt": "enviar",
+      "ru": "отправлять",
+      "example": "Envio-lhe o contrato ainda hoje.",
+      "audio": true
+    },
+    {
+      "pt": "as horas extraordinárias",
+      "ru": "сверхурочные",
+      "gender": "f",
+      "example": "Este mês fiz muitas horas extraordinárias.",
+      "audio": true
+    },
+    {
+      "pt": "o aumento",
+      "ru": "прибавка к зарплате",
+      "gender": "m",
+      "example": "Pedi um aumento à chefia.",
+      "audio": true
+    },
+    {
+      "pt": "a promoção",
+      "ru": "повышение (в должности)",
+      "gender": "f",
+      "example": "Depois da promoção, passei a gerir a equipa.",
+      "audio": true
+    },
+    {
+      "pt": "a formação",
+      "ru": "обучение, тренинг",
+      "gender": "f",
+      "example": "A empresa paga a formação em inglês.",
+      "audio": true
+    },
+    {
+      "pt": "o estágio",
+      "ru": "стажировка",
+      "gender": "m",
+      "example": "Fiz um estágio de seis meses numa agência.",
+      "audio": true
+    },
+    {
+      "pt": "despedir",
+      "ru": "увольнять",
+      "example": "A empresa despediu vinte pessoas.",
+      "audio": true
+    },
+    {
+      "pt": "despedir-se",
+      "ru": "уволиться (по собственному желанию)",
+      "example": "O Duarte despediu-se e foi para Londres.",
+      "audio": true
+    },
+    {
+      "pt": "a pausa para café",
+      "ru": "перерыв на кофе",
+      "gender": "f",
+      "example": "Fazemos uma pausa para café às onze.",
+      "audio": true
+    }
+  ]
+}

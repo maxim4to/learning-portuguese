@@ -1,0 +1,180 @@
+{
+  "id": "mudanca-utilities",
+  "title": "Переезд: свет, вода, интернет",
+  "titlePt": "Mudança: luz, água e internet",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia. Em que posso ajudar?", "ru": "Доброе утро. Чем могу помочь?" },
+    { "speaker": "B", "pt": "Bom dia. Mudei-me para um apartamento novo e queria fazer um contrato de eletricidade.", "ru": "Доброе утро. Я переехал в новую квартиру и хотел бы заключить договор на электричество." },
+    { "speaker": "A", "pt": "Com certeza. Tem o código CPE da casa? Aparece numa fatura antiga.", "ru": "Конечно. У вас есть код CPE квартиры? Он указан в старом счёте." },
+    { "speaker": "B", "pt": "Tenho, o senhorio enviou-me uma fotografia. Também trouxe o contrato de arrendamento e o NIF.", "ru": "Есть, арендодатель прислал мне фото. Ещё я принёс договор аренды и NIF." },
+    { "speaker": "A", "pt": "Ótimo. Que potência quer contratar? Para um T2, normalmente chegam 6,9 kVA.", "ru": "Отлично. Какую мощность хотите подключить? Для T2 (две спальни) обычно хватает 6,9 кВА." },
+    { "speaker": "B", "pt": "Pode ser. E qual é a diferença entre a tarifa simples e a bi-horária?", "ru": "Давайте. А в чём разница между простым и двухзонным тарифом?" },
+    { "speaker": "A", "pt": "Na bi-horária, a eletricidade é mais barata à noite e ao fim de semana. Compensa se puser as máquinas a trabalhar a essas horas.", "ru": "При двухзонном тарифе электричество дешевле ночью и в выходные. Это выгодно, если вы включаете стиральную и посудомоечную машину в это время." },
+    { "speaker": "B", "pt": "Acho que prefiro a simples. Também preciso de dar a leitura do contador?", "ru": "Пожалуй, я выберу простой. Мне нужно ещё передать показания счётчика?" },
+    { "speaker": "A", "pt": "Sim, diga-me os números do contador, para não pagar os consumos do inquilino anterior.", "ru": "Да, назовите цифры на счётчике, чтобы не платить за расход предыдущего жильца." },
+    { "speaker": "B", "pt": "A leitura é 15342. Quero pagar por débito direto e receber a fatura eletrónica.", "ru": "Показания — 15342. Я хочу платить автоплатежом и получать электронный счёт." },
+    { "speaker": "A", "pt": "Fica tudo registado. A luz vai estar no seu nome dentro de um ou dois dias.", "ru": "Всё оформлено. Электричество будет переоформлено на вас в течение одного-двух дней." },
+    { "speaker": "B", "pt": "E aqui também tratam da internet? Queria fibra.", "ru": "А интернетом вы тоже занимаетесь? Мне нужно оптоволокно." },
+    { "speaker": "A", "pt": "Tratamos. Temos um pacote com fibra, televisão e telemóvel, mas tem fidelização de vinte e quatro meses.", "ru": "Да. Есть пакет с оптоволокном, телевидением и мобильной связью, но с обязательным сроком договора двадцать четыре месяца." },
+    { "speaker": "B", "pt": "Vinte e quatro meses é muito. Há alguma opção sem fidelização?", "ru": "Двадцать четыре месяца — это много. Есть вариант без обязательного срока?" },
+    { "speaker": "A", "pt": "Há, mas a mensalidade é mais cara e paga a instalação. E a água, lembre-se, trata-se nos serviços municipalizados da câmara.", "ru": "Есть, но абонентская плата выше, и установка платная. А воду, не забудьте, оформляют в муниципальной коммунальной службе." }
+  ],
+  "phrases": [
+    { "pt": "Mudei-me há pouco tempo.", "ru": "Я недавно переехал." },
+    { "pt": "Queria fazer um contrato de eletricidade.", "ru": "Я хотел бы заключить договор на электричество." },
+    { "pt": "Queria mudar a titularidade do contrato.", "ru": "Я хотел бы переоформить договор на себя." },
+    { "pt": "Qual é a leitura do contador?", "ru": "Какие показания счётчика?" },
+    { "pt": "Quero pagar por débito direto.", "ru": "Я хочу платить автоплатежом (прямым дебетом)." },
+    { "pt": "Prefiro a fatura eletrónica.", "ru": "Я предпочитаю электронный счёт." },
+    { "pt": "Tem fidelização?", "ru": "Есть обязательный срок договора?" },
+    { "pt": "Quanto é a mensalidade?", "ru": "Сколько стоит абонентская плата?" },
+    { "pt": "Quando é que vêm fazer a instalação?", "ru": "Когда придут делать подключение?" },
+    { "pt": "Estou sem internet desde ontem.", "ru": "У меня нет интернета со вчерашнего дня." }
+  ],
+  "vocab": [
+    { "pt": "a mudança", "ru": "переезд; изменение", "example": "A mudança foi no sábado." },
+    { "pt": "mudar-se", "ru": "переезжать", "example": "Mudei-me para Almada em setembro." },
+    { "pt": "a luz", "ru": "свет; электричество (разг.)", "example": "Já pagaste a conta da luz?" },
+    { "pt": "a eletricidade", "ru": "электричество", "example": "A eletricidade está cada vez mais cara." },
+    { "pt": "o gás", "ru": "газ", "example": "O fogão é a gás natural." },
+    { "pt": "a botija de gás", "ru": "газовый баллон", "example": "Acabou o gás, tenho de trocar a botija." },
+    { "pt": "a água", "ru": "вода", "example": "O contrato da água faz-se na câmara." },
+    { "pt": "os serviços municipalizados", "ru": "муниципальные коммунальные службы (SMAS)", "example": "A água é dos serviços municipalizados." },
+    { "pt": "o comercializador", "ru": "поставщик (электричества, газа)", "example": "Mudei de comercializador e poupei dinheiro." },
+    { "pt": "a operadora", "ru": "оператор связи", "example": "Qual é a tua operadora de internet?" },
+    { "pt": "o contrato", "ru": "договор", "example": "Assinei o contrato online." },
+    { "pt": "a titularidade", "ru": "оформление на владельца (титульного абонента)", "example": "Tenho de mudar a titularidade da água." },
+    { "pt": "o titular", "ru": "владелец договора, абонент", "example": "O titular do contrato é o senhorio." },
+    { "pt": "o código CPE", "ru": "код точки подключения электричества", "example": "O código CPE vem na fatura da luz." },
+    { "pt": "o contador", "ru": "счётчик", "example": "O contador fica na entrada do prédio." },
+    { "pt": "a leitura do contador", "ru": "показания счётчика", "example": "Envio a leitura do contador todos os meses." },
+    { "pt": "o consumo", "ru": "расход, потребление", "example": "Este mês o consumo foi mais alto." },
+    { "pt": "a potência contratada", "ru": "подключённая мощность", "example": "Com pouca potência contratada, o quadro vai abaixo." },
+    { "pt": "a tarifa simples / bi-horária", "ru": "простой / двухзонный тариф", "example": "Com a bi-horária, lavo a roupa à noite." },
+    { "pt": "a fatura", "ru": "счёт (за услуги)", "example": "A fatura chega por e-mail." },
+    { "pt": "a fatura eletrónica", "ru": "электронный счёт", "example": "Com a fatura eletrónica tenho desconto." },
+    { "pt": "o débito direto", "ru": "прямой дебет, автоплатёж", "example": "Pago a água por débito direto." },
+    { "pt": "o IBAN", "ru": "IBAN, номер счёта", "example": "Para o débito direto preciso do seu IBAN." },
+    { "pt": "a fibra", "ru": "оптоволокно (интернет)", "example": "O prédio já tem fibra." },
+    { "pt": "o router", "ru": "роутер", "example": "Reinicia o router e espera um minuto." },
+    { "pt": "o técnico", "ru": "мастер, техник", "example": "O técnico vem instalar a fibra na quinta." },
+    { "pt": "a instalação", "ru": "установка, подключение", "example": "A instalação é gratuita com fidelização." },
+    { "pt": "o pacote", "ru": "пакет (услуг)", "example": "O pacote inclui televisão e telemóvel." },
+    { "pt": "a fidelização", "ru": "обязательный срок договора", "example": "Se cancelar antes do fim da fidelização, paga uma multa." },
+    { "pt": "a mensalidade", "ru": "ежемесячная плата", "example": "A mensalidade é de quarenta euros." },
+    { "pt": "a avaria", "ru": "поломка, авария", "example": "Liguei para a linha de apoio por causa de uma avaria." },
+    { "pt": "o senhorio / a senhoria", "ru": "арендодатель", "example": "O senhorio deu-me os contratos antigos." },
+    { "pt": "o inquilino", "ru": "жилец, арендатор", "example": "O inquilino anterior deixou a conta por pagar." },
+    { "pt": "o contrato de arrendamento", "ru": "договор аренды", "example": "Pediram-me uma cópia do contrato de arrendamento." },
+    { "pt": "o T2", "ru": "квартира с двумя спальнями (+ гостиная)", "example": "Arrendámos um T2 perto do metro." },
+    { "pt": "tratar de", "ru": "заниматься, оформлять", "example": "Ainda tenho de tratar da internet." }
+  ],
+  "exercises": [
+    {
+      "id": "mudanca-utilities-ex-01",
+      "topicId": "mudanca-utilities",
+      "type": "choice",
+      "prompt": "O contrato de internet obriga a ficar dois anos com a operadora. Isso chama-se ___.",
+      "options": ["carência", "fidelização", "titularidade", "mensalidade"],
+      "correct": 1,
+      "explanation": "**Fidelização** — обязательный срок договора (обычно 12 или 24 месяца). Если расторгнуть раньше — штраф. **Mensalidade** — ежемесячная плата, **titularidade** — на кого оформлен договор."
+    },
+    {
+      "id": "mudanca-utilities-ex-02",
+      "topicId": "mudanca-utilities",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "o contador", "right": "счётчик" },
+        { "left": "a leitura", "right": "показания" },
+        { "left": "o débito direto", "right": "автоплатёж" },
+        { "left": "o senhorio", "right": "арендодатель" },
+        { "left": "a fibra", "right": "оптоволокно" }
+      ]
+    },
+    {
+      "id": "mudanca-utilities-ex-03",
+      "topicId": "mudanca-utilities",
+      "type": "fill-gap",
+      "prompt": "Bom dia. ___ (mudar-se) para um apartamento novo e queria fazer um contrato de eletricidade.",
+      "answer": ["Mudei-me"],
+      "hint": "«я переехал» — perfeito + местоимение",
+      "ru": "Доброе утро. Я переехал в новую квартиру и хотел бы заключить договор на электричество.",
+      "explanation": "**Mudar-se** — возвратный глагол «переезжать»: **mudei-me**. Без **-me** (*mudei*) получится «я изменил/поменял»."
+    },
+    {
+      "id": "mudanca-utilities-ex-04",
+      "topicId": "mudanca-utilities",
+      "type": "listen-type",
+      "text": "E aqui também tratam da internet? Queria fibra.",
+      "answer": ["E aqui também tratam da internet? Queria fibra."],
+      "explanation": "**Tratar de** — заниматься, оформлять: **tratam da internet** (de + a). **Fibra** — оптоволоконный интернет."
+    },
+    {
+      "id": "mudanca-utilities-ex-05",
+      "topicId": "mudanca-utilities",
+      "type": "listen-choice",
+      "text": "Sim, diga-me os números do contador, para não pagar os consumos do inquilino anterior.",
+      "prompt": "Зачем сотрудница просит показания счётчика?",
+      "options": ["Чтобы рассчитать мощность.", "Чтобы оформить автоплатёж.", "Чтобы проверить, есть ли оптоволокно.", "Чтобы не платить за расход прошлого жильца."],
+      "correct": 3,
+      "explanation": "**Os consumos do inquilino anterior** — расход предыдущего жильца. Показания при въезде лучше сфотографировать."
+    },
+    {
+      "id": "mudanca-utilities-ex-06",
+      "topicId": "mudanca-utilities",
+      "type": "order-words",
+      "words": ["Quero", "pagar", "por", "débito", "direto."],
+      "answer": "Quero pagar por débito direto.",
+      "ru": "Я хочу платить автоплатежом."
+    },
+    {
+      "id": "mudanca-utilities-ex-07",
+      "topicId": "mudanca-utilities",
+      "type": "translate-ru-pt",
+      "ru": "У меня нет интернета со вчерашнего дня.",
+      "answer": ["Estou sem internet desde ontem.", "Não tenho internet desde ontem.", "Desde ontem que estou sem internet.", "Desde ontem que não tenho internet."],
+      "explanation": "Естественнее всего — **estar sem**: **estou sem internet**, **estou sem luz**. После **desde ontem** в начале фразы в pt-PT часто добавляют **que**."
+    },
+    {
+      "id": "mudanca-utilities-ex-08",
+      "topicId": "mudanca-utilities",
+      "type": "choice",
+      "prompt": "Onde se trata normalmente do contrato da água?",
+      "options": ["Nas Finanças.", "Na operadora de telecomunicações.", "Nos serviços municipalizados ou na empresa de águas do concelho.", "Na junta de freguesia."],
+      "correct": 2,
+      "explanation": "Вода в Португалии — муниципальная услуга: **serviços municipalizados (SMAS)** или компания, работающая на муниципалитет (в Лиссабоне — EPAL). Электричество и интернет выбираются свободно."
+    },
+    {
+      "id": "mudanca-utilities-ex-09",
+      "topicId": "mudanca-utilities",
+      "type": "fill-gap",
+      "prompt": "Também preciso ___ dar a leitura do contador?",
+      "answer": ["de"],
+      "hint": "precisar ___ + инфинитив",
+      "ru": "Мне нужно ещё передать показания счётчика?",
+      "explanation": "**Precisar de** + инфинитив или существительное: **preciso de dar**, **preciso de ajuda**. Без **de** — бразильская разговорная норма."
+    },
+    {
+      "id": "mudanca-utilities-ex-10",
+      "topicId": "mudanca-utilities",
+      "type": "transform",
+      "prompt": "Quero fazer um contrato de eletricidade.",
+      "instruction": "Сделай просьбу вежливее (imperfeito вместо presente)",
+      "answer": ["Queria fazer um contrato de eletricidade.", "Eu queria fazer um contrato de eletricidade."],
+      "explanation": "**Queria…** — стандартная вежливая формула для любого обращения в офис или магазин в Португалии."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы переехали, и у вас уже неделю не работает оптоволоконный интернет, хотя техник должен был прийти в понедельник. Напишите письмо оператору: имя и NIF владельца договора, адрес, что случилось (техник не пришёл, интернета нет), попросите новую дату установки и скидку на абонентскую плату, напомните, что у вас договор с fidelização на 24 месяца.",
+    "sample": "Exmos. Senhores,\nSou titular do contrato n.º 77810342 (NIF 298 123 456), para a morada Rua da Graça, 15, 2.º Esq., 1170-165 Lisboa.\nMudei-me no dia 1 de outubro e a instalação da fibra estava marcada para segunda-feira, dia 7, entre as 9h e as 13h. O técnico não apareceu e ninguém me avisou.\nEstou sem internet há uma semana e trabalho a partir de casa.\nPeço que marquem uma nova data com urgência e que me deem um desconto na mensalidade deste mês.\nLembro que assinei um contrato com fidelização de 24 meses, por isso espero o mesmo compromisso da vossa parte.\nCom os melhores cumprimentos,\nAndrei Sokolov",
+    "checklist": [
+      "Указаны номер договора, NIF и адрес (morada)",
+      "Описана проблема с датами: estava marcada para…, o técnico não apareceu",
+      "Есть просьба с conjuntivo: Peço que marquem…, que me deem…",
+      "Упомянуты fidelização и mensalidade",
+      "Формальное начало и конец: Exmos. Senhores / Com os melhores cumprimentos"
+    ]
+  }
+}

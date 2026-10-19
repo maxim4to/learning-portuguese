@@ -1,0 +1,443 @@
+{
+  "id": "a2-adverbios-frequencia",
+  "level": "A2",
+  "module": "a2-frase",
+  "title": "Наречия частоты и глагол costumar",
+  "titlePt": "Advérbios de frequência e o verbo costumar",
+  "requires": [
+    "a1-presente-indicativo-regulares",
+    "a2-adverbios"
+  ],
+  "theory": "## Шкала частоты\n\n| 100 % → 0 % | перевод |\n|---|---|\n| **sempre** | всегда |\n| **quase sempre** | почти всегда |\n| **normalmente, geralmente, habitualmente** | обычно |\n| **muitas vezes, frequentemente** | часто |\n| **às vezes, por vezes** | иногда |\n| **de vez em quando** | время от времени |\n| **raramente, poucas vezes** | редко |\n| **quase nunca** | почти никогда |\n| **nunca** | никогда |\n\n**Às vezes** пишется с грависом (**a + as**). **Por vezes** — нейтральный, очень португальский синоним.\n\n## Место в предложении\n\n- **nunca, raramente, quase nunca** — обычно **перед глаголом**: **Nunca como carne. Raramente vejo televisão.**\n- **sempre** в pt-PT очень часто **после глагола**: **Janto sempre em casa. Ela está sempre a queixar-se.** Перед глаголом тоже возможно: **Sempre gostei de música.**\n- **às vezes, de vez em quando, muitas vezes, normalmente** — в начале или в конце: **Às vezes vou a pé. / Vou a pé às vezes.**\n\n## Nunca и отрицание\n\nВ русском «никогда **не**» — двойное отрицание. В португальском **nunca перед глаголом заменяет não**:\n\n**Nunca bebo café à noite.** (не *Nunca não bebo*)\n\nЕсли **nunca** стоит после глагола, перед глаголом нужно **não**: **Não bebo café nunca.** — это эмоциональнее.\n\n**nunca, sempre, já, também** притягивают клитики: **Nunca me lembro do nome dele. Sempre te disse isso.**\n\n## costumar + инфинитив — «обычно делать, иметь привычку»\n\n| | costumar |\n|---|---|\n| eu | **costumo** |\n| tu | **costumas** |\n| ele / ela / você | **costuma** |\n| nós | **costumamos** |\n| eles / vocês | **costumam** |\n\n**Costumo almoçar ao meio-dia.** — Я обычно обедаю в полдень.\n**Não costumas sair à noite?** — Ты обычно не выходишь по вечерам?\n\nИнфинитив идёт **сразу**, без предлога. О привычках в прошлом — **imperfeito**: **Quando era pequeno, costumava passar o verão no Algarve.** — В детстве я обычно проводил лето в Алгарве.\n\n## Сколько раз?\n\n- **uma vez por semana, duas vezes por mês, três vezes por ano** — **por**, а не «в»;\n- **todos os dias** (каждый день), **todas as semanas**, **todos os anos**;\n- **todo o dia** — «весь день», а не «каждый день»!\n- **à segunda / às segundas** — по понедельникам; **ao fim de semana** — по выходным.\n\n## Полезные выражения\n\n| выражение | перевод |\n|---|---|\n| **a toda a hora** | постоянно, то и дело |\n| **dia sim, dia não** | через день |\n| **cada vez mais / menos** | всё чаще (больше) / всё реже (меньше) |\n| **uma vez ou outra** | изредка |\n| **outra vez / de novo** | снова, опять |\n\n**O telemóvel toca a toda a hora.** — Телефон звонит постоянно.\n\nВопросы: **Com que frequência vais ao ginásio? Quantas vezes por semana treinas? Costumas cozinhar?**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **todos os dias** | todo dia | в pt-PT обязательны артикль и мн. ч. |\n| **todo o dia** (весь день) | o dia todo / todo o dia | |\n| **às vezes / por vezes** | às vezes / tem vezes que | *tem vezes* — разговорный бразилизм |\n| Está **sempre a falar**. | Está **sempre falando**. | estar a + инфинитив |\n| **uma vez por semana** | uma vez por semana / uma vez na semana | |\n| **Nunca me lembro.** | Nunca lembro. | в pt-PT lembrar-se — возвратный |\n\nГлавная ловушка — *todo dia*: в Португалии это звучит как ошибка; говорите **todos os dias**.",
+  "commonErrors": "- **Двойное отрицание по-русски**: *Nunca não como peixe* ✗ → **Nunca como peixe** ✓.\n- **Предлог после costumar**: *Costumo de acordar cedo* ✗ → **Costumo acordar cedo** ✓.\n- **«Каждый день» = «весь день»**: *Trabalho todo o dia* — «работаю весь день»; «каждый день» → **todos os dias** ✓; *todo dia* ✗ — бразилизм.\n- **«Раз в неделю» по-русски**: *uma vez em semana* ✗ → **uma vez por semana** ✓.\n- **Без грависа**: *as vezes* ✗ → **às vezes** ✓.\n- **Клитика после nunca/sempre**: *Nunca lembro-me* ✗ → **Nunca me lembro** ✓.\n- **Герундий из бразильских материалов**: *Está sempre reclamando* ✗ → **Está sempre a queixar-se** ✓.",
+  "examples": [
+    {
+      "pt": "Costumo tomar o pequeno-almoço num café perto de casa.",
+      "ru": "Обычно я завтракаю в кафе рядом с домом.",
+      "audio": true
+    },
+    {
+      "pt": "Ao fim de semana vamos muitas vezes à praia.",
+      "ru": "По выходным мы часто ездим на пляж.",
+      "audio": true
+    },
+    {
+      "pt": "Nunca me lembro da palavra-passe do wi-fi.",
+      "ru": "Я никогда не помню пароль от вай-фая.",
+      "audio": true
+    },
+    {
+      "pt": "De vez em quando janto com os meus colegas.",
+      "ru": "Время от времени я ужинаю с коллегами.",
+      "audio": true
+    },
+    {
+      "pt": "O comboio para Sintra está sempre cheio de turistas.",
+      "ru": "Поезд в Синтру всегда полон туристов.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-adverbios-frequencia-ex-01",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "match",
+      "prompt": "Соедините наречие с переводом.",
+      "pairs": [
+        {
+          "left": "sempre",
+          "right": "всегда"
+        },
+        {
+          "left": "nunca",
+          "right": "никогда"
+        },
+        {
+          "left": "às vezes",
+          "right": "иногда"
+        },
+        {
+          "left": "de vez em quando",
+          "right": "время от времени"
+        },
+        {
+          "left": "raramente",
+          "right": "редко"
+        },
+        {
+          "left": "muitas vezes",
+          "right": "часто"
+        }
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-02",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (costumar) almoçar no escritório.",
+      "answer": [
+        "costumo"
+      ],
+      "ru": "Я обычно обедаю в офисе."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-03",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (costumar) ir ao ginásio?",
+      "answer": [
+        "costumas"
+      ],
+      "ru": "Ты обычно ходишь в спортзал?"
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-04",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Nós não ___ (costumar) ver televisão.",
+      "answer": [
+        "costumamos"
+      ],
+      "ru": "Мы обычно не смотрим телевизор."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-05",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "choice",
+      "prompt": "«Я никогда не ем мясо.»",
+      "options": [
+        "Nunca não como carne.",
+        "Não nunca como carne.",
+        "Nunca como carne.",
+        "Como carne nunca não."
+      ],
+      "correct": 2,
+      "explanation": "nunca перед глаголом уже содержит отрицание — não не нужно."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-06",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "choice",
+      "prompt": "«Каждый день»",
+      "options": [
+        "todo dia",
+        "todos os dias",
+        "todo o dia",
+        "todos dias"
+      ],
+      "correct": 1,
+      "explanation": "todos os dias — каждый день; todo o dia — весь день; todo dia — бразилизм."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-07",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Ela trabalha ___ dia: das nove da manhã às nove da noite!",
+      "answer": [
+        "todo o"
+      ],
+      "ru": "Она работает весь день: с девяти утра до девяти вечера!",
+      "explanation": "«Весь день» — todo o dia."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-08",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "___ vezes vou a pé, outras vezes apanho o autocarro.",
+      "answer": [
+        "às",
+        "por",
+        "algumas",
+        "muitas"
+      ],
+      "ru": "Иногда я хожу пешком, иногда езжу на автобусе.",
+      "explanation": "Às vezes / por vezes — «иногда». Не забудьте гравис в às."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-09",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "O Pedro ___ chega atrasado — é muito pontual.",
+      "answer": [
+        "nunca",
+        "raramente",
+        "quase nunca"
+      ],
+      "ru": "Педру никогда не опаздывает — он очень пунктуален."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-10",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "choice",
+      "prompt": "Vou ao cinema ___ — mais ou menos uma vez por mês.",
+      "options": [
+        "nunca",
+        "sempre",
+        "todos os dias",
+        "de vez em quando"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-11",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Quando era pequeno, ___ (costumar) passar o verão no Algarve.",
+      "answer": [
+        "costumava"
+      ],
+      "hint": "привычка в прошлом → imperfeito",
+      "ru": "В детстве я обычно проводил лето в Алгарве."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-12",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Nunca me lembro do nome dele.",
+        "Nunca lembro-me do nome dele.",
+        "Me nunca lembro do nome dele.",
+        "Nunca lembro do nome dele."
+      ],
+      "correct": 0,
+      "explanation": "nunca — «магнит»: клитика перед глаголом. Без me — бразильский вариант."
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-13",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "transform",
+      "prompt": "Às vezes janto fora.",
+      "instruction": "Замените «às vezes» на «nunca».",
+      "answer": [
+        "Nunca janto fora.",
+        "Não janto fora nunca."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-14",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "transform",
+      "prompt": "Normalmente vou de metro para o trabalho.",
+      "instruction": "Перепишите с глаголом costumar.",
+      "answer": [
+        "Costumo ir de metro para o trabalho.",
+        "Eu costumo ir de metro para o trabalho.",
+        "Costumo ir para o trabalho de metro.",
+        "Eu costumo ir para o trabalho de metro."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-15",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "transform",
+      "prompt": "Vou à piscina às segundas e às quintas.",
+      "instruction": "Скажите, сколько раз в неделю вы ходите в бассейн.",
+      "answer": [
+        "Vou à piscina duas vezes por semana.",
+        "Vou duas vezes por semana à piscina.",
+        "Eu vou à piscina duas vezes por semana."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-16",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "order-words",
+      "words": [
+        "me",
+        "Nunca",
+        "lembro",
+        "disso"
+      ],
+      "answer": "Nunca me lembro disso"
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-17",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "order-words",
+      "words": [
+        "vezes",
+        "Quantas",
+        "por",
+        "semana",
+        "treinas?"
+      ],
+      "answer": "Quantas vezes por semana treinas?"
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-18",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "translate-ru-pt",
+      "ru": "Я обычно завтракаю дома.",
+      "answer": [
+        "Costumo tomar o pequeno-almoço em casa.",
+        "Eu costumo tomar o pequeno-almoço em casa.",
+        "Normalmente tomo o pequeno-almoço em casa.",
+        "Eu normalmente tomo o pequeno-almoço em casa.",
+        "Geralmente tomo o pequeno-almoço em casa.",
+        "Geralmente, eu tomo o pequeno-almoço em casa.",
+        "Habitualmente tomo o pequeno-almoço em casa."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-19",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "translate-ru-pt",
+      "ru": "Он всегда опаздывает.",
+      "answer": [
+        "Ele chega sempre atrasado.",
+        "Chega sempre atrasado.",
+        "Ele está sempre atrasado.",
+        "Está sempre atrasado.",
+        "Ele chega sempre tarde.",
+        "Chega sempre tarde.",
+        "Ele atrasa-se sempre.",
+        "Atrasa-se sempre.",
+        "Ele sempre chega atrasado."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-20",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "listen-type",
+      "text": "De vez em quando vamos ao Porto.",
+      "answer": [
+        "De vez em quando vamos ao Porto."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-ex-21",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "listen-choice",
+      "text": "Quase nunca bebo café à noite.",
+      "options": [
+        "Я почти всегда пью кофе вечером.",
+        "Я никогда не пью кофе.",
+        "Я почти никогда не пью кофе вечером.",
+        "Иногда я пью кофе вечером."
+      ],
+      "correct": 2
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-adverbios-frequencia-mt-01",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (costumar) jantar tarde.",
+      "answer": [
+        "costumam"
+      ],
+      "ru": "Они обычно ужинают поздно."
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-02",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Ela está ___ a queixar-se do trabalho.",
+      "answer": [
+        "sempre"
+      ],
+      "hint": "всегда",
+      "ru": "Она вечно жалуется на работу."
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-03",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Vou ao dentista duas vezes ___ ano.",
+      "answer": [
+        "por"
+      ],
+      "ru": "Я хожу к стоматологу два раза в год."
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-04",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "fill-gap",
+      "prompt": "Não bebo álcool ___.",
+      "answer": [
+        "nunca"
+      ],
+      "hint": "никогда",
+      "ru": "Я никогда не пью алкоголь.",
+      "explanation": "nunca после глагола требует não перед глаголом."
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-05",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "choice",
+      "prompt": "«Каждую неделю»",
+      "options": [
+        "todas as semanas",
+        "toda semana",
+        "toda a semana",
+        "todas semanas"
+      ],
+      "correct": 0,
+      "explanation": "toda a semana — «всю неделю»."
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-06",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Costumo de acordar cedo.",
+        "Costumo acordar cedo.",
+        "Costumo a acordar cedo.",
+        "Costumo acordando cedo."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-07",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Nunca esqueço-te.",
+        "Te nunca esqueço.",
+        "Nunca te esqueço.",
+        "Nunca não te esqueço."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-08",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "transform",
+      "prompt": "Normalmente almoço às duas.",
+      "instruction": "Перепишите с глаголом costumar.",
+      "answer": [
+        "Costumo almoçar às duas.",
+        "Eu costumo almoçar às duas."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-09",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "translate-ru-pt",
+      "ru": "Время от времени я хожу в театр.",
+      "answer": [
+        "De vez em quando vou ao teatro.",
+        "Vou ao teatro de vez em quando.",
+        "De vez em quando eu vou ao teatro.",
+        "Às vezes vou ao teatro.",
+        "Por vezes vou ao teatro.",
+        "Vou de vez em quando ao teatro.",
+        "Eu vou ao teatro de vez em quando."
+      ]
+    },
+    {
+      "id": "a2-adverbios-frequencia-mt-10",
+      "topicId": "a2-adverbios-frequencia",
+      "type": "listen-type",
+      "text": "Costumava ir à praia todos os fins de semana.",
+      "answer": [
+        "Costumava ir à praia todos os fins de semana."
+      ]
+    }
+  ]
+}

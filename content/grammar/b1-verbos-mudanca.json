@@ -1,0 +1,445 @@
+{
+  "id": "b1-verbos-mudanca",
+  "level": "B1",
+  "module": "b1-lexico-estilo",
+  "title": "Глаголы изменения: «стать»",
+  "titlePt": "Verbos de mudança",
+  "requires": [
+    "a1-ser-estar",
+    "a2-preterito-perfeito-simples",
+    "a2-verbos-reflexos"
+  ],
+  "theory": "## Как сказать «стать»\n\nОдного глагола «стать» в португальском нет: выбор зависит от того, **какое** это изменение — внезапное или постепенное, временное или глубокое, начало привычки или неожиданный итог.\n\n| конструкция | тип изменения | пример |\n|---|---|---|\n| **ficar** + прил. | результат события, новое состояние (эмоции, здоровье, внешность) | **Fiquei contente com a notícia.** — Я обрадовался новости. |\n| **tornar-se** + сущ./прил. | постепенное, глубокое изменение сути | **Lisboa tornou-se muito cara.** — Лиссабон стал очень дорогим. |\n| **pôr-se a** + инф. | внезапно начать | **O bebé pôs-se a chorar.** — Малыш расплакался. |\n| **pôr-se** + прил. | внезапная реакция (книжно) | **Pôs-se pálido.** (чаще **ficou pálido**) |\n| **fazer-se** | «делаться» со временем; устойчивые сочетания | **Faz-se tarde.** — Становится поздно. |\n| **passar a** + инф. | начать делать регулярно, новая привычка | **Passei a ir de bicicleta para o trabalho.** |\n| **vir a** + инф. | со временем оказаться, в будущем стать | **Ele veio a ser presidente da câmara.** |\n| **acabar por** + инф. | в конце концов (часто вопреки планам) | **Acabámos por ficar em casa.** |\n| **chegar a** + инф. | дойти до того, что; даже | **Cheguei a pensar que não vinhas.** — Я даже подумал, что ты не придёшь. |\n\n## ficar — главный глагол изменения\n\n**ficar** + прилагательное: **ficar doente, cansado, nervoso, zangado, triste, rico, careca, pronto**. **ficar com** + существительное: **ficar com fome / frio / medo** — проголодаться, замёрзнуть, испугаться. Не путайте с другими значениями: **A estação fica perto** (находится), **Fica aqui!** (останься), **O vestido fica-te bem** (тебе идёт).\n\n## ficar или tornar-se?\n\n**Ficou rico** — разбогател (сразу, в результате: выиграл в лотерею). **Tornou-se rico** — стал богатым (путь, годы работы). С существительным — **tornar-se**: **tornou-se médico**, **tornou-se um problema**. В pt-PT очень часто **tornar-se num/numa**: **A viagem tornou-se num pesadelo.** — Поездка превратилась в кошмар.\n\nНе путайте: **tornar a** + инф. = «снова»: **Ele tornou a ligar.** — Он снова позвонил.\n\n## fazer-se\n\n**fazer-se de** + прил. — притворяться: **Não te faças de parvo!** — Не прикидывайся дурачком! **fazer-se à estrada** — отправиться в путь.\n\n## acabar por ≠ acabar de\n\n**Acabei por comprar o carro.** — В итоге я купил машину. **Acabei de comprar o carro.** — Я только что купил машину.\n\n## chegar a с отрицанием\n\n**Não cheguei a ver o filme.** — Я так и не посмотрел фильм (не дошло до этого).\n\n## Время и клитики\n\nЧаще всего эти глаголы стоят в **perfeito**: **ficou, tornou-se, pôs-se a, passou a, veio a, acabou por, chegou a**. Клитика -se — после глагола, но перед ним после «магнитов»: **Ela tornou-se famosa** → **Ela nunca se tornou famosa.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| Ele **tornou-se** médico. | Ele **se tornou** médico / **virou** médico. | разг. *virar* «стать» — бразильское; ênclise в pt-PT |\n| **Pôs-se a chorar.** / **Desatou a chorar.** | Começou a chorar. | *pôr-se a, desatar a* — живые и частотные в pt-PT |\n| **Fiquei à espera.** / **Fiquei a esperar.** | Fiquei esperando. | ficar + a + инф. вместо герундия |\n| **Tornou-se num pesadelo.** | Tornou-se um pesadelo. | *tornar-se num* — типично для pt-PT |\n\nВ Бразилии *virar* («virou moda», «virou adulto») — норма разговорной речи; в Португалии в этих случаях говорят **tornar-se** или **ficar**.",
+  "commonErrors": "- **tornar без -se**: *Ele tornou médico* ✗ → **Ele tornou-se médico** ✓ (tornar a = «снова»).\n- **tornar-se для внезапной эмоции**: *Tornou-se zangado quando ouviu isso* ✗ → **Ficou zangado** ✓.\n- **acabar de вместо acabar por**: *Acabei de ficar em casa* (в значении «в итоге остался») ✗ → **Acabei por ficar em casa** ✓.\n- **Бразильская проклиза**: *Ela se tornou famosa* ✗ → **Ela tornou-se famosa** ✓.\n- **virar = «стать»**: *Ele virou famoso* ✗ → **Ele tornou-se famoso / ficou famoso** ✓.\n- **Герундий после ficar**: *Fiquei esperando* ✗ → **Fiquei à espera / Fiquei a esperar** ✓.\n- **Не тот предлог**: *Passei de ir ao ginásio*, *Cheguei de pensar* ✗ → **Passei a ir**, **Cheguei a pensar** ✓.",
+  "examples": [
+    {
+      "pt": "Quando soube da notícia, fiquei muito contente.",
+      "ru": "Когда я узнал новость, я очень обрадовался.",
+      "audio": true
+    },
+    {
+      "pt": "Com os anos, o bairro tornou-se muito caro.",
+      "ru": "С годами район стал очень дорогим.",
+      "audio": true
+    },
+    {
+      "pt": "Desde que mudei de casa, passei a ir a pé para o trabalho.",
+      "ru": "С тех пор как я переехал, я стал ходить на работу пешком.",
+      "audio": true
+    },
+    {
+      "pt": "Íamos sair, mas acabámos por ficar em casa.",
+      "ru": "Мы собирались выйти, но в итоге остались дома.",
+      "audio": true
+    },
+    {
+      "pt": "Cheguei a pensar que te tinhas esquecido de mim.",
+      "ru": "Я даже подумал, что ты обо мне забыл.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-verbos-mudanca-ex-01",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Quando soube da notícia, a Rita ___ (ficar) muito contente.",
+      "answer": [
+        "ficou"
+      ],
+      "ru": "Когда Рита узнала новость, она очень обрадовалась."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-02",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Com o turismo, Lisboa ___ (tornar-se) uma cidade cara.",
+      "answer": [
+        "tornou-se"
+      ],
+      "ru": "Из-за туризма Лиссабон стал дорогим городом.",
+      "explanation": "Постепенное изменение → tornar-se; ênclise."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-03",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Quando viu o palhaço, o miúdo ___ a chorar.",
+      "answer": [
+        "pôs-se",
+        "desatou",
+        "começou"
+      ],
+      "hint": "pôr-se, perfeito",
+      "ru": "Увидев клоуна, мальчик расплакался."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-04",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Desde janeiro ___ (passar, eu) a ir para o trabalho de bicicleta.",
+      "answer": [
+        "passei"
+      ],
+      "ru": "С января я стал ездить на работу на велосипеде.",
+      "explanation": "passar a — новая регулярная привычка."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-05",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Íamos jantar fora, mas ___ (acabar, nós) por ficar em casa.",
+      "answer": [
+        "acabámos"
+      ],
+      "ru": "Мы собирались поужинать в ресторане, но в итоге остались дома.",
+      "explanation": "Perfeito 1 л. мн. ч. на -ar в pt-PT — с акцентом: acabámos."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-06",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "O miúdo tímido da turma ___ (vir) a ser um grande ator.",
+      "answer": [
+        "veio"
+      ],
+      "ru": "Застенчивый мальчик из класса со временем стал большим актёром."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-07",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Fiquei tão preocupado que ___ (chegar) a ligar para o hospital.",
+      "answer": [
+        "cheguei"
+      ],
+      "ru": "Я так волновался, что даже позвонил в больницу."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-08",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Não te ___ (fazer) de parvo, sabes muito bem do que estou a falar!",
+      "answer": [
+        "faças"
+      ],
+      "ru": "Не прикидывайся дурачком, ты прекрасно знаешь, о чём я!",
+      "explanation": "Отрицательный императив — conjuntivo: não te faças."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-09",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "Ganhou a lotaria e ___ rico de um dia para o outro.",
+      "options": [
+        "tornou-se",
+        "ficou",
+        "pôs-se",
+        "fez-se"
+      ],
+      "correct": 1,
+      "explanation": "Внезапный результат события → ficar."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-10",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "Com os anos, a pequena empresa ___ uma multinacional.",
+      "options": [
+        "ficou",
+        "pôs-se",
+        "tornou-se",
+        "passou"
+      ],
+      "correct": 2,
+      "explanation": "Постепенное изменение + существительное → tornar-se."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-11",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "— Viste o filme? — Não, não ___ a vê-lo; adormeci.",
+      "options": [
+        "cheguei",
+        "acabei",
+        "passei",
+        "vim"
+      ],
+      "correct": 0,
+      "explanation": "não chegar a — так и не сделать."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-12",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "Já ___ tarde, temos de ir.",
+      "options": [
+        "fica",
+        "se torna",
+        "põe-se",
+        "se faz"
+      ],
+      "correct": 3,
+      "explanation": "fazer-se tarde — становиться поздно; после já — próclise."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-13",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "O médico mandou-o deixar de fumar e ele ___ fazer desporto.",
+      "options": [
+        "acabou de",
+        "pôs-se de",
+        "passou a",
+        "veio de"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-14",
+      "topicId": "b1-verbos-mudanca",
+      "type": "transform",
+      "prompt": "Agora bebo chá todos os dias; antes não bebia.",
+      "instruction": "Скажите одной фразой с passar a (perfeito, eu).",
+      "answer": [
+        "Passei a beber chá todos os dias.",
+        "Eu passei a beber chá todos os dias."
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-15",
+      "topicId": "b1-verbos-mudanca",
+      "type": "transform",
+      "prompt": "No fim, comprámos o carro mais barato.",
+      "instruction": "Перепишите с acabar por.",
+      "answer": [
+        "Acabámos por comprar o carro mais barato.",
+        "No fim, acabámos por comprar o carro mais barato.",
+        "Nós acabámos por comprar o carro mais barato."
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-16",
+      "topicId": "b1-verbos-mudanca",
+      "type": "transform",
+      "prompt": "Ela tornou-se diretora.",
+      "instruction": "Поставьте в отрицание (não).",
+      "answer": [
+        "Ela não se tornou diretora.",
+        "Não se tornou diretora."
+      ],
+      "explanation": "После não — próclise: não se tornou."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-17",
+      "topicId": "b1-verbos-mudanca",
+      "type": "order-words",
+      "words": [
+        "tornou-se",
+        "viagem",
+        "pesadelo",
+        "A",
+        "num"
+      ],
+      "answer": "A viagem tornou-se num pesadelo",
+      "ru": "Поездка превратилась в кошмар."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-18",
+      "topicId": "b1-verbos-mudanca",
+      "type": "order-words",
+      "words": [
+        "tornou",
+        "se",
+        "nunca",
+        "Ele",
+        "famoso"
+      ],
+      "answer": "Ele nunca se tornou famoso",
+      "ru": "Он так и не стал знаменитым."
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-19",
+      "topicId": "b1-verbos-mudanca",
+      "type": "translate-ru-pt",
+      "ru": "Она рассердилась.",
+      "answer": [
+        "Ela ficou zangada.",
+        "Ficou zangada.",
+        "Ela zangou-se.",
+        "Zangou-se."
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-20",
+      "topicId": "b1-verbos-mudanca",
+      "type": "translate-ru-pt",
+      "ru": "В итоге мы остались дома.",
+      "answer": [
+        "Acabámos por ficar em casa.",
+        "No fim, acabámos por ficar em casa.",
+        "Afinal, acabámos por ficar em casa.",
+        "No fim, ficámos em casa.",
+        "Nós acabámos por ficar em casa.",
+        "No final, acabámos por ficar em casa.",
+        "No final, ficámos em casa.",
+        "Afinal, ficámos em casa."
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-21",
+      "topicId": "b1-verbos-mudanca",
+      "type": "listen-type",
+      "text": "O meu irmão passou a trabalhar à noite.",
+      "answer": [
+        "O meu irmão passou a trabalhar à noite."
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-ex-22",
+      "topicId": "b1-verbos-mudanca",
+      "type": "match",
+      "prompt": "Соедините конструкцию со значением.",
+      "pairs": [
+        {
+          "left": "ficar contente",
+          "right": "обрадоваться"
+        },
+        {
+          "left": "tornar-se famoso",
+          "right": "стать знаменитым"
+        },
+        {
+          "left": "pôr-se a correr",
+          "right": "пуститься бежать"
+        },
+        {
+          "left": "passar a fumar",
+          "right": "начать курить (регулярно)"
+        },
+        {
+          "left": "acabar por aceitar",
+          "right": "в итоге согласиться"
+        },
+        {
+          "left": "chegar a pensar",
+          "right": "даже подумать"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-verbos-mudanca-mt-01",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Quando viu a conta, o Duarte ___ (ficar) pálido.",
+      "answer": [
+        "ficou"
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-02",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "O teatro ___ (tornar-se) num cinema nos anos 80.",
+      "answer": [
+        "tornou-se"
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-03",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Depois da mudança, ___ (passar, nós) a jantar mais cedo.",
+      "answer": [
+        "passámos"
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-04",
+      "topicId": "b1-verbos-mudanca",
+      "type": "fill-gap",
+      "prompt": "Ela não queria ir, mas ___ (acabar) por aceitar o convite.",
+      "answer": [
+        "acabou"
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-05",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "O cão viu o gato e ___ a ladrar.",
+      "options": [
+        "ficou",
+        "tornou-se",
+        "pôs-se",
+        "fez-se"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-06",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "Acabei ___ fazer o jantar — está pronto!",
+      "options": [
+        "por",
+        "de",
+        "a",
+        "em"
+      ],
+      "correct": 1,
+      "explanation": "acabar de — только что; acabar por — в итоге."
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-07",
+      "topicId": "b1-verbos-mudanca",
+      "type": "choice",
+      "prompt": "Выберите европейский вариант:",
+      "options": [
+        "Ele virou médico.",
+        "Ele se tornou médico.",
+        "Ele tornou-se médico."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-08",
+      "topicId": "b1-verbos-mudanca",
+      "type": "transform",
+      "prompt": "Pensei mesmo que tinhas ido embora.",
+      "instruction": "Передайте «я даже подумал» с chegar a.",
+      "answer": [
+        "Cheguei a pensar que tinhas ido embora.",
+        "Eu cheguei a pensar que tinhas ido embora."
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-09",
+      "topicId": "b1-verbos-mudanca",
+      "type": "translate-ru-pt",
+      "ru": "Становится поздно.",
+      "answer": [
+        "Faz-se tarde.",
+        "Já se faz tarde.",
+        "Está a ficar tarde.",
+        "Está a fazer-se tarde."
+      ]
+    },
+    {
+      "id": "b1-verbos-mudanca-mt-10",
+      "topicId": "b1-verbos-mudanca",
+      "type": "listen-choice",
+      "text": "Acabámos por não ir à praia.",
+      "options": [
+        "Мы только что вернулись с пляжа.",
+        "В итоге мы не пошли на пляж.",
+        "Мы перестали ходить на пляж.",
+        "Мы закончили собираться на пляж."
+      ],
+      "correct": 1
+    }
+  ]
+}

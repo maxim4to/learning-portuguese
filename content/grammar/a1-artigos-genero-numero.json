@@ -1,0 +1,420 @@
+{
+  "id": "a1-artigos-genero-numero",
+  "level": "A1",
+  "module": "a1-basics",
+  "title": "Артикли, род и число существительных",
+  "titlePt": "Artigos, género e número",
+  "requires": [],
+  "theory": "## Артикли\n\nВ русском артиклей нет, поэтому их легко забыть. В португальском существительное почти всегда стоит с артиклем, который показывает род и число.\n\n| | муж. ед. | жен. ед. | муж. мн. | жен. мн. |\n|---|---|---|---|---|\n| определённый («тот самый») | **o** | **a** | **os** | **as** |\n| неопределённый («какой-то, один») | **um** | **uma** | **uns** | **umas** |\n\n- **O comboio** sai às dez. — Поезд (известный нам) отходит в десять.\n- Queria **um café**. — Мне кофе (одну чашку).\n- Tenho **umas** perguntas. — У меня есть несколько вопросов.\n\nВ Португалии определённый артикль ставится и перед именами людей: **A Inês** é médica. **O Rui** mora no Porto. Перед названием страны тоже обычно нужен артикль: **a Rússia**, **o Brasil**, **os Estados Unidos**, но **Portugal** — без артикля.\n\nС профессией после **ser** артикля нет: **Sou engenheiro.** — Я инженер.\n\n## Род существительных\n\n| признак | род | примеры |\n|---|---|---|\n| -o | мужской | **o livro, o carro** |\n| -a | женский | **a casa, a mesa** |\n| -ção, -dade, -gem | женский | **a estação, a cidade, a viagem** |\n| -ma (греческие слова) | мужской | **o problema, o sistema, o programa, o clima** |\n| -e, -l, -r, согласная | любой — запоминаем | **o leite, a noite, o hotel, a cor, a flor** |\n\nИсключения: **o dia, o mapa, o sofá**, но **a mão, a foto, a tribo**. Род в португальском и русском часто не совпадает: **o problema** (проблема), **a cor** (цвет), **a árvore** (дерево), **o leite** (молоко).\n\nПрилагательное согласуется с существительным: **um carro novo — uma casa nova — uns carros novos — umas casas novas**.\n\n## Множественное число\n\n| окончание | правило | примеры |\n|---|---|---|\n| гласная | + **s** | **livro → livros, mesa → mesas** |\n| -r, -z, -s (ударный слог) | + **es** | **mulher → mulheres, luz → luzes, país → países** |\n| -m | **-m → -ns** | **homem → homens, jardim → jardins** |\n| -al, -ol, -ul | **-l → -is** | **animal → animais, espanhol → espanhóis, azul → azuis** |\n| -el (ударный) | **-el → -éis** | **hotel → hotéis, papel → papéis** |\n| -ão | **-ões** (чаще всего), **-ães**, **-ãos** | **estação → estações, pão → pães, mão → mãos** |\n\nУ слов на -ão множественное число нужно запоминать; самый частый вариант — **-ões**. Слова на безударный -s не меняются: **o lápis → os lápis, o ténis → os ténis**.\n\n## Как запоминать род\n\nУчите слово сразу с артиклем: не «casa», а **a casa**; не «problema», а **o problema**. В словаре род помечен как m. или f. Иногда от рода зависит смысл: **o capital** (капитал) — **a capital** (столица): **Lisboa é a capital de Portugal.**\n\n## Слияние с предлогами (кратко)\n\nАртикль сливается с предлогами **de, em, a**: **do, da, no, na, ao, à**. **Venho do Porto. Moro na Rússia. Vou ao cinema.** Подробно — в теме о предлогах места.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **A Joana** chegou. | Joana chegou. | в Португалии артикль перед именем — норма; в Бразилии зависит от региона |\n| **o meu** carro | meu carro | в pt-PT притяжательное идёт с артиклем |\n| **o ecrã**, **a equipa** | a tela, o time | разные слова — разный род |\n| **género, bebé, ténis** | gênero, bebê, tênis | в pt-PT открытые гласные пишутся с акутом |\n| **o autocarro → os autocarros** | o ônibus → os ônibus | лексика: в Португалии **autocarro** |\n\nГрамматика рода и числа в обоих вариантах одинакова; отличаются лексика, орфография и употребление артикля с именами и притяжательными.",
+  "commonErrors": "- **Пропуск артикля** (в русском его нет): *Livro está na mesa* ✗ → **O livro está na mesa** ✓.\n- **Род по русской модели**: *a problema* ✗ → **o problema** ✓; *o cor* ✗ → **a cor** ✓; *o viagem* ✗ → **a viagem** ✓; *a leite* ✗ → **o leite** ✓.\n- **Артикль с профессией**: *Sou um engenheiro* ✗ → **Sou engenheiro** ✓.\n- **Множественное число «по-английски»**: *hotels* ✗ → **hotéis** ✓; *homems* ✗ → **homens** ✓; *pãos* ✗ → **pães** ✓; *animals* ✗ → **animais** ✓.\n- **Нет согласования прилагательного**: *umas casas novo* ✗ → **umas casas novas** ✓.\n- **Имя без артикля** — не ошибка, но звучит непривычно для португальца: *Inês é médica* → естественнее **A Inês é médica**.",
+  "examples": [
+    {
+      "pt": "O comboio para Coimbra sai às nove.",
+      "ru": "Поезд на Коимбру отходит в девять.",
+      "audio": true
+    },
+    {
+      "pt": "Queria um café e uma água, por favor.",
+      "ru": "Мне, пожалуйста, кофе и воду.",
+      "audio": true
+    },
+    {
+      "pt": "A Inês tem dois cães e um gato.",
+      "ru": "У Инес две собаки и кошка.",
+      "audio": true
+    },
+    {
+      "pt": "As estações de metro estão cheias.",
+      "ru": "Станции метро переполнены.",
+      "audio": true
+    },
+    {
+      "pt": "Os hotéis no centro são caros.",
+      "ru": "Отели в центре дорогие.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-artigos-genero-numero-ex-01",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "___ comboio para o Porto sai às dez.",
+      "answer": [
+        "O"
+      ],
+      "hint": "определённый артикль",
+      "ru": "Поезд на Порту отходит в десять."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-02",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Queria ___ café, por favor.",
+      "answer": [
+        "um"
+      ],
+      "ru": "Мне кофе, пожалуйста.",
+      "explanation": "Заказываем одну чашку — неопределённый артикль."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-03",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "___ estação fica perto daqui.",
+      "answer": [
+        "A"
+      ],
+      "ru": "Вокзал находится недалеко отсюда.",
+      "explanation": "Слова на -ção — женского рода."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-04",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "___ problema é muito simples.",
+      "answer": [
+        "O"
+      ],
+      "ru": "Проблема очень простая.",
+      "explanation": "problema — мужской род (греческие слова на -ma)."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-05",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Tenho ___ amigas em Lisboa.",
+      "answer": [
+        "umas"
+      ],
+      "hint": "неопределённый, жен. мн. ч.",
+      "ru": "У меня есть несколько подруг в Лиссабоне."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-06",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Há muitos ___ (hotel) no centro.",
+      "answer": [
+        "hotéis"
+      ],
+      "ru": "В центре много отелей.",
+      "explanation": "Ударный -el → -éis."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-07",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Os ___ (pão) daqui são ótimos.",
+      "answer": [
+        "pães"
+      ],
+      "ru": "Здешние булочки отличные.",
+      "explanation": "pão → pães: множественное на -ães нужно запомнить."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-08",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Na linha azul há duas ___ (estação) novas.",
+      "answer": [
+        "estações"
+      ],
+      "ru": "На синей линии две новые станции.",
+      "explanation": "Большинство слов на -ção → -ções."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-09",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "choice",
+      "prompt": "___ dia está bonito.",
+      "options": [
+        "A",
+        "O",
+        "Os",
+        "Uma"
+      ],
+      "correct": 1,
+      "explanation": "dia — мужской род, хотя кончается на -a."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-10",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "choice",
+      "prompt": "Ela tem ___ mãos frias.",
+      "options": [
+        "os",
+        "uns",
+        "as",
+        "o"
+      ],
+      "correct": 2,
+      "explanation": "mão — женский род: a mão, as mãos."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-11",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "choice",
+      "prompt": "O meu irmão é ___.",
+      "options": [
+        "engenheiro",
+        "um engenheiro",
+        "o engenheiro"
+      ],
+      "correct": 0,
+      "explanation": "С профессией после ser артикль не ставится."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-12",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "choice",
+      "prompt": "Prefiro ___ cor azul.",
+      "options": [
+        "o",
+        "um",
+        "os",
+        "a"
+      ],
+      "correct": 3,
+      "explanation": "cor — женского рода (в отличие от русского «цвет»)."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-13",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "transform",
+      "prompt": "O rapaz é alto.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "Os rapazes são altos."
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-14",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "transform",
+      "prompt": "A senhora é portuguesa.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "As senhoras são portuguesas."
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-15",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "transform",
+      "prompt": "O animal é pequeno.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "Os animais são pequenos."
+      ],
+      "explanation": "-al → -ais."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-16",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "order-words",
+      "words": [
+        "têm",
+        "Os",
+        "bola",
+        "miúdos",
+        "uma"
+      ],
+      "answer": "Os miúdos têm uma bola",
+      "ru": "У детей есть мяч."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-17",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "order-words",
+      "words": [
+        "um",
+        "Quero",
+        "sumo",
+        "de",
+        "laranja"
+      ],
+      "answer": "Quero um sumo de laranja",
+      "ru": "Я хочу апельсиновый сок."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-18",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "translate-ru-pt",
+      "ru": "Инес — врач.",
+      "answer": [
+        "A Inês é médica.",
+        "Inês é médica."
+      ],
+      "explanation": "В Португалии перед именем обычно ставят артикль; с профессией артикля нет."
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-19",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "translate-ru-pt",
+      "ru": "Где туалет?",
+      "answer": [
+        "Onde é a casa de banho?",
+        "Onde fica a casa de banho?",
+        "Onde está a casa de banho?",
+        "Onde é que é a casa de banho?",
+        "Onde é que fica a casa de banho?"
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-20",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "listen-type",
+      "text": "As cidades portuguesas são bonitas.",
+      "answer": [
+        "As cidades portuguesas são bonitas."
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-ex-21",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "match",
+      "pairs": [
+        {
+          "left": "o hotel",
+          "right": "os hotéis"
+        },
+        {
+          "left": "o homem",
+          "right": "os homens"
+        },
+        {
+          "left": "a estação",
+          "right": "as estações"
+        },
+        {
+          "left": "o pão",
+          "right": "os pães"
+        },
+        {
+          "left": "a mão",
+          "right": "as mãos"
+        },
+        {
+          "left": "o país",
+          "right": "os países"
+        }
+      ],
+      "prompt": "Соедините единственное и множественное число."
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-artigos-genero-numero-mt-01",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "___ viagem para o Algarve é longa.",
+      "answer": [
+        "A"
+      ],
+      "explanation": "viagem — женский род (-gem)."
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-02",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Há dois ___ (jardim) perto de casa.",
+      "answer": [
+        "jardins"
+      ],
+      "explanation": "-m → -ns."
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-03",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Queria ___ água sem gás, por favor.",
+      "answer": [
+        "uma"
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-04",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "fill-gap",
+      "prompt": "Os ___ (papel) estão em cima da mesa.",
+      "answer": [
+        "papéis"
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-05",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "choice",
+      "prompt": "___ sistema não funciona.",
+      "options": [
+        "A",
+        "Os",
+        "O",
+        "As"
+      ],
+      "correct": 2,
+      "explanation": "sistema — мужской род."
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-06",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "choice",
+      "prompt": "Sou ___ e trabalho num hospital.",
+      "options": [
+        "um enfermeiro",
+        "o enfermeiro",
+        "enfermeiro"
+      ],
+      "correct": 2,
+      "explanation": "Профессия после ser — без артикля."
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-07",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "choice",
+      "prompt": "Na quinta há dois ___.",
+      "options": [
+        "cãos",
+        "cães",
+        "cões"
+      ],
+      "correct": 1,
+      "explanation": "cão → cães."
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-08",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "transform",
+      "prompt": "O homem é alto.",
+      "instruction": "Поставьте всё предложение во множественное число.",
+      "answer": [
+        "Os homens são altos."
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-09",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "translate-ru-pt",
+      "ru": "У меня есть дом и машина.",
+      "answer": [
+        "Tenho uma casa e um carro.",
+        "Eu tenho uma casa e um carro."
+      ]
+    },
+    {
+      "id": "a1-artigos-genero-numero-mt-10",
+      "topicId": "a1-artigos-genero-numero",
+      "type": "listen-choice",
+      "text": "As raparigas têm três gatos.",
+      "options": [
+        "У девочки три кошки.",
+        "У девушек три кошки.",
+        "У девушек есть кошка.",
+        "У мальчиков три кошки."
+      ],
+      "correct": 1
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "id": "b2-mais-que-perfeito-simples",
+  "level": "B2",
+  "module": "b2-tempos-compostos",
+  "title": "Простой mais-que-perfeito: fizera, dissera",
+  "titlePt": "Pretérito mais-que-perfeito simples",
+  "requires": [
+    "a2-mais-que-perfeito",
+    "a2-preterito-perfeito-simples",
+    "b1-imperfeito-conjuntivo-condicional"
+  ],
+  "theory": "## Значение\n\n**Mais-que-perfeito simples** (**fizera, dissera**) значит то же, что **tinha feito, tinha dito**: действие, случившееся **раньше другого прошедшего**. Разница — в стиле: простая форма книжная. Её встречаешь в литературе, прессе, официальных текстах, а в разговоре почти не слышишь.\n\n**Quando a polícia chegou, o ladrão já fugira.** = **...já tinha fugido.** — Когда приехала полиция, вор уже сбежал.\n\n## Образование\n\nБерём форму **eles** в pretérito perfeito simples, отбрасываем **-ram** и добавляем **-ra, -ras, -ra, -ramos, -ram**. В форме **nós** — ударение (как в imperfeito do conjuntivo).\n\n| | falar (fala-ram) | comer (come-ram) | partir (parti-ram) |\n|---|---|---|---|\n| eu | falara | comera | partira |\n| tu | falaras | comeras | partiras |\n| ele / você | falara | comera | partira |\n| nós | **faláramos** | **comêramos** | **partíramos** |\n| eles / vocês | falaram | comeram | partiram |\n\nФорма **eles** совпадает с perfeito simples (**falaram**) — различаем по контексту.\n\nНеправильные глаголы — по той же схеме, основа та же, что в **tivesse, fizesse**:\n\n| инфинитив | eu / ele | nós | = |\n|---|---|---|---|\n| ter | tivera | tivéramos | tinha tido |\n| estar | estivera | estivéramos | tinha estado |\n| ser, ir | fora | fôramos | tinha sido / ido |\n| fazer | fizera | fizéramos | tinha feito |\n| dizer | dissera | disséramos | tinha dito |\n| poder | pudera | pudéramos | tinha podido |\n| querer | quisera | quiséramos | tinha querido |\n| saber | soubera | soubéramos | tinha sabido |\n| vir | viera | viéramos | tinha vindo |\n| ver | vira | víramos | tinha visto |\n| dar | dera | déramos | tinha dado |\n| pôr | pusera | puséramos | tinha posto |\n\nОсторожно с омонимами: **fora** — «был / ходил раньше» и «снаружи» (**lá fora**); **vira** — «видел раньше» и «поворачивает» (**virar**).\n\n## Где встречается\n\n- **Литература**: **Nunca vira um mar tão azul.** — Никогда прежде он не видел такого синего моря.\n- **Пресса**: **O ministro, que dissera na véspera que não se demitia, apresentou ontem a demissão.**\n- **Старые тексты** иногда используют её вместо condicional: **Mais valera ficar calado.** (= mais valia) — Лучше было бы промолчать.\n\nСами в речи говорите **tinha feito**; простую форму достаточно уверенно узнавать.\n\n## Как переводить\n\nВ русском предпрошедшего нет, поэтому порядок событий передаём словами **уже, раньше, прежде, до того, накануне, ранее**: **A empresa, que já despedira cem pessoas em março, anunciou novos cortes.** — Компания, которая ещё в марте уволила сто человек, объявила о новых сокращениях. Если в тексте рядом стоят **perfeito** и **mais-que-perfeito simples**, второе всегда случилось раньше.\n\n## Застывшие выражения — их используют все\n\n| выражение | значение | пример |\n|---|---|---|\n| **Quem me dera!** | вот бы!, мне бы так! | **Quem me dera ter férias!** / **Quem me dera que fosse verão!** |\n| **Pudera!** | ещё бы!, неудивительно! | **— Está exausto. — Pudera! Trabalhou o fim de semana todo.** |\n| **Tomara (que)...** | хоть бы, лишь бы | **Tomara que não chova.** |\n| **Quisera eu!** | мне бы так! (книжн.) | **— Vais de férias? — Quisera eu!** |\n\nПосле **quem me dera** — инфинитив (если желание о себе) или **que** + imperfeito / mais-que-perfeito do conjuntivo: **Quem me dera ter ido! Quem me dera que ele tivesse ficado!**\n\nВ pt-PT из пожеланий самое частотное — **quem me dera**; **tomara** звучит скорее по-бразильски.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Quem me dera!** | **Tomara!** / **Quem me dera!** | в Португалии tomara встречается реже |\n| ...que **dissera** na véspera (пресса) | ...que **tinha dito** / **havia dito** | португальская пресса заметно чаще использует простую форму |\n| **Pudera!** | **Pudera!** / **Também, né!** | «ещё бы!» — общее, но в pt-PT частотнее |\n\nОбразование форм одинаково в обеих нормах; в живой речи и там и там — **tinha feito**.",
+  "commonErrors": "- **Основа от инфинитива**: *fazera, dizera, podera, tera* ✗ → **fizera, dissera, pudera, tivera** ✓ (основа — perfeito eles).\n- **Принять за будущее или condicional**: *fizera* ≠ «сделает» / «сделал бы»; **fizera = tinha feito** ✓.\n- **Без ударения в nós**: *fizeramos, estiveramos* ✗ → **fizéramos, estivéramos** ✓.\n- **Простая форма в разговоре**: *Quando cheguei, ele já saíra* — не ошибка, но звучит как роман; в речи → **já tinha saído** ✓.\n- **Индикатив после quem me dera que**: *Quem me dera que tenho tempo* ✗ → **Quem me dera ter tempo / que tivesse tempo** ✓.\n- **Pudera ≠ poderia**: *Pudera ajudar-te* ✗ (в значении «я мог бы помочь») → **Podia / Poderia ajudar-te** ✓.",
+  "examples": [
+    {
+      "pt": "Quando a polícia chegou, o ladrão já fugira.",
+      "ru": "Когда приехала полиция, вор уже сбежал.",
+      "audio": true
+    },
+    {
+      "pt": "O ministro, que dissera na véspera que não se demitia, apresentou ontem a demissão.",
+      "ru": "Министр, который накануне заявлял, что не уйдёт в отставку, вчера подал прошение об отставке.",
+      "audio": true
+    },
+    {
+      "pt": "Nunca vira um mar tão azul.",
+      "ru": "Никогда прежде я не видел такого синего моря.",
+      "audio": true
+    },
+    {
+      "pt": "Quem me dera ter mais tempo para ler!",
+      "ru": "Вот бы у меня было больше времени на чтение!",
+      "audio": true
+    },
+    {
+      "pt": "Está exausto? Pudera! Trabalhou o fim de semana todo.",
+      "ru": "Вымотался? Ещё бы! Работал все выходные.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-01",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Quando cheguei, o comboio já ___ (partir).",
+      "answer": [
+        "partira"
+      ],
+      "hint": "простая форма",
+      "ru": "Когда я пришёл, поезд уже ушёл.",
+      "explanation": "Partiram → partira = tinha partido."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-02",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ela nunca ___ (ver) Lisboa antes daquela viagem.",
+      "answer": [
+        "vira"
+      ],
+      "hint": "простая форма",
+      "ru": "До той поездки она никогда не видела Лиссабон."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-03",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "O treinador ___ (dizer) que a equipa estava pronta.",
+      "answer": [
+        "dissera"
+      ],
+      "hint": "простая форма",
+      "ru": "Тренер (ранее) сказал, что команда готова."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-04",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Nós já ___ (jantar) quando ele telefonou.",
+      "answer": [
+        "jantáramos"
+      ],
+      "hint": "простая форма, ударение в nós",
+      "ru": "Мы уже поужинали, когда он позвонил."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-05",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "O escritor ___ (fazer) a mesma viagem trinta anos antes.",
+      "answer": [
+        "fizera"
+      ],
+      "hint": "простая форма",
+      "ru": "Писатель совершил то же путешествие тридцатью годами раньше."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-06",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ele explicou que ___ (estar) doente na semana anterior.",
+      "answer": [
+        "estivera"
+      ],
+      "hint": "простая форма",
+      "ru": "Он объяснил, что болел на прошлой неделе."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-07",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Quem me ___ (dar) ter férias agora!",
+      "answer": [
+        "dera"
+      ],
+      "ru": "Вот бы сейчас отпуск!",
+      "explanation": "Quem me dera — застывшее выражение с mais-que-perfeito simples от dar."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-08",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "— O Rui está cansadíssimo. — ___ (poder)! Dormiu três horas.",
+      "answer": [
+        "Pudera"
+      ],
+      "ru": "— Руй ужасно устал. — Ещё бы! Спал три часа."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-09",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "choice",
+      "prompt": "«Ela já saíra quando cheguei.» = ",
+      "options": [
+        "Ela já saiu quando eu chegar.",
+        "Ela sairia quando cheguei.",
+        "Ela já tinha saído quando cheguei.",
+        "Ela saísse quando cheguei."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-10",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "choice",
+      "prompt": "Mais-que-perfeito simples от fazer (eu):",
+      "options": [
+        "fazera",
+        "fizera",
+        "faria",
+        "fizesse"
+      ],
+      "correct": 1,
+      "explanation": "Основа от fizeram, а не от инфинитива."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-11",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "choice",
+      "prompt": "— Ele está tão feliz! — ___! Ganhou a lotaria.",
+      "options": [
+        "Quem me dera",
+        "Tomara",
+        "Pudera",
+        "Oxalá"
+      ],
+      "correct": 2,
+      "explanation": "Pudera! — «ещё бы, неудивительно»."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-12",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "choice",
+      "prompt": "Nós já ___ aquele filme. (ver, простая форма)",
+      "options": [
+        "vimos",
+        "viramos",
+        "veríamos",
+        "víramos"
+      ],
+      "correct": 3,
+      "explanation": "Viram → víramos; viramos без ударения — от virar."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-13",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "transform",
+      "prompt": "Ele tinha dito a verdade.",
+      "instruction": "Замените составную форму на простую.",
+      "answer": [
+        "Ele dissera a verdade.",
+        "Dissera a verdade."
+      ]
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-14",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "transform",
+      "prompt": "Quando chegámos, a Inês já tinha saído.",
+      "instruction": "Замените составную форму на простую.",
+      "answer": [
+        "Quando chegámos, a Inês já saíra."
+      ]
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-15",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "transform",
+      "prompt": "A Joana partira para Paris.",
+      "instruction": "Перескажите в разговорном стиле (составная форма).",
+      "answer": [
+        "A Joana tinha partido para Paris."
+      ]
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-16",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "transform",
+      "prompt": "Gostava muito de ter tempo.",
+      "instruction": "Выразите то же желание через «Quem me dera...».",
+      "answer": [
+        "Quem me dera ter tempo.",
+        "Quem me dera que eu tivesse tempo."
+      ]
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-17",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "order-words",
+      "words": [
+        "nunca",
+        "um",
+        "vira",
+        "Ele",
+        "mar",
+        "tão",
+        "azul"
+      ],
+      "answer": "Ele nunca vira um mar tão azul",
+      "ru": "Он никогда прежде не видел такого синего моря."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-18",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "order-words",
+      "words": [
+        "me",
+        "Quem",
+        "ter",
+        "dera",
+        "férias"
+      ],
+      "answer": "Quem me dera ter férias",
+      "ru": "Вот бы мне отпуск!"
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-19",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "translate-ru-pt",
+      "ru": "Вот бы мне жить у моря!",
+      "answer": [
+        "Quem me dera viver perto do mar!",
+        "Quem me dera morar perto do mar!",
+        "Quem me dera viver à beira-mar!",
+        "Quem me dera morar à beira-mar!",
+        "Quem me dera viver junto ao mar!",
+        "Quem me dera morar junto ao mar!"
+      ]
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-20",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "translate-ru-pt",
+      "ru": "Когда мы пришли, фильм уже начался.",
+      "answer": [
+        "Quando chegámos, o filme já começara.",
+        "Quando chegámos, o filme já tinha começado.",
+        "Quando nós chegámos, o filme já começara.",
+        "Quando nós chegámos, o filme já tinha começado."
+      ],
+      "explanation": "Книжно — começara, разговорно — tinha começado. Chegámos — с ударением (прошедшее)."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-21",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "listen-choice",
+      "text": "Pudera! Não dormiu nada.",
+      "options": [
+        "Вот бы! Совсем не спал.",
+        "Ещё бы! Он совсем не спал.",
+        "Может быть, он совсем не спал.",
+        "Он бы совсем не спал."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-ex-22",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "match",
+      "prompt": "Соедините простую форму с составной.",
+      "pairs": [
+        {
+          "left": "fizera",
+          "right": "tinha feito"
+        },
+        {
+          "left": "dissera",
+          "right": "tinha dito"
+        },
+        {
+          "left": "estivera",
+          "right": "tinha estado"
+        },
+        {
+          "left": "vira",
+          "right": "tinha visto"
+        },
+        {
+          "left": "pusera",
+          "right": "tinha posto"
+        },
+        {
+          "left": "viera",
+          "right": "tinha vindo"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-01",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "O avião já ___ (aterrar) quando chegámos ao aeroporto.",
+      "answer": [
+        "aterrara"
+      ],
+      "hint": "простая форма",
+      "ru": "Самолёт уже приземлился, когда мы приехали в аэропорт."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-02",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Ela ___ (ter) uma vida difícil antes de vir para Portugal.",
+      "answer": [
+        "tivera"
+      ],
+      "hint": "простая форма",
+      "ru": "До переезда в Португалию у неё была тяжёлая жизнь."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-03",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (estar) em Coimbra dois anos antes.",
+      "answer": [
+        "estivéramos"
+      ],
+      "hint": "простая форма",
+      "ru": "Мы были в Коимбре двумя годами раньше."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-04",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "fill-gap",
+      "prompt": "Quem me ___ (dar) que fosse sexta-feira!",
+      "answer": [
+        "dera"
+      ],
+      "ru": "Вот бы была пятница!"
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-05",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "choice",
+      "prompt": "В «Ele fora o melhor aluno da turma» слово fora значит:",
+      "options": [
+        "será",
+        "lá fora",
+        "seria",
+        "tinha sido"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-06",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "choice",
+      "prompt": "Какая форма от dizer (eles) совпадает с mais-que-perfeito simples?",
+      "options": [
+        "diziam",
+        "disseram",
+        "dissessem",
+        "diriam"
+      ],
+      "correct": 1,
+      "explanation": "В 3-м л. мн. ч. простой mais-que-perfeito совпадает с perfeito simples."
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-07",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "choice",
+      "prompt": "— A Rita fala muito bem inglês. — ___! Viveu dez anos em Londres.",
+      "options": [
+        "Quem me dera",
+        "Tomara",
+        "Oxalá",
+        "Pudera"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-08",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "transform",
+      "prompt": "O jornalista tinha feito a pergunta.",
+      "instruction": "Замените составную форму на простую.",
+      "answer": [
+        "O jornalista fizera a pergunta."
+      ]
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-09",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "translate-ru-pt",
+      "ru": "Вот бы у меня было больше времени!",
+      "answer": [
+        "Quem me dera ter mais tempo!",
+        "Oxalá tivesse mais tempo!",
+        "Oxalá eu tivesse mais tempo!",
+        "Quem me dera que eu tivesse mais tempo!"
+      ]
+    },
+    {
+      "id": "b2-mais-que-perfeito-simples-mt-10",
+      "topicId": "b2-mais-que-perfeito-simples",
+      "type": "listen-type",
+      "text": "Nunca vira nada assim.",
+      "answer": [
+        "Nunca vira nada assim."
+      ]
+    }
+  ]
+}

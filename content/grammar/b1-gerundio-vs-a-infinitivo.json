@@ -1,0 +1,428 @@
+{
+  "id": "b1-gerundio-vs-a-infinitivo",
+  "level": "B1",
+  "module": "b1-sintaxe",
+  "title": "Герундий или «a + инфинитив»",
+  "titlePt": "Gerúndio vs. a + infinitivo",
+  "requires": [
+    "a1-estar-a-ir-infinitivo",
+    "a2-preterito-imperfeito"
+  ],
+  "theory": "## Главное правило Португалии\n\nПроцесс «в данный момент» в pt-PT выражается конструкцией **estar a + инфинитив**, а не герундием: **Estou a trabalhar.** **Estava a jantar quando ligaste.** Та же модель **глагол + a + инфинитив** работает у целой группы глаголов, которые уточняют, *как* идёт действие.\n\n| конструкция | значение | пример |\n|---|---|---|\n| **estar a** + inf. | происходит сейчас / происходило тогда | **Estou a ler.** — Я читаю (сейчас). |\n| **andar a** + inf. | в последнее время, регулярно | **Ando a dormir mal.** — Последнее время плохо сплю. |\n| **continuar a** + inf. | продолжать | **Continua a chover.** — Всё ещё идёт дождь. |\n| **ficar a** + inf. | остаться и (долго) делать | **Ficámos a conversar.** — Мы засиделись за разговором. |\n| **passar** (o dia...) **a** + inf. | провести время за чем-то | **Passei a tarde a estudar.** |\n| **começar a / voltar a** + inf. | начать / снова сделать | **Voltou a ligar.** — Он опять позвонил. |\n| **pôr-se a** + inf. | вдруг начать | **Pôs-se a chorar.** — Вдруг расплакалась. |\n\nПосле глаголов движения «как именно» тоже передаётся через **a** + инфинитив: **Saiu a correr.** — Выбежал. **Entrou a rir.** — Вошёл смеясь. **Veio a cantar.** — Шёл и пел. Вариант **saiu correndo** грамматически возможен, но звучит книжно или по-бразильски; в живой речи Португалии — **saiu a correr**.\n\n## Где герундий в Португалии ЕСТЬ\n\nГерундий (**falando, fazendo, partindo**) никуда не исчез — он просто не сочетается с **estar** в значении «сейчас». Его законные места:\n\n**1. Обстоятельственный герундий** (как русское деепричастие), чаще в начале фразы и в более нейтральном или письменном стиле:\n\n| значение | пример |\n|---|---|\n| причина | **Sendo assim, vamos adiar a reunião.** — Раз так, перенесём встречу. |\n| условие | **Querendo, podes vir connosco.** — Если хочешь, поехали с нами. |\n| время | **Chegando a Lisboa, liga-me.** — Как приедешь в Лиссабон, позвони. |\n| уступка / вывод | **Pensando bem, não vou.** — Если подумать, не пойду. |\n\n**2. Устойчивые выражения**: **sendo assim**, **pensando bem**, **tendo em conta** (учитывая), **tendo em vista**, **querendo** (если захочешь).\n\n**3. Ir + герундий** — постепенное развитие: **Os convidados foram chegando.** — Гости понемногу подтягивались. **Vai-se fazendo.** — Потихоньку делается. И очень частотное **Vou andando!** — Ну, я пошёл!\n\n**4. Сложный герундий** (книжн.): **Tendo terminado o trabalho, saiu.** — Закончив работу, вышел.\n\n**5. Диалекты**: на юге (Алентежу, Алгарве) **estar** + герундий встречается и у португальцев. Но это региональная норма — ориентируйтесь на **estar a**.\n\n## Как не ошибиться\n\nЕсли по-русски можно сказать «сейчас / как раз / всё ещё / последнее время» — нужен **глагол + a + инфинитив**. Если это русское деепричастие в начале фразы («будучи», «подумав», «учитывая») — смело используйте герундий.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Estou a trabalhar.** | *Estou trabalhando.* | главное различие двух норм |\n| **Continua a chover.** | *Continua chovendo.* | то же для continuar, andar, ficar |\n| **Ando a pensar nisso.** | *Ando pensando nisso.* | |\n| **Saiu a correr.** | *Saiu correndo.* | в pt-PT герундий здесь книжный |\n| **Sendo assim...**, **Vou andando.** | **Sendo assim...**, **Vou indo.** | обстоятельственный герундий общий |\n\nБразильские сериалы, песни и приложения — главный источник «заражения» герундием. Если слышите **-ndo** после **estar**, это бразильская (или южнопортугальская) речь.",
+  "commonErrors": "- **Бразильский герундий**: *Estou estudando* ✗ → **Estou a estudar** ✓.\n- **Гибрид**: *Estou a estudando* ✗ → **Estou a estudar** ✓ (после **a** — всегда инфинитив).\n- **Без предлога**: *Estou estudar* ✗, *Continuo trabalhar* ✗ → **Estou a estudar**, **Continuo a trabalhar** ✓.\n- **Не тот предлог (калька «продолжать что-то делать»)**: *Continuo de estudar* ✗ → **Continuo a estudar** ✓.\n- **estar a вместо andar a** для «последнее время»: *Estou a dormir mal ultimamente* — понятно, но естественнее **Ando a dormir mal**.\n- **Боязнь герундия там, где он нужен**: *A pensar bem, não vou* ✗ → **Pensando bem, não vou** ✓; *Ser assim...* ✗ → **Sendo assim...** ✓.\n- **Деепричастие по-русски в середине простой речи**: *Ele entrou sorrindo* — книжно; в разговоре **Ele entrou a sorrir**.",
+  "examples": [
+    {
+      "pt": "Desculpa, agora não posso, estou a conduzir.",
+      "ru": "Извини, сейчас не могу, я за рулём.",
+      "audio": true
+    },
+    {
+      "pt": "Ultimamente ando a trabalhar demasiado.",
+      "ru": "Последнее время я слишком много работаю.",
+      "audio": true
+    },
+    {
+      "pt": "Ficámos a conversar até às duas da manhã.",
+      "ru": "Мы проговорили до двух часов ночи.",
+      "audio": true
+    },
+    {
+      "pt": "O miúdo viu o cão e saiu a correr.",
+      "ru": "Мальчишка увидел собаку и бросился бежать.",
+      "audio": true
+    },
+    {
+      "pt": "Sendo assim, vamos adiar o jantar.",
+      "ru": "Раз так, перенесём ужин.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-01",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Neste momento estou ___ (ler) um livro do Saramago.",
+      "answer": [
+        "a ler"
+      ],
+      "ru": "Сейчас я читаю книгу Сарамаго."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-02",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Quando me ligaste, eu estava ___ (tomar) banho.",
+      "answer": [
+        "a tomar"
+      ],
+      "ru": "Когда ты мне позвонил, я был в душе."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-03",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Ultimamente ando ___ (dormir) muito mal.",
+      "answer": [
+        "a dormir"
+      ],
+      "ru": "Последнее время я очень плохо сплю."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-04",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Apesar da chuva, eles continuaram ___ (jogar).",
+      "answer": [
+        "a jogar"
+      ],
+      "ru": "Несмотря на дождь, они продолжали играть."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-05",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Ficámos ___ (conversar) até às duas da manhã.",
+      "answer": [
+        "a conversar"
+      ],
+      "ru": "Мы проговорили до двух часов ночи."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-06",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "___ (ser) assim, vamos adiar a reunião.",
+      "answer": [
+        "Sendo"
+      ],
+      "ru": "Раз так, перенесём встречу.",
+      "explanation": "Обстоятельственный герундий в начале фразы — нормальный pt-PT."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-07",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Passei a tarde ___ (arrumar) a casa.",
+      "answer": [
+        "a arrumar"
+      ],
+      "ru": "Я провёл день за уборкой дома."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-08",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "O miúdo saiu ___ (correr) quando viu o cão.",
+      "answer": [
+        "a correr"
+      ],
+      "ru": "Мальчишка выбежал, когда увидел собаку.",
+      "explanation": "В живой речи Португалии — saiu a correr; saiu correndo звучит по-бразильски или книжно."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-09",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "choice",
+      "prompt": "— O que estás a fazer? — ___",
+      "options": [
+        "Estou cozinhando.",
+        "Estou a cozinhar.",
+        "Estou cozinhar.",
+        "Estou de cozinhar."
+      ],
+      "correct": 1,
+      "explanation": "Процесс сейчас → estar a + infinitivo."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-10",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "choice",
+      "prompt": "___ bem, acho que não vou.",
+      "options": [
+        "A pensar",
+        "Pensar",
+        "Pensado",
+        "Pensando"
+      ],
+      "correct": 3,
+      "explanation": "Устойчивое «если подумать» — герундий pensando."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-11",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "choice",
+      "prompt": "Os convidados foram ___ ao longo da noite.",
+      "options": [
+        "chegar",
+        "a chegar",
+        "chegando",
+        "chegados"
+      ],
+      "correct": 2,
+      "explanation": "ir + герундий = постепенное действие; эта конструкция живёт и в pt-PT."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-12",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "choice",
+      "prompt": "Escolha a frase típica do português europeu:",
+      "options": [
+        "Continuo a trabalhar no mesmo sítio.",
+        "Continuo trabalhando no mesmo sítio.",
+        "Continuo de trabalhar no mesmo sítio.",
+        "Continuo trabalhar no mesmo sítio."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-13",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "transform",
+      "prompt": "Eu leio o jornal.",
+      "instruction": "Скажите, что действие происходит прямо сейчас (estar a).",
+      "answer": [
+        "Eu estou a ler o jornal.",
+        "Estou a ler o jornal."
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-14",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "transform",
+      "prompt": "Ele fuma muito.",
+      "instruction": "Скажите, что так в последнее время (andar a).",
+      "answer": [
+        "Ele anda a fumar muito.",
+        "Anda a fumar muito."
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-15",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "transform",
+      "prompt": "Ela ainda vive em Coimbra.",
+      "instruction": "Перестройте с continuar a.",
+      "answer": [
+        "Ela continua a viver em Coimbra.",
+        "Continua a viver em Coimbra."
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-16",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "order-words",
+      "words": [
+        "a",
+        "Estávamos",
+        "jantar",
+        "quando",
+        "chegaste"
+      ],
+      "answer": "Estávamos a jantar quando chegaste"
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-17",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "order-words",
+      "words": [
+        "Sendo",
+        "assim,",
+        "fico",
+        "em",
+        "casa"
+      ],
+      "answer": "Sendo assim, fico em casa"
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-18",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "translate-ru-pt",
+      "ru": "Что ты делаешь?",
+      "answer": [
+        "O que estás a fazer?",
+        "Que estás a fazer?",
+        "O que é que estás a fazer?",
+        "Estás a fazer o quê?",
+        "O que é que tu estás a fazer?"
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-19",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "translate-ru-pt",
+      "ru": "Я всё ещё учу португальский.",
+      "answer": [
+        "Continuo a aprender português.",
+        "Continuo a estudar português.",
+        "Eu continuo a aprender português.",
+        "Eu continuo a estudar português.",
+        "Ainda estou a aprender português.",
+        "Ainda estou a estudar português.",
+        "Eu ainda estou a aprender português.",
+        "Eu ainda estou a estudar português."
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-20",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "listen-type",
+      "text": "Ando a trabalhar demasiado ultimamente.",
+      "answer": [
+        "Ando a trabalhar demasiado ultimamente."
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-ex-21",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "match",
+      "prompt": "Соедините конструкцию с её значением.",
+      "pairs": [
+        {
+          "left": "estar a fazer",
+          "right": "делать сейчас"
+        },
+        {
+          "left": "andar a fazer",
+          "right": "делать в последнее время"
+        },
+        {
+          "left": "continuar a fazer",
+          "right": "продолжать делать"
+        },
+        {
+          "left": "ficar a fazer",
+          "right": "задержаться, делая"
+        },
+        {
+          "left": "voltar a fazer",
+          "right": "сделать снова"
+        },
+        {
+          "left": "ir fazendo",
+          "right": "делать понемногу"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-01",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "O telefone tocou enquanto eu estava ___ (dormir).",
+      "answer": [
+        "a dormir"
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-02",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Desde janeiro que ando ___ (poupar) dinheiro para a viagem.",
+      "answer": [
+        "a poupar"
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-03",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Ela ficou ___ (olhar) para mim sem dizer nada.",
+      "answer": [
+        "a olhar"
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-04",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "fill-gap",
+      "prompt": "___ (ter) em conta o preço, é uma boa opção.",
+      "answer": [
+        "Tendo"
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-05",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "choice",
+      "prompt": "As crianças estão ___ no jardim.",
+      "options": [
+        "brincando",
+        "a brincar",
+        "brincar",
+        "de brincar"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-06",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "choice",
+      "prompt": "Quando me viu, a Rita veio ___ ter comigo.",
+      "options": [
+        "correr",
+        "de correr",
+        "a correr",
+        "a correndo"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-07",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "choice",
+      "prompt": "Qual destas frases é típica do português europeu?",
+      "options": [
+        "Estamos esperando o autocarro.",
+        "Estamos esperando o ônibus.",
+        "Estamos a esperar o ônibus.",
+        "Estamos à espera do autocarro."
+      ],
+      "correct": 3,
+      "explanation": "Только здесь нет ни герундия, ни бразильской лексики (ônibus)."
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-08",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "transform",
+      "prompt": "Ela estuda Direito.",
+      "instruction": "Скажите, что она всё ещё учится (continuar a).",
+      "answer": [
+        "Ela continua a estudar Direito.",
+        "Continua a estudar Direito."
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-09",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "translate-ru-pt",
+      "ru": "Мы как раз ужинали, когда ты позвонил.",
+      "answer": [
+        "Estávamos a jantar quando ligaste.",
+        "Estávamos a jantar quando telefonaste.",
+        "Estávamos a jantar quando tu ligaste.",
+        "Estávamos a jantar quando tu telefonaste.",
+        "Nós estávamos a jantar quando ligaste.",
+        "Nós estávamos a jantar quando telefonaste.",
+        "Nós estávamos a jantar quando tu ligaste.",
+        "Nós estávamos a jantar quando tu telefonaste."
+      ]
+    },
+    {
+      "id": "b1-gerundio-vs-a-infinitivo-mt-10",
+      "topicId": "b1-gerundio-vs-a-infinitivo",
+      "type": "listen-choice",
+      "text": "Vou andando, que já é tarde.",
+      "options": [
+        "Я иду пешком, уже поздно.",
+        "Я буду гулять допоздна.",
+        "Ну, я пошёл, уже поздно.",
+        "Я давно хожу пешком."
+      ],
+      "correct": 2,
+      "explanation": "Vou andando — устойчивое «ну, я пошёл»."
+    }
+  ]
+}

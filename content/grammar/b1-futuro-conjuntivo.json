@@ -1,0 +1,429 @@
+{
+  "id": "b1-futuro-conjuntivo",
+  "level": "B1",
+  "module": "b1-conjuntivo",
+  "title": "Будущее время сослагательного наклонения",
+  "titlePt": "Futuro do conjuntivo",
+  "requires": [
+    "a2-preterito-perfeito-simples",
+    "b1-presente-conjuntivo"
+  ],
+  "theory": "## Зачем оно нужно\n\n**Futuro do conjuntivo** — особенность португальского (в испанском оно почти вымерло). Им выражают **будущее действие в придаточном** после **quando, se, assim que** и т. п.: *Когда придёшь, позвони* → **Quando chegares, liga-me.** По-русски там стоит будущее время, по-португальски — **не** futuro simples и **не** presente.\n\n## Образование\n\nБерём форму **eles** в **pretérito perfeito simples**, отбрасываем **-ram** и добавляем окончания: **-r, -res, -r, -rmos, -rem**.\n\n| | falar (fala-ram) | fazer (fize-ram) | ter (tive-ram) | ser / ir (fo-ram) |\n|---|---|---|---|---|\n| eu | falar | fizer | tiver | for |\n| tu | falares | fizeres | tiveres | fores |\n| ele / você | falar | fizer | tiver | for |\n| nós | falarmos | fizermos | tivermos | formos |\n| eles / vocês | falarem | fizerem | tiverem | forem |\n\nУ правильных глаголов формы совпадают с инфинитивом (личным инфинитивом), у неправильных — нет. Поэтому важно знать perfeito:\n\n| инфинитив | eles (perfeito) | futuro do conjuntivo (eu / tu) |\n|---|---|---|\n| estar | estiveram | estiver / estiveres |\n| poder | puderam | puder / puderes |\n| querer | quiseram | quiser / quiseres |\n| saber | souberam | souber / souberes |\n| dizer | disseram | disser / disseres |\n| trazer | trouxeram | trouxer / trouxeres |\n| pôr | puseram | puser / puseres |\n| dar | deram | der / deres |\n| **ver** | **viram** | **vir / vires** |\n| **vir** | **vieram** | **vier / vieres** |\n| haver | houveram | houver |\n\nЛовушка: **Se o vires** = «если ты его *увидишь*» (ver), **Se vieres** = «если ты *придёшь*» (vir).\n\n## После каких слов\n\n| слово | пример |\n|---|---|\n| quando | **Quando chegares a casa, manda-me uma mensagem.** |\n| se (реальное условие в будущем) | **Se puderes, ajuda-me amanhã.** |\n| assim que, logo que, mal | **Assim que souber, digo-te.** |\n| enquanto | **Enquanto estiveres doente, fica em casa.** |\n| sempre que | **Sempre que quiseres, aparece.** |\n| como, conforme | **Faz como quiseres.** |\n| quem, o que, onde, tudo o que | **Quem quiser, pode vir.** **Come o que te apetecer.** |\n\nВ главном предложении — **presente, futuro, imperativo** или **ir + infinitivo**.\n\n## Когда НЕ употребляется\n\n- **Привычное действие** (quando = «каждый раз, когда») → presente: **Quando chove, fico em casa.**\n- **Прошлое** → perfeito / imperfeito: **Quando cheguei, ele já tinha saído.**\n- После **que** (espero que, quero que) → **presente do conjuntivo**: **Espero que venhas** (*vieres* ✗).\n- Нереальное условие → **imperfeito do conjuntivo**: **Se eu tivesse tempo, ia.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Quando chegares**, liga-me. | **Quando você chegar**, me liga. | tu + 2-е лицо и ênclise в pt-PT |\n| Se o **vires**, diz-lhe olá. | Se você **ver** ele... (разг.) | *se eu ver* — частая бразильская разговорная ошибка; норма — **vir** |\n| Se **puderes**, vem. | Se você **puder**, vem. | |\n\nСамо время одинаково живо в обеих нормах. Но в Бразилии в разговоре его неправильные формы часто заменяют инфинитивом (*se eu fazer, quando eu ver*), а такие материалы легко «заразить» себя ошибкой.",
+  "commonErrors": "- **Будущее время по-русски**: *Quando chegarei, ligo-te* ✗ → **Quando chegar, ligo-te** ✓.\n- **Presente вместо futuro do conjuntivo** для конкретного будущего: *Se amanhã chove, não vou* — разговорно, но норма **Se amanhã chover, não vou**.\n- **Инфинитив вместо неправильной формы**: *Se eu fazer* ✗ → **Se eu fizer**; *Quando eu poder* ✗ → **Quando eu puder**; *Se eu ser* ✗ → **Se eu for**.\n- **ver / vir**: *Se eu ver o Rui* ✗ → **Se eu vir o Rui** ✓; *Se ele vir amanhã* (в значении «придёт») ✗ → **Se ele vier amanhã** ✓.\n- **После que**: *Espero que puderes* ✗ → **Espero que possas** ✓.\n- **Забытое -es у tu**: *Quando tu chegar* ✗ → **Quando chegares** ✓.",
+  "examples": [
+    {
+      "pt": "Quando chegares a casa, manda-me uma mensagem.",
+      "ru": "Когда доберёшься домой, напиши мне.",
+      "audio": true
+    },
+    {
+      "pt": "Se puderes, passa pela farmácia.",
+      "ru": "Если сможешь, зайди в аптеку.",
+      "audio": true
+    },
+    {
+      "pt": "Assim que souber o resultado, telefono-te.",
+      "ru": "Как только узнаю результат, позвоню тебе.",
+      "audio": true
+    },
+    {
+      "pt": "Se vires a Joana, diz-lhe que eu ligo amanhã.",
+      "ru": "Если увидишь Жоану, скажи ей, что я позвоню завтра.",
+      "audio": true
+    },
+    {
+      "pt": "Quem quiser, pode ficar para jantar.",
+      "ru": "Кто хочет, может остаться на ужин.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-futuro-conjuntivo-ex-01",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Quando ___ (chegar) ao Porto, liga-me.",
+      "answer": [
+        "chegares"
+      ],
+      "hint": "tu",
+      "ru": "Когда приедешь в Порту, позвони мне."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-02",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Se ___ (ter) tempo amanhã, vou ao ginásio.",
+      "answer": [
+        "tiver"
+      ],
+      "hint": "eu",
+      "ru": "Если завтра будет время, пойду в спортзал."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-03",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Se tu ___ (poder), ajuda-me com as malas.",
+      "answer": [
+        "puderes"
+      ],
+      "ru": "Если сможешь, помоги мне с чемоданами."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-04",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Assim que eles ___ (saber) a notícia, vão ficar contentes.",
+      "answer": [
+        "souberem"
+      ],
+      "ru": "Как только они узнают новость, они обрадуются."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-05",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Faz como ___ (querer).",
+      "answer": [
+        "quiseres"
+      ],
+      "hint": "tu",
+      "ru": "Делай как хочешь."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-06",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Se ___ (estar) bom tempo, vamos à praia.",
+      "answer": [
+        "estiver"
+      ],
+      "ru": "Если будет хорошая погода, пойдём на пляж."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-07",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Quando nós ___ (ser) velhos, vamos viver para o campo.",
+      "answer": [
+        "formos"
+      ],
+      "ru": "Когда мы будем старыми, переедем жить в деревню."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-08",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Se ___ (ver) o meu irmão, diz-lhe olá.",
+      "answer": [
+        "vires"
+      ],
+      "hint": "tu; ver ≠ vir",
+      "ru": "Если увидишь моего брата, передай ему привет."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-09",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Se vocês ___ (vir) cá no verão, ficam lá em casa.",
+      "answer": [
+        "vierem"
+      ],
+      "ru": "Если приедете сюда летом, остановитесь у нас."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-10",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "choice",
+      "prompt": "Quando ___ o relatório, envia-mo.",
+      "options": [
+        "acabares",
+        "acabes",
+        "acabarás",
+        "acabas"
+      ],
+      "correct": 0,
+      "explanation": "Будущее действие после quando → futuro do conjuntivo."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-11",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "choice",
+      "prompt": "Se eu ___ isso, ela fica zangada.",
+      "options": [
+        "fizer",
+        "faça",
+        "farei",
+        "fazer"
+      ],
+      "correct": 0,
+      "explanation": "fazer → fizeram → fizer. *Se eu fazer* — типичная ошибка."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-12",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "choice",
+      "prompt": "Espero que ___ vir à festa.",
+      "options": [
+        "puderes",
+        "possas",
+        "podes",
+        "poderes"
+      ],
+      "correct": 1,
+      "explanation": "После que (espero que) — presente do conjuntivo, а не futuro."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-13",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "choice",
+      "prompt": "Quando ___, fico sempre em casa.",
+      "options": [
+        "chova",
+        "chove",
+        "chover",
+        "choverá"
+      ],
+      "correct": 1,
+      "explanation": "Привычное действие («каждый раз, когда») → presente do indicativo."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-14",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "transform",
+      "prompt": "Se tens dúvidas, pergunta.",
+      "instruction": "Замените presente на futuro do conjuntivo (норма).",
+      "answer": [
+        "Se tiveres dúvidas, pergunta."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-15",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "transform",
+      "prompt": "Quando chegarei, telefono-te.",
+      "instruction": "Исправьте ошибку в выборе времени.",
+      "answer": [
+        "Quando chegar, telefono-te.",
+        "Quando eu chegar, telefono-te."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-16",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "transform",
+      "prompt": "Se eu ver a Ana, digo-lhe.",
+      "instruction": "Исправьте ошибку.",
+      "answer": [
+        "Se eu vir a Ana, digo-lhe.",
+        "Se vir a Ana, digo-lhe."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-17",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "order-words",
+      "words": [
+        "puderes,",
+        "Se",
+        "traz",
+        "sobremesa",
+        "a"
+      ],
+      "answer": "Se puderes, traz a sobremesa"
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-18",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "order-words",
+      "words": [
+        "quiser,",
+        "pode",
+        "Quem",
+        "entrar"
+      ],
+      "answer": "Quem quiser, pode entrar"
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-19",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "translate-ru-pt",
+      "ru": "Когда будешь в Лиссабоне, позвони мне.",
+      "answer": [
+        "Quando estiveres em Lisboa, liga-me.",
+        "Quando estiveres em Lisboa, telefona-me."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-20",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "translate-ru-pt",
+      "ru": "Если будет дождь, мы останемся дома.",
+      "answer": [
+        "Se chover, ficamos em casa.",
+        "Se chover, vamos ficar em casa.",
+        "Se chover, ficaremos em casa.",
+        "Se chover, nós ficamos em casa."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-21",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "listen-type",
+      "text": "Assim que puder, respondo-te.",
+      "answer": [
+        "Assim que puder, respondo-te."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-ex-22",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой futuro do conjuntivo (eu).",
+      "pairs": [
+        {
+          "left": "ser",
+          "right": "for"
+        },
+        {
+          "left": "ver",
+          "right": "vir"
+        },
+        {
+          "left": "vir",
+          "right": "vier"
+        },
+        {
+          "left": "dizer",
+          "right": "disser"
+        },
+        {
+          "left": "pôr",
+          "right": "puser"
+        },
+        {
+          "left": "dar",
+          "right": "der"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-futuro-conjuntivo-mt-01",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Quando tu ___ (fazer) anos, fazemos uma festa.",
+      "answer": [
+        "fizeres"
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-02",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Se nós ___ (ir) de carro, chegamos mais cedo.",
+      "answer": [
+        "formos"
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-03",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Enquanto ela ___ (estar) doente, não vai trabalhar.",
+      "answer": [
+        "estiver"
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-04",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Se ___ (haver) problemas, avisa-me.",
+      "answer": [
+        "houver"
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-05",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "choice",
+      "prompt": "Se tu ___ o Pedro, dá-lhe as chaves.",
+      "options": [
+        "vejas",
+        "veres",
+        "vires",
+        "vieres"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-06",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "choice",
+      "prompt": "Quando eles ___, começamos a jantar.",
+      "options": [
+        "chegarem",
+        "cheguem",
+        "chegam",
+        "chegarão"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-07",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "choice",
+      "prompt": "Quando ___ pequeno, morava em Moscovo.",
+      "options": [
+        "era",
+        "fosse",
+        "fui",
+        "for"
+      ],
+      "correct": 0,
+      "explanation": "Речь о прошлом — futuro do conjuntivo невозможен."
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-08",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "transform",
+      "prompt": "Quando tu podes, vem cá.",
+      "instruction": "Замените presente на futuro do conjuntivo.",
+      "answer": [
+        "Quando puderes, vem cá.",
+        "Quando tu puderes, vem cá."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-09",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "translate-ru-pt",
+      "ru": "Как только узнаю, скажу тебе.",
+      "answer": [
+        "Assim que souber, digo-te.",
+        "Logo que souber, digo-te.",
+        "Mal souber, digo-te.",
+        "Assim que eu souber, digo-te.",
+        "Assim que souber, vou dizer-te.",
+        "Assim que souber, dir-te-ei."
+      ]
+    },
+    {
+      "id": "b1-futuro-conjuntivo-mt-10",
+      "topicId": "b1-futuro-conjuntivo",
+      "type": "listen-choice",
+      "text": "Se vieres amanhã, traz o livro.",
+      "options": [
+        "Когда придёшь, принеси книгу.",
+        "Если бы ты пришёл завтра, ты бы принёс книгу.",
+        "Если придёшь завтра, принеси книгу.",
+        "Если увидишь завтра книгу, принеси её."
+      ],
+      "correct": 2
+    }
+  ]
+}

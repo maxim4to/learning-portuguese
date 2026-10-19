@@ -1,0 +1,188 @@
+{
+  "id": "camara-municipal",
+  "title": "В мэрии (Câmara Municipal)",
+  "titlePt": "Na Câmara Municipal",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia. Em que posso ajudar?", "ru": "Доброе утро. Чем могу помочь?" },
+    { "speaker": "B", "pt": "Bom dia. Precisava de um atestado de residência. É aqui que se pede?", "ru": "Доброе утро. Мне нужна справка о месте жительства. Её здесь оформляют?" },
+    { "speaker": "A", "pt": "Não, o atestado de residência é passado pela junta de freguesia da sua zona.", "ru": "Нет, справку о месте жительства выдаёт районная управа (junta de freguesia) по месту жительства." },
+    { "speaker": "B", "pt": "Ah, não sabia. E o que é que tenho de levar à junta?", "ru": "А, я не знал. А что мне нужно принести в junta?" },
+    { "speaker": "A", "pt": "O documento de identificação, o NIF e um comprovativo de morada, como o contrato de arrendamento.", "ru": "Документ, удостоверяющий личность, NIF и подтверждение адреса, например договор аренды." },
+    { "speaker": "B", "pt": "Disseram-me que às vezes é preciso levar testemunhas. É verdade?", "ru": "Мне говорили, что иногда нужно приводить свидетелей. Это правда?" },
+    { "speaker": "A", "pt": "Em algumas juntas, sim. Pedem duas testemunhas recenseadas na freguesia.", "ru": "В некоторых управах — да. Просят двух свидетелей, зарегистрированных избирателями в этом районе." },
+    { "speaker": "B", "pt": "Percebo. Já agora, também queria pedir o dístico de estacionamento para residentes.", "ru": "Понятно. Кстати, я ещё хотел бы оформить парковочное разрешение для жителей." },
+    { "speaker": "A", "pt": "Isso é cá na Câmara. Precisa do certificado de matrícula do carro e do comprovativo de morada.", "ru": "Это здесь, в мэрии. Нужны свидетельство о регистрации машины и подтверждение адреса." },
+    { "speaker": "B", "pt": "O carro está em nome da minha mulher. Faz diferença?", "ru": "Машина оформлена на мою жену. Это имеет значение?" },
+    { "speaker": "A", "pt": "Não faz, desde que ela viva na mesma morada. Também pode tratar disso online, no portal da Câmara.", "ru": "Нет, если она живёт по тому же адресу. Это можно сделать и онлайн, на портале мэрии." },
+    { "speaker": "B", "pt": "Ótimo. Uma última pergunta: tenho um sofá velho para deitar fora. Como é que faço?", "ru": "Отлично. Последний вопрос: мне нужно выбросить старый диван. Как это сделать?" },
+    { "speaker": "A", "pt": "Ligue para a linha da recolha de monos e marque o dia. O serviço é gratuito.", "ru": "Позвоните на линию вывоза крупногабаритного мусора и договоритесь о дне. Услуга бесплатная." },
+    { "speaker": "B", "pt": "Não posso simplesmente deixá-lo ao lado do contentor?", "ru": "А просто оставить его рядом с мусорным контейнером нельзя?" },
+    { "speaker": "A", "pt": "Não, isso dá coima. Tem mesmo de marcar a recolha.", "ru": "Нет, за это штрафуют. Обязательно нужно заказать вывоз." }
+  ],
+  "phrases": [
+    { "pt": "Precisava de um atestado de residência.", "ru": "Мне нужна справка о месте жительства." },
+    { "pt": "É aqui que se pede?", "ru": "Это здесь оформляют?" },
+    { "pt": "Qual é a junta de freguesia da minha zona?", "ru": "Какая управа относится к моему району?" },
+    { "pt": "Que documentos é que tenho de levar?", "ru": "Какие документы мне нужно взять?" },
+    { "pt": "É preciso levar testemunhas?", "ru": "Нужно приводить свидетелей?" },
+    { "pt": "Quanto custa o atestado?", "ru": "Сколько стоит справка?" },
+    { "pt": "Posso tratar disso online?", "ru": "Можно сделать это онлайн?" },
+    { "pt": "Qual é o horário de atendimento?", "ru": "Какие часы приёма?" },
+    { "pt": "Queria marcar a recolha de monos.", "ru": "Я хотел бы заказать вывоз крупногабаритного мусора." },
+    { "pt": "A quem é que me devo dirigir?", "ru": "К кому мне обратиться?" }
+  ],
+  "vocab": [
+    { "pt": "a Câmara Municipal", "ru": "мэрия, муниципалитет", "example": "A Câmara Municipal fica na praça principal." },
+    { "pt": "o presidente da Câmara", "ru": "мэр", "example": "O presidente da Câmara inaugurou o novo parque." },
+    { "pt": "o município / o concelho", "ru": "муниципалитет (территория)", "example": "Moro no concelho de Oeiras." },
+    { "pt": "a junta de freguesia", "ru": "районная управа (самый низовой орган власти)", "example": "A junta de freguesia abre às nove." },
+    { "pt": "a freguesia", "ru": "район, приход (административная единица)", "example": "A minha freguesia é Arroios." },
+    { "pt": "o atestado de residência", "ru": "справка о месте жительства", "example": "A AIMA pediu-me um atestado de residência." },
+    { "pt": "passar um atestado", "ru": "выдать справку", "example": "A junta passa o atestado no próprio dia." },
+    { "pt": "a testemunha", "ru": "свидетель", "example": "A minha vizinha foi minha testemunha." },
+    { "pt": "recenseado", "ru": "зарегистрированный (как избиратель)", "example": "As testemunhas têm de estar recenseadas na freguesia." },
+    { "pt": "o recenseamento eleitoral", "ru": "регистрация избирателей", "example": "O recenseamento eleitoral é automático para os portugueses." },
+    { "pt": "o comprovativo de morada", "ru": "подтверждение адреса", "example": "Uma fatura da água serve como comprovativo de morada." },
+    { "pt": "o documento de identificação", "ru": "удостоверение личности", "example": "Traga um documento de identificação válido." },
+    { "pt": "o requerimento", "ru": "заявление (официальное)", "example": "Preenchi o requerimento no balcão." },
+    { "pt": "preencher", "ru": "заполнять", "example": "Tem de preencher este impresso." },
+    { "pt": "o impresso", "ru": "бланк", "example": "Os impressos estão em cima do balcão." },
+    { "pt": "o balcão de atendimento", "ru": "стойка приёма посетителей", "example": "Dirija-se ao balcão de atendimento número três." },
+    { "pt": "o horário de atendimento", "ru": "часы приёма", "example": "O horário de atendimento é das nove às cinco." },
+    { "pt": "o dístico de residente", "ru": "парковочное разрешение для жителей", "example": "Com o dístico de residente estaciono à porta de casa." },
+    { "pt": "o estacionamento", "ru": "парковка", "example": "O estacionamento nesta rua é pago." },
+    { "pt": "o certificado de matrícula", "ru": "свидетельство о регистрации автомобиля", "example": "O certificado de matrícula está no porta-luvas." },
+    { "pt": "a recolha de monos", "ru": "вывоз крупногабаритного мусора", "example": "A recolha de monos passa às quartas-feiras." },
+    { "pt": "os monos", "ru": "крупногабаритный мусор (старая мебель и т. п.)", "example": "Os monos não se deixam na rua." },
+    { "pt": "o contentor", "ru": "мусорный контейнер", "example": "O contentor do lixo está cheio." },
+    { "pt": "o ecoponto", "ru": "контейнеры для раздельного сбора", "example": "O vidro vai para o ecoponto verde." },
+    { "pt": "deitar fora", "ru": "выбрасывать", "example": "Deitei fora as caixas da mudança." },
+    { "pt": "a coima", "ru": "административный штраф", "example": "Deixar lixo na rua dá coima." },
+    { "pt": "a licença", "ru": "разрешение, лицензия", "example": "Para fazer obras precisa de licença da Câmara." },
+    { "pt": "as obras", "ru": "ремонт, строительные работы", "example": "Os vizinhos estão em obras há um mês." },
+    { "pt": "a taxa", "ru": "сбор, пошлина", "example": "A taxa do atestado é de cinco euros." },
+    { "pt": "tratar de", "ru": "заниматься (делом), оформлять", "example": "Tratei de tudo numa só manhã." },
+    { "pt": "dirigir-se a", "ru": "обращаться (куда-то, к кому-то)", "example": "Para isso, dirija-se à junta de freguesia." },
+    { "pt": "a Loja do Cidadão", "ru": "многофункциональный центр госуслуг", "example": "Renovei o cartão na Loja do Cidadão." },
+    { "pt": "o munícipe", "ru": "житель муниципалитета", "example": "O atendimento ao munícipe é no rés-do-chão." }
+  ],
+  "exercises": [
+    {
+      "id": "camara-municipal-ex-01",
+      "topicId": "camara-municipal",
+      "type": "choice",
+      "prompt": "Onde é que se pede normalmente o atestado de residência?",
+      "options": ["Na AIMA", "Nas Finanças", "No centro de saúde", "Na junta de freguesia"],
+      "correct": 3,
+      "explanation": "**Atestado de residência** выдаёт **junta de freguesia** по месту жительства. Câmara Municipal занимается делами всего муниципалитета: парковкой, лицензиями, мусором."
+    },
+    {
+      "id": "camara-municipal-ex-02",
+      "topicId": "camara-municipal",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a testemunha", "right": "свидетель" },
+        { "left": "os monos", "right": "крупногабаритный мусор" },
+        { "left": "o contentor", "right": "мусорный контейнер" },
+        { "left": "o impresso", "right": "бланк" },
+        { "left": "a coima", "right": "штраф" }
+      ]
+    },
+    {
+      "id": "camara-municipal-ex-03",
+      "topicId": "camara-municipal",
+      "type": "fill-gap",
+      "prompt": "O atestado de residência é ___ pela junta de freguesia da sua zona.",
+      "answer": ["passado"],
+      "hint": "причастие от passar («выдавать» о документе)",
+      "ru": "Справку о месте жительства выдаёт районная управа по месту жительства.",
+      "explanation": "Документы «проходят»: **passar um atestado / uma receita / uma fatura** — выдать. В пассиве — **é passado pela junta**."
+    },
+    {
+      "id": "camara-municipal-ex-04",
+      "topicId": "camara-municipal",
+      "type": "listen-type",
+      "text": "O carro está em nome da minha mulher. Faz diferença?",
+      "answer": ["O carro está em nome da minha mulher. Faz diferença?"],
+      "explanation": "**Estar em nome de** — «быть оформленным на кого-то». **Faz diferença?** — «Это имеет значение?»"
+    },
+    {
+      "id": "camara-municipal-ex-05",
+      "topicId": "camara-municipal",
+      "type": "listen-choice",
+      "text": "Em algumas juntas, sim. Pedem duas testemunhas recenseadas na freguesia.",
+      "prompt": "Кто может быть свидетелем?",
+      "options": ["Любые двое знакомых", "Два сотрудника управы", "Двое избирателей, зарегистрированных в этом районе", "Двое соседей-иностранцев"],
+      "correct": 2,
+      "explanation": "**Recenseado na freguesia** — внесён в списки избирателей этого района. Свидетели подтверждают, что вы действительно там живёте."
+    },
+    {
+      "id": "camara-municipal-ex-06",
+      "topicId": "camara-municipal",
+      "type": "order-words",
+      "words": ["que", "É", "aqui", "pede?", "se"],
+      "answer": "É aqui que se pede?",
+      "ru": "Это здесь оформляют?",
+      "explanation": "**É aqui que…** — выделительная конструкция «именно здесь». После **que** клитика стоит перед глаголом: **que se pede**."
+    },
+    {
+      "id": "camara-municipal-ex-07",
+      "topicId": "camara-municipal",
+      "type": "translate-ru-pt",
+      "ru": "Можно сделать это онлайн?",
+      "answer": [
+        "Posso tratar disso online?",
+        "Posso tratar disto online?",
+        "Pode-se tratar disso online?",
+        "Dá para tratar disso online?",
+        "Posso fazer isso online?",
+        "Posso fazer isto online?",
+        "Pode-se fazer isso online?",
+        "Dá para fazer isso online?",
+        "Posso tratar disso pela internet?"
+      ],
+      "explanation": "**Tratar de** — «заниматься, оформлять»: **tratar disso** (de + isso). Безличное «можно» — **pode-se** или разговорное **dá para**."
+    },
+    {
+      "id": "camara-municipal-ex-08",
+      "topicId": "camara-municipal",
+      "type": "choice",
+      "prompt": "Quer deitar fora um sofá velho. O que deve fazer?",
+      "options": ["Marcar a recolha de monos", "Deixá-lo ao lado do contentor", "Pô-lo no ecoponto", "Pedir um dístico de residente"],
+      "correct": 0,
+      "explanation": "Старая мебель — **monos**. Их вывозят по записи (**marcar a recolha**), обычно бесплатно. Оставить у контейнера — **dá coima**."
+    },
+    {
+      "id": "camara-municipal-ex-09",
+      "topicId": "camara-municipal",
+      "type": "fill-gap",
+      "prompt": "Tenho um sofá velho para deitar ___. Como é que faço?",
+      "answer": ["fora"],
+      "hint": "«выбросить» = deitar …",
+      "ru": "Мне нужно выбросить старый диван. Как это сделать?",
+      "explanation": "**Deitar fora** — «выбросить». В Бразилии говорят *jogar fora*, в Португалии — **deitar fora**."
+    },
+    {
+      "id": "camara-municipal-ex-10",
+      "topicId": "camara-municipal",
+      "type": "transform",
+      "prompt": "Preciso de um atestado de residência.",
+      "instruction": "Смягчи просьбу: поставь глагол в imperfeito",
+      "answer": ["Precisava de um atestado de residência.", "Eu precisava de um atestado de residência."],
+      "explanation": "Imperfeito в pt-PT смягчает просьбу: **Precisava de…**, **Queria…** звучат вежливее, чем **Preciso de…**, **Quero…**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы переехали в новый район и пришли в junta de freguesia за справкой о месте жительства. Напишите диалог из 8–10 реплик с сотрудницей: объясните, что вам нужно и для чего (например, для AIMA); спросите, какие документы нужны; уточните, нужны ли свидетели; спросите стоимость и когда будет готова справка; узнайте часы приёма.",
+    "sample": "— Bom dia. Faça favor.\n— Bom dia. Precisava de um atestado de residência para a AIMA.\n— Com certeza. Trouxe o documento de identificação e o comprovativo de morada?\n— Trouxe o título de residência e o contrato de arrendamento. É preciso levar testemunhas?\n— Com o contrato de arrendamento não é preciso.\n— Ótimo. Quanto custa o atestado?\n— São cinco euros.\n— E quando é que fica pronto?\n— Fica pronto amanhã à tarde.\n— Qual é o horário de atendimento?\n— Das nove às cinco, de segunda a sexta.\n— Muito obrigado. Até amanhã.",
+    "checklist": [
+      "Просьба смягчена: Precisava de… / Queria…",
+      "Названы нужные документы: documento de identificação, comprovativo de morada",
+      "Есть вопрос о свидетелях (testemunhas)",
+      "Есть вопросы о цене, сроке готовности и часах приёма",
+      "Дни недели — со строчной буквы: de segunda a sexta"
+    ]
+  }
+}

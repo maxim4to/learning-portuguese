@@ -1,0 +1,428 @@
+{
+  "id": "b1-ordem-palavras-enfase",
+  "level": "B1",
+  "module": "b1-sintaxe",
+  "title": "Порядок слов и логическое выделение",
+  "titlePt": "Ordem das palavras e ênfase",
+  "requires": [
+    "a1-interrogativos",
+    "a2-pronomes-cliticos-colocacao"
+  ],
+  "theory": "## Нейтральный порядок и зачем его ломать\n\nБазовый порядок — **подлежащее + глагол + дополнение**: **O Rui partiu o copo.** В русском для выделения мы просто двигаем слова и меняем интонацию («Стакан разбил Руй»). В португальском для этого есть специальные конструкции.\n\n## É que в вопросах\n\nВ pt-PT вопрос с вопросительным словом очень часто строится с **é que** — это нейтрально, а не эмфатично:\n\n| без é que | с é que |\n|---|---|\n| **Onde moras?** | **Onde é que moras?** |\n| **O que queres?** | **O que é que queres?** |\n| **Quando chega o comboio?** | **Quando é que o comboio chega?** |\n| **Porque não vieste?** | **Porque é que não vieste?** |\n\nПорядок слов: без **é que** подлежащее-существительное обычно идёт **после** глагола (**Onde trabalha a tua irmã?**); с **é que** — перед глаголом (**Onde é que a tua irmã trabalha?**). Вопросительное слово притягивает клитику: **Como se chama o teu pai?**\n\n## Выделение: é... que / foi... que\n\nЧтобы выделить элемент («именно»), его ставят в рамку **ser ... que**:\n\n| нейтрально | с выделением |\n|---|---|\n| **O João partiu o copo.** | **Foi o João que partiu o copo.** — Это Жуан разбил стакан. |\n| **Chegámos ontem.** | **Foi ontem que chegámos.** — Мы приехали именно вчера. |\n| **A Ana decide.** | **É a Ana que decide.** |\n\n**Ser** согласуется по времени с глаголом фразы (**é / foi**), а с местоимениями — и по лицу: **Fui eu que fiz.** **Fomos nós que pagámos.** Вместо **que** с людьми возможно **quem** + 3-е лицо: **Fui eu quem fez.**\n\nРазговорный вариант — неизменяемое **é que** после выделенного слова: **O João é que partiu o copo.** **Eu é que sei!** — Уж мне-то лучше знать! **Tu é que tens razão.**\n\n## Вынос в начало (топикализация)\n\nТему высказывания можно вынести в начало через запятую: **Café, não bebo.** **Esse filme, já vi.** **Esse livro, já o li.** Особенно часто так выделяют местоимения: **A mim ninguém me disse nada!**\n\n## Частицы cá и lá\n\nПомимо «здесь / там» эти слова дают эмоциональную окраску:\n\n| выражение | значение |\n|---|---|\n| **Eu cá...** / **Cá por mim...** | Я-то... / По мне, так... |\n| **Anda cá!** | Иди сюда! |\n| **Diz lá!** / **Vá lá!** | Ну, говори же! / Ну давай! |\n| **Sei lá!** | Откуда я знаю! |\n| **Isso lá é verdade?** | Да разве это правда? |\n\n## Mesmo и próprio\n\n**Mesmo** после прилагательного или глагола — «действительно, правда»: **É mesmo bom!** **Estou mesmo cansado.** **É mesmo!** — Точно! Перед словом — «даже»: **Mesmo o Rui percebeu.** После местоимения — «сам»: **eu mesmo / ela mesma**.\n\n**Próprio** — «сам» и «собственный»; согласуется: **o próprio ministro** (сам министр), **ela própria**, **elas próprias**, **o meu próprio carro**.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Onde é que moras?** / **Onde moras?** | **Onde você mora?** | в pt-BR **é que** реже, подлежащее обычно перед глаголом |\n| **Como se chama o teu pai?** | **Como o seu pai se chama?** | в pt-PT после вопроса — инверсия и próclise |\n| **Fui eu que fiz.** | **Fui eu que fiz.** / **Eu que fiz.** | бразильское *Eu que fiz* без **é** в pt-PT не употребляется |\n| **Sei lá!**, **Anda cá!** | **Sei lá!**, **Vem cá!** | частицы общие, но **cá** в pt-PT много частотнее, чем в pt-BR (там **aqui**) |",
+  "commonErrors": "- **Русская интонация вместо конструкции**: *O copo partiu o João* ✗ (значит «стакан разбил Жуана»!) → **Foi o João que partiu o copo** ✓.\n- **Несогласованное ser**: *É eu que fiz* ✗ → **Fui eu que fiz** ✓; *Foi nós que pagámos* ✗ → **Fomos nós que pagámos** ✓.\n- **Согласование «é que» после выделенного слова**: *Os meus pais são que decidiram* ✗ → **Os meus pais é que decidiram** ✓ (здесь **é que** неизменяемо).\n- **Подлежащее перед глаголом без é que**: *Onde a tua irmã trabalha?* — бразильский порядок; **Onde trabalha a tua irmã?** или **Onde é que a tua irmã trabalha?** ✓.\n- **Клитика после вопросительного слова**: *Como chama-se o teu pai?* ✗ → **Como se chama o teu pai?** ✓.\n- **mesmo не на месте**: *Mesmo é bom* ✗ → **É mesmo bom** ✓.\n- **próprio без согласования**: *Ela próprio disse* ✗ → **Ela própria disse** ✓.\n- **você в неформальном вопросе**: *O que você quer?* ✗ → **O que é que queres?** ✓.",
+  "examples": [
+    {
+      "pt": "O que é que vais fazer no fim de semana?",
+      "ru": "Что ты будешь делать на выходных?",
+      "audio": true
+    },
+    {
+      "pt": "Foi a Inês que organizou a festa.",
+      "ru": "Это Инеш организовала праздник.",
+      "audio": true
+    },
+    {
+      "pt": "Eu é que sei o que me faz bem.",
+      "ru": "Уж мне-то лучше знать, что мне полезно.",
+      "audio": true
+    },
+    {
+      "pt": "Café, não bebo depois das cinco.",
+      "ru": "Кофе я после пяти не пью.",
+      "audio": true
+    },
+    {
+      "pt": "Este pastel de nata está mesmo bom!",
+      "ru": "Этот паштел-де-ната правда вкусный!",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-ordem-palavras-enfase-ex-01",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Onde ___ moras?",
+      "answer": [
+        "é que"
+      ],
+      "ru": "Где ты живёшь?",
+      "explanation": "Типичный pt-PT вопрос: вопросительное слово + é que."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-02",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "___ o Rui que partiu o copo.",
+      "answer": [
+        "Foi"
+      ],
+      "ru": "Это Руй разбил стакан.",
+      "explanation": "Действие в прошлом → foi ... que."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-03",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "___ eu que fiz o bolo.",
+      "answer": [
+        "Fui"
+      ],
+      "ru": "Это я испёк торт.",
+      "explanation": "С местоимением ser согласуется по лицу: fui eu."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-04",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Os meus pais ___ que decidiram.",
+      "answer": [
+        "é"
+      ],
+      "ru": "Решили-то мои родители.",
+      "explanation": "После выделенного слова — неизменяемое é que."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-05",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Este bolo está ___ bom!",
+      "answer": [
+        "mesmo"
+      ],
+      "hint": "«правда, действительно»",
+      "ru": "Этот торт правда вкусный!"
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-06",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Ela ___ admitiu que se enganou.",
+      "answer": [
+        "própria",
+        "mesma"
+      ],
+      "hint": "«она сама»",
+      "ru": "Она сама признала, что ошиблась."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-07",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Sei ___! Pergunta ao Pedro.",
+      "answer": [
+        "lá"
+      ],
+      "hint": "«Откуда я знаю!»",
+      "ru": "Откуда я знаю! Спроси Педру."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-08",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Anda ___, quero mostrar-te uma coisa.",
+      "answer": [
+        "cá"
+      ],
+      "ru": "Иди сюда, хочу тебе кое-что показать."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-09",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "choice",
+      "prompt": "Onde ___?",
+      "options": [
+        "a tua irmã trabalha",
+        "trabalha a tua irmã",
+        "a tua irmã é que trabalha",
+        "que a tua irmã trabalha"
+      ],
+      "correct": 1,
+      "explanation": "Без é que подлежащее-существительное идёт после глагола. Onde a tua irmã trabalha? — бразильский порядок."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-10",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "choice",
+      "prompt": "___ chegaram os convidados.",
+      "options": [
+        "Foi às oito quando",
+        "Era às oito que",
+        "Foi às oito que",
+        "Às oito foi que"
+      ],
+      "correct": 2,
+      "explanation": "Выделение времени: foi + время + que."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-11",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "choice",
+      "prompt": "___ nós que pagámos o jantar.",
+      "options": [
+        "Foi",
+        "Fomos",
+        "Somos",
+        "É"
+      ],
+      "correct": 1,
+      "explanation": "Ser согласуется с местоимением и временем: fomos nós."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-12",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "choice",
+      "prompt": "As alunas ___ organizaram a festa.",
+      "options": [
+        "próprio",
+        "próprios",
+        "próprias",
+        "própria"
+      ],
+      "correct": 2,
+      "explanation": "próprio согласуется с alunas: ж. р., мн. ч."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-13",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "transform",
+      "prompt": "O Duarte pagou a conta.",
+      "instruction": "Выделите «Duarte» конструкцией foi ... que.",
+      "answer": [
+        "Foi o Duarte que pagou a conta.",
+        "Foi o Duarte quem pagou a conta."
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-14",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "transform",
+      "prompt": "Onde moras?",
+      "instruction": "Добавьте é que.",
+      "answer": [
+        "Onde é que moras?",
+        "Onde é que tu moras?"
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-15",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "transform",
+      "prompt": "Eu não bebo café.",
+      "instruction": "Вынесите «café» в начало фразы.",
+      "answer": [
+        "Café, não bebo.",
+        "Café, eu não bebo."
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-16",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "order-words",
+      "words": [
+        "é",
+        "que",
+        "O",
+        "queres",
+        "que",
+        "jantar",
+        "para"
+      ],
+      "answer": "O que é que queres para jantar"
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-17",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "order-words",
+      "words": [
+        "Foi",
+        "que",
+        "ontem",
+        "chegámos"
+      ],
+      "answer": "Foi ontem que chegámos"
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-18",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "translate-ru-pt",
+      "ru": "Это я открыл окно.",
+      "answer": [
+        "Fui eu que abri a janela.",
+        "Fui eu quem abriu a janela.",
+        "Eu é que abri a janela."
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-19",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "translate-ru-pt",
+      "ru": "Почему ты не пришёл?",
+      "answer": [
+        "Porque é que não vieste?",
+        "Porque não vieste?",
+        "Porque é que tu não vieste?",
+        "Por que razão não vieste?"
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-20",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "listen-type",
+      "text": "Eu cá por mim prefiro ficar em casa.",
+      "answer": [
+        "Eu cá por mim prefiro ficar em casa."
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-ex-21",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "match",
+      "prompt": "Соедините выражение с его значением.",
+      "pairs": [
+        {
+          "left": "Sei lá!",
+          "right": "Откуда я знаю!"
+        },
+        {
+          "left": "Anda cá!",
+          "right": "Иди сюда!"
+        },
+        {
+          "left": "Diz lá!",
+          "right": "Ну, говори же!"
+        },
+        {
+          "left": "É mesmo!",
+          "right": "Точно!"
+        },
+        {
+          "left": "Eu é que sei.",
+          "right": "Уж мне-то лучше знать."
+        },
+        {
+          "left": "ela própria",
+          "right": "она сама"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-ordem-palavras-enfase-mt-01",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Quando ___ chegas?",
+      "answer": [
+        "é que"
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-02",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "___ a Inês que me contou a novidade.",
+      "answer": [
+        "Foi"
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-03",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Eles ___ que têm razão, não tu.",
+      "answer": [
+        "é"
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-04",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "fill-gap",
+      "prompt": "Hoje estou ___ cansado.",
+      "answer": [
+        "mesmo"
+      ],
+      "hint": "«по-настоящему»"
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-05",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "choice",
+      "prompt": "Como ___?",
+      "options": [
+        "o teu pai se chama",
+        "se chama o teu pai",
+        "chama-se o teu pai",
+        "o teu pai chama-se"
+      ],
+      "correct": 1,
+      "explanation": "Вопросительное слово притягивает клитику, подлежащее — после глагола."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-06",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "choice",
+      "prompt": "Fomos nós que ___ o jogo.",
+      "options": [
+        "ganhou",
+        "ganharam",
+        "ganhámos",
+        "ganhamos"
+      ],
+      "correct": 2,
+      "explanation": "Глагол согласуется с nós; прошедшее — ganhámos с акцентом."
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-07",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "choice",
+      "prompt": "Qual destas perguntas é natural em pt-PT (tu)?",
+      "options": [
+        "Onde você mora?",
+        "O que você quer?",
+        "Que você acha?",
+        "O que é que queres?"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-08",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "transform",
+      "prompt": "A Rita escreveu este texto.",
+      "instruction": "Выделите «Rita» (foi ... que).",
+      "answer": [
+        "Foi a Rita que escreveu este texto.",
+        "Foi a Rita quem escreveu este texto."
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-09",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "translate-ru-pt",
+      "ru": "Где ты работаешь?",
+      "answer": [
+        "Onde é que trabalhas?",
+        "Onde trabalhas?",
+        "Onde é que tu trabalhas?",
+        "Onde trabalhas tu?"
+      ]
+    },
+    {
+      "id": "b1-ordem-palavras-enfase-mt-10",
+      "topicId": "b1-ordem-palavras-enfase",
+      "type": "listen-choice",
+      "text": "Isso lá é verdade?",
+      "options": [
+        "Там это правда?",
+        "Да разве это правда?",
+        "Это правда там?",
+        "Это точно правда."
+      ],
+      "correct": 1,
+      "explanation": "lá здесь — частица сомнения, а не «там»."
+    }
+  ]
+}

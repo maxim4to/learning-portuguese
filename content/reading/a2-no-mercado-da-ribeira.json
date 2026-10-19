@@ -1,0 +1,187 @@
+{
+  "id": "a2-no-mercado-da-ribeira",
+  "level": "A2",
+  "title": "No mercado da Ribeira",
+  "paragraphs": [
+    "Todos os sábados de manhã, a Joana vai ao Mercado da Ribeira, ao pé do Cais do Sodré. Gosta de comprar fruta, legumes e peixe frescos, e os preços são melhores do que no supermercado.",
+    "Primeiro, para na banca da dona Fernanda, que vende fruta há trinta anos. — Bom dia! Queria um quilo de laranjas e meio quilo de morangos, se faz favor. — Aqui tem. Mais alguma coisa? — É tudo, obrigada. Quanto é? — São quatro euros e vinte.",
+    "Depois, vai à zona do peixe. O peixeiro mostra-lhe uns carapaus muito frescos. — Estes chegaram hoje de manhã, menina! A Joana compra seis e pede para os limpar.",
+    "Ao lado, uma senhora vende flores. A Joana leva um ramo de girassóis para a sala.",
+    "Na outra metade do edifício, há um espaço com restaurantes e mesas compridas. Ao sábado, está sempre cheio de turistas e de lisboetas. A Joana senta-se um bocadinho, bebe um sumo de laranja e descansa.",
+    "Às onze, volta para casa com os sacos pesados, mas satisfeita. À noite, vai fazer carapaus grelhados para os amigos."
+  ],
+  "glossary": [
+    {
+      "word": "ao pé do",
+      "ru": "рядом с"
+    },
+    {
+      "word": "legumes",
+      "ru": "овощи"
+    },
+    {
+      "word": "banca",
+      "ru": "прилавок, лоток"
+    },
+    {
+      "word": "vende fruta há trinta anos",
+      "ru": "продаёт фрукты уже тридцать лет"
+    },
+    {
+      "word": "Queria",
+      "ru": "Я бы хотела (вежливая просьба)"
+    },
+    {
+      "word": "morangos",
+      "ru": "клубника"
+    },
+    {
+      "word": "se faz favor",
+      "ru": "пожалуйста"
+    },
+    {
+      "word": "Mais alguma coisa?",
+      "ru": "Что-нибудь ещё?"
+    },
+    {
+      "word": "É tudo",
+      "ru": "Это всё"
+    },
+    {
+      "word": "Quanto é?",
+      "ru": "Сколько с меня?"
+    },
+    {
+      "word": "peixeiro",
+      "ru": "торговец рыбой"
+    },
+    {
+      "word": "carapaus",
+      "ru": "ставрида"
+    },
+    {
+      "word": "pede para os limpar",
+      "ru": "просит их почистить"
+    },
+    {
+      "word": "ramo de girassóis",
+      "ru": "букет подсолнухов"
+    },
+    {
+      "word": "compridas",
+      "ru": "длинные"
+    },
+    {
+      "word": "um bocadinho",
+      "ru": "немножко, ненадолго"
+    },
+    {
+      "word": "sacos pesados",
+      "ru": "тяжёлые сумки"
+    },
+    {
+      "word": "satisfeita",
+      "ru": "довольная"
+    },
+    {
+      "word": "grelhados",
+      "ru": "жаренные на гриле"
+    }
+  ],
+  "questions": [
+    {
+      "id": "a2-no-mercado-da-ribeira-q-01",
+      "topicId": "a2-no-mercado-da-ribeira",
+      "type": "choice",
+      "prompt": "Porque é que a Joana prefere o mercado ao supermercado?",
+      "options": [
+        "Porque fica mais perto de casa",
+        "Porque os preços são melhores",
+        "Porque abre mais cedo",
+        "Porque tem estacionamento"
+      ],
+      "correct": 1,
+      "explanation": "**Os preços são melhores do que no supermercado** — цены лучше, а продукты свежие."
+    },
+    {
+      "id": "a2-no-mercado-da-ribeira-q-02",
+      "topicId": "a2-no-mercado-da-ribeira",
+      "type": "choice",
+      "prompt": "O que é que a Joana compra na banca da dona Fernanda?",
+      "options": [
+        "Laranjas e morangos",
+        "Carapaus e laranjas",
+        "Girassóis e morangos",
+        "Legumes e peixe"
+      ],
+      "correct": 0,
+      "explanation": "**Um quilo de laranjas e meio quilo de morangos** — килограмм апельсинов и полкило клубники."
+    },
+    {
+      "id": "a2-no-mercado-da-ribeira-q-03",
+      "topicId": "a2-no-mercado-da-ribeira",
+      "type": "fill-gap",
+      "prompt": "— É tudo, obrigada. ___ é? — São quatro euros e vinte.",
+      "answer": [
+        "Quanto"
+      ],
+      "hint": "сколько",
+      "ru": "— Это всё, спасибо. Сколько с меня? — Четыре евро двадцать.",
+      "explanation": "**Quanto é?** — «Сколько с меня?», стандартный вопрос при оплате."
+    },
+    {
+      "id": "a2-no-mercado-da-ribeira-q-04",
+      "topicId": "a2-no-mercado-da-ribeira",
+      "type": "choice",
+      "prompt": "O que é que o peixeiro diz sobre os carapaus?",
+      "options": [
+        "Que estão em promoção",
+        "Que são do dia anterior",
+        "Que chegaram hoje de manhã",
+        "Que já estão limpos"
+      ],
+      "correct": 2,
+      "explanation": "**Estes chegaram hoje de manhã** — рыбу привезли сегодня утром, то есть она свежая."
+    },
+    {
+      "id": "a2-no-mercado-da-ribeira-q-05",
+      "topicId": "a2-no-mercado-da-ribeira",
+      "type": "fill-gap",
+      "prompt": "Bom dia! ___ um quilo de laranjas, se faz favor.",
+      "answer": [
+        "Queria"
+      ],
+      "hint": "я бы хотела (querer)",
+      "ru": "Добрый день! Мне, пожалуйста, килограмм апельсинов.",
+      "explanation": "Вежливая просьба в pt-PT — **Queria...** (imperfeito в значении «я бы хотел»). Звучит мягче, чем *Quero*."
+    },
+    {
+      "id": "a2-no-mercado-da-ribeira-q-06",
+      "topicId": "a2-no-mercado-da-ribeira",
+      "type": "translate-ru-pt",
+      "ru": "Что-нибудь ещё? — Это всё, спасибо.",
+      "answer": [
+        "Mais alguma coisa? — É tudo, obrigada.",
+        "Mais alguma coisa? — É tudo, obrigado.",
+        "Mais alguma coisa? É tudo, obrigada.",
+        "Mais alguma coisa? É tudo, obrigado."
+      ],
+      "explanation": "Стандартный обмен репликами у прилавка: **Mais alguma coisa?** — **É tudo, obrigado/obrigada** (форма зависит от пола говорящего)."
+    },
+    {
+      "id": "a2-no-mercado-da-ribeira-q-07",
+      "topicId": "a2-no-mercado-da-ribeira",
+      "type": "listen-choice",
+      "text": "Às onze, volta para casa com os sacos pesados, mas satisfeita.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "В одиннадцать она идёт на рынок с пустыми сумками.",
+        "В два часа она возвращается домой уставшая.",
+        "В одиннадцать она ставит тяжёлые сумки у двери.",
+        "В одиннадцать она возвращается домой с тяжёлыми сумками, но довольная."
+      ],
+      "correct": 3,
+      "explanation": "**Às onze** — в одиннадцать; **volta para casa** — возвращается домой; **sacos pesados** — тяжёлые сумки; **satisfeita** — довольная."
+    }
+  ]
+}

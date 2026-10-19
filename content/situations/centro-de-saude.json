@@ -1,0 +1,187 @@
+{
+  "id": "centro-de-saude",
+  "title": "В поликлинике (centro de saúde)",
+  "titlePt": "No centro de saúde",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Boa tarde, senhor Ivanov. Sente-se. Então, o que é que o traz cá?", "ru": "Добрый день, господин Иванов. Садитесь. Итак, что вас привело?" },
+    { "speaker": "B", "pt": "Boa tarde, doutora. Há três dias que estou com febre e dores de garganta.", "ru": "Добрый день, доктор. Уже три дня у меня температура и болит горло." },
+    { "speaker": "A", "pt": "Tem tosse? E dores no corpo?", "ru": "Кашель есть? А ломота в теле?" },
+    { "speaker": "B", "pt": "Tenho alguma tosse, sobretudo à noite, e sinto-me muito cansado.", "ru": "Немного кашляю, особенно ночью, и чувствую сильную усталость." },
+    { "speaker": "A", "pt": "Mediu a febre? Quanto é que tinha?", "ru": "Вы мерили температуру? Сколько было?" },
+    { "speaker": "B", "pt": "Ontem à noite tinha trinta e oito e meio. Tomei um paracetamol.", "ru": "Вчера вечером было тридцать восемь и пять. Я выпил парацетамол." },
+    { "speaker": "A", "pt": "Vamos ver. Abra a boca, se faz favor. A garganta está bastante inflamada.", "ru": "Посмотрим. Откройте рот, пожалуйста. Горло довольно сильно воспалено." },
+    { "speaker": "B", "pt": "É grave? Preciso de tomar antibiótico?", "ru": "Это серьёзно? Мне нужно пить антибиотик?" },
+    { "speaker": "A", "pt": "Não, parece uma infeção viral. O antibiótico não ajuda nestes casos.", "ru": "Нет, похоже на вирусную инфекцию. В таких случаях антибиотик не помогает." },
+    { "speaker": "B", "pt": "Então o que é que devo fazer?", "ru": "Тогда что мне делать?" },
+    { "speaker": "A", "pt": "Descanse, beba muitos líquidos e tome paracetamol de oito em oito horas, se tiver febre.", "ru": "Отдыхайте, пейте много жидкости и принимайте парацетамол каждые восемь часов, если будет температура." },
+    { "speaker": "B", "pt": "Pode passar-me a receita? E também preciso de uma baixa para o trabalho.", "ru": "Можете выписать рецепт? И ещё мне нужен больничный для работы." },
+    { "speaker": "A", "pt": "Passo-lhe a receita, que recebe por SMS, e a baixa por três dias.", "ru": "Выпишу вам рецепт — он придёт по SMS — и больничный на три дня." },
+    { "speaker": "B", "pt": "Muito obrigado. E se não melhorar?", "ru": "Большое спасибо. А если мне не станет лучше?" },
+    { "speaker": "A", "pt": "Se piorar ou a febre não passar, ligue para o SNS 24 ou volte cá.", "ru": "Если станет хуже или температура не спадёт, звоните в SNS 24 или приходите снова." }
+  ],
+  "phrases": [
+    { "pt": "Queria marcar uma consulta com a minha médica de família.", "ru": "Я хотел бы записаться к своему семейному врачу." },
+    { "pt": "Há alguma vaga para hoje?", "ru": "Есть свободная запись на сегодня?" },
+    { "pt": "Sou utente deste centro de saúde.", "ru": "Я прикреплён к этому центру здоровья." },
+    { "pt": "O meu número de utente é este.", "ru": "Вот мой номер пациента." },
+    { "pt": "Há três dias que estou com febre.", "ru": "У меня температура уже три дня." },
+    { "pt": "Dói-me aqui.", "ru": "У меня болит здесь." },
+    { "pt": "Sou alérgico à penicilina.", "ru": "У меня аллергия на пенициллин." },
+    { "pt": "Pode passar-me a receita?", "ru": "Можете выписать рецепт?" },
+    { "pt": "Preciso de uma baixa para o trabalho.", "ru": "Мне нужен больничный для работы." },
+    { "pt": "Tenho de fazer análises?", "ru": "Мне нужно сдать анализы?" }
+  ],
+  "vocab": [
+    { "pt": "o centro de saúde", "ru": "поликлиника, центр здоровья", "example": "O centro de saúde fica ao lado da junta." },
+    { "pt": "o médico / a médica de família", "ru": "семейный врач", "example": "Ainda não tenho médico de família atribuído." },
+    { "pt": "o/a utente", "ru": "пациент (зарегистрированный в SNS)", "example": "Os utentes sem marcação esperam mais tempo." },
+    { "pt": "o número de utente", "ru": "номер пациента SNS", "example": "Pedi o número de utente no centro de saúde." },
+    { "pt": "o SNS", "ru": "Национальная служба здравоохранения", "example": "O SNS é público e quase gratuito." },
+    { "pt": "o SNS 24", "ru": "телефонная линия и сайт медпомощи (808 24 24 24)", "example": "Liguei para o SNS 24 e mandaram-me ao centro de saúde." },
+    { "pt": "a consulta", "ru": "приём у врача", "example": "A consulta é às três e um quarto." },
+    { "pt": "a consulta do dia", "ru": "приём в тот же день (без записи)", "example": "Fui à consulta do dia porque estava com muita febre." },
+    { "pt": "marcar uma consulta", "ru": "записаться к врачу", "example": "Marquei uma consulta pela aplicação do SNS 24." },
+    { "pt": "o enfermeiro / a enfermeira", "ru": "медбрат / медсестра", "example": "A enfermeira mediu-me a tensão." },
+    { "pt": "as urgências", "ru": "отделение неотложной помощи", "example": "À noite tive de ir às urgências do hospital." },
+    { "pt": "a febre", "ru": "температура, жар", "example": "O miúdo está com febre desde ontem." },
+    { "pt": "a tosse", "ru": "кашель", "example": "A tosse não me deixa dormir." },
+    { "pt": "a dor de garganta", "ru": "боль в горле", "example": "Tenho uma dor de garganta muito forte." },
+    { "pt": "a dor de cabeça", "ru": "головная боль", "example": "Ando com dores de cabeça há uma semana." },
+    { "pt": "a dor de barriga", "ru": "боль в животе", "example": "Comi marisco e fiquei com dor de barriga." },
+    { "pt": "as dores no corpo", "ru": "ломота в теле", "example": "Com a gripe, tenho dores no corpo todo." },
+    { "pt": "a constipação", "ru": "простуда", "example": "Não é gripe, é só uma constipação." },
+    { "pt": "a gripe", "ru": "грипп", "example": "Este inverno apanhei gripe duas vezes." },
+    { "pt": "a infeção", "ru": "инфекция", "example": "É uma infeção na garganta." },
+    { "pt": "inflamado", "ru": "воспалённый", "example": "Tem o ouvido um pouco inflamado." },
+    { "pt": "a alergia", "ru": "аллергия", "example": "Na primavera tenho alergia ao pólen." },
+    { "pt": "a tensão arterial", "ru": "артериальное давление", "example": "Tenho a tensão um pouco alta." },
+    { "pt": "as análises", "ru": "анализы", "example": "Tenho de fazer análises ao sangue em jejum." },
+    { "pt": "o raio-X", "ru": "рентген", "example": "A médica pediu um raio-X ao peito." },
+    { "pt": "a receita", "ru": "рецепт", "example": "A receita chegou por SMS com um código." },
+    { "pt": "passar uma receita", "ru": "выписать рецепт", "example": "O médico passou-me uma receita para as alergias." },
+    { "pt": "a baixa médica", "ru": "больничный", "example": "Estive de baixa médica uma semana." },
+    { "pt": "o antibiótico", "ru": "антибиотик", "example": "O antibiótico toma-se até ao fim." },
+    { "pt": "o comprimido", "ru": "таблетка", "example": "Tome um comprimido depois do almoço." },
+    { "pt": "a vacina", "ru": "прививка, вакцина", "example": "A vacina da gripe é gratuita para maiores de sessenta anos." },
+    { "pt": "sentir-se mal", "ru": "плохо себя чувствовать", "example": "Senti-me mal no trabalho e vim embora." },
+    { "pt": "melhorar / piorar", "ru": "поправляться / ухудшаться", "example": "Se a tosse piorar, volte cá." },
+    { "pt": "doer", "ru": "болеть", "example": "Dói-me o joelho quando subo escadas." },
+    { "pt": "medir a febre", "ru": "измерить температуру", "example": "Medi a febre de manhã e estava normal." }
+  ],
+  "exercises": [
+    {
+      "id": "centro-de-saude-ex-01",
+      "topicId": "centro-de-saude",
+      "type": "choice",
+      "prompt": "Como se diz «у меня болит голова» de forma natural?",
+      "options": ["Tenho dor de cabeça.", "Estou dor de cabeça.", "Sou com dor de cabeça.", "Faz-me dor a cabeça."],
+      "correct": 0,
+      "explanation": "Симптомы «имеют»: **Tenho dor de cabeça / febre / tosse**. Можно и через **doer**: **Dói-me a cabeça**. С **estar com** — **Estou com febre**."
+    },
+    {
+      "id": "centro-de-saude-ex-02",
+      "topicId": "centro-de-saude",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a constipação", "right": "простуда" },
+        { "left": "a tosse", "right": "кашель" },
+        { "left": "a baixa médica", "right": "больничный" },
+        { "left": "a tensão arterial", "right": "давление" },
+        { "left": "as análises", "right": "анализы" }
+      ]
+    },
+    {
+      "id": "centro-de-saude-ex-03",
+      "topicId": "centro-de-saude",
+      "type": "fill-gap",
+      "prompt": "Há três dias que ___ com febre.",
+      "answer": ["estou"],
+      "hint": "временное состояние, 1-е лицо",
+      "ru": "У меня температура уже три дня.",
+      "explanation": "**Há + срок + que + presente** — «уже столько-то времени»: **Há três dias que estou com febre**. **Estar com** описывает временное состояние."
+    },
+    {
+      "id": "centro-de-saude-ex-04",
+      "topicId": "centro-de-saude",
+      "type": "listen-type",
+      "text": "Então o que é que devo fazer?",
+      "answer": ["Então o que é que devo fazer?"],
+      "explanation": "**O que é que devo fazer?** — «Что мне делать?». **Dever + infinitivo** — «следует, должен»."
+    },
+    {
+      "id": "centro-de-saude-ex-05",
+      "topicId": "centro-de-saude",
+      "type": "listen-choice",
+      "text": "Descanse, beba muitos líquidos e tome paracetamol de oito em oito horas, se tiver febre.",
+      "prompt": "Как часто принимать парацетамол?",
+      "options": ["Восемь раз в день", "Каждые восемь часов при температуре", "Раз в день по восемь таблеток", "Утром и вечером, восемь дней"],
+      "correct": 1,
+      "explanation": "**De oito em oito horas** — «каждые восемь часов». **Se tiver febre** — futuro do conjuntivo: «если будет температура»."
+    },
+    {
+      "id": "centro-de-saude-ex-06",
+      "topicId": "centro-de-saude",
+      "type": "order-words",
+      "words": ["passar-me", "Pode", "receita?", "a"],
+      "answer": "Pode passar-me a receita?",
+      "ru": "Можете выписать мне рецепт?",
+      "explanation": "Рецепт «проходит» к пациенту: **passar uma receita** — выписать рецепт. Клитика **-me** стоит после инфинитива."
+    },
+    {
+      "id": "centro-de-saude-ex-07",
+      "topicId": "centro-de-saude",
+      "type": "translate-ru-pt",
+      "ru": "У меня аллергия на пенициллин.",
+      "answer": [
+        "Sou alérgico à penicilina.",
+        "Sou alérgica à penicilina.",
+        "Tenho alergia à penicilina.",
+        "Eu sou alérgico à penicilina.",
+        "Eu sou alérgica à penicilina.",
+        "Eu tenho alergia à penicilina."
+      ],
+      "explanation": "**Ser alérgico a** или **ter alergia a**. **A + a penicilina = à penicilina**."
+    },
+    {
+      "id": "centro-de-saude-ex-08",
+      "topicId": "centro-de-saude",
+      "type": "choice",
+      "prompt": "À noite sente-se muito mal, mas não sabe se deve ir às urgências. O que faz primeiro?",
+      "options": ["Vai à farmácia de serviço pedir antibiótico.", "Espera pela consulta do mês seguinte.", "Vai às Finanças.", "Liga para o SNS 24."],
+      "correct": 3,
+      "explanation": "**SNS 24** (808 24 24 24) — круглосуточная линия: медсестра оценит симптомы и направит в **centro de saúde** или **urgências**. Антибиотики без рецепта не продают."
+    },
+    {
+      "id": "centro-de-saude-ex-09",
+      "topicId": "centro-de-saude",
+      "type": "fill-gap",
+      "prompt": "Ainda não tenho médico de ___. Posso marcar uma consulta do dia?",
+      "answer": ["família"],
+      "hint": "семейный врач",
+      "ru": "У меня ещё нет семейного врача. Можно записаться на приём сегодня?",
+      "explanation": "**O médico de família** закрепляется за **utente** в его **centro de saúde**. Пока его нет, ходят на **consulta do dia** или **consulta aberta**."
+    },
+    {
+      "id": "centro-de-saude-ex-10",
+      "topicId": "centro-de-saude",
+      "type": "transform",
+      "prompt": "Tenho dor no joelho.",
+      "instruction": "Перефразируй через глагол doer (Dói-me…)",
+      "answer": ["Dói-me o joelho.", "Está-me a doer o joelho.", "O joelho dói-me."],
+      "explanation": "**Doer** строится как «мне болит»: **Dói-me o joelho**, **Doem-me as costas**. Клитика после глагола, артикль перед частью тела обязателен."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы на приёме у семейного врача. Напишите диалог из 8–10 реплик: опишите симптомы и с какого времени они у вас; ответьте на вопрос о температуре; скажите, что у вас аллергия на какое-то лекарство; попросите рецепт и больничный; спросите, что делать, если не станет лучше.",
+    "sample": "— Bom dia. Então, o que é que se passa?\n— Bom dia, doutora. Há dois dias que tenho dores de cabeça e tosse.\n— Tem febre?\n— Ontem tinha trinta e oito. Hoje de manhã já estava melhor.\n— Toma algum medicamento? Tem alergias?\n— Não tomo nada, mas sou alérgico ao ibuprofeno.\n— Muito bem. Vou passar-lhe um xarope para a tosse e paracetamol.\n— Pode passar-me também uma baixa? Não consigo trabalhar assim.\n— Passo-lhe a baixa por dois dias.\n— Obrigado. E se não melhorar?\n— Se piorar, ligue para o SNS 24.",
+    "checklist": [
+      "Симптомы описаны через ter / estar com / doer (Tenho tosse, Estou com febre, Dói-me…)",
+      "Срок выражен через Há … que …",
+      "Есть фраза об аллергии: Sou alérgico a… / Tenho alergia a…",
+      "Просьбы о рецепте и больничном: Pode passar-me a receita / uma baixa?",
+      "Нет бразилизмов и клитик в начале фразы (не Me dói…, а Dói-me…)"
+    ]
+  }
+}

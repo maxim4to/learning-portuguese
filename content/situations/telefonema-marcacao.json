@@ -1,0 +1,174 @@
+{
+  "id": "telefonema-marcacao",
+  "title": "Звонок: записаться / перенести встречу",
+  "titlePt": "Telefonema para marcar uma consulta",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Clínica Dentária Sorriso, bom dia. Fala a Rita.", "ru": "Стоматологическая клиника «Сорризу», доброе утро. Это Рита." },
+    { "speaker": "B", "pt": "Bom dia. Queria marcar uma consulta com o dentista, se faz favor.", "ru": "Доброе утро. Я хотел бы записаться к стоматологу, пожалуйста." },
+    { "speaker": "A", "pt": "Com certeza. Já é nosso cliente?", "ru": "Конечно. Вы у нас уже бывали?" },
+    { "speaker": "B", "pt": "Não, é a primeira vez. Chamo-me Dmitri Volkov.", "ru": "Нет, впервые. Меня зовут Дмитрий Волков." },
+    { "speaker": "A", "pt": "Pode soletrar o apelido, se faz favor?", "ru": "Можете продиктовать фамилию по буквам, пожалуйста?" },
+    { "speaker": "B", "pt": "V-O-L-K-O-V. Volkov.", "ru": "В-О-Л-К-О-В. Волков." },
+    { "speaker": "A", "pt": "Obrigada. Tenho vaga na quinta-feira às dez e meia. Dá-lhe jeito?", "ru": "Спасибо. Есть свободное время в четверг в половине одиннадцатого. Вам удобно?" },
+    { "speaker": "B", "pt": "De manhã não me dá jeito, estou a trabalhar. Tem alguma coisa ao fim da tarde?", "ru": "Утром мне неудобно, я на работе. Есть что-нибудь ближе к вечеру?" },
+    { "speaker": "A", "pt": "Tenho na sexta-feira às seis e um quarto. Pode ser?", "ru": "Есть в пятницу в четверть седьмого. Подойдёт?" },
+    { "speaker": "B", "pt": "Pode ser, perfeito. Preciso de levar algum documento?", "ru": "Подойдёт, отлично. Нужно взять какие-нибудь документы?" },
+    { "speaker": "A", "pt": "Traga o cartão de cidadão ou o título de residência e o NIF.", "ru": "Возьмите удостоверение личности или вид на жительство и NIF." },
+    { "speaker": "B", "pt": "Está bem. E se precisar de mudar a hora, como é que faço?", "ru": "Хорошо. А если мне нужно будет перенести запись, как это сделать?" },
+    { "speaker": "A", "pt": "Ligue-nos com vinte e quatro horas de antecedência e mudamos a marcação.", "ru": "Позвоните нам за сутки, и мы перенесём запись." },
+    { "speaker": "B", "pt": "Combinado. Pode dizer-me o número de telefone outra vez?", "ru": "Договорились. Можете ещё раз продиктовать номер телефона?" },
+    { "speaker": "A", "pt": "É o duzentos e dezassete, trinta e quatro, cinquenta e seis, setenta. Até sexta!", "ru": "217 34 56 70. До пятницы!" }
+  ],
+  "phrases": [
+    { "pt": "Queria marcar uma consulta, se faz favor.", "ru": "Я хотел бы записаться на приём, пожалуйста." },
+    { "pt": "Queria mudar a minha marcação.", "ru": "Я хотел бы перенести свою запись." },
+    { "pt": "Tenho de desmarcar a consulta de amanhã.", "ru": "Мне нужно отменить завтрашнюю запись." },
+    { "pt": "Tem vaga para esta semana?", "ru": "Есть свободное время на этой неделе?" },
+    { "pt": "Não me dá jeito. Tem outra hora?", "ru": "Мне неудобно. Есть другое время?" },
+    { "pt": "Pode ser às seis?", "ru": "Можно в шесть?" },
+    { "pt": "Pode repetir mais devagar, se faz favor?", "ru": "Можете повторить помедленнее, пожалуйста?" },
+    { "pt": "Pode soletrar?", "ru": "Можете продиктовать по буквам?" },
+    { "pt": "Desculpe, a chamada caiu.", "ru": "Извините, связь прервалась." },
+    { "pt": "Fico a aguardar a sua chamada.", "ru": "Буду ждать вашего звонка." }
+  ],
+  "vocab": [
+    { "pt": "o telefonema / a chamada", "ru": "телефонный звонок", "example": "Recebi uma chamada da clínica." },
+    { "pt": "ligar / telefonar", "ru": "звонить", "example": "Ligo-lhe amanhã de manhã." },
+    { "pt": "atender", "ru": "отвечать на звонок, брать трубку", "example": "Ninguém atende o telefone." },
+    { "pt": "a marcação", "ru": "запись (на приём)", "example": "Fiz a marcação pela internet." },
+    { "pt": "marcar", "ru": "записаться, назначить", "example": "Quero marcar uma reunião com o senhorio." },
+    { "pt": "desmarcar", "ru": "отменить (запись, встречу)", "example": "Tive de desmarcar o jantar." },
+    { "pt": "remarcar / mudar a marcação", "ru": "перенести запись", "example": "Posso remarcar para a próxima semana?" },
+    { "pt": "a consulta", "ru": "приём (у врача)", "example": "A consulta é às três." },
+    { "pt": "a vaga", "ru": "свободное место, окно", "example": "Só há vaga para o mês que vem." },
+    { "pt": "a disponibilidade", "ru": "свободное время", "example": "Qual é a sua disponibilidade?" },
+    { "pt": "dar jeito", "ru": "быть удобным", "example": "Dá-lhe jeito às cinco?" },
+    { "pt": "combinado", "ru": "договорились", "example": "Então às oito no café. Combinado!" },
+    { "pt": "com antecedência", "ru": "заранее", "example": "Avise com dois dias de antecedência." },
+    { "pt": "soletrar", "ru": "говорить по буквам", "example": "Pode soletrar o seu nome?" },
+    { "pt": "o apelido", "ru": "фамилия", "example": "O meu apelido é difícil de soletrar." },
+    { "pt": "o nome próprio", "ru": "имя", "example": "Escreva primeiro o nome próprio." },
+    { "pt": "a extensão", "ru": "добавочный номер", "example": "Ligue para a extensão vinte e três." },
+    { "pt": "o atendimento", "ru": "обслуживание, приём звонков", "example": "O horário de atendimento é das nove às sete." },
+    { "pt": "estar ocupado", "ru": "быть занятым (о линии)", "example": "O número está sempre ocupado." },
+    { "pt": "a mensagem", "ru": "сообщение", "example": "Deixei uma mensagem no gravador." },
+    { "pt": "a lembrança / o lembrete", "ru": "напоминание", "example": "Recebo um lembrete por SMS na véspera." },
+    { "pt": "a chamada caiu", "ru": "связь прервалась", "example": "Desculpe, a chamada caiu." },
+    { "pt": "a rede", "ru": "сеть, связь", "example": "Aqui não há rede." },
+    { "pt": "o telemóvel", "ru": "мобильный телефон", "example": "Deixe o número de telemóvel, se faz favor." },
+    { "pt": "o telefone fixo", "ru": "стационарный телефон", "example": "Os números fixos de Lisboa começam por 21." },
+    { "pt": "a véspera", "ru": "накануне", "example": "Ligaram-me na véspera para confirmar." },
+    { "pt": "confirmar", "ru": "подтвердить", "example": "Queria confirmar a consulta de amanhã." },
+    { "pt": "o imprevisto", "ru": "непредвиденное обстоятельство", "example": "Tive um imprevisto e não posso ir." },
+    { "pt": "ao fim da tarde", "ru": "ближе к вечеру", "example": "Ao fim da tarde tenho mais tempo." },
+    { "pt": "e um quarto / e meia", "ru": "с четвертью / с половиной", "example": "A consulta é às seis e um quarto." },
+    { "pt": "a clínica dentária", "ru": "стоматологическая клиника", "example": "A clínica dentária fica no primeiro andar." }
+  ],
+  "exercises": [
+    {
+      "id": "telefonema-marcacao-ex-01",
+      "topicId": "telefonema-marcacao",
+      "type": "choice",
+      "prompt": "Precisa de cancelar uma consulta. O que diz?",
+      "options": ["Queria marcar a consulta.", "Queria confirmar a consulta.", "Queria atender a consulta.", "Queria desmarcar a consulta."],
+      "correct": 3,
+      "explanation": "**Desmarcar** — отменить запись, **marcar** — записаться, **remarcar / mudar a marcação** — перенести, **confirmar** — подтвердить."
+    },
+    {
+      "id": "telefonema-marcacao-ex-02",
+      "topicId": "telefonema-marcacao",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "o apelido", "right": "фамилия" },
+        { "left": "soletrar", "right": "говорить по буквам" },
+        { "left": "atender", "right": "взять трубку" },
+        { "left": "a véspera", "right": "накануне" },
+        { "left": "com antecedência", "right": "заранее" }
+      ]
+    },
+    {
+      "id": "telefonema-marcacao-ex-03",
+      "topicId": "telefonema-marcacao",
+      "type": "fill-gap",
+      "prompt": "De manhã não me ___ jeito. Tem alguma coisa ao fim da tarde?",
+      "answer": ["dá"],
+      "hint": "dar jeito — быть удобным",
+      "ru": "Утром мне неудобно. Есть что-нибудь ближе к вечеру?",
+      "explanation": "**Dar jeito** — очень португальское «быть удобным»: **Dá-lhe jeito?** — «Вам удобно?», **Não me dá jeito** — «Мне неудобно» (после **não** клитика перед глаголом)."
+    },
+    {
+      "id": "telefonema-marcacao-ex-04",
+      "topicId": "telefonema-marcacao",
+      "type": "listen-type",
+      "text": "Pode soletrar o apelido, se faz favor?",
+      "answer": ["Pode soletrar o apelido, se faz favor?"],
+      "explanation": "**O apelido** в Португалии — фамилия (не прозвище!). Имя — **o nome próprio**."
+    },
+    {
+      "id": "telefonema-marcacao-ex-05",
+      "topicId": "telefonema-marcacao",
+      "type": "listen-choice",
+      "text": "Ligue-nos com vinte e quatro horas de antecedência e mudamos a marcação.",
+      "prompt": "Что нужно сделать, чтобы перенести запись?",
+      "options": ["Прийти в клинику за день", "Позвонить за сутки", "Написать письмо за неделю", "Позвонить в течение двух часов"],
+      "correct": 1,
+      "explanation": "**Com vinte e quatro horas de antecedência** — за 24 часа (заранее). **Mudar a marcação** — перенести запись."
+    },
+    {
+      "id": "telefonema-marcacao-ex-06",
+      "topicId": "telefonema-marcacao",
+      "type": "order-words",
+      "words": ["Queria", "mudar", "a", "minha", "marcação,", "se", "faz", "favor."],
+      "answer": "Queria mudar a minha marcação, se faz favor.",
+      "ru": "Я хотел бы перенести свою запись, пожалуйста."
+    },
+    {
+      "id": "telefonema-marcacao-ex-07",
+      "topicId": "telefonema-marcacao",
+      "type": "translate-ru-pt",
+      "ru": "Можете повторить помедленнее, пожалуйста?",
+      "answer": ["Pode repetir mais devagar, se faz favor?", "Pode repetir mais devagar, por favor?", "Podia repetir mais devagar, se faz favor?", "Podia repetir mais devagar, por favor?"]
+    },
+    {
+      "id": "telefonema-marcacao-ex-08",
+      "topicId": "telefonema-marcacao",
+      "type": "choice",
+      "prompt": "A rececionista pergunta se a hora é boa para si. O que é mais natural em Portugal?",
+      "options": ["Você pode nessa hora?", "Dá-lhe jeito?", "Te convém?", "Lhe dá jeito?"],
+      "correct": 1,
+      "explanation": "**Dá-lhe jeito?** — вежливо и естественно. *Lhe dá jeito?* и *Te convém?* начинаются с клитики (так в pt-PT не говорят), а **você** в лицо звучит суховато."
+    },
+    {
+      "id": "telefonema-marcacao-ex-09",
+      "topicId": "telefonema-marcacao",
+      "type": "fill-gap",
+      "prompt": "Desculpe, tive um imprevisto. Tenho de ___ a consulta de amanhã.",
+      "answer": ["desmarcar", "cancelar"],
+      "hint": "отменить запись",
+      "ru": "Извините, у меня непредвиденные обстоятельства. Мне нужно отменить завтрашнюю запись.",
+      "explanation": "**Desmarcar** (или **cancelar**) — отменить. **Ter de + infinitivo** — «нужно, приходится»."
+    },
+    {
+      "id": "telefonema-marcacao-ex-10",
+      "topicId": "telefonema-marcacao",
+      "type": "transform",
+      "prompt": "Às seis está bem para mim?",
+      "instruction": "Перефразируй короче и естественнее с poder ser: «Можно в шесть?»",
+      "answer": ["Pode ser às seis?", "Pode ser às seis horas?"],
+      "explanation": "**Pode ser?** — универсальное «Подойдёт? / Можно?». Ответ: **Pode ser** — «Подойдёт»."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы записаны в клинику на завтра на 10:00, но у вас изменились планы. Напишите телефонный диалог из 8–10 реплик с администратором: представьтесь и продиктуйте фамилию по буквам, объясните, что хотите перенести запись, скажите, когда вам удобно, договоритесь о новой дате и времени и попросите подтверждение по SMS.",
+    "sample": "— Clínica Saúde Mais, boa tarde.\n— Boa tarde. Fala Dmitri Volkov. Tenho uma consulta marcada para amanhã às dez.\n— Pode soletrar o apelido, se faz favor?\n— V-O-L-K-O-V.\n— Sim, já encontrei. Em que posso ajudar?\n— Tive um imprevisto no trabalho e queria mudar a marcação.\n— Com certeza. Quando é que lhe dá jeito?\n— De manhã não me dá jeito. Pode ser ao fim da tarde, depois das cinco?\n— Tenho vaga na quarta-feira às cinco e meia.\n— Pode ser, perfeito. Pode enviar-me a confirmação por SMS?\n— Envio já. Até quarta!\n— Combinado. Obrigado e boa tarde.",
+    "checklist": [
+      "Вы представились (Fala… / Chamo-me…) и назвали фамилию по буквам",
+      "Использованы слова marcação, mudar / remarcar / desmarcar, consulta",
+      "Есть dar jeito в правильной форме: Dá-lhe jeito? / Não me dá jeito",
+      "Время названо по-португальски: às cinco e meia, às seis e um quarto",
+      "Есть просьба о подтверждении и вежливое прощание (Combinado. Obrigado.)"
+    ]
+  }
+}

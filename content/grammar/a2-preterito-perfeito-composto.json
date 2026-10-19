@@ -1,0 +1,459 @@
+{
+  "id": "a2-preterito-perfeito-composto",
+  "level": "A2",
+  "module": "a2-passado",
+  "title": "Сложное прошедшее «tenho feito»: в последнее время",
+  "titlePt": "Pretérito perfeito composto",
+  "requires": [
+    "a2-preterito-perfeito-simples",
+    "a1-presente-irregulares"
+  ],
+  "theory": "## Форма\n\n**Ter** в настоящем времени + **particípio passado** (не изменяется по роду и числу):\n\n| | ter | falar | comer | partir |\n|---|---|---|---|---|\n| eu | tenho | **tenho falado** | **tenho comido** | **tenho partido** |\n| tu | tens | tens falado | tens comido | tens partido |\n| ele / você | tem | tem falado | tem comido | tem partido |\n| nós | temos | temos falado | temos comido | temos partido |\n| eles / vocês | têm | têm falado | têm comido | têm partido |\n\nНеправильные причастия:\n\n| инфинитив | particípio | инфинитив | particípio |\n|---|---|---|---|\n| fazer | **feito** | escrever | **escrito** |\n| dizer | **dito** | abrir | **aberto** |\n| ver | **visto** | pôr | **posto** |\n| vir | **vindo** | ganhar / gastar / pagar | **ganho / gasto / pago** |\n\n## Значение: «в последнее время, и это продолжается»\n\n**Pretérito perfeito composto** описывает действие, которое **повторялось или длилось с какого-то момента в прошлом до сейчас** и, скорее всего, продолжится:\n\n**Tenho trabalhado muito.** — В последнее время я много работаю.\n**Tem chovido imenso este mês.** — В этом месяце постоянно идут дожди.\n**Não tenho dormido bem.** — Я плохо сплю последнее время.\n\nМаркеры: **ultimamente, nos últimos tempos, este mês / este ano, desde janeiro, cada vez mais**.\n\nПо-русски это чаще всего **настоящее время** с «в последнее время»: «последнее время много читаю» = **Tenho lido muito**.\n\n## Это НЕ английский Present Perfect\n\nОднократное действие, результат или опыт («уже сделал», «когда-нибудь был») в pt-PT передаются **perfeito simples**:\n\n| по-русски | ✓ pt-PT | ✗ калька с английского |\n|---|---|---|\n| Я уже видел этот фильм. | **Já vi este filme.** | *Tenho visto este filme.* |\n| Ты уже поел? | **Já comeste?** | *Já tens comido?* |\n| Я был в Порту три раза. | **Estive no Porto três vezes.** | *Tenho estado no Porto três vezes.* |\n| Я потерял ключи! | **Perdi as chaves!** | *Tenho perdido as chaves!* |\n\n**Tenho visto este filme** значит «в последнее время я (неоднократно) смотрю этот фильм».\n\n## Сравнение\n\n| perfeito simples | perfeito composto |\n|---|---|\n| **Escrevi ao senhorio.** — Я написал хозяину квартиры (один раз). | **Tenho escrito ao senhorio.** — Я пишу хозяину (уже не раз, и это продолжается). |\n| **Ontem falei com a Inês.** | **Ultimamente tenho falado muito com a Inês.** |\n\nС конкретным моментом в прошлом (**ontem, em 2020, há dois dias**) composto невозможен.\n\n## Местоимения\n\nМестоимение присоединяется к **ter**: **Tenho-a visto pouco.** После «магнитов» — перед ним: **Não a tenho visto.** Подробно — в теме о месте клитик.\n\n## Длительный вариант\n\n**Tenho estado a + инфинитив** подчёркивает процесс: **Tenho estado a estudar para o exame.** — Последнее время готовлюсь к экзамену.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Não a tenho visto.** | Não tenho visto ela. | дополнение «её» — клитика, а не *ela* |\n| **Tenho estado a trabalhar** muito. | Tenho estado trabalhando muito. | процесс — estar a + инфинитив |\n| **Já comeste?** | Você já comeu? | в обеих нормах «уже сделал» — простое прошедшее |\n\nЗначение «повторяющееся действие до настоящего» общее для pt-PT и pt-BR. Главный источник ошибок — не бразильская норма, а английский Present Perfect.",
+  "commonErrors": "- **Калька с английского Present Perfect**: *Tenho visto este filme* (= I have seen) ✗ → **Já vi este filme** ✓.\n- **Опыт и количество раз**: *Tenho estado em Portugal três vezes* ✗ → **Estive em Portugal três vezes** ✓.\n- **С конкретным моментом**: *Ontem tenho trabalhado muito* ✗ → **Ontem trabalhei muito** ✓.\n- **Результат одного действия**: *Tenho perdido o telemóvel!* ✗ → **Perdi o telemóvel!** ✓.\n- **Согласование причастия**: *A Ana tem feitas muitas compras* ✗ → **A Ana tem feito muitas compras** ✓ (после ter причастие не меняется).\n- **Правильное причастие у неправильного глагола**: *tenho fazido, tem escrevido, temos vido* ✗ → **tenho feito, tem escrito, temos visto** ✓.\n- **Местоимение не там**: *Não tenho-a visto* ✗ → **Não a tenho visto** ✓.",
+  "examples": [
+    {
+      "pt": "Ultimamente tenho trabalhado muito e não tenho tido tempo para nada.",
+      "ru": "В последнее время я много работаю и ни на что не хватает времени.",
+      "audio": true
+    },
+    {
+      "pt": "Tem chovido imenso este inverno.",
+      "ru": "Этой зимой постоянно идут дожди.",
+      "audio": true
+    },
+    {
+      "pt": "Como tens passado? — Bem, obrigado.",
+      "ru": "Как поживаешь? — Хорошо, спасибо.",
+      "audio": true
+    },
+    {
+      "pt": "Já vi este filme, mas não me importo de o ver outra vez.",
+      "ru": "Я уже видел этот фильм, но не против посмотреть его ещё раз.",
+      "audio": true
+    },
+    {
+      "pt": "Não tenho visto a Joana. Está tudo bem com ela?",
+      "ru": "Я давно не вижу Жоану. У неё всё в порядке?",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-preterito-perfeito-composto-ex-01",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ultimamente eu ___ (trabalhar) muito.",
+      "answer": [
+        "tenho trabalhado"
+      ],
+      "ru": "В последнее время я много работаю."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-02",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Este mês ___ (chover) quase todos os dias, e amanhã vai chover outra vez.",
+      "answer": [
+        "tem chovido"
+      ],
+      "ru": "В этом месяце дождь идёт почти каждый день, и завтра снова будет дождь."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-03",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ultimamente nós ___ (ir) muitas vezes ao ginásio.",
+      "answer": [
+        "temos ido"
+      ],
+      "ru": "Последнее время мы часто ходим в спортзал."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-04",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (fazer) exercício ultimamente?",
+      "answer": [
+        "tens feito"
+      ],
+      "hint": "fazer → feito",
+      "ru": "Ты занимаешься спортом в последнее время?"
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-05",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ultimamente os vizinhos ___ (fazer) barulho todas as noites.",
+      "answer": [
+        "têm feito"
+      ],
+      "ru": "В последнее время соседи шумят каждую ночь.",
+      "explanation": "eles → têm (с циркумфлексом) + feito."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-06",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ultimamente eu não ___ (dormir) bem.",
+      "answer": [
+        "tenho dormido"
+      ],
+      "ru": "Последнее время я плохо сплю."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-07",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Desde janeiro, a Rita ___ (escrever) ao senhorio todas as semanas, mas ele nunca responde.",
+      "answer": [
+        "tem escrito"
+      ],
+      "ru": "С января Рита каждую неделю пишет хозяину квартиры, но он никогда не отвечает.",
+      "explanation": "Повторяющееся действие с января до сих пор; escrever → escrito."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-08",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Eu já ___ (ver) este filme duas vezes.",
+      "answer": [
+        "vi"
+      ],
+      "hint": "опыт, количество раз",
+      "ru": "Я уже видел этот фильм два раза.",
+      "explanation": "Опыт и подсчитанное количество раз — perfeito simples, а не tenho visto."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-09",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "Já ___ o relatório? — Sim, acabei agora mesmo.",
+      "options": [
+        "tens acabado",
+        "acabavas",
+        "acabaste",
+        "tinhas acabado"
+      ],
+      "correct": 2,
+      "explanation": "«Уже закончил?» — однократный результат → perfeito simples."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-10",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "Ultimamente os preços ___ todas as semanas.",
+      "options": [
+        "subiam",
+        "têm subido",
+        "tinham subido",
+        "têm subidos"
+      ],
+      "correct": 1,
+      "explanation": "Повторяется до сих пор → composto; причастие не согласуется."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-11",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "Já ___ no Porto? (Have you ever been...?)",
+      "options": [
+        "estiveste",
+        "tens estado",
+        "estavas",
+        "estás"
+      ],
+      "correct": 0,
+      "explanation": "Опыт («когда-нибудь был») — perfeito simples."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-12",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "Não ___ o Pedro ultimamente. Está tudo bem com ele?",
+      "options": [
+        "vejo-o",
+        "tinha visto",
+        "tenho visto",
+        "teria visto"
+      ],
+      "correct": 2,
+      "explanation": "ultimamente + повторяющаяся ситуация до сих пор → composto."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-13",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "Что значит «Tenho lido muito»?",
+      "options": [
+        "Я много прочитал (за один раз).",
+        "Я раньше много читал.",
+        "Я вчера много прочитал.",
+        "Я в последнее время много читаю."
+      ],
+      "correct": 3,
+      "explanation": "Composto = регулярное действие вплоть до настоящего."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-14",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "transform",
+      "prompt": "Trabalho muito.",
+      "instruction": "Скажите, что это происходит в последнее время (perfeito composto).",
+      "answer": [
+        "Tenho trabalhado muito.",
+        "Eu tenho trabalhado muito.",
+        "Ultimamente tenho trabalhado muito.",
+        "Ultimamente eu tenho trabalhado muito."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-15",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "transform",
+      "prompt": "Ele faz o jantar.",
+      "instruction": "Скажите, что это происходит в последнее время (perfeito composto).",
+      "answer": [
+        "Ele tem feito o jantar.",
+        "Tem feito o jantar.",
+        "Ultimamente ele tem feito o jantar.",
+        "Ultimamente tem feito o jantar.",
+        "Ele tem feito o jantar ultimamente."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-16",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "transform",
+      "prompt": "Não tenho visto a Inês.",
+      "instruction": "Замените «a Inês» местоимением.",
+      "answer": [
+        "Não a tenho visto.",
+        "Eu não a tenho visto."
+      ],
+      "explanation": "não притягивает местоимение — оно встаёт перед ter."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-17",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "order-words",
+      "words": [
+        "tenho",
+        "Ultimamente",
+        "muito",
+        "trabalhado",
+        "não"
+      ],
+      "answer": "Ultimamente não tenho trabalhado muito"
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-18",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "order-words",
+      "words": [
+        "muito",
+        "Tem",
+        "este",
+        "chovido",
+        "inverno"
+      ],
+      "answer": "Tem chovido muito este inverno"
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-19",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "translate-ru-pt",
+      "ru": "В последнее время я плохо сплю.",
+      "answer": [
+        "Ultimamente tenho dormido mal.",
+        "Ultimamente não tenho dormido bem.",
+        "Ultimamente eu tenho dormido mal.",
+        "Ultimamente eu não tenho dormido bem.",
+        "Tenho dormido mal ultimamente.",
+        "Não tenho dormido bem ultimamente.",
+        "Eu tenho dormido mal ultimamente.",
+        "Eu não tenho dormido bem ultimamente.",
+        "Nos últimos tempos tenho dormido mal.",
+        "Nos últimos tempos não tenho dormido bem.",
+        "Nos últimos tempos eu tenho dormido mal.",
+        "Nos últimos tempos eu não tenho dormido bem."
+      ],
+      "explanation": "Регулярная ситуация до настоящего момента → perfeito composto."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-20",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "translate-ru-pt",
+      "ru": "Я уже видел этот фильм.",
+      "answer": [
+        "Já vi este filme.",
+        "Eu já vi este filme.",
+        "Já vi esse filme.",
+        "Eu já vi esse filme."
+      ],
+      "explanation": "Не *tenho visto*: однократный опыт → perfeito simples."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-21",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "listen-type",
+      "text": "Tem feito muito calor esta semana.",
+      "answer": [
+        "Tem feito muito calor esta semana."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-ex-22",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "match",
+      "prompt": "Соедините инфинитив с причастием.",
+      "pairs": [
+        {
+          "left": "fazer",
+          "right": "feito"
+        },
+        {
+          "left": "dizer",
+          "right": "dito"
+        },
+        {
+          "left": "ver",
+          "right": "visto"
+        },
+        {
+          "left": "escrever",
+          "right": "escrito"
+        },
+        {
+          "left": "pôr",
+          "right": "posto"
+        },
+        {
+          "left": "abrir",
+          "right": "aberto"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-preterito-perfeito-composto-mt-01",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ultimamente tu ___ (estar) muito calado.",
+      "answer": [
+        "tens estado"
+      ],
+      "ru": "Ты в последнее время очень молчалив."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-02",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ultimamente nós ___ (ver) muitas séries.",
+      "answer": [
+        "temos visto"
+      ],
+      "ru": "В последнее время мы смотрим много сериалов."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-03",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ultimamente eles ___ (vir) cá muitas vezes.",
+      "answer": [
+        "têm vindo"
+      ],
+      "ru": "В последнее время они часто сюда приходят."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-04",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "fill-gap",
+      "prompt": "Ontem eu ___ (escrever) ao senhorio.",
+      "answer": [
+        "escrevi"
+      ],
+      "ru": "Вчера я написал хозяину квартиры.",
+      "explanation": "ontem — конкретный момент → perfeito simples."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-05",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "___ as chaves! Não consigo entrar em casa.",
+      "options": [
+        "Tenho perdido",
+        "Perdi",
+        "Perdia",
+        "Tinha perdido"
+      ],
+      "correct": 1,
+      "explanation": "Однократное событие с результатом — perfeito simples."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-06",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "Ultimamente o Duarte ___ muito tarde ao trabalho.",
+      "options": [
+        "chegou",
+        "chegava",
+        "tem chegado",
+        "chega-se"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-07",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "choice",
+      "prompt": "Что значит «Temos falado muito»?",
+      "options": [
+        "Мы много поговорили (один раз).",
+        "Мы будем много говорить.",
+        "Мы раньше много говорили.",
+        "Мы в последнее время много общаемся."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-08",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "transform",
+      "prompt": "Eles abrem a loja mais cedo.",
+      "instruction": "Скажите, что это происходит в последнее время (perfeito composto).",
+      "answer": [
+        "Eles têm aberto a loja mais cedo.",
+        "Têm aberto a loja mais cedo.",
+        "Ultimamente eles têm aberto a loja mais cedo.",
+        "Ultimamente têm aberto a loja mais cedo."
+      ]
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-09",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "translate-ru-pt",
+      "ru": "Ты уже был в Синтре?",
+      "answer": [
+        "Já estiveste em Sintra?",
+        "Tu já estiveste em Sintra?",
+        "Já foste a Sintra?",
+        "Tu já foste a Sintra?",
+        "Já alguma vez estiveste em Sintra?",
+        "Alguma vez estiveste em Sintra?",
+        "Já foste alguma vez a Sintra?"
+      ],
+      "explanation": "Опыт — perfeito simples, не *tens estado*."
+    },
+    {
+      "id": "a2-preterito-perfeito-composto-mt-10",
+      "topicId": "a2-preterito-perfeito-composto",
+      "type": "listen-type",
+      "text": "Não tenho tido tempo para nada.",
+      "answer": [
+        "Não tenho tido tempo para nada."
+      ]
+    }
+  ]
+}

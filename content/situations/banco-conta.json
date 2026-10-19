@@ -1,0 +1,179 @@
+{
+  "id": "banco-conta",
+  "title": "Открыть счёт в банке",
+  "titlePt": "Abrir conta no banco",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia, sente-se. Em que posso ajudá-lo?", "ru": "Доброе утро, присаживайтесь. Чем могу вам помочь?" },
+    { "speaker": "B", "pt": "Bom dia. Queria abrir uma conta à ordem, se faz favor.", "ru": "Доброе утро. Я хотел бы открыть текущий счёт." },
+    { "speaker": "A", "pt": "Com certeza. Trouxe o documento de identificação, o NIF e um comprovativo de morada?", "ru": "Конечно. Вы принесли удостоверение личности, NIF и подтверждение адреса?" },
+    { "speaker": "B", "pt": "Trouxe o passaporte, o título de residência e uma fatura da luz em meu nome.", "ru": "Я принёс паспорт, вид на жительство и счёт за электричество на моё имя." },
+    { "speaker": "A", "pt": "Perfeito. Também preciso de um comprovativo de rendimentos, por exemplo o último recibo de vencimento.", "ru": "Отлично. Ещё мне нужно подтверждение доходов, например последний расчётный листок." },
+    { "speaker": "B", "pt": "Aqui está. Quanto é a comissão de manutenção da conta?", "ru": "Вот он. Сколько стоит обслуживание счёта?" },
+    { "speaker": "A", "pt": "São cinco euros por mês, mas fica isento se domiciliar o ordenado cá no banco.", "ru": "Пять евро в месяц, но вы освобождаетесь от платы, если будете получать зарплату на счёт в нашем банке." },
+    { "speaker": "B", "pt": "Então vou domiciliar o ordenado. E o cartão de débito, quando é que o recebo?", "ru": "Тогда буду получать зарплату сюда. А дебетовую карту когда я получу?" },
+    { "speaker": "A", "pt": "Chega por correio dentro de uma semana. O PIN vem numa carta separada.", "ru": "Она придёт по почте в течение недели. PIN-код придёт отдельным письмом." },
+    { "speaker": "B", "pt": "E posso usar o MB Way logo?", "ru": "А MB Way можно сразу подключить?" },
+    { "speaker": "A", "pt": "Pode. Depois de ativar o cartão, instala a aplicação e associa o seu número de telemóvel.", "ru": "Можно. После активации карты установите приложение и привяжите свой номер мобильного." },
+    { "speaker": "B", "pt": "Com o MB Way posso enviar dinheiro a amigos sem saber o IBAN deles?", "ru": "С MB Way я могу переводить деньги друзьям, не зная их IBAN?" },
+    { "speaker": "A", "pt": "Exatamente, basta o número de telemóvel. Agora assine aqui, na ficha de assinatura, se faz favor.", "ru": "Именно, достаточно номера телефона. А теперь распишитесь здесь, в карточке образца подписи, пожалуйста." },
+    { "speaker": "B", "pt": "Onde é que assino? Aqui em baixo?", "ru": "Где мне расписаться? Здесь внизу?" },
+    { "speaker": "A", "pt": "Sim, aí mesmo. Já está! O seu IBAN está nesta folha. Bem-vindo ao nosso banco.", "ru": "Да, вот здесь. Готово! Ваш IBAN — на этом листе. Добро пожаловать в наш банк." }
+  ],
+  "phrases": [
+    { "pt": "Queria abrir uma conta à ordem.", "ru": "Я хотел бы открыть текущий счёт." },
+    { "pt": "Que documentos é que são precisos?", "ru": "Какие документы нужны?" },
+    { "pt": "Quanto é a comissão de manutenção?", "ru": "Сколько стоит обслуживание счёта?" },
+    { "pt": "Há alguma conta sem comissões?", "ru": "Есть счёт без комиссий?" },
+    { "pt": "Quando é que recebo o cartão?", "ru": "Когда я получу карту?" },
+    { "pt": "Como é que ativo o MB Way?", "ru": "Как подключить MB Way?" },
+    { "pt": "Pode dar-me o comprovativo do IBAN?", "ru": "Можете дать мне подтверждение IBAN?" },
+    { "pt": "Queria domiciliar o ordenado nesta conta.", "ru": "Я хотел бы получать зарплату на этот счёт." },
+    { "pt": "Perdi o cartão. Queria cancelá-lo.", "ru": "Я потерял карту. Хочу её заблокировать." },
+    { "pt": "Onde é que fica o multibanco mais próximo?", "ru": "Где ближайший банкомат?" }
+  ],
+  "vocab": [
+    { "pt": "o banco", "ru": "банк", "example": "O banco fecha às três da tarde." },
+    { "pt": "o balcão", "ru": "отделение банка; стойка", "example": "Fui ao balcão da minha rua." },
+    { "pt": "o gestor / a gestora de conta", "ru": "персональный менеджер", "example": "A minha gestora de conta ligou-me ontem." },
+    { "pt": "a conta à ordem", "ru": "текущий счёт", "example": "Tenho uma conta à ordem e uma poupança." },
+    { "pt": "a conta poupança", "ru": "сберегательный счёт", "example": "Ponho cem euros por mês na conta poupança." },
+    { "pt": "a conta conjunta", "ru": "совместный счёт", "example": "Eu e a minha mulher temos uma conta conjunta." },
+    { "pt": "o titular", "ru": "владелец счёта", "example": "Só o titular pode pedir o cartão." },
+    { "pt": "abrir / fechar uma conta", "ru": "открыть / закрыть счёт", "example": "Abrir conta demorou meia hora." },
+    { "pt": "o IBAN", "ru": "номер счёта IBAN", "example": "Mandei o IBAN à empresa para receber o ordenado." },
+    { "pt": "o comprovativo de IBAN", "ru": "подтверждение реквизитов счёта", "example": "A empresa pediu um comprovativo de IBAN." },
+    { "pt": "o cartão de débito", "ru": "дебетовая карта", "example": "Pago tudo com o cartão de débito." },
+    { "pt": "o cartão de crédito", "ru": "кредитная карта", "example": "Não preciso de cartão de crédito." },
+    { "pt": "o código PIN", "ru": "PIN-код", "example": "Nunca diga o código PIN a ninguém." },
+    { "pt": "ativar o cartão", "ru": "активировать карту", "example": "Ativei o cartão no multibanco." },
+    { "pt": "o multibanco", "ru": "банкомат; сеть Multibanco", "example": "Há um multibanco à saída do metro." },
+    { "pt": "levantar dinheiro", "ru": "снять наличные", "example": "Vou levantar dinheiro para pagar a renda." },
+    { "pt": "depositar", "ru": "вносить (деньги на счёт)", "example": "Depositei o cheque ao balcão." },
+    { "pt": "a transferência", "ru": "перевод", "example": "Fiz a transferência ontem à noite." },
+    { "pt": "a transferência imediata", "ru": "мгновенный перевод", "example": "Com a transferência imediata, o dinheiro chega logo." },
+    { "pt": "o MB Way", "ru": "MB Way (приложение для платежей по номеру телефона)", "example": "Mandei-te os dez euros por MB Way." },
+    { "pt": "a aplicação", "ru": "приложение", "example": "Vejo o saldo na aplicação do banco." },
+    { "pt": "o homebanking", "ru": "интернет-банк", "example": "Pago as contas pelo homebanking." },
+    { "pt": "o saldo", "ru": "остаток на счёте", "example": "O saldo está negativo." },
+    { "pt": "o extrato", "ru": "выписка", "example": "Pedi o extrato dos últimos três meses." },
+    { "pt": "a comissão", "ru": "комиссия", "example": "Este banco cobra comissão por tudo." },
+    { "pt": "a comissão de manutenção", "ru": "плата за обслуживание счёта", "example": "A comissão de manutenção subiu este ano." },
+    { "pt": "isento", "ru": "освобождённый (от платы)", "example": "Os jovens estão isentos de comissões." },
+    { "pt": "domiciliar o ordenado", "ru": "получать зарплату на счёт в этом банке", "example": "Se domiciliar o ordenado, não paga comissões." },
+    { "pt": "o ordenado", "ru": "зарплата", "example": "O ordenado entra no dia vinte e cinco." },
+    { "pt": "o débito direto", "ru": "автоплатёж (прямое списание)", "example": "A luz e a água estão em débito direto." },
+    { "pt": "o crédito à habitação", "ru": "ипотека", "example": "Pedimos um crédito à habitação a trinta anos." },
+    { "pt": "a ficha de assinatura", "ru": "карточка с образцом подписи", "example": "Assinei a ficha de assinatura com a minha caneta." },
+    { "pt": "o comprovativo de rendimentos", "ru": "подтверждение доходов", "example": "O banco pediu um comprovativo de rendimentos." },
+    { "pt": "cancelar o cartão", "ru": "заблокировать / аннулировать карту", "example": "Liguei logo para cancelar o cartão." }
+  ],
+  "exercises": [
+    {
+      "id": "banco-conta-ex-01",
+      "topicId": "banco-conta",
+      "type": "choice",
+      "prompt": "Queria levantar dinheiro. Onde é que vou?",
+      "options": ["Ao multibanco", "Ao caixa eletrônico", "À aplicação", "Ao MB Way"],
+      "correct": 0,
+      "explanation": "Банкомат в Португалии — **o multibanco** (так называется и вся сеть). *Caixa eletrônico* — бразильское слово. **Levantar dinheiro** — снять наличные."
+    },
+    {
+      "id": "banco-conta-ex-02",
+      "topicId": "banco-conta",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a conta à ordem", "right": "текущий счёт" },
+        { "left": "o saldo", "right": "остаток на счёте" },
+        { "left": "o extrato", "right": "выписка" },
+        { "left": "o ordenado", "right": "зарплата" },
+        { "left": "o débito direto", "right": "автоплатёж" }
+      ]
+    },
+    {
+      "id": "banco-conta-ex-03",
+      "topicId": "banco-conta",
+      "type": "fill-gap",
+      "prompt": "São cinco euros por mês, mas fica ___ se domiciliar o ordenado cá no banco.",
+      "answer": ["isento"],
+      "hint": "«освобождённый от платы»",
+      "ru": "Пять евро в месяц, но вы не платите, если будете получать зарплату в нашем банке.",
+      "explanation": "**Ficar isento (de)** — быть освобождённым от платы: **isento de comissões**. Женский род — **isenta**."
+    },
+    {
+      "id": "banco-conta-ex-04",
+      "topicId": "banco-conta",
+      "type": "listen-type",
+      "text": "Chega por correio dentro de uma semana. O PIN vem numa carta separada.",
+      "answer": ["Chega por correio dentro de uma semana. O PIN vem numa carta separada."],
+      "explanation": "**Dentro de** — «в течение, через»: **dentro de uma semana**. **Uma carta separada** — отдельное письмо: карту и PIN-код всегда присылают раздельно."
+    },
+    {
+      "id": "banco-conta-ex-05",
+      "topicId": "banco-conta",
+      "type": "listen-choice",
+      "text": "Pode. Depois de ativar o cartão, instala a aplicação e associa o seu número de telemóvel.",
+      "prompt": "Что нужно сделать, чтобы пользоваться MB Way?",
+      "options": ["Прийти в банк ещё раз", "Активировать карту, установить приложение и привязать номер телефона", "Позвонить в банк и назвать IBAN", "Подождать письмо с PIN-кодом и открыть второй счёт"],
+      "correct": 1,
+      "explanation": "**Ativar o cartão** — активировать карту, **instalar a aplicação** — установить приложение, **associar o número de telemóvel** — привязать номер мобильного."
+    },
+    {
+      "id": "banco-conta-ex-06",
+      "topicId": "banco-conta",
+      "type": "order-words",
+      "words": ["abrir", "Queria", "à", "conta", "uma", "ordem"],
+      "answer": "Queria abrir uma conta à ordem",
+      "ru": "Я хотел бы открыть текущий счёт.",
+      "explanation": "**Conta à ordem** — текущий счёт (деньги доступны «по требованию»). Вежливое **Queria…** — стандарт для просьб."
+    },
+    {
+      "id": "banco-conta-ex-07",
+      "topicId": "banco-conta",
+      "type": "translate-ru-pt",
+      "ru": "Я потерял карту.",
+      "answer": ["Perdi o cartão.", "Eu perdi o cartão.", "Perdi o meu cartão.", "Eu perdi o meu cartão.", "Perdi o cartão do banco.", "Perdi o cartão bancário."],
+      "explanation": "Банковская карта — **o cartão** (мужской род). Законченное действие — pretérito perfeito: **perdi**."
+    },
+    {
+      "id": "banco-conta-ex-08",
+      "topicId": "banco-conta",
+      "type": "choice",
+      "prompt": "A empresa pede-lhe os dados da conta para pagar o ordenado. O que é que envia?",
+      "options": ["O código PIN", "O extrato", "O comprovativo de IBAN", "A ficha de assinatura"],
+      "correct": 2,
+      "explanation": "Работодателю отправляют **comprovativo de IBAN** — документ с номером счёта и именем владельца. PIN-код не сообщают никому."
+    },
+    {
+      "id": "banco-conta-ex-09",
+      "topicId": "banco-conta",
+      "type": "fill-gap",
+      "prompt": "Trouxe o passaporte e uma fatura da luz em meu ___.",
+      "answer": ["nome"],
+      "hint": "«на моё имя»",
+      "ru": "Я принёс паспорт и счёт за электричество на моё имя.",
+      "explanation": "**Em meu nome** — «на моё имя». Счёт за свет, воду или интернет — самый частый **comprovativo de morada**."
+    },
+    {
+      "id": "banco-conta-ex-10",
+      "topicId": "banco-conta",
+      "type": "transform",
+      "prompt": "Quando é que recebo o cartão de débito?",
+      "instruction": "Замени «o cartão de débito» местоимением",
+      "answer": ["Quando é que o recebo?", "Quando o recebo?"],
+      "explanation": "Прямое дополнение **o cartão** → **o**. После вопросительного слова (**quando**) клитика встаёт перед глаголом: **Quando é que o recebo?**"
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы хотите открыть счёт в португальском банке. Напишите письмо в отделение (6–10 строк): представьтесь и скажите, что недавно переехали в Португалию; спросите, какие документы нужны для открытия счёта; уточните стоимость обслуживания и есть ли счёт без комиссий; спросите, можно ли сразу подключить MB Way; попросите записать вас на встречу.",
+    "sample": "Bom dia,\nO meu nome é Sergei Petrov e mudei-me para Braga há dois meses.\nGostava de abrir uma conta à ordem no vosso banco.\nQue documentos é que são precisos? Já tenho NIF e título de residência.\nQuanto é a comissão de manutenção? Há alguma conta sem comissões?\nTambém queria saber se posso ativar o MB Way logo depois de abrir a conta.\nPodia marcar-me uma reunião para a próxima semana, de manhã?\nObrigado desde já.\nCom os melhores cumprimentos,\nSergei Petrov",
+    "checklist": [
+      "Есть приветствие и прощание (Bom dia… / Com os melhores cumprimentos)",
+      "Используются термины: conta à ordem, comissão de manutenção, MB Way",
+      "Есть вопрос о документах: Que documentos é que são precisos?",
+      "Просьбы смягчены: Gostava de…, Queria saber…, Podia…?",
+      "Клитики после глагола (mudei-me, marcar-me) и telemóvel вместо celular"
+    ]
+  }
+}

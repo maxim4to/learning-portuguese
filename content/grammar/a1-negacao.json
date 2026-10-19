@@ -1,0 +1,423 @@
+{
+  "id": "a1-negacao",
+  "level": "A1",
+  "module": "a1-basics",
+  "title": "Отрицание",
+  "titlePt": "A negação",
+  "requires": [
+    "a1-ser-estar",
+    "a1-pronomes-pessoais-tratamento"
+  ],
+  "theory": "## não перед глаголом\n\nОтрицание **não** ставится прямо перед глаголом — как русское «не»: **Não falo alemão. A loja não abre ao domingo.**\n\nЕсли у глагола есть безударное местоимение, **não** «притягивает» его перед глаголом: **Chamo-me Rui** → **Não me chamo Rui. Lembro-me** → **Não me lembro.**\n\n## Короткий ответ: повторяем глагол\n\nПортугальцы редко отвечают одним «да / нет». Обычно повторяют глагол, а при отрицании **não** звучит дважды:\n\n- **— Falas inglês? — Falo.** (Да.)\n- **— Tens carro? — Não, não tenho.** (Нет.)\n- **— É português? — Não, não sou.**\n\n## Отрицательные слова\n\n| слово | значение | пример |\n|---|---|---|\n| **nada** | ничего | **Não quero nada.** |\n| **ninguém** | никто, никого | **Não conheço ninguém.** |\n| **nunca** | никогда | **Nunca bebo café.** |\n| **nenhum / nenhuma** | ни один, никакой | **Não tenho nenhuma dúvida.** |\n| **nem... nem** | ни... ни | **Não bebo nem café nem chá.** |\n| **também não** | тоже не | **Eu também não.** |\n| **nem eu** | я тоже нет | **— Não percebo. — Nem eu.** |\n| **ainda não** | ещё не | **Ainda não jantei.** |\n| **já não** | больше не, уже не | **Já não moro em Lisboa.** |\n\n**nenhum** согласуется с существительным: **nenhum problema, nenhuma casa**.\n\n## Двойное отрицание: главное правило\n\nКак и в русском, отрицания складываются: **Não vejo nada.** — Ничего не вижу. **Não está ninguém em casa.** — Дома никого нет.\n\nНо есть важное отличие: если отрицательное слово стоит **перед** глаголом, **não** не нужно.\n\n| слово после глагола | слово перед глаголом |\n|---|---|\n| **Não sabe ninguém.** | **Ninguém sabe.** (никто не знает) |\n| **Não como carne nunca.** | **Nunca como carne.** |\n| **Não me interessa nada.** | **Nada me interessa.** |\n\nРусское «никто **не** знает» дословно даёт ошибку *Ninguém não sabe*. Запомните: **ninguém / nunca / nada** в начале — без **não**.\n\n## já não и ainda não\n\n- **já não** = «больше не» (раньше было, теперь нет): **Já não fumo.** — Я больше не курю.\n- **ainda não** = «ещё не» (пока нет, но будет): **Ainda não conheço o Porto.** — Я ещё не был в Порту.\n\n## С модальными глаголами\n\n**não** ставится перед спрягаемым глаголом, а не перед инфинитивом: **Não posso ir.** — Я не могу пойти. **Não quero falar disso.** — Не хочу об этом говорить.\n\n## Полезные выражения\n\n| выражение | значение |\n|---|---|\n| **Nem pensar!** | Ни за что! |\n| **De maneira nenhuma.** | Ни в коем случае. |\n| **Não faz mal.** | Ничего страшного. |\n| **Não há problema.** | Без проблем. |\n| **Nada disso!** | Ничего подобного! |\n\n## Вопрос-подтверждение\n\nВ конце утверждения часто добавляют **, não é?** — «не так ли?»: **Moras em Lisboa, não é?** В ответ на «спасибо» можно услышать **Não tem de quê.** — Не за что.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Não sei.** | Não sei não. / Sei não. | двойное или конечное *não* — бразильская разговорная речь |\n| **Já não moro** aqui. | Não moro **mais** aqui. | «больше не» в pt-PT — **já não** |\n| **Não me lembro.** | Não lembro. / Me lembro não. | в pt-PT глагол возвратный, клитика после **não** — перед глаголом |\n| **..., não é?** | **..., né?** | *né* в Португалии звучит по-бразильски |\n| **Não tem de quê.** / **De nada.** | De nada. / Imagina! | |\n\nКонструкция *não... mais* в Португалии понятна, но звучит непривычно; естественно — **já não**.",
+  "commonErrors": "- **Калька «никто не»**: *Ninguém não sabe* ✗ → **Ninguém sabe** ✓; *Nunca não como carne* ✗ → **Nunca como carne** ✓.\n- **Клитика после глагола при отрицании**: *Não lembro-me* ✗ → **Não me lembro** ✓; *Não chamo-me Rui* ✗ → **Não me chamo Rui** ✓.\n- **«Больше не» как не mais**: *Não fumo mais* → естественнее **Já não fumo** ✓.\n- **Путаница já não / ainda não**: *Já não conheço o Porto* (= «уже не знаю») ✗ → **Ainda não conheço o Porto** ✓ («ещё не»).\n- **Нет согласования nenhum**: *nenhum casa* ✗ → **nenhuma casa** ✓.\n- **Бразильское конечное não**: *Sei não* ✗ → **Não sei** ✓.\n- **Отрицание не перед тем глаголом**: *Eu quero não ir* (если имеется в виду «не хочу») ✗ → **Não quero ir** ✓.",
+  "examples": [
+    {
+      "pt": "Não percebo, pode repetir?",
+      "ru": "Не понимаю, можете повторить?",
+      "audio": true
+    },
+    {
+      "pt": "Ninguém sabe a que horas sai o autocarro.",
+      "ru": "Никто не знает, во сколько отходит автобус.",
+      "audio": true
+    },
+    {
+      "pt": "Já não moro em Lisboa.",
+      "ru": "Я больше не живу в Лиссабоне.",
+      "audio": true
+    },
+    {
+      "pt": "Nunca tomo o pequeno-almoço em casa.",
+      "ru": "Я никогда не завтракаю дома.",
+      "audio": true
+    },
+    {
+      "pt": "— Queres mais alguma coisa? — Não, não quero nada, obrigado.",
+      "ru": "— Хочешь ещё что-нибудь? — Нет, ничего не хочу, спасибо.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-negacao-ex-01",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Eu ___ falo alemão.",
+      "answer": [
+        "não"
+      ],
+      "ru": "Я не говорю по-немецки."
+    },
+    {
+      "id": "a1-negacao-ex-02",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Não conheço ___ aqui.",
+      "answer": [
+        "ninguém"
+      ],
+      "hint": "никого",
+      "ru": "Я никого здесь не знаю."
+    },
+    {
+      "id": "a1-negacao-ex-03",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "___ sabe onde está o Rui.",
+      "answer": [
+        "Ninguém"
+      ],
+      "hint": "никто",
+      "ru": "Никто не знает, где Руй.",
+      "explanation": "Ninguém перед глаголом — без não."
+    },
+    {
+      "id": "a1-negacao-ex-04",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Não quero ___, obrigado.",
+      "answer": [
+        "nada"
+      ],
+      "hint": "ничего",
+      "ru": "Ничего не хочу, спасибо."
+    },
+    {
+      "id": "a1-negacao-ex-05",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Não tenho ___ irmã.",
+      "answer": [
+        "nenhuma"
+      ],
+      "hint": "ни одной",
+      "ru": "У меня нет ни одной сестры.",
+      "explanation": "irmã — ж. р. → nenhuma."
+    },
+    {
+      "id": "a1-negacao-ex-06",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "___ como carne.",
+      "answer": [
+        "Nunca"
+      ],
+      "hint": "никогда",
+      "ru": "Я никогда не ем мясо."
+    },
+    {
+      "id": "a1-negacao-ex-07",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Já ___ moro em Lisboa, agora moro no Porto.",
+      "answer": [
+        "não"
+      ],
+      "ru": "Я больше не живу в Лиссабоне, теперь живу в Порту.",
+      "explanation": "já não = «больше не»."
+    },
+    {
+      "id": "a1-negacao-ex-08",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Não bebo café ___ chá.",
+      "answer": [
+        "nem"
+      ],
+      "ru": "Я не пью ни кофе, ни чай."
+    },
+    {
+      "id": "a1-negacao-ex-09",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "Ninguém ___ a resposta.",
+      "options": [
+        "não sabe",
+        "sabe",
+        "sabes",
+        "não sabem"
+      ],
+      "correct": 1,
+      "explanation": "Ninguém в начале — глагол без não, 3-е лицо ед. ч."
+    },
+    {
+      "id": "a1-negacao-ex-10",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "— Gostas de futebol? — Não, ___.",
+      "options": [
+        "gosto não",
+        "não gostas",
+        "não gosto",
+        "nunca não"
+      ],
+      "correct": 2,
+      "explanation": "Отвечаем глаголом: Não, não gosto."
+    },
+    {
+      "id": "a1-negacao-ex-11",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "Não ___ lembro do nome dele.",
+      "options": [
+        "lembro",
+        "me",
+        "se",
+        "te"
+      ],
+      "correct": 1,
+      "explanation": "Não притягивает клитику: Não me lembro."
+    },
+    {
+      "id": "a1-negacao-ex-12",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "— Não gosto de peixe. — Eu ___.",
+      "options": [
+        "também",
+        "não também",
+        "sim",
+        "também não"
+      ],
+      "correct": 3,
+      "explanation": "«Я тоже не» — eu também não (или nem eu)."
+    },
+    {
+      "id": "a1-negacao-ex-13",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "(больше не) O Pedro ___ aqui.",
+      "options": [
+        "não trabalha mais",
+        "já não trabalha",
+        "trabalha não",
+        "nunca não trabalha"
+      ],
+      "correct": 1,
+      "explanation": "В pt-PT «больше не» — já não."
+    },
+    {
+      "id": "a1-negacao-ex-14",
+      "topicId": "a1-negacao",
+      "type": "transform",
+      "prompt": "Eu falo francês.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "Eu não falo francês.",
+        "Não falo francês."
+      ]
+    },
+    {
+      "id": "a1-negacao-ex-15",
+      "topicId": "a1-negacao",
+      "type": "transform",
+      "prompt": "Alguém sabe a morada.",
+      "instruction": "Сделайте отрицательным: alguém → ninguém.",
+      "answer": [
+        "Ninguém sabe a morada."
+      ]
+    },
+    {
+      "id": "a1-negacao-ex-16",
+      "topicId": "a1-negacao",
+      "type": "transform",
+      "prompt": "Vejo alguma coisa.",
+      "instruction": "Сделайте отрицательным: «что-то» → «ничего».",
+      "answer": [
+        "Não vejo nada.",
+        "Eu não vejo nada."
+      ]
+    },
+    {
+      "id": "a1-negacao-ex-17",
+      "topicId": "a1-negacao",
+      "type": "transform",
+      "prompt": "Chamo-me Rui.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "Não me chamo Rui.",
+        "Eu não me chamo Rui."
+      ],
+      "explanation": "После não местоимение переходит перед глаголом."
+    },
+    {
+      "id": "a1-negacao-ex-18",
+      "topicId": "a1-negacao",
+      "type": "order-words",
+      "words": [
+        "me",
+        "Não",
+        "lembro"
+      ],
+      "answer": "Não me lembro",
+      "ru": "Я не помню."
+    },
+    {
+      "id": "a1-negacao-ex-19",
+      "topicId": "a1-negacao",
+      "type": "order-words",
+      "words": [
+        "nunca",
+        "Ela",
+        "de",
+        "carro",
+        "anda"
+      ],
+      "answer": "Ela nunca anda de carro",
+      "ru": "Она никогда не ездит на машине."
+    },
+    {
+      "id": "a1-negacao-ex-20",
+      "topicId": "a1-negacao",
+      "type": "translate-ru-pt",
+      "ru": "Я не понимаю.",
+      "answer": [
+        "Não percebo.",
+        "Eu não percebo.",
+        "Não compreendo.",
+        "Eu não compreendo.",
+        "Não entendo.",
+        "Eu não entendo."
+      ]
+    },
+    {
+      "id": "a1-negacao-ex-21",
+      "topicId": "a1-negacao",
+      "type": "translate-ru-pt",
+      "ru": "Здесь никого нет.",
+      "answer": [
+        "Não está ninguém aqui.",
+        "Não há ninguém aqui.",
+        "Aqui não há ninguém.",
+        "Aqui não está ninguém.",
+        "Não está cá ninguém.",
+        "Não há cá ninguém.",
+        "Ninguém está aqui.",
+        "Não está aqui ninguém.",
+        "Não há aqui ninguém."
+      ]
+    },
+    {
+      "id": "a1-negacao-ex-22",
+      "topicId": "a1-negacao",
+      "type": "listen-type",
+      "text": "Ninguém quer ir à praia hoje.",
+      "answer": [
+        "Ninguém quer ir à praia hoje."
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-negacao-mt-01",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "— Já jantaste? — Ainda ___.",
+      "answer": [
+        "não"
+      ]
+    },
+    {
+      "id": "a1-negacao-mt-02",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Não há ___ problema.",
+      "answer": [
+        "nenhum"
+      ]
+    },
+    {
+      "id": "a1-negacao-mt-03",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Ela ___ me liga.",
+      "answer": [
+        "nunca"
+      ],
+      "hint": "никогда"
+    },
+    {
+      "id": "a1-negacao-mt-04",
+      "topicId": "a1-negacao",
+      "type": "fill-gap",
+      "prompt": "Não vejo ___ na rua.",
+      "answer": [
+        "ninguém"
+      ],
+      "hint": "никого"
+    },
+    {
+      "id": "a1-negacao-mt-05",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "— Sabes onde fica? — Não, ___.",
+      "options": [
+        "sei não",
+        "não sei",
+        "nunca sei"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-negacao-mt-06",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "Ninguém ___. (нам не помогает)",
+      "options": [
+        "nos ajuda",
+        "ajuda-nos",
+        "não nos ajuda",
+        "não ajuda-nos"
+      ],
+      "correct": 0,
+      "explanation": "Ninguém — без não и притягивает клитику: Ninguém nos ajuda."
+    },
+    {
+      "id": "a1-negacao-mt-07",
+      "topicId": "a1-negacao",
+      "type": "choice",
+      "prompt": "— Não tenho fome. — Nem ___.",
+      "options": [
+        "mim",
+        "me",
+        "eu"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-negacao-mt-08",
+      "topicId": "a1-negacao",
+      "type": "transform",
+      "prompt": "Lembro-me do nome.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "Não me lembro do nome.",
+        "Eu não me lembro do nome."
+      ]
+    },
+    {
+      "id": "a1-negacao-mt-09",
+      "topicId": "a1-negacao",
+      "type": "translate-ru-pt",
+      "ru": "Я больше не курю.",
+      "answer": [
+        "Já não fumo.",
+        "Eu já não fumo."
+      ]
+    },
+    {
+      "id": "a1-negacao-mt-10",
+      "topicId": "a1-negacao",
+      "type": "listen-choice",
+      "text": "Ainda não conheço ninguém aqui.",
+      "options": [
+        "Я больше никого здесь не знаю.",
+        "Я никогда здесь не был.",
+        "Никто меня здесь не знает.",
+        "Я ещё никого здесь не знаю."
+      ],
+      "correct": 3
+    }
+  ]
+}

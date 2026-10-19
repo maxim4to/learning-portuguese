@@ -1,0 +1,205 @@
+{
+  "id": "b2-greve-comboios",
+  "level": "B2",
+  "title": "Greve na CP deixa milhares sem comboio",
+  "paragraphs": [
+    "Milhares de passageiros ficaram ontem sem transporte devido à greve dos trabalhadores da CP, que paralisou grande parte da circulação ferroviária no país. Segundo a empresa, foram suprimidos cerca de três quartos dos comboios previstos, sobretudo nas linhas urbanas de Lisboa e do Porto.",
+    "Nas estações do Cais do Sodré, do Rossio e de Campanhã, as filas para os táxis e os autocarros começaram a formar-se ainda antes das sete da manhã. «Saí de casa às cinco e meia e ainda não sei a que horas vou chegar», queixava-se Marta Silva, enfermeira, que faz todos os dias o percurso entre o Cacém e Lisboa. Muitos acabaram por desistir e voltar para casa; outros partilharam táxis com desconhecidos para não faltarem ao trabalho.",
+    "Os sindicatos que convocaram a paralisação exigem aumentos salariais acima da inflação e a contratação de mais trabalhadores. Em declarações aos jornalistas, o dirigente sindical José Carvalho afirmou que os ferroviários estavam «cansados de promessas» e acusou a administração de ter recusado todas as propostas apresentadas nos últimos meses. Acrescentou que, se não houvesse uma resposta concreta até ao fim do mês, a greve seria repetida.",
+    "A administração da CP, por sua vez, lamentou os transtornos causados aos passageiros e garantiu que tinha apresentado uma proposta «justa e equilibrada». Numa nota enviada às redações, a empresa explicou que não podia ir mais longe sem pôr em causa a sua sustentabilidade financeira e apelou aos sindicatos para que regressassem à mesa das negociações.",
+    "Os serviços mínimos, decretados por um tribunal arbitral, abrangiam apenas uma pequena parte das ligações, o que as associações de utentes consideraram insuficiente. Estas recordaram que quem já tinha comprado bilhete para um comboio suprimido tem direito ao reembolso ou à troca para outra data.",
+    "Contactado pela nossa redação, o Governo disse estar a acompanhar a situação «com preocupação» e admitiu vir a mediar o conflito, mas recusou adiantar prazos. Para já, não está marcada nenhuma nova reunião entre as partes. A circulação deverá ser retomada com normalidade esta manhã."
+  ],
+  "glossary": [
+    {
+      "word": "paralisou",
+      "ru": "парализовала, остановила"
+    },
+    {
+      "word": "circulação ferroviária",
+      "ru": "железнодорожное движение"
+    },
+    {
+      "word": "foram suprimidos",
+      "ru": "были отменены"
+    },
+    {
+      "word": "queixava-se",
+      "ru": "жаловалась"
+    },
+    {
+      "word": "percurso",
+      "ru": "маршрут"
+    },
+    {
+      "word": "convocaram a paralisação",
+      "ru": "объявили забастовку"
+    },
+    {
+      "word": "aumentos salariais",
+      "ru": "повышение зарплат"
+    },
+    {
+      "word": "contratação",
+      "ru": "наём (на работу)"
+    },
+    {
+      "word": "dirigente sindical",
+      "ru": "профсоюзный лидер"
+    },
+    {
+      "word": "ferroviários",
+      "ru": "железнодорожники"
+    },
+    {
+      "word": "por sua vez",
+      "ru": "в свою очередь"
+    },
+    {
+      "word": "transtornos",
+      "ru": "неудобства"
+    },
+    {
+      "word": "redações",
+      "ru": "редакции"
+    },
+    {
+      "word": "pôr em causa",
+      "ru": "поставить под угрозу"
+    },
+    {
+      "word": "apelou aos sindicatos",
+      "ru": "призвала профсоюзы"
+    },
+    {
+      "word": "serviços mínimos",
+      "ru": "минимальный обязательный объём услуг (во время забастовки)"
+    },
+    {
+      "word": "tribunal arbitral",
+      "ru": "арбитражный суд"
+    },
+    {
+      "word": "abrangiam",
+      "ru": "охватывали"
+    },
+    {
+      "word": "utentes",
+      "ru": "пользователи (общественных услуг), пассажиры"
+    },
+    {
+      "word": "adiantar prazos",
+      "ru": "называть сроки"
+    }
+  ],
+  "questions": [
+    {
+      "id": "b2-greve-comboios-q-01",
+      "topicId": "b2-greve-comboios",
+      "type": "choice",
+      "prompt": "O que exigem os sindicatos?",
+      "options": [
+        "A demissão da administração da CP",
+        "Aumentos salariais acima da inflação e mais trabalhadores",
+        "Bilhetes mais baratos para os passageiros",
+        "Novas linhas de comboio"
+      ],
+      "correct": 1,
+      "explanation": "**Exigem aumentos salariais acima da inflação e a contratação de mais trabalhadores.**"
+    },
+    {
+      "id": "b2-greve-comboios-q-02",
+      "topicId": "b2-greve-comboios",
+      "type": "fill-gap",
+      "prompt": "José Carvalho afirmou que os ferroviários ___ (estar) «cansados de promessas».",
+      "answer": [
+        "estavam"
+      ],
+      "hint": "discurso indireto, imperfeito",
+      "ru": "Жозе Карвалью заявил, что железнодорожники «устали от обещаний».",
+      "explanation": "Косвенная речь после глагола в прошедшем (**afirmou que**): настоящее время прямой речи переходит в imperfeito — *«Estamos cansados»* → **afirmou que estavam cansados**."
+    },
+    {
+      "id": "b2-greve-comboios-q-03",
+      "topicId": "b2-greve-comboios",
+      "type": "fill-gap",
+      "prompt": "Acrescentou que, se não houvesse uma resposta concreta, a greve ___ (ser) repetida.",
+      "answer": [
+        "seria"
+      ],
+      "hint": "discurso indireto, condicional",
+      "ru": "Он добавил, что если конкретного ответа не будет, забастовка повторится.",
+      "explanation": "В косвенной речи будущее прямой речи (*a greve será repetida*) переходит в condicional: **seria**. В паре с **se + imperfeito do conjuntivo** (**houvesse**)."
+    },
+    {
+      "id": "b2-greve-comboios-q-04",
+      "topicId": "b2-greve-comboios",
+      "type": "choice",
+      "prompt": "Qual foi a reação da administração da CP?",
+      "options": [
+        "Aceitou todas as exigências dos sindicatos",
+        "Recusou comentar a greve",
+        "Ameaçou despedir os grevistas",
+        "Lamentou os transtornos e defendeu a sua proposta"
+      ],
+      "correct": 3,
+      "explanation": "**Lamentou os transtornos causados aos passageiros e garantiu que tinha apresentado uma proposta «justa e equilibrada».**"
+    },
+    {
+      "id": "b2-greve-comboios-q-05",
+      "topicId": "b2-greve-comboios",
+      "type": "choice",
+      "prompt": "O que acharam as associações de utentes dos serviços mínimos?",
+      "options": [
+        "Que eram insuficientes",
+        "Que eram suficientes",
+        "Que eram ilegais",
+        "O texto não diz"
+      ],
+      "correct": 0,
+      "explanation": "**Abrangiam apenas uma pequena parte das ligações, o que as associações de utentes consideraram insuficiente.**"
+    },
+    {
+      "id": "b2-greve-comboios-q-06",
+      "topicId": "b2-greve-comboios",
+      "type": "choice",
+      "prompt": "O que pode fazer quem comprou bilhete para um comboio suprimido?",
+      "options": [
+        "Nada, perde o dinheiro",
+        "Viajar de graça no dia seguinte",
+        "Pedir o reembolso ou trocar a data",
+        "Pedir um táxi pago pela CP"
+      ],
+      "correct": 2,
+      "explanation": "Ассоциации напомнили: **tem direito ao reembolso ou à troca para outra data**."
+    },
+    {
+      "id": "b2-greve-comboios-q-07",
+      "topicId": "b2-greve-comboios",
+      "type": "translate-ru-pt",
+      "ru": "Компания объяснила, что не может пойти дальше.",
+      "answer": [
+        "A empresa explicou que não podia ir mais longe.",
+        "A empresa explicou que não pode ir mais longe.",
+        "A empresa explicou que não podia ir mais além.",
+        "A empresa explicou que não conseguia ir mais longe."
+      ],
+      "explanation": "В косвенной речи после **explicou que** настоящее время обычно сдвигается в imperfeito: **não podia**. Настоящее (**não pode**) допустимо, если ситуация актуальна до сих пор."
+    },
+    {
+      "id": "b2-greve-comboios-q-08",
+      "topicId": "b2-greve-comboios",
+      "type": "listen-choice",
+      "text": "Para já, não está marcada nenhuma nova reunião entre as partes.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "Новая встреча сторон назначена на завтра.",
+        "Пока что новой встречи между сторонами не назначено.",
+        "Стороны уже договорились на встрече.",
+        "Встреча сторон была отменена в последний момент."
+      ],
+      "correct": 1,
+      "explanation": "**Para já** — «пока что, на данный момент»; **não está marcada nenhuma** — двойное отрицание в португальском нормально: «не назначено никакой»."
+    }
+  ]
+}

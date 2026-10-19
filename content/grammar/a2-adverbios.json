@@ -1,0 +1,444 @@
+{
+  "id": "a2-adverbios",
+  "level": "A2",
+  "module": "a2-frase",
+  "title": "Наречия: образование, bem/mal, muito/pouco, já/ainda",
+  "titlePt": "Advérbios: formação e posição",
+  "requires": [
+    "a1-presente-indicativo-regulares",
+    "a1-negacao"
+  ],
+  "theory": "## Образование на -mente\n\nБерём прилагательное **в женском роде** и добавляем **-mente** (≈ русское «-о»: быстро, спокойно).\n\n| прилагательное | ж. р. | наречие |\n|---|---|---|\n| rápido | rápida | **rapidamente** |\n| lento | lenta | **lentamente** |\n| calmo | calma | **calmamente** |\n| fácil | fácil | **facilmente** |\n| feliz | feliz | **felizmente** (к счастью) |\n| normal | normal | **normalmente** |\n| último | última | **ultimamente** (в последнее время) |\n\nПисьменное ударение исчезает: **rápido → rapidamente**, **fácil → facilmente**. Если наречий два подряд, **-mente** ставят только у последнего: **Falou calma e claramente.**\n\nМногие прилагательные работают как наречия без -mente и не меняются: **falar alto / baixo** (громко / тихо), **ir direto** (прямо), **custar caro** (стоить дорого), **trabalhar duro**. В разговоре вместо **rapidamente** чаще говорят **depressa**: **Anda depressa!** — Иди быстрее!\n\nНе всё переводится через -mente: «очень» — **muito**, «вдруг» — **de repente**, «вовремя» — **a horas**, «специально» — **de propósito**.\n\n## bem / mal — наречия, bom / mau — прилагательные\n\n| наречие (как?) | прилагательное (какой?) |\n|---|---|\n| Ela cozinha **bem**. | A comida é **boa**. |\n| Dormi **mal**. | É um **mau** hotel. |\n\nСравнительная степень: **melhor** (лучше), **pior** (хуже): **Hoje sinto-me melhor.** *Mais bem* в этом значении не говорят.\n\n## muito / pouco / bastante / demasiado\n\nКак **наречие** — не меняются: **Trabalho muito. Eles estão muito cansados.**\nКак **прилагательное** перед существительным — согласуются: **muitas pessoas, pouco tempo, demasiados carros.**\n\n**pouco** ≠ **um pouco**: **Falo pouco** — говорю мало (негатив), **Falo um pouco** — немного говорю.\n**demasiado** — «слишком»: **É demasiado caro.**\n\n## já / ainda\n\n| | значение | пример |\n|---|---|---|\n| **já** | уже | **Já almocei.** |\n| **ainda** | ещё, всё ещё | **Ainda moras no Porto?** |\n| **ainda não** | ещё не | **Ainda não acabei.** |\n| **já não** | больше не, уже не | **Já não fumo.** |\n\nКороткий ответ на вопрос с **já** — само **Já** или глагол: **— Já jantaste? — Já.** / **— Jantei.** В разговоре **já** значит ещё и «сейчас же»: **Vou já!** — Уже иду!\n\n## Место наречия\n\n- Наречия образа действия (**bem, mal, depressa, -mente**) — **после глагола**: **Falo bem português.** Не ставьте их между подлежащим и глаголом, как в русском «я хорошо говорю».\n- **já, ainda, também, só, nunca** — **перед глаголом** и притягивают клитику: **Já te disse. Ainda não o vi.**\n- Наречия времени и места (**hoje, amanhã, aqui, lá**) — в начале или в конце: **Amanhã vou ao Porto.**\n- **muito, demasiado** перед прилагательным/наречием: **muito bem, demasiado tarde.**\n- Наречия на **-mente** с оценкой всей фразы (**felizmente, infelizmente, normalmente**) обычно ставят в начало и отделяют запятой: **Infelizmente, não posso ir.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Já não** moro em Lisboa. | **Não** moro **mais** em Lisboa. | «больше не» в Португалии — **já não** |\n| **Normalmente levanto-me** às sete. | Normalmente **me levanto** às sete. | наречие на -mente не притягивает клитику |\n| Fala **muito bem**. (разг. **bué bem**) | Fala **super bem**. | **bué** — португальский молодёжный сленг, только в неформальной речи |\n| **Vou já!** | Já vou! | в pt-PT оба, но **Vou já** — типично португальское |\n\n**Já não** + глагол — один из самых узнаваемых маркеров pt-PT: *não ... mais* в Португалии звучит по-бразильски.",
+  "commonErrors": "- **Мужской род перед -mente**: *rápidomente, lentomente* ✗ → **rapidamente, lentamente** ✓.\n- **bom вместо bem**: *Ela canta bom* ✗ → **Ela canta bem** ✓; и наоборот *O café é bem* ✗ → **O café é bom** ✓.\n- **Согласование наречия**: *Eles estão muitos cansados* ✗ → **muito cansados** ✓ (перед прилагательным muito не меняется).\n- **Русский порядок слов**: *Eu bem falo inglês* ✗ → **Falo bem inglês** ✓.\n- **Бразильское «больше не»**: *Não trabalho mais lá* ✗ → **Já não trabalho lá** ✓.\n- **«Ещё не» через já**: *Já não almocei* («больше не обедал») ✗ → **Ainda não almocei** ✓.\n- **pouco / um pouco**: *Durmo pouco* — «сплю мало», а не «немного посплю» (**Durmo um pouco**).\n- **Mais bem** вместо **melhor**: *Hoje estou mais bem* ✗ → **Hoje estou melhor** ✓.",
+  "examples": [
+    {
+      "pt": "Felizmente, o comboio chegou a horas.",
+      "ru": "К счастью, поезд пришёл вовремя.",
+      "audio": true
+    },
+    {
+      "pt": "Falas muito bem português!",
+      "ru": "Ты очень хорошо говоришь по-португальски!",
+      "audio": true
+    },
+    {
+      "pt": "Já não moro em Lisboa, agora moro em Braga.",
+      "ru": "Я больше не живу в Лиссабоне, теперь живу в Браге.",
+      "audio": true
+    },
+    {
+      "pt": "Ainda não percebo tudo, mas percebo cada vez mais.",
+      "ru": "Я ещё не всё понимаю, но понимаю всё больше.",
+      "audio": true
+    },
+    {
+      "pt": "Ultimamente tenho dormido mal.",
+      "ru": "В последнее время я плохо сплю.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-adverbios-ex-01",
+      "topicId": "a2-adverbios",
+      "type": "match",
+      "prompt": "Соедините прилагательное с наречием.",
+      "pairs": [
+        {
+          "left": "rápido",
+          "right": "rapidamente"
+        },
+        {
+          "left": "fácil",
+          "right": "facilmente"
+        },
+        {
+          "left": "feliz",
+          "right": "felizmente"
+        },
+        {
+          "left": "último",
+          "right": "ultimamente"
+        },
+        {
+          "left": "calmo",
+          "right": "calmamente"
+        },
+        {
+          "left": "normal",
+          "right": "normalmente"
+        }
+      ]
+    },
+    {
+      "id": "a2-adverbios-ex-02",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "Ela fala português muito ___.",
+      "options": [
+        "bom",
+        "boa",
+        "bem",
+        "bons"
+      ],
+      "correct": 2,
+      "explanation": "Как говорит? → наречие bem. bom/boa — прилагательные."
+    },
+    {
+      "id": "a2-adverbios-ex-03",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "Este bolo é muito ___ (bom / bem).",
+      "answer": [
+        "bom"
+      ],
+      "ru": "Этот торт очень вкусный.",
+      "explanation": "Какой торт? → прилагательное bom."
+    },
+    {
+      "id": "a2-adverbios-ex-04",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "O Rui conduz muito ___ (lento).",
+      "answer": [
+        "lentamente"
+      ],
+      "hint": "наречие на -mente",
+      "ru": "Руй водит очень медленно.",
+      "explanation": "lento → lenta → lentamente."
+    },
+    {
+      "id": "a2-adverbios-ex-05",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "___ (feliz), o autocarro chegou a horas.",
+      "answer": [
+        "felizmente"
+      ],
+      "ru": "К счастью, автобус пришёл вовремя.",
+      "explanation": "feliz одинаково в обоих родах: felizmente."
+    },
+    {
+      "id": "a2-adverbios-ex-06",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "Os miúdos estão ___ cansados.",
+      "answer": [
+        "muito"
+      ],
+      "hint": "очень",
+      "ru": "Дети очень устали.",
+      "explanation": "Перед прилагательным muito — наречие и не согласуется."
+    },
+    {
+      "id": "a2-adverbios-ex-07",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "Hoje há ___ pessoas na praia.",
+      "options": [
+        "muito",
+        "muitas",
+        "muitos",
+        "muita"
+      ],
+      "correct": 1,
+      "explanation": "Перед существительным muito — прилагательное: muitas pessoas (ж. р., мн. ч.)."
+    },
+    {
+      "id": "a2-adverbios-ex-08",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "— Já almoçaste? — ___ não, vou almoçar agora.",
+      "answer": [
+        "ainda"
+      ],
+      "ru": "— Ты уже пообедал? — Ещё нет, сейчас пойду.",
+      "explanation": "«Ещё не» — ainda não."
+    },
+    {
+      "id": "a2-adverbios-ex-09",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "Este exercício é ___ difícil para mim.",
+      "answer": [
+        "demasiado"
+      ],
+      "hint": "слишком",
+      "ru": "Это упражнение для меня слишком трудное."
+    },
+    {
+      "id": "a2-adverbios-ex-10",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "«Я больше не работаю там.»",
+      "options": [
+        "Não trabalho mais lá.",
+        "Ainda não trabalho lá.",
+        "Já não trabalho lá.",
+        "Já trabalho lá."
+      ],
+      "correct": 2,
+      "explanation": "«Больше не» в pt-PT — já não. Não ... mais — бразильский вариант."
+    },
+    {
+      "id": "a2-adverbios-ex-11",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "«Я мало сплю.»",
+      "options": [
+        "Durmo um pouco.",
+        "Durmo pouco.",
+        "Durmo poucos.",
+        "Pouco eu durmo."
+      ],
+      "correct": 1,
+      "explanation": "pouco — «мало»; um pouco — «немного, чуть-чуть»."
+    },
+    {
+      "id": "a2-adverbios-ex-12",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "Hoje sinto-me ___ do que ontem.",
+      "options": [
+        "melhor",
+        "mais bem",
+        "mais bom",
+        "bem"
+      ],
+      "correct": 0,
+      "explanation": "Сравнительная степень от bem — melhor."
+    },
+    {
+      "id": "a2-adverbios-ex-13",
+      "topicId": "a2-adverbios",
+      "type": "transform",
+      "prompt": "Ela fala de forma clara.",
+      "instruction": "Замените «de forma + прилагательное» наречием на -mente.",
+      "answer": [
+        "Ela fala claramente.",
+        "Fala claramente."
+      ]
+    },
+    {
+      "id": "a2-adverbios-ex-14",
+      "topicId": "a2-adverbios",
+      "type": "transform",
+      "prompt": "Ainda moro em Coimbra.",
+      "instruction": "Скажите, что вы больше не живёте в Коимбре.",
+      "answer": [
+        "Já não moro em Coimbra.",
+        "Eu já não moro em Coimbra."
+      ],
+      "explanation": "ainda (ещё) ↔ já não (уже не)."
+    },
+    {
+      "id": "a2-adverbios-ex-15",
+      "topicId": "a2-adverbios",
+      "type": "transform",
+      "prompt": "O professor explicou com calma e com paciência.",
+      "instruction": "Замените выражения двумя наречиями на -mente.",
+      "answer": [
+        "O professor explicou calma e pacientemente.",
+        "O professor explicou calmamente e pacientemente."
+      ],
+      "explanation": "При двух наречиях подряд -mente обычно ставят только у последнего."
+    },
+    {
+      "id": "a2-adverbios-ex-16",
+      "topicId": "a2-adverbios",
+      "type": "order-words",
+      "words": [
+        "ainda",
+        "não",
+        "Eu",
+        "almocei"
+      ],
+      "answer": "Eu ainda não almocei",
+      "explanation": "ainda não стоит перед глаголом."
+    },
+    {
+      "id": "a2-adverbios-ex-17",
+      "topicId": "a2-adverbios",
+      "type": "order-words",
+      "words": [
+        "já",
+        "não",
+        "Ela",
+        "fuma"
+      ],
+      "answer": "Ela já não fuma"
+    },
+    {
+      "id": "a2-adverbios-ex-18",
+      "topicId": "a2-adverbios",
+      "type": "translate-ru-pt",
+      "ru": "Он хорошо готовит.",
+      "answer": [
+        "Ele cozinha bem.",
+        "Cozinha bem."
+      ]
+    },
+    {
+      "id": "a2-adverbios-ex-19",
+      "topicId": "a2-adverbios",
+      "type": "translate-ru-pt",
+      "ru": "Ты ещё работаешь в банке?",
+      "answer": [
+        "Ainda trabalhas no banco?",
+        "Tu ainda trabalhas no banco?",
+        "Ainda estás a trabalhar no banco?",
+        "Tu ainda estás a trabalhar no banco?"
+      ]
+    },
+    {
+      "id": "a2-adverbios-ex-20",
+      "topicId": "a2-adverbios",
+      "type": "translate-ru-pt",
+      "ru": "Я больше не живу в Лиссабоне.",
+      "answer": [
+        "Já não moro em Lisboa.",
+        "Eu já não moro em Lisboa.",
+        "Já não vivo em Lisboa.",
+        "Eu já não vivo em Lisboa."
+      ]
+    },
+    {
+      "id": "a2-adverbios-ex-21",
+      "topicId": "a2-adverbios",
+      "type": "listen-type",
+      "text": "Felizmente, o metro chegou a horas.",
+      "answer": [
+        "Felizmente, o metro chegou a horas."
+      ]
+    },
+    {
+      "id": "a2-adverbios-ex-22",
+      "topicId": "a2-adverbios",
+      "type": "listen-choice",
+      "text": "Já não tenho tempo para isso.",
+      "options": [
+        "У меня ещё нет на это времени.",
+        "У меня уже есть на это время.",
+        "У меня больше нет на это времени.",
+        "У меня мало на это времени."
+      ],
+      "correct": 2
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-adverbios-mt-01",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "Ela resolveu o problema ___ (fácil).",
+      "answer": [
+        "facilmente"
+      ],
+      "ru": "Она легко решила проблему."
+    },
+    {
+      "id": "a2-adverbios-mt-02",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "A sopa está muito ___ (bom / bem).",
+      "answer": [
+        "boa"
+      ],
+      "ru": "Суп очень вкусный.",
+      "explanation": "Какой суп? → прилагательное, согласуется: a sopa → boa."
+    },
+    {
+      "id": "a2-adverbios-mt-03",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "— Ainda fumas? — Não, ___ não fumo.",
+      "answer": [
+        "já"
+      ],
+      "ru": "— Ты ещё куришь? — Нет, уже не курю."
+    },
+    {
+      "id": "a2-adverbios-mt-04",
+      "topicId": "a2-adverbios",
+      "type": "fill-gap",
+      "prompt": "Dormi muito ___ esta noite, estou cansado.",
+      "answer": [
+        "mal"
+      ],
+      "hint": "плохо",
+      "ru": "Я очень плохо спал этой ночью, я устал."
+    },
+    {
+      "id": "a2-adverbios-mt-05",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "Eles estão ___ contentes.",
+      "options": [
+        "muitos",
+        "muito",
+        "muitas",
+        "muita"
+      ],
+      "correct": 1,
+      "explanation": "Перед прилагательным muito не меняется."
+    },
+    {
+      "id": "a2-adverbios-mt-06",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "«Ещё нет.»",
+      "options": [
+        "Já não.",
+        "Não mais.",
+        "Ainda sim.",
+        "Ainda não."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-adverbios-mt-07",
+      "topicId": "a2-adverbios",
+      "type": "choice",
+      "prompt": "Выберите правильный порядок слов:",
+      "options": [
+        "Falo bem francês.",
+        "Eu bem falo francês.",
+        "Bem falo eu francês.",
+        "Eu falo francês bom."
+      ],
+      "correct": 0,
+      "explanation": "Наречие образа действия ставится после глагола."
+    },
+    {
+      "id": "a2-adverbios-mt-08",
+      "topicId": "a2-adverbios",
+      "type": "transform",
+      "prompt": "Ele respondeu de forma rápida.",
+      "instruction": "Замените выражение наречием на -mente.",
+      "answer": [
+        "Ele respondeu rapidamente.",
+        "Respondeu rapidamente."
+      ]
+    },
+    {
+      "id": "a2-adverbios-mt-09",
+      "topicId": "a2-adverbios",
+      "type": "translate-ru-pt",
+      "ru": "Она очень хорошо поёт.",
+      "answer": [
+        "Ela canta muito bem.",
+        "Canta muito bem."
+      ]
+    },
+    {
+      "id": "a2-adverbios-mt-10",
+      "topicId": "a2-adverbios",
+      "type": "listen-type",
+      "text": "Ultimamente tenho dormido mal.",
+      "answer": [
+        "Ultimamente tenho dormido mal."
+      ]
+    }
+  ]
+}

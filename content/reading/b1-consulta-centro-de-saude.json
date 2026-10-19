@@ -1,0 +1,202 @@
+{
+  "id": "b1-consulta-centro-de-saude",
+  "level": "B1",
+  "title": "Uma consulta no centro de saúde",
+  "paragraphs": [
+    "Na segunda-feira, o Pedro acordou com dores de garganta e febre. Pensou que era apenas uma constipação, mas na quarta-feira continuava a sentir-se mal e decidiu ligar para a linha SNS 24.",
+    "A enfermeira fez-lhe várias perguntas: há quantos dias tinha febre, se tossia, se tinha alguma doença crónica. No fim, disse-lhe que era melhor ir ao centro de saúde e marcou-lhe uma consulta para essa mesma tarde. Explicou também que não precisava de pagar nada.",
+    "Ao chegar, o Pedro deu o número de utente na receção e sentou-se na sala de espera. Estavam lá umas quinze pessoas: uma senhora idosa com o neto, um homem com o braço ao peito, uma mãe a tentar acalmar um bebé que não parava de chorar. Esperou quase uma hora.",
+    "Finalmente, chamaram-no. Não era a sua médica de família, que estava de férias, mas um médico jovem e simpático. Auscultou-o, viu-lhe a garganta e mediu-lhe a temperatura. — Tem uma amigdalite — disse. — Vou receitar-lhe um antibiótico. Tome um comprimido de oito em oito horas, durante sete dias, e não interrompa o tratamento mesmo que se sinta melhor.",
+    "O Pedro perguntou se podia ir trabalhar no dia seguinte. O médico achou que não e passou-lhe um certificado de incapacidade temporária por três dias.",
+    "A receita chegou-lhe por SMS, com um código. Na farmácia ao lado, bastou mostrar o telemóvel. Pagou menos de cinco euros e voltou para casa, decidido a passar os dias seguintes no sofá, com chá e mantas."
+  ],
+  "glossary": [
+    {
+      "word": "dores de garganta",
+      "ru": "боль в горле"
+    },
+    {
+      "word": "constipação",
+      "ru": "простуда"
+    },
+    {
+      "word": "continuava a sentir-se mal",
+      "ru": "по-прежнему плохо себя чувствовал"
+    },
+    {
+      "word": "linha SNS 24",
+      "ru": "горячая линия Национальной службы здравоохранения"
+    },
+    {
+      "word": "se tossia",
+      "ru": "кашлял ли он"
+    },
+    {
+      "word": "marcou-lhe uma consulta",
+      "ru": "записала его на приём"
+    },
+    {
+      "word": "número de utente",
+      "ru": "номер пациента в системе здравоохранения"
+    },
+    {
+      "word": "receção",
+      "ru": "регистратура, ресепшен"
+    },
+    {
+      "word": "sala de espera",
+      "ru": "зал ожидания"
+    },
+    {
+      "word": "com o braço ao peito",
+      "ru": "с рукой на перевязи"
+    },
+    {
+      "word": "médica de família",
+      "ru": "семейный (участковый) врач"
+    },
+    {
+      "word": "Auscultou-o",
+      "ru": "послушал его (стетоскопом)"
+    },
+    {
+      "word": "amigdalite",
+      "ru": "ангина, тонзиллит"
+    },
+    {
+      "word": "receitar-lhe",
+      "ru": "выписать вам"
+    },
+    {
+      "word": "comprimido",
+      "ru": "таблетка"
+    },
+    {
+      "word": "de oito em oito horas",
+      "ru": "каждые восемь часов"
+    },
+    {
+      "word": "certificado de incapacidade temporária",
+      "ru": "больничный лист"
+    },
+    {
+      "word": "bastou mostrar",
+      "ru": "достаточно было показать"
+    },
+    {
+      "word": "mantas",
+      "ru": "пледы, одеяла"
+    }
+  ],
+  "questions": [
+    {
+      "id": "b1-consulta-centro-de-saude-q-01",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "choice",
+      "prompt": "Porque é que o Pedro ligou para a linha SNS 24?",
+      "options": [
+        "Porque queria mudar de médico de família",
+        "Porque continuava doente ao fim de dois dias",
+        "Porque precisava de uma receita para a mãe",
+        "Porque tinha partido o braço"
+      ],
+      "correct": 1,
+      "explanation": "Он думал, что это простуда, но **na quarta-feira continuava a sentir-se mal** — и позвонил на линию SNS 24."
+    },
+    {
+      "id": "b1-consulta-centro-de-saude-q-02",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "choice",
+      "prompt": "Quanto pagou o Pedro pela consulta?",
+      "options": [
+        "Nada",
+        "Menos de cinco euros",
+        "Cinco euros",
+        "O texto não diz"
+      ],
+      "correct": 0,
+      "explanation": "Медсестра объяснила, что **não precisava de pagar nada**. Меньше пяти евро он заплатил в аптеке за лекарство."
+    },
+    {
+      "id": "b1-consulta-centro-de-saude-q-03",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "fill-gap",
+      "prompt": "Ao chegar, o Pedro deu o número de ___ na receção.",
+      "answer": [
+        "utente"
+      ],
+      "hint": "пациент госсистемы здравоохранения",
+      "ru": "По приходе Педру назвал в регистратуре свой номер пациента.",
+      "explanation": "**Número de utente** — номер пациента в SNS (Serviço Nacional de Saúde); его спрашивают в любом медучреждении."
+    },
+    {
+      "id": "b1-consulta-centro-de-saude-q-04",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "choice",
+      "prompt": "Porque é que o Pedro não foi atendido pela sua médica de família?",
+      "options": [
+        "Porque ela já não trabalhava lá",
+        "Porque estava doente",
+        "Porque estava de férias",
+        "Porque só atendia de manhã"
+      ],
+      "correct": 2,
+      "explanation": "**Não era a sua médica de família, que estava de férias.**"
+    },
+    {
+      "id": "b1-consulta-centro-de-saude-q-05",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "fill-gap",
+      "prompt": "Tome um comprimido de oito ___ oito horas.",
+      "answer": [
+        "em"
+      ],
+      "hint": "предлог",
+      "ru": "Принимайте по одной таблетке каждые восемь часов.",
+      "explanation": "**De oito em oito horas** — «каждые восемь часов». Так же: **de dois em dois dias** — через день."
+    },
+    {
+      "id": "b1-consulta-centro-de-saude-q-06",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "fill-gap",
+      "prompt": "Não interrompa o tratamento mesmo que se ___ melhor.",
+      "answer": [
+        "sinta"
+      ],
+      "hint": "sentir, conjuntivo",
+      "ru": "Не прерывайте лечение, даже если почувствуете себя лучше.",
+      "explanation": "После **mesmo que** («даже если») — presente do conjuntivo: **sentir → sinta**."
+    },
+    {
+      "id": "b1-consulta-centro-de-saude-q-07",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "translate-ru-pt",
+      "ru": "Врач выдал ему больничный на три дня.",
+      "answer": [
+        "O médico passou-lhe um certificado de incapacidade temporária por três dias.",
+        "O médico passou-lhe uma baixa por três dias.",
+        "O médico deu-lhe baixa por três dias.",
+        "O médico passou-lhe baixa por três dias.",
+        "O médico deu-lhe uma baixa por três dias.",
+        "O médico deu-lhe um certificado de incapacidade temporária por três dias.",
+        "O médico passou-lhe a baixa por três dias."
+      ],
+      "explanation": "Официально — **certificado de incapacidade temporária**, в разговоре — **baixa (médica)**. «Выдать» — **passar**: **passou-lhe** (энклиза, «магнита» нет)."
+    },
+    {
+      "id": "b1-consulta-centro-de-saude-q-08",
+      "topicId": "b1-consulta-centro-de-saude",
+      "type": "listen-choice",
+      "text": "A receita chegou-lhe por SMS, com um código.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "Рецепт пришёл ему по SMS, с кодом.",
+        "Рецепт ему дали на бумаге.",
+        "Он отправил код по SMS.",
+        "Рецепт пришёл по почте."
+      ],
+      "correct": 0,
+      "explanation": "**A receita** — рецепт; **chegou-lhe** — пришёл ему; в Португалии электронный рецепт приходит SMS-кой с кодами для аптеки."
+    }
+  ]
+}

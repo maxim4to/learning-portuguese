@@ -1,0 +1,184 @@
+{
+  "id": "a2-a-minha-rotina",
+  "level": "A2",
+  "title": "A minha rotina",
+  "paragraphs": [
+    "Chamo-me Duarte, tenho 32 anos e trabalho num banco em Coimbra. Durante a semana, a minha rotina é quase sempre igual.",
+    "Acordo às sete e um quarto, levanto-me logo e tomo um duche rápido. Ao pequeno-almoço, como uma torrada e bebo um café com leite.",
+    "Às oito, saio de casa e apanho o autocarro na paragem em frente ao meu prédio. A viagem demora vinte minutos. Normalmente, aproveito para ler as notícias no telemóvel.",
+    "No trabalho, estou quase sempre a responder a e-mails ou a falar com clientes. Ao meio-dia e meia, almoço com os colegas numa cantina perto do escritório. O prato do dia custa sete euros e é bastante bom.",
+    "Saio às seis. Duas vezes por semana, vou ao ginásio; nos outros dias, vou diretamente para casa. À noite, janto com a minha mulher, a Rita, e conversamos sobre o dia. Raramente vemos televisão: preferimos ler ou ouvir música.",
+    "Deito-me por volta das onze. Ao fim de semana, nunca ponho o despertador! Durmo até tarde e, quando está bom tempo, vamos dar um passeio junto ao Mondego."
+  ],
+  "glossary": [
+    {
+      "word": "quase sempre igual",
+      "ru": "почти всегда одинаковая"
+    },
+    {
+      "word": "levanto-me logo",
+      "ru": "сразу встаю"
+    },
+    {
+      "word": "tomo um duche",
+      "ru": "принимаю душ"
+    },
+    {
+      "word": "apanho o autocarro",
+      "ru": "сажусь на автобус"
+    },
+    {
+      "word": "paragem",
+      "ru": "остановка"
+    },
+    {
+      "word": "em frente ao meu prédio",
+      "ru": "напротив моего дома"
+    },
+    {
+      "word": "demora",
+      "ru": "длится, занимает (время)"
+    },
+    {
+      "word": "aproveito para",
+      "ru": "пользуюсь случаем, чтобы"
+    },
+    {
+      "word": "escritório",
+      "ru": "офис"
+    },
+    {
+      "word": "cantina",
+      "ru": "столовая"
+    },
+    {
+      "word": "prato do dia",
+      "ru": "блюдо дня, бизнес-ланч"
+    },
+    {
+      "word": "bastante",
+      "ru": "довольно"
+    },
+    {
+      "word": "Duas vezes por semana",
+      "ru": "два раза в неделю"
+    },
+    {
+      "word": "Raramente",
+      "ru": "редко"
+    },
+    {
+      "word": "Deito-me",
+      "ru": "ложусь спать"
+    },
+    {
+      "word": "por volta das onze",
+      "ru": "около одиннадцати"
+    },
+    {
+      "word": "despertador",
+      "ru": "будильник"
+    },
+    {
+      "word": "dar um passeio",
+      "ru": "прогуляться"
+    }
+  ],
+  "questions": [
+    {
+      "id": "a2-a-minha-rotina-q-01",
+      "topicId": "a2-a-minha-rotina",
+      "type": "choice",
+      "prompt": "Onde é que o Duarte trabalha?",
+      "options": [
+        "Numa cantina em Coimbra",
+        "Num banco em Coimbra",
+        "Numa escola no Porto",
+        "Num ginásio em Lisboa"
+      ],
+      "correct": 1,
+      "explanation": "Первая фраза: **trabalho num banco em Coimbra**."
+    },
+    {
+      "id": "a2-a-minha-rotina-q-02",
+      "topicId": "a2-a-minha-rotina",
+      "type": "fill-gap",
+      "prompt": "Acordo às sete e um quarto, ___ logo e tomo um duche rápido.",
+      "answer": [
+        "levanto-me"
+      ],
+      "hint": "встаю (levantar-se)",
+      "ru": "Я просыпаюсь в четверть восьмого, сразу встаю и быстро принимаю душ.",
+      "explanation": "Возвратный глагол **levantar-se**; в утвердительной фразе без «магнитов» местоимение ставится после глагола через дефис: **levanto-me**."
+    },
+    {
+      "id": "a2-a-minha-rotina-q-03",
+      "topicId": "a2-a-minha-rotina",
+      "type": "choice",
+      "prompt": "O que é que o Duarte faz no autocarro?",
+      "options": [
+        "Dorme um pouco",
+        "Fala ao telemóvel com a Rita",
+        "Lê as notícias no telemóvel",
+        "Responde a e-mails"
+      ],
+      "correct": 2,
+      "explanation": "**Aproveito para ler as notícias no telemóvel** — в дороге он читает новости."
+    },
+    {
+      "id": "a2-a-minha-rotina-q-04",
+      "topicId": "a2-a-minha-rotina",
+      "type": "fill-gap",
+      "prompt": "Duas ___ por semana, vou ao ginásio.",
+      "answer": [
+        "vezes"
+      ],
+      "hint": "раза",
+      "ru": "Два раза в неделю я хожу в спортзал.",
+      "explanation": "**Duas vezes por semana** — «два раза в неделю». **Vez** во множественном числе — **vezes**."
+    },
+    {
+      "id": "a2-a-minha-rotina-q-05",
+      "topicId": "a2-a-minha-rotina",
+      "type": "choice",
+      "prompt": "O que é que o Duarte e a Rita fazem à noite, normalmente?",
+      "options": [
+        "Veem televisão",
+        "Vão ao ginásio",
+        "Leem ou ouvem música",
+        "Dão um passeio junto ao rio"
+      ],
+      "correct": 2,
+      "explanation": "**Raramente vemos televisão: preferimos ler ou ouvir música.** Прогулка вдоль Мондегу — это выходные."
+    },
+    {
+      "id": "a2-a-minha-rotina-q-06",
+      "topicId": "a2-a-minha-rotina",
+      "type": "translate-ru-pt",
+      "ru": "По выходным я никогда не ставлю будильник.",
+      "answer": [
+        "Ao fim de semana, nunca ponho o despertador.",
+        "Ao fim de semana, eu nunca ponho o despertador.",
+        "Aos fins de semana, nunca ponho o despertador.",
+        "Aos fins de semana, eu nunca ponho o despertador.",
+        "Nunca ponho o despertador ao fim de semana.",
+        "Nunca ponho o despertador aos fins de semana."
+      ],
+      "explanation": "«Ставить будильник» — **pôr o despertador** (наст. вр. **ponho**). «По выходным» — **ao fim de semana** / **aos fins de semana**."
+    },
+    {
+      "id": "a2-a-minha-rotina-q-07",
+      "topicId": "a2-a-minha-rotina",
+      "type": "listen-choice",
+      "text": "A viagem demora vinte minutos.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "Поездка занимает двадцать минут.",
+        "Поездка занимает двенадцать минут.",
+        "Я опаздываю на двадцать минут."
+      ],
+      "correct": 0,
+      "explanation": "**Demorar** — «занимать (время), длиться»; **vinte** — двадцать (двенадцать — **doze**)."
+    }
+  ]
+}

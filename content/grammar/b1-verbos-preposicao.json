@@ -1,0 +1,428 @@
+{
+  "id": "b1-verbos-preposicao",
+  "level": "B1",
+  "module": "b1-lexico-estilo",
+  "title": "Глаголы с предлогами",
+  "titlePt": "Verbos com preposição",
+  "requires": [
+    "a1-gostar-de",
+    "a1-preposicoes-lugar-contracoes",
+    "a2-verbos-reflexos"
+  ],
+  "theory": "## Управление надо учить вместе с глаголом\n\nМногие португальские глаголы требуют определённого предлога, и он часто не совпадает с русским. Учите глагол сразу с предлогом: не «precisar», а **precisar de**. Предлог сливается с артиклем и местоимением: **preciso do carro**, **penso nisso**, **sonhei contigo**, **lembro-me dela**.\n\n## Самые частотные\n\n| предлог | глаголы | пример |\n|---|---|---|\n| **de** | gostar de, precisar de, lembrar-se de, esquecer-se de, depender de, desistir de, mudar de, tratar de, ter medo de | **Preciso de ajuda.** **Lembras-te de mim?** |\n| **a** | começar a, aprender a, voltar a, ajudar (alguém) a, ensinar a, chegar a, assistir a | **Comecei a aprender português.** |\n| **em** | pensar em, acreditar em, confiar em, reparar em, entrar em, insistir em | **Penso muito em ti.** **Entrei no café.** |\n| **com** | sonhar com, casar com, contar com, concordar com, preocupar-se com | **Sonhei com o mar.** **Conto contigo.** |\n| **por** | esperar por, perguntar por, interessar-se por, passar por | **Espera por mim!** **Perguntaram por ti.** |\n\n## Русская модель против португальской\n\n| по-русски | по-португальски | ловушка |\n|---|---|---|\n| нуждаться **в** чём-то | **precisar de** | не *em* |\n| думать **о** ком-то | **pensar em** | не *de*, не *sobre* |\n| мечтать **о** / видеть во сне | **sonhar com** | не *de* |\n| жениться **на** | **casar com** | не *em* |\n| зависеть **от** | **depender de** | совпадает |\n| верить **в** | **acreditar em** | совпадает |\n| помнить что-то | **lembrar-se de** | возвратный + **de** |\n| помогать **кому** | **ajudar alguém** | прямое дополнение: **ajudo-o**, не *ajudo-lhe* |\n| ждать кого-то | **esperar alguém / esperar por alguém** | оба варианта нормальны |\n\n## Один глагол — разные предлоги\n\n| конструкция | значение | пример |\n|---|---|---|\n| **acabar de** + inf. | только что (сделать) | **Acabei de chegar.** — Я только что пришёл. |\n| **acabar por** + inf. | в итоге (сделать) | **Acabámos por ficar em casa.** — В итоге остались дома. |\n| **deixar de** + inf. | перестать | **Deixei de fumar.** — Я бросил курить. |\n| **voltar a** + inf. | снова (сделать) | **Voltou a ligar.** — Он опять позвонил. |\n| **começar por** + inf. | начать с того, что | **Comecei por pedir desculpa.** |\n\n## Глаголы, которые меняют смысл с предлогом\n\n| конструкция | значение | пример |\n|---|---|---|\n| **ficar com** | взять себе, оставить у себя | **Fico com este.** — Беру этот (в магазине). |\n| **dar com** | наткнуться, найти | **Dei com as chaves debaixo do sofá.** |\n| **ir ter com** | пойти к кому-то, встретиться | **Vou ter com a Rita ao café.** |\n| **dar para** | выходить на; быть возможным | **A janela dá para o rio.** **Hoje não dá para ir.** |\n| **tratar de** | заняться, позаботиться | **Eu trato disso.** — Я этим займусь. |\n\n## Предлог перед que\n\nЕсли после глагола идёт придаточное, предлог в норме сохраняется: **Lembro-me de que...**, **Tenho a certeza de que...**, **Insisto em que...**. В разговорной речи его часто опускают, но в письме лучше оставить.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Preciso de ti.** | **Preciso de você.** | предлог тот же, отличается местоимение |\n| **Vou ter com a Rita.** | **Vou encontrar a Rita.** | **ir ter com** — типично португальское выражение |\n| **Esqueci-me de ligar.** | **Esqueci de ligar.** | в pt-BR возвратное **-me** часто выпадает |\n| **Lembro-me disso.** | **Lembro disso.** | то же |\n| **Gostava de falar com o gerente.** | **Gostaria de falar com o gerente.** | imperfeito вместо condicional — норма вежливости в pt-PT |\n\nПредложное управление в двух нормах в основном совпадает; разница — в возвратных формах и в чисто португальских выражениях (**ir ter com**, **dar com**).",
+  "commonErrors": "- **Калька с русского «думать о»**: *Penso de ti* / *Penso sobre ti* ✗ → **Penso em ti** ✓.\n- **«Нуждаться в»**: *Preciso em ajuda* ✗, *Preciso ajuda* ✗ → **Preciso de ajuda** ✓.\n- **«Мечтать о»**: *Sonho de uma casa* ✗ → **Sonho com uma casa** ✓.\n- **«Жениться на»**: *Casou na Ana* ✗ → **Casou com a Ana** ✓.\n- **Потеря возвратности**: *Lembro o nome dele* ✗ → **Lembro-me do nome dele** ✓; *Esqueci de...* → **Esqueci-me de...** ✓.\n- **Путаница acabar de / acabar por**: *Acabei por chegar* («в итоге пришёл») ≠ **Acabei de chegar** («только что пришёл»).\n- **«Начать» с de**: *Comecei de estudar* ✗ → **Comecei a estudar** ✓.\n- **ajudar с дательным**: *Ajudei-lhe* ✗ → **Ajudei-o / Ajudei-a** ✓.\n- **entrar a**: *Entrei a casa* ✗ → **Entrei em casa** ✓, **Entrei no metro** ✓.",
+  "examples": [
+    {
+      "pt": "Lembras-te do nome daquele restaurante?",
+      "ru": "Ты помнишь название того ресторана?",
+      "audio": true
+    },
+    {
+      "pt": "Estou sempre a pensar em ti.",
+      "ru": "Я всё время думаю о тебе.",
+      "audio": true
+    },
+    {
+      "pt": "Esta noite sonhei com a casa dos meus avós.",
+      "ru": "Сегодня ночью мне снился дом бабушки и дедушки.",
+      "audio": true
+    },
+    {
+      "pt": "Acabei de sair do trabalho, vou ter contigo ao café.",
+      "ru": "Я только что вышел с работы, подойду к тебе в кафе.",
+      "audio": true
+    },
+    {
+      "pt": "Depois de muito discutir, acabámos por ficar em casa.",
+      "ru": "После долгих споров мы в итоге остались дома.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-verbos-preposicao-ex-01",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Preciso ___ ajuda com as malas.",
+      "answer": [
+        "de"
+      ],
+      "ru": "Мне нужна помощь с чемоданами."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-02",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Lembras-te ___ mim?",
+      "answer": [
+        "de"
+      ],
+      "ru": "Ты меня помнишь?"
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-03",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Estou a pensar ___ ti.",
+      "answer": [
+        "em"
+      ],
+      "ru": "Я думаю о тебе.",
+      "explanation": "pensar em — «думать о»."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-04",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Esta noite sonhei ___ o meu avô.",
+      "answer": [
+        "com"
+      ],
+      "ru": "Сегодня ночью мне снился дедушка."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-05",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Comecei ___ aprender português no ano passado.",
+      "answer": [
+        "a"
+      ],
+      "ru": "Я начал учить португальский в прошлом году."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-06",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Depois de muita discussão, acabámos ___ ficar em casa.",
+      "answer": [
+        "por"
+      ],
+      "ru": "После долгих споров мы в итоге остались дома.",
+      "explanation": "acabar por — «в итоге»."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-07",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Olha, o comboio acabou ___ chegar agora mesmo.",
+      "answer": [
+        "de"
+      ],
+      "ru": "Смотри, поезд только что прибыл.",
+      "explanation": "acabar de — «только что» (agora mesmo); acabar por — «в итоге»."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-08",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Ele deixou ___ fumar há dois anos.",
+      "answer": [
+        "de"
+      ],
+      "ru": "Он бросил курить два года назад."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-09",
+      "topicId": "b1-verbos-preposicao",
+      "type": "choice",
+      "prompt": "Vou ter ___ a Rita ao café.",
+      "options": [
+        "à",
+        "com",
+        "a",
+        "para"
+      ],
+      "correct": 1,
+      "explanation": "ir ter com alguém — встретиться с кем-то, подойти к кому-то."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-10",
+      "topicId": "b1-verbos-preposicao",
+      "type": "choice",
+      "prompt": "— Qual dos casacos leva? — Fico ___ o azul.",
+      "options": [
+        "de",
+        "em",
+        "com",
+        "por"
+      ],
+      "correct": 2,
+      "explanation": "ficar com — взять себе."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-11",
+      "topicId": "b1-verbos-preposicao",
+      "type": "choice",
+      "prompt": "Ontem dei ___ uma carteira na rua.",
+      "options": [
+        "em",
+        "de",
+        "a",
+        "com"
+      ],
+      "correct": 3,
+      "explanation": "dar com — наткнуться, найти."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-12",
+      "topicId": "b1-verbos-preposicao",
+      "type": "choice",
+      "prompt": "Ela não confia ___ ninguém.",
+      "options": [
+        "em",
+        "de",
+        "com",
+        "a"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-13",
+      "topicId": "b1-verbos-preposicao",
+      "type": "transform",
+      "prompt": "Ele ainda fuma.",
+      "instruction": "Скажите, что он бросил курить (deixar de).",
+      "answer": [
+        "Ele deixou de fumar.",
+        "Deixou de fumar."
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-14",
+      "topicId": "b1-verbos-preposicao",
+      "type": "transform",
+      "prompt": "Cheguei agora mesmo a casa.",
+      "instruction": "Перестройте с acabar de.",
+      "answer": [
+        "Acabei de chegar a casa.",
+        "Eu acabei de chegar a casa."
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-15",
+      "topicId": "b1-verbos-preposicao",
+      "type": "transform",
+      "prompt": "Penso no exame.",
+      "instruction": "Замените «no exame» на «isso».",
+      "answer": [
+        "Penso nisso.",
+        "Eu penso nisso."
+      ],
+      "explanation": "em + isso → nisso."
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-16",
+      "topicId": "b1-verbos-preposicao",
+      "type": "order-words",
+      "words": [
+        "Esqueci-me",
+        "de",
+        "trazer",
+        "as",
+        "chaves"
+      ],
+      "answer": "Esqueci-me de trazer as chaves"
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-17",
+      "topicId": "b1-verbos-preposicao",
+      "type": "order-words",
+      "words": [
+        "Ajudei",
+        "a",
+        "minha",
+        "vizinha",
+        "a",
+        "mudar",
+        "de",
+        "casa"
+      ],
+      "answer": "Ajudei a minha vizinha a mudar de casa"
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-18",
+      "topicId": "b1-verbos-preposicao",
+      "type": "translate-ru-pt",
+      "ru": "От чего это зависит?",
+      "answer": [
+        "Depende de quê?",
+        "Isso depende de quê?",
+        "De que depende isso?",
+        "De que é que isso depende?",
+        "De que depende?",
+        "Depende do quê?",
+        "Isso depende do quê?"
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-19",
+      "topicId": "b1-verbos-preposicao",
+      "type": "translate-ru-pt",
+      "ru": "Я мечтаю о доме у моря.",
+      "answer": [
+        "Sonho com uma casa à beira-mar.",
+        "Sonho com uma casa junto ao mar.",
+        "Sonho com uma casa perto do mar.",
+        "Eu sonho com uma casa à beira-mar.",
+        "Eu sonho com uma casa junto ao mar.",
+        "Eu sonho com uma casa perto do mar."
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-20",
+      "topicId": "b1-verbos-preposicao",
+      "type": "listen-type",
+      "text": "Não te esqueças de ligar à tua mãe.",
+      "answer": [
+        "Não te esqueças de ligar à tua mãe."
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-ex-21",
+      "topicId": "b1-verbos-preposicao",
+      "type": "match",
+      "prompt": "Соедините выражение с его значением.",
+      "pairs": [
+        {
+          "left": "dar com",
+          "right": "наткнуться, найти"
+        },
+        {
+          "left": "ficar com",
+          "right": "взять себе"
+        },
+        {
+          "left": "ir ter com",
+          "right": "встретиться с кем-то"
+        },
+        {
+          "left": "acabar por",
+          "right": "в итоге (сделать)"
+        },
+        {
+          "left": "acabar de",
+          "right": "только что (сделать)"
+        },
+        {
+          "left": "deixar de",
+          "right": "перестать"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-verbos-preposicao-mt-01",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Gostava ___ falar com o gerente.",
+      "answer": [
+        "de"
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-02",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Acreditas ___ fantasmas?",
+      "answer": [
+        "em"
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-03",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Ele nunca concorda ___ ninguém.",
+      "answer": [
+        "com"
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-04",
+      "topicId": "b1-verbos-preposicao",
+      "type": "fill-gap",
+      "prompt": "Ontem voltei ___ ver o filme.",
+      "answer": [
+        "a"
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-05",
+      "topicId": "b1-verbos-preposicao",
+      "type": "choice",
+      "prompt": "Já te lembraste ___ que te pedi?",
+      "options": [
+        "o",
+        "no",
+        "do",
+        "pelo"
+      ],
+      "correct": 2,
+      "explanation": "lembrar-se de + o que → do que."
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-06",
+      "topicId": "b1-verbos-preposicao",
+      "type": "choice",
+      "prompt": "Ele mudou ___ ideias.",
+      "options": [
+        "as",
+        "de",
+        "em",
+        "com"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-07",
+      "topicId": "b1-verbos-preposicao",
+      "type": "choice",
+      "prompt": "Esperei ___ ti mais de uma hora.",
+      "options": [
+        "a",
+        "de",
+        "por",
+        "em"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-08",
+      "topicId": "b1-verbos-preposicao",
+      "type": "transform",
+      "prompt": "Lembro o nome dele.",
+      "instruction": "Исправьте ошибку (lembrar-se de).",
+      "answer": [
+        "Lembro-me do nome dele."
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-09",
+      "topicId": "b1-verbos-preposicao",
+      "type": "translate-ru-pt",
+      "ru": "Я думаю о тебе.",
+      "answer": [
+        "Penso em ti.",
+        "Eu penso em ti.",
+        "Estou a pensar em ti.",
+        "Eu estou a pensar em ti."
+      ]
+    },
+    {
+      "id": "b1-verbos-preposicao-mt-10",
+      "topicId": "b1-verbos-preposicao",
+      "type": "listen-choice",
+      "text": "Acabei por ficar em casa.",
+      "options": [
+        "Я только что пришёл домой.",
+        "Я перестал сидеть дома.",
+        "В итоге я остался дома.",
+        "Я закончил дела дома."
+      ],
+      "correct": 2
+    }
+  ]
+}

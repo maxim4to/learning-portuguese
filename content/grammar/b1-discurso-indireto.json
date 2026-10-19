@@ -1,0 +1,439 @@
+{
+  "id": "b1-discurso-indireto",
+  "level": "B1",
+  "module": "b1-sintaxe",
+  "title": "Косвенная речь",
+  "titlePt": "Discurso indireto",
+  "requires": [
+    "a2-preterito-imperfeito",
+    "a2-mais-que-perfeito",
+    "b1-imperfeito-conjuntivo-condicional"
+  ],
+  "theory": "## Глаголы речи\n\n| глагол | конструкция | пример |\n|---|---|---|\n| **dizer** | dizer (a alguém) que | **Ela disse-me que estava cansada.** |\n| **contar, explicar, responder, avisar** | ... que | **Respondeu que não sabia.** |\n| **perguntar** | perguntar se / onde / quando / o que... | **Perguntou-me se eu queria café.** |\n| **pedir** | pedir que + conjuntivo / pedir para + infinitivo | **Pediu-me que fechasse a porta.** |\n| **mandar, aconselhar** | ... que + conjuntivo / ... + infinitivo | **O médico mandou-me descansar.** |\n\nЕсли глагол речи в **настоящем** (**Ele diz que...**), времена не меняются: **«Estou cansado.» → Ele diz que está cansado.**\n\n## Сдвиг времён после прошедшего\n\nЕсли глагол речи в прошедшем (**disse, perguntou, pediu**), время в придаточном «сдвигается назад» — в отличие от русского, где оно сохраняется.\n\n| прямая речь | косвенная речь (disse que...) |\n|---|---|\n| presente: «**Estou** cansada.» | imperfeito: ...que **estava** cansada |\n| perfeito: «**Comprei** bilhetes.» | mais-que-perfeito: ...que **tinha comprado** bilhetes |\n| ir + inf.: «**Vou** ligar.» | ia + inf.: ...que **ia** ligar |\n| futuro: «**Chegarei** às dez.» | condicional / imperfeito: ...que **chegaria / chegava** às dez |\n| imperfeito: «**Era** tarde.» | без изменений: ...que **era** tarde |\n| imperativo: «**Fecha** a porta!» | imperfeito do conjuntivo: ...que **fechasse** a porta |\n| presente do conjuntivo: «Quero que **venhas**.» | imperfeito do conjuntivo: ...que queria que **viesse** |\n\n## Местоимения, время и место\n\nМеняется точка зрения, поэтому меняются и местоимения: **eu → ele / ela**, **o meu → o dele / o dela** (в pt-PT **dele / dela** предпочтительнее двусмысленного **seu**).\n\n| в прямой речи | в косвенной |\n|---|---|\n| hoje | naquele dia |\n| ontem | no dia anterior, na véspera |\n| amanhã | no dia seguinte |\n| agora | naquele momento, então |\n| aqui, cá | ali, lá |\n| este | aquele |\n| na próxima semana | na semana seguinte |\n| vir, trazer | ir, levar |\n\n**«Amanhã venho cá.» → Ele disse que no dia seguinte ia lá.**\n\n## Косвенный вопрос\n\n- Вопрос «да / нет» → **se**: **«Moras em Lisboa?» → Perguntou-me se eu morava em Lisboa.**\n- Вопрос с вопросительным словом → то же слово, прямой порядок слов, **é que** обычно опускается: **«Onde é que trabalhas?» → Perguntou-me onde eu trabalhava.**\n\n## Косвенное повеление\n\nИмператив передаётся двумя способами:\n\n- **pedir / dizer / mandar que** + imperfeito do conjuntivo: **«Liga-me!» → Pediu-me que lhe ligasse.**\n- **pedir / dizer para** + инфинитив (личный, если подлежащее нужно уточнить): **Pediu-me para lhe ligar.** **Disse-nos para esperarmos.**\n\nОтрицание сохраняется: **«Não te preocupes!» → Disse-me que não me preocupasse.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| Ela **disse-me** que... | Ela **me disse** que... | ênclise в pt-PT |\n| Perguntou-me se eu **estava a trabalhar**. | Perguntou se eu **estava trabalhando**. | estar a + infinitivo |\n| ...que **tinha feito** | ...que **tinha feito** / разг. ...que **fez** | в pt-PT сдвиг времён соблюдается последовательнее |\n| a casa **dele** / **dela** | a casa **dele** / a **sua** casa | в обеих нормах dele/dela снимает двусмысленность |\n\nПравила косвенной речи совпадают; разница — в клитиках, конструкции estar a и разговорной небрежности со сдвигом времён.",
+  "commonErrors": "- **Нет сдвига времён** по русской модели («сказала, что устала» → настоящее): *Ela disse que está cansada* — разговорно; норма **disse que estava cansada** ✓.\n- **Perfeito вместо mais-que-perfeito**: *Disse que comprou* (разг.) → **disse que tinha comprado** ✓.\n- **Futuro после прошедшего**: *Disse que chegará* ✗ → **disse que chegaria / chegava** ✓.\n- **Индикатив в косвенном повелении**: *Pediu que fecho a porta* ✗ → **Pediu que fechasse a porta** ✓.\n- **«Ли» через вопросительное слово**: *Perguntou que eu queria café* ✗ → **Perguntou se eu queria café** ✓.\n- **Инверсия из прямого вопроса**: *Perguntou onde trabalhava eu* ✗ → **Perguntou onde eu trabalhava** ✓.\n- **Время и место не сдвигаются**: *Disse que amanhã vinha aqui* (если это было в прошлом месяце) ✗ → **no dia seguinte ia lá** ✓.",
+  "examples": [
+    {
+      "pt": "A Inês disse que estava muito cansada.",
+      "ru": "Инеш сказала, что очень устала.",
+      "audio": true
+    },
+    {
+      "pt": "O Rui contou-me que tinha mudado de emprego.",
+      "ru": "Руй рассказал мне, что сменил работу.",
+      "audio": true
+    },
+    {
+      "pt": "Ela perguntou-me se eu queria um café.",
+      "ru": "Она спросила, хочу ли я кофе.",
+      "audio": true
+    },
+    {
+      "pt": "O empregado perguntou onde é que queríamos sentar-nos.",
+      "ru": "Официант спросил, где мы хотим сесть.",
+      "audio": true
+    },
+    {
+      "pt": "A mãe pediu-me que lhe telefonasse ao chegar.",
+      "ru": "Мама попросила меня позвонить ей, когда доеду.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-discurso-indireto-ex-01",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Estou cansada.» → A Inês disse que ___ (estar) cansada.",
+      "answer": [
+        "estava"
+      ],
+      "explanation": "Presente → imperfeito."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-02",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Comprei bilhetes.» → O Rui disse que ___ (comprar) bilhetes.",
+      "answer": [
+        "tinha comprado",
+        "comprara"
+      ],
+      "hint": "mais-que-perfeito",
+      "explanation": "Perfeito → mais-que-perfeito composto (tinha + particípio). Comprara — книжная простая форма."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-03",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Vou ligar-te amanhã.» → Ele disse que me ___ (ir) ligar no dia seguinte.",
+      "answer": [
+        "ia"
+      ],
+      "explanation": "Vou + инфинитив → ia + инфинитив."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-04",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Fecha a janela!» → A mãe pediu-me que ___ (fechar) a janela.",
+      "answer": [
+        "fechasse"
+      ],
+      "explanation": "Императив → imperfeito do conjuntivo."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-05",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Moras em Lisboa?» → Ela perguntou-me ___ eu morava em Lisboa.",
+      "answer": [
+        "se"
+      ],
+      "explanation": "Вопрос «да / нет» → se."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-06",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Onde é a estação?» → O turista perguntou ___ era a estação.",
+      "answer": [
+        "onde",
+        "onde é que"
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-ex-07",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Chegarei às dez.» → A Joana disse que ___ (chegar) às dez.",
+      "answer": [
+        "chegaria",
+        "chegava"
+      ],
+      "explanation": "Futuro → condicional; в разговоре pt-PT часто imperfeito."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-08",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Telefona-me hoje.» → Ele disse-me para lhe ___ (telefonar) naquele dia.",
+      "answer": [
+        "telefonar",
+        "ligar"
+      ],
+      "explanation": "Dizer para + инфинитив; hoje → naquele dia."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-09",
+      "topicId": "b1-discurso-indireto",
+      "type": "choice",
+      "prompt": "«Amanhã tenho um exame.» → Ela disse que ___ tinha um exame.",
+      "options": [
+        "amanhã",
+        "no dia seguinte",
+        "ontem",
+        "hoje"
+      ],
+      "correct": 1,
+      "explanation": "Amanhã → no dia seguinte."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-10",
+      "topicId": "b1-discurso-indireto",
+      "type": "choice",
+      "prompt": "«Onde é que trabalhas?» → Ele perguntou-me onde ___.",
+      "options": [
+        "eu trabalhava",
+        "é que trabalhas",
+        "trabalhas tu",
+        "que eu trabalhava"
+      ],
+      "correct": 0,
+      "explanation": "Прямой порядок слов, сдвиг presente → imperfeito."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-11",
+      "topicId": "b1-discurso-indireto",
+      "type": "choice",
+      "prompt": "«Não façam barulho!» → O pai pediu-nos que não ___ barulho.",
+      "options": [
+        "façamos",
+        "fazemos",
+        "fazíamos",
+        "fizéssemos"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-discurso-indireto-ex-12",
+      "topicId": "b1-discurso-indireto",
+      "type": "choice",
+      "prompt": "«Este é o meu carro.» (o Pedro) → Ele disse que aquele era o carro ___.",
+      "options": [
+        "meu",
+        "dela",
+        "dele",
+        "teu"
+      ],
+      "correct": 2,
+      "explanation": "O meu → o dele."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-13",
+      "topicId": "b1-discurso-indireto",
+      "type": "transform",
+      "prompt": "«Estou a trabalhar.» (o Pedro)",
+      "instruction": "Передайте косвенной речью: «O Pedro disse que...».",
+      "answer": [
+        "O Pedro disse que estava a trabalhar."
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-ex-14",
+      "topicId": "b1-discurso-indireto",
+      "type": "transform",
+      "prompt": "«Já jantaste?» (a Rita)",
+      "instruction": "Передайте косвенной речью: «A Rita perguntou-me se...».",
+      "answer": [
+        "A Rita perguntou-me se eu já tinha jantado.",
+        "A Rita perguntou-me se já tinha jantado."
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-ex-15",
+      "topicId": "b1-discurso-indireto",
+      "type": "transform",
+      "prompt": "«Traz o teu computador!» (a chefe)",
+      "instruction": "Передайте косвенной речью: «A chefe pediu-me que...».",
+      "answer": [
+        "A chefe pediu-me que levasse o meu computador.",
+        "A chefe pediu-me que levasse o computador.",
+        "A chefe pediu-me que trouxesse o meu computador.",
+        "A chefe pediu-me que trouxesse o computador."
+      ],
+      "explanation": "Trazer часто меняется на levar: точка зрения сместилась."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-16",
+      "topicId": "b1-discurso-indireto",
+      "type": "order-words",
+      "words": [
+        "Ela",
+        "perguntou-me",
+        "café",
+        "se",
+        "eu",
+        "queria"
+      ],
+      "answer": "Ela perguntou-me se eu queria café",
+      "ru": "Она спросила меня, хочу ли я кофе."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-17",
+      "topicId": "b1-discurso-indireto",
+      "type": "order-words",
+      "words": [
+        "que",
+        "disse",
+        "podia",
+        "Ele",
+        "não",
+        "vir"
+      ],
+      "answer": "Ele disse que não podia vir",
+      "ru": "Он сказал, что не может прийти."
+    },
+    {
+      "id": "b1-discurso-indireto-ex-18",
+      "topicId": "b1-discurso-indireto",
+      "type": "translate-ru-pt",
+      "ru": "Она спросила, где я живу.",
+      "answer": [
+        "Ela perguntou onde eu morava.",
+        "Ela perguntou onde eu vivia.",
+        "Ela perguntou onde é que eu morava.",
+        "Ela perguntou onde é que eu vivia.",
+        "Ela perguntou-me onde eu morava.",
+        "Ela perguntou-me onde eu vivia.",
+        "Ela perguntou-me onde é que eu morava.",
+        "Ela perguntou-me onde é que eu vivia.",
+        "Perguntou-me onde eu morava.",
+        "Perguntou-me onde eu vivia.",
+        "Perguntou-me onde é que eu morava.",
+        "Perguntou-me onde é que eu vivia.",
+        "Perguntou onde eu morava.",
+        "Perguntou onde eu vivia.",
+        "Perguntou onde é que eu morava.",
+        "Perguntou onde é que eu vivia."
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-ex-19",
+      "topicId": "b1-discurso-indireto",
+      "type": "translate-ru-pt",
+      "ru": "Он попросил меня закрыть дверь.",
+      "answer": [
+        "Ele pediu-me que fechasse a porta.",
+        "Ele pediu-me para fechar a porta.",
+        "Pediu-me que fechasse a porta.",
+        "Pediu-me para fechar a porta."
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-ex-20",
+      "topicId": "b1-discurso-indireto",
+      "type": "listen-type",
+      "text": "Ela disse que estava muito ocupada.",
+      "answer": [
+        "Ela disse que estava muito ocupada."
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-ex-21",
+      "topicId": "b1-discurso-indireto",
+      "type": "match",
+      "prompt": "Соедините слово из прямой речи с его заменой в косвенной.",
+      "pairs": [
+        {
+          "left": "hoje",
+          "right": "naquele dia"
+        },
+        {
+          "left": "amanhã",
+          "right": "no dia seguinte"
+        },
+        {
+          "left": "ontem",
+          "right": "no dia anterior"
+        },
+        {
+          "left": "agora",
+          "right": "naquele momento"
+        },
+        {
+          "left": "aqui",
+          "right": "ali"
+        },
+        {
+          "left": "este",
+          "right": "aquele"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-discurso-indireto-mt-01",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Gosto muito de Lisboa.» → A Ana disse que ___ (gostar) muito de Lisboa.",
+      "answer": [
+        "gostava"
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-mt-02",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Perdi as chaves.» → O Duarte disse que ___ (perder) as chaves.",
+      "answer": [
+        "tinha perdido",
+        "perdera"
+      ],
+      "hint": "mais-que-perfeito"
+    },
+    {
+      "id": "b1-discurso-indireto-mt-03",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Vens à festa?» → Ela perguntou-me ___ eu ia à festa.",
+      "answer": [
+        "se"
+      ],
+      "explanation": "Вопрос «да / нет» → se; vir → ir."
+    },
+    {
+      "id": "b1-discurso-indireto-mt-04",
+      "topicId": "b1-discurso-indireto",
+      "type": "fill-gap",
+      "prompt": "«Ajuda-me!» → Ele pediu-me que o ___ (ajudar).",
+      "answer": [
+        "ajudasse"
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-mt-05",
+      "topicId": "b1-discurso-indireto",
+      "type": "choice",
+      "prompt": "«Vou mudar de casa.» → Ela disse que ___ mudar de casa.",
+      "options": [
+        "vai",
+        "ia",
+        "foi",
+        "fosse"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-discurso-indireto-mt-06",
+      "topicId": "b1-discurso-indireto",
+      "type": "choice",
+      "prompt": "«Quando é que voltas?» → Perguntaram-me quando ___.",
+      "options": [
+        "volto",
+        "é que voltas",
+        "voltasse",
+        "voltava"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-discurso-indireto-mt-07",
+      "topicId": "b1-discurso-indireto",
+      "type": "choice",
+      "prompt": "«Estou aqui.» → Ele disse que estava ___.",
+      "options": [
+        "aqui",
+        "cá",
+        "ali",
+        "aí"
+      ],
+      "correct": 2,
+      "explanation": "Aqui → ali (или lá)."
+    },
+    {
+      "id": "b1-discurso-indireto-mt-08",
+      "topicId": "b1-discurso-indireto",
+      "type": "transform",
+      "prompt": "«Não te preocupes!» (a mãe)",
+      "instruction": "Передайте косвенной речью: «A mãe disse-me que...».",
+      "answer": [
+        "A mãe disse-me que não me preocupasse."
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-mt-09",
+      "topicId": "b1-discurso-indireto",
+      "type": "translate-ru-pt",
+      "ru": "Он сказал, что устал.",
+      "answer": [
+        "Ele disse que estava cansado.",
+        "Disse que estava cansado."
+      ]
+    },
+    {
+      "id": "b1-discurso-indireto-mt-10",
+      "topicId": "b1-discurso-indireto",
+      "type": "listen-choice",
+      "text": "O Rui perguntou se podia ficar cá em casa.",
+      "options": [
+        "Руй спросил, может ли он остаться у нас.",
+        "Руй сказал, что останется у нас.",
+        "Руй спросил, где мы живём.",
+        "Руй попросил нас остаться дома."
+      ],
+      "correct": 0
+    }
+  ]
+}

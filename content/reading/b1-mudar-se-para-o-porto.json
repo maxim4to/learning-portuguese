@@ -1,0 +1,205 @@
+{
+  "id": "b1-mudar-se-para-o-porto",
+  "level": "B1",
+  "title": "Mudar-se para o Porto",
+  "paragraphs": [
+    "Há seis meses, a Rita recebeu uma proposta de trabalho no Porto. Sempre tinha vivido em Lisboa e, ao início, hesitou: deixar a família e os amigos não era fácil. Mas o salário era melhor e a empresa pagava-lhe a mudança, por isso acabou por aceitar.",
+    "O mais difícil foi encontrar casa. Os anúncios desapareciam num dia e muitos senhorios pediam dois meses de caução, um fiador e o recibo de vencimento. Depois de visitar oito apartamentos, arrendou um T1 no Bonfim, um bairro tranquilo perto da estação de metro do Campo 24 de Agosto.",
+    "Também teve de tratar da papelada: mudou a morada no cartão de cidadão, informou as Finanças e inscreveu-se no centro de saúde da zona. «Ninguém me tinha avisado de que tudo isto demorava tanto», conta a rir.",
+    "Nas primeiras semanas, a Rita reparou em pequenas diferenças. No café, em vez de uma bica, pede-se um cimbalino; e se quiser uma cerveja de pressão, tem de pedir um fino, e não uma imperial. As pessoas tratam-na por «menina» e falam com ela como se a conhecessem há anos.",
+    "O tempo foi outra surpresa. Chove muito mais do que em Lisboa, e o inverno é húmido. Em contrapartida, a cidade é mais pequena e consegue ir a pé para quase todo o lado.",
+    "Hoje, a Rita já não se sente uma estranha. Ao domingo, costuma passear pela Ribeira ou atravessar a ponte D. Luís até Gaia. E já tem um prato preferido: a francesinha, embora admita que não é propriamente uma refeição leve."
+  ],
+  "glossary": [
+    {
+      "word": "proposta de trabalho",
+      "ru": "предложение о работе"
+    },
+    {
+      "word": "hesitou",
+      "ru": "колебалась"
+    },
+    {
+      "word": "pagava-lhe a mudança",
+      "ru": "оплачивала ей переезд"
+    },
+    {
+      "word": "acabou por aceitar",
+      "ru": "в итоге согласилась"
+    },
+    {
+      "word": "senhorios",
+      "ru": "арендодатели, хозяева жилья"
+    },
+    {
+      "word": "caução",
+      "ru": "залог"
+    },
+    {
+      "word": "fiador",
+      "ru": "поручитель"
+    },
+    {
+      "word": "recibo de vencimento",
+      "ru": "расчётный листок (справка о зарплате)"
+    },
+    {
+      "word": "arrendou um T1",
+      "ru": "сняла однокомнатную квартиру (T1 — одна спальня + гостиная)"
+    },
+    {
+      "word": "tratar da papelada",
+      "ru": "заниматься бумагами, оформлением"
+    },
+    {
+      "word": "morada",
+      "ru": "адрес"
+    },
+    {
+      "word": "conta a rir",
+      "ru": "рассказывает со смехом"
+    },
+    {
+      "word": "reparou em",
+      "ru": "заметила"
+    },
+    {
+      "word": "cimbalino",
+      "ru": "эспрессо (так говорят на севере, в Порту)"
+    },
+    {
+      "word": "cerveja de pressão",
+      "ru": "разливное пиво"
+    },
+    {
+      "word": "fino",
+      "ru": "бокал разливного пива (Порту; в Лиссабоне — imperial)"
+    },
+    {
+      "word": "como se a conhecessem há anos",
+      "ru": "как будто знали её много лет"
+    },
+    {
+      "word": "Em contrapartida",
+      "ru": "зато, с другой стороны"
+    },
+    {
+      "word": "para quase todo o lado",
+      "ru": "почти куда угодно"
+    },
+    {
+      "word": "não é propriamente",
+      "ru": "не то чтобы, не совсем"
+    }
+  ],
+  "questions": [
+    {
+      "id": "b1-mudar-se-para-o-porto-q-01",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "choice",
+      "prompt": "Porque é que a Rita aceitou a proposta?",
+      "options": [
+        "Porque queria sair de casa dos pais",
+        "Porque o salário era melhor e a empresa pagava a mudança",
+        "Porque os amigos já viviam no Porto",
+        "Porque em Lisboa não havia trabalho"
+      ],
+      "correct": 1,
+      "explanation": "**O salário era melhor e a empresa pagava-lhe a mudança, por isso acabou por aceitar.**"
+    },
+    {
+      "id": "b1-mudar-se-para-o-porto-q-02",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "choice",
+      "prompt": "Qual destas coisas os senhorios NÃO pediam, segundo o texto?",
+      "options": [
+        "Um fiador",
+        "Dois meses de caução",
+        "O recibo de vencimento",
+        "Uma carta do banco"
+      ],
+      "correct": 3,
+      "explanation": "В тексте: **dois meses de caução, um fiador e o recibo de vencimento**. Письмо из банка не упоминается."
+    },
+    {
+      "id": "b1-mudar-se-para-o-porto-q-03",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "fill-gap",
+      "prompt": "Depois de visitar oito apartamentos, ___ um T1 no Bonfim.",
+      "answer": [
+        "arrendou"
+      ],
+      "hint": "сняла (arrendar)",
+      "ru": "Посмотрев восемь квартир, она сняла однушку в Бонфине.",
+      "explanation": "**Arrendar** — снимать (или сдавать) жильё в аренду. Pretérito perfeito: **arrendou**. **Alugar** в Португалии тоже употребляется, но в договорах и объявлениях о жилье типичнее **arrendar** (**arrendamento**, **renda**)."
+    },
+    {
+      "id": "b1-mudar-se-para-o-porto-q-04",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "choice",
+      "prompt": "No Porto, para pedir uma cerveja de pressão, diz-se…",
+      "options": [
+        "uma imperial",
+        "um cimbalino",
+        "um fino",
+        "uma bica"
+      ],
+      "correct": 2,
+      "explanation": "В Порту — **um fino**, в Лиссабоне — **uma imperial**. **Cimbalino** и **bica** — это кофе."
+    },
+    {
+      "id": "b1-mudar-se-para-o-porto-q-05",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "fill-gap",
+      "prompt": "Chove muito mais do que em Lisboa. Em ___, a cidade é mais pequena.",
+      "answer": [
+        "contrapartida"
+      ],
+      "hint": "зато",
+      "ru": "Дождей гораздо больше, чем в Лиссабоне. Зато город меньше.",
+      "explanation": "**Em contrapartida** — «зато, с другой стороны»: вводит противопоставление."
+    },
+    {
+      "id": "b1-mudar-se-para-o-porto-q-06",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "fill-gap",
+      "prompt": "Também teve de tratar da papelada: mudou a ___ no cartão de cidadão.",
+      "answer": [
+        "morada"
+      ],
+      "hint": "адрес",
+      "ru": "Ей также пришлось заняться бумагами: она сменила адрес в удостоверении личности.",
+      "explanation": "**Morada** — адрес (в pt-PT; *endereço* тоже существует, но для домашнего адреса типично **morada**)."
+    },
+    {
+      "id": "b1-mudar-se-para-o-porto-q-07",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "translate-ru-pt",
+      "ru": "Никто меня не предупредил, что всё это занимает столько времени.",
+      "answer": [
+        "Ninguém me avisou de que tudo isto demorava tanto.",
+        "Ninguém me avisou que tudo isto demorava tanto.",
+        "Ninguém me tinha avisado de que tudo isto demorava tanto.",
+        "Ninguém me tinha avisado que tudo isto demorava tanto.",
+        "Ninguém me avisou de que tudo isto demora tanto.",
+        "Ninguém me avisou que tudo isto demora tanto."
+      ],
+      "explanation": "**Ninguém** — «магнит»: местоимение встаёт перед глаголом (**Ninguém me avisou**). «Занимать время» — **demorar**."
+    },
+    {
+      "id": "b1-mudar-se-para-o-porto-q-08",
+      "topicId": "b1-mudar-se-para-o-porto",
+      "type": "listen-choice",
+      "text": "Hoje, a Rita já não se sente uma estranha.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "Сегодня Рита чувствует себя странно.",
+        "Рита ещё не освоилась в городе.",
+        "Сегодня Рита встретила незнакомку.",
+        "Теперь Рита уже не чувствует себя чужой."
+      ],
+      "correct": 3,
+      "explanation": "**Já não** — «уже не»; **sentir-se uma estranha** — «чувствовать себя чужой». Местоимение **se** стоит перед глаголом из-за **não**."
+    }
+  ]
+}

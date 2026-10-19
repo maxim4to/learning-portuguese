@@ -1,0 +1,176 @@
+{
+  "id": "restaurante",
+  "title": "В ресторане",
+  "titlePt": "No restaurante",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Boa tarde! Têm reserva?", "ru": "Добрый день! У вас забронировано?" },
+    { "speaker": "B", "pt": "Não temos. Há mesa para dois, se faz favor?", "ru": "Нет. Найдётся столик на двоих, пожалуйста?" },
+    { "speaker": "A", "pt": "Há, sim. Sentem-se ali ao pé da janela. Aqui tem a ementa.", "ru": "Да, есть. Садитесь вон там, у окна. Вот меню." },
+    { "speaker": "B", "pt": "Obrigado. Qual é o prato do dia?", "ru": "Спасибо. Какое у вас блюдо дня?" },
+    { "speaker": "A", "pt": "Hoje temos bacalhau à Brás e, de carne, arroz de pato.", "ru": "Сегодня треска по-брашски, а из мясного — рис с уткой." },
+    { "speaker": "B", "pt": "Pode ser meia dose de arroz de pato? Não tenho muita fome.", "ru": "Можно половинную порцию риса с уткой? Я не очень голоден." },
+    { "speaker": "A", "pt": "Pode, claro. E para beber?", "ru": "Конечно. А что будете пить?" },
+    { "speaker": "B", "pt": "Um jarro de vinho da casa e uma garrafa de água, se faz favor.", "ru": "Графин домашнего вина и бутылку воды, пожалуйста." },
+    { "speaker": "A", "pt": "Trago já o couvert: pão, azeitonas e manteiga.", "ru": "Сейчас принесу закуски: хлеб, оливки и масло." },
+    { "speaker": "B", "pt": "Desculpe, o couvert paga-se à parte? Se for assim, não queremos as azeitonas.", "ru": "Извините, закуски оплачиваются отдельно? Если да, оливки нам не нужны." },
+    { "speaker": "A", "pt": "Paga-se, sim. Então levo as azeitonas. Já escolheram a sobremesa?", "ru": "Да, оплачиваются. Тогда оливки я унесу. Десерт уже выбрали?" },
+    { "speaker": "B", "pt": "Ainda não. Que sobremesas é que têm?", "ru": "Ещё нет. Какие у вас десерты?" },
+    { "speaker": "A", "pt": "Temos mousse de chocolate, arroz-doce e fruta da época.", "ru": "Есть шоколадный мусс, рисовый пудинг и сезонные фрукты." },
+    { "speaker": "B", "pt": "Um arroz-doce e dois cafés. E traga-nos a conta, se faz favor.", "ru": "Один рисовый пудинг и два кофе. И принесите нам счёт, пожалуйста." },
+    { "speaker": "A", "pt": "Com certeza. Querem a fatura com número de contribuinte?", "ru": "Конечно. Счёт с налоговым номером?" }
+  ],
+  "phrases": [
+    { "pt": "Há mesa para dois, se faz favor?", "ru": "Найдётся столик на двоих, пожалуйста?" },
+    { "pt": "Queria reservar uma mesa para sábado às oito.", "ru": "Я хотел бы забронировать столик на субботу на восемь." },
+    { "pt": "Qual é o prato do dia?", "ru": "Какое сегодня блюдо дня?" },
+    { "pt": "Pode ser meia dose?", "ru": "Можно половинную порцию?" },
+    { "pt": "O que é que recomenda?", "ru": "Что вы посоветуете?" },
+    { "pt": "Sou alérgico a marisco.", "ru": "У меня аллергия на морепродукты." },
+    { "pt": "O couvert paga-se à parte?", "ru": "Закуски оплачиваются отдельно?" },
+    { "pt": "Não pedimos isto.", "ru": "Мы это не заказывали." },
+    { "pt": "A conta, se faz favor.", "ru": "Счёт, пожалуйста." },
+    { "pt": "Podemos pagar separado?", "ru": "Можно заплатить раздельно?" }
+  ],
+  "vocab": [
+    { "pt": "a ementa", "ru": "меню", "example": "Pode trazer-nos a ementa, se faz favor?" },
+    { "pt": "a reserva", "ru": "бронь, бронирование", "example": "Tenho uma reserva em nome de Ivanov." },
+    { "pt": "o prato do dia", "ru": "блюдо дня", "example": "O prato do dia custa nove euros." },
+    { "pt": "a dose", "ru": "порция", "example": "Uma dose dá bem para duas pessoas." },
+    { "pt": "a meia dose", "ru": "половинная порция", "example": "Para mim é meia dose de bitoque." },
+    { "pt": "o couvert", "ru": "закуски на столе (хлеб, оливки, масло — платные)", "example": "O couvert não é obrigatório." },
+    { "pt": "a entrada", "ru": "закуска, первое", "example": "De entrada queríamos uma sopa." },
+    { "pt": "o prato principal", "ru": "основное блюдо", "example": "O prato principal vem com batatas." },
+    { "pt": "a sobremesa", "ru": "десерт", "example": "Hoje não quero sobremesa." },
+    { "pt": "o menu do dia", "ru": "комплексный обед (суп, блюдо, напиток, кофе)", "example": "O menu do dia inclui sopa e café." },
+    { "pt": "a sopa", "ru": "суп", "example": "A sopa do dia é caldo verde." },
+    { "pt": "o peixe grelhado", "ru": "рыба на гриле", "example": "Prefiro peixe grelhado com legumes." },
+    { "pt": "a carne", "ru": "мясо", "example": "Como quer a carne: mal passada ou bem passada?" },
+    { "pt": "mal passado / bem passado", "ru": "с кровью / хорошо прожаренный", "example": "O bife bem passado, se faz favor." },
+    { "pt": "o bitoque", "ru": "битоке (стейк с яйцом и картошкой)", "example": "O bitoque é um clássico dos restaurantes portugueses." },
+    { "pt": "o bacalhau", "ru": "треска (солёная)", "example": "Há mil receitas de bacalhau." },
+    { "pt": "o arroz de pato", "ru": "рис с уткой", "example": "O arroz de pato vai ao forno." },
+    { "pt": "o marisco", "ru": "морепродукты", "example": "Esta marisqueira tem marisco fresco." },
+    { "pt": "a guarnição", "ru": "гарнир", "example": "Pode trocar a guarnição por salada?" },
+    { "pt": "as batatas fritas", "ru": "картошка фри", "example": "O prato vem com batatas fritas e salada." },
+    { "pt": "o vinho da casa", "ru": "домашнее вино", "example": "O vinho da casa é tinto ou branco?" },
+    { "pt": "o jarro", "ru": "графин, кувшин", "example": "Um jarro de vinho branco, se faz favor." },
+    { "pt": "a garrafa", "ru": "бутылка", "example": "Traga uma garrafa de água fresca." },
+    { "pt": "a imperial", "ru": "небольшой бокал разливного пива (Лиссабон)", "example": "Duas imperiais, se faz favor." },
+    { "pt": "o arroz-doce", "ru": "рисовый пудинг с корицей", "example": "O arroz-doce da avó é o melhor." },
+    { "pt": "a fruta da época", "ru": "сезонные фрукты", "example": "De sobremesa há fruta da época." },
+    { "pt": "a casa de banho", "ru": "туалет", "example": "A casa de banho fica ao fundo, à direita." },
+    { "pt": "o empregado de mesa", "ru": "официант", "example": "O empregado de mesa recomendou o polvo." },
+    { "pt": "a conta", "ru": "счёт", "example": "Pedimos a conta e fomos embora." },
+    { "pt": "pagar separado", "ru": "платить раздельно", "example": "Aqui não se pode pagar separado." },
+    { "pt": "a gorjeta", "ru": "чаевые", "example": "Deixámos dois euros de gorjeta." },
+    { "pt": "a tasca", "ru": "таверна, простой недорогой ресторанчик", "example": "Almoçamos numa tasca perto do trabalho." },
+    { "pt": "alérgico a", "ru": "с аллергией на", "example": "A minha filha é alérgica a frutos secos." }
+  ],
+  "exercises": [
+    {
+      "id": "restaurante-ex-01",
+      "topicId": "restaurante",
+      "type": "choice",
+      "prompt": "Não tem muita fome. Como pede metade do prato?",
+      "options": ["Pode ser meia dose?", "Pode ser meio prato?", "Queria uma porção pequena de prato?"],
+      "correct": 0,
+      "explanation": "В португальских ресторанах есть официальная **meia dose** — половинная порция за меньшую цену. Её указывают прямо в меню."
+    },
+    {
+      "id": "restaurante-ex-02",
+      "topicId": "restaurante",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a ementa", "right": "меню" },
+        { "left": "a sobremesa", "right": "десерт" },
+        { "left": "a guarnição", "right": "гарнир" },
+        { "left": "o jarro", "right": "графин" },
+        { "left": "a gorjeta", "right": "чаевые" }
+      ]
+    },
+    {
+      "id": "restaurante-ex-03",
+      "topicId": "restaurante",
+      "type": "fill-gap",
+      "prompt": "Desculpe, o couvert ___ (pagar-se) à parte?",
+      "answer": ["paga-se"],
+      "hint": "безличная конструкция с se, ênclise",
+      "ru": "Извините, закуски оплачиваются отдельно?",
+      "explanation": "**Paga-se** — «оплачивается». Без «магнита» местоимение стоит после глагола. Couvert (хлеб, оливки, масло) в Португалии платный, от него можно отказаться."
+    },
+    {
+      "id": "restaurante-ex-04",
+      "topicId": "restaurante",
+      "type": "listen-type",
+      "text": "Obrigado. Qual é o prato do dia?",
+      "answer": ["Obrigado. Qual é o prato do dia?"],
+      "explanation": "**Prato do dia** — блюдо дня, обычно самое выгодное предложение в обед."
+    },
+    {
+      "id": "restaurante-ex-05",
+      "topicId": "restaurante",
+      "type": "listen-choice",
+      "text": "Paga-se, sim. Então levo as azeitonas. Já escolheram a sobremesa?",
+      "prompt": "Что делает официантка?",
+      "options": ["Приносит ещё оливок и спрашивает про напитки", "Уносит оливки и спрашивает про десерт", "Говорит, что оливки бесплатные", "Приносит счёт"],
+      "correct": 1,
+      "explanation": "**Levo as azeitonas** — «уношу оливки», **Já escolheram a sobremesa?** — «десерт уже выбрали?»."
+    },
+    {
+      "id": "restaurante-ex-06",
+      "topicId": "restaurante",
+      "type": "order-words",
+      "words": ["Há", "mesa", "para", "dois,", "se", "faz", "favor?"],
+      "answer": "Há mesa para dois, se faz favor?",
+      "ru": "Найдётся столик на двоих, пожалуйста?"
+    },
+    {
+      "id": "restaurante-ex-07",
+      "topicId": "restaurante",
+      "type": "translate-ru-pt",
+      "ru": "Принесите нам счёт, пожалуйста.",
+      "answer": ["Traga-nos a conta, se faz favor.", "Traga-nos a conta, por favor.", "Pode trazer-nos a conta, se faz favor?", "Pode trazer-nos a conta, por favor?", "Podia trazer-nos a conta, se faz favor?", "Pode-nos trazer a conta, se faz favor?", "A conta, se faz favor.", "A conta, por favor."]
+    },
+    {
+      "id": "restaurante-ex-08",
+      "topicId": "restaurante",
+      "type": "choice",
+      "prompt": "Como se diz «меню» num restaurante em Portugal?",
+      "options": ["o cardápio", "a carta de pratos", "a ementa", "o menu do dia"],
+      "correct": 2,
+      "explanation": "В Португалии меню — **a ementa** (в ресторанах подороже говорят и **a carta**). *Cardápio* — бразильское слово. **Menu do dia** — это комплексный обед, а не меню."
+    },
+    {
+      "id": "restaurante-ex-09",
+      "topicId": "restaurante",
+      "type": "fill-gap",
+      "prompt": "Como quer o bife? Mal passado ou bem ___?",
+      "answer": ["passado"],
+      "hint": "степень прожарки",
+      "ru": "Как вам стейк? С кровью или хорошо прожаренный?",
+      "explanation": "**Mal passado** — с кровью, **médio** — средней прожарки, **bem passado** — хорошо прожаренный."
+    },
+    {
+      "id": "restaurante-ex-10",
+      "topicId": "restaurante",
+      "type": "transform",
+      "prompt": "Traz a conta.",
+      "instruction": "Сделай просьбу вежливой: обращение на «вы» (o senhor) + «пожалуйста»",
+      "answer": ["Traga a conta, se faz favor.", "Traga a conta, por favor.", "Pode trazer a conta, se faz favor?", "Pode trazer a conta, por favor?", "Podia trazer a conta, se faz favor?", "Podia trazer a conta, por favor?"],
+      "explanation": "**Traz** — повелительное для **tu**. Официанту говорят **Traga…** (форма для o senhor/a senhora) или ещё мягче — **Pode / Podia trazer…?**"
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы позвонили в ресторан, чтобы забронировать столик, а потом пришли туда. Напишите диалог из 8–10 реплик: забронируйте столик на четверых на пятницу на 20:00, спросите блюдо дня, закажите половинную порцию и напиток, предупредите об аллергии на морепродукты, попросите счёт и заплатите раздельно.",
+    "sample": "— Restaurante O Cantinho, boa tarde.\n— Boa tarde. Queria reservar uma mesa para quatro pessoas para sexta-feira às oito da noite.\n— Com certeza. Em nome de quem?\n— Em nome de Ivanov. Obrigado.\n— Boa noite! Têm reserva?\n— Temos, em nome de Ivanov. Qual é o prato do dia?\n— Hoje é polvo à lagareiro e, de carne, secretos de porco preto.\n— Para mim é meia dose de secretos e uma imperial. Sou alérgico a marisco, o prato leva marisco?\n— Não leva, pode estar descansado.\n— Desculpe, a conta, se faz favor. Podemos pagar separado?\n— Podem, claro.",
+    "checklist": [
+      "Есть бронирование: на сколько человек, день и время (para quatro pessoas, sexta-feira às oito)",
+      "Просьбы вежливые: Queria…, Pode…?, se faz favor",
+      "Использованы ресторанные слова: prato do dia, meia dose, ementa, conta",
+      "Есть фраза про аллергию (Sou alérgico a…) и просьба заплатить раздельно (pagar separado)",
+      "Нет бразилизмов: cardápio, garçom, banheiro, фраз, начинающихся с клитики (Me traz…)"
+    ]
+  }
+}

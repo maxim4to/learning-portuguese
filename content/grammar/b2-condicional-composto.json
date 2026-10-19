@@ -1,0 +1,467 @@
+{
+  "id": "b2-condicional-composto",
+  "level": "B2",
+  "module": "b2-tempos-compostos",
+  "title": "Condicional composto: «я бы сделал (тогда)»",
+  "titlePt": "Condicional composto e condicionais irreais no passado",
+  "requires": [
+    "a2-condicional",
+    "a2-mais-que-perfeito",
+    "b1-imperfeito-conjuntivo-condicional"
+  ],
+  "theory": "## Образование\n\n**Ter** в condicional + **particípio passado**:\n\n| | ter | ir | fazer |\n|---|---|---|---|\n| eu | teria | **teria ido** | **teria feito** |\n| tu | terias | terias ido | terias feito |\n| ele / você | teria | teria ido | teria feito |\n| nós | **teríamos** | teríamos ido | teríamos feito |\n| eles / vocês | teriam | teriam ido | teriam feito |\n\nВ живой речи pt-PT вместо **teria feito** обычно говорят **tinha feito** (mais-que-perfeito composto) — так же, как вместо **faria** говорят **fazia**.\n\n## 1. Нереальное условие в прошлом\n\n«Если бы тогда…, то…» — и условие, и результат уже в прошлом, изменить ничего нельзя:\n\n**se + tivesse feito** → **teria feito / tinha feito**\n\n**Se tivesse sabido, teria ido.** (нейтрально) = **Se tivesse sabido, tinha ido.** (разговорно) — Если бы я знал, я бы пошёл.\n**Se não tivéssemos perdido o comboio, teríamos chegado a tempo.** — Если бы мы не опоздали на поезд, мы бы успели.\n\nВ быстрой речи даже условие упрощают: **Se soubesse, tinha ido.** Понимать это нужно, но в письме держитесь полной формы. Русское «бы» не подсказывает время — смотрите, к какому моменту относится условие: к сейчас или к прошлому.\n\n## Три типа «если бы» — сравните\n\n| ситуация | se + | главная часть | пример |\n|---|---|---|---|\n| сейчас / вообще | imperfeito conj. | condicional / imperfeito | **Se tivesse tempo, ia.** |\n| в прошлом | mais-que-perfeito conj. | condicional composto / mais-que-perfeito | **Se tivesse tido tempo, tinha ido.** |\n| смешанный: прошлое → сейчас | mais-que-perfeito conj. | condicional / imperfeito | **Se tivesse estudado medicina, agora era médica.** |\n\nВ смешанном типе условие в прошлом, а результат — в настоящем.\n\n## 2. Упущенные возможности и упрёки\n\nБез **se** — то, что могло бы случиться, но не случилось:\n\n- **Gostava de ter ido.** — Я бы хотел пойти (но не пошёл). Типично для pt-PT: **gostava de ter + particípio**, а не *teria gostado de ir*.\n- **Devias ter dito a verdade.** — Тебе следовало сказать правду.\n- **Podias ter avisado!** — Мог бы и предупредить!\n- **Sem a tua ajuda, nunca teria conseguido.** — Без твоей помощи я бы никогда не справился.\n\nОбратите внимание: модальный глагол в imperfeito (**devias, podias**), а составной — инфинитив: **ter dito, ter avisado**.\n\n## 3. Оценка и догадка о прошлом\n\n- **Teria sido melhor esperar.** — Лучше было бы подождать.\n- **Se fosse a ti, tinha ido.** — На твоём месте я бы пошёл (тогда).\n- **Quem teria dito uma coisa dessas?** — Кто бы мог такое сказать?\n\n## 4. В косвенной речи\n\n**Futuro composto** после глагола речи в прошедшем → **condicional composto**:\n**«Até sexta terei acabado.» → Disse que até sexta teria acabado.**\n\n## Местоимения\n\nПосле **se, não, que** — próclise: **Se me tivesses dito, não me teria esquecido.** Без «магнита» в книжном стиле — мезоклиза: **Ter-te-ia ajudado.** В разговоре проще: **Tinha-te ajudado.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| Se tivesse sabido, **tinha ido**. | Se tivesse sabido, **teria ido**. | в устной речи pt-PT tinha + particípio — норма |\n| **Gostava de ter ido.** | **Gostaria de ter ido.** | в pt-PT для вежливости и сожаления — imperfeito |\n| **Ter-te-ia dito** / **Tinha-te dito**. | **Teria te dito.** | мезоклиза только в pt-PT; бразильский порядок в pt-PT — ошибка |\n| **Se fosse a ti, tinha ido.** | **Se eu fosse você, teria ido.** | устойчивая pt-PT формула |\n\nСами формы **teria feito** в обеих нормах одинаковы; различие — в том, насколько часто их заменяют на **tinha feito**.",
+  "commonErrors": "- **Condicional после se** по модели «если бы»: *Se eu teria sabido* ✗ → **Se eu tivesse sabido** ✓.\n- **Индикатив в условии**: *Se eu sabia, tinha ido* ✗ → **Se eu tivesse sabido / soubesse, tinha ido** ✓ (*se eu sabia, não vinha* слышно в просторечии, но это не норма).\n- **Время условия не сдвинуто в прошлое**: *Se ontem tivesse tempo, ia* (разг.) → **Se ontem tivesse tido tempo, tinha ido** ✓.\n- **«Должен был» = tinha de**: *Tinha de dizer a verdade* — «пришлось сказать» (и сказал). Упрёк «следовало сказать, но не сказал» → **Devias ter dito a verdade** ✓.\n- **Клитика по-бразильски**: *Teria te ajudado* ✗ → **Ter-te-ia ajudado / Tinha-te ajudado** ✓.\n- **Согласование причастия**: *Teria comprada a casa* ✗ → **Teria comprado a casa** ✓.\n- **Gostar de + составное**: *Teria gostado de ir* — возможно, но естественнее **Gostava de ter ido** ✓.",
+  "examples": [
+    {
+      "pt": "Se tivesse sabido do concerto, tinha ido contigo.",
+      "ru": "Если бы я знал о концерте, я бы пошёл с тобой.",
+      "audio": true
+    },
+    {
+      "pt": "Se não tivéssemos perdido o comboio, teríamos chegado a tempo.",
+      "ru": "Если бы мы не опоздали на поезд, мы бы приехали вовремя.",
+      "audio": true
+    },
+    {
+      "pt": "Gostava de ter conhecido a tua avó.",
+      "ru": "Жаль, что я не успел познакомиться с твоей бабушкой.",
+      "audio": true
+    },
+    {
+      "pt": "Podias ter avisado que chegavas tarde!",
+      "ru": "Мог бы и предупредить, что придёшь поздно!",
+      "audio": true
+    },
+    {
+      "pt": "Se tivesse estudado medicina, agora era médica.",
+      "ru": "Если бы я тогда пошла на медицинский, сейчас была бы врачом.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-condicional-composto-ex-01",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se eu tivesse sabido, ___ (ir) à festa.",
+      "answer": [
+        "teria ido",
+        "tinha ido"
+      ],
+      "ru": "Если бы я знал, я бы пошёл на вечеринку.",
+      "explanation": "Teria ido — нейтрально, tinha ido — разговорный pt-PT."
+    },
+    {
+      "id": "b2-condicional-composto-ex-02",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se nós ___ (sair) mais cedo, teríamos apanhado o comboio.",
+      "answer": [
+        "tivéssemos saído"
+      ],
+      "hint": "ударение в форме nós",
+      "ru": "Если бы мы вышли раньше, мы бы успели на поезд."
+    },
+    {
+      "id": "b2-condicional-composto-ex-03",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se tu ___ (ligar), eu teria atendido.",
+      "answer": [
+        "tivesses ligado"
+      ],
+      "ru": "Если бы ты позвонил, я бы ответил."
+    },
+    {
+      "id": "b2-condicional-composto-ex-04",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Sem a tua ajuda, eu nunca ___ (conseguir).",
+      "answer": [
+        "teria conseguido",
+        "tinha conseguido"
+      ],
+      "ru": "Без твоей помощи я бы никогда не справился."
+    },
+    {
+      "id": "b2-condicional-composto-ex-05",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (gostar) de ter ido ao concerto, mas estava doente.",
+      "answer": [
+        "gostava",
+        "gostaria"
+      ],
+      "ru": "Я бы хотел пойти на концерт, но болел.",
+      "explanation": "Gostava de ter + particípio — сожаление о прошлом; в pt-PT чаще gostava."
+    },
+    {
+      "id": "b2-condicional-composto-ex-06",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se o Rui ___ (estudar) mais, agora tinha um emprego melhor.",
+      "answer": [
+        "tivesse estudado"
+      ],
+      "ru": "Если бы Руй больше учился, сейчас у него была бы работа получше.",
+      "explanation": "Смешанный тип: условие в прошлом, результат сейчас."
+    },
+    {
+      "id": "b2-condicional-composto-ex-07",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se eles não ___ (chegar) atrasados, não tinham perdido o início do filme.",
+      "answer": [
+        "tivessem chegado"
+      ],
+      "ru": "Если бы они не опоздали, они бы не пропустили начало фильма."
+    },
+    {
+      "id": "b2-condicional-composto-ex-08",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (dever) ter dito a verdade.",
+      "answer": [
+        "devias",
+        "deverias"
+      ],
+      "ru": "Тебе следовало сказать правду.",
+      "explanation": "Упрёк: devias + ter + particípio."
+    },
+    {
+      "id": "b2-condicional-composto-ex-09",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "Se ___ mais cuidado, não tinhas partido o copo.",
+      "options": [
+        "tinhas tido",
+        "tiveres tido",
+        "tivesses tido",
+        "terias tido"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-condicional-composto-ex-10",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "Se tivesse chovido, ___ em casa.",
+      "options": [
+        "ficarei",
+        "tinha ficado",
+        "fiquei",
+        "tenha ficado"
+      ],
+      "correct": 1,
+      "explanation": "Разговорный pt-PT: tinha ficado = teria ficado."
+    },
+    {
+      "id": "b2-condicional-composto-ex-11",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "«Podias ter avisado!» — это:",
+      "options": [
+        "Ты сможешь предупредить?",
+        "Ты смог предупредить.",
+        "Ты можешь предупредить сейчас.",
+        "Мог бы и предупредить!"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-condicional-composto-ex-12",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "Se me tivesses pedido, eu ___.",
+      "options": [
+        "ter-te-ia ajudado",
+        "teria-te ajudado",
+        "te teria ajudado",
+        "teria ajudado-te"
+      ],
+      "correct": 0,
+      "explanation": "Без «магнита» перед глаголом — мезоклиза (книжно) или разговорное tinha-te ajudado."
+    },
+    {
+      "id": "b2-condicional-composto-ex-13",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "Se tivesse estudado mais, agora ___ um emprego melhor.",
+      "options": [
+        "tinha tido",
+        "terei",
+        "tivesse",
+        "tinha"
+      ],
+      "correct": 3,
+      "explanation": "Agora → результат в настоящем: tinha / teria."
+    },
+    {
+      "id": "b2-condicional-composto-ex-14",
+      "topicId": "b2-condicional-composto",
+      "type": "transform",
+      "prompt": "Se tiver tempo, vou.",
+      "instruction": "Сделайте условие нереальным в прошлом («если бы тогда…»).",
+      "answer": [
+        "Se tivesse tido tempo, tinha ido.",
+        "Se tivesse tido tempo, teria ido.",
+        "Se eu tivesse tido tempo, tinha ido.",
+        "Se eu tivesse tido tempo, teria ido."
+      ]
+    },
+    {
+      "id": "b2-condicional-composto-ex-15",
+      "topicId": "b2-condicional-composto",
+      "type": "transform",
+      "prompt": "Se tivesse sabido, teria ido.",
+      "instruction": "Перескажите в разговорном стиле pt-PT: главную часть — через tinha + particípio.",
+      "answer": [
+        "Se tivesse sabido, tinha ido.",
+        "Se eu tivesse sabido, tinha ido."
+      ]
+    },
+    {
+      "id": "b2-condicional-composto-ex-16",
+      "topicId": "b2-condicional-composto",
+      "type": "transform",
+      "prompt": "Não fui à praia porque choveu.",
+      "instruction": "Перефразируйте: «Se não tivesse chovido...».",
+      "answer": [
+        "Se não tivesse chovido, tinha ido à praia.",
+        "Se não tivesse chovido, teria ido à praia.",
+        "Se não tivesse chovido, eu tinha ido à praia.",
+        "Se não tivesse chovido, eu teria ido à praia."
+      ]
+    },
+    {
+      "id": "b2-condicional-composto-ex-17",
+      "topicId": "b2-condicional-composto",
+      "type": "order-words",
+      "words": [
+        "Se",
+        "tivesse",
+        "tinha",
+        "sabido,",
+        "ido",
+        "contigo"
+      ],
+      "answer": "Se tivesse sabido, tinha ido contigo",
+      "ru": "Если бы я знал, я бы пошёл с тобой."
+    },
+    {
+      "id": "b2-condicional-composto-ex-18",
+      "topicId": "b2-condicional-composto",
+      "type": "order-words",
+      "words": [
+        "ter",
+        "Gostava",
+        "de",
+        "a",
+        "conhecido",
+        "tua",
+        "irmã"
+      ],
+      "answer": "Gostava de ter conhecido a tua irmã",
+      "ru": "Жаль, что я не познакомился с твоей сестрой."
+    },
+    {
+      "id": "b2-condicional-composto-ex-19",
+      "topicId": "b2-condicional-composto",
+      "type": "translate-ru-pt",
+      "ru": "Если бы ты мне сказал, я бы тебе помог.",
+      "answer": [
+        "Se me tivesses dito, tinha-te ajudado.",
+        "Se me tivesses dito, ter-te-ia ajudado.",
+        "Se me tivesses dito, eu tinha-te ajudado.",
+        "Se me tivesses dito, eu ter-te-ia ajudado.",
+        "Se tu me tivesses dito, tinha-te ajudado.",
+        "Se tu me tivesses dito, ter-te-ia ajudado.",
+        "Se tu me tivesses dito, eu tinha-te ajudado.",
+        "Se tu me tivesses dito, eu ter-te-ia ajudado.",
+        "Se me tivesses contado, tinha-te ajudado.",
+        "Se me tivesses contado, ter-te-ia ajudado.",
+        "Se me tivesses contado, eu tinha-te ajudado.",
+        "Se me tivesses contado, eu ter-te-ia ajudado.",
+        "Se tu me tivesses contado, tinha-te ajudado.",
+        "Se tu me tivesses contado, ter-te-ia ajudado.",
+        "Se tu me tivesses contado, eu tinha-te ajudado.",
+        "Se tu me tivesses contado, eu ter-te-ia ajudado.",
+        "Se me tivesses dito, ajudava-te.",
+        "Se tu me tivesses dito, ajudava-te."
+      ],
+      "explanation": "Разговорно — tinha-te ajudado (или даже ajudava-te), книжно — ter-te-ia ajudado."
+    },
+    {
+      "id": "b2-condicional-composto-ex-20",
+      "topicId": "b2-condicional-composto",
+      "type": "translate-ru-pt",
+      "ru": "Тебе следовало прийти раньше.",
+      "answer": [
+        "Devias ter vindo mais cedo.",
+        "Devias ter chegado mais cedo.",
+        "Deverias ter vindo mais cedo.",
+        "Deverias ter chegado mais cedo.",
+        "Tu devias ter vindo mais cedo.",
+        "Tu devias ter chegado mais cedo.",
+        "Tu deverias ter vindo mais cedo.",
+        "Tu deverias ter chegado mais cedo."
+      ]
+    },
+    {
+      "id": "b2-condicional-composto-ex-21",
+      "topicId": "b2-condicional-composto",
+      "type": "listen-type",
+      "text": "Sem ti, não teria conseguido.",
+      "answer": [
+        "Sem ti, não teria conseguido."
+      ]
+    },
+    {
+      "id": "b2-condicional-composto-ex-22",
+      "topicId": "b2-condicional-composto",
+      "type": "match",
+      "prompt": "Соедините условие с результатом.",
+      "pairs": [
+        {
+          "left": "Se tivesse chovido,",
+          "right": "tínhamos ficado em casa."
+        },
+        {
+          "left": "Se tivesses chegado a horas,",
+          "right": "não terias perdido o início."
+        },
+        {
+          "left": "Se tivesse estudado medicina,",
+          "right": "agora era médica."
+        },
+        {
+          "left": "Se tivéssemos tempo,",
+          "right": "íamos ao Porto este fim de semana."
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-condicional-composto-mt-01",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se eu ___ (saber) a resposta, tinha-te dito.",
+      "answer": [
+        "tivesse sabido",
+        "soubesse"
+      ],
+      "ru": "Если бы я знал ответ, я бы тебе сказал.",
+      "explanation": "Норма — tivesse sabido; в речи часто упрощают до soubesse."
+    },
+    {
+      "id": "b2-condicional-composto-mt-02",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se tivesses estudado, ___ (passar) no exame.",
+      "answer": [
+        "tinhas passado",
+        "terias passado"
+      ],
+      "ru": "Если бы ты занимался, ты бы сдал экзамен."
+    },
+    {
+      "id": "b2-condicional-composto-mt-03",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (gostar) de ter ficado mais tempo em Lisboa.",
+      "answer": [
+        "gostávamos",
+        "gostaríamos"
+      ],
+      "ru": "Нам бы хотелось подольше остаться в Лиссабоне."
+    },
+    {
+      "id": "b2-condicional-composto-mt-04",
+      "topicId": "b2-condicional-composto",
+      "type": "fill-gap",
+      "prompt": "Se não ___ (haver) greve, o comboio tinha chegado a horas.",
+      "answer": [
+        "tivesse havido"
+      ],
+      "ru": "Если бы не было забастовки, поезд пришёл бы вовремя."
+    },
+    {
+      "id": "b2-condicional-composto-mt-05",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "Se ___ o despertador, não teria chegado atrasado.",
+      "options": [
+        "ouvi",
+        "tiver ouvido",
+        "tivesse ouvido",
+        "teria ouvido"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-condicional-composto-mt-06",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "«Devias ter ligado.» — это:",
+      "options": [
+        "Ты должен позвонить.",
+        "Тебе следовало позвонить.",
+        "Ты, наверное, позвонил.",
+        "Ты позвонишь?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-condicional-composto-mt-07",
+      "topicId": "b2-condicional-composto",
+      "type": "choice",
+      "prompt": "Se tivesse dinheiro, ___ um carro amanhã.",
+      "options": [
+        "tinha comprado",
+        "teria comprado",
+        "comprava",
+        "tivesse comprado"
+      ],
+      "correct": 2,
+      "explanation": "Результат в будущем, а не в прошлом → condicional / imperfeito."
+    },
+    {
+      "id": "b2-condicional-composto-mt-08",
+      "topicId": "b2-condicional-composto",
+      "type": "transform",
+      "prompt": "Como não me convidaram, não fui.",
+      "instruction": "Перефразируйте: «Se me tivessem convidado...».",
+      "answer": [
+        "Se me tivessem convidado, tinha ido.",
+        "Se me tivessem convidado, teria ido.",
+        "Se me tivessem convidado, eu tinha ido.",
+        "Se me tivessem convidado, eu teria ido."
+      ]
+    },
+    {
+      "id": "b2-condicional-composto-mt-09",
+      "topicId": "b2-condicional-composto",
+      "type": "translate-ru-pt",
+      "ru": "Если бы мы знали, мы бы остались дома.",
+      "answer": [
+        "Se tivéssemos sabido, tínhamos ficado em casa.",
+        "Se tivéssemos sabido, teríamos ficado em casa.",
+        "Se nós tivéssemos sabido, tínhamos ficado em casa.",
+        "Se nós tivéssemos sabido, teríamos ficado em casa.",
+        "Se soubéssemos, tínhamos ficado em casa.",
+        "Se soubéssemos, teríamos ficado em casa."
+      ]
+    },
+    {
+      "id": "b2-condicional-composto-mt-10",
+      "topicId": "b2-condicional-composto",
+      "type": "listen-type",
+      "text": "Podias ter avisado que chegavas tarde.",
+      "answer": [
+        "Podias ter avisado que chegavas tarde."
+      ]
+    }
+  ]
+}

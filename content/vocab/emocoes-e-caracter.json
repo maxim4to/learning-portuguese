@@ -1,0 +1,349 @@
+{
+  "id": "emocoes-e-caracter",
+  "title": "Эмоции и характер",
+  "titlePt": "Emoções e caráter",
+  "level": "A2",
+  "words": [
+    {
+      "pt": "o sentimento",
+      "ru": "чувство",
+      "gender": "m",
+      "example": "É difícil falar dos sentimentos numa língua estrangeira.",
+      "audio": true
+    },
+    {
+      "pt": "a alegria",
+      "ru": "радость",
+      "gender": "f",
+      "example": "Que alegria ver-te aqui!",
+      "audio": true
+    },
+    {
+      "pt": "a tristeza",
+      "ru": "грусть, печаль",
+      "gender": "f",
+      "example": "Senti uma grande tristeza quando ele foi embora.",
+      "audio": true
+    },
+    {
+      "pt": "a saudade",
+      "ru": "тоска по кому-то/чему-то, «саудаде»",
+      "gender": "f",
+      "example": "A saudade é uma palavra muito portuguesa.",
+      "audio": true
+    },
+    {
+      "pt": "ter saudades de",
+      "ru": "скучать по",
+      "example": "Tenho saudades da minha família.",
+      "audio": true
+    },
+    {
+      "pt": "feliz",
+      "ru": "счастливый",
+      "example": "Estou muito feliz com a notícia.",
+      "audio": true
+    },
+    {
+      "pt": "contente",
+      "ru": "довольный, радостный",
+      "example": "A Rita ficou contente com o presente.",
+      "audio": true
+    },
+    {
+      "pt": "triste",
+      "ru": "грустный",
+      "example": "Porque é que estás tão triste?",
+      "audio": true
+    },
+    {
+      "pt": "chateado",
+      "ru": "раздражённый, расстроенный (разг.)",
+      "example": "Estou chateado contigo, não me ligaste.",
+      "audio": true
+    },
+    {
+      "pt": "chatear-se",
+      "ru": "рассердиться, обидеться; поссориться",
+      "example": "Não te chateies, foi sem querer.",
+      "audio": true
+    },
+    {
+      "pt": "zangado",
+      "ru": "сердитый",
+      "example": "A mãe ficou zangada com o barulho.",
+      "audio": true
+    },
+    {
+      "pt": "preocupado",
+      "ru": "обеспокоенный",
+      "example": "Estou preocupado com o exame.",
+      "audio": true
+    },
+    {
+      "pt": "nervoso",
+      "ru": "нервный, взволнованный",
+      "example": "Fico sempre nervoso antes das entrevistas.",
+      "audio": true
+    },
+    {
+      "pt": "ansioso",
+      "ru": "тревожный; с нетерпением ждущий",
+      "example": "Estou ansioso por ver o resultado.",
+      "audio": true
+    },
+    {
+      "pt": "cansado",
+      "ru": "уставший",
+      "example": "Hoje estou mesmo cansado.",
+      "audio": true
+    },
+    {
+      "pt": "farto de",
+      "ru": "сыт по горло, надоело",
+      "example": "Estou farto de esperar pelo autocarro.",
+      "audio": true
+    },
+    {
+      "pt": "aborrecido",
+      "ru": "скучающий; скучный",
+      "example": "O filme era tão aborrecido que adormeci.",
+      "audio": true
+    },
+    {
+      "pt": "surpreendido",
+      "ru": "удивлённый",
+      "example": "Fiquei surpreendido com a resposta dele.",
+      "audio": true
+    },
+    {
+      "pt": "envergonhado",
+      "ru": "смущённый, пристыженный",
+      "example": "Ficou envergonhado quando se enganou.",
+      "audio": true
+    },
+    {
+      "pt": "ter vergonha",
+      "ru": "стесняться, стыдиться",
+      "example": "Não tenhas vergonha de falar português.",
+      "audio": true
+    },
+    {
+      "pt": "ter medo de",
+      "ru": "бояться",
+      "example": "Tenho medo de conduzir em Lisboa.",
+      "audio": true
+    },
+    {
+      "pt": "orgulhoso",
+      "ru": "гордый",
+      "example": "Estou orgulhoso de ti.",
+      "audio": true
+    },
+    {
+      "pt": "aliviado",
+      "ru": "испытывающий облегчение",
+      "example": "Fiquei aliviado quando recebi a resposta.",
+      "audio": true
+    },
+    {
+      "pt": "desiludido",
+      "ru": "разочарованный",
+      "example": "Fiquei desiludido com o novo trabalho.",
+      "audio": true
+    },
+    {
+      "pt": "o ciúme",
+      "ru": "ревность",
+      "gender": "m",
+      "example": "O ciúme estraga qualquer relação.",
+      "audio": true
+    },
+    {
+      "pt": "simpático",
+      "ru": "приятный, доброжелательный",
+      "example": "Os vizinhos são muito simpáticos.",
+      "audio": true
+    },
+    {
+      "pt": "antipático",
+      "ru": "неприятный, недружелюбный",
+      "example": "O empregado foi bastante antipático.",
+      "audio": true
+    },
+    {
+      "pt": "bem-disposto",
+      "ru": "в хорошем настроении, жизнерадостный",
+      "example": "O Pedro está sempre bem-disposto.",
+      "audio": true
+    },
+    {
+      "pt": "mal-disposto",
+      "ru": "не в духе; с тошнотой",
+      "example": "Hoje acordei mal-disposto.",
+      "audio": true
+    },
+    {
+      "pt": "teimoso",
+      "ru": "упрямый",
+      "example": "O meu filho é teimoso como o pai.",
+      "audio": true
+    },
+    {
+      "pt": "preguiçoso",
+      "ru": "ленивый",
+      "example": "Ao domingo sou muito preguiçoso.",
+      "audio": true
+    },
+    {
+      "pt": "trabalhador",
+      "ru": "трудолюбивый",
+      "example": "Ela é muito trabalhadora e organizada.",
+      "audio": true
+    },
+    {
+      "pt": "tímido",
+      "ru": "застенчивый",
+      "example": "Era tímido, mas agora fala com toda a gente.",
+      "audio": true
+    },
+    {
+      "pt": "extrovertido",
+      "ru": "общительный, экстраверт",
+      "example": "A Inês é extrovertida e faz amigos em todo o lado.",
+      "audio": true
+    },
+    {
+      "pt": "educado",
+      "ru": "вежливый, воспитанный (не «образованный»!)",
+      "example": "O teu filho é muito educado.",
+      "audio": true
+    },
+    {
+      "pt": "mal-educado",
+      "ru": "невоспитанный, грубый",
+      "example": "Não sejas mal-educado, cumprimenta a senhora.",
+      "audio": true
+    },
+    {
+      "pt": "generoso",
+      "ru": "щедрый",
+      "example": "O avô é muito generoso com os netos.",
+      "audio": true
+    },
+    {
+      "pt": "forreta",
+      "ru": "скупой, жадина (разг.)",
+      "example": "Não sejas forreta, paga-me um café!",
+      "audio": true
+    },
+    {
+      "pt": "sensível",
+      "ru": "чувствительный, ранимый",
+      "example": "Ela é muito sensível, cuidado com o que dizes.",
+      "audio": true
+    },
+    {
+      "pt": "esperto",
+      "ru": "сообразительный, смышлёный",
+      "example": "O miúdo é muito esperto para a idade.",
+      "audio": true
+    },
+    {
+      "pt": "parvo",
+      "ru": "глупый, дурак (разг.)",
+      "example": "Fui parvo em acreditar nele.",
+      "audio": true
+    },
+    {
+      "pt": "exigente",
+      "ru": "требовательный",
+      "example": "A chefe é exigente, mas justa.",
+      "audio": true
+    },
+    {
+      "pt": "descontraído",
+      "ru": "расслабленный, непринуждённый",
+      "example": "O ambiente no escritório é descontraído.",
+      "audio": true
+    },
+    {
+      "pt": "fixe",
+      "ru": "классный, клёвый (разг.)",
+      "example": "O teu novo colega é muito fixe.",
+      "audio": true
+    },
+    {
+      "pt": "porreiro",
+      "ru": "отличный, классный (разг.)",
+      "example": "Foi um jantar porreiro!",
+      "audio": true
+    },
+    {
+      "pt": "giro",
+      "ru": "милый, симпатичный, красивый",
+      "example": "Que vestido tão giro!",
+      "audio": true
+    },
+    {
+      "pt": "chato",
+      "ru": "занудный, надоедливый; досадный",
+      "example": "O vizinho é um chato, queixa-se de tudo.",
+      "audio": true
+    },
+    {
+      "pt": "Que chatice!",
+      "ru": "Какая досада! Вот засада!",
+      "example": "Perdi o comboio. Que chatice!",
+      "audio": true
+    },
+    {
+      "pt": "Que seca!",
+      "ru": "Какая скука!",
+      "example": "A reunião durou três horas. Que seca!",
+      "audio": true
+    },
+    {
+      "pt": "Que giro!",
+      "ru": "Как мило! Как здорово!",
+      "example": "Vais viver para o Porto? Que giro!",
+      "audio": true
+    },
+    {
+      "pt": "Fogo!",
+      "ru": "Блин! Чёрт! (мягкое восклицание)",
+      "example": "Fogo, esqueci-me das chaves outra vez!",
+      "audio": true
+    },
+    {
+      "pt": "Coitado!",
+      "ru": "Бедняга!",
+      "example": "Coitado do Rui, partiu o braço.",
+      "audio": true
+    },
+    {
+      "pt": "Ainda bem!",
+      "ru": "Вот и хорошо! Слава богу!",
+      "example": "Já te sentes melhor? Ainda bem!",
+      "audio": true
+    },
+    {
+      "pt": "Não faz mal.",
+      "ru": "Ничего страшного.",
+      "example": "Desculpa o atraso! — Não faz mal.",
+      "audio": true
+    },
+    {
+      "pt": "ter piada",
+      "ru": "быть забавным, смешным",
+      "example": "Ele tem muita piada, rimo-nos imenso.",
+      "audio": true
+    },
+    {
+      "pt": "estar com a pica toda",
+      "ru": "быть полным энтузиазма (разг.)",
+      "example": "Comecei o curso e estou com a pica toda!",
+      "audio": true
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "id": "b2-opiniao-habitacao",
+  "level": "B2",
+  "title": "Opinião: casa para quem cá vive",
+  "paragraphs": [
+    "Há vinte anos, quem chegava aos trinta em Portugal pensava em comprar casa. Hoje, muitos jovens da minha geração dão-se por satisfeitos se conseguirem arrendar um quarto num apartamento partilhado. Não exagero: em Lisboa e no Porto, a renda de um T1 ultrapassa com frequência o salário mínimo, e os portugueses saem de casa dos pais, em média, perto dos trinta anos.",
+    "As causas são conhecidas e, ao contrário do que se ouve nos cafés, não se resumem aos estrangeiros. Durante décadas, o Estado praticamente deixou de construir habitação pública, que representa hoje uma fatia ínfima do parque habitacional. Ao mesmo tempo, os salários mantiveram-se baixos, a construção nova virou-se para o segmento de luxo e muitos prédios dos centros históricos foram convertidos em alojamento local.",
+    "É verdade que o turismo trouxe dinheiro e recuperou bairros que estavam a cair aos bocados. Seria hipócrita negá-lo. Mas uma cidade não é um parque temático: se os professores, os enfermeiros e os empregados de mesa não puderem viver nela, quem é que vai dar aulas, tratar dos doentes e servir os cafés?",
+    "Os sucessivos governos têm anunciado programa atrás de programa, com nomes sonantes e resultados modestos. Fala-se muito de incentivos fiscais e pouco de casas concretas, com chaves e moradores. Entretanto, os jovens emigram ou adiam a decisão de ter filhos, e as famílias de rendimentos médios são empurradas para cada vez mais longe, para concelhos onde o comboio passa de hora a hora.",
+    "Não tenho uma solução mágica, mas parece-me evidente que nenhuma medida resultará sem um investimento público sério e prolongado: construir e reabilitar casas a custos controlados, aproveitar os imóveis do Estado que estão devolutos e garantir contratos de arrendamento mais longos e estáveis. Também seria útil que as câmaras municipais tivessem coragem de limitar o alojamento local onde ele já tomou conta dos bairros.",
+    "A habitação não é um luxo nem um mero investimento. É a base de tudo o resto: de uma família, de um emprego, de uma vida. Enquanto a tratarmos como uma mercadoria qualquer, continuaremos a ver os nossos filhos fazer as malas."
+  ],
+  "glossary": [
+    {
+      "word": "dão-se por satisfeitos",
+      "ru": "считают себя довольными, рады уже тому"
+    },
+    {
+      "word": "apartamento partilhado",
+      "ru": "квартира, которую снимают вскладчину"
+    },
+    {
+      "word": "ultrapassa",
+      "ru": "превышает"
+    },
+    {
+      "word": "não se resumem aos",
+      "ru": "не сводятся к"
+    },
+    {
+      "word": "uma fatia ínfima",
+      "ru": "ничтожная доля"
+    },
+    {
+      "word": "parque habitacional",
+      "ru": "жилой фонд"
+    },
+    {
+      "word": "alojamento local",
+      "ru": "краткосрочная (туристическая) аренда жилья"
+    },
+    {
+      "word": "a cair aos bocados",
+      "ru": "разваливались на куски"
+    },
+    {
+      "word": "nomes sonantes",
+      "ru": "громкие названия"
+    },
+    {
+      "word": "adiam",
+      "ru": "откладывают"
+    },
+    {
+      "word": "rendimentos médios",
+      "ru": "средние доходы"
+    },
+    {
+      "word": "empurradas",
+      "ru": "вытесняемые"
+    },
+    {
+      "word": "concelhos",
+      "ru": "муниципалитеты (районы)"
+    },
+    {
+      "word": "de hora a hora",
+      "ru": "раз в час"
+    },
+    {
+      "word": "a custos controlados",
+      "ru": "по регулируемой (доступной) цене"
+    },
+    {
+      "word": "devolutos",
+      "ru": "пустующие, заброшенные"
+    },
+    {
+      "word": "tomou conta dos",
+      "ru": "захватил, заполонил"
+    },
+    {
+      "word": "uma mercadoria qualquer",
+      "ru": "обычный товар"
+    },
+    {
+      "word": "fazer as malas",
+      "ru": "паковать чемоданы (уезжать)"
+    }
+  ],
+  "questions": [
+    {
+      "id": "b2-opiniao-habitacao-q-01",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "choice",
+      "prompt": "Qual é a principal tese do autor?",
+      "options": [
+        "Os estrangeiros são os únicos culpados pela crise da habitação",
+        "Sem investimento público sério, a crise da habitação não se resolve",
+        "O turismo só trouxe problemas às cidades",
+        "Os jovens devem comprar casa antes dos trinta"
+      ],
+      "correct": 1,
+      "explanation": "Ключевая фраза: **nenhuma medida resultará sem um investimento público sério e prolongado**. Автор прямо говорит, что причины **não se resumem aos estrangeiros**, и признаёт пользу туризма."
+    },
+    {
+      "id": "b2-opiniao-habitacao-q-02",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "choice",
+      "prompt": "Como é que o autor vê o turismo?",
+      "options": [
+        "Como a única causa do problema",
+        "Como algo totalmente positivo",
+        "Com uma posição equilibrada: trouxe benefícios, mas também custos",
+        "Não fala do turismo"
+      ],
+      "correct": 2,
+      "explanation": "Он признаёт, что туризм **trouxe dinheiro e recuperou bairros** (**Seria hipócrita negá-lo**), но предупреждает, что **uma cidade não é um parque temático**."
+    },
+    {
+      "id": "b2-opiniao-habitacao-q-03",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "fill-gap",
+      "prompt": "Se os professores e os enfermeiros não ___ (poder) viver nela, quem é que vai dar aulas?",
+      "answer": [
+        "puderem"
+      ],
+      "hint": "futuro do conjuntivo",
+      "ru": "Если учителя и медсёстры не смогут в нём жить, кто будет преподавать?",
+      "explanation": "После **se** с отнесённостью к будущему — futuro do conjuntivo: **poder → puderem**. Типичная ошибка русскоязычных — поставить здесь *podem*."
+    },
+    {
+      "id": "b2-opiniao-habitacao-q-04",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "choice",
+      "prompt": "O que critica o autor nos programas dos governos?",
+      "options": [
+        "Têm nomes sonantes, mas resultados modestos",
+        "São demasiado caros",
+        "Só ajudam os estrangeiros",
+        "Foram anunciados há demasiado pouco tempo"
+      ],
+      "correct": 0,
+      "explanation": "**Programa atrás de programa, com nomes sonantes e resultados modestos** — громкие названия, скромные результаты."
+    },
+    {
+      "id": "b2-opiniao-habitacao-q-05",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "fill-gap",
+      "prompt": "Também seria útil que as câmaras municipais ___ (ter) coragem de limitar o alojamento local.",
+      "answer": [
+        "tivessem"
+      ],
+      "hint": "imperfeito do conjuntivo",
+      "ru": "Было бы также полезно, чтобы муниципалитеты решились ограничить краткосрочную аренду.",
+      "explanation": "Главное предложение в condicional (**seria útil que**) требует imperfeito do conjuntivo: **ter → tivessem**."
+    },
+    {
+      "id": "b2-opiniao-habitacao-q-06",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "fill-gap",
+      "prompt": "Enquanto a ___ (tratar) como uma mercadoria qualquer, continuaremos a ver os nossos filhos fazer as malas.",
+      "answer": [
+        "tratarmos"
+      ],
+      "hint": "futuro do conjuntivo, nós",
+      "ru": "Пока мы будем относиться к нему как к обычному товару, мы будем видеть, как наши дети пакуют чемоданы.",
+      "explanation": "**Enquanto** («пока») с будущим значением — futuro do conjuntivo: **tratarmos**. Местоимение **a** (= a habitação) стоит перед глаголом из-за союза."
+    },
+    {
+      "id": "b2-opiniao-habitacao-q-07",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "translate-ru-pt",
+      "ru": "Причины известны, и они не сводятся к иностранцам.",
+      "answer": [
+        "As causas são conhecidas e não se resumem aos estrangeiros.",
+        "As causas são conhecidas e elas não se resumem aos estrangeiros.",
+        "As causas são conhecidas e não se limitam aos estrangeiros.",
+        "As causas são conhecidas e não se reduzem aos estrangeiros."
+      ],
+      "explanation": "**Resumir-se a** — «сводиться к»; после **não** местоимение встаёт перед глаголом: **não se resumem**. **A + os = aos**."
+    },
+    {
+      "id": "b2-opiniao-habitacao-q-08",
+      "topicId": "b2-opiniao-habitacao",
+      "type": "listen-choice",
+      "text": "A habitação não é um luxo nem um mero investimento.",
+      "prompt": "Что ты услышал?",
+      "options": [
+        "Жильё — это роскошь и выгодная инвестиция.",
+        "Жильё — это не роскошь и не просто инвестиция.",
+        "Инвестиции в жильё — не роскошь.",
+        "Жилья не хватает даже для инвесторов."
+      ],
+      "correct": 1,
+      "explanation": "**Não é... nem...** — «не... и не...»; **um mero investimento** — «всего лишь инвестиция»."
+    }
+  ]
+}

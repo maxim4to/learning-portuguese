@@ -1,0 +1,191 @@
+{
+  "id": "vizinhos-condominio",
+  "title": "Соседи и condomínio",
+  "titlePt": "Vizinhos e condomínio",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Boa noite a todos. Vamos começar a reunião de condomínio. O senhor é do terceiro esquerdo, não é?", "ru": "Добрый вечер всем. Начинаем собрание собственников. Вы ведь из квартиры на третьем этаже слева?" },
+    { "speaker": "B", "pt": "Sou, sim. Comprei a fração em março. Queria levantar duas questões, se for possível.", "ru": "Да. Я купил квартиру в марте. Хотел бы поднять два вопроса, если можно." },
+    { "speaker": "A", "pt": "Com certeza. Primeiro temos de aprovar as contas do ano passado e o orçamento para o próximo ano.", "ru": "Конечно. Сначала нужно утвердить отчёт за прошлый год и бюджет на следующий." },
+    { "speaker": "B", "pt": "Em relação ao orçamento: a quota mensal vai aumentar?", "ru": "Что касается бюджета: ежемесячный взнос вырастет?" },
+    { "speaker": "A", "pt": "Vai passar de trinta e cinco para quarenta euros, por causa das obras no telhado.", "ru": "Он вырастет с тридцати пяти до сорока евро из-за ремонта крыши." },
+    { "speaker": "B", "pt": "Percebo. E quando é que as obras vão começar? Há uma infiltração na minha casa de banho.", "ru": "Понятно. А когда начнётся ремонт? У меня в ванной протечка." },
+    { "speaker": "A", "pt": "Se a proposta for aprovada hoje, começam em maio. Já pediu a alguém para ver a infiltração?", "ru": "Если предложение сегодня утвердят, начнут в мае. Вы уже просили кого-нибудь посмотреть протечку?" },
+    { "speaker": "B", "pt": "Ainda não. Mandei um e-mail à administração do condomínio, mas ninguém me respondeu.", "ru": "Ещё нет. Я написал управляющей компании, но мне никто не ответил." },
+    { "speaker": "A", "pt": "Peço desculpa. Vou mandar lá o canalizador esta semana. Qual era a segunda questão?", "ru": "Прошу прощения. На этой неделе пришлю к вам сантехника. А какой второй вопрос?" },
+    { "speaker": "B", "pt": "É o barulho. O vizinho de cima está sempre a arrastar móveis depois da meia-noite.", "ru": "Шум. Сосед сверху постоянно двигает мебель после полуночи." },
+    { "speaker": "A", "pt": "O regulamento do condomínio diz que é preciso respeitar o silêncio entre as onze da noite e as sete da manhã.", "ru": "По правилам дома с одиннадцати вечера до семи утра нужно соблюдать тишину." },
+    { "speaker": "B", "pt": "Já falei com ele, mas não adiantou nada. O que é que posso fazer?", "ru": "Я уже говорил с ним, но без толку. Что я могу сделать?" },
+    { "speaker": "A", "pt": "Vamos pôr isso na ata e enviar-lhe uma carta. Se continuar, pode chamar a PSP.", "ru": "Мы внесём это в протокол и отправим ему письмо. Если не прекратится, можете вызвать полицию (PSP)." },
+    { "speaker": "B", "pt": "Muito bem. Então voto a favor das obras e do novo orçamento.", "ru": "Хорошо. Тогда я голосую за ремонт и за новый бюджет." },
+    { "speaker": "A", "pt": "Obrigada. Quem vota contra? Ninguém? Fica aprovado por unanimidade.", "ru": "Спасибо. Кто против? Никого? Принято единогласно." }
+  ],
+  "phrases": [
+    { "pt": "Queria levantar uma questão.", "ru": "Я хотел бы поднять один вопрос." },
+    { "pt": "Em relação ao orçamento…", "ru": "Что касается бюджета…" },
+    { "pt": "Quanto é a quota do condomínio?", "ru": "Сколько составляет взнос на содержание дома?" },
+    { "pt": "Quando é que as obras vão começar?", "ru": "Когда начнётся ремонт?" },
+    { "pt": "Há uma infiltração no teto da minha casa de banho.", "ru": "У меня протекает потолок в ванной." },
+    { "pt": "O vizinho de cima faz muito barulho à noite.", "ru": "Сосед сверху сильно шумит по ночам." },
+    { "pt": "Já falei com ele, mas não adiantou nada.", "ru": "Я уже говорил с ним, но без толку." },
+    { "pt": "Desculpe o incómodo, mas podia baixar a música?", "ru": "Простите за беспокойство, не могли бы вы сделать музыку потише?" },
+    { "pt": "Peço que isto fique registado na ata.", "ru": "Прошу занести это в протокол." },
+    { "pt": "Voto a favor. / Voto contra.", "ru": "Я голосую за. / Я голосую против." }
+  ],
+  "vocab": [
+    { "pt": "o condomínio", "ru": "кондоминиум: объединение собственников дома; взносы на его содержание", "example": "O condomínio deste prédio é bem gerido." },
+    { "pt": "o condómino / a condómina", "ru": "собственник квартиры в доме", "example": "Todos os condóminos foram convocados para a reunião." },
+    { "pt": "a administração do condomínio", "ru": "управляющая компания (или управляющий) дома", "example": "A administração do condomínio ainda não respondeu." },
+    { "pt": "o administrador / a administradora", "ru": "управляющий / управляющая", "example": "A administradora apresentou as contas do ano." },
+    { "pt": "a reunião de condomínio", "ru": "собрание собственников", "example": "A reunião de condomínio é na quinta-feira às oito." },
+    { "pt": "a assembleia de condóminos", "ru": "общее собрание собственников (офиц.)", "example": "A assembleia de condóminos aprovou o orçamento." },
+    { "pt": "a convocatória", "ru": "уведомление о собрании", "example": "Recebi a convocatória na caixa do correio." },
+    { "pt": "a ordem de trabalhos", "ru": "повестка дня", "example": "As obras estão na ordem de trabalhos." },
+    { "pt": "a ata", "ru": "протокол", "example": "A ata da reunião vai ser enviada por e-mail." },
+    { "pt": "o orçamento", "ru": "бюджет; смета", "example": "Pedimos três orçamentos para pintar a fachada." },
+    { "pt": "a quota", "ru": "взнос (ежемесячный или квартальный)", "example": "A quota do condomínio paga-se até ao dia oito." },
+    { "pt": "o fundo comum de reserva", "ru": "резервный фонд дома", "example": "As obras vão ser pagas com o fundo comum de reserva." },
+    { "pt": "a fração", "ru": "квартира, помещение (юридический термин)", "example": "Cada fração tem direito a um lugar na garagem." },
+    { "pt": "as partes comuns", "ru": "места общего пользования", "example": "A limpeza das partes comuns é às terças." },
+    { "pt": "o regulamento do condomínio", "ru": "правила дома", "example": "O regulamento do condomínio proíbe estender roupa na fachada." },
+    { "pt": "as obras", "ru": "ремонтные работы", "example": "As obras no prédio vão durar dois meses." },
+    { "pt": "o telhado", "ru": "крыша", "example": "O telhado precisa de ser reparado antes do inverno." },
+    { "pt": "a fachada", "ru": "фасад", "example": "A fachada vai ser pintada na primavera." },
+    { "pt": "o elevador", "ru": "лифт", "example": "O elevador está avariado outra vez." },
+    { "pt": "o patamar", "ru": "лестничная площадка", "example": "Não deixe as bicicletas no patamar." },
+    { "pt": "o rés-do-chão", "ru": "первый этаж", "example": "A senhora do rés-do-chão tem um cão." },
+    { "pt": "o terceiro esquerdo", "ru": "третий этаж, квартира слева (3.º esq.)", "example": "Moro no terceiro esquerdo." },
+    { "pt": "a infiltração", "ru": "протечка (через стену, потолок)", "example": "Há uma infiltração no teto da cozinha." },
+    { "pt": "a humidade", "ru": "сырость, влажность", "example": "Com a humidade, apareceu bolor na parede." },
+    { "pt": "o canalizador", "ru": "сантехник", "example": "O canalizador vem cá amanhã de manhã." },
+    { "pt": "o barulho", "ru": "шум", "example": "O barulho das obras começa às oito." },
+    { "pt": "o ruído", "ru": "шум (офиц., в законах)", "example": "A lei do ruído protege o descanso entre as onze da noite e as sete da manhã." },
+    { "pt": "o vizinho de cima / de baixo", "ru": "сосед сверху / снизу", "example": "A vizinha de baixo queixou-se da água." },
+    { "pt": "o senhorio / a senhoria", "ru": "арендодатель / арендодательница", "example": "O senhorio paga o condomínio, não o inquilino." },
+    { "pt": "o inquilino / a inquilina", "ru": "арендатор, жилец", "example": "Os inquilinos também podem ir à reunião." },
+    { "pt": "o ecoponto", "ru": "контейнеры для раздельного сбора мусора", "example": "O ecoponto fica ao fundo da rua." },
+    { "pt": "a votação", "ru": "голосование", "example": "A votação foi feita no fim da reunião." },
+    { "pt": "por unanimidade", "ru": "единогласно", "example": "O orçamento foi aprovado por unanimidade." },
+    { "pt": "arrastar móveis", "ru": "двигать мебель (с шумом)", "example": "Alguém está a arrastar móveis lá em cima." },
+    { "pt": "não adiantar nada", "ru": "ничего не дать, не помочь", "example": "Reclamei, mas não adiantou nada." },
+    { "pt": "queixar-se", "ru": "жаловаться", "example": "Vou queixar-me à administração." }
+  ],
+  "exercises": [
+    {
+      "id": "vizinhos-condominio-ex-01",
+      "topicId": "vizinhos-condominio",
+      "type": "choice",
+      "prompt": "O valor que cada condómino paga todos os meses para as despesas do prédio chama-se ___.",
+      "options": ["a renda", "a caução", "a quota", "a fatura"],
+      "correct": 2,
+      "explanation": "**A quota** (do condomínio) — взнос собственника на содержание дома. **A renda** — арендная плата, **a caução** — залог при аренде."
+    },
+    {
+      "id": "vizinhos-condominio-ex-02",
+      "topicId": "vizinhos-condominio",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a ata", "right": "протокол" },
+        { "left": "o orçamento", "right": "бюджет, смета" },
+        { "left": "a infiltração", "right": "протечка" },
+        { "left": "o canalizador", "right": "сантехник" },
+        { "left": "o telhado", "right": "крыша" }
+      ]
+    },
+    {
+      "id": "vizinhos-condominio-ex-03",
+      "topicId": "vizinhos-condominio",
+      "type": "fill-gap",
+      "prompt": "O vizinho de cima está sempre ___ arrastar móveis depois da meia-noite.",
+      "answer": ["a"],
+      "hint": "длительное действие в pt-PT",
+      "ru": "Сосед сверху постоянно двигает мебель после полуночи.",
+      "explanation": "В Португалии длительное действие — **estar a + infinitivo**: **está sempre a arrastar**. Герундий (*está arrastando*) — бразильский вариант."
+    },
+    {
+      "id": "vizinhos-condominio-ex-04",
+      "topicId": "vizinhos-condominio",
+      "type": "listen-type",
+      "text": "Em relação ao orçamento: a quota mensal vai aumentar?",
+      "answer": ["Em relação ao orçamento: a quota mensal vai aumentar?"],
+      "explanation": "**Em relação a…** — «что касается…», удобный оборот, чтобы перейти к своему вопросу на собрании."
+    },
+    {
+      "id": "vizinhos-condominio-ex-05",
+      "topicId": "vizinhos-condominio",
+      "type": "listen-choice",
+      "text": "Vai passar de trinta e cinco para quarenta euros, por causa das obras no telhado.",
+      "prompt": "Почему вырастет взнос?",
+      "options": ["Из-за ремонта лифта", "Из-за ремонта крыши", "Из-за покраски фасада", "Из-за долгов соседей"],
+      "correct": 1,
+      "explanation": "**Por causa das obras no telhado** — из-за ремонта крыши. Взнос: с **35** до **40** евро."
+    },
+    {
+      "id": "vizinhos-condominio-ex-06",
+      "topicId": "vizinhos-condominio",
+      "type": "order-words",
+      "words": ["Mandei", "um", "e-mail", "à", "administração", "do", "condomínio."],
+      "answer": "Mandei um e-mail à administração do condomínio.",
+      "ru": "Я отправил e-mail управляющей компании дома."
+    },
+    {
+      "id": "vizinhos-condominio-ex-07",
+      "topicId": "vizinhos-condominio",
+      "type": "translate-ru-pt",
+      "ru": "У меня в ванной протечка.",
+      "answer": [
+        "Há uma infiltração na minha casa de banho.",
+        "Há uma infiltração na casa de banho.",
+        "Tenho uma infiltração na casa de banho.",
+        "Tenho uma infiltração na minha casa de banho.",
+        "Na minha casa de banho há uma infiltração."
+      ],
+      "explanation": "Протечка через стену или потолок — **infiltração**; «ванная» — **casa de banho** (не *banheiro*). «Есть, имеется» — **há**."
+    },
+    {
+      "id": "vizinhos-condominio-ex-08",
+      "topicId": "vizinhos-condominio",
+      "type": "choice",
+      "prompt": "Como pedir educadamente a um vizinho que faça menos barulho?",
+      "options": [
+        "Faz menos barulho!",
+        "Me desculpe, mas você faz muito barulho.",
+        "O senhor tem que parar com isso já.",
+        "Desculpe o incómodo, mas podia fazer menos barulho à noite?"
+      ],
+      "correct": 3,
+      "explanation": "Вежливая просьба в pt-PT — через **podia…?** и **desculpe o incómodo**. *Me desculpe* — бразильский порядок (фраза не начинается с клитики), *você* в лицо звучит сухо, а требование «прекратить немедленно» — грубо."
+    },
+    {
+      "id": "vizinhos-condominio-ex-09",
+      "topicId": "vizinhos-condominio",
+      "type": "fill-gap",
+      "prompt": "Se a proposta ___ (ser) aprovada hoje, as obras começam em maio.",
+      "answer": ["for"],
+      "hint": "условие в будущем → futuro do conjuntivo",
+      "ru": "Если предложение утвердят сегодня, работы начнутся в мае.",
+      "explanation": "После **se** с отнесением к будущему — **futuro do conjuntivo**: **se for aprovada**. Русскоязычные часто ставят *se é* — по-португальски так не говорят."
+    },
+    {
+      "id": "vizinhos-condominio-ex-10",
+      "topicId": "vizinhos-condominio",
+      "type": "transform",
+      "prompt": "O vizinho arrasta móveis depois da meia-noite.",
+      "instruction": "Подчеркни, что это происходит постоянно: используй estar sempre a + infinitivo",
+      "answer": ["O vizinho está sempre a arrastar móveis depois da meia-noite."],
+      "explanation": "**Estar sempre a + infinitivo** — «вечно что-то делать», часто с оттенком раздражения."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы живёте в квартире на 3-м этаже слева (3.º esq.). Напишите e-mail управляющей компании дома: представьтесь, сообщите о протечке в потолке ванной (с какого времени, что уже сделали), пожалуйтесь на ночной шум соседа сверху (вы уже говорили с ним), попросите прислать сантехника и включить вопрос о шуме в повестку следующего собрания.",
+    "sample": "Exma. Senhora Administradora,\n\nSou o condómino do terceiro esquerdo do número 12 da Rua das Flores.\nEscrevo-lhe por causa de dois problemas.\nPrimeiro, há uma infiltração no teto da minha casa de banho desde o mês passado. Já tirei fotografias, que envio em anexo.\nSegundo, o vizinho de cima está sempre a arrastar móveis e a ouvir música alta depois da meia-noite. Já falei com ele duas vezes, mas não adiantou nada.\nPeço-lhe que mande o canalizador ver a infiltração o mais depressa possível.\nGostava também que a questão do barulho fosse incluída na ordem de trabalhos da próxima reunião de condomínio.\n\nAgradeço desde já a atenção.\nCom os melhores cumprimentos,\nDmitri Sokolov",
+    "checklist": [
+      "Есть официальное обращение (Exma. Senhora…) и вежливая подпись (Com os melhores cumprimentos)",
+      "Вы назвали свою квартиру (terceiro esquerdo) и описали протечку словом infiltração",
+      "Шум описан через estar (sempre) a + infinitivo, а не через герундий",
+      "Просьбы смягчены: Peço-lhe que…, Gostava que…, Podia…?",
+      "Упомянута ordem de trabalhos или reunião de condomínio"
+    ]
+  }
+}

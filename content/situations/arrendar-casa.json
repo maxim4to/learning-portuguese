@@ -1,0 +1,191 @@
+{
+  "id": "arrendar-casa",
+  "title": "Снять квартиру",
+  "titlePt": "Arrendar uma casa",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Boa tarde! É o senhor Ivanov? Sou a Joana, da imobiliária. Entre, esteja à vontade.", "ru": "Добрый день! Вы господин Иванов? Я Жуана из агентства недвижимости. Проходите, чувствуйте себя как дома." },
+    { "speaker": "B", "pt": "Boa tarde, muito prazer. Obrigado por me mostrar o apartamento.", "ru": "Добрый день, очень приятно. Спасибо, что показываете квартиру." },
+    { "speaker": "A", "pt": "Como vê, é um T2 com varanda, cozinha equipada e muita luz. A renda é de novecentos euros por mês.", "ru": "Как видите, это T2 (две спальни) с балконом и оборудованной кухней, здесь много света. Аренда — девятьсот евро в месяц." },
+    { "speaker": "B", "pt": "As contas estão incluídas na renda ou são à parte?", "ru": "Коммунальные платежи включены в аренду или оплачиваются отдельно?" },
+    { "speaker": "A", "pt": "A água, a luz e o gás são à parte. O condomínio já está incluído.", "ru": "Вода, электричество и газ — отдельно. Взнос в фонд дома уже включён." },
+    { "speaker": "B", "pt": "E o que é que o senhorio pede para assinar o contrato?", "ru": "А что хозяин просит для подписания договора?" },
+    { "speaker": "A", "pt": "Pede duas rendas de caução e uma renda adiantada. Também é preciso um fiador.", "ru": "Он просит залог в размере двух месячных платежей и оплату за месяц вперёд. Ещё нужен поручитель." },
+    { "speaker": "B", "pt": "Não tenho fiador cá em Portugal. Há alguma alternativa?", "ru": "У меня нет поручителя здесь, в Португалии. Есть какой-то другой вариант?" },
+    { "speaker": "A", "pt": "Nesse caso, o senhorio aceita mais duas rendas de caução ou uma garantia bancária.", "ru": "В таком случае хозяин согласен на залог ещё за два месяца или на банковскую гарантию." },
+    { "speaker": "B", "pt": "E o contrato é por quanto tempo?", "ru": "А договор на какой срок?" },
+    { "speaker": "A", "pt": "É um contrato de um ano, renovável. O senhorio regista-o nas Finanças e passa recibos eletrónicos.", "ru": "Договор на год с продлением. Хозяин регистрирует его в налоговой и выдаёт электронные квитанции." },
+    { "speaker": "B", "pt": "Ótimo. Que documentos é que tenho de apresentar?", "ru": "Отлично. Какие документы мне нужно предоставить?" },
+    { "speaker": "A", "pt": "O título de residência, o NIF e os três últimos recibos de vencimento ou o contrato de trabalho.", "ru": "Вид на жительство, NIF и три последних расчётных листка или трудовой договор." },
+    { "speaker": "B", "pt": "Muito bem. Gostava de pensar até amanhã. Posso ligar-lhe de manhã?", "ru": "Хорошо. Я бы хотел подумать до завтра. Можно позвонить вам утром?" },
+    { "speaker": "A", "pt": "Claro, mas não demore muito: há mais pessoas interessadas.", "ru": "Конечно, только не затягивайте: есть и другие желающие." }
+  ],
+  "phrases": [
+    { "pt": "Queria marcar uma visita ao apartamento.", "ru": "Я хотел бы договориться о просмотре квартиры." },
+    { "pt": "O apartamento ainda está disponível?", "ru": "Квартира ещё свободна?" },
+    { "pt": "Quanto é a renda por mês?", "ru": "Сколько стоит аренда в месяц?" },
+    { "pt": "As contas estão incluídas?", "ru": "Коммунальные платежи включены?" },
+    { "pt": "Quantas rendas de caução é que pedem?", "ru": "Залог за сколько месяцев вы берёте?" },
+    { "pt": "É preciso fiador?", "ru": "Нужен поручитель?" },
+    { "pt": "O contrato vai ser registado nas Finanças?", "ru": "Договор будет зарегистрирован в налоговой?" },
+    { "pt": "Aceitam animais de estimação?", "ru": "С домашними животными можно?" },
+    { "pt": "A partir de quando é que a casa está livre?", "ru": "С какого числа квартира свободна?" },
+    { "pt": "Gostava de pensar até amanhã.", "ru": "Я бы хотел подумать до завтра." }
+  ],
+  "vocab": [
+    { "pt": "o senhorio / a senhoria", "ru": "арендодатель, хозяин / хозяйка жилья", "example": "O senhorio mora no prédio ao lado." },
+    { "pt": "o inquilino / a inquilina", "ru": "арендатор, жилец", "example": "O inquilino anterior saiu em março." },
+    { "pt": "a imobiliária", "ru": "агентство недвижимости", "example": "Encontrei a casa através de uma imobiliária." },
+    { "pt": "o arrendamento", "ru": "аренда (жилья)", "example": "Os preços do arrendamento em Lisboa estão muito altos." },
+    { "pt": "arrendar", "ru": "снимать; сдавать в аренду", "example": "Queremos arrendar um T2 perto do metro." },
+    { "pt": "a renda", "ru": "арендная плата", "example": "A renda paga-se até ao dia oito de cada mês." },
+    { "pt": "a caução", "ru": "залог, депозит", "example": "A caução é devolvida no fim do contrato." },
+    { "pt": "o fiador / a fiadora", "ru": "поручитель", "example": "O meu colega aceitou ser meu fiador." },
+    { "pt": "a garantia bancária", "ru": "банковская гарантия", "example": "Sem fiador, pode apresentar uma garantia bancária." },
+    { "pt": "o contrato de arrendamento", "ru": "договор аренды", "example": "Li o contrato de arrendamento com atenção." },
+    { "pt": "o recibo de renda", "ru": "квитанция об оплате аренды", "example": "O senhorio passa o recibo de renda no Portal das Finanças." },
+    { "pt": "as contas", "ru": "счета, коммунальные платежи", "example": "As contas da luz e da água ficam em meu nome." },
+    { "pt": "o condomínio", "ru": "взнос на содержание дома; ТСЖ", "example": "O condomínio custa trinta euros por mês." },
+    { "pt": "o T1 / o T2", "ru": "квартира с одной / двумя спальнями", "example": "Um T1 chega para uma pessoa." },
+    { "pt": "a assoalhada", "ru": "жилая комната (в объявлениях)", "example": "É um apartamento de três assoalhadas." },
+    { "pt": "mobilado", "ru": "меблированный", "example": "O apartamento está mobilado, só falta a televisão." },
+    { "pt": "a cozinha equipada", "ru": "кухня с техникой", "example": "A cozinha equipada tem forno, placa e frigorífico." },
+    { "pt": "a varanda", "ru": "балкон", "example": "A varanda dá para o rio." },
+    { "pt": "o rés-do-chão", "ru": "первый этаж", "example": "Não quero viver no rés-do-chão por causa do barulho." },
+    { "pt": "o andar", "ru": "этаж; квартира", "example": "Moro no terceiro andar sem elevador." },
+    { "pt": "o elevador", "ru": "лифт", "example": "O prédio é antigo e não tem elevador." },
+    { "pt": "a arrecadação", "ru": "кладовка (в подвале или на чердаке)", "example": "As bicicletas ficam na arrecadação." },
+    { "pt": "o lugar de garagem", "ru": "парковочное место в гараже", "example": "O lugar de garagem custa mais cinquenta euros." },
+    { "pt": "a humidade", "ru": "сырость, влажность", "example": "No inverno há humidade nas paredes do quarto." },
+    { "pt": "o aquecimento", "ru": "отопление", "example": "Muitas casas em Portugal não têm aquecimento central." },
+    { "pt": "o certificado energético", "ru": "энергетический сертификат", "example": "O anúncio deve indicar o certificado energético." },
+    { "pt": "o anúncio", "ru": "объявление", "example": "Vi o anúncio ontem à noite e liguei logo." },
+    { "pt": "a visita", "ru": "просмотр (квартиры)", "example": "A visita ficou marcada para sábado às onze." },
+    { "pt": "o recibo de vencimento", "ru": "расчётный листок (зарплатная справка)", "example": "Pedem os três últimos recibos de vencimento." },
+    { "pt": "adiantado", "ru": "заранее, вперёд (об оплате)", "example": "Paga-se um mês adiantado." },
+    { "pt": "renovável", "ru": "с возможностью продления", "example": "O contrato é de dois anos, renovável." },
+    { "pt": "a mudança", "ru": "переезд", "example": "A mudança está marcada para o fim do mês." },
+    { "pt": "mudar-se", "ru": "переезжать", "example": "Mudámo-nos para Setúbal no ano passado." },
+    { "pt": "as chaves", "ru": "ключи", "example": "Entregam-me as chaves no dia da assinatura." },
+    { "pt": "a avaria", "ru": "поломка", "example": "Se houver uma avaria, ligo ao senhorio." }
+  ],
+  "exercises": [
+    {
+      "id": "arrendar-casa-ex-01",
+      "topicId": "arrendar-casa",
+      "type": "choice",
+      "prompt": "O senhorio pede duas rendas de ___ antes de entregar as chaves.",
+      "options": ["sinal", "multa", "caução", "entrada"],
+      "correct": 2,
+      "explanation": "**A caução** — залог, который возвращают в конце аренды. Обычно просят 1–2 месячных платежа (**duas rendas de caução**). **Multa** — штраф, **entrada** — первоначальный взнос при покупке."
+    },
+    {
+      "id": "arrendar-casa-ex-02",
+      "topicId": "arrendar-casa",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "o senhorio", "right": "арендодатель" },
+        { "left": "o inquilino", "right": "арендатор" },
+        { "left": "o fiador", "right": "поручитель" },
+        { "left": "a renda", "right": "арендная плата" },
+        { "left": "o condomínio", "right": "взнос на содержание дома" }
+      ]
+    },
+    {
+      "id": "arrendar-casa-ex-03",
+      "topicId": "arrendar-casa",
+      "type": "fill-gap",
+      "prompt": "A água, a luz e o gás são à ___.",
+      "answer": ["parte"],
+      "hint": "«отдельно»",
+      "ru": "Вода, электричество и газ — отдельно.",
+      "explanation": "**À parte** — «отдельно, сверху». Противоположное — **incluído**: *O condomínio já está incluído*."
+    },
+    {
+      "id": "arrendar-casa-ex-04",
+      "topicId": "arrendar-casa",
+      "type": "listen-type",
+      "text": "E o contrato é por quanto tempo?",
+      "answer": ["E o contrato é por quanto tempo?"],
+      "explanation": "**Por quanto tempo?** — «на какой срок?». Типичный ответ: **um contrato de um ano, renovável**."
+    },
+    {
+      "id": "arrendar-casa-ex-05",
+      "topicId": "arrendar-casa",
+      "type": "listen-choice",
+      "text": "Nesse caso, o senhorio aceita mais duas rendas de caução ou uma garantia bancária.",
+      "prompt": "Что предлагает агент, если нет поручителя?",
+      "options": ["Найти поручителя через агентство", "Заплатить залог ещё за два месяца или дать банковскую гарантию", "Заплатить аренду за весь год вперёд", "Снять квартиру на полгода"],
+      "correct": 1,
+      "explanation": "**Mais duas rendas de caução** — ещё два месяца залога, **uma garantia bancária** — банковская гарантия. Это обычные альтернативы **fiador** для иностранцев."
+    },
+    {
+      "id": "arrendar-casa-ex-06",
+      "topicId": "arrendar-casa",
+      "type": "order-words",
+      "words": ["contas", "As", "na", "incluídas", "estão", "renda?"],
+      "answer": "As contas estão incluídas na renda?",
+      "ru": "Коммунальные платежи включены в аренду?",
+      "explanation": "**As contas** — счета за воду, свет, газ, интернет. Этот вопрос стоит задать до подписания договора."
+    },
+    {
+      "id": "arrendar-casa-ex-07",
+      "topicId": "arrendar-casa",
+      "type": "translate-ru-pt",
+      "ru": "Сколько стоит аренда в месяц?",
+      "answer": [
+        "Quanto é a renda por mês?",
+        "Quanto custa a renda por mês?",
+        "Qual é o valor da renda por mês?",
+        "Quanto é a renda mensal?",
+        "Qual é a renda mensal?",
+        "Qual é o valor da renda mensal?",
+        "Quanto custa a renda mensal?",
+        "Quanto é que é a renda por mês?",
+        "Quanto é que custa a renda por mês?",
+        "Quanto se paga de renda por mês?"
+      ],
+      "explanation": "Аренда жилья — **a renda** (не *o aluguel*, как в Бразилии). «В месяц» — **por mês** или прилагательное **mensal**."
+    },
+    {
+      "id": "arrendar-casa-ex-08",
+      "topicId": "arrendar-casa",
+      "type": "choice",
+      "prompt": "Num anúncio português, um apartamento com dois quartos chama-se…",
+      "options": ["um T1", "um T2", "um dois-ambientes", "um T3"],
+      "correct": 1,
+      "explanation": "Цифра после **T** — число спален (без гостиной): **T0** — студия, **T1** — одна спальня, **T2** — две. Поэтому T2 — это «трёшка» в русском понимании с гостиной."
+    },
+    {
+      "id": "arrendar-casa-ex-09",
+      "topicId": "arrendar-casa",
+      "type": "fill-gap",
+      "prompt": "Não tenho ___ cá em Portugal. Há alguma alternativa?",
+      "answer": ["fiador"],
+      "hint": "человек, который гарантирует оплату за вас",
+      "ru": "У меня нет поручителя здесь, в Португалии. Есть другой вариант?",
+      "explanation": "**O fiador** — поручитель: если жилец не платит, платит он. Для новоприбывших это частая проблема."
+    },
+    {
+      "id": "arrendar-casa-ex-10",
+      "topicId": "arrendar-casa",
+      "type": "transform",
+      "prompt": "Quero ver o apartamento amanhã.",
+      "instruction": "Смягчи просьбу с помощью Gostava de…",
+      "answer": ["Gostava de ver o apartamento amanhã.", "Eu gostava de ver o apartamento amanhã."],
+      "explanation": "**Gostava de + infinitivo** — вежливое «я бы хотел», очень характерно для pt-PT. Прямое *Quero…* в разговоре с агентом звучит резковато."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы нашли в объявлении квартиру T1 в Порту. Напишите письмо агенту (6–10 строк): представьтесь и спросите, свободна ли ещё квартира; уточните, включены ли коммунальные платежи; спросите, какой залог просит хозяин; объясните, что у вас нет поручителя, и спросите об альтернативе; предложите день и время для просмотра.",
+    "sample": "Boa tarde,\nO meu nome é Pavel Smirnov e vi o vosso anúncio do T1 na Rua de Cedofeita.\nGostava de saber se o apartamento ainda está disponível.\nAs contas estão incluídas na renda ou são à parte?\nQuantas rendas de caução é que o senhorio pede?\nNão tenho fiador cá em Portugal. Seria possível apresentar uma garantia bancária?\nPodia marcar uma visita para quinta-feira, ao fim da tarde?\nObrigado desde já.\nCom os melhores cumprimentos,\nPavel Smirnov",
+    "checklist": [
+      "Есть вежливое приветствие и прощание (Boa tarde… / Com os melhores cumprimentos)",
+      "Вопросы о свободности квартиры и о коммунальных платежах (as contas, incluídas / à parte)",
+      "Используются слова renda, caução, fiador в правильном значении",
+      "Просьбы смягчены: Gostava de…, Podia…?, Seria possível…?",
+      "Нет бразилизмов: aluguel, mobiliado, клитики в начале фразы (Me envie…)"
+    ]
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "id": "b1-ha-desde-durante",
+  "level": "B1",
+  "module": "b1-sintaxe",
+  "title": "Há, desde, durante: выражение длительности",
+  "titlePt": "Há, desde, durante",
+  "requires": [
+    "a2-preposicoes-tempo",
+    "a2-perfeito-vs-imperfeito",
+    "b1-presente-conjuntivo"
+  ],
+  "theory": "## Три способа сказать о времени\n\n| что выражаем | конструкция | пример |\n|---|---|---|\n| «... назад» | **há** + период + **perfeito** | **Cheguei há dois anos.** — Я приехал два года назад. |\n| «уже ... (и продолжается)» | **há** + период + **que** + **presente** | **Há dois anos que vivo cá.** — Я живу здесь уже два года. |\n| | **presente** + **há** + период | **Vivo cá há dois anos.** |\n| «с (момента)» | **desde** + точка во времени | **Vivo cá desde 2022.** |\n| «в течение» (закрытый отрезок) | **durante** + период | **Vivi em Faro durante cinco anos.** |\n| «через ...» (в будущем) | **daqui a** + период | **O comboio parte daqui a dez minutos.** |\n\n## Há: «назад» или «уже»?\n\nВсё решает время глагола:\n\n- **perfeito** → действие закончено, **há** = «назад»: **Conheci-a há um ano.** — Я познакомился с ней год назад.\n- **presente** → действие продолжается, **há** = «уже, на протяжении»: **Conheço-a há um ano.** — Я знаю её уже год.\n\nЭто главная ловушка для русскоязычных: по-русски «я живу здесь два года» — настоящее время, и по-португальски тоже **presente**: **Vivo aqui há dois anos.** Не *vivi* и не *tenho vivido*.\n\nТо же с отрицанием: **Há muito tempo que não te vejo!** — Сто лет тебя не видел! (буквально «не вижу»). Вопрос: **Há quanto tempo estudas português?** — Сколько ты уже учишь португальский?\n\nЕсли отсчёт идёт от момента в прошлом, **há** превращается в **havia**, а глагол — в imperfeito: **Quando a conheci, ela vivia em Lisboa havia dois anos.**\n\nНе путайте **há** (глагол haver, прошлое) и **a** (предлог, расстояние или будущее): **Fica a dois quilómetros.** **Daqui a uma semana.**\n\n## Desde — от точки\n\n**Desde** + дата, событие, момент: **desde 2020**, **desde segunda-feira**, **desde o verão**, **desde criança** (с детства), **desde sempre**. Глагол обычно в **presente**, если состояние длится: **Trabalho aqui desde março.**\n\n## Desde que — два значения\n\n| desde que + | значение | пример |\n|---|---|---|\n| **индикатив** | «с тех пор как» (время) | **Desde que me mudei, estou mais calmo.** |\n| **conjuntivo** | «при условии, что» | **Podes ir, desde que voltes cedo.** |\n\nПодсказка: если можно заменить на «если только», нужен conjuntivo.\n\n## Durante — закрытый отрезок\n\n**Durante** + период или событие: **durante cinco anos**, **durante o verão**, **durante a reunião**. Обычно с **perfeito** (период закончился) или с повторяющимся действием: **Durante as férias, levantava-me tarde.** С количеством времени **durante** можно опустить: **Vivi lá cinco anos.**\n\nСравните:\n- **Vivi em Braga durante três anos.** — Жил три года (больше не живу).\n- **Vivo em Braga há três anos.** — Живу уже три года (и сейчас тоже).\n- **Vivo em Braga desde 2023.** — Живу с 2023 года.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Há dois anos que vivo cá.** | **Faz dois anos que moro aqui.** | **faz** в pt-PT тоже понятно, но **há** — стандарт; **cá** и **viver** частотнее в pt-PT |\n| **Cheguei há pouco.** | **Cheguei agora há pouco.** / **Acabei de chegar.** | в pt-PT очень частотны **há pouco**, **há bocado** |\n| **Estou à tua espera há meia hora.** | **Estou te esperando há meia hora.** | в pt-PT **estar à espera** и никакого герундия |\n\nСами предлоги **há / desde / durante** и союз **desde que** работают в обеих нормах одинаково.",
+  "commonErrors": "- **Прошедшее вместо настоящего**: *Vivi em Lisboa há três anos* (значит «жил три года назад») ✗ для «живу уже три года» → **Vivo em Lisboa há três anos** ✓.\n- **Перфект по-английски**: *Tenho vivido aqui há dois anos* ✗ → **Vivo aqui há dois anos** ✓.\n- **desde с периодом**: *Estudo português desde dois anos* ✗ → **Estudo português há dois anos** ✓ (**desde** — только от точки: **desde 2023**).\n- **durante для продолжающегося**: *Trabalho aqui durante cinco anos* ✗ → **Trabalho aqui há cinco anos** ✓.\n- **há вместо daqui a** (русское «через»): *O médico chega há dez minutos* ✗ → **O médico chega daqui a dez minutos** ✓.\n- **Орфография**: *a dois anos* (в значении «назад») ✗ → **há dois anos** ✓.\n- **desde que + индикатив в значении условия**: *Podes ir, desde que voltas cedo* ✗ → **desde que voltes cedo** ✓.",
+  "examples": [
+    {
+      "pt": "Vivo em Lisboa há três anos.",
+      "ru": "Я живу в Лиссабоне уже три года.",
+      "audio": true
+    },
+    {
+      "pt": "Mudei-me para cá há três anos.",
+      "ru": "Я переехал сюда три года назад.",
+      "audio": true
+    },
+    {
+      "pt": "Há muito tempo que não te vejo!",
+      "ru": "Сто лет тебя не видел!",
+      "audio": true
+    },
+    {
+      "pt": "Trabalho nesta empresa desde 2021.",
+      "ru": "Я работаю в этой компании с 2021 года.",
+      "audio": true
+    },
+    {
+      "pt": "Podes levar o carro, desde que o tragas amanhã.",
+      "ru": "Можешь взять машину, при условии что вернёшь её завтра.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-ha-desde-durante-ex-01",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Cheguei a Lisboa ___ três anos.",
+      "answer": [
+        "há"
+      ],
+      "ru": "Я приехал в Лиссабон три года назад."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-02",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Vivo no Porto ___ 2019.",
+      "answer": [
+        "desde"
+      ],
+      "ru": "Я живу в Порту с 2019 года."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-03",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Trabalhei na Alemanha ___ cinco anos e depois voltei.",
+      "answer": [
+        "durante"
+      ],
+      "ru": "Я пять лет работал в Германии, а потом вернулся.",
+      "explanation": "Закрытый отрезок в прошлом → durante + perfeito."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-04",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "___ duas horas que estou à tua espera!",
+      "answer": [
+        "Há"
+      ],
+      "ru": "Я жду тебя уже два часа!"
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-05",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Há muito tempo que não ___ (ver) a Joana.",
+      "answer": [
+        "vejo"
+      ],
+      "hint": "eu",
+      "ru": "Я давно не видел Жоану.",
+      "explanation": "Состояние длится до сих пор → presente, хотя по-русски «не видел»."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-06",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Podes ficar com o carro, desde que ___ (ter) cuidado.",
+      "answer": [
+        "tenhas"
+      ],
+      "hint": "tu",
+      "ru": "Можешь взять машину, при условии что будешь осторожен.",
+      "explanation": "desde que = «при условии, что» → conjuntivo."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-07",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Desde que se ___ (mudar) para cá, ela está mais feliz.",
+      "answer": [
+        "mudou"
+      ],
+      "ru": "С тех пор как она сюда переехала, она счастливее.",
+      "explanation": "desde que = «с тех пор как» → индикатив."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-08",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "O comboio parte ___ dez minutos.",
+      "answer": [
+        "daqui a"
+      ],
+      "ru": "Поезд отправляется через десять минут."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-09",
+      "topicId": "b1-ha-desde-durante",
+      "type": "choice",
+      "prompt": "Estudo português ___ dois anos.",
+      "options": [
+        "desde",
+        "durante",
+        "há",
+        "faz que"
+      ],
+      "correct": 2,
+      "explanation": "Период + действие продолжается → há."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-10",
+      "topicId": "b1-ha-desde-durante",
+      "type": "choice",
+      "prompt": "Ela ___ em Coimbra há dez anos e gosta muito.",
+      "options": [
+        "vive",
+        "viveu",
+        "vivia",
+        "viverá"
+      ],
+      "correct": 0,
+      "explanation": "Живёт до сих пор → presente."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-11",
+      "topicId": "b1-ha-desde-durante",
+      "type": "choice",
+      "prompt": "Quando a conheci, ela já morava em Lisboa ___ dois anos.",
+      "options": [
+        "há",
+        "havia",
+        "desde",
+        "daqui a"
+      ],
+      "correct": 1,
+      "explanation": "Отсчёт от момента в прошлом → havia."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-12",
+      "topicId": "b1-ha-desde-durante",
+      "type": "choice",
+      "prompt": "Não como carne ___ criança.",
+      "options": [
+        "desde que",
+        "há",
+        "durante",
+        "desde"
+      ],
+      "correct": 3,
+      "explanation": "desde criança — «с детства»."
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-13",
+      "topicId": "b1-ha-desde-durante",
+      "type": "transform",
+      "prompt": "Vivo em Lisboa há cinco anos.",
+      "instruction": "Начните с «Há...».",
+      "answer": [
+        "Há cinco anos que vivo em Lisboa.",
+        "Há cinco anos que eu vivo em Lisboa."
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-14",
+      "topicId": "b1-ha-desde-durante",
+      "type": "transform",
+      "prompt": "Há meia hora que estou à espera.",
+      "instruction": "Перенесите «há meia hora» в конец.",
+      "answer": [
+        "Estou à espera há meia hora.",
+        "Eu estou à espera há meia hora."
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-15",
+      "topicId": "b1-ha-desde-durante",
+      "type": "transform",
+      "prompt": "Se tiveres cuidado, podes ir.",
+      "instruction": "Замените se на desde que.",
+      "answer": [
+        "Podes ir, desde que tenhas cuidado.",
+        "Desde que tenhas cuidado, podes ir."
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-16",
+      "topicId": "b1-ha-desde-durante",
+      "type": "order-words",
+      "words": [
+        "Há",
+        "quanto",
+        "tempo",
+        "estudas",
+        "português?"
+      ],
+      "answer": "Há quanto tempo estudas português?"
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-17",
+      "topicId": "b1-ha-desde-durante",
+      "type": "order-words",
+      "words": [
+        "Choveu",
+        "durante",
+        "toda",
+        "a",
+        "noite"
+      ],
+      "answer": "Choveu durante toda a noite"
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-18",
+      "topicId": "b1-ha-desde-durante",
+      "type": "translate-ru-pt",
+      "ru": "Я живу в Лиссабоне уже три года.",
+      "answer": [
+        "Vivo em Lisboa há três anos.",
+        "Moro em Lisboa há três anos.",
+        "Eu vivo em Lisboa há três anos.",
+        "Eu moro em Lisboa há três anos.",
+        "Já vivo em Lisboa há três anos.",
+        "Já moro em Lisboa há três anos.",
+        "Há três anos que vivo em Lisboa.",
+        "Há três anos que moro em Lisboa.",
+        "Há três anos que eu vivo em Lisboa.",
+        "Há três anos que eu moro em Lisboa."
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-19",
+      "topicId": "b1-ha-desde-durante",
+      "type": "translate-ru-pt",
+      "ru": "Мы познакомились два года назад.",
+      "answer": [
+        "Conhecemo-nos há dois anos.",
+        "Nós conhecemo-nos há dois anos."
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-20",
+      "topicId": "b1-ha-desde-durante",
+      "type": "listen-type",
+      "text": "Há quanto tempo estás em Portugal?",
+      "answer": [
+        "Há quanto tempo estás em Portugal?"
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-ex-21",
+      "topicId": "b1-ha-desde-durante",
+      "type": "match",
+      "prompt": "Соедините конструкцию с переводом.",
+      "pairs": [
+        {
+          "left": "cheguei há dois anos",
+          "right": "приехал два года назад"
+        },
+        {
+          "left": "há dois anos que vivo cá",
+          "right": "живу здесь уже два года"
+        },
+        {
+          "left": "desde 2020",
+          "right": "с 2020 года"
+        },
+        {
+          "left": "durante dois anos",
+          "right": "в течение двух лет"
+        },
+        {
+          "left": "daqui a dois anos",
+          "right": "через два года"
+        },
+        {
+          "left": "desde que voltes cedo",
+          "right": "при условии, что вернёшься рано"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-ha-desde-durante-mt-01",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Mudei de casa ___ um mês.",
+      "answer": [
+        "há"
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-02",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Conheço o Rui ___ a escola primária.",
+      "answer": [
+        "desde"
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-03",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "___ as férias, li quatro livros.",
+      "answer": [
+        "Durante"
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-04",
+      "topicId": "b1-ha-desde-durante",
+      "type": "fill-gap",
+      "prompt": "Empresto-te o livro, desde que mo ___ (devolver) na segunda.",
+      "answer": [
+        "devolvas"
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-05",
+      "topicId": "b1-ha-desde-durante",
+      "type": "choice",
+      "prompt": "Há quanto tempo ___ aqui?",
+      "options": [
+        "trabalhaste",
+        "trabalhas",
+        "trabalhavas",
+        "trabalharás"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-06",
+      "topicId": "b1-ha-desde-durante",
+      "type": "choice",
+      "prompt": "O médico chega ___ dez minutos.",
+      "options": [
+        "há",
+        "desde",
+        "daqui a",
+        "durante"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-07",
+      "topicId": "b1-ha-desde-durante",
+      "type": "choice",
+      "prompt": "Desde que ___, não parou de chover.",
+      "options": [
+        "chegámos",
+        "chegue",
+        "chegarmos",
+        "cheguemos"
+      ],
+      "correct": 0,
+      "explanation": "«С тех пор как» → индикатив."
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-08",
+      "topicId": "b1-ha-desde-durante",
+      "type": "transform",
+      "prompt": "Toco guitarra há dez anos.",
+      "instruction": "Начните с «Há...».",
+      "answer": [
+        "Há dez anos que toco guitarra.",
+        "Há dez anos que eu toco guitarra."
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-09",
+      "topicId": "b1-ha-desde-durante",
+      "type": "translate-ru-pt",
+      "ru": "Я жду тебя уже час!",
+      "answer": [
+        "Estou à tua espera há uma hora!",
+        "Há uma hora que estou à tua espera!",
+        "Espero-te há uma hora!",
+        "Há uma hora que te espero!",
+        "Estou à espera há uma hora!",
+        "Há uma hora que estou à espera!",
+        "Espero por ti há uma hora!",
+        "Há uma hora que espero por ti!"
+      ]
+    },
+    {
+      "id": "b1-ha-desde-durante-mt-10",
+      "topicId": "b1-ha-desde-durante",
+      "type": "listen-choice",
+      "text": "Saí do trabalho há pouco.",
+      "options": [
+        "Я ухожу с работы через минуту.",
+        "Я мало работаю.",
+        "Я давно ушёл с работы.",
+        "Я недавно ушёл с работы."
+      ],
+      "correct": 3
+    }
+  ]
+}

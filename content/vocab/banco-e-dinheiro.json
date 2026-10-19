@@ -1,0 +1,376 @@
+{
+  "id": "banco-e-dinheiro",
+  "title": "Банк и деньги",
+  "titlePt": "Banco e dinheiro",
+  "level": "B1",
+  "words": [
+    {
+      "pt": "o banco",
+      "ru": "банк",
+      "gender": "m",
+      "example": "O banco fica aberto até às três.",
+      "audio": true
+    },
+    {
+      "pt": "a conta bancária",
+      "ru": "банковский счёт",
+      "gender": "f",
+      "example": "Para receber o ordenado, preciso de uma conta bancária.",
+      "audio": true
+    },
+    {
+      "pt": "abrir conta",
+      "ru": "открыть счёт",
+      "example": "Para abrir conta, pedem NIF e comprovativo de morada.",
+      "audio": true
+    },
+    {
+      "pt": "a conta à ordem",
+      "ru": "текущий счёт",
+      "gender": "f",
+      "example": "O ordenado cai na conta à ordem.",
+      "audio": true
+    },
+    {
+      "pt": "a conta poupança",
+      "ru": "сберегательный счёт",
+      "gender": "f",
+      "example": "Ponho cem euros por mês na conta poupança.",
+      "audio": true
+    },
+    {
+      "pt": "o titular da conta",
+      "ru": "владелец счёта",
+      "gender": "m",
+      "example": "O titular da conta tem de assinar.",
+      "audio": true
+    },
+    {
+      "pt": "o IBAN",
+      "ru": "IBAN, номер счёта",
+      "gender": "m",
+      "example": "Mande-me o seu IBAN para eu fazer a transferência.",
+      "audio": true
+    },
+    {
+      "pt": "o cartão de débito",
+      "ru": "дебетовая карта",
+      "gender": "m",
+      "example": "Pago quase tudo com o cartão de débito.",
+      "audio": true
+    },
+    {
+      "pt": "o cartão de crédito",
+      "ru": "кредитная карта",
+      "gender": "m",
+      "example": "O cartão de crédito tem uma anuidade.",
+      "audio": true
+    },
+    {
+      "pt": "o código PIN",
+      "ru": "ПИН-код",
+      "gender": "m",
+      "example": "Esqueci-me do código PIN.",
+      "audio": true
+    },
+    {
+      "pt": "bloquear o cartão",
+      "ru": "заблокировать карту",
+      "example": "Perdi a carteira e liguei logo para bloquear o cartão.",
+      "audio": true
+    },
+    {
+      "pt": "o multibanco",
+      "ru": "банкомат; система Multibanco",
+      "gender": "m",
+      "example": "Há um multibanco ao lado da farmácia.",
+      "audio": true
+    },
+    {
+      "pt": "levantar dinheiro",
+      "ru": "снять наличные",
+      "example": "Vou levantar dinheiro ao multibanco.",
+      "audio": true
+    },
+    {
+      "pt": "depositar",
+      "ru": "вносить (деньги на счёт)",
+      "example": "Depositei o cheque ao balcão.",
+      "audio": true
+    },
+    {
+      "pt": "o depósito a prazo",
+      "ru": "срочный вклад",
+      "gender": "m",
+      "example": "O depósito a prazo rende pouco.",
+      "audio": true
+    },
+    {
+      "pt": "a transferência",
+      "ru": "банковский перевод",
+      "gender": "f",
+      "example": "A transferência demora um dia útil.",
+      "audio": true
+    },
+    {
+      "pt": "fazer uma transferência",
+      "ru": "сделать перевод",
+      "example": "Fiz uma transferência para o senhorio.",
+      "audio": true
+    },
+    {
+      "pt": "a transferência imediata",
+      "ru": "мгновенный перевод",
+      "gender": "f",
+      "example": "Com a transferência imediata, o dinheiro chega na hora.",
+      "audio": true
+    },
+    {
+      "pt": "o MB Way",
+      "ru": "MB Way (приложение для платежей по номеру телефона)",
+      "gender": "m",
+      "example": "Mando-te o dinheiro por MB Way.",
+      "audio": true
+    },
+    {
+      "pt": "pagar por MB Way",
+      "ru": "заплатить через MB Way",
+      "example": "Posso pagar por MB Way?",
+      "audio": true
+    },
+    {
+      "pt": "o pagamento",
+      "ru": "платёж, оплата",
+      "gender": "m",
+      "example": "O pagamento foi recusado.",
+      "audio": true
+    },
+    {
+      "pt": "pagar com cartão",
+      "ru": "платить картой",
+      "example": "Aceitam pagamento com cartão?",
+      "audio": true
+    },
+    {
+      "pt": "o pagamento de serviços",
+      "ru": "оплата услуг (через Multibanco)",
+      "gender": "m",
+      "example": "Paguei a fatura da luz em pagamento de serviços.",
+      "audio": true
+    },
+    {
+      "pt": "a referência multibanco",
+      "ru": "платёжный код Multibanco",
+      "gender": "f",
+      "example": "A fatura traz entidade e referência multibanco.",
+      "audio": true
+    },
+    {
+      "pt": "o débito direto",
+      "ru": "автоматическое списание",
+      "gender": "m",
+      "example": "A conta da água está em débito direto.",
+      "audio": true
+    },
+    {
+      "pt": "o saldo",
+      "ru": "остаток на счёте",
+      "gender": "m",
+      "example": "Vê o saldo na aplicação do banco.",
+      "audio": true
+    },
+    {
+      "pt": "o extrato",
+      "ru": "выписка по счёту",
+      "gender": "m",
+      "example": "Pedi o extrato dos últimos três meses.",
+      "audio": true
+    },
+    {
+      "pt": "a comissão",
+      "ru": "комиссия банка",
+      "gender": "f",
+      "example": "O banco cobra uma comissão de manutenção.",
+      "audio": true
+    },
+    {
+      "pt": "a aplicação do banco",
+      "ru": "банковское приложение",
+      "gender": "f",
+      "example": "Faço tudo pela aplicação do banco.",
+      "audio": true
+    },
+    {
+      "pt": "o empréstimo",
+      "ru": "кредит, заём",
+      "gender": "m",
+      "example": "Pedimos um empréstimo para comprar carro.",
+      "audio": true
+    },
+    {
+      "pt": "o crédito à habitação",
+      "ru": "ипотека",
+      "gender": "m",
+      "example": "O crédito à habitação é a trinta anos.",
+      "audio": true
+    },
+    {
+      "pt": "os juros",
+      "ru": "проценты (по кредиту, вкладу)",
+      "gender": "m",
+      "example": "Os juros subiram muito este ano.",
+      "audio": true
+    },
+    {
+      "pt": "a taxa de juro",
+      "ru": "процентная ставка",
+      "gender": "f",
+      "example": "A taxa de juro é variável.",
+      "audio": true
+    },
+    {
+      "pt": "a prestação",
+      "ru": "ежемесячный платёж по кредиту, взнос",
+      "gender": "f",
+      "example": "A prestação da casa subiu cinquenta euros.",
+      "audio": true
+    },
+    {
+      "pt": "pagar às prestações",
+      "ru": "платить в рассрочку",
+      "example": "Comprei o frigorífico às prestações.",
+      "audio": true
+    },
+    {
+      "pt": "o seguro de vida",
+      "ru": "страхование жизни",
+      "gender": "m",
+      "example": "O banco exige um seguro de vida para o crédito à habitação.",
+      "audio": true
+    },
+    {
+      "pt": "o dinheiro",
+      "ru": "деньги",
+      "gender": "m",
+      "example": "Não tenho dinheiro comigo.",
+      "audio": true
+    },
+    {
+      "pt": "o dinheiro vivo",
+      "ru": "наличные",
+      "gender": "m",
+      "example": "Na tasca só aceitam dinheiro vivo.",
+      "audio": true
+    },
+    {
+      "pt": "a nota",
+      "ru": "купюра",
+      "gender": "f",
+      "example": "Só tenho uma nota de cinquenta.",
+      "audio": true
+    },
+    {
+      "pt": "a moeda",
+      "ru": "монета; валюта",
+      "gender": "f",
+      "example": "Tens moedas para o parquímetro?",
+      "audio": true
+    },
+    {
+      "pt": "o cêntimo",
+      "ru": "цент",
+      "gender": "m",
+      "example": "Custa noventa e nove cêntimos.",
+      "audio": true
+    },
+    {
+      "pt": "trocar",
+      "ru": "разменять; обменять",
+      "example": "Pode trocar-me esta nota de vinte?",
+      "audio": true
+    },
+    {
+      "pt": "o câmbio",
+      "ru": "обмен валюты; курс",
+      "gender": "m",
+      "example": "O câmbio no aeroporto é péssimo.",
+      "audio": true
+    },
+    {
+      "pt": "poupar",
+      "ru": "копить, экономить",
+      "example": "Estamos a poupar para as férias.",
+      "audio": true
+    },
+    {
+      "pt": "gastar",
+      "ru": "тратить",
+      "example": "Gastei demasiado este mês.",
+      "audio": true
+    },
+    {
+      "pt": "o orçamento",
+      "ru": "бюджет; смета",
+      "gender": "m",
+      "example": "Temos de fazer um orçamento familiar.",
+      "audio": true
+    },
+    {
+      "pt": "as despesas",
+      "ru": "расходы",
+      "gender": "f",
+      "example": "As despesas fixas são renda, luz e internet.",
+      "audio": true
+    },
+    {
+      "pt": "dever",
+      "ru": "быть должным",
+      "example": "Devo-te dez euros do jantar.",
+      "audio": true
+    },
+    {
+      "pt": "emprestar",
+      "ru": "одалживать (кому-то)",
+      "example": "Podes emprestar-me cinco euros?",
+      "audio": true
+    },
+    {
+      "pt": "pedir emprestado",
+      "ru": "брать в долг",
+      "example": "Pedi dinheiro emprestado ao meu irmão.",
+      "audio": true
+    },
+    {
+      "pt": "o reembolso",
+      "ru": "возврат денег (в т. ч. налога)",
+      "gender": "m",
+      "example": "O reembolso do IRS chegou ontem.",
+      "audio": true
+    },
+    {
+      "pt": "a burla",
+      "ru": "мошенничество",
+      "gender": "f",
+      "example": "Cuidado com mensagens falsas: é burla.",
+      "audio": true
+    },
+    {
+      "pt": "caro",
+      "ru": "дорогой",
+      "example": "Lisboa está cada vez mais cara.",
+      "audio": true
+    },
+    {
+      "pt": "barato",
+      "ru": "дешёвый",
+      "example": "Este supermercado é mais barato.",
+      "audio": true
+    },
+    {
+      "pt": "estar teso",
+      "ru": "быть на мели (разг.)",
+      "example": "Hoje não saio, estou teso até ao fim do mês.",
+      "audio": true
+    }
+  ]
+}

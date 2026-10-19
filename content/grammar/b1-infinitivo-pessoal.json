@@ -1,0 +1,429 @@
+{
+  "id": "b1-infinitivo-pessoal",
+  "level": "B1",
+  "module": "b1-conjuntivo",
+  "title": "Личный инфинитив",
+  "titlePt": "Infinitivo pessoal",
+  "requires": [
+    "b1-presente-conjuntivo",
+    "b1-futuro-conjuntivo"
+  ],
+  "theory": "## Что это такое\n\n**Infinitivo pessoal** (личный инфинитив) — уникальная черта португальского: инфинитив, который изменяется по лицам. Он показывает, **кто** выполняет действие, когда это не очевидно: **para tu perceberes** — «чтобы ты понял», **antes de eles saírem** — «до того как они уйдут».\n\n## Образование\n\nК инфинитиву добавляем окончания **—, -es, —, -mos, -em**. Исключений нет: даже у неправильных глаголов основа — сам инфинитив.\n\n| | falar | fazer | ser | ir | pôr |\n|---|---|---|---|---|---|\n| eu | falar | fazer | ser | ir | pôr |\n| tu | falares | fazeres | seres | ires | pores |\n| ele / você | falar | fazer | ser | ir | pôr |\n| nós | falarmos | fazermos | sermos | irmos | pormos |\n| eles / vocês | falarem | fazerem | serem | irem | porem |\n\nОрфография: **sair → saíres, saírem** (ударение на **í**), **pôr → pores, pormos** (без ^).\n\nУ правильных глаголов формы совпадают с futuro do conjuntivo, у неправильных — нет:\n\n| infinitivo pessoal | futuro do conjuntivo |\n|---|---|\n| para **fazeres** | se **fizeres** |\n| para **teres** | se **tiveres** |\n| para **seres** | se **fores** |\n| para **veres** (ver) | se **vires** (ver) |\n| para **vires** (vir) | se **vieres** (vir) |\n\n## Где используется\n\n**1. После предлогов**: para, sem, antes de, depois de, até, por, apesar de, em vez de.\n\n**Trouxe o mapa para não nos perdermos.** — Я взял карту, чтобы мы не заблудились.\n**Saímos sem eles verem.** — Мы ушли так, что они не видели.\n**Obrigado por teres vindo.** — Спасибо, что пришёл.\n\n**2. Ao + инфинитив** = «когда, при»: **Ao chegarmos ao hotel, vimos o mar.** — Когда мы приехали в отель, мы увидели море.\n\n**3. После безличных выражений** (é melhor, é importante, é pena, é preciso, é possível):\n**É melhor irmos de táxi.** — Лучше нам поехать на такси.\n**É pena não poderes vir.** — Жаль, что ты не можешь прийти.\n\n## Infinitivo pessoal или conjuntivo?\n\nЧасто оба варианта правильны, но личный инфинитив короче и в pt-PT звучит естественнее в разговоре:\n\n| conjuntivo | infinitivo pessoal |\n|---|---|\n| para que **percebas** | para **perceberes** |\n| antes que **saiam** | antes de **saírem** |\n| sem que **saibas** | sem **saberes** |\n| é melhor que **saiamos** | é melhor **sairmos** |\n\nОбратите внимание: с инфинитивом союз **que** исчезает, а **antes que** превращается в **antes de**.\n\n## Когда личная форма не нужна\n\nЕсли подлежащее то же, что в главном предложении, обычно хватает простого инфинитива: **Vou estudar para passar no exame.** Личная форма появляется, когда подлежащие разные или их нужно подчеркнуть: **Explico-te para passares no exame.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **É melhor irmos.** | **É melhor a gente ir.** | в pt-BR разговорное *a gente* + простой инфинитив |\n| **para tu perceberes** | **para você entender** | tu + личная форма в pt-PT |\n| **Ao chegarmos**, ligámos-te. | **Quando chegamos**, te ligamos. | ao + infinitivo очень частотно в pt-PT |\n\nЛичный инфинитив существует в обеих нормах, но в pt-PT им пользуются заметно чаще, в том числе в разговорной речи.",
+  "commonErrors": "- **Conjuntivo после para без que**: *para tu percebas* ✗ → **para tu perceberes** ✓ или **para que percebas** ✓.\n- **Форма futuro do conjuntivo вместо инфинитива**: *para fizeres* ✗ → **para fazeres** ✓; *antes de tiveres* ✗ → **antes de teres** ✓.\n- **ver / vir**: *Saímos sem eles virem* (= «без того чтобы они пришли») ≠ **sem eles verem** («чтобы они не видели»).\n- **Antes que + инфинитив**: *antes que saíres* ✗ → **antes de saíres** ✓.\n- **Неличный инфинитив при другом подлежащем**: *É melhor ir* («лучше пойти» — кому?) → **É melhor irmos** ✓, если речь о «нас».\n- **Безударное saires**: *saires, sairem* ✗ → **saíres, saírem** ✓.\n- **Калька «чтобы ты»**: *para que tu perceberes* ✗ — либо **que** + conjuntivo, либо инфинитив без **que**.",
+  "examples": [
+    {
+      "pt": "É melhor irmos de metro, há muito trânsito.",
+      "ru": "Лучше нам поехать на метро, пробки.",
+      "audio": true
+    },
+    {
+      "pt": "Trouxe sopa para comermos ao jantar.",
+      "ru": "Я принёс суп, чтобы мы поели на ужин.",
+      "audio": true
+    },
+    {
+      "pt": "Antes de saíres, fecha as janelas.",
+      "ru": "Прежде чем уйдёшь, закрой окна.",
+      "audio": true
+    },
+    {
+      "pt": "Ao chegarmos a Coimbra, fomos logo à universidade.",
+      "ru": "Приехав в Коимбру, мы сразу пошли в университет.",
+      "audio": true
+    },
+    {
+      "pt": "Obrigado por teres vindo à minha festa.",
+      "ru": "Спасибо, что пришёл на мой праздник.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-infinitivo-pessoal-ex-01",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Trouxe o livro para tu ___ (ler).",
+      "answer": [
+        "leres"
+      ],
+      "ru": "Я принёс книгу, чтобы ты почитал."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-02",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "É melhor nós ___ (sair) já.",
+      "answer": [
+        "sairmos"
+      ],
+      "ru": "Лучше нам выйти прямо сейчас."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-03",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Antes de vocês ___ (sair), quero falar convosco.",
+      "answer": [
+        "saírem"
+      ],
+      "hint": "ударение на í",
+      "ru": "Прежде чем вы уйдёте, я хочу с вами поговорить."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-04",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Ao ___ (entrar) na sala, vimos logo o problema.",
+      "answer": [
+        "entrarmos",
+        "entrar"
+      ],
+      "ru": "Войдя в зал, мы сразу увидели проблему.",
+      "explanation": "Возможны оба варианта; entrarmos подчёркивает, что речь о «нас»."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-05",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "É importante tu ___ (dormir) bem antes do exame.",
+      "answer": [
+        "dormires"
+      ],
+      "ru": "Важно, чтобы ты хорошо выспался перед экзаменом."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-06",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Vamos esperar até eles ___ (acabar) o trabalho.",
+      "answer": [
+        "acabarem"
+      ],
+      "ru": "Подождём, пока они не закончат работу."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-07",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Saímos sem os vizinhos ___ (ver).",
+      "answer": [
+        "verem"
+      ],
+      "ru": "Мы ушли так, что соседи не видели.",
+      "explanation": "ver → verem; virem — от vir («прийти»)."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-08",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Obrigado por ___ (vir), meninos!",
+      "answer": [
+        "virem",
+        "terem vindo"
+      ],
+      "ru": "Спасибо, что пришли, ребята!"
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-09",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "choice",
+      "prompt": "É melhor ___ já, senão perdemos o comboio.",
+      "options": [
+        "irmos",
+        "vamos",
+        "formos",
+        "iremos"
+      ],
+      "correct": 0,
+      "explanation": "Безличное выражение + личный инфинитив."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-10",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "choice",
+      "prompt": "Dei-lhes o mapa para não se ___.",
+      "options": [
+        "percam",
+        "perderem",
+        "perdessem",
+        "perder"
+      ],
+      "correct": 1,
+      "explanation": "Para + личный инфинитив (eles). Percam было бы возможно только с para que."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-11",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "choice",
+      "prompt": "Comprei bilhetes para ___ ao concerto.",
+      "options": [
+        "vamos",
+        "formos",
+        "irmos",
+        "iremos"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-12",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "choice",
+      "prompt": "Depois de ___ o contrato, os inquilinos receberam as chaves.",
+      "options": [
+        "assinaram",
+        "assinem",
+        "assinassem",
+        "assinarem"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-13",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "transform",
+      "prompt": "Vou fazer o jantar para que vocês comam.",
+      "instruction": "Замените «para que + conjuntivo» на «para + личный инфинитив».",
+      "answer": [
+        "Vou fazer o jantar para vocês comerem.",
+        "Vou fazer o jantar para comerem."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-14",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "transform",
+      "prompt": "É melhor que saiamos cedo.",
+      "instruction": "Замените на конструкцию с личным инфинитивом.",
+      "answer": [
+        "É melhor sairmos cedo.",
+        "É melhor nós sairmos cedo."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-15",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "transform",
+      "prompt": "Quando chegámos ao hotel, vimos o mar.",
+      "instruction": "Замените «Quando...» на «Ao + инфинитив».",
+      "answer": [
+        "Ao chegarmos ao hotel, vimos o mar.",
+        "Ao chegar ao hotel, vimos o mar."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-16",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "order-words",
+      "words": [
+        "não",
+        "vir",
+        "jantar",
+        "poderes",
+        "É",
+        "ao",
+        "pena"
+      ],
+      "answer": "É pena não poderes vir ao jantar",
+      "ru": "Жаль, что ты не сможешь прийти на ужин."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-17",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "order-words",
+      "words": [
+        "antes",
+        "saírem",
+        "de",
+        "casa",
+        "de",
+        "eles",
+        "Liguei"
+      ],
+      "answer": "Liguei antes de eles saírem de casa",
+      "ru": "Я позвонил до того, как они вышли из дома."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-18",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "translate-ru-pt",
+      "ru": "Лучше нам подождать здесь.",
+      "answer": [
+        "É melhor esperarmos aqui.",
+        "É melhor esperarmos cá.",
+        "É melhor nós esperarmos aqui.",
+        "É melhor nós esperarmos cá.",
+        "É melhor que esperemos aqui.",
+        "É melhor que esperemos cá."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-19",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "translate-ru-pt",
+      "ru": "Я дал тебе ключ, чтобы ты мог войти.",
+      "answer": [
+        "Dei-te a chave para poderes entrar.",
+        "Dei-te a chave para tu poderes entrar.",
+        "Dei-te a chave para que pudesses entrar.",
+        "Dei-te a chave para que tu pudesses entrar."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-20",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "listen-type",
+      "text": "É melhor irmos de metro.",
+      "answer": [
+        "É melhor irmos de metro."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-ex-21",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "match",
+      "prompt": "Соедините личный инфинитив (tu) с futuro do conjuntivo (tu) того же глагола.",
+      "pairs": [
+        {
+          "left": "fazeres",
+          "right": "fizeres"
+        },
+        {
+          "left": "dizeres",
+          "right": "disseres"
+        },
+        {
+          "left": "teres",
+          "right": "tiveres"
+        },
+        {
+          "left": "seres",
+          "right": "fores"
+        },
+        {
+          "left": "veres",
+          "right": "vires"
+        },
+        {
+          "left": "vires",
+          "right": "vieres"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-infinitivo-pessoal-mt-01",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Trouxe pão para ___ (fazer) sandes.",
+      "answer": [
+        "fazermos"
+      ],
+      "hint": "nós",
+      "ru": "Я принёс хлеб, чтобы мы сделали бутерброды."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-02",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "É melhor vocês ___ (ficar) em casa hoje.",
+      "answer": [
+        "ficarem"
+      ],
+      "ru": "Вам лучше остаться сегодня дома."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-03",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Depois de tu ___ (ler) a carta, dá-ma.",
+      "answer": [
+        "leres"
+      ],
+      "ru": "Когда прочитаешь письмо, дай его мне."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-04",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "fill-gap",
+      "prompt": "Antes de nós ___ (pôr) a mesa, vamos lavar as mãos.",
+      "answer": [
+        "pormos"
+      ],
+      "ru": "Прежде чем накрыть на стол, помоем руки."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-05",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "choice",
+      "prompt": "É pena eles não ___ cá.",
+      "options": [
+        "estejam",
+        "estarem",
+        "estiverem",
+        "estão"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-06",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "choice",
+      "prompt": "Fala mais alto para todos ___.",
+      "options": [
+        "ouvir",
+        "ouvissem",
+        "ouçam",
+        "ouvirem"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-07",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "choice",
+      "prompt": "Ao ___ o resultado, os alunos ficaram contentes.",
+      "options": [
+        "saberem",
+        "souberem",
+        "saibam",
+        "sabiam"
+      ],
+      "correct": 0,
+      "explanation": "Ao + личный инфинитив; souberem — futuro do conjuntivo."
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-08",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "transform",
+      "prompt": "Vou sair antes que eles acordem.",
+      "instruction": "Замените «antes que + conjuntivo» на личный инфинитив.",
+      "answer": [
+        "Vou sair antes de eles acordarem.",
+        "Vou sair antes de acordarem."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-09",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "translate-ru-pt",
+      "ru": "Спасибо, что ты мне помог.",
+      "answer": [
+        "Obrigado por me ajudares.",
+        "Obrigado por me teres ajudado.",
+        "Obrigada por me ajudares.",
+        "Obrigada por me teres ajudado."
+      ]
+    },
+    {
+      "id": "b1-infinitivo-pessoal-mt-10",
+      "topicId": "b1-infinitivo-pessoal",
+      "type": "listen-type",
+      "text": "Vamos esperar até vocês chegarem.",
+      "answer": [
+        "Vamos esperar até vocês chegarem."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "id": "entrevista-emprego",
+  "title": "Собеседование",
+  "titlePt": "Entrevista de emprego",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia, sente-se, por favor. Obrigada por ter vindo.", "ru": "Доброе утро, садитесь, пожалуйста. Спасибо, что пришли." },
+    { "speaker": "B", "pt": "Bom dia. Eu é que agradeço o convite.", "ru": "Доброе утро. Это вам спасибо за приглашение." },
+    { "speaker": "A", "pt": "Para começar, fale-me um pouco do seu percurso profissional.", "ru": "Для начала расскажите немного о своём профессиональном пути." },
+    { "speaker": "B", "pt": "Trabalhei oito anos como engenheiro informático em Moscovo e há dois anos que vivo em Portugal.", "ru": "Я восемь лет работал инженером-программистом в Москве, а последние два года живу в Португалии." },
+    { "speaker": "A", "pt": "E o que é que tem feito desde que chegou?", "ru": "А чем вы занимались с тех пор, как приехали?" },
+    { "speaker": "B", "pt": "Tenho trabalhado como freelancer e tenho estudado português para me integrar melhor.", "ru": "Работал фрилансером и учил португальский, чтобы лучше интегрироваться." },
+    { "speaker": "A", "pt": "Muito bem. Porque é que se candidatou a esta vaga?", "ru": "Очень хорошо. Почему вы откликнулись на эту вакансию?" },
+    { "speaker": "B", "pt": "Porque gostava de trabalhar numa equipa e a vossa empresa tem projetos que me interessam.", "ru": "Потому что я хотел бы работать в команде, а у вашей компании есть проекты, которые мне интересны." },
+    { "speaker": "A", "pt": "Qual seria a sua disponibilidade para começar?", "ru": "Когда вы могли бы приступить к работе?" },
+    { "speaker": "B", "pt": "Estou disponível de imediato. Também posso trabalhar em regime híbrido.", "ru": "Я готов приступить сразу. Также могу работать в гибридном формате." },
+    { "speaker": "A", "pt": "Oferecemos um contrato a termo de um ano, com possibilidade de passar a efetivo.", "ru": "Мы предлагаем срочный договор на год с возможностью перевода на бессрочный." },
+    { "speaker": "B", "pt": "Parece-me bem. Posso perguntar qual é o ordenado previsto?", "ru": "Меня это устраивает. Могу я спросить, какая предполагается зарплата?" },
+    { "speaker": "A", "pt": "São dois mil e duzentos euros brutos, pagos em catorze meses, mais subsídio de refeição.", "ru": "Две тысячи двести евро брутто, четырнадцать выплат в год, плюс компенсация питания." },
+    { "speaker": "B", "pt": "Está dentro das minhas expectativas. Quando é que terei uma resposta?", "ru": "Это в пределах моих ожиданий. Когда я получу ответ?" },
+    { "speaker": "A", "pt": "Até ao fim da próxima semana entramos em contacto consigo.", "ru": "До конца следующей недели мы с вами свяжемся." }
+  ],
+  "phrases": [
+    { "pt": "Obrigado pelo convite.", "ru": "Спасибо за приглашение." },
+    { "pt": "Fale-me um pouco de si.", "ru": "Расскажите немного о себе." },
+    { "pt": "Tenho cinco anos de experiência na área.", "ru": "У меня пять лет опыта в этой сфере." },
+    { "pt": "Candidatei-me a esta vaga porque…", "ru": "Я откликнулся на эту вакансию, потому что…" },
+    { "pt": "Os meus pontos fortes são…", "ru": "Мои сильные стороны — это…" },
+    { "pt": "Estou disponível de imediato.", "ru": "Я готов приступить сразу." },
+    { "pt": "Qual é o ordenado previsto?", "ru": "Какая предполагается зарплата?" },
+    { "pt": "Que tipo de contrato é que oferecem?", "ru": "Какой договор вы предлагаете?" },
+    { "pt": "Há possibilidade de teletrabalho?", "ru": "Есть возможность удалённой работы?" },
+    { "pt": "Quando é que posso esperar uma resposta?", "ru": "Когда мне ждать ответа?" }
+  ],
+  "vocab": [
+    { "pt": "a entrevista de emprego", "ru": "собеседование", "example": "Tenho uma entrevista de emprego na terça-feira." },
+    { "pt": "a vaga", "ru": "вакансия", "example": "Vi a vaga no LinkedIn." },
+    { "pt": "o anúncio", "ru": "объявление", "example": "O anúncio pedia inglês fluente." },
+    { "pt": "candidatar-se a", "ru": "подавать заявку, откликаться на", "example": "Candidatei-me a três vagas esta semana." },
+    { "pt": "a candidatura", "ru": "заявка, отклик", "example": "Enviei a candidatura por email." },
+    { "pt": "o currículo (CV)", "ru": "резюме", "example": "Atualizei o currículo em português." },
+    { "pt": "a carta de motivação", "ru": "сопроводительное письмо", "example": "A carta de motivação deve ser curta." },
+    { "pt": "a experiência profissional", "ru": "опыт работы", "example": "Tem experiência profissional na área?" },
+    { "pt": "o percurso profissional", "ru": "профессиональный путь, карьера", "example": "O meu percurso profissional começou em Moscovo." },
+    { "pt": "as habilitações literárias", "ru": "образование (уровень)", "example": "Quais são as suas habilitações literárias?" },
+    { "pt": "a licenciatura / o mestrado", "ru": "бакалавриат / магистратура", "example": "Tenho mestrado em Engenharia." },
+    { "pt": "a equivalência / o reconhecimento do diploma", "ru": "признание диплома", "example": "Pedi o reconhecimento do diploma à DGES." },
+    { "pt": "os pontos fortes / os pontos fracos", "ru": "сильные / слабые стороны", "example": "Um dos meus pontos fortes é a organização." },
+    { "pt": "a equipa", "ru": "команда", "example": "A equipa tem oito pessoas." },
+    { "pt": "a empresa", "ru": "компания", "example": "A empresa fica no Parque das Nações." },
+    { "pt": "a entidade patronal", "ru": "работодатель (офиц.)", "example": "A entidade patronal paga o seguro de saúde." },
+    { "pt": "o contrato a termo (certo)", "ru": "срочный трудовой договор", "example": "Assinei um contrato a termo de seis meses." },
+    { "pt": "o contrato sem termo", "ru": "бессрочный трудовой договор", "example": "Ao fim de um ano passei a contrato sem termo." },
+    { "pt": "efetivo", "ru": "в штате, на постоянном договоре", "example": "Finalmente fiquei efetivo." },
+    { "pt": "o período experimental", "ru": "испытательный срок", "example": "O período experimental é de noventa dias." },
+    { "pt": "o recibo verde", "ru": "«зелёный чек» (работа как самозанятый)", "example": "Durante um ano trabalhei a recibos verdes." },
+    { "pt": "o ordenado / o salário", "ru": "зарплата", "example": "O ordenado é pago no fim do mês." },
+    { "pt": "bruto / líquido", "ru": "до вычета налогов / на руки", "example": "Quanto é que fica líquido por mês?" },
+    { "pt": "o subsídio de férias / de Natal", "ru": "отпускная / рождественская выплата (13-я и 14-я зарплата)", "example": "O subsídio de Natal é pago em novembro." },
+    { "pt": "o subsídio de refeição", "ru": "компенсация на питание", "example": "O subsídio de refeição vem no cartão." },
+    { "pt": "o horário de trabalho", "ru": "рабочий график", "example": "O horário de trabalho é das nove às seis." },
+    { "pt": "o teletrabalho", "ru": "удалённая работа", "example": "Faço teletrabalho dois dias por semana." },
+    { "pt": "o regime híbrido", "ru": "гибридный формат", "example": "A empresa funciona em regime híbrido." },
+    { "pt": "a disponibilidade", "ru": "готовность приступить; свободное время", "example": "Qual é a sua disponibilidade para viajar?" },
+    { "pt": "de imediato", "ru": "немедленно, сразу", "example": "Posso começar de imediato." },
+    { "pt": "o aviso prévio", "ru": "срок уведомления об увольнении", "example": "Tenho de dar trinta dias de aviso prévio." },
+    { "pt": "as férias", "ru": "отпуск", "example": "Tenho direito a vinte e dois dias úteis de férias." },
+    { "pt": "os recursos humanos", "ru": "отдел кадров, HR", "example": "Os recursos humanos ligam-lhe amanhã." },
+    { "pt": "o recrutador / a recrutadora", "ru": "рекрутер", "example": "A recrutadora pediu referências." }
+  ],
+  "exercises": [
+    {
+      "id": "entrevista-emprego-ex-01",
+      "topicId": "entrevista-emprego",
+      "type": "choice",
+      "prompt": "«Ordenado bruto» é…",
+      "options": ["o salário depois dos descontos", "o salário antes dos descontos para o IRS e a Segurança Social", "o subsídio de refeição", "o salário mínimo"],
+      "correct": 1,
+      "explanation": "**Bruto** — до вычета налога **IRS** и взносов в **Segurança Social**; на руки — **líquido**. В Португалии зарплату часто считают в 14 выплат: + **subsídio de férias** и **subsídio de Natal**."
+    },
+    {
+      "id": "entrevista-emprego-ex-02",
+      "topicId": "entrevista-emprego",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a vaga", "right": "вакансия" },
+        { "left": "o currículo", "right": "резюме" },
+        { "left": "o período experimental", "right": "испытательный срок" },
+        { "left": "o aviso prévio", "right": "срок уведомления" },
+        { "left": "a equipa", "right": "команда" }
+      ]
+    },
+    {
+      "id": "entrevista-emprego-ex-03",
+      "topicId": "entrevista-emprego",
+      "type": "fill-gap",
+      "prompt": "Há dois anos que ___ (viver) em Portugal.",
+      "answer": ["vivo"],
+      "hint": "há … que + presente = «уже … как»",
+      "ru": "Я уже два года живу в Португалии.",
+      "explanation": "**Há + период + que + presente** — действие началось в прошлом и продолжается: **há dois anos que vivo**. Русскоязычные часто ошибочно ставят здесь прошедшее время."
+    },
+    {
+      "id": "entrevista-emprego-ex-04",
+      "topicId": "entrevista-emprego",
+      "type": "listen-type",
+      "text": "Parece-me bem. Posso perguntar qual é o ordenado previsto?",
+      "answer": ["Parece-me bem. Posso perguntar qual é o ordenado previsto?"],
+      "explanation": "**Parece-me bem** — «меня устраивает» (ênclise: **parece-me**). **O ordenado** — зарплата; спросить о ней в конце собеседования вполне нормально."
+    },
+    {
+      "id": "entrevista-emprego-ex-05",
+      "topicId": "entrevista-emprego",
+      "type": "listen-choice",
+      "text": "Oferecemos um contrato a termo de um ano, com possibilidade de passar a efetivo.",
+      "prompt": "Какой договор предлагают?",
+      "options": ["Бессрочный договор с испытательным сроком в год", "Работу на «зелёных чеках» в течение года", "Срочный договор на год с возможностью перехода на постоянный", "Стажировку на год без оплаты"],
+      "correct": 2,
+      "explanation": "**Contrato a termo** — срочный договор; **passar a efetivo** — перейти в штат на бессрочный договор (**contrato sem termo**)."
+    },
+    {
+      "id": "entrevista-emprego-ex-06",
+      "topicId": "entrevista-emprego",
+      "type": "order-words",
+      "words": ["Tenho", "cinco", "anos", "de", "experiência", "na", "área."],
+      "answer": "Tenho cinco anos de experiência na área.",
+      "ru": "У меня пять лет опыта в этой сфере."
+    },
+    {
+      "id": "entrevista-emprego-ex-07",
+      "topicId": "entrevista-emprego",
+      "type": "translate-ru-pt",
+      "ru": "Почему вы откликнулись на эту вакансию?",
+      "answer": ["Porque é que se candidatou a esta vaga?", "Porque se candidatou a esta vaga?", "Porque é que o senhor se candidatou a esta vaga?", "Porque é que a senhora se candidatou a esta vaga?", "Por que razão se candidatou a esta vaga?", "Por que motivo se candidatou a esta vaga?"],
+      "explanation": "После **porque é que** местоимение **se** стоит перед глаголом: вопросительное слово — «магнит» для клитики."
+    },
+    {
+      "id": "entrevista-emprego-ex-08",
+      "topicId": "entrevista-emprego",
+      "type": "choice",
+      "prompt": "Nos últimos meses estudou português regularmente. Como diz isto?",
+      "options": ["Tenho estudado português.", "Estudei português.", "Estou estudando português.", "Tinha estudado português."],
+      "correct": 0,
+      "explanation": "**Tenho estudado** (pretérito perfeito composto) в pt-PT означает регулярное действие «в последнее время». *Estudei* — разовое законченное, *estou estudando* — бразильский герундий."
+    },
+    {
+      "id": "entrevista-emprego-ex-09",
+      "topicId": "entrevista-emprego",
+      "type": "fill-gap",
+      "prompt": "Para começar, ___ (falar) um pouco de si.",
+      "answer": ["fale"],
+      "hint": "повелительное наклонение для o senhor / a senhora",
+      "ru": "Для начала расскажите немного о себе.",
+      "explanation": "Вежливый императив = presente do conjuntivo 3-го лица: **fale-me**, **sente-se**, **diga-me**."
+    },
+    {
+      "id": "entrevista-emprego-ex-10",
+      "topicId": "entrevista-emprego",
+      "type": "transform",
+      "prompt": "Quero trabalhar numa equipa internacional.",
+      "instruction": "Смягчи: «я хотел бы…» через gostar de в imperfeito",
+      "answer": ["Gostava de trabalhar numa equipa internacional.", "Eu gostava de trabalhar numa equipa internacional."],
+      "explanation": "**Gostava de + infinitivo** — типично португальское вежливое «я хотел бы». На собеседовании звучит лучше, чем прямое *quero*."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вас пригласили на собеседование в португальскую компанию. Напишите диалог из 8–10 реплик с рекрутером: кратко расскажите о своём опыте (сколько лет, где, кем), объясните, почему откликнулись на вакансию, скажите, когда можете приступить, спросите о типе договора и зарплате и узнайте, когда ждать ответа.",
+    "sample": "— Bom dia, sente-se. Fale-me um pouco de si.\n— Bom dia. Sou contabilista e tenho dez anos de experiência. Trabalhei numa auditora em São Petersburgo e há três anos que vivo em Lisboa.\n— O que é que tem feito em Portugal?\n— Tenho trabalhado a recibos verdes e tirei um curso de contabilidade portuguesa.\n— Porque é que se candidatou a esta vaga?\n— Gostava de voltar a trabalhar numa equipa e a vossa empresa tem clientes internacionais.\n— Qual é a sua disponibilidade?\n— Posso começar daqui a duas semanas, porque tenho de terminar um projeto.\n— Muito bem. Tem alguma pergunta?\n— Sim. Que tipo de contrato é que oferecem e qual é o ordenado previsto?\n— Contrato sem termo, com um período experimental de noventa dias, e mil e oitocentos euros brutos.\n— Obrigado. Quando é que posso esperar uma resposta?",
+    "checklist": [
+      "Опыт описан конкретно: сколько лет, где и кем (tenho … anos de experiência, trabalhei…)",
+      "Использована конструкция há … que + presente для того, что длится до сих пор",
+      "Есть мотивация (Candidatei-me porque… / Gostava de…) и ответ про disponibilidade",
+      "Есть вопросы о договоре (contrato a termo / sem termo) и зарплате (ordenado, bruto/líquido)",
+      "Обращение вежливое (o senhor / a senhora, без você), без герундия и бразилизмов"
+    ]
+  }
+}

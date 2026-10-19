@@ -1,0 +1,446 @@
+{
+  "id": "a1-gostar-de",
+  "level": "A1",
+  "module": "a1-verbo-presente",
+  "title": "Gostar de и другие глаголы с предлогом de",
+  "titlePt": "Gostar de, precisar de, lembrar-se de",
+  "requires": [
+    "a1-presente-indicativo-regulares",
+    "a1-artigos-genero-numero"
+  ],
+  "theory": "## Gostar de — «нравиться, любить»\n\nПо-русски «мне нравится кофе» — кофе здесь подлежащее. По-португальски наоборот: **тот, кому нравится, — подлежащее**, а предмет вводится предлогом **de**.\n\n| | gostar |\n|---|---|\n| eu | gosto |\n| tu | gostas |\n| ele / ela / você | gosta |\n| nós | gostamos |\n| eles / elas / vocês | gostam |\n\n- **Gosto de café.** — Я люблю кофе.\n- **Gostas de viver em Lisboa?** — Тебе нравится жить в Лиссабоне?\n- **A Rita não gosta de acordar cedo.** — Рита не любит рано вставать.\n\n## De + артикль = одно слово\n\nЕсли после **de** стоит артикль, указательное или личное местоимение, они сливаются:\n\n| de + | o | a | os | as | este / esta | ele / ela |\n|---|---|---|---|---|---|---|\n| = | **do** | **da** | **dos** | **das** | **deste / desta** | **dele / dela** |\n\n- **Gosto de música** (вообще, без артикля) — **Gosto da música deste café** (конкретная музыка).\n- **Gostamos muito desta cidade.** — Нам очень нравится этот город.\n- **Ela gosta dele.** — Он ей нравится.\n\nС инфинитивом слияния нет: **Gosto de ler.**\n\n## Короткий ответ\n\n«Да» в ответе обычно заменяют глаголом: **— Gostas de bacalhau? — Gosto!** / **— Não, não gosto.** Предлог в коротком ответе не нужен.\n\n## Другие глаголы с de\n\n| глагол | пример |\n|---|---|\n| **precisar de** — нуждаться | **Preciso de ajuda.** **Precisamos de sair já.** |\n| **lembrar-se de** — помнить | **Lembro-me de ti.** **Não me lembro do nome dele.** |\n| **esquecer-se de** — забывать | **Esqueci-me das chaves.** |\n| **depender de** — зависеть | **Depende do tempo.** |\n| **falar de** — говорить о | **Falamos do trabalho.** |\n\n**Lembrar-se** и **esquecer-se** — возвратные: местоимение стоит после глагола через дефис (**lembras-te**), а после **não**, **nunca**, вопросительных слов — перед глаголом (**Não me lembro**).\n\n## Без de\n\n- **adorar** — обожать: **Adoro chocolate.**\n- **amar** — любить (людей, сильно): **Amo-te.**\n- **querer** — хотеть: **Quero um café.**\n\nВежливое «я бы хотел» — **gostava de** (форма imperfeito): **Gostava de um café, por favor.** — Я бы хотел кофе.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Preciso de** ajuda. | Preciso ajuda. / Preciso de ajuda. | в Бразилии *de* часто опускают |\n| **Lembro-me de** ti. | Lembro de você. / Me lembro de você. | в pt-PT глагол возвратный, клитика после глагола |\n| **Não me lembro.** | Não lembro. | |\n| **Gostava de** um café. | Gostaria de um café. | в Португалии вежливая просьба — imperfeito *gostava* |\n\nВ обоих вариантах **gostar de** требует предлога; разница — в соседних глаголах и в месте местоимения.",
+  "commonErrors": "- **Калька «мне нравится»**: *Me gosta café* ✗ → **Gosto de café** ✓ (подлежащее — тот, кто любит).\n- **Пропуск de**: *Gosto café* ✗ → **Gosto de café** ✓; *Preciso ajuda* ✗ → **Preciso de ajuda** ✓.\n- **Нет слияния**: *Gosto de o filme* ✗ → **Gosto do filme** ✓; *Gosto de esta cidade* ✗ → **Gosto desta cidade** ✓.\n- **Местоимение без предлога**: *Gosto ela* ✗ → **Gosto dela** ✓.\n- **Лишний de**: *Adoro de chocolate* ✗ → **Adoro chocolate** ✓.\n- **Забыто -se**: *Lembro de ti* ✗ → **Lembro-me de ti** ✓.\n- **Клитика в начале фразы**: *Me lembro* ✗ → **Lembro-me** ✓; но **Não me lembro** ✓.\n- **Предлог в коротком ответе**: *Sim, gosto de* ✗ → **Gosto** ✓ / **Sim, gosto** ✓.",
+  "examples": [
+    {
+      "pt": "Gosto muito de pastéis de nata.",
+      "ru": "Я очень люблю паштейш-де-ната.",
+      "audio": true
+    },
+    {
+      "pt": "Gostas de viver em Lisboa?",
+      "ru": "Тебе нравится жить в Лиссабоне?",
+      "audio": true
+    },
+    {
+      "pt": "Preciso de um táxi para o aeroporto.",
+      "ru": "Мне нужно такси до аэропорта.",
+      "audio": true
+    },
+    {
+      "pt": "Desculpe, não me lembro do seu nome.",
+      "ru": "Извините, я не помню, как вас зовут.",
+      "audio": true
+    },
+    {
+      "pt": "Gostava de um galão, por favor.",
+      "ru": "Мне, пожалуйста, галан (кофе с молоком).",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-gostar-de-ex-01",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Eu gosto ___ ler à noite.",
+      "answer": [
+        "de"
+      ],
+      "ru": "Я люблю читать по вечерам."
+    },
+    {
+      "id": "a1-gostar-de-ex-02",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "A Joana gosta muito ___ mar.",
+      "answer": [
+        "do"
+      ],
+      "hint": "de + o",
+      "ru": "Жоана очень любит море.",
+      "explanation": "de + o = do."
+    },
+    {
+      "id": "a1-gostar-de-ex-03",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Gostas ___ música portuguesa?",
+      "answer": [
+        "de",
+        "da"
+      ],
+      "ru": "Тебе нравится португальская музыка?",
+      "explanation": "О музыке вообще — de; можно и da, если имеется в виду конкретная."
+    },
+    {
+      "id": "a1-gostar-de-ex-04",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (precisar) de um táxi.",
+      "answer": [
+        "precisamos"
+      ],
+      "ru": "Нам нужно такси."
+    },
+    {
+      "id": "a1-gostar-de-ex-05",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Não me ___ (lembrar) do nome dele.",
+      "answer": [
+        "lembro"
+      ],
+      "ru": "Я не помню, как его зовут."
+    },
+    {
+      "id": "a1-gostar-de-ex-06",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Tu lembras-___ do Rui?",
+      "answer": [
+        "te"
+      ],
+      "ru": "Ты помнишь Руя?",
+      "explanation": "lembrar-se — возвратный глагол: tu lembras-te."
+    },
+    {
+      "id": "a1-gostar-de-ex-07",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Preciso ___ falar contigo.",
+      "answer": [
+        "de"
+      ],
+      "ru": "Мне нужно с тобой поговорить."
+    },
+    {
+      "id": "a1-gostar-de-ex-08",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Gostas ___ casa nova da Inês?",
+      "answer": [
+        "da"
+      ],
+      "hint": "de + a",
+      "ru": "Тебе нравится новый дом Инеш?"
+    },
+    {
+      "id": "a1-gostar-de-ex-09",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "— Gostas de bacalhau? — ___",
+      "options": [
+        "Sim, gosto.",
+        "Sim, gosto de.",
+        "Sim, me gosta.",
+        "Sim, gosto-o."
+      ],
+      "correct": 0,
+      "explanation": "В коротком ответе повторяют глагол без предлога."
+    },
+    {
+      "id": "a1-gostar-de-ex-10",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "Как сказать «Мне нравится этот город»?",
+      "options": [
+        "Me gosta esta cidade.",
+        "Gosto esta cidade.",
+        "Gosto desta cidade.",
+        "Gosto de esta cidade."
+      ],
+      "correct": 2,
+      "explanation": "de + esta = desta; подлежащее — тот, кому нравится."
+    },
+    {
+      "id": "a1-gostar-de-ex-11",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "Desculpe, não ___ do seu nome.",
+      "options": [
+        "lembro",
+        "lembro-me",
+        "lembra-me",
+        "me lembro"
+      ],
+      "correct": 3,
+      "explanation": "não притягивает местоимение: não me lembro."
+    },
+    {
+      "id": "a1-gostar-de-ex-12",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "Para fazer o bolo, ___ três ovos.",
+      "options": [
+        "preciso",
+        "preciso de",
+        "preciso dos",
+        "preciso a"
+      ],
+      "correct": 1,
+      "explanation": "precisar de; без артикля, т. к. яйца — не конкретные."
+    },
+    {
+      "id": "a1-gostar-de-ex-13",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "Eu ___ futebol!",
+      "options": [
+        "adoro de",
+        "gosto o",
+        "adoro",
+        "amo de"
+      ],
+      "correct": 2,
+      "explanation": "adorar — без предлога."
+    },
+    {
+      "id": "a1-gostar-de-ex-14",
+      "topicId": "a1-gostar-de",
+      "type": "transform",
+      "prompt": "Eu gosto de café.",
+      "instruction": "Замените подлежащее на «a Rita».",
+      "answer": [
+        "A Rita gosta de café."
+      ]
+    },
+    {
+      "id": "a1-gostar-de-ex-15",
+      "topicId": "a1-gostar-de",
+      "type": "transform",
+      "prompt": "Lembro-me da viagem.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "Não me lembro da viagem.",
+        "Eu não me lembro da viagem."
+      ],
+      "explanation": "После não местоимение переходит перед глаголом."
+    },
+    {
+      "id": "a1-gostar-de-ex-16",
+      "topicId": "a1-gostar-de",
+      "type": "transform",
+      "prompt": "Preciso de + o carro hoje.",
+      "instruction": "Соедините предлог с артиклем и запишите фразу.",
+      "answer": [
+        "Preciso do carro hoje.",
+        "Eu preciso do carro hoje."
+      ]
+    },
+    {
+      "id": "a1-gostar-de-ex-17",
+      "topicId": "a1-gostar-de",
+      "type": "order-words",
+      "words": [
+        "não",
+        "de",
+        "gosto",
+        "Eu",
+        "acordar",
+        "cedo"
+      ],
+      "answer": "Eu não gosto de acordar cedo",
+      "ru": "Я не люблю рано вставать."
+    },
+    {
+      "id": "a1-gostar-de-ex-18",
+      "topicId": "a1-gostar-de",
+      "type": "order-words",
+      "words": [
+        "nome",
+        "Lembras-te",
+        "dela?",
+        "do"
+      ],
+      "answer": "Lembras-te do nome dela?",
+      "ru": "Ты помнишь, как её зовут?"
+    },
+    {
+      "id": "a1-gostar-de-ex-19",
+      "topicId": "a1-gostar-de",
+      "type": "translate-ru-pt",
+      "ru": "Мне нужна помощь.",
+      "answer": [
+        "Preciso de ajuda.",
+        "Eu preciso de ajuda."
+      ]
+    },
+    {
+      "id": "a1-gostar-de-ex-20",
+      "topicId": "a1-gostar-de",
+      "type": "translate-ru-pt",
+      "ru": "Ты меня помнишь?",
+      "answer": [
+        "Lembras-te de mim?",
+        "Tu lembras-te de mim?"
+      ],
+      "explanation": "lembrar-se de + mim; клитика te после глагола."
+    },
+    {
+      "id": "a1-gostar-de-ex-21",
+      "topicId": "a1-gostar-de",
+      "type": "listen-type",
+      "text": "Gostamos muito de viver em Lisboa.",
+      "answer": [
+        "Gostamos muito de viver em Lisboa."
+      ]
+    },
+    {
+      "id": "a1-gostar-de-ex-22",
+      "topicId": "a1-gostar-de",
+      "type": "match",
+      "prompt": "Соедините предлог со слитной формой.",
+      "pairs": [
+        {
+          "left": "de + o",
+          "right": "do"
+        },
+        {
+          "left": "de + a",
+          "right": "da"
+        },
+        {
+          "left": "de + os",
+          "right": "dos"
+        },
+        {
+          "left": "de + as",
+          "right": "das"
+        },
+        {
+          "left": "de + ele",
+          "right": "dele"
+        },
+        {
+          "left": "de + ela",
+          "right": "dela"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-gostar-de-mt-01",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Eles gostam muito ___ cidade do Porto.",
+      "answer": [
+        "da"
+      ],
+      "ru": "Им очень нравится город Порту."
+    },
+    {
+      "id": "a1-gostar-de-mt-02",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (precisar) de ajuda?",
+      "answer": [
+        "precisas"
+      ],
+      "ru": "Тебе нужна помощь?"
+    },
+    {
+      "id": "a1-gostar-de-mt-03",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "Ela nunca se ___ (lembrar) das chaves.",
+      "answer": [
+        "lembra"
+      ],
+      "ru": "Она никогда не помнит про ключи."
+    },
+    {
+      "id": "a1-gostar-de-mt-04",
+      "topicId": "a1-gostar-de",
+      "type": "fill-gap",
+      "prompt": "O Duarte gosta ___ jogar futebol ao domingo.",
+      "answer": [
+        "de"
+      ],
+      "ru": "Дуарте любит играть в футбол по воскресеньям."
+    },
+    {
+      "id": "a1-gostar-de-mt-05",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "Какая фраза правильная в pt-PT?",
+      "options": [
+        "Me lembro de você.",
+        "Lembro de ti.",
+        "Lembro-me de ti.",
+        "Lembro-me ti."
+      ],
+      "correct": 2,
+      "explanation": "Возвратный глагол + de; клитика после глагола."
+    },
+    {
+      "id": "a1-gostar-de-mt-06",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "Eu ___ do teu irmão, é muito simpático.",
+      "options": [
+        "gosto",
+        "gosta",
+        "me gosta",
+        "gosto de"
+      ],
+      "correct": 0,
+      "explanation": "do уже содержит предлог de."
+    },
+    {
+      "id": "a1-gostar-de-mt-07",
+      "topicId": "a1-gostar-de",
+      "type": "choice",
+      "prompt": "Não preciso ___ nada, obrigado.",
+      "options": [
+        "em",
+        "a",
+        "por",
+        "de"
+      ],
+      "correct": 3,
+      "explanation": "precisar de."
+    },
+    {
+      "id": "a1-gostar-de-mt-08",
+      "topicId": "a1-gostar-de",
+      "type": "transform",
+      "prompt": "Gostas de chá?",
+      "instruction": "Ответьте отрицательно полным предложением.",
+      "answer": [
+        "Não, não gosto de chá.",
+        "Não gosto de chá.",
+        "Não, eu não gosto de chá.",
+        "Eu não gosto de chá."
+      ]
+    },
+    {
+      "id": "a1-gostar-de-mt-09",
+      "topicId": "a1-gostar-de",
+      "type": "translate-ru-pt",
+      "ru": "Мне нравятся эти туфли.",
+      "answer": [
+        "Gosto destes sapatos.",
+        "Eu gosto destes sapatos.",
+        "Gosto desses sapatos.",
+        "Eu gosto desses sapatos."
+      ],
+      "explanation": "de + estes = destes."
+    },
+    {
+      "id": "a1-gostar-de-mt-10",
+      "topicId": "a1-gostar-de",
+      "type": "listen-choice",
+      "text": "Não me lembro do caminho.",
+      "prompt": "Что вы услышали?",
+      "options": [
+        "Я не люблю эту дорогу.",
+        "Мне не нужна дорога.",
+        "Я не помню дорогу.",
+        "Я не знаю эту дорогу."
+      ],
+      "correct": 2
+    }
+  ]
+}

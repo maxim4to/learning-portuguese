@@ -1,0 +1,414 @@
+{
+  "id": "a1-presente-indicativo-regulares",
+  "level": "A1",
+  "module": "a1-verbo-presente",
+  "title": "Настоящее время: правильные глаголы",
+  "titlePt": "Presente do indicativo: verbos regulares",
+  "requires": [
+    "a1-pronomes-pessoais-tratamento"
+  ],
+  "theory": "## Три спряжения\n\nВсе глаголы делятся по окончанию инфинитива на **-ar**, **-er**, **-ir**. Чтобы получить форму настоящего времени, отбрасываем окончание инфинитива и добавляем личное окончание.\n\n| | falar (говорить) | comer (есть) | partir (уезжать) |\n|---|---|---|---|\n| eu | fal**o** | com**o** | part**o** |\n| tu | fal**as** | com**es** | part**es** |\n| ele / ela / você | fal**a** | com**e** | part**e** |\n| nós | fal**amos** | com**emos** | part**imos** |\n| eles / elas / vocês | fal**am** | com**em** | part**em** |\n\nФорма **vós** (fal**ais**, com**eis**, part**is**) в живой речи почти не встречается (церковь, север страны), поэтому в таблицах она опущена.\n\n## Подлежащее можно опускать\n\nОкончание и так показывает лицо, поэтому местоимение обычно выпускают: **Moro em Lisboa.** — «Я живу в Лиссабоне». Местоимение ставят для контраста или выделения: **Eu trabalho, tu descansas.**\n\n## tu, você, o senhor\n\n- **tu** + форма 2-го лица (**falas**) — с друзьями, семьёй, коллегами, детьми.\n- **você / o senhor / a senhora** + форма 3-го лица (**fala**) — вежливо. В Португалии слово **você** в лицо часто звучит суховато; вежливее сказать **o senhor / a senhora** или просто опустить местоимение: **Fala inglês?**\n- Множественное число — **vocês** + 3-е лицо мн. ч. (**falam**) и для «вы» дружеского, и для вежливого.\n\n## Орфографические изменения в форме eu\n\nЧтобы сохранить произношение корня, в форме **eu** меняется буква:\n\n| инфинитив | eu | остальные |\n|---|---|---|\n| conhecer | conhe**ç**o | conheces, conhece... |\n| proteger | prote**j**o | proteges, protege... |\n| dirigir | diri**j**o | diriges, dirige... |\n\n## Когда употребляется\n\n1. Регулярные действия и привычки: **Almoço sempre à uma.**\n2. Факты и состояния: **A Ana vive em Braga.**\n3. Ближайшее запланированное будущее: **Amanhã parto para o Porto.**\n4. Длительность до настоящего момента с **há**: **Moro cá há dois anos.** — «Живу здесь уже два года».\n\n**Важно:** действие, которое происходит *прямо сейчас*, в pt-PT передаётся конструкцией **estar a + инфинитив**: **Estou a trabalhar.** Простое **Trabalho** — это «я работаю (вообще, регулярно)».",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Tu falas** português? | **Você fala** português? | в Португалии неформально — tu + форма 2-го лица |\n| **Estou a trabalhar.** | Estou trabalhando. | герундий для «прямо сейчас» в Португалии звучит как бразилизм |\n| **Percebes?** | Entende? | perceber — самый частый глагол «понимать» в pt-PT |\n| **Apanho o autocarro.** | Pego o ônibus. | лексика: apanhar, autocarro |\n\nЕщё одна европейская деталь: в pt-PT различаются **falamos** (мы говорим, наст.) и **falámos** (мы поговорили, прош.). В Бразилии обе формы пишутся *falamos*.",
+  "commonErrors": "- **Пропуск -s в форме tu**: *Tu fala bem* ✗ → **Tu falas bem** ✓. Для pt-PT это одна из самых заметных ошибок.\n- **Простое настоящее вместо «прямо сейчас»**: на вопрос «Что ты делаешь?» отвечают **Estou a ler**, а не *Leio*.\n- **Лишние местоимения** (калька с русского): *Eu moro em Lisboa e eu trabalho num banco* — второе *eu* лишнее.\n- **Забытая орфография**: *conheco* ✗ → **conheço** ✓, *protego* ✗ → **protejo** ✓.\n- **Você с друзьями**: в Португалии с друзьями говорят **tu**; *você* в такой ситуации звучит холодно.\n- **Длительность**: *Moro aqui dois anos* ✗ → **Moro cá há dois anos** ✓ (обязательно **há**).",
+  "examples": [
+    {
+      "pt": "Moro em Lisboa, mas trabalho em Oeiras.",
+      "ru": "Я живу в Лиссабоне, но работаю в Оэйраше.",
+      "audio": true
+    },
+    {
+      "pt": "Tu falas muito bem português!",
+      "ru": "Ты очень хорошо говоришь по-португальски!",
+      "audio": true
+    },
+    {
+      "pt": "Ao pequeno-almoço bebemos sempre café com leite.",
+      "ru": "На завтрак мы всегда пьём кофе с молоком.",
+      "audio": true
+    },
+    {
+      "pt": "A farmácia abre às nove e fecha às sete.",
+      "ru": "Аптека открывается в девять и закрывается в семь.",
+      "audio": true
+    },
+    {
+      "pt": "Não conheço bem esta zona da cidade.",
+      "ru": "Я плохо знаю этот район города.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-presente-indicativo-regulares-ex-01",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (morar) perto da praia.",
+      "answer": [
+        "moro"
+      ],
+      "ru": "Я живу недалеко от пляжа."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-02",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (falar) muito depressa!",
+      "answer": [
+        "falas"
+      ],
+      "hint": "tu → -as",
+      "ru": "Ты говоришь очень быстро!"
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-03",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (comer) sempre às oito.",
+      "answer": [
+        "comemos"
+      ],
+      "ru": "Мы всегда едим в восемь."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-04",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Os supermercados ___ (abrir) às nove.",
+      "answer": [
+        "abrem"
+      ],
+      "ru": "Супермаркеты открываются в девять."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-05",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "A Inês ___ (escrever) muitos e-mails no trabalho.",
+      "answer": [
+        "escreve"
+      ],
+      "ru": "Инеш пишет много писем на работе."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-06",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Não ___ (conhecer) o teu irmão.",
+      "answer": [
+        "conheço"
+      ],
+      "hint": "орфография: c → ç перед o",
+      "ru": "Я не знаком с твоим братом."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-07",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Vocês ___ (partir) amanhã para o Algarve?",
+      "answer": [
+        "partem"
+      ],
+      "ru": "Вы уезжаете завтра в Алгарве?"
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-08",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "choice",
+      "prompt": "Todos os dias ___ o autocarro às oito e um quarto.",
+      "options": [
+        "apanho",
+        "apanha",
+        "apanhas",
+        "apanhamos"
+      ],
+      "correct": 0,
+      "explanation": "Подразумевается «eu» — форма apanho. Apanhar o autocarro — «садиться на автобус» в pt-PT."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-09",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "choice",
+      "prompt": "Ó Rita, tu ___ no centro?",
+      "options": [
+        "moram",
+        "mora",
+        "moras",
+        "moro"
+      ],
+      "correct": 2,
+      "explanation": "С подругой — tu + форма 2-го лица: moras."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-10",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "choice",
+      "prompt": "Как естественно сказать в Португалии «Сейчас я работаю (в данный момент)»?",
+      "options": [
+        "Agora trabalhando.",
+        "Agora estou trabalhar.",
+        "Agora estou trabalhando.",
+        "Agora estou a trabalhar."
+      ],
+      "correct": 3,
+      "explanation": "В pt-PT длительное действие — estar a + инфинитив. Герундий — бразильский вариант."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-11",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "transform",
+      "prompt": "Eu bebo café ao pequeno-almoço.",
+      "instruction": "Замените подлежащее на «nós».",
+      "answer": [
+        "Nós bebemos café ao pequeno-almoço.",
+        "Bebemos café ao pequeno-almoço."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-12",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "transform",
+      "prompt": "Ela vive em Coimbra.",
+      "instruction": "Замените подлежащее на «tu».",
+      "answer": [
+        "Tu vives em Coimbra.",
+        "Vives em Coimbra."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-13",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "transform",
+      "prompt": "O Pedro trabalha ao sábado.",
+      "instruction": "Сделайте предложение отрицательным.",
+      "answer": [
+        "O Pedro não trabalha ao sábado."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-14",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "order-words",
+      "words": [
+        "estuda",
+        "A",
+        "Direito",
+        "Maria",
+        "em",
+        "Coimbra"
+      ],
+      "answer": "A Maria estuda Direito em Coimbra"
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-15",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "order-words",
+      "words": [
+        "inglês",
+        "Tu",
+        "no",
+        "falas",
+        "trabalho?"
+      ],
+      "answer": "Tu falas inglês no trabalho?"
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-16",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "translate-ru-pt",
+      "ru": "Я живу в Порту.",
+      "answer": [
+        "Moro no Porto.",
+        "Eu moro no Porto.",
+        "Vivo no Porto.",
+        "Eu vivo no Porto."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-17",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "translate-ru-pt",
+      "ru": "Ты много работаешь.",
+      "answer": [
+        "Trabalhas muito.",
+        "Tu trabalhas muito."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-18",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "translate-ru-pt",
+      "ru": "Мы не понимаем.",
+      "answer": [
+        "Não percebemos.",
+        "Nós não percebemos.",
+        "Não compreendemos.",
+        "Nós não compreendemos.",
+        "Não entendemos.",
+        "Nós não entendemos."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-19",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "listen-type",
+      "text": "Eles moram perto da estação.",
+      "answer": [
+        "Eles moram perto da estação."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-20",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "listen-choice",
+      "text": "Tu bebes chá ou café?",
+      "options": [
+        "Tu bebes chá ou café?",
+        "Tu bebe chá ou café?",
+        "Vocês bebem chá ou café?",
+        "Tu bebeste chá ou café?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-ex-21",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "match",
+      "pairs": [
+        {
+          "left": "eu",
+          "right": "falo"
+        },
+        {
+          "left": "tu",
+          "right": "falas"
+        },
+        {
+          "left": "a senhora",
+          "right": "fala"
+        },
+        {
+          "left": "nós",
+          "right": "falamos"
+        },
+        {
+          "left": "vocês",
+          "right": "falam"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-presente-indicativo-regulares-mt-01",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (trabalhar) num banco.",
+      "answer": [
+        "trabalho"
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-02",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (aprender) muito depressa.",
+      "answer": [
+        "aprendes"
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-03",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (decidir) amanhã.",
+      "answer": [
+        "decidimos"
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-04",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (proteger) os meus filhos.",
+      "answer": [
+        "protejo"
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-05",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "choice",
+      "prompt": "Os meus pais ___ em Faro.",
+      "options": [
+        "vives",
+        "vive",
+        "vivem",
+        "vivemos"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-06",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "choice",
+      "prompt": "Вежливо спросить незнакомую женщину в Португалии, говорит ли она по-английски:",
+      "options": [
+        "Você falas inglês?",
+        "A senhora falas inglês?",
+        "Tu falas inglês?",
+        "A senhora fala inglês?"
+      ],
+      "correct": 3,
+      "explanation": "a senhora + 3-е лицо (fala) — вежливое обращение."
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-07",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "choice",
+      "prompt": "— O que estás a fazer? — ___",
+      "options": [
+        "Estou lendo um livro.",
+        "Estou a ler um livro.",
+        "Lendo um livro.",
+        "Leio um livro."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-08",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "transform",
+      "prompt": "Eu abro a janela.",
+      "instruction": "Замените подлежащее на «eles».",
+      "answer": [
+        "Eles abrem a janela.",
+        "Abrem a janela."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-09",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "translate-ru-pt",
+      "ru": "Я живу здесь уже три года.",
+      "answer": [
+        "Moro cá há três anos.",
+        "Moro aqui há três anos.",
+        "Vivo cá há três anos.",
+        "Vivo aqui há três anos.",
+        "Eu moro cá há três anos.",
+        "Eu moro aqui há três anos.",
+        "Eu vivo cá há três anos.",
+        "Eu vivo aqui há três anos."
+      ]
+    },
+    {
+      "id": "a1-presente-indicativo-regulares-mt-10",
+      "topicId": "a1-presente-indicativo-regulares",
+      "type": "listen-type",
+      "text": "Nós jantamos às oito.",
+      "answer": [
+        "Nós jantamos às oito."
+      ]
+    }
+  ]
+}

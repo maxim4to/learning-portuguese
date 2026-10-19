@@ -1,0 +1,455 @@
+{
+  "id": "a2-mais-que-perfeito",
+  "level": "A2",
+  "module": "a2-passado",
+  "title": "Предпрошедшее время «tinha feito»",
+  "titlePt": "Pretérito mais-que-perfeito composto",
+  "requires": [
+    "a2-preterito-perfeito-simples",
+    "a2-preterito-imperfeito"
+  ],
+  "theory": "## Значение\n\n**Mais-que-perfeito** (предпрошедшее) — действие, которое произошло **раньше другого действия в прошлом**. В русском особой формы нет: мы говорим «уже», «до этого», «раньше».\n\n**Quando cheguei à estação, o comboio já tinha partido.** — Когда я пришёл на вокзал, поезд уже ушёл.\n\nСравните:\n\n| | смысл |\n|---|---|\n| **Quando cheguei, o comboio partiu.** | я пришёл, и после этого поезд ушёл |\n| **Quando cheguei, o comboio já tinha partido.** | поезд ушёл раньше, чем я пришёл |\n\n## Составная форма — норма живой речи\n\n**Ter** в imperfeito + **particípio passado** (не изменяется):\n\n| | ter | chegar | comer | sair |\n|---|---|---|---|---|\n| eu | tinha | **tinha chegado** | **tinha comido** | **tinha saído** |\n| tu | tinhas | tinhas chegado | tinhas comido | tinhas saído |\n| ele / você | tinha | tinha chegado | tinha comido | tinha saído |\n| nós | **tínhamos** | tínhamos chegado | tínhamos comido | tínhamos saído |\n| eles / vocês | tinham | tinham chegado | tinham comido | tinham saído |\n\nНеправильные причастия те же, что в **tenho feito**: **feito, dito, visto, vindo, posto, escrito, aberto, ganho, gasto, pago**.\n\nВариант с **haver** (**havia feito**) встречается в письменной речи; в разговоре — **tinha feito**.\n\n## Когда употреблять\n\n| ситуация | пример |\n|---|---|\n| действие до другого события | **Quando ligaste, já tínhamos jantado.** |\n| причина в прошлом | **Estava cansada porque tinha trabalhado doze horas.** |\n| «никогда раньше» до момента в прошлом | **Nunca tinha visto o mar antes daquela viagem.** |\n| пересказ чужих слов о прошлом | **Ele disse que tinha perdido as chaves.** (Он сказал, что потерял ключи.) |\n| «ещё не» к моменту в прошлом | **Quando saí, eles ainda não tinham chegado.** |\n\nМаркеры: **já, ainda não, nunca... antes, antes de, quando, porque**.\n\n## Местоимения\n\nМестоимение присоединяется к **tinha**: **Tinha-o visto na véspera.** После «магнитов» (**já, não, nunca, que**) — перед ним: **Já o tinha visto. Disse que a tinha encontrado.**\n\n## Простая форма — только узнавать\n\nВ литературе, прессе и официальных текстах встречается простой mais-que-perfeito. Он образуется от формы **eles** в perfeito simples: убираем **-ram**, добавляем **-ra**:\n\n| perfeito (eles) | mais-que-perfeito simples | = |\n|---|---|---|\n| falaram | **falara** | tinha falado |\n| fizeram | **fizera** | tinha feito |\n| estiveram | **estivera** | tinha estado |\n| disseram | **dissera** | tinha dito |\n\n**Ela partira na véspera.** — Она уехала (ещё) накануне.\n\nВ речи эти формы звучат книжно — сами их не используйте. Исключение — застывшие выражения: **Quem me dera!** (Вот бы!), **Pudera!** (Ещё бы!).",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Já o tinha visto.** | Já tinha visto ele. | дополнение — клитика, место по правилам pt-PT |\n| **Tinha-o visto** na véspera. | Tinha visto ele na véspera. | без магнита — ênclise к tinha |\n| **tinha feito** (речь), havia feito (письмо) | tinha feito / havia feito | в Бразилии **havia feito** чаще и в речи |\n\nПростая форма (**fizera, dissera**) в обеих нормах книжная; в Португалии она чуть чаще встречается в прессе и литературе.",
+  "commonErrors": "- **Простое прошедшее вместо предпрошедшего**: *Quando chegámos, o filme já começou* ✗ → **o filme já tinha começado** ✓ (в русском «уже начался» — та же форма, поэтому ошибку легко сделать).\n- **Perfeito от ter вместо imperfeito**: *Tive feito* ✗ → **Tinha feito** ✓.\n- **Правильное причастие у неправильного глагола**: *tinha fazido, tinha escrevido, tinha abrido* ✗ → **tinha feito, tinha escrito, tinha aberto** ✓.\n- **Согласование причастия**: *Ela tinha feitas as malas* ✗ → **Ela tinha feito as malas** ✓.\n- **Нет ударения**: *tinhamos* ✗ → **tínhamos** ✓.\n- **Книжная форма в разговоре**: *Eu fizera o jantar* (звучит как цитата из романа) → **Eu tinha feito o jantar** ✓.\n- **Местоимение после глагола при магните**: *Já tinha-o visto* ✗ → **Já o tinha visto** ✓.",
+  "examples": [
+    {
+      "pt": "Quando cheguei à estação, o comboio já tinha partido.",
+      "ru": "Когда я пришёл на вокзал, поезд уже ушёл.",
+      "audio": true
+    },
+    {
+      "pt": "Nunca tinha comido sardinhas assadas antes de vir para Lisboa.",
+      "ru": "До переезда в Лиссабон я никогда не ел жареных сардин.",
+      "audio": true
+    },
+    {
+      "pt": "Ela estava cansada porque tinha trabalhado o dia todo.",
+      "ru": "Она была уставшей, потому что работала весь день.",
+      "audio": true
+    },
+    {
+      "pt": "O Rui disse que tinha deixado o telemóvel no escritório.",
+      "ru": "Руй сказал, что оставил телефон в офисе.",
+      "audio": true
+    },
+    {
+      "pt": "Quando ligaste, já tínhamos jantado.",
+      "ru": "Когда ты позвонил, мы уже поужинали.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-mais-que-perfeito-ex-01",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Quando cheguei à estação, o comboio já ___ (partir).",
+      "answer": [
+        "tinha partido"
+      ],
+      "ru": "Когда я пришёл на вокзал, поезд уже ушёл.",
+      "explanation": "Поезд ушёл раньше, чем я пришёл, → tinha partido."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-02",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Eu nunca ___ (comer) bacalhau antes de vir para Portugal.",
+      "answer": [
+        "tinha comido"
+      ],
+      "ru": "До приезда в Португалию я никогда не ел трески."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-03",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Quando ligaste, nós já ___ (jantar).",
+      "answer": [
+        "tínhamos jantado"
+      ],
+      "hint": "nós: tínhamos — с ударением",
+      "ru": "Когда ты позвонил, мы уже поужинали."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-04",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "A Joana estava cansada porque ___ (trabalhar) doze horas.",
+      "answer": [
+        "tinha trabalhado"
+      ],
+      "ru": "Жоана устала, потому что проработала двенадцать часов.",
+      "explanation": "Причина в прошлом, которая предшествовала состоянию."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-05",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Quando fomos ao cinema, tu já ___ (ver) o filme?",
+      "answer": [
+        "tinhas visto"
+      ],
+      "hint": "ver → visto",
+      "ru": "Когда мы пошли в кино, ты уже видел этот фильм?"
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-06",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Eles disseram que ___ (fazer) uma reserva para as oito.",
+      "answer": [
+        "tinham feito"
+      ],
+      "ru": "Они сказали, что забронировали столик на восемь.",
+      "explanation": "Пересказ: действие произошло до момента «сказали»."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-07",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Quando a polícia chegou, o ladrão já ___ (fugir).",
+      "answer": [
+        "tinha fugido"
+      ],
+      "ru": "Когда приехала полиция, вор уже сбежал."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-08",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "A minha mãe perguntou-me se eu ___ (pôr) o leite no frigorífico.",
+      "answer": [
+        "tinha posto"
+      ],
+      "hint": "pôr → posto",
+      "ru": "Мама спросила, убрал ли я молоко в холодильник."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-09",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "choice",
+      "prompt": "Quando chegámos ao cinema, o filme já ___ .",
+      "options": [
+        "começou",
+        "tinha começado",
+        "começava",
+        "tem começado"
+      ],
+      "correct": 1,
+      "explanation": "Начало фильма предшествовало нашему приходу → tinha começado."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-10",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "choice",
+      "prompt": "Ele disse-me que, antes daquela viagem, nunca ___ a Lisboa.",
+      "options": [
+        "tem ido",
+        "vai",
+        "tinha ido",
+        "ir"
+      ],
+      "correct": 2,
+      "explanation": "«Никогда раньше» до момента в прошлом → mais-que-perfeito."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-11",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "choice",
+      "prompt": "В романе: «Ela partira na véspera.» Что это значит?",
+      "options": [
+        "Она уехала ещё накануне.",
+        "Она уедет накануне.",
+        "Она уезжала накануне.",
+        "Она бы уехала накануне."
+      ],
+      "correct": 0,
+      "explanation": "partira — книжная простая форма = tinha partido."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-12",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "choice",
+      "prompt": "Какая форма — книжный эквивалент «tinha feito»?",
+      "options": [
+        "fazia",
+        "fizesse",
+        "fará",
+        "fizera"
+      ],
+      "correct": 3,
+      "explanation": "fizeram → fize- + -ra = fizera."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-13",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "transform",
+      "prompt": "Quando chegámos, o filme já começou.",
+      "instruction": "Исправьте: фильм начался раньше, чем мы пришли.",
+      "answer": [
+        "Quando chegámos, o filme já tinha começado.",
+        "Quando chegámos, já o filme tinha começado."
+      ]
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-14",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "transform",
+      "prompt": "Ela fizera tudo sozinha.",
+      "instruction": "Замените книжную простую форму разговорной составной.",
+      "answer": [
+        "Ela tinha feito tudo sozinha.",
+        "Tinha feito tudo sozinha."
+      ]
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-15",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "transform",
+      "prompt": "Já tinha visto o Rui.",
+      "instruction": "Замените «o Rui» местоимением.",
+      "answer": [
+        "Já o tinha visto.",
+        "Eu já o tinha visto."
+      ],
+      "explanation": "já — магнит: местоимение перед tinha."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-16",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "order-words",
+      "words": [
+        "tinha",
+        "Nunca",
+        "mar",
+        "o",
+        "visto",
+        "antes"
+      ],
+      "answer": "Nunca tinha visto o mar antes"
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-17",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "order-words",
+      "words": [
+        "que",
+        "Ele",
+        "chaves",
+        "disse",
+        "perdido",
+        "tinha",
+        "as"
+      ],
+      "answer": "Ele disse que tinha perdido as chaves"
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-18",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "translate-ru-pt",
+      "ru": "Когда я проснулся, все уже ушли.",
+      "answer": [
+        "Quando acordei, todos já tinham saído.",
+        "Quando acordei, já todos tinham saído.",
+        "Quando acordei, já tinham saído todos.",
+        "Quando acordei, todos já se tinham ido embora.",
+        "Quando acordei, já todos se tinham ido embora.",
+        "Quando eu acordei, todos já tinham saído.",
+        "Quando eu acordei, já todos tinham saído.",
+        "Quando eu acordei, já tinham saído todos.",
+        "Quando eu acordei, todos já se tinham ido embora.",
+        "Quando eu acordei, já todos se tinham ido embora.",
+        "Quando acordei, toda a gente já tinha saído.",
+        "Quando acordei, já toda a gente tinha saído.",
+        "Quando eu acordei, toda a gente já tinha saído.",
+        "Quando eu acordei, já toda a gente tinha saído."
+      ],
+      "explanation": "Все ушли раньше, чем я проснулся, → tinham saído."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-19",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "translate-ru-pt",
+      "ru": "До 2020 года я никогда не был в Португалии.",
+      "answer": [
+        "Até 2020 nunca tinha estado em Portugal.",
+        "Até 2020 nunca tinha ido a Portugal.",
+        "Até 2020 eu nunca tinha estado em Portugal.",
+        "Até 2020 eu nunca tinha ido a Portugal.",
+        "Antes de 2020 nunca tinha estado em Portugal.",
+        "Antes de 2020 nunca tinha ido a Portugal.",
+        "Antes de 2020 eu nunca tinha estado em Portugal.",
+        "Antes de 2020 eu nunca tinha ido a Portugal."
+      ],
+      "explanation": "nunca + mais-que-perfeito: «никогда раньше» до момента в прошлом."
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-20",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "listen-type",
+      "text": "Já tinham saído quando chegámos.",
+      "answer": [
+        "Já tinham saído quando chegámos."
+      ]
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-21",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "listen-choice",
+      "text": "Quando liguei, ela já tinha saído.",
+      "options": [
+        "Когда я позвоню, она уже выйдет.",
+        "Когда она позвонила, я уже вышел.",
+        "Когда я позвонил, она уже ушла.",
+        "Когда я звонил, она выходила."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-mais-que-perfeito-ex-22",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "match",
+      "prompt": "Соедините книжную простую форму с разговорной составной.",
+      "pairs": [
+        {
+          "left": "fizera",
+          "right": "tinha feito"
+        },
+        {
+          "left": "dissera",
+          "right": "tinha dito"
+        },
+        {
+          "left": "estivera",
+          "right": "tinha estado"
+        },
+        {
+          "left": "vira",
+          "right": "tinha visto"
+        },
+        {
+          "left": "falara",
+          "right": "tinha falado"
+        },
+        {
+          "left": "pusera",
+          "right": "tinha posto"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-mais-que-perfeito-mt-01",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Quando cheguei a casa, a minha mulher já ___ (fazer) o jantar.",
+      "answer": [
+        "tinha feito"
+      ],
+      "ru": "Когда я пришёл домой, жена уже приготовила ужин."
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-02",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Nós já ___ (estar) em Évora antes, por isso conhecíamos a cidade.",
+      "answer": [
+        "tínhamos estado"
+      ],
+      "ru": "Мы уже бывали в Эворе раньше, поэтому знали город."
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-03",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Quando passei pela loja, eles ainda não a ___ (abrir).",
+      "answer": [
+        "tinham aberto"
+      ],
+      "hint": "abrir → aberto",
+      "ru": "Когда я проходил мимо магазина, они его ещё не открыли."
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-04",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "fill-gap",
+      "prompt": "Tu disseste que já ___ (ler) o livro.",
+      "answer": [
+        "tinhas lido"
+      ],
+      "ru": "Ты сказал, что уже прочитал книгу."
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-05",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "choice",
+      "prompt": "Quando entrei, eles já ___ a reunião.",
+      "options": [
+        "acabaram",
+        "acabavam",
+        "têm acabado",
+        "tinham acabado"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-06",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "choice",
+      "prompt": "Eu nunca ___ fado ao vivo antes daquela noite.",
+      "options": [
+        "tinha ouvido",
+        "ouvia",
+        "tenho ouvido",
+        "ouço"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-07",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "choice",
+      "prompt": "«O comboio já partira.» — это...",
+      "options": [
+        "разговорная норма",
+        "книжный вариант «já tinha partido»",
+        "будущее время",
+        "ошибка"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-08",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "transform",
+      "prompt": "Ela tinha visto a Inês.",
+      "instruction": "Замените «a Inês» местоимением.",
+      "answer": [
+        "Ela tinha-a visto.",
+        "Tinha-a visto."
+      ],
+      "explanation": "Без магнита местоимение присоединяется к tinha через дефис."
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-09",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "translate-ru-pt",
+      "ru": "Он сказал, что уже поел.",
+      "answer": [
+        "Ele disse que já tinha comido.",
+        "Disse que já tinha comido."
+      ]
+    },
+    {
+      "id": "a2-mais-que-perfeito-mt-10",
+      "topicId": "a2-mais-que-perfeito",
+      "type": "listen-type",
+      "text": "Nunca tinha visto nada assim.",
+      "answer": [
+        "Nunca tinha visto nada assim."
+      ]
+    }
+  ]
+}

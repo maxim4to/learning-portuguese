@@ -1,0 +1,453 @@
+{
+  "id": "b2-registo-estilo",
+  "level": "B2",
+  "module": "b2-discurso-estilo",
+  "title": "Регистр и стиль речи",
+  "titlePt": "Registo e estilo",
+  "requires": [
+    "a1-pronomes-pessoais-tratamento",
+    "b1-email-formal-informal"
+  ],
+  "theory": "## Шкала обращений\n\nВ Португалии форма обращения — это социальный сигнал. От самой близкой к самой официальной:\n\n| форма | с кем | пример |\n|---|---|---|\n| **tu** + 2-е л. | семья, друзья, ровесники, дети, всё чаще коллеги | **Queres um café?** |\n| имя + 3-е л. | знакомые, коллеги постарше (очень pt-PT) | **A Joana quer um café?** |\n| 3-е л. без местоимения | нейтрально-вежливо: незнакомые, клиенты | **Quer um café?** |\n| **você** | равные по статусу; в лицо старшему звучит сухо, даже грубовато | **Você quer um café?** |\n| **o senhor / a senhora** | старшие, клиенты, сфера услуг | **A senhora quer um café?** |\n| **o senhor doutor / a senhora engenheira** | с титулом — уважительно | **O senhor doutor já almoçou?** |\n| **V. Exa.** | официальные письма | **Informamos V. Exa. de que...** |\n\nСамый безопасный вариант с незнакомыми — 3-е лицо без местоимения: **Desculpe, sabe onde fica a estação?**\n\n## Лексика: нейтральное → формальное\n\n| нейтрально | формально |\n|---|---|\n| pedir | **solicitar** |\n| fazer (um pagamento) | **efetuar** |\n| comprar | **adquirir** |\n| morar | **residir** |\n| ter | **dispor de** |\n| esperar | **aguardar** |\n| morrer | **falecer** |\n| ganhar (salário) | **auferir** |\n| ir | **deslocar-se** |\n| arranjar | **obter** |\n\nРазговорная лексика pt-PT: **fixe** (классный), **giro** (милый, симпатичный), **porreiro** (отличный, о человеке — славный), **bué** (очень, много — молодёжное), **malta** (народ, ребята), **gajo / gaja** (тип, мужик — фамильярно), **uma seca** (скукота), **cota** (старик, «предок» — сленг).\n\n## Грамматика письменной и устной речи\n\n| устно | письменно / официально |\n|---|---|\n| **A reunião vai ser amanhã.** | **A reunião realizar-se-á amanhã.** (мезоклиза) |\n| **Dizem que...** | **Diz-se que... / Considera-se que...** |\n| **Depois de acabarmos...** | **Após a conclusão dos trabalhos...** (номинализация) |\n| **Queria... / Podia...?** | **Gostaria... / Poderia...?** |\n\n## Вежливость и эвфемизмы\n\nСмягчение просьбы: **Podia...?**, **Importa-se de** + инф.**?** (**Importa-se de fechar a janela?**), **Será que me podia ajudar?**, **Agradecia que** + imperf. conj. (**Agradecia que me enviasse a fatura.**), **Se não for incómodo...**\n\nЭвфемизмы: **faleceu** вместо *morreu*, **pessoa de idade / idoso** вместо *velho*, **invisual** вместо *cego*, **pessoa com deficiência**. Литота смягчает критику: **Não é propriamente barato.** — Мягко говоря, не дёшево. **Não é bem assim.** — Не совсем так.\n\n## Дискурсивные маркеры pt-PT\n\n| маркер | функция | пример |\n|---|---|---|\n| **pois** | согласие | **— Está frio. — Pois está.** **Pois é!** — Вот именно! |\n| **pois não** | согласие с отрицанием | **— Isto não é fácil. — Pois não.** — Да уж, непросто. |\n| **pronto** | «ну ладно», завершение, смирение | **Pronto, então fica combinado.** **Pronto, paciência.** |\n| **então** | начало, упрёк, эмфаза | **Então, tudo bem?** **Então?!** — Ну и что это?! **Então não!** — Ещё бы! |\n| **ora** | переход к делу; «да что вы» | **Ora bem, vamos começar.** **— Obrigado! — Ora essa!** |\n| **olha / olhe** | привлечь внимание (tu / вежл.) | **Olhe, desculpe...** |\n| **é pá / epá** | удивление, досада — только среди друзей | **É pá, não acredito!** |\n| **Estou?** | ответ по телефону | **— Estou? — Olá, é a Rita.** |\n| **portanto, quer dizer, tipo** | заполнители пауз в речи | в письме их убирают |",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Estou? / Estou sim?** | Alô? | ответ по телефону |\n| **Pois não.** (= «да уж, нет») | Pois não? (= «чем могу помочь?») | в pt-PT это согласие с отрицанием, а не предложение помощи |\n| **tu** + 2-е л. в неформальной речи | você | *você* в pt-PT в лицо звучит дистанцированно |\n| **é pá / epá** | pô, cara | бразильские междометия в Португалии звучат чуждо |\n| **fixe, porreiro** | maneiro, bacana | молодёжная оценочная лексика |\n| **Ora essa!** | Imagina! / Que nada! | ответ на благодарность |\n\nГлавное различие — система обращений: в Португалии она многоступенчатая, а **você** не является универсальной формой.",
+  "commonErrors": "- **você к пожилому человеку**: *Você quer ajuda?* ✗ → **A senhora quer ajuda?** / **Quer ajuda?** ✓.\n- **tu в официальной ситуации**: *Podes dar-me o formulário?* (в Finanças) ✗ → **Pode dar-me o formulário?** ✓.\n- **Смешение регистров в письме**: *Exmo. Senhor, ... a malta acha isso fixe* ✗ — в формальном тексте нейтральная или книжная лексика.\n- **Слишком прямые просьбы** (калька с русского «Дайте...»): *Dê-me a conta* ✗ (звучит резко) → **Pode trazer-me a conta, por favor?** ✓.\n- **Pois não = «нет»**: *— Vens? — Pois não* (в значении «не приду») ✗ — это согласие с отрицательной фразой собеседника.\n- **é pá с незнакомыми или начальством** ✗ — только в кругу друзей.\n- **Мезоклиза в разговоре**: *Falar-lhe-ei amanhã* (устно) звучит книжно → **Vou falar com ele amanhã** ✓.\n- **Бразильское «Alô»** по телефону ✗ → **Estou?** ✓.",
+  "examples": [
+    {
+      "pt": "A senhora deseja mais alguma coisa?",
+      "ru": "Желаете что-нибудь ещё? (вежливо, к женщине)",
+      "audio": true
+    },
+    {
+      "pt": "Importa-se de fechar a janela, por favor?",
+      "ru": "Вы не могли бы закрыть окно?",
+      "audio": true
+    },
+    {
+      "pt": "Venho por este meio solicitar uma segunda via do cartão.",
+      "ru": "Настоящим прошу выдать дубликат карты.",
+      "audio": true
+    },
+    {
+      "pt": "— Isto não é nada fácil. — Pois não.",
+      "ru": "— Это совсем не просто. — Да уж, это точно.",
+      "audio": true
+    },
+    {
+      "pt": "Pronto, então fica combinado para sábado.",
+      "ru": "Ну ладно, тогда договорились на субботу.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-registo-estilo-ex-01",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "Bom dia, ___ senhora deseja mais alguma coisa?",
+      "answer": [
+        "a"
+      ],
+      "ru": "Доброе утро, желаете что-нибудь ещё?",
+      "explanation": "o senhor / a senhora — с артиклем."
+    },
+    {
+      "id": "b2-registo-estilo-ex-02",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "Venho por este meio ___ (pedir → формально) uma certidão de residência.",
+      "answer": [
+        "solicitar"
+      ],
+      "ru": "Настоящим прошу выдать справку о месте жительства."
+    },
+    {
+      "id": "b2-registo-estilo-ex-03",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "— ___? — Olá, é a Rita!",
+      "answer": [
+        "Estou",
+        "Estou sim",
+        "Está",
+        "Sim"
+      ],
+      "ru": "— Алло? — Привет, это Рита!",
+      "explanation": "В Португалии на звонок отвечают «Estou?» (также «Sim?», «Está?»), а не бразильское «Alô?»."
+    },
+    {
+      "id": "b2-registo-estilo-ex-04",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "— Isto não é nada fácil. — Pois ___.",
+      "answer": [
+        "não"
+      ],
+      "ru": "— Это совсем не просто. — Да уж.",
+      "explanation": "Согласие с отрицательной фразой — pois não."
+    },
+    {
+      "id": "b2-registo-estilo-ex-05",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "— Vens à festa? — Então ___! Claro que vou.",
+      "answer": [
+        "não"
+      ],
+      "ru": "— Придёшь на вечеринку? — Ещё бы! Конечно, приду.",
+      "explanation": "Então não! — эмфатическое «конечно»."
+    },
+    {
+      "id": "b2-registo-estilo-ex-06",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "___ bem, vamos começar a reunião.",
+      "answer": [
+        "Ora"
+      ],
+      "ru": "Итак, начнём совещание."
+    },
+    {
+      "id": "b2-registo-estilo-ex-07",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "___ (importar-se) de fechar a janela, por favor?",
+      "answer": [
+        "Importa-se"
+      ],
+      "ru": "Вы не могли бы закрыть окно?"
+    },
+    {
+      "id": "b2-registo-estilo-ex-08",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "___ (olhar), desculpe, sabe onde fica a estação?",
+      "answer": [
+        "Olhe"
+      ],
+      "ru": "Простите, вы не подскажете, где вокзал?",
+      "explanation": "К незнакомому — olhe (3-е л.), к другу — olha."
+    },
+    {
+      "id": "b2-registo-estilo-ex-09",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "Вы предлагаете помощь пожилой соседке:",
+      "options": [
+        "Queres ajuda com os sacos?",
+        "A senhora quer ajuda com os sacos?",
+        "Você quer ajuda com os sacos?",
+        "Tu queres ajuda com os sacos?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-registo-estilo-ex-10",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "— Muito obrigado pela ajuda! — ___",
+      "options": [
+        "Pois não?",
+        "É pá!",
+        "Ora essa!",
+        "Então?"
+      ],
+      "correct": 2,
+      "explanation": "Ora essa! — «да что вы, не за что»."
+    },
+    {
+      "id": "b2-registo-estilo-ex-11",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "Формальный синоним глагола «morar»:",
+      "options": [
+        "habitar-se",
+        "ficar",
+        "viver-se",
+        "residir"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-registo-estilo-ex-12",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "Какая фраза подходит для официального объявления?",
+      "options": [
+        "Amanhã há reunião, ok?",
+        "Realizar-se-á uma reunião amanhã.",
+        "Vai haver para aí uma reunião amanhã.",
+        "Amanhã é reunião, malta."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-registo-estilo-ex-13",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "«Pronto, paciência.» значит:",
+      "options": [
+        "Готово, терпение!",
+        "Быстрее, будь терпелив.",
+        "Ты готов?",
+        "Ну ладно, что поделаешь."
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-registo-estilo-ex-14",
+      "topicId": "b2-registo-estilo",
+      "type": "transform",
+      "prompt": "Podes mandar-me o relatório?",
+      "instruction": "Сделайте просьбу формальной (3-е лицо, вежливое наклонение).",
+      "answer": [
+        "Poderia enviar-me o relatório?",
+        "Podia enviar-me o relatório?",
+        "Poderia mandar-me o relatório?",
+        "Podia mandar-me o relatório?",
+        "O senhor poderia enviar-me o relatório?",
+        "O senhor podia enviar-me o relatório?",
+        "A senhora poderia enviar-me o relatório?",
+        "A senhora podia enviar-me o relatório?"
+      ]
+    },
+    {
+      "id": "b2-registo-estilo-ex-15",
+      "topicId": "b2-registo-estilo",
+      "type": "transform",
+      "prompt": "Quero um café.",
+      "instruction": "Смягчите просьбу с помощью imperfeito.",
+      "answer": [
+        "Queria um café.",
+        "Queria um café, por favor."
+      ]
+    },
+    {
+      "id": "b2-registo-estilo-ex-16",
+      "topicId": "b2-registo-estilo",
+      "type": "transform",
+      "prompt": "O cliente comprou o produto e pagou.",
+      "instruction": "Перепишите в официальном стиле (adquirir, efetuar o pagamento).",
+      "answer": [
+        "O cliente adquiriu o produto e efetuou o pagamento."
+      ]
+    },
+    {
+      "id": "b2-registo-estilo-ex-17",
+      "topicId": "b2-registo-estilo",
+      "type": "order-words",
+      "words": [
+        "de",
+        "Importa-se",
+        "favor?",
+        "repetir,",
+        "por"
+      ],
+      "answer": "Importa-se de repetir, por favor?",
+      "ru": "Не могли бы вы повторить?"
+    },
+    {
+      "id": "b2-registo-estilo-ex-18",
+      "topicId": "b2-registo-estilo",
+      "type": "order-words",
+      "words": [
+        "que",
+        "enviasse",
+        "Agradecia",
+        "fatura",
+        "me",
+        "a"
+      ],
+      "answer": "Agradecia que me enviasse a fatura",
+      "ru": "Буду признателен, если вы пришлёте мне счёт."
+    },
+    {
+      "id": "b2-registo-estilo-ex-19",
+      "topicId": "b2-registo-estilo",
+      "type": "translate-ru-pt",
+      "ru": "Не могли бы вы мне помочь? (вежливо, незнакомому)",
+      "answer": [
+        "Podia ajudar-me?",
+        "Poderia ajudar-me?",
+        "Pode ajudar-me?",
+        "Importa-se de me ajudar?",
+        "Será que me podia ajudar?",
+        "Será que me poderia ajudar?",
+        "O senhor podia ajudar-me?",
+        "A senhora podia ajudar-me?",
+        "O senhor poderia ajudar-me?",
+        "A senhora poderia ajudar-me?",
+        "Podia ajudar-me, por favor?",
+        "Poderia ajudar-me, por favor?"
+      ]
+    },
+    {
+      "id": "b2-registo-estilo-ex-20",
+      "topicId": "b2-registo-estilo",
+      "type": "listen-type",
+      "text": "Pronto, então fica combinado para sábado.",
+      "answer": [
+        "Pronto, então fica combinado para sábado."
+      ]
+    },
+    {
+      "id": "b2-registo-estilo-ex-21",
+      "topicId": "b2-registo-estilo",
+      "type": "listen-choice",
+      "text": "É pá, não acredito!",
+      "options": [
+        "Простите, я вам не верю. (официально)",
+        "Папа, я не верю!",
+        "Блин, не может быть! (между друзьями)",
+        "Пожалуйста, поверьте мне!"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-registo-estilo-ex-22",
+      "topicId": "b2-registo-estilo",
+      "type": "match",
+      "prompt": "Соедините формальный глагол с нейтральным.",
+      "pairs": [
+        {
+          "left": "falecer",
+          "right": "morrer"
+        },
+        {
+          "left": "adquirir",
+          "right": "comprar"
+        },
+        {
+          "left": "residir",
+          "right": "morar"
+        },
+        {
+          "left": "solicitar",
+          "right": "pedir"
+        },
+        {
+          "left": "efetuar",
+          "right": "fazer"
+        },
+        {
+          "left": "aguardar",
+          "right": "esperar"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-registo-estilo-mt-01",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "— Estou? — Boa tarde, ___ falar com a Dra. Marta Silva?",
+      "answer": [
+        "podia",
+        "poderia",
+        "posso"
+      ],
+      "ru": "— Алло? — Добрый день, можно поговорить с доктором Мартой Силвой?"
+    },
+    {
+      "id": "b2-registo-estilo-mt-02",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "— Que calor! — Pois ___!",
+      "answer": [
+        "é"
+      ],
+      "ru": "— Ну и жара! — Вот именно!"
+    },
+    {
+      "id": "b2-registo-estilo-mt-03",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "Venho por este meio ___ (pedir → формально) o reembolso.",
+      "answer": [
+        "solicitar"
+      ],
+      "ru": "Настоящим прошу вернуть деньги."
+    },
+    {
+      "id": "b2-registo-estilo-mt-04",
+      "topicId": "b2-registo-estilo",
+      "type": "fill-gap",
+      "prompt": "___ (importar-se) de esperar um momento?",
+      "answer": [
+        "Importa-se"
+      ],
+      "ru": "Не могли бы вы подождать минутку?"
+    },
+    {
+      "id": "b2-registo-estilo-mt-05",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "Начало письма в налоговую (Finanças):",
+      "options": [
+        "Olá! Podes ver o meu processo?",
+        "Exmos. Senhores, venho por este meio solicitar informações sobre o meu processo.",
+        "Oi, tudo bom? Vocês podem ver o meu processo?",
+        "É pá, vejam lá o meu processo."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b2-registo-estilo-mt-06",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "«Então não!» в ответ на вопрос «Vens?» значит:",
+      "options": [
+        "Нет, тогда не надо.",
+        "Тогда нет.",
+        "Ни в коем случае.",
+        "Конечно!"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-registo-estilo-mt-07",
+      "topicId": "b2-registo-estilo",
+      "type": "choice",
+      "prompt": "Вежливый эвфемизм для «velho»:",
+      "options": [
+        "cota",
+        "velhote",
+        "pessoa de idade",
+        "gajo"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-registo-estilo-mt-08",
+      "topicId": "b2-registo-estilo",
+      "type": "transform",
+      "prompt": "Quero saber o preço.",
+      "instruction": "Сделайте фразу вежливой.",
+      "answer": [
+        "Queria saber o preço.",
+        "Gostava de saber o preço.",
+        "Gostaria de saber o preço."
+      ]
+    },
+    {
+      "id": "b2-registo-estilo-mt-09",
+      "topicId": "b2-registo-estilo",
+      "type": "translate-ru-pt",
+      "ru": "Ну ладно, что поделаешь.",
+      "answer": [
+        "Pronto, paciência.",
+        "Pronto, que remédio.",
+        "Paciência."
+      ]
+    },
+    {
+      "id": "b2-registo-estilo-mt-10",
+      "topicId": "b2-registo-estilo",
+      "type": "listen-type",
+      "text": "Olhe, desculpe, sabe onde fica a farmácia?",
+      "answer": [
+        "Olhe, desculpe, sabe onde fica a farmácia?"
+      ]
+    }
+  ]
+}

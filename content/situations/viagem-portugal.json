@@ -1,0 +1,191 @@
+{
+  "id": "viagem-portugal",
+  "title": "Путешествие по Португалии",
+  "titlePt": "Viagem por Portugal",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Boa tarde, bem-vindo! Tem reserva?", "ru": "Добрый день, добро пожаловать! У вас есть бронь?" },
+    { "speaker": "B", "pt": "Boa tarde. Tenho, sim. Fiz a reserva pela internet, em nome de Sokolov.", "ru": "Добрый день. Да. Я бронировал через интернет, на фамилию Соколов." },
+    { "speaker": "A", "pt": "Deixe-me ver… Um quarto duplo, duas noites, com pequeno-almoço. Está certo?", "ru": "Сейчас посмотрю… Двухместный номер, две ночи, с завтраком. Всё верно?" },
+    { "speaker": "B", "pt": "Está certo. A que horas é o pequeno-almoço?", "ru": "Верно. Во сколько завтрак?" },
+    { "speaker": "A", "pt": "É das sete e meia às dez, no rés-do-chão. Preciso de um documento de identificação, se faz favor.", "ru": "С половины восьмого до десяти, на первом этаже. Мне нужен ваш документ, пожалуйста." },
+    { "speaker": "B", "pt": "Aqui tem. A taxa turística está incluída no preço?", "ru": "Вот. Туристический сбор включён в цену?" },
+    { "speaker": "A", "pt": "Não está. São três euros por pessoa e por noite, paga-se aqui.", "ru": "Нет. Три евро с человека за ночь, оплачивается здесь." },
+    { "speaker": "B", "pt": "Combinado. O que é que nos recomenda visitar amanhã?", "ru": "Договорились. Что посоветуете посмотреть завтра?" },
+    { "speaker": "A", "pt": "Recomendo a Ribeira e as caves do vinho do Porto, em Gaia. E não deixe de provar uma francesinha!", "ru": "Советую Рибейру и винные погреба портвейна в Гайе. И обязательно попробуйте франсезинью!" },
+    { "speaker": "B", "pt": "Ótima ideia. Depois queremos ir a Lisboa. É melhor ir de comboio ou de autocarro?", "ru": "Отличная идея. Потом мы хотим в Лиссабон. Лучше ехать на поезде или на автобусе?" },
+    { "speaker": "A", "pt": "O Alfa Pendular é o mais rápido: demora cerca de três horas. Parte da estação de Campanhã.", "ru": "Alfa Pendular — самый быстрый: идёт около трёх часов. Отправляется со станции Кампанья." },
+    { "speaker": "B", "pt": "É preciso comprar o bilhete com antecedência?", "ru": "Билет нужно покупать заранее?" },
+    { "speaker": "A", "pt": "É melhor. Pode comprá-lo na aplicação da CP, e se comprar cedo é mais barato.", "ru": "Лучше заранее. Можно купить в приложении CP, и если брать рано, выйдет дешевле." },
+    { "speaker": "B", "pt": "Muito obrigado. Já agora, a que horas é o check-out?", "ru": "Большое спасибо. Кстати, до скольки нужно выехать из номера?" },
+    { "speaker": "A", "pt": "Até às onze. Depois pode deixar as malas aqui na receção. Boa estadia!", "ru": "До одиннадцати. Потом можно оставить чемоданы здесь, на ресепшене. Приятного отдыха!" }
+  ],
+  "phrases": [
+    { "pt": "Tenho uma reserva em nome de…", "ru": "У меня бронь на имя…" },
+    { "pt": "Queria fazer o check-in, se faz favor.", "ru": "Я хотел бы заселиться, пожалуйста." },
+    { "pt": "O pequeno-almoço está incluído?", "ru": "Завтрак включён?" },
+    { "pt": "A que horas é o check-out?", "ru": "До скольки нужно освободить номер?" },
+    { "pt": "Posso deixar as malas aqui na receção?", "ru": "Можно оставить чемоданы на ресепшене?" },
+    { "pt": "O que é que me recomenda visitar?", "ru": "Что посоветуете посмотреть?" },
+    { "pt": "Queria um bilhete para Lisboa no Alfa Pendular.", "ru": "Мне билет до Лиссабона на Alfa Pendular." },
+    { "pt": "Ida e volta, se faz favor.", "ru": "Туда и обратно, пожалуйста." },
+    { "pt": "A que horas parte o próximo comboio?", "ru": "Во сколько отправляется следующий поезд?" },
+    { "pt": "De que linha parte o comboio para o Porto?", "ru": "С какого пути отправляется поезд на Порту?" }
+  ],
+  "vocab": [
+    { "pt": "a viagem", "ru": "поездка, путешествие", "example": "A viagem até ao Algarve correu bem." },
+    { "pt": "o alojamento local", "ru": "частное жильё для туристов (апартаменты, гостевой дом)", "example": "Ficámos num alojamento local no centro." },
+    { "pt": "a pousada", "ru": "пузада (отель в историческом здании)", "example": "Dormimos numa pousada num antigo convento." },
+    { "pt": "a reserva", "ru": "бронь, бронирование", "example": "A reserva está em nome da minha mulher." },
+    { "pt": "reservar", "ru": "забронировать", "example": "Reservei o quarto com um mês de antecedência." },
+    { "pt": "a receção", "ru": "ресепшен, стойка регистрации", "example": "A receção está aberta vinte e quatro horas." },
+    { "pt": "o quarto individual / duplo", "ru": "одноместный / двухместный номер", "example": "Queria um quarto duplo com duas camas." },
+    { "pt": "a cama de casal", "ru": "двуспальная кровать", "example": "O quarto tem uma cama de casal." },
+    { "pt": "o pequeno-almoço", "ru": "завтрак", "example": "O pequeno-almoço está incluído no preço." },
+    { "pt": "a chave", "ru": "ключ", "example": "Deixe a chave na receção quando sair." },
+    { "pt": "a taxa turística", "ru": "туристический сбор", "example": "A taxa turística paga-se no check-in." },
+    { "pt": "a estadia", "ru": "пребывание", "example": "A estadia foi muito agradável." },
+    { "pt": "a mala", "ru": "чемодан", "example": "A minha mala é a azul." },
+    { "pt": "a vista", "ru": "вид (из окна)", "example": "O quarto tem vista para o rio." },
+    { "pt": "o ar condicionado", "ru": "кондиционер", "example": "O ar condicionado não está a funcionar." },
+    { "pt": "o comboio", "ru": "поезд", "example": "O comboio para Coimbra está atrasado." },
+    { "pt": "o Alfa Pendular", "ru": "скоростной поезд CP (Лиссабон — Порту — Алгарве)", "example": "No Alfa Pendular há tomadas e wi-fi." },
+    { "pt": "o Intercidades", "ru": "междугородний поезд (дешевле Alfa)", "example": "O Intercidades para em mais estações." },
+    { "pt": "o regional", "ru": "региональный поезд, электричка", "example": "Fomos de Coimbra à Figueira da Foz no regional." },
+    { "pt": "a estação", "ru": "вокзал, станция", "example": "A estação de Santa Apolónia fica perto do rio." },
+    { "pt": "a linha", "ru": "путь (на вокзале); линия", "example": "O comboio parte da linha quatro." },
+    { "pt": "a carruagem", "ru": "вагон", "example": "O meu lugar é na carruagem cinco." },
+    { "pt": "o lugar", "ru": "место", "example": "Prefiro um lugar à janela." },
+    { "pt": "o bilhete de ida e volta", "ru": "билет туда и обратно", "example": "Um bilhete de ida e volta é mais barato?" },
+    { "pt": "a bilheteira", "ru": "билетная касса", "example": "A bilheteira fecha às dez da noite." },
+    { "pt": "partir / chegar", "ru": "отправляться / прибывать", "example": "O comboio parte às nove e chega ao meio-dia." },
+    { "pt": "o atraso", "ru": "опоздание, задержка", "example": "O comboio tem um atraso de vinte minutos." },
+    { "pt": "com antecedência", "ru": "заранее", "example": "Comprei os bilhetes com antecedência." },
+    { "pt": "alugar um carro", "ru": "взять машину напрокат", "example": "Vamos alugar um carro para ver o Alentejo." },
+    { "pt": "a portagem", "ru": "плата за проезд по платной дороге", "example": "Na autoestrada há portagens." },
+    { "pt": "o miradouro", "ru": "смотровая площадка", "example": "Ao pôr do sol fomos ao miradouro." },
+    { "pt": "o centro histórico", "ru": "исторический центр", "example": "O centro histórico de Évora é muito bonito." },
+    { "pt": "as caves do vinho do Porto", "ru": "погреба портвейна (в Гайе)", "example": "Fizemos uma prova nas caves do vinho do Porto." },
+    { "pt": "a francesinha", "ru": "франсезинья (сэндвич с соусом, блюдо Порту)", "example": "A francesinha é o prato típico do Porto." },
+    { "pt": "recomendar", "ru": "советовать, рекомендовать", "example": "Recomenda-me algum restaurante aqui perto?" }
+  ],
+  "exercises": [
+    {
+      "id": "viagem-portugal-ex-01",
+      "topicId": "viagem-portugal",
+      "type": "choice",
+      "prompt": "O comboio mais rápido da CP entre Lisboa e o Porto chama-se ___.",
+      "options": ["o Regional", "o Intercidades", "o Metro", "o Alfa Pendular"],
+      "correct": 3,
+      "explanation": "**O Alfa Pendular** — самый быстрый поезд CP: Лиссабон — Порту примерно за три часа. **Intercidades** медленнее и дешевле, **Regional** — пригородный."
+    },
+    {
+      "id": "viagem-portugal-ex-02",
+      "topicId": "viagem-portugal",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a bilheteira", "right": "билетная касса" },
+        { "left": "a carruagem", "right": "вагон" },
+        { "left": "a receção", "right": "ресепшен" },
+        { "left": "a mala", "right": "чемодан" },
+        { "left": "o miradouro", "right": "смотровая площадка" }
+      ]
+    },
+    {
+      "id": "viagem-portugal-ex-03",
+      "topicId": "viagem-portugal",
+      "type": "fill-gap",
+      "prompt": "Tenho uma reserva em ___ de Sokolov.",
+      "answer": ["nome"],
+      "hint": "«на имя…»",
+      "ru": "У меня бронь на фамилию Соколов.",
+      "explanation": "**Em nome de…** — «на имя…». Так говорят в отеле, ресторане, у врача."
+    },
+    {
+      "id": "viagem-portugal-ex-04",
+      "topicId": "viagem-portugal",
+      "type": "listen-type",
+      "text": "Está certo. A que horas é o pequeno-almoço?",
+      "answer": ["Está certo. A que horas é o pequeno-almoço?"],
+      "explanation": "Завтрак в Португалии — **o pequeno-almoço** (с дефисом). *Café da manhã* — бразильский вариант."
+    },
+    {
+      "id": "viagem-portugal-ex-05",
+      "topicId": "viagem-portugal",
+      "type": "listen-choice",
+      "text": "Não está. São três euros por pessoa e por noite, paga-se aqui.",
+      "prompt": "Что сказали про туристический сбор?",
+      "options": ["Он уже включён в цену", "Три евро с человека за ночь, платить на месте", "Три евро за весь номер", "Его платят онлайн"],
+      "correct": 1,
+      "explanation": "**Não está (incluída)** — сбор не включён; **por pessoa e por noite** — с человека за ночь; **paga-se aqui** — платят здесь."
+    },
+    {
+      "id": "viagem-portugal-ex-06",
+      "topicId": "viagem-portugal",
+      "type": "order-words",
+      "words": ["É", "preciso", "comprar", "o", "bilhete", "com", "antecedência?"],
+      "answer": "É preciso comprar o bilhete com antecedência?",
+      "ru": "Билет нужно покупать заранее?"
+    },
+    {
+      "id": "viagem-portugal-ex-07",
+      "topicId": "viagem-portugal",
+      "type": "translate-ru-pt",
+      "ru": "Билет туда и обратно до Лиссабона, пожалуйста.",
+      "answer": [
+        "Um bilhete de ida e volta para Lisboa, se faz favor.",
+        "Um bilhete de ida e volta para Lisboa, por favor.",
+        "Queria um bilhete de ida e volta para Lisboa, se faz favor.",
+        "Queria um bilhete de ida e volta para Lisboa, por favor.",
+        "Era um bilhete de ida e volta para Lisboa, se faz favor.",
+        "Era um bilhete de ida e volta para Lisboa, por favor."
+      ],
+      "explanation": "Билет — **o bilhete** (не *passagem*), «туда и обратно» — **de ida e volta**, «в/до Лиссабона» — **para Lisboa**."
+    },
+    {
+      "id": "viagem-portugal-ex-08",
+      "topicId": "viagem-portugal",
+      "type": "choice",
+      "prompt": "Qual destas perguntas é natural em Portugal?",
+      "options": [
+        "A que horas parte o comboio para Lisboa?",
+        "A que horas sai o trem para Lisboa?",
+        "Que horas sai o ônibus pra Lisboa?",
+        "Quando o trem vai sair para Lisboa?"
+      ],
+      "correct": 0,
+      "explanation": "В Португалии поезд — **o comboio**, автобус — **o autocarro**. *Trem*, *ônibus* и разговорное *pra* — бразильские."
+    },
+    {
+      "id": "viagem-portugal-ex-09",
+      "topicId": "viagem-portugal",
+      "type": "fill-gap",
+      "prompt": "O bilhete? Pode ___ (comprar + o) na aplicação da CP.",
+      "answer": ["comprá-lo"],
+      "hint": "инфинитив + местоимение «его»",
+      "ru": "Его можно купить в приложении CP.",
+      "explanation": "**Comprar + o → comprá-lo**: после инфинитива **o** превращается в **-lo**, **r** выпадает, гласная получает ударение."
+    },
+    {
+      "id": "viagem-portugal-ex-10",
+      "topicId": "viagem-portugal",
+      "type": "transform",
+      "prompt": "Comprei o bilhete na aplicação.",
+      "instruction": "Расскажи о планах: поставь в ближайшее будущее (ir + infinitivo)",
+      "answer": ["Vou comprar o bilhete na aplicação."],
+      "explanation": "Ближайшее будущее в разговорной речи — **ir + infinitivo**: **vou comprar**, **vamos visitar**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Вы планируете выходные в Порту. Напишите e-mail в гостевой дом (alojamento local): забронируйте двухместный номер на две ночи (укажите даты), спросите, включён ли завтрак и туристический сбор, предупредите, что приедете поздно (около 23:00) на Alfa Pendular, спросите, как добраться от станции Кампанья, и попросите совет, что посмотреть.",
+    "sample": "Boa tarde,\n\nQueria reservar um quarto duplo para duas noites, de 14 a 16 de novembro.\nO pequeno-almoço está incluído no preço? E a taxa turística?\nVamos chegar de Alfa Pendular à estação de Campanhã por volta das onze da noite. Há alguém na receção a essa hora?\nComo é que se chega da estação ao alojamento? É melhor apanhar o metro ou um táxi?\nPor último, o que é que nos recomenda visitar num fim de semana?\n\nObrigado desde já.\nCumprimentos,\nSergei Ivanov",
+    "checklist": [
+      "Указаны тип номера (quarto duplo), количество ночей и даты",
+      "Есть вопросы про pequeno-almoço и taxa turística",
+      "Использованы pt-PT слова: comboio / Alfa Pendular, apanhar o metro, receção",
+      "Просьба начинается с вежливого Queria…",
+      "Есть просьба о рекомендации и вежливая подпись"
+    ]
+  }
+}

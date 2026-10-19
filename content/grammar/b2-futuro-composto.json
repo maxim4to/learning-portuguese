@@ -1,0 +1,454 @@
+{
+  "id": "b2-futuro-composto",
+  "level": "B2",
+  "module": "b2-tempos-compostos",
+  "title": "Futuro composto: «буду уже сделавшим» и догадки",
+  "titlePt": "Futuro composto do indicativo",
+  "requires": [
+    "a2-futuro-simples",
+    "a2-mais-que-perfeito",
+    "b1-futuro-conjuntivo"
+  ],
+  "theory": "## Образование\n\n**Ter** в futuro simples + **particípio passado** (не изменяется):\n\n| | ter | acabar | fazer | sair |\n|---|---|---|---|---|\n| eu | terei | **terei acabado** | **terei feito** | **terei saído** |\n| tu | terás | terás acabado | terás feito | terás saído |\n| ele / você | terá | terá acabado | terá feito | terá saído |\n| nós | teremos | teremos acabado | teremos feito | teremos saído |\n| eles / vocês | terão | terão acabado | terão feito | terão saído |\n\nНеправильные причастия: **feito, dito, visto, vindo, posto, escrito, aberto, pago, ganho, gasto**.\n\n## 1. Действие, завершённое к моменту в будущем\n\nFuturo composto говорит: «к такому-то моменту это **уже будет сделано**».\n\n**Até sexta-feira, terei acabado o relatório.** — К пятнице я закончу отчёт.\n**Quando chegares, já teremos jantado.** — Когда ты приедешь, мы уже поужинаем.\n**Daqui a um ano, a Rita terá terminado o curso.** — Через год Рита окончит университет.\n\nСравните:\n\n| futuro simples | futuro composto |\n|---|---|\n| **Às oito janto.** — В восемь я ужинаю (начну в восемь). | **Às oito já terei jantado.** — К восьми я уже поужинаю. |\n| **Em junho acabo o curso.** — В июне заканчиваю учёбу. | **Em junho já terei acabado o curso.** — К июню учёба будет позади. |\n\nМаркеры: **até** (+ дата, **até ao fim do mês**), **daqui a**, **já**, **quando / assim que** + futuro do conjuntivo в соседней части.\n\nВ разговоре форма звучит немного книжно, и её часто заменяют: **Até sexta vou ter acabado o relatório** или просто **Até sexta acabo o relatório**.\n\n## 2. Предположение о прошлом\n\nВторая, очень частотная функция — **догадка** о том, что уже произошло. Русские эквиваленты: «наверное», «может быть», «неужели», «куда же».\n\n**O Duarte não atende. Terá adormecido?** — Дуарте не отвечает. Может, уснул?\n**Onde terei deixado as chaves?** — Куда же я дел ключи?\n\n| разговорно | нейтрально / книжно |\n|---|---|\n| **Deve ter adormecido.** | **Terá adormecido.** |\n| **Se calhar perdeu o autocarro.** | **Terá perdido o autocarro.** |\n| **Será que ele percebeu?** | **Terá ele percebido?** |\n\n## 3. Язык новостей: неподтверждённая информация\n\nВ португальской прессе **terá + particípio** — стандартный способ сообщить факт, который ещё не подтверждён («по имеющимся данным», «предположительно»):\n\n**Segundo a polícia, o incêndio terá começado na cozinha.** — По данным полиции, пожар, предположительно, начался на кухне.\n**O suspeito terá fugido para Espanha.** — Подозреваемый, вероятно, бежал в Испанию.\n\nЭто не будущее время! **Terá sido** = «по-видимому, было».\n\n## Futuro composto: индикатив или conjuntivo?\n\nВ главном предложении — **terei feito**; после **quando, se, assim que** — conjuntivo **tiver feito**:\n\n**Quando tiver acabado, terei mais tempo.** — Когда я закончу, у меня будет больше времени.\n\n## В косвенной речи\n\nПосле глагола речи в прошедшем futuro composto превращается в **condicional composto**: **«Até sexta terei acabado.» → Ele disse que até sexta teria acabado.**\n\n## Местоимения\n\nПосле **já, não, que** — próclise: **Já o terei feito. Não o terá visto.** Без «магнита» в книжном стиле — мезоклиза: **Tê-lo-ei feito até sexta.** В речи её обходят: **Até sexta, já o terei feito.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| O suspeito **terá fugido**. | O suspeito **teria fugido**. | неподтверждённые новости: в Португалии futuro composto, в Бразилии — condicional composto |\n| **Tê-lo-ei feito** (книжн.) | **Terei feito isso** / **o terei feito** | мезоклиза — только pt-PT |\n| **Já o terei acabado.** | **Já terei acabado ele.** (разг.) | в pt-PT «его» — только клитика |\n\nЗначение «к моменту в будущем» и «догадка о прошлом» — общее для обеих норм. Читая португальские новости, помните: **terá** там почти всегда про прошлое.",
+  "commonErrors": "- **Futuro composto после quando / se**: *Quando terei acabado, ligo-te* ✗ → **Quando tiver acabado, ligo-te** ✓.\n- **«Terá sido» как будущее**: *O acidente terá sido causado pela chuva* — это не «будет вызвано», а «по-видимому, было вызвано» ✓.\n- **Путаница deve fazer / deve ter feito**: «он, наверное, ушёл» — *Ele deve sair* ✗ (= он должен уйти) → **Ele deve ter saído / Ele terá saído** ✓.\n- **Причастие от инфинитива**: *terei fazido, terá abrido* ✗ → **terei feito, terá aberto** ✓.\n- **Согласование причастия**: *Terei acabada a tese* ✗ → **Terei acabado a tese** ✓.\n- **Клитика после вспомогательного глагола**: *terei-o feito* ✗ → **tê-lo-ei feito** (книжн.) / **já o terei feito** ✓.",
+  "examples": [
+    {
+      "pt": "Até ao fim do mês, já terei mudado de casa.",
+      "ru": "К концу месяца я уже перееду.",
+      "audio": true
+    },
+    {
+      "pt": "Quando chegares a Lisboa, já teremos jantado.",
+      "ru": "Когда ты приедешь в Лиссабон, мы уже поужинаем.",
+      "audio": true
+    },
+    {
+      "pt": "O Duarte não atende o telemóvel. Terá adormecido?",
+      "ru": "Дуарте не берёт трубку. Может, уснул?",
+      "audio": true
+    },
+    {
+      "pt": "Segundo a polícia, o incêndio terá começado na cozinha.",
+      "ru": "По данным полиции, пожар, предположительно, начался на кухне.",
+      "audio": true
+    },
+    {
+      "pt": "Onde terei deixado as chaves do carro?",
+      "ru": "Куда же я дел ключи от машины?",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-futuro-composto-ex-01",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Até sexta-feira, eu já ___ (acabar) o relatório.",
+      "answer": [
+        "terei acabado"
+      ],
+      "ru": "К пятнице я уже закончу отчёт."
+    },
+    {
+      "id": "b2-futuro-composto-ex-02",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Quando chegares, nós já ___ (jantar).",
+      "answer": [
+        "teremos jantado"
+      ],
+      "hint": "futuro composto",
+      "ru": "Когда ты придёшь, мы уже поужинаем.",
+      "explanation": "В разговоре можно услышать и «já jantámos», но норма — teremos jantado."
+    },
+    {
+      "id": "b2-futuro-composto-ex-03",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Daqui a dois anos, a Rita ___ (terminar) o curso.",
+      "answer": [
+        "terá terminado"
+      ],
+      "ru": "Через два года Рита окончит университет."
+    },
+    {
+      "id": "b2-futuro-composto-ex-04",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Até ao verão, eles ___ (fazer) as obras na casa.",
+      "answer": [
+        "terão feito"
+      ],
+      "ru": "К лету они сделают ремонт в доме.",
+      "explanation": "Fazer → feito."
+    },
+    {
+      "id": "b2-futuro-composto-ex-05",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Daqui a uma hora, tu já ___ (escrever) o texto todo.",
+      "answer": [
+        "terás escrito"
+      ],
+      "ru": "Через час ты уже напишешь весь текст.",
+      "explanation": "Escrever → escrito."
+    },
+    {
+      "id": "b2-futuro-composto-ex-06",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "O Pedro está atrasado. ___ (perder) o autocarro?",
+      "answer": [
+        "Terá perdido"
+      ],
+      "ru": "Педру опаздывает. Может, опоздал на автобус?",
+      "explanation": "Догадка о прошлом → futuro composto."
+    },
+    {
+      "id": "b2-futuro-composto-ex-07",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Segundo as testemunhas, o condutor ___ (adormecer) ao volante.",
+      "answer": [
+        "terá adormecido"
+      ],
+      "ru": "По словам свидетелей, водитель, вероятно, уснул за рулём.",
+      "explanation": "Неподтверждённая информация в новостях → terá + particípio."
+    },
+    {
+      "id": "b2-futuro-composto-ex-08",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Onde ___ (pôr) eu os óculos?",
+      "answer": [
+        "terei posto"
+      ],
+      "ru": "Куда же я положил очки?",
+      "explanation": "Pôr → posto."
+    },
+    {
+      "id": "b2-futuro-composto-ex-09",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "Quando ___ o curso, vou procurar trabalho no Porto.",
+      "options": [
+        "terei acabado",
+        "tiver acabado",
+        "terá acabado",
+        "tivesse acabado"
+      ],
+      "correct": 1,
+      "explanation": "После quando о будущем — conjuntivo: tiver acabado, а не terei acabado."
+    },
+    {
+      "id": "b2-futuro-composto-ex-10",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "«O ministro terá recebido o dinheiro.» Что это значит?",
+      "options": [
+        "Министр получит деньги.",
+        "Министр должен получить деньги.",
+        "Министр, по имеющимся данным, получил деньги.",
+        "Министр получил бы деньги."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-futuro-composto-ex-11",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "Amanhã a esta hora, já ___ em Paris.",
+      "options": [
+        "aterraríamos",
+        "temos aterrado",
+        "tivermos aterrado",
+        "teremos aterrado"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b2-futuro-composto-ex-12",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "O quarto? Quando voltares, já ___.",
+      "options": [
+        "teremos-o arrumado",
+        "o teremos arrumado",
+        "tê-lo-emos arrumado",
+        "teremos arrumado-o"
+      ],
+      "correct": 1,
+      "explanation": "После já — próclise: já o teremos arrumado."
+    },
+    {
+      "id": "b2-futuro-composto-ex-13",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "Ele não respondeu. ___ recebido a mensagem?",
+      "options": [
+        "Terá",
+        "Tenha",
+        "Tiver",
+        "Tem"
+      ],
+      "correct": 0,
+      "explanation": "Догадка о прошлом в вопросе → Terá recebido?"
+    },
+    {
+      "id": "b2-futuro-composto-ex-14",
+      "topicId": "b2-futuro-composto",
+      "type": "transform",
+      "prompt": "Acabo o projeto até dezembro.",
+      "instruction": "Подчеркните завершённость к сроку с помощью futuro composto.",
+      "answer": [
+        "Terei acabado o projeto até dezembro.",
+        "Até dezembro terei acabado o projeto.",
+        "Já terei acabado o projeto até dezembro.",
+        "Até dezembro já terei acabado o projeto."
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-ex-15",
+      "topicId": "b2-futuro-composto",
+      "type": "transform",
+      "prompt": "Ele deve ter saído mais cedo.",
+      "instruction": "Выразите ту же догадку через futuro composto.",
+      "answer": [
+        "Ele terá saído mais cedo.",
+        "Terá saído mais cedo."
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-ex-16",
+      "topicId": "b2-futuro-composto",
+      "type": "transform",
+      "prompt": "Provavelmente o comboio já partiu.",
+      "instruction": "Перефразируйте с futuro composto (без «provavelmente»).",
+      "answer": [
+        "O comboio já terá partido.",
+        "O comboio terá já partido."
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-ex-17",
+      "topicId": "b2-futuro-composto",
+      "type": "order-words",
+      "words": [
+        "já",
+        "Quando",
+        "teremos",
+        "chegares,",
+        "jantado"
+      ],
+      "answer": "Quando chegares, já teremos jantado",
+      "ru": "Когда ты придёшь, мы уже поужинаем."
+    },
+    {
+      "id": "b2-futuro-composto-ex-18",
+      "topicId": "b2-futuro-composto",
+      "type": "order-words",
+      "words": [
+        "terá",
+        "O",
+        "começado",
+        "incêndio",
+        "cozinha",
+        "na"
+      ],
+      "answer": "O incêndio terá começado na cozinha",
+      "ru": "Пожар, предположительно, начался на кухне."
+    },
+    {
+      "id": "b2-futuro-composto-ex-19",
+      "topicId": "b2-futuro-composto",
+      "type": "translate-ru-pt",
+      "ru": "К концу года я уже выучу португальский.",
+      "answer": [
+        "Até ao fim do ano, já terei aprendido português.",
+        "Até ao fim do ano, terei aprendido português.",
+        "Até ao final do ano, já terei aprendido português.",
+        "Até ao final do ano, terei aprendido português."
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-ex-20",
+      "topicId": "b2-futuro-composto",
+      "type": "translate-ru-pt",
+      "ru": "Где же он мог оставить телефон?",
+      "answer": [
+        "Onde terá deixado o telemóvel?",
+        "Onde terá ele deixado o telemóvel?",
+        "Onde é que ele terá deixado o telemóvel?",
+        "Onde terá posto o telemóvel?",
+        "Onde terá ele posto o telemóvel?",
+        "Onde é que ele terá posto o telemóvel?",
+        "Onde é que terá deixado o telemóvel?",
+        "Onde é que terá posto o telemóvel?"
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-ex-21",
+      "topicId": "b2-futuro-composto",
+      "type": "listen-type",
+      "text": "Até lá, já terei mudado de casa.",
+      "answer": [
+        "Até lá, já terei mudado de casa."
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-ex-22",
+      "topicId": "b2-futuro-composto",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой futuro composto (eu).",
+      "pairs": [
+        {
+          "left": "fazer",
+          "right": "terei feito"
+        },
+        {
+          "left": "dizer",
+          "right": "terei dito"
+        },
+        {
+          "left": "ver",
+          "right": "terei visto"
+        },
+        {
+          "left": "pôr",
+          "right": "terei posto"
+        },
+        {
+          "left": "escrever",
+          "right": "terei escrito"
+        },
+        {
+          "left": "abrir",
+          "right": "terei aberto"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b2-futuro-composto-mt-01",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Até amanhã, eles já ___ (receber) a encomenda.",
+      "answer": [
+        "terão recebido"
+      ],
+      "ru": "К завтрашнему дню они уже получат посылку."
+    },
+    {
+      "id": "b2-futuro-composto-mt-02",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Quando acordares, eu já ___ (sair).",
+      "answer": [
+        "terei saído"
+      ],
+      "ru": "Когда ты проснёшься, я уже уйду."
+    },
+    {
+      "id": "b2-futuro-composto-mt-03",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "A Joana ainda não chegou. ___ (ficar) presa no trânsito?",
+      "answer": [
+        "Terá ficado"
+      ],
+      "ru": "Жоаны всё ещё нет. Может, застряла в пробке?"
+    },
+    {
+      "id": "b2-futuro-composto-mt-04",
+      "topicId": "b2-futuro-composto",
+      "type": "fill-gap",
+      "prompt": "Daqui a dez anos, nós ___ (pagar) a casa toda.",
+      "answer": [
+        "teremos pago",
+        "teremos pagado"
+      ],
+      "ru": "Через десять лет мы выплатим весь дом.",
+      "explanation": "С ter в pt-PT обычно короткое причастие pago."
+    },
+    {
+      "id": "b2-futuro-composto-mt-05",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "Segundo a imprensa, o jogador ___ uma lesão grave no treino de ontem.",
+      "options": [
+        "sofrerá",
+        "terá sofrido",
+        "tenha sofrido",
+        "tiver sofrido"
+      ],
+      "correct": 1,
+      "explanation": "Неподтверждённая новость о прошлом → terá sofrido."
+    },
+    {
+      "id": "b2-futuro-composto-mt-06",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "Se até sexta não ___ a resposta, telefono-lhes.",
+      "options": [
+        "terei recebido",
+        "terá recebido",
+        "tenha recebido",
+        "tiver recebido"
+      ],
+      "correct": 3,
+      "explanation": "После se о будущем → futuro composto do conjuntivo."
+    },
+    {
+      "id": "b2-futuro-composto-mt-07",
+      "topicId": "b2-futuro-composto",
+      "type": "choice",
+      "prompt": "Quando chegarmos ao cinema, o filme já ___.",
+      "options": [
+        "começa",
+        "tiver começado",
+        "terá começado",
+        "tenha começado"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b2-futuro-composto-mt-08",
+      "topicId": "b2-futuro-composto",
+      "type": "transform",
+      "prompt": "Deve ter havido um problema.",
+      "instruction": "Выразите ту же догадку через futuro composto.",
+      "answer": [
+        "Terá havido um problema."
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-mt-09",
+      "topicId": "b2-futuro-composto",
+      "type": "translate-ru-pt",
+      "ru": "Когда ты вернёшься, я уже закончу.",
+      "answer": [
+        "Quando voltares, já terei acabado.",
+        "Quando voltares, já terei terminado.",
+        "Quando tu voltares, já terei acabado.",
+        "Quando tu voltares, já terei terminado.",
+        "Quando regressares, já terei acabado.",
+        "Quando regressares, já terei terminado."
+      ]
+    },
+    {
+      "id": "b2-futuro-composto-mt-10",
+      "topicId": "b2-futuro-composto",
+      "type": "listen-choice",
+      "text": "O avião terá aterrado há uma hora.",
+      "options": [
+        "Самолёт приземлится через час.",
+        "Самолёт должен приземлиться через час.",
+        "Самолёт, наверное, приземлился час назад.",
+        "Самолёт приземлился бы час назад."
+      ],
+      "correct": 2
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "id": "casa-e-arrendamento",
+  "title": "Жильё и аренда",
+  "titlePt": "Casa e arrendamento",
+  "level": "A2",
+  "words": [
+    {
+      "pt": "o apartamento",
+      "ru": "квартира",
+      "gender": "m",
+      "example": "Arrendámos um apartamento perto do metro.",
+      "audio": true
+    },
+    {
+      "pt": "o T2",
+      "ru": "квартира с двумя спальнями (T0 — студия, T1 — одна спальня)",
+      "gender": "m",
+      "example": "Um T2 tem dois quartos, sala, cozinha e casa de banho.",
+      "audio": true
+    },
+    {
+      "pt": "a moradia",
+      "ru": "частный дом",
+      "gender": "f",
+      "example": "Os meus sogros vivem numa moradia com jardim.",
+      "audio": true
+    },
+    {
+      "pt": "o prédio",
+      "ru": "многоквартирный дом, здание",
+      "gender": "m",
+      "example": "O nosso prédio não tem elevador.",
+      "audio": true
+    },
+    {
+      "pt": "o andar",
+      "ru": "этаж; квартира на этаже",
+      "gender": "m",
+      "example": "Moro no terceiro andar, lado esquerdo.",
+      "audio": true
+    },
+    {
+      "pt": "o rés-do-chão",
+      "ru": "первый (цокольный) этаж",
+      "gender": "m",
+      "example": "A papelaria fica no rés-do-chão do prédio.",
+      "audio": true
+    },
+    {
+      "pt": "a cave",
+      "ru": "подвал, цокольный этаж",
+      "gender": "f",
+      "example": "Guardamos as bicicletas na cave.",
+      "audio": true
+    },
+    {
+      "pt": "o sótão",
+      "ru": "чердак, мансарда",
+      "gender": "m",
+      "example": "O sótão foi transformado num escritório.",
+      "audio": true
+    },
+    {
+      "pt": "o quarto",
+      "ru": "спальня, комната",
+      "gender": "m",
+      "example": "O quarto das traseiras é mais silencioso.",
+      "audio": true
+    },
+    {
+      "pt": "a sala",
+      "ru": "гостиная",
+      "gender": "f",
+      "example": "A sala tem muita luz de manhã.",
+      "audio": true
+    },
+    {
+      "pt": "a cozinha",
+      "ru": "кухня",
+      "gender": "f",
+      "example": "A cozinha está equipada com forno e placa.",
+      "audio": true
+    },
+    {
+      "pt": "a casa de banho",
+      "ru": "ванная, туалет",
+      "gender": "f",
+      "example": "A casa de banho precisa de obras.",
+      "audio": true
+    },
+    {
+      "pt": "a varanda",
+      "ru": "балкон",
+      "gender": "f",
+      "example": "Ao domingo tomamos o pequeno-almoço na varanda.",
+      "audio": true
+    },
+    {
+      "pt": "a marquise",
+      "ru": "застеклённый балкон",
+      "gender": "f",
+      "example": "A máquina de lavar roupa está na marquise.",
+      "audio": true
+    },
+    {
+      "pt": "a arrecadação",
+      "ru": "кладовка",
+      "gender": "f",
+      "example": "O apartamento tem arrecadação e lugar de garagem.",
+      "audio": true
+    },
+    {
+      "pt": "o lugar de garagem",
+      "ru": "место в паркинге",
+      "gender": "m",
+      "example": "O lugar de garagem paga-se à parte.",
+      "audio": true
+    },
+    {
+      "pt": "o elevador",
+      "ru": "лифт",
+      "gender": "m",
+      "example": "O elevador está avariado outra vez.",
+      "audio": true
+    },
+    {
+      "pt": "o frigorífico",
+      "ru": "холодильник",
+      "gender": "m",
+      "example": "O frigorífico faz um barulho estranho à noite.",
+      "audio": true
+    },
+    {
+      "pt": "a máquina de lavar roupa",
+      "ru": "стиральная машина",
+      "gender": "f",
+      "example": "A máquina de lavar roupa é nova.",
+      "audio": true
+    },
+    {
+      "pt": "o esquentador",
+      "ru": "газовая колонка, водонагреватель",
+      "gender": "m",
+      "example": "O esquentador é a gás e às vezes vai-se abaixo.",
+      "audio": true
+    },
+    {
+      "pt": "o aquecimento central",
+      "ru": "центральное отопление",
+      "gender": "m",
+      "example": "Muitas casas antigas não têm aquecimento central.",
+      "audio": true
+    },
+    {
+      "pt": "a humidade",
+      "ru": "сырость, влажность",
+      "gender": "f",
+      "example": "No inverno aparece humidade nas paredes do quarto.",
+      "audio": true
+    },
+    {
+      "pt": "mobilado",
+      "ru": "меблированный",
+      "example": "Arrendo um quarto mobilado no centro do Porto.",
+      "audio": true
+    },
+    {
+      "pt": "arrendar",
+      "ru": "снимать или сдавать в аренду (жильё)",
+      "example": "Queremos arrendar uma casa em Setúbal.",
+      "audio": true
+    },
+    {
+      "pt": "alugar",
+      "ru": "арендовать, сдавать (жильё, машину)",
+      "example": "Aluga-se quarto a estudantes, perto da faculdade.",
+      "audio": true
+    },
+    {
+      "pt": "o arrendamento",
+      "ru": "аренда жилья",
+      "gender": "m",
+      "example": "O arrendamento em Lisboa está caríssimo.",
+      "audio": true
+    },
+    {
+      "pt": "o senhorio / a senhoria",
+      "ru": "арендодатель, хозяин квартиры",
+      "gender": "mf",
+      "example": "O senhorio vem cá amanhã ver a torneira.",
+      "audio": true
+    },
+    {
+      "pt": "o inquilino / a inquilina",
+      "ru": "жилец, арендатор",
+      "gender": "mf",
+      "example": "O inquilino tem de avisar com antecedência antes de sair.",
+      "audio": true
+    },
+    {
+      "pt": "o contrato de arrendamento",
+      "ru": "договор аренды",
+      "gender": "m",
+      "example": "Assinámos o contrato de arrendamento por dois anos.",
+      "audio": true
+    },
+    {
+      "pt": "a renda",
+      "ru": "арендная плата",
+      "gender": "f",
+      "example": "A renda paga-se até ao dia oito de cada mês.",
+      "audio": true
+    },
+    {
+      "pt": "a caução",
+      "ru": "залог, депозит",
+      "gender": "f",
+      "example": "O senhorio pede dois meses de caução.",
+      "audio": true
+    },
+    {
+      "pt": "o fiador / a fiadora",
+      "ru": "поручитель",
+      "gender": "mf",
+      "example": "Sem fiador, a imobiliária não aceita a proposta.",
+      "audio": true
+    },
+    {
+      "pt": "o recibo de renda",
+      "ru": "квитанция об оплате аренды",
+      "gender": "m",
+      "example": "Peça sempre o recibo de renda eletrónico.",
+      "audio": true
+    },
+    {
+      "pt": "o condomínio",
+      "ru": "ТСЖ; ежемесячный взнос на содержание дома",
+      "gender": "m",
+      "example": "O condomínio custa trinta euros por mês.",
+      "audio": true
+    },
+    {
+      "pt": "a reunião de condomínio",
+      "ru": "собрание жильцов",
+      "gender": "f",
+      "example": "Na reunião de condomínio falámos das obras do telhado.",
+      "audio": true
+    },
+    {
+      "pt": "o administrador do condomínio",
+      "ru": "управляющий домом",
+      "gender": "m",
+      "example": "Liguei ao administrador do condomínio por causa da infiltração.",
+      "audio": true
+    },
+    {
+      "pt": "o vizinho / a vizinha",
+      "ru": "сосед, соседка",
+      "gender": "mf",
+      "example": "A vizinha de cima faz muito barulho à noite.",
+      "audio": true
+    },
+    {
+      "pt": "as contas",
+      "ru": "счета (коммунальные)",
+      "gender": "f",
+      "example": "As contas não estão incluídas na renda.",
+      "audio": true
+    },
+    {
+      "pt": "a conta da luz",
+      "ru": "счёт за электричество",
+      "gender": "f",
+      "example": "A conta da luz veio altíssima este mês.",
+      "audio": true
+    },
+    {
+      "pt": "a fatura da água",
+      "ru": "счёт за воду",
+      "gender": "f",
+      "example": "A fatura da água chega por email.",
+      "audio": true
+    },
+    {
+      "pt": "a botija de gás",
+      "ru": "газовый баллон",
+      "gender": "f",
+      "example": "Temos de trocar a botija de gás.",
+      "audio": true
+    },
+    {
+      "pt": "despesas incluídas",
+      "ru": "все расходы включены (в объявлении)",
+      "example": "Quarto em Arroios, quatrocentos euros, despesas incluídas.",
+      "audio": true
+    },
+    {
+      "pt": "a imobiliária",
+      "ru": "агентство недвижимости",
+      "gender": "f",
+      "example": "A imobiliária cobra uma comissão ao senhorio.",
+      "audio": true
+    },
+    {
+      "pt": "o anúncio",
+      "ru": "объявление",
+      "gender": "m",
+      "example": "Vi o anúncio num site de casas.",
+      "audio": true
+    },
+    {
+      "pt": "a visita",
+      "ru": "просмотр квартиры",
+      "gender": "f",
+      "example": "Marcámos uma visita para quinta-feira às seis.",
+      "audio": true
+    },
+    {
+      "pt": "o certificado energético",
+      "ru": "энергетический сертификат",
+      "gender": "m",
+      "example": "O anúncio tem de indicar o certificado energético da casa.",
+      "audio": true
+    },
+    {
+      "pt": "a mudança",
+      "ru": "переезд",
+      "gender": "f",
+      "example": "A mudança foi no sábado e ainda temos caixas por abrir.",
+      "audio": true
+    },
+    {
+      "pt": "mudar-se",
+      "ru": "переезжать",
+      "example": "Mudámo-nos para o Porto em março.",
+      "audio": true
+    },
+    {
+      "pt": "as obras",
+      "ru": "ремонт, строительные работы",
+      "gender": "f",
+      "example": "O prédio está em obras até dezembro.",
+      "audio": true
+    },
+    {
+      "pt": "avariar",
+      "ru": "ломаться (о технике)",
+      "example": "A máquina de lavar avariou ontem.",
+      "audio": true
+    },
+    {
+      "pt": "a fuga de água",
+      "ru": "протечка",
+      "gender": "f",
+      "example": "Há uma fuga de água por baixo do lava-loiça.",
+      "audio": true
+    },
+    {
+      "pt": "o canalizador",
+      "ru": "сантехник",
+      "gender": "m",
+      "example": "Chamámos um canalizador por causa da fuga de água.",
+      "audio": true
+    },
+    {
+      "pt": "a chave",
+      "ru": "ключ",
+      "gender": "f",
+      "example": "Ainda não me deram a chave da garagem.",
+      "audio": true
+    },
+    {
+      "pt": "a caixa do correio",
+      "ru": "почтовый ящик",
+      "gender": "f",
+      "example": "A conta da luz estava na caixa do correio.",
+      "audio": true
+    },
+    {
+      "pt": "rescindir o contrato",
+      "ru": "расторгнуть договор",
+      "example": "Se rescindir o contrato antes do prazo, perde a caução?",
+      "audio": true
+    },
+    {
+      "pt": "as traseiras",
+      "ru": "задняя сторона дома (окна во двор)",
+      "gender": "f",
+      "example": "A minha janela dá para as traseiras.",
+      "audio": true
+    }
+  ]
+}

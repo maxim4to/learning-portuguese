@@ -1,0 +1,459 @@
+{
+  "id": "b1-imperfeito-conjuntivo-condicional",
+  "level": "B1",
+  "module": "b1-conjuntivo",
+  "title": "Imperfeito do conjuntivo и нереальное условие",
+  "titlePt": "Imperfeito do conjuntivo e frases condicionais",
+  "requires": [
+    "b1-presente-conjuntivo",
+    "a2-condicional",
+    "a2-preterito-perfeito-simples"
+  ],
+  "theory": "## Образование\n\nКак и futuro do conjuntivo, форма строится от **eles** в **pretérito perfeito simples**: отбрасываем **-ram** и добавляем **-sse, -sses, -sse, -ssemos, -ssem**. В форме **nós** появляется ударение.\n\n| | falar (fala-ram) | comer (come-ram) | partir (parti-ram) |\n|---|---|---|---|\n| eu | falasse | comesse | partisse |\n| tu | falasses | comesses | partisses |\n| ele / você | falasse | comesse | partisse |\n| nós | falássemos | comêssemos | partíssemos |\n| eles / vocês | falassem | comessem | partissem |\n\nНеправильные глаголы — по той же схеме, никаких исключений:\n\n| инфинитив | eles (perfeito) | eu / nós |\n|---|---|---|\n| ter | tiveram | tivesse / tivéssemos |\n| ser, ir | foram | fosse / fôssemos |\n| estar | estiveram | estivesse / estivéssemos |\n| fazer | fizeram | fizesse / fizéssemos |\n| poder | puderam | pudesse / pudéssemos |\n| saber | souberam | soubesse / soubéssemos |\n| querer | quiseram | quisesse / quiséssemos |\n| dizer | disseram | dissesse / disséssemos |\n| trazer | trouxeram | trouxesse / trouxéssemos |\n| vir | vieram | viesse / viéssemos |\n| ver | viram | visse / víssemos |\n| dar | deram | desse / déssemos |\n\n## 1. Нереальное условие: se + imperfeito do conjuntivo\n\n«Если бы…, то…» → **se** + imperfeito do conjuntivo, в главной части — **condicional** или (в живой речи pt-PT чаще) **imperfeito do indicativo**:\n\n**Se eu tivesse tempo, fazia / faria isso.** — Если бы у меня было время, я бы это сделал.\n**Se fosse a ti, não aceitava.** — На твоём месте я бы не соглашался.\n\nСравните три типа условия:\n\n| тип | se + | главная часть | пример |\n|---|---|---|---|\n| привычка, факт | presente | presente | **Se chove, fico em casa.** |\n| реальное будущее | futuro do conjuntivo | presente / futuro / imperativo | **Se chover, fico em casa.** |\n| нереальное | imperfeito do conjuntivo | condicional / imperfeito | **Se chovesse, ficava em casa.** |\n\n## 2. Como se — «как будто»\n\nПосле **como se** — всегда imperfeito do conjuntivo, даже если речь о настоящем:\n**Ele fala como se soubesse tudo.** — Он говорит так, будто всё знает.\n\n## 3. Пожелания\n\n- **Quem me dera** + инфинитив (если желание о себе): **Quem me dera ter férias!** — Вот бы мне отпуск!\n- **Quem me dera que** + imperfeito do conjuntivo: **Quem me dera que fosse sexta-feira!**\n- **Oxalá** + imperfeito do conjuntivo — маловероятное желание: **Oxalá ele estivesse aqui.**\n\n## 4. Согласование времён\n\nЕсли в главном предложении прошедшее или condicional, а по правилу нужен conjuntivo, берём imperfeito:\n\n| настоящее | прошедшее |\n|---|---|\n| **Quero que venhas.** | **Queria que viesses.** |\n| **Peço-te que me ajudes.** | **Pedi-te que me ajudasses.** |\n| **É importante que saibas.** | **Era importante que soubesses.** |\n\n**Queria que...** звучит и как вежливое настоящее: «я бы хотел, чтобы…».\n\nТо же после союзов: **Expliquei devagar para que todos percebessem.** — Я объяснил медленно, чтобы все поняли. **Saí sem que ninguém me visse.**\n\n## Вежливые просьбы\n\nНереальное условие смягчает просьбу: **Se não se importasse, podia fechar a janela?** — Если вам не трудно, не могли бы вы закрыть окно? **Se pudesses passar cá amanhã, era ótimo.** — Если бы ты смог зайти завтра, было бы отлично.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| Se tivesse tempo, **ia**. | Se tivesse tempo, **iria**. | в pt-PT в разговоре в главной части чаще imperfeito |\n| **Se fosse a ti**, não ia. | **Se eu fosse você**, não iria. | устойчивое pt-PT выражение «se fosse a ti» |\n| **Quem me dera!** | **Tomara!** / **Quem me dera!** | *quem me dera* — самое частотное в pt-PT |\n| **Dir-te-ia** (книжн.) | **Te diria** | мезоклиза только в pt-PT, в речи её избегают через imperfeito: **dizia-te** |\n\nФормы imperfeito do conjuntivo в обеих нормах одинаковы.",
+  "commonErrors": "- **Индикатив после se в нереальном условии**: *Se eu tinha dinheiro, comprava* ✗ → **Se eu tivesse dinheiro, comprava** ✓.\n- **Condicional после se** по русской модели «если бы»: *Se eu teria tempo* ✗ → **Se eu tivesse tempo** ✓.\n- **Основа от инфинитива**: *fazesse, tenesse, podesse* ✗ → **fizesse, tivesse, pudesse** (основа — perfeito eles).\n- **Без ударения в nós**: *falassemos, tivessemos* ✗ → **falássemos, tivéssemos** ✓.\n- **Presente после como se**: *Fala como se sabe tudo* ✗ → **como se soubesse** ✓.\n- **Нереальное условие для реального будущего**: *Se amanhã chovesse, ficamos* ✗ → **Se amanhã chover, ficamos** ✓.\n- **Нарушение согласования**: *Queria que venhas* ✗ → **Queria que viesses** ✓.",
+  "examples": [
+    {
+      "pt": "Se eu tivesse mais tempo, aprendia a tocar guitarra.",
+      "ru": "Если бы у меня было больше времени, я бы научился играть на гитаре.",
+      "audio": true
+    },
+    {
+      "pt": "Se fosse a ti, ia de comboio.",
+      "ru": "На твоём месте я бы поехал на поезде.",
+      "audio": true
+    },
+    {
+      "pt": "Ele fala como se fosse o dono da casa.",
+      "ru": "Он говорит так, будто он хозяин дома.",
+      "audio": true
+    },
+    {
+      "pt": "Quem me dera estar agora numa praia do Algarve!",
+      "ru": "Вот бы сейчас оказаться на пляже в Алгарве!",
+      "audio": true
+    },
+    {
+      "pt": "A médica pediu que eu voltasse daqui a uma semana.",
+      "ru": "Врач попросила, чтобы я пришёл снова через неделю.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-01",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Se eu ___ (ter) dinheiro, comprava uma casa em Sintra.",
+      "answer": [
+        "tivesse"
+      ],
+      "ru": "Если бы у меня были деньги, я бы купил дом в Синтре."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-02",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Se nós ___ (morar) perto do mar, íamos à praia todos os dias.",
+      "answer": [
+        "morássemos"
+      ],
+      "hint": "ударение в форме nós",
+      "ru": "Если бы мы жили у моря, мы бы ходили на пляж каждый день."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-03",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Ele fala como se ___ (saber) tudo.",
+      "answer": [
+        "soubesse"
+      ],
+      "ru": "Он говорит так, будто всё знает.",
+      "explanation": "После como se — всегда imperfeito do conjuntivo."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-04",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Quem me dera que ___ (ser) sexta-feira!",
+      "answer": [
+        "fosse"
+      ],
+      "ru": "Вот бы была пятница!"
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-05",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Se tu ___ (fazer) desporto, sentias-te melhor.",
+      "answer": [
+        "fizesses"
+      ],
+      "ru": "Если бы ты занимался спортом, ты бы чувствовал себя лучше."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-06",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "A professora pediu que nós ___ (trazer) o livro.",
+      "answer": [
+        "trouxéssemos"
+      ],
+      "ru": "Учительница попросила, чтобы мы принесли книгу.",
+      "explanation": "Главное предложение в прошедшем → imperfeito do conjuntivo."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-07",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Se vocês ___ (vir) mais cedo, jantávamos juntos.",
+      "answer": [
+        "viessem"
+      ],
+      "hint": "vir → vieram",
+      "ru": "Если бы вы пришли пораньше, мы бы поужинали вместе."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-08",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Se eu tivesse tempo, ___ (ir) contigo.",
+      "answer": [
+        "ia",
+        "iria"
+      ],
+      "ru": "Если бы у меня было время, я бы пошёл с тобой.",
+      "explanation": "В главной части — condicional (iria) или, разговорно в pt-PT, imperfeito (ia)."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-09",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "choice",
+      "prompt": "Se eu ___ rico, viajava pelo mundo.",
+      "options": [
+        "for",
+        "seja",
+        "fosse",
+        "era"
+      ],
+      "correct": 2,
+      "explanation": "Нереальное условие → se + imperfeito do conjuntivo."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-10",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "choice",
+      "prompt": "Se ___ amanhã, ficamos em casa.",
+      "options": [
+        "chovesse",
+        "chover",
+        "chova",
+        "choveria"
+      ],
+      "correct": 1,
+      "explanation": "Реальное будущее условие → futuro do conjuntivo."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-11",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "choice",
+      "prompt": "Queria que tu ___ comigo ao médico.",
+      "options": [
+        "vais",
+        "vás",
+        "fores",
+        "fosses"
+      ],
+      "correct": 3,
+      "explanation": "Queria (imperfeito) → согласование: imperfeito do conjuntivo."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-12",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "choice",
+      "prompt": "Ela olhou para mim como se não me ___.",
+      "options": [
+        "conhecesse",
+        "conheça",
+        "conhecer",
+        "conhece"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-13",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "transform",
+      "prompt": "Se tenho tempo, vou ao ginásio.",
+      "instruction": "Сделайте условие нереальным («если бы…»).",
+      "answer": [
+        "Se tivesse tempo, ia ao ginásio.",
+        "Se tivesse tempo, iria ao ginásio.",
+        "Se eu tivesse tempo, ia ao ginásio.",
+        "Se eu tivesse tempo, iria ao ginásio."
+      ]
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-14",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "transform",
+      "prompt": "Quero que me ajudes.",
+      "instruction": "Перенесите в прошлое: «Queria que...».",
+      "answer": [
+        "Queria que me ajudasses.",
+        "Eu queria que me ajudasses.",
+        "Queria que tu me ajudasses."
+      ]
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-15",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "transform",
+      "prompt": "Não tenho carro.",
+      "instruction": "Выразите сожаление с «Quem me dera...».",
+      "answer": [
+        "Quem me dera ter carro.",
+        "Quem me dera ter um carro."
+      ],
+      "explanation": "Желание о себе → quem me dera + инфинитив."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-16",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "order-words",
+      "words": [
+        "Se",
+        "mudava-me",
+        "eu",
+        "pudesse,",
+        "Lisboa",
+        "para"
+      ],
+      "answer": "Se eu pudesse, mudava-me para Lisboa",
+      "ru": "Если бы я мог, я бы переехал в Лиссабон."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-17",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "order-words",
+      "words": [
+        "como",
+        "fosse",
+        "gasta",
+        "Ele",
+        "se",
+        "dinheiro",
+        "milionário"
+      ],
+      "answer": "Ele gasta dinheiro como se fosse milionário",
+      "ru": "Он тратит деньги, будто миллионер."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-18",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "translate-ru-pt",
+      "ru": "Если бы я знал, я бы тебе сказал.",
+      "answer": [
+        "Se soubesse, dizia-te.",
+        "Se soubesse, dir-te-ia.",
+        "Se soubesse, contava-te.",
+        "Se soubesse, contar-te-ia.",
+        "Se eu soubesse, dizia-te.",
+        "Se eu soubesse, dir-te-ia.",
+        "Se eu soubesse, contava-te.",
+        "Se eu soubesse, contar-te-ia.",
+        "Se soubesse, tinha-te dito.",
+        "Se eu soubesse, tinha-te dito."
+      ],
+      "explanation": "Мезоклиза (dir-te-ia) правильна, но в речи чаще imperfeito: dizia-te."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-19",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "translate-ru-pt",
+      "ru": "Вот бы сейчас было лето!",
+      "answer": [
+        "Quem me dera que fosse verão agora!",
+        "Quem me dera que agora fosse verão!",
+        "Oxalá fosse verão agora!",
+        "Oxalá agora fosse verão!",
+        "Quem me dera que já fosse verão!"
+      ]
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-20",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "listen-type",
+      "text": "Se eu fosse a ti, ia de comboio.",
+      "answer": [
+        "Se eu fosse a ti, ia de comboio."
+      ]
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-ex-21",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой imperfeito do conjuntivo (eu).",
+      "pairs": [
+        {
+          "left": "ter",
+          "right": "tivesse"
+        },
+        {
+          "left": "fazer",
+          "right": "fizesse"
+        },
+        {
+          "left": "dizer",
+          "right": "dissesse"
+        },
+        {
+          "left": "poder",
+          "right": "pudesse"
+        },
+        {
+          "left": "vir",
+          "right": "viesse"
+        },
+        {
+          "left": "ver",
+          "right": "visse"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-01",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Se eu ___ (poder), ajudava-te.",
+      "answer": [
+        "pudesse"
+      ],
+      "ru": "Если бы я мог, я бы тебе помог."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-02",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Era importante que eles ___ (chegar) a horas.",
+      "answer": [
+        "chegassem"
+      ],
+      "ru": "Было важно, чтобы они пришли вовремя."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-03",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Fala português como se ___ (ser) portuguesa.",
+      "answer": [
+        "fosse"
+      ],
+      "ru": "Она говорит по-португальски, будто португалка."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-04",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "fill-gap",
+      "prompt": "Se nós ___ (ter) mais tempo, visitávamos o Porto.",
+      "answer": [
+        "tivéssemos"
+      ],
+      "ru": "Если бы у нас было больше времени, мы бы съездили в Порту."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-05",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "choice",
+      "prompt": "Se eu ___ a ti, falava com ele.",
+      "options": [
+        "for",
+        "seja",
+        "era",
+        "fosse"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-06",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "choice",
+      "prompt": "Pedi-lhe que me ___ o livro.",
+      "options": [
+        "empreste",
+        "emprestasse",
+        "emprestar",
+        "emprestava"
+      ],
+      "correct": 1,
+      "explanation": "Pedi (прошедшее) → imperfeito do conjuntivo."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-07",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "choice",
+      "prompt": "Se amanhã ___ sol, vamos à praia.",
+      "options": [
+        "estiver",
+        "estivesse",
+        "esteja",
+        "estará"
+      ],
+      "correct": 0,
+      "explanation": "Реальное условие в будущем → futuro do conjuntivo."
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-08",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "transform",
+      "prompt": "Se ganhar a lotaria, compro uma casa.",
+      "instruction": "Сделайте условие нереальным («если бы…»).",
+      "answer": [
+        "Se ganhasse a lotaria, comprava uma casa.",
+        "Se ganhasse a lotaria, compraria uma casa.",
+        "Se eu ganhasse a lotaria, comprava uma casa.",
+        "Se eu ganhasse a lotaria, compraria uma casa."
+      ]
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-09",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "translate-ru-pt",
+      "ru": "Если бы у меня была машина, я бы поехал в Порту.",
+      "answer": [
+        "Se tivesse carro, ia ao Porto.",
+        "Se tivesse carro, ia para o Porto.",
+        "Se tivesse carro, iria ao Porto.",
+        "Se tivesse carro, iria para o Porto.",
+        "Se tivesse um carro, ia ao Porto.",
+        "Se tivesse um carro, ia para o Porto.",
+        "Se tivesse um carro, iria ao Porto.",
+        "Se tivesse um carro, iria para o Porto.",
+        "Se eu tivesse carro, ia ao Porto.",
+        "Se eu tivesse carro, ia para o Porto.",
+        "Se eu tivesse carro, iria ao Porto.",
+        "Se eu tivesse carro, iria para o Porto.",
+        "Se eu tivesse um carro, ia ao Porto.",
+        "Se eu tivesse um carro, ia para o Porto.",
+        "Se eu tivesse um carro, iria ao Porto.",
+        "Se eu tivesse um carro, iria para o Porto."
+      ]
+    },
+    {
+      "id": "b1-imperfeito-conjuntivo-condicional-mt-10",
+      "topicId": "b1-imperfeito-conjuntivo-condicional",
+      "type": "listen-choice",
+      "text": "Quem me dera que estivesses aqui.",
+      "options": [
+        "Жаль, что ты здесь.",
+        "Я рад, что ты здесь.",
+        "Как бы я хотел, чтобы ты был здесь.",
+        "Если будешь здесь, позвони."
+      ],
+      "correct": 2
+    }
+  ]
+}

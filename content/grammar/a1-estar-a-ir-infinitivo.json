@@ -1,0 +1,444 @@
+{
+  "id": "a1-estar-a-ir-infinitivo",
+  "level": "A1",
+  "module": "a1-verbo-presente",
+  "title": "Estar a + инфинитив и ir + инфинитив",
+  "titlePt": "Estar a + infinitivo e ir + infinitivo",
+  "requires": [
+    "a1-ser-estar",
+    "a1-presente-irregulares"
+  ],
+  "theory": "## Estar a + инфинитив — «сейчас, в процессе»\n\nЧтобы сказать, что действие происходит **прямо сейчас**, в Португалии используют **estar a + инфинитив**. Глагол **estar** спрягается, смысловой глагол стоит в неизменной форме инфинитива.\n\n| | estar | + a + инфинитив |\n|---|---|---|\n| eu | estou | a trabalhar |\n| tu | estás | a ler |\n| ele / ela / você | está | a dormir |\n| nós | estamos | a jantar |\n| eles / elas / vocês | estão | a ouvir |\n\n- **Agora não posso, estou a conduzir.** — Сейчас не могу, я за рулём.\n- **O que estás a fazer?** — Что ты делаешь?\n- **Não estou a perceber.** — Я не понимаю (сейчас, что ты говоришь).\n\nКонструкция подходит и для **временного периода**: **Estou a viver em Lisboa** (пока что живу в Лиссабоне), **Ela está a aprender alemão**.\n\n## Presente или estar a?\n\n| presente | estar a + инф. |\n|---|---|\n| привычка, факт, расписание | процесс в данный момент |\n| **Trabalho num banco.** — Я работаю в банке. | **Estou a trabalhar em casa hoje.** — Сегодня я работаю из дома. |\n| **Leio muito.** — Я много читаю. | **Estou a ler um livro ótimo.** — Я сейчас читаю отличную книгу. |\n\nСлова-подсказки для **estar a**: **agora, neste momento, ainda**. Для простого presente: **sempre, todos os dias, às vezes, normalmente**.\n\nЕсли есть безударное местоимение, по умолчанию оно присоединяется к инфинитиву: **Estou a ouvir-te.** Рядом с **estar** тоже возможно: **Estou-te a ouvir.**\n\n## Ir + инфинитив — ближайшее будущее\n\nДля планов и того, что вот-вот случится, используют **ir** в настоящем времени + инфинитив (без предлога!):\n\n| | ir | + инфинитив |\n|---|---|---|\n| eu | vou | jantar fora |\n| tu | vais | sair |\n| ele / ela / você | vai | chover |\n| nós | vamos | viajar |\n| eles / elas / vocês | vão | mudar de casa |\n\n- **Amanhã vou trabalhar em casa.** — Завтра я буду работать дома.\n- **Vamos jantar fora?** — Поужинаем где-нибудь?\n- **Cuidado, vai chover!** — Осторожно, сейчас пойдёт дождь!\n- **Não vou sair hoje.** — Сегодня я никуда не пойду.\n\nСлова-подсказки: **logo, logo à noite, amanhã, para a semana, no sábado, este fim de semana**.\n\nГлагол **ir** не сочетают с инфинитивом **ir**: не *vou ir*, а просто **Amanhã vou a Braga.** — Завтра я еду в Брагу. Сравните: **Vou a Braga** (куда — предлог **a** + место) и **Vou visitar Braga** (что сделать — инфинитив без предлога).\n\nВ разговоре будущее часто выражается и простым presente: **Amanhã trabalho em casa.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Estou a trabalhar.** | Estou trabalhando. | герундий после *estar* в Португалии звучит по-бразильски |\n| **O que estás a fazer?** | O que você está fazendo? | в pt-PT — tu + estás a |\n| **Vou** ao Porto amanhã. | Vou ir ao Porto amanhã. | *vou ir* в Португалии не говорят |\n| **Estou a ouvir-te.** | Estou te ouvindo. | клитика при инфинитиве |\n\nГерундий в Португалии всё же встречается — в Алентежу и Алгарве, а также в письменных оборотах (**Chegando a casa, liguei-lhe**). Но в стандартной речи «сейчас делаю» — только **estar a + инфинитив**.",
+  "commonErrors": "- **Бразильский герундий** (из сериалов и онлайн-курсов): *Estou trabalhando* ✗ → **Estou a trabalhar** ✓.\n- **Пропуск a**: *Estou trabalhar* ✗ → **Estou a trabalhar** ✓.\n- **Существительное вместо инфинитива**: *Estou a trabalho* ✗ → **Estou a trabalhar** ✓.\n- **Ser вместо estar**: *Sou a estudar* ✗ → **Estou a estudar** ✓.\n- **Estar a для привычки**: *Todos os dias estou a acordar às sete* ✗ → **Todos os dias acordo às sete** ✓.\n- **Лишний предлог после ir**: *Vou a jantar* ✗ → **Vou jantar** ✓ (a ставится только перед местом: **Vou ao café**).\n- **Ir + ir**: *Vou ir à praia* ✗ → **Vou à praia** ✓.\n- **Калька с русского «буду делать»**: *Vou estar a trabalhar amanhã* (слишком громоздко для простого плана) → **Amanhã vou trabalhar** ✓.",
+  "examples": [
+    {
+      "pt": "Agora não posso falar, estou a conduzir.",
+      "ru": "Сейчас не могу говорить, я за рулём.",
+      "audio": true
+    },
+    {
+      "pt": "O que estás a fazer?",
+      "ru": "Что ты делаешь?",
+      "audio": true
+    },
+    {
+      "pt": "Os miúdos estão a brincar no jardim.",
+      "ru": "Дети играют в саду.",
+      "audio": true
+    },
+    {
+      "pt": "Amanhã vou trabalhar em casa.",
+      "ru": "Завтра я буду работать из дома.",
+      "audio": true
+    },
+    {
+      "pt": "Vamos jantar fora no sábado?",
+      "ru": "Поужинаем в субботу в ресторане?",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-01",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Agora não posso falar, ___ (estar) a conduzir.",
+      "answer": [
+        "estou"
+      ],
+      "ru": "Сейчас не могу говорить, я за рулём."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-02",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "O que é que tu ___ (estar) a ler?",
+      "answer": [
+        "estás"
+      ],
+      "ru": "Что ты читаешь?"
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-03",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Os miúdos estão ___ brincar no jardim.",
+      "answer": [
+        "a"
+      ],
+      "ru": "Дети играют в саду.",
+      "explanation": "estar + a + инфинитив: предлог a обязателен."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-04",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Ela está a ___ (estudar) para o exame.",
+      "answer": [
+        "estudar"
+      ],
+      "ru": "Она готовится к экзамену.",
+      "explanation": "После estar a смысловой глагол стоит в инфинитиве."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-05",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Amanhã nós ___ (ir) visitar a avó.",
+      "answer": [
+        "vamos"
+      ],
+      "ru": "Завтра мы поедем к бабушке."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-06",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Logo à noite eu ___ (ir) ver o jogo com o Rui.",
+      "answer": [
+        "vou"
+      ],
+      "ru": "Вечером я буду смотреть матч с Руем."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-07",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Cuidado, ___ (ir) chover!",
+      "answer": [
+        "vai"
+      ],
+      "ru": "Осторожно, сейчас пойдёт дождь!",
+      "explanation": "Безличное «пойдёт дождь» — 3-е лицо ед. ч.: vai chover."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-08",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "Как сказать «Я сейчас готовлю ужин» в Португалии?",
+      "options": [
+        "Estou fazendo o jantar.",
+        "Estou fazer o jantar.",
+        "Estou a fazer o jantar.",
+        "Sou a fazer o jantar."
+      ],
+      "correct": 2,
+      "explanation": "pt-PT: estar a + инфинитив. Герундий — бразильский вариант."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-09",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "Trabalho num banco. Todos os dias ___ às nove.",
+      "options": [
+        "estou a entrar",
+        "entro",
+        "vou a entrar",
+        "estou entrando"
+      ],
+      "correct": 1,
+      "explanation": "Привычка (todos os dias) — простой presente."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-10",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "Para a semana ___ de férias para os Açores.",
+      "options": [
+        "vou ir",
+        "vou a ir",
+        "vou",
+        "estou ir"
+      ],
+      "correct": 2,
+      "explanation": "Ir с инфинитивом ir не сочетается: просто vou."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-11",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "— Onde está o Duarte? — ___ no quarto.",
+      "options": [
+        "Está a dormir",
+        "Está dormindo",
+        "Está dormir",
+        "É a dormir"
+      ],
+      "correct": 0,
+      "explanation": "Процесс сейчас — está a dormir."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-12",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "Desculpa, não ___ a perceber nada!",
+      "options": [
+        "sou",
+        "tenho",
+        "vou",
+        "estou"
+      ],
+      "correct": 3,
+      "explanation": "Не понимаю (в данный момент) — estou a perceber."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-13",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "transform",
+      "prompt": "Eu leio o jornal.",
+      "instruction": "Скажите, что вы делаете это прямо сейчас (estar a + инфинитив).",
+      "answer": [
+        "Eu estou a ler o jornal.",
+        "Estou a ler o jornal."
+      ]
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-14",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "transform",
+      "prompt": "Nós jantamos em casa.",
+      "instruction": "Скажите о ближайшем будущем (ir + инфинитив).",
+      "answer": [
+        "Nós vamos jantar em casa.",
+        "Vamos jantar em casa."
+      ]
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-15",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "transform",
+      "prompt": "A Rita está a trabalhar.",
+      "instruction": "Замените «a Rita» на «a Rita e o Pedro».",
+      "answer": [
+        "A Rita e o Pedro estão a trabalhar."
+      ]
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-16",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "order-words",
+      "words": [
+        "estás",
+        "O",
+        "fazer?",
+        "a",
+        "que"
+      ],
+      "answer": "O que estás a fazer?",
+      "ru": "Что ты делаешь?"
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-17",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "order-words",
+      "words": [
+        "comprar",
+        "Vou",
+        "o",
+        "bilhetes",
+        "para",
+        "comboio"
+      ],
+      "answer": "Vou comprar bilhetes para o comboio",
+      "ru": "Я куплю билеты на поезд."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-18",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "translate-ru-pt",
+      "ru": "Я сейчас учу португальский.",
+      "answer": [
+        "Estou a aprender português.",
+        "Eu estou a aprender português.",
+        "Agora estou a aprender português.",
+        "Agora eu estou a aprender português.",
+        "Eu agora estou a aprender português.",
+        "Estou a estudar português.",
+        "Eu estou a estudar português.",
+        "Agora estou a estudar português.",
+        "Neste momento estou a aprender português.",
+        "Neste momento estou a estudar português."
+      ],
+      "explanation": "Процесс / временный период — estar a + инфинитив."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-19",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "translate-ru-pt",
+      "ru": "Завтра я буду работать дома.",
+      "answer": [
+        "Amanhã vou trabalhar em casa.",
+        "Amanhã eu vou trabalhar em casa.",
+        "Vou trabalhar em casa amanhã.",
+        "Eu vou trabalhar em casa amanhã.",
+        "Amanhã trabalho em casa.",
+        "Amanhã eu trabalho em casa."
+      ],
+      "explanation": "План на завтра — ir + инфинитив (или просто presente)."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-20",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "listen-type",
+      "text": "Estamos a esperar pelo autocarro.",
+      "answer": [
+        "Estamos a esperar pelo autocarro."
+      ]
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-ex-21",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "match",
+      "prompt": "Соедините форму со значением.",
+      "pairs": [
+        {
+          "left": "estou a comer",
+          "right": "я ем (прямо сейчас)"
+        },
+        {
+          "left": "como",
+          "right": "я ем (обычно)"
+        },
+        {
+          "left": "vou comer",
+          "right": "я поем (скоро)"
+        },
+        {
+          "left": "estamos a comer",
+          "right": "мы едим (сейчас)"
+        },
+        {
+          "left": "vamos comer",
+          "right": "мы поедим (скоро)"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-01",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Não faças barulho, o bebé ___ (estar) a dormir.",
+      "answer": [
+        "está"
+      ],
+      "ru": "Не шуми, малыш спит."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-02",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (ir) mudar de casa em março.",
+      "answer": [
+        "vão"
+      ],
+      "ru": "В марте они будут переезжать."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-03",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Estou a ___ (aprender) a conduzir.",
+      "answer": [
+        "aprender"
+      ],
+      "ru": "Я учусь водить машину."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-04",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (estar) a ouvir-me?",
+      "answer": [
+        "estás"
+      ],
+      "ru": "Ты меня слышишь?"
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-05",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "Какая фраза звучит по-португальски (pt-PT)?",
+      "options": [
+        "Ela está falando ao telemóvel.",
+        "Ela está a falar ao telemóvel.",
+        "Ela está falar ao telemóvel.",
+        "Ela é a falar ao telemóvel."
+      ],
+      "correct": 1,
+      "explanation": "estar a + инфинитив."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-06",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "Este sábado ___ a casa dos meus pais.",
+      "options": [
+        "vou ir",
+        "estou a ir",
+        "vou a ir",
+        "vou"
+      ],
+      "correct": 3,
+      "explanation": "Ir + ir не говорят: vou a casa dos meus pais."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-07",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "choice",
+      "prompt": "Какая фраза описывает привычку?",
+      "options": [
+        "O Pedro joga ténis às terças.",
+        "O Pedro está a jogar ténis.",
+        "O Pedro vai jogar ténis.",
+        "O Pedro está a jogar ténis agora."
+      ],
+      "correct": 0,
+      "explanation": "Привычки и регулярные действия — простой presente."
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-08",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "transform",
+      "prompt": "Vou ler este livro.",
+      "instruction": "Скажите, что вы делаете это прямо сейчас.",
+      "answer": [
+        "Estou a ler este livro.",
+        "Eu estou a ler este livro."
+      ]
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-09",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "translate-ru-pt",
+      "ru": "Что ты сейчас делаешь?",
+      "answer": [
+        "O que estás a fazer?",
+        "O que é que estás a fazer?",
+        "O que estás a fazer agora?",
+        "O que é que estás a fazer agora?",
+        "Que estás a fazer?",
+        "O que estás tu a fazer?",
+        "Estás a fazer o quê?",
+        "O que é que tu estás a fazer?"
+      ]
+    },
+    {
+      "id": "a1-estar-a-ir-infinitivo-mt-10",
+      "topicId": "a1-estar-a-ir-infinitivo",
+      "type": "listen-choice",
+      "text": "Vamos jantar fora hoje.",
+      "prompt": "Что вы услышали?",
+      "options": [
+        "Сегодня мы ужинаем дома.",
+        "Сегодня мы поужинаем в ресторане.",
+        "Мы сейчас ужинаем в ресторане.",
+        "Вчера мы ужинали в ресторане."
+      ],
+      "correct": 1,
+      "explanation": "vamos jantar fora — план на ближайшее будущее; jantar fora — ужинать вне дома."
+    }
+  ]
+}

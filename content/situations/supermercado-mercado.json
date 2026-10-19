@@ -1,0 +1,177 @@
+{
+  "id": "supermercado-mercado",
+  "title": "В супермаркете и на рынке",
+  "titlePt": "No supermercado e no mercado",
+  "level": "A2",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia! Quem é o próximo?", "ru": "Доброе утро! Кто следующий?" },
+    { "speaker": "B", "pt": "Sou eu. Queria meio quilo de carne picada de vaca, se faz favor.", "ru": "Я. Мне полкило говяжьего фарша, пожалуйста." },
+    { "speaker": "A", "pt": "Com certeza. Mais alguma coisa do talho?", "ru": "Конечно. Что-нибудь ещё из мясного?" },
+    { "speaker": "B", "pt": "Sim, quatro bifes de peru, não muito grossos.", "ru": "Да, четыре стейка из индейки, не очень толстых." },
+    { "speaker": "A", "pt": "Aqui tem. A carne picada passou um bocadinho do meio quilo, pode ser?", "ru": "Вот, пожалуйста. Фарша вышло чуть больше полкило, ничего?" },
+    { "speaker": "B", "pt": "Pode ser. E na peixaria, o peixe é fresco?", "ru": "Ничего. А в рыбном отделе рыба свежая?" },
+    { "speaker": "A", "pt": "É, chegou esta manhã. O peixe-espada está em promoção.", "ru": "Да, привезли сегодня утром. Рыба-сабля по акции." },
+    { "speaker": "B", "pt": "Então queria dois carapaus e uma dourada. Pode amanhá-la?", "ru": "Тогда мне две ставриды и дораду. Можете её почистить?" },
+    { "speaker": "A", "pt": "Posso, claro. Quer às postas ou inteira?", "ru": "Конечно. Нарезать стейками или целиком?" },
+    { "speaker": "B", "pt": "Inteira, é para grelhar. Obrigado.", "ru": "Целиком, это на гриль. Спасибо." },
+    { "speaker": "A", "pt": "Bom dia. Tem cartão cliente?", "ru": "Доброе утро. У вас есть карта покупателя?" },
+    { "speaker": "B", "pt": "Tenho, está na aplicação. Preciso também de um saco, se faz favor.", "ru": "Есть, в приложении. И мне нужен пакет, пожалуйста." },
+    { "speaker": "A", "pt": "O saco custa dez cêntimos. Quer contribuinte na fatura?", "ru": "Пакет стоит десять центов. Указать налоговый номер в чеке?" },
+    { "speaker": "B", "pt": "Não, obrigado. Pago com MB Way.", "ru": "Нет, спасибо. Плачу через MB Way." },
+    { "speaker": "A", "pt": "São trinta e dois euros e quinze. Obrigada, bom fim de semana!", "ru": "С вас тридцать два евро пятнадцать. Спасибо, хороших выходных!" }
+  ],
+  "phrases": [
+    { "pt": "Quem é o último?", "ru": "Кто последний (в очереди)?" },
+    { "pt": "Queria meio quilo de…, se faz favor.", "ru": "Мне полкило…, пожалуйста." },
+    { "pt": "Pode cortar às fatias finas?", "ru": "Можете нарезать тонкими ломтиками?" },
+    { "pt": "Pode amanhar o peixe?", "ru": "Можете почистить рыбу?" },
+    { "pt": "Passou um bocadinho, pode ser?", "ru": "Вышло чуть больше, ничего?" },
+    { "pt": "Onde é que estão os ovos?", "ru": "Где у вас яйца?" },
+    { "pt": "Isto está em promoção?", "ru": "Это по акции?" },
+    { "pt": "Tem cartão cliente?", "ru": "У вас есть карта покупателя?" },
+    { "pt": "Não preciso de saco, obrigado.", "ru": "Пакет не нужен, спасибо." },
+    { "pt": "Pago com cartão / com MB Way.", "ru": "Плачу картой / через MB Way." }
+  ],
+  "vocab": [
+    { "pt": "o talho", "ru": "мясной отдел, мясная лавка", "example": "O talho do bairro tem carne muito boa." },
+    { "pt": "a peixaria", "ru": "рыбный отдел, рыбный магазин", "example": "Na peixaria há sardinhas frescas." },
+    { "pt": "a padaria", "ru": "булочная, хлебный отдел", "example": "Compro o pão na padaria da esquina." },
+    { "pt": "a charcutaria", "ru": "отдел колбас и сыров", "example": "Na charcutaria peço fiambre e queijo." },
+    { "pt": "o mercado", "ru": "рынок", "example": "Ao sábado vou ao mercado de Campo de Ourique." },
+    { "pt": "a banca", "ru": "прилавок на рынке", "example": "A senhora daquela banca tem a melhor fruta." },
+    { "pt": "a carne picada", "ru": "фарш", "example": "Preciso de carne picada para fazer almôndegas." },
+    { "pt": "o bife", "ru": "стейк, отбивная", "example": "Quatro bifes de vaca, se faz favor." },
+    { "pt": "o frango", "ru": "курица (мясо)", "example": "Leve um frango inteiro, fica mais barato." },
+    { "pt": "o peru", "ru": "индейка", "example": "Os bifes de peru são muito magros." },
+    { "pt": "o carapau", "ru": "ставрида", "example": "Os carapaus estão a três euros o quilo." },
+    { "pt": "a dourada", "ru": "дорада", "example": "A dourada grelhada é deliciosa." },
+    { "pt": "o peixe-espada", "ru": "рыба-сабля", "example": "O peixe-espada preto é típico da Madeira." },
+    { "pt": "amanhar o peixe", "ru": "чистить и потрошить рыбу", "example": "Na peixaria amanham o peixe de graça." },
+    { "pt": "às postas", "ru": "кусками, стейками (о рыбе)", "example": "Queria o salmão às postas." },
+    { "pt": "às fatias", "ru": "ломтиками", "example": "O queijo é às fatias ou inteiro?" },
+    { "pt": "o quilo", "ru": "килограмм", "example": "Quanto custa o quilo de laranjas?" },
+    { "pt": "meio quilo", "ru": "полкило", "example": "Meio quilo de tomate chega." },
+    { "pt": "cem gramas", "ru": "сто граммов", "example": "Duzentos gramas de fiambre, se faz favor." },
+    { "pt": "a dúzia", "ru": "дюжина", "example": "Uma dúzia de ovos, se faz favor." },
+    { "pt": "o molho", "ru": "пучок", "example": "Um molho de coentros custa um euro." },
+    { "pt": "a embalagem", "ru": "упаковка", "example": "A embalagem de seis iogurtes está em promoção." },
+    { "pt": "o saco", "ru": "пакет, сумка", "example": "Trouxe o meu saco de pano." },
+    { "pt": "o cesto", "ru": "корзинка", "example": "Pegue num cesto à entrada." },
+    { "pt": "o carrinho", "ru": "тележка", "example": "O carrinho precisa de uma moeda." },
+    { "pt": "a promoção", "ru": "акция, скидка", "example": "Esta semana o azeite está em promoção." },
+    { "pt": "o cartão cliente", "ru": "карта покупателя", "example": "Com o cartão cliente tem desconto." },
+    { "pt": "a caixa", "ru": "касса", "example": "Só há uma caixa aberta." },
+    { "pt": "a caixa self-service", "ru": "касса самообслуживания", "example": "Pago sempre na caixa self-service." },
+    { "pt": "o prazo de validade", "ru": "срок годности", "example": "Veja o prazo de validade do leite." },
+    { "pt": "fresco", "ru": "свежий", "example": "O pão ainda está fresco." },
+    { "pt": "maduro", "ru": "спелый", "example": "Estas bananas já estão maduras." },
+    { "pt": "a fruta e os legumes", "ru": "фрукты и овощи", "example": "A fruta e os legumes estão ao fundo da loja." },
+    { "pt": "pesar", "ru": "взвешивать", "example": "Tem de pesar a fruta antes de ir à caixa." }
+  ],
+  "exercises": [
+    {
+      "id": "supermercado-mercado-ex-01",
+      "topicId": "supermercado-mercado",
+      "type": "choice",
+      "prompt": "Onde se compra carne picada em Portugal?",
+      "options": ["no açougue", "na peixaria", "na padaria", "no talho"],
+      "correct": 3,
+      "explanation": "Мясная лавка или мясной отдел в Португалии — **o talho**. *Açougue* — бразильское слово."
+    },
+    {
+      "id": "supermercado-mercado-ex-02",
+      "topicId": "supermercado-mercado",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "a dúzia", "right": "дюжина" },
+        { "left": "o molho", "right": "пучок" },
+        { "left": "o saco", "right": "пакет" },
+        { "left": "o prazo de validade", "right": "срок годности" },
+        { "left": "a caixa", "right": "касса" }
+      ]
+    },
+    {
+      "id": "supermercado-mercado-ex-03",
+      "topicId": "supermercado-mercado",
+      "type": "fill-gap",
+      "prompt": "Queria ___ quilo de carne picada, se faz favor.",
+      "answer": ["meio"],
+      "hint": "«пол-» (полкило)",
+      "ru": "Мне полкило фарша, пожалуйста.",
+      "explanation": "**Meio quilo** — полкило (quilo мужского рода). Женский род — **meia**: **meia dúzia** (полдюжины), **meia dose**."
+    },
+    {
+      "id": "supermercado-mercado-ex-04",
+      "topicId": "supermercado-mercado",
+      "type": "listen-type",
+      "text": "Bom dia. Tem cartão cliente?",
+      "answer": ["Bom dia. Tem cartão cliente?"],
+      "explanation": "**Cartão cliente** — карта лояльности. Её спрашивают на кассе почти во всех сетях (Continente, Pingo Doce, Lidl)."
+    },
+    {
+      "id": "supermercado-mercado-ex-05",
+      "topicId": "supermercado-mercado",
+      "type": "listen-choice",
+      "text": "Posso, claro. Quer às postas ou inteira?",
+      "prompt": "О чём спрашивает продавщица?",
+      "options": ["Почистить рыбу или нет?", "Нарезать рыбу стейками или оставить целиком?", "Положить рыбу в пакет?", "Рыба для гриля или для супа?"],
+      "correct": 1,
+      "explanation": "**Às postas** — кусками поперёк (стейками), **inteira** — целиком."
+    },
+    {
+      "id": "supermercado-mercado-ex-06",
+      "topicId": "supermercado-mercado",
+      "type": "order-words",
+      "words": ["Não", "preciso", "de", "saco,", "obrigado."],
+      "answer": "Não preciso de saco, obrigado.",
+      "ru": "Пакет не нужен, спасибо."
+    },
+    {
+      "id": "supermercado-mercado-ex-07",
+      "topicId": "supermercado-mercado",
+      "type": "translate-ru-pt",
+      "ru": "Дюжину яиц, пожалуйста.",
+      "answer": ["Uma dúzia de ovos, se faz favor.", "Uma dúzia de ovos, por favor.", "Queria uma dúzia de ovos, se faz favor.", "Queria uma dúzia de ovos, por favor."]
+    },
+    {
+      "id": "supermercado-mercado-ex-08",
+      "topicId": "supermercado-mercado",
+      "type": "choice",
+      "prompt": "Na peixaria, como pede para limparem o peixe?",
+      "options": ["Pode amanhar o peixe?", "Pode lavar o peixe?", "Pode arrumar o peixe?", "Pode picar o peixe?"],
+      "correct": 0,
+      "explanation": "**Amanhar o peixe** — почистить от чешуи и выпотрошить. Это делают бесплатно. **Arrumar** — убирать/раскладывать, **picar** — рубить, молоть."
+    },
+    {
+      "id": "supermercado-mercado-ex-09",
+      "topicId": "supermercado-mercado",
+      "type": "fill-gap",
+      "prompt": "Esta semana o azeite está em ___.",
+      "answer": ["promoção"],
+      "hint": "акция, скидка",
+      "ru": "На этой неделе оливковое масло по акции.",
+      "explanation": "**Estar em promoção** — продаваться по акции. Ценники с акцией в супермаркетах обычно жёлтые или красные."
+    },
+    {
+      "id": "supermercado-mercado-ex-10",
+      "topicId": "supermercado-mercado",
+      "type": "transform",
+      "prompt": "Quero duzentos gramas de queijo.",
+      "instruction": "Сделай просьбу вежливой: «хотел бы» + «пожалуйста»",
+      "answer": ["Queria duzentos gramas de queijo, se faz favor.", "Queria duzentos gramas de queijo, por favor."],
+      "explanation": "За прилавком тоже говорят **Queria…** — так звучит вежливо. Обратите внимание: **o grama** в значении «грамм» — мужского рода: **duzentos gramas**."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Субботним утром вы на рынке и в супермаркете. Напишите диалог из 8–10 реплик: купите в мясном отделе 1 кг курицы и полкило фарша, в рыбном попросите почистить дораду, спросите, что сегодня по акции, на кассе скажите, есть ли у вас карта покупателя и нужен ли пакет, и заплатите.",
+    "sample": "— Bom dia! Quem é o próximo?\n— Sou eu. Queria um quilo de frango e meio quilo de carne picada, se faz favor.\n— Aqui tem. Mais alguma coisa?\n— É tudo, obrigado.\n— Bom dia. Que peixe é que está em promoção hoje?\n— A dourada e o carapau.\n— Então queria duas douradas. Pode amanhá-las?\n— Posso, claro. Inteiras ou às postas?\n— Inteiras, se faz favor.\n— Bom dia. Tem cartão cliente?\n— Tenho, aqui está. Não preciso de saco, trouxe o meu.\n— São vinte e quatro euros e trinta.\n— Pago com cartão.",
+    "checklist": [
+      "Количества названы правильно: um quilo, meio quilo, cem gramas, uma dúzia",
+      "Отделы названы по-португальски: talho, peixaria (не açougue)",
+      "Есть просьба почистить рыбу (amanhar) и вопрос про акцию (em promoção)",
+      "На кассе есть фразы про cartão cliente, saco и способ оплаты",
+      "Просьбы вежливые: Queria…, se faz favor; клитика после глагола (amanhá-las)"
+    ]
+  }
+}

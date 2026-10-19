@@ -1,0 +1,412 @@
+{
+  "id": "a1-presente-irregulares",
+  "level": "A1",
+  "module": "a1-verbo-presente",
+  "title": "Настоящее время: неправильные глаголы",
+  "titlePt": "Presente do indicativo: verbos irregulares",
+  "requires": [
+    "a1-presente-indicativo-regulares"
+  ],
+  "theory": "## Самые частые неправильные глаголы\n\nНеправильных глаголов немного, но они самые употребительные. Форму **vós** опускаем (см. тему о правильных глаголах).\n\n| | ser | estar | ter | ir | vir |\n|---|---|---|---|---|---|\n| eu | sou | estou | tenho | vou | venho |\n| tu | és | estás | tens | vais | vens |\n| ele / você | é | está | tem | vai | vem |\n| nós | somos | estamos | temos | vamos | vimos |\n| eles / vocês | são | estão | **têm** | vão | **vêm** |\n\n## Неправильная только форма eu\n\nУ многих глаголов «ломается» лишь первое лицо, остальные формы — по правилам:\n\n| инфинитив | eu | tu / ele |\n|---|---|---|\n| fazer (делать) | **faço** | fazes / **faz** |\n| dizer (говорить, сказать) | **digo** | dizes / **diz** |\n| trazer (приносить) | **trago** | trazes / **traz** |\n| poder (мочь) | **posso** | podes / pode |\n| saber (знать) | **sei** | sabes / sabe |\n| ver (видеть) | **vejo** | vês / vê |\n| ouvir (слышать) | **ouço / oiço** | ouves / ouve |\n| pedir (просить) | **peço** | pedes / pede |\n| sair (выходить) | **saio** | sais / sai |\n| dormir (спать) | **durmo** | dormes / dorme |\n| perder (терять) | **perco** | perdes / perde |\n\nОбратите внимание: **faz, diz, traz, quer** — в 3-м лице нет конечного -e (*faze*, *quere* ✗).\n\n## Ещё три важных глагола\n\n| | dar | pôr | querer |\n|---|---|---|---|\n| eu | dou | ponho | quero |\n| tu | dás | pões | queres |\n| ele / você | dá | põe | quer |\n| nós | damos | pomos | queremos |\n| eles / vocês | dão | põem | querem |\n\n## Ударения: tem / têm, vem / vêm\n\n- **ele tem** — **eles têm**, **ele vem** — **eles vêm**: во множественном числе пишется циркумфлекс (и звук «удваивается»: [tɐ̃jɐ̃j]).\n- По орфографической реформе (AO 1990) **veem, leem, creem, deem** пишутся **без** циркумфлекса: *vêem* — старая орфография.\n- **pôr** (глагол) пишется с ^, чтобы отличать от предлога **por**.\n\n## Ловушка: vimos\n\n**vimos** — это и «мы приходим» (наст. время от *vir*), и «мы видели» (прош. время от *ver*). Смысл понятен из контекста: **Vimos de Lisboa.** — «Мы едем из Лиссабона».",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **oiço** / ouço | ouço | в Португалии обе формы нормативны, *oiço* очень частотна в речи |\n| **Tu vens** à festa? | Você vem na festa? | tu + 2-е лицо; в pt-PT «прийти на» — **ir/vir a** |\n| **Pões** o casaco? | Bota o casaco? | глагол *botar* в pt-PT звучит просторечно; нормально — **pôr** |\n| **Vou ao** cinema. | Vou no cinema. | направление в pt-PT — предлог **a** |",
+  "commonErrors": "- **Аналогия с правильными глаголами**: *eu fazo* ✗ → **faço**, *eu dizo* ✗ → **digo**, *eu podo* ✗ → **posso**, *eu sabo* ✗ → **sei**.\n- **Лишнее -e**: *ele faze / ele quere* ✗ → **ele faz / ele quer**.\n- **Нет циркумфлекса во мн. ч.**: *eles tem* ✗ → **eles têm**; *eles vem* ✗ → **eles vêm**.\n- **Старая орфография**: *eles vêem / lêem* ✗ → **veem / leem**.\n- **Путаница ir / vir**: *ir* — «идти туда» (от говорящего), *vir* — «идти сюда» (к говорящему). «Иду!» в ответ на зов — **Já vou!**, а не *Já venho*.\n- **Ser / estar + ir**: формы **vou / vais** (ir) не путать с **sou / és** (ser).",
+  "examples": [
+    {
+      "pt": "Hoje não posso, tenho muito trabalho.",
+      "ru": "Сегодня не могу, у меня много работы.",
+      "audio": true
+    },
+    {
+      "pt": "O que fazes ao fim de semana?",
+      "ru": "Что ты делаешь на выходных?",
+      "audio": true
+    },
+    {
+      "pt": "Não sei onde é a casa de banho.",
+      "ru": "Я не знаю, где туалет.",
+      "audio": true
+    },
+    {
+      "pt": "Os meus pais vêm cá no Natal.",
+      "ru": "Мои родители приезжают сюда на Рождество.",
+      "audio": true
+    },
+    {
+      "pt": "Ponho o telemóvel em cima da mesa.",
+      "ru": "Я кладу телефон на стол.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-presente-irregulares-ex-01",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (fazer) o jantar hoje.",
+      "answer": [
+        "faço"
+      ],
+      "ru": "Сегодня ужин готовлю я."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-02",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Desculpe, não ___ (saber) onde fica a estação.",
+      "answer": [
+        "sei"
+      ],
+      "ru": "Извините, я не знаю, где вокзал."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-03",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (ter) dois filhos.",
+      "answer": [
+        "têm"
+      ],
+      "hint": "мн. ч. — с циркумфлексом",
+      "ru": "У них двое детей."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-04",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (ir) ao ginásio hoje?",
+      "answer": [
+        "vais"
+      ],
+      "ru": "Ты сегодня идёшь в спортзал?"
+    },
+    {
+      "id": "a1-presente-irregulares-ex-05",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (poder) ajudar-te amanhã.",
+      "answer": [
+        "posso"
+      ],
+      "ru": "Я могу помочь тебе завтра."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-06",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Ela ___ (dizer) sempre a verdade.",
+      "answer": [
+        "diz"
+      ],
+      "ru": "Она всегда говорит правду."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-07",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (ouvir) música no comboio.",
+      "answer": [
+        "ouço",
+        "oiço"
+      ],
+      "ru": "Я слушаю музыку в поезде."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-08",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Os vizinhos ___ (vir) jantar connosco.",
+      "answer": [
+        "vêm"
+      ],
+      "ru": "Соседи придут к нам ужинать."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-09",
+      "topicId": "a1-presente-irregulares",
+      "type": "choice",
+      "prompt": "Eu ___ sempre um café depois do almoço.",
+      "options": [
+        "pede",
+        "peço",
+        "pedo",
+        "pido"
+      ],
+      "correct": 1,
+      "explanation": "pedir → eu peço."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-10",
+      "topicId": "a1-presente-irregulares",
+      "type": "choice",
+      "prompt": "Eles ___ o filme amanhã.",
+      "options": [
+        "vem",
+        "vêm",
+        "vêem",
+        "veem"
+      ],
+      "correct": 3,
+      "explanation": "ver → eles veem (по AO 1990 без циркумфлекса). vêm — от vir."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-11",
+      "topicId": "a1-presente-irregulares",
+      "type": "choice",
+      "prompt": "O que é que tu ___ ?",
+      "options": [
+        "quer",
+        "queres",
+        "queira",
+        "quere"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-presente-irregulares-ex-12",
+      "topicId": "a1-presente-irregulares",
+      "type": "choice",
+      "prompt": "— Maxim, anda cá! — Já ___!",
+      "options": [
+        "venho",
+        "vou",
+        "vem",
+        "sou"
+      ],
+      "correct": 1,
+      "explanation": "Отвечая на зов, говорят «Já vou!» — движение от себя к собеседнику."
+    },
+    {
+      "id": "a1-presente-irregulares-ex-13",
+      "topicId": "a1-presente-irregulares",
+      "type": "transform",
+      "prompt": "Ele traz o vinho.",
+      "instruction": "Замените подлежащее на «eu».",
+      "answer": [
+        "Eu trago o vinho.",
+        "Trago o vinho."
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-ex-14",
+      "topicId": "a1-presente-irregulares",
+      "type": "transform",
+      "prompt": "Eu ponho a mesa.",
+      "instruction": "Замените подлежащее на «tu».",
+      "answer": [
+        "Tu pões a mesa.",
+        "Pões a mesa."
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-ex-15",
+      "topicId": "a1-presente-irregulares",
+      "type": "transform",
+      "prompt": "Ela vem de autocarro.",
+      "instruction": "Поставьте во множественное число (ela → elas).",
+      "answer": [
+        "Elas vêm de autocarro."
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-ex-16",
+      "topicId": "a1-presente-irregulares",
+      "type": "order-words",
+      "words": [
+        "oito",
+        "durmo",
+        "Eu",
+        "horas",
+        "sempre"
+      ],
+      "answer": "Eu durmo sempre oito horas"
+    },
+    {
+      "id": "a1-presente-irregulares-ex-17",
+      "topicId": "a1-presente-irregulares",
+      "type": "order-words",
+      "words": [
+        "não",
+        "Hoje",
+        "sair",
+        "posso",
+        "contigo"
+      ],
+      "answer": "Hoje não posso sair contigo"
+    },
+    {
+      "id": "a1-presente-irregulares-ex-18",
+      "topicId": "a1-presente-irregulares",
+      "type": "translate-ru-pt",
+      "ru": "Что ты делаешь?",
+      "answer": [
+        "O que fazes?",
+        "O que é que fazes?",
+        "O que estás a fazer?",
+        "O que é que estás a fazer?",
+        "Que fazes?",
+        "O que fazes tu?"
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-ex-19",
+      "topicId": "a1-presente-irregulares",
+      "type": "translate-ru-pt",
+      "ru": "Я не вижу автобус.",
+      "answer": [
+        "Não vejo o autocarro.",
+        "Eu não vejo o autocarro."
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-ex-20",
+      "topicId": "a1-presente-irregulares",
+      "type": "listen-type",
+      "text": "Eles têm um cão e dois gatos.",
+      "answer": [
+        "Eles têm um cão e dois gatos."
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-ex-21",
+      "topicId": "a1-presente-irregulares",
+      "type": "match",
+      "pairs": [
+        {
+          "left": "fazer",
+          "right": "faço"
+        },
+        {
+          "left": "dizer",
+          "right": "digo"
+        },
+        {
+          "left": "saber",
+          "right": "sei"
+        },
+        {
+          "left": "pôr",
+          "right": "ponho"
+        },
+        {
+          "left": "dar",
+          "right": "dou"
+        },
+        {
+          "left": "sair",
+          "right": "saio"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-presente-irregulares-mt-01",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Sou russo, mas ___ (estar) a viver em Portugal há dois anos.",
+      "answer": [
+        "estou"
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-mt-02",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (ir) à praia no domingo.",
+      "answer": [
+        "vamos"
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-mt-03",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (ver) bem sem óculos?",
+      "answer": [
+        "vês"
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-mt-04",
+      "topicId": "a1-presente-irregulares",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (perder) sempre as chaves!",
+      "answer": [
+        "perco"
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-mt-05",
+      "topicId": "a1-presente-irregulares",
+      "type": "choice",
+      "prompt": "As crianças ___ muito cedo.",
+      "options": [
+        "dormim",
+        "dorme",
+        "dormem",
+        "durmem"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-presente-irregulares-mt-06",
+      "topicId": "a1-presente-irregulares",
+      "type": "choice",
+      "prompt": "Eles ___ razão.",
+      "options": [
+        "teem",
+        "tém",
+        "tem",
+        "têm"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a1-presente-irregulares-mt-07",
+      "topicId": "a1-presente-irregulares",
+      "type": "choice",
+      "prompt": "Ele ___ os trabalhos de casa à noite.",
+      "options": [
+        "faço",
+        "faz",
+        "fazi",
+        "faze"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-presente-irregulares-mt-08",
+      "topicId": "a1-presente-irregulares",
+      "type": "transform",
+      "prompt": "Tu dás o livro ao professor.",
+      "instruction": "Замените подлежащее на «eu».",
+      "answer": [
+        "Eu dou o livro ao professor.",
+        "Dou o livro ao professor."
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-mt-09",
+      "topicId": "a1-presente-irregulares",
+      "type": "translate-ru-pt",
+      "ru": "Я выхожу из дома в восемь.",
+      "answer": [
+        "Saio de casa às oito.",
+        "Eu saio de casa às oito."
+      ]
+    },
+    {
+      "id": "a1-presente-irregulares-mt-10",
+      "topicId": "a1-presente-irregulares",
+      "type": "listen-choice",
+      "text": "Eles vêm amanhã.",
+      "options": [
+        "Он приезжает завтра.",
+        "Они приехали вчера.",
+        "Они приезжают завтра.",
+        "Они видят завтра."
+      ],
+      "correct": 2
+    }
+  ]
+}

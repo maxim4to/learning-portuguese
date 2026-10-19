@@ -1,0 +1,436 @@
+{
+  "id": "a2-imperativo",
+  "level": "A2",
+  "module": "a2-imperativo-futuro-condicional",
+  "title": "Повелительное наклонение",
+  "titlePt": "Imperativo",
+  "requires": [
+    "a1-presente-irregulares",
+    "a2-pronomes-cliticos-colocacao"
+  ],
+  "theory": "## Какая форма для кого\n\n| | tu | você / o senhor / a senhora | vocês |\n|---|---|---|---|\n| утверждение | **fala, come, abre** | **fale, coma, abra** | **falem, comam, abram** |\n| отрицание | **não fales, não comas, não abras** | **não fale, não coma, não abra** | **não falem, não comam, não abram** |\n\n## Утвердительная форма для tu\n\nЭто просто форма **ele/ela** настоящего времени: **Fala mais devagar! Come a sopa! Abre a janela!**\n\n## Формы для você / vocês и все отрицательные\n\nБерём форму **eu** настоящего времени, отбрасываем **-o** и меняем гласную: **-ar → -e**, **-er/-ir → -a**. Это формы presente do conjuntivo (подробно — на B1).\n\n| инфинитив | eu | você | vocês | tu (отриц.) |\n|---|---|---|---|---|\n| falar | falo | **fale** | **falem** | **não fales** |\n| beber | bebo | **beba** | **bebam** | **não bebas** |\n| abrir | abro | **abra** | **abram** | **não abras** |\n| ter | tenho | **tenha** | **tenham** | **não tenhas** |\n| vir | venho | **venha** | **venham** | **não venhas** |\n| ouvir | ouço | **ouça** | **ouçam** | **não ouças** |\n\nОрфография: chegar → **chegue**, ficar → **fique**, começar → **comece**.\n\n## Неправильные формы\n\n| | tu (утв.) | você | tu (отриц.) |\n|---|---|---|---|\n| ser | **sê** | **seja** | **não sejas** |\n| ir | **vai** | **vá** | **não vás** |\n| fazer | **faz** | **faça** | **não faças** |\n| dizer | **diz** | **diga** | **não digas** |\n| trazer | **traz** | **traga** | **não tragas** |\n| pôr | **põe** | **ponha** | **não ponhas** |\n| dar | **dá** | **dê** | **não dês** |\n| estar | **está** | **esteja** | **não estejas** |\n\nФорма для **vós** почти исчезла, но живёт в устойчивых выражениях: **Sede bem-vindos!** (от ser). В обычной речи вместо vós — **vocês**.\n\n«Давайте ...» — **vamos + инфинитив**: **Vamos jantar!** **Vamos embora!**\n\n## Imperativo и местоимения\n\n- Утверждение → местоимение **после** глагола: **Diz-me!** **Senta-te!** **Dê-me um café, por favor.** **Põe-no aqui.** Faz + o → **Fá-lo!**\n- Отрицание → **перед** глаголом: **Não me digas!** **Não te preocupes!** **Não se esqueça!**\n\n## Вежливость\n\nГолый imperativo звучит резко. В Португалии смягчают: **por favor**, **faz favor** (tu) / **faça favor** (você), или вопрос: **Podes fechar a porta?** **Pode repetir?** Устойчивые формулы: **Desculpe!** (Извините!), **Diga!** (Слушаю! — по телефону, в магазине), **Olhe...** (Послушайте...).\n\nНа табличках и в инструкциях вместо imperativo часто стоит инфинитив: **Não fumar. Empurrar.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Diz-me** a verdade. | **Me diz** a verdade. | начинать с клитики в pt-PT нельзя |\n| **Não fales** assim! | **Não fala** assim! | в разговорном BR отрицание строится по утвердительной форме |\n| **Senta-te!** | **Senta aí!** / **Se senta!** | |\n| **Faz favor!** | Por favor! | **faz/faça favor** — типично португальская формула |\n| **Põe** o casaco. | **Bota** o casaco. | лексика |\n\nВ Бразилии, где tu почти не используют, формы **fala** и **fale** смешиваются; в pt-PT разделение строгое: **fala** — для tu, **fale** — для você / o senhor.",
+  "commonErrors": "- **Отрицание по образцу утверждения**: *Não fala!* ✗ → **Não fales!** ✓; *Não vais!* («ты не пойдёшь») ≠ **Não vás!** («не ходи!»).\n- **Форма для tu с -s**: *Fazes isso!* ✗ → **Faz isso!** ✓; *Ponhe aqui* ✗ → **Põe aqui** ✓.\n- **Фамильярность с незнакомыми**: официанту *Traz-me a conta* ✗ → **Traga-me a conta, por favor** ✓.\n- **Клитика в начале**: *Me diz* ✗ → **Diz-me** ✓; *Se sente* ✗ → **Sente-se** ✓.\n- **Ênclise при отрицании**: *Não diz-me* ✗ → **Não me digas** ✓; *Não preocupes-te* ✗ → **Não te preocupes** ✓.\n- **Смешение tu и você**: *Senta-se!* (другу) ✗ → **Senta-te!** ✓ (или **Sente-se!** для você).",
+  "examples": [
+    {
+      "pt": "Fala mais devagar, por favor, não percebo.",
+      "ru": "Говори помедленнее, пожалуйста, я не понимаю.",
+      "audio": true
+    },
+    {
+      "pt": "Faça o favor de se sentar.",
+      "ru": "Присаживайтесь, пожалуйста.",
+      "audio": true
+    },
+    {
+      "pt": "Não te esqueças de comprar pão!",
+      "ru": "Не забудь купить хлеб!",
+      "audio": true
+    },
+    {
+      "pt": "Põe o casaco, está frio lá fora.",
+      "ru": "Надень куртку, на улице холодно.",
+      "audio": true
+    },
+    {
+      "pt": "Diz-me a que horas chega o comboio.",
+      "ru": "Скажи мне, во сколько приходит поезд.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-imperativo-ex-01",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "___ (abrir, tu) a janela, por favor.",
+      "answer": [
+        "Abre"
+      ],
+      "ru": "Открой окно, пожалуйста.",
+      "explanation": "Утвердительная форма tu = форма ele настоящего времени."
+    },
+    {
+      "id": "a2-imperativo-ex-02",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "Não ___ (comer, tu) isso, está estragado!",
+      "answer": [
+        "comas"
+      ],
+      "ru": "Не ешь это, оно испорчено!",
+      "explanation": "Отрицание: não + форма conjuntivo (como → comas)."
+    },
+    {
+      "id": "a2-imperativo-ex-03",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "___ (ir, tu) já para a cama!",
+      "answer": [
+        "Vai"
+      ],
+      "ru": "Сейчас же иди спать!"
+    },
+    {
+      "id": "a2-imperativo-ex-04",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "___ (pôr, tu) os pratos na mesa.",
+      "answer": [
+        "Põe"
+      ],
+      "ru": "Поставь тарелки на стол."
+    },
+    {
+      "id": "a2-imperativo-ex-05",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "Meninos, ___ (fazer, vocês) os trabalhos de casa!",
+      "answer": [
+        "façam"
+      ],
+      "ru": "Дети, сделайте домашнее задание!",
+      "explanation": "vocês: faço → façam."
+    },
+    {
+      "id": "a2-imperativo-ex-06",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "Não ___ (ser, tu) assim!",
+      "answer": [
+        "sejas"
+      ],
+      "ru": "Не будь таким!"
+    },
+    {
+      "id": "a2-imperativo-ex-07",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "___ (trazer, tu) pão para o jantar, por favor.",
+      "answer": [
+        "Traz"
+      ],
+      "ru": "Принеси хлеба к ужину, пожалуйста."
+    },
+    {
+      "id": "a2-imperativo-ex-08",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "Скажите официанту: «Принесите счёт, пожалуйста».",
+      "options": [
+        "Traz a conta, por favor.",
+        "Traga a conta, por favor.",
+        "Trazes a conta, por favor.",
+        "Trague a conta, por favor."
+      ],
+      "correct": 1,
+      "explanation": "С незнакомым — форма для você/o senhor: trago → traga."
+    },
+    {
+      "id": "a2-imperativo-ex-09",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "Não ___ nada a ninguém!",
+      "options": [
+        "diz",
+        "dizes",
+        "digas",
+        "dize"
+      ],
+      "correct": 2,
+      "explanation": "Отрицательный imperativo для tu: digo → não digas. «Não diz» — бразильская разговорная форма."
+    },
+    {
+      "id": "a2-imperativo-ex-10",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "Как сказать другу «Садись!»?",
+      "options": [
+        "Se senta!",
+        "Senta-se!",
+        "Sente-se!",
+        "Senta-te!"
+      ],
+      "correct": 3,
+      "explanation": "Для tu — Senta-te! «Sente-se!» — вежливая форма для você/o senhor."
+    },
+    {
+      "id": "a2-imperativo-ex-11",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "Não ___ preocupes, está tudo bem.",
+      "options": [
+        "te",
+        "se",
+        "me"
+      ],
+      "correct": 0,
+      "explanation": "Отрицание + tu: Não te preocupes."
+    },
+    {
+      "id": "a2-imperativo-ex-12",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "___ o seu nome, por favor.",
+      "options": [
+        "Me diga",
+        "Diga-me",
+        "Diz-me",
+        "Diga-se"
+      ],
+      "correct": 1,
+      "explanation": "Вежливая форма (o seu nome → você/o senhor), местоимение после глагола."
+    },
+    {
+      "id": "a2-imperativo-ex-13",
+      "topicId": "a2-imperativo",
+      "type": "transform",
+      "prompt": "Fecha a porta.",
+      "instruction": "Сделайте отрицательным.",
+      "answer": [
+        "Não feches a porta."
+      ]
+    },
+    {
+      "id": "a2-imperativo-ex-14",
+      "topicId": "a2-imperativo",
+      "type": "transform",
+      "prompt": "Fala com ele.",
+      "instruction": "Обратитесь вежливо (o senhor).",
+      "answer": [
+        "Fale com ele."
+      ]
+    },
+    {
+      "id": "a2-imperativo-ex-15",
+      "topicId": "a2-imperativo",
+      "type": "transform",
+      "prompt": "Dá-me o livro.",
+      "instruction": "Сделайте отрицательным.",
+      "answer": [
+        "Não me dês o livro."
+      ],
+      "explanation": "При отрицании местоимение переходит перед глаголом, а dá → não dês."
+    },
+    {
+      "id": "a2-imperativo-ex-16",
+      "topicId": "a2-imperativo",
+      "type": "order-words",
+      "words": [
+        "Não",
+        "te",
+        "esqueças",
+        "da",
+        "chave"
+      ],
+      "answer": "Não te esqueças da chave"
+    },
+    {
+      "id": "a2-imperativo-ex-17",
+      "topicId": "a2-imperativo",
+      "type": "order-words",
+      "words": [
+        "Diz-me",
+        "onde",
+        "fica",
+        "a",
+        "estação"
+      ],
+      "answer": "Diz-me onde fica a estação"
+    },
+    {
+      "id": "a2-imperativo-ex-18",
+      "topicId": "a2-imperativo",
+      "type": "translate-ru-pt",
+      "ru": "Не говори мне это!",
+      "answer": [
+        "Não me digas isso!",
+        "Não me digas isto!"
+      ]
+    },
+    {
+      "id": "a2-imperativo-ex-19",
+      "topicId": "a2-imperativo",
+      "type": "translate-ru-pt",
+      "ru": "Подождите минутку, пожалуйста. (o senhor)",
+      "answer": [
+        "Espere um momento, por favor.",
+        "Espere um minuto, por favor.",
+        "Espere um minutinho, por favor.",
+        "Espere um bocadinho, por favor.",
+        "Por favor, espere um momento.",
+        "Por favor, espere um minuto.",
+        "Aguarde um momento, por favor.",
+        "Espere um momento, se faz favor.",
+        "Espere um momento, faz favor.",
+        "Espere um momento, faça favor."
+      ]
+    },
+    {
+      "id": "a2-imperativo-ex-20",
+      "topicId": "a2-imperativo",
+      "type": "translate-ru-pt",
+      "ru": "Иди сюда! (tu)",
+      "answer": [
+        "Vem cá!",
+        "Vem aqui!",
+        "Anda cá!",
+        "Anda aqui!",
+        "Chega aqui!",
+        "Chega cá!"
+      ]
+    },
+    {
+      "id": "a2-imperativo-ex-21",
+      "topicId": "a2-imperativo",
+      "type": "listen-type",
+      "text": "Não te preocupes, eu ajudo-te.",
+      "answer": [
+        "Não te preocupes, eu ajudo-te."
+      ]
+    },
+    {
+      "id": "a2-imperativo-ex-22",
+      "topicId": "a2-imperativo",
+      "type": "match",
+      "prompt": "Соедините инфинитив с утвердительной формой imperativo для tu.",
+      "pairs": [
+        {
+          "left": "ser",
+          "right": "sê"
+        },
+        {
+          "left": "ir",
+          "right": "vai"
+        },
+        {
+          "left": "fazer",
+          "right": "faz"
+        },
+        {
+          "left": "dizer",
+          "right": "diz"
+        },
+        {
+          "left": "pôr",
+          "right": "põe"
+        },
+        {
+          "left": "dar",
+          "right": "dá"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-imperativo-mt-01",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "___ (dizer, tu) a verdade!",
+      "answer": [
+        "Diz"
+      ]
+    },
+    {
+      "id": "a2-imperativo-mt-02",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "Não ___ (ir, tu) sozinho à noite.",
+      "answer": [
+        "vás"
+      ]
+    },
+    {
+      "id": "a2-imperativo-mt-03",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "Por favor, ___ (vir, o senhor) comigo.",
+      "answer": [
+        "venha"
+      ]
+    },
+    {
+      "id": "a2-imperativo-mt-04",
+      "topicId": "a2-imperativo",
+      "type": "fill-gap",
+      "prompt": "___ (ser, tu) paciente!",
+      "answer": [
+        "Sê"
+      ]
+    },
+    {
+      "id": "a2-imperativo-mt-05",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "Não ___ isso, por favor!",
+      "options": [
+        "faz",
+        "fazes",
+        "faças",
+        "faze"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-imperativo-mt-06",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "Как вежливо попросить незнакомца: «Покажите мне, пожалуйста»?",
+      "options": [
+        "Mostra-me, por favor.",
+        "Me mostre, por favor.",
+        "Mostre-me, por favor.",
+        "Mostre-se, por favor."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a2-imperativo-mt-07",
+      "topicId": "a2-imperativo",
+      "type": "choice",
+      "prompt": "A chave? ___ aqui.",
+      "options": [
+        "Põe-na",
+        "Põe-a",
+        "Põe-la",
+        "A põe"
+      ],
+      "correct": 0,
+      "explanation": "После носового -õe: a → na."
+    },
+    {
+      "id": "a2-imperativo-mt-08",
+      "topicId": "a2-imperativo",
+      "type": "transform",
+      "prompt": "Senta-te aqui.",
+      "instruction": "Сделайте отрицательным.",
+      "answer": [
+        "Não te sentes aqui."
+      ]
+    },
+    {
+      "id": "a2-imperativo-mt-09",
+      "topicId": "a2-imperativo",
+      "type": "translate-ru-pt",
+      "ru": "Не волнуйтесь! (vocês)",
+      "answer": [
+        "Não se preocupem!"
+      ]
+    },
+    {
+      "id": "a2-imperativo-mt-10",
+      "topicId": "a2-imperativo",
+      "type": "listen-choice",
+      "text": "Não me digas!",
+      "prompt": "Что значит эта фраза?",
+      "options": [
+        "Скажи мне!",
+        "Не говори ему!",
+        "Не говори мне! / Да ты что!",
+        "Я тебе не скажу."
+      ],
+      "correct": 2
+    }
+  ]
+}

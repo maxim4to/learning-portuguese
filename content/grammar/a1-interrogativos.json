@@ -1,0 +1,438 @@
+{
+  "id": "a1-interrogativos",
+  "level": "A1",
+  "module": "a1-basics",
+  "title": "Вопросительные слова",
+  "titlePt": "Pronomes e advérbios interrogativos",
+  "requires": [
+    "a1-ser-estar",
+    "a1-pronomes-pessoais-tratamento"
+  ],
+  "theory": "## Вопросительные слова\n\n| слово | значение | пример |\n|---|---|---|\n| **o que / que** | что | **O que fazes?** — Что ты делаешь? |\n| **que** + сущ. | какой | **Que horas são?** — Который час? |\n| **qual / quais** | какой, который (из ряда) | **Qual é a tua morada?** — Какой у тебя адрес? |\n| **quem** | кто | **Quem é aquele senhor?** |\n| **onde** | где | **Onde moras?** |\n| **aonde / para onde** | куда | **Para onde vais?** |\n| **de onde** | откуда | **De onde és?** |\n| **quando** | когда | **Quando chegas?** |\n| **a que horas** | во сколько | **A que horas abre a loja?** |\n| **como** | как | **Como te chamas?** |\n| **quanto, quanta, quantos, quantas** | сколько | **Quanto custa? Quantos anos tens?** |\n| **porque é que / porquê** | почему | **Porque é que choras?** |\n| **para quê** | зачем | **Para quê?** |\n\n## que, o que, qual\n\n- **o que** — «что» без существительного: **O que queres?** В разговоре можно и просто **que**: **Que queres?**\n- **que** + существительное — «какой»: **Que livro estás a ler?**\n- **qual / quais** + **ser** — когда спрашиваем о конкретном значении из множества (имя, адрес, номер, столица): **Qual é o teu nome? Qual é a capital da Rússia?** Вопрос *O que é a tua morada?* звучит как «что такое твой адрес?».\n\n**quanto** согласуется с существительным: **quanto dinheiro, quanta água, quantos dias, quantas pessoas**.\n\n## Почему: porque é que, porquê, porque\n\n| форма | где | пример |\n|---|---|---|\n| **porque é que** | в начале вопроса | **Porque é que não vens?** |\n| **porquê** | в конце вопроса или отдельно | **Não vens porquê? — Porquê?** |\n| **porque** | ответ: «потому что» | **Porque estou cansado.** |\n\nВ pt-PT вопросительное «почему» пишется слитно; бразильское *por que* (раздельно) в этом значении не используется.\n\n## «é que» — визитная карточка pt-PT\n\nПортугальцы постоянно вставляют **é que** после вопросительного слова. Смысл не меняется, но вопрос звучит естественнее и мягче:\n\n- **Onde é que moras?** = **Onde moras?**\n- **O que é que queres?** = **O que queres?**\n- **Quando é que o Rui chega?** = **Quando chega o Rui?**\n\nПосле **é que** порядок прямой (подлежащее перед глаголом): **Onde é que a Inês trabalha?** Без **é que** подлежащее обычно ставят после глагола: **Onde trabalha a Inês?**\n\n## Вопросы без вопросительного слова\n\nОбщий вопрос задаётся только интонацией, порядок слов не меняется: **Falas inglês?** **O comboio já chegou?** Отвечают обычно глаголом, а не «да»: **— Falas inglês? — Falo.**\n\n## Местоимения в вопросе\n\nВопросительное слово притягивает безударное местоимение: **Como te chamas?** (не *Como chamas-te*), **Como se diz isto em português?**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Porque é que** não vens? | **Por que** você não vem? | в pt-PT слитно и обычно с **é que** |\n| **Onde é que** está o Rui? | **Cadê** o Rui? | *cadê* — чисто бразильское разговорное |\n| **Qual é o teu** nome? | Qual (é) **seu** nome? | в pt-PT — **teu** с артиклем и с **é** |\n| **O que é que** queres? | O que você quer? | **é que** в pt-PT гораздо частотнее |\n| **Como te chamas?** | Como você se chama? | местоимение перед глаголом после **como** |\n\nКонструкция **é que** есть и в Бразилии, но в Португалии она встречается почти в каждом втором вопросе — используйте её смело.",
+  "commonErrors": "- **o que вместо qual**: *O que é a tua morada?* ✗ → **Qual é a tua morada?** ✓; *O que é o teu nome?* ✗ → **Qual é o teu nome?** ✓\n- **porquê в начале вопроса**: *Porquê estás triste?* ✗ → **Porque é que estás triste?** ✓ или **Estás triste porquê?** ✓\n- **Бразильское написание**: *Por que você não vem?* ✗ → **Porque é que não vens?** ✓\n- **quanto без согласования**: *Quanto pessoas?* ✗ → **Quantas pessoas?** ✓\n- **Клитика после вопросительного слова**: *Como chamas-te?* ✗ → **Como te chamas?** ✓\n- **«Что за...» по-русски**: *O que livro?* ✗ → **Que livro?** ✓\n- **Ответ одним «да»** (по-русски): *— Tens tempo? — Sim.* — понятно, но естественнее **— Tenho.**",
+  "examples": [
+    {
+      "pt": "Como te chamas?",
+      "ru": "Как тебя зовут?",
+      "audio": true
+    },
+    {
+      "pt": "Onde é que fica a estação de comboios?",
+      "ru": "Где находится железнодорожный вокзал?",
+      "audio": true
+    },
+    {
+      "pt": "Porque é que não vens connosco?",
+      "ru": "Почему ты не идёшь с нами?",
+      "audio": true
+    },
+    {
+      "pt": "Qual é o teu número de telemóvel?",
+      "ru": "Какой у тебя номер мобильного?",
+      "audio": true
+    },
+    {
+      "pt": "Quanto custa um bilhete para o Porto?",
+      "ru": "Сколько стоит билет до Порту?",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-interrogativos-ex-01",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ te chamas?",
+      "answer": [
+        "Como"
+      ],
+      "ru": "Как тебя зовут?"
+    },
+    {
+      "id": "a1-interrogativos-ex-02",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ é a tua morada?",
+      "answer": [
+        "Qual"
+      ],
+      "ru": "Какой у тебя адрес?",
+      "explanation": "Имя, адрес, номер — qual + ser."
+    },
+    {
+      "id": "a1-interrogativos-ex-03",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ é aquele senhor?",
+      "answer": [
+        "Quem"
+      ],
+      "ru": "Кто тот господин?"
+    },
+    {
+      "id": "a1-interrogativos-ex-04",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "— ___ moras? — Em Setúbal.",
+      "answer": [
+        "Onde"
+      ],
+      "ru": "— Где ты живёшь? — В Сетубале."
+    },
+    {
+      "id": "a1-interrogativos-ex-05",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ custa o bilhete?",
+      "answer": [
+        "Quanto"
+      ],
+      "ru": "Сколько стоит билет?"
+    },
+    {
+      "id": "a1-interrogativos-ex-06",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "— ___ é que chegas a Lisboa? — Amanhã.",
+      "answer": [
+        "Quando"
+      ],
+      "ru": "— Когда ты приезжаешь в Лиссабон? — Завтра."
+    },
+    {
+      "id": "a1-interrogativos-ex-07",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "Estás cansado ___?",
+      "answer": [
+        "porquê"
+      ],
+      "ru": "Почему ты устал?",
+      "explanation": "В конце вопроса — porquê (с ударением)."
+    },
+    {
+      "id": "a1-interrogativos-ex-08",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ irmãos tens?",
+      "answer": [
+        "Quantos"
+      ],
+      "ru": "Сколько у тебя братьев (и сестёр)?",
+      "explanation": "irmãos — муж. мн. → quantos."
+    },
+    {
+      "id": "a1-interrogativos-ex-09",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "___ é que estás a fazer?",
+      "options": [
+        "Qual",
+        "Quanto",
+        "O que",
+        "Quem"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-interrogativos-ex-10",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "— ___ é que não comes? — Porque não tenho fome.",
+      "options": [
+        "Porquê",
+        "Porque",
+        "Por que",
+        "Para quê"
+      ],
+      "correct": 1,
+      "explanation": "В начале вопроса — porque é que (слитно, без ударения)."
+    },
+    {
+      "id": "a1-interrogativos-ex-11",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "___ é a capital de Portugal?",
+      "options": [
+        "O que",
+        "Que",
+        "Quem",
+        "Qual"
+      ],
+      "correct": 3,
+      "explanation": "Выбор из множества (столица) — qual."
+    },
+    {
+      "id": "a1-interrogativos-ex-12",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "___ horas são?",
+      "options": [
+        "Que",
+        "Quais",
+        "Quantas",
+        "Qual"
+      ],
+      "correct": 0,
+      "explanation": "«Который час?» — Que horas são? (Quantas horas — «сколько часов»)."
+    },
+    {
+      "id": "a1-interrogativos-ex-13",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "___ pessoas vêm ao jantar?",
+      "options": [
+        "Quantos",
+        "Quanta",
+        "Quantas",
+        "Quais"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-interrogativos-ex-14",
+      "topicId": "a1-interrogativos",
+      "type": "transform",
+      "prompt": "Onde moras?",
+      "instruction": "Добавьте разговорное «é que».",
+      "answer": [
+        "Onde é que moras?",
+        "Onde é que tu moras?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-ex-15",
+      "topicId": "a1-interrogativos",
+      "type": "transform",
+      "prompt": "Moro em Lisboa.",
+      "instruction": "Задайте вопрос к «em Lisboa» (где?).",
+      "answer": [
+        "Onde moras?",
+        "Onde é que moras?",
+        "Onde é que tu moras?",
+        "Onde moras tu?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-ex-16",
+      "topicId": "a1-interrogativos",
+      "type": "transform",
+      "prompt": "O Rui chega às oito.",
+      "instruction": "Задайте вопрос «во сколько?».",
+      "answer": [
+        "A que horas chega o Rui?",
+        "A que horas é que o Rui chega?",
+        "A que horas é que chega o Rui?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-ex-17",
+      "topicId": "a1-interrogativos",
+      "type": "order-words",
+      "words": [
+        "que",
+        "é",
+        "Onde",
+        "trabalhas?"
+      ],
+      "answer": "Onde é que trabalhas?",
+      "ru": "Где ты работаешь?"
+    },
+    {
+      "id": "a1-interrogativos-ex-18",
+      "topicId": "a1-interrogativos",
+      "type": "order-words",
+      "words": [
+        "Porque",
+        "que",
+        "é",
+        "não",
+        "vens?"
+      ],
+      "answer": "Porque é que não vens?",
+      "ru": "Почему ты не придёшь?"
+    },
+    {
+      "id": "a1-interrogativos-ex-19",
+      "topicId": "a1-interrogativos",
+      "type": "translate-ru-pt",
+      "ru": "Какой у тебя номер телефона?",
+      "answer": [
+        "Qual é o teu número de telemóvel?",
+        "Qual é o teu número de telefone?",
+        "Qual é o teu número?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-ex-20",
+      "topicId": "a1-interrogativos",
+      "type": "translate-ru-pt",
+      "ru": "Почему ты учишь португальский?",
+      "answer": [
+        "Porque é que estudas português?",
+        "Porque é que tu estudas português?",
+        "Porque estudas português?",
+        "Estudas português porquê?",
+        "Porque é que aprendes português?",
+        "Porque aprendes português?",
+        "Porque é que estás a aprender português?",
+        "Porque é que estás a estudar português?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-ex-21",
+      "topicId": "a1-interrogativos",
+      "type": "listen-type",
+      "text": "Quando é que vais a Lisboa?",
+      "answer": [
+        "Quando é que vais a Lisboa?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-ex-22",
+      "topicId": "a1-interrogativos",
+      "type": "match",
+      "pairs": [
+        {
+          "left": "Onde moras?",
+          "right": "Em Faro."
+        },
+        {
+          "left": "Quando chegas?",
+          "right": "Amanhã."
+        },
+        {
+          "left": "Quem é?",
+          "right": "É o Rui."
+        },
+        {
+          "left": "Quantos anos tens?",
+          "right": "Tenho trinta."
+        },
+        {
+          "left": "Como vais para o trabalho?",
+          "right": "De metro."
+        }
+      ],
+      "prompt": "Соедините вопрос с ответом."
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-interrogativos-mt-01",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "— De ___ és? — Sou de Moscovo.",
+      "answer": [
+        "onde"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-mt-02",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ é o teu nome?",
+      "answer": [
+        "Qual"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-mt-03",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ é que fazes ao fim de semana?",
+      "answer": [
+        "O que",
+        "Que"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-mt-04",
+      "topicId": "a1-interrogativos",
+      "type": "fill-gap",
+      "prompt": "___ anos tens?",
+      "answer": [
+        "Quantos"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-mt-05",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "— Não vou à praia. — ___? — Porque está a chover.",
+      "options": [
+        "Porque",
+        "Porquê",
+        "Por quê",
+        "Para quê"
+      ],
+      "correct": 1,
+      "explanation": "Отдельно стоящее «почему?» — Porquê?"
+    },
+    {
+      "id": "a1-interrogativos-mt-06",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "___ é que vem ao jantar? — A Joana e o Duarte.",
+      "options": [
+        "Quem",
+        "Quais",
+        "Qual",
+        "Que"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-interrogativos-mt-07",
+      "topicId": "a1-interrogativos",
+      "type": "choice",
+      "prompt": "___ destas duas camisolas preferes?",
+      "options": [
+        "Que",
+        "O que",
+        "Qual",
+        "Quem"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-interrogativos-mt-08",
+      "topicId": "a1-interrogativos",
+      "type": "transform",
+      "prompt": "Onde mora a Inês?",
+      "instruction": "Добавьте разговорное «é que».",
+      "answer": [
+        "Onde é que a Inês mora?",
+        "Onde é que mora a Inês?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-mt-09",
+      "topicId": "a1-interrogativos",
+      "type": "translate-ru-pt",
+      "ru": "Сколько стоит кофе?",
+      "answer": [
+        "Quanto custa o café?",
+        "Quanto custa um café?",
+        "Quanto é o café?",
+        "Quanto é um café?",
+        "Quanto é que custa o café?",
+        "Quanto é que custa um café?"
+      ]
+    },
+    {
+      "id": "a1-interrogativos-mt-10",
+      "topicId": "a1-interrogativos",
+      "type": "listen-choice",
+      "text": "A que horas abre a farmácia?",
+      "options": [
+        "Где находится аптека?",
+        "Когда закрывается аптека?",
+        "Во сколько открывается аптека?",
+        "Сколько стоит в аптеке?"
+      ],
+      "correct": 2
+    }
+  ]
+}

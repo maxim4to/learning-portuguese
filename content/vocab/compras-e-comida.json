@@ -1,0 +1,411 @@
+{
+  "id": "compras-e-comida",
+  "title": "Покупки и продукты",
+  "titlePt": "Compras e comida",
+  "level": "A2",
+  "words": [
+    {
+      "pt": "o supermercado",
+      "ru": "супермаркет",
+      "gender": "m",
+      "example": "Faço as compras no supermercado ao sábado.",
+      "audio": true
+    },
+    {
+      "pt": "a mercearia",
+      "ru": "продуктовая лавка",
+      "gender": "f",
+      "example": "A mercearia da esquina fecha à hora de almoço.",
+      "audio": true
+    },
+    {
+      "pt": "o mercado",
+      "ru": "рынок",
+      "gender": "m",
+      "example": "No mercado, a fruta é mais fresca.",
+      "audio": true
+    },
+    {
+      "pt": "o talho",
+      "ru": "мясная лавка",
+      "gender": "m",
+      "example": "Comprei bifes de vaca no talho.",
+      "audio": true
+    },
+    {
+      "pt": "o talhante",
+      "ru": "мясник",
+      "gender": "mf",
+      "example": "O talhante cortou a carne em cubos.",
+      "audio": true
+    },
+    {
+      "pt": "a peixaria",
+      "ru": "рыбный магазин, рыбный отдел",
+      "gender": "f",
+      "example": "Na peixaria há sardinhas muito frescas.",
+      "audio": true
+    },
+    {
+      "pt": "a padaria",
+      "ru": "булочная",
+      "gender": "f",
+      "example": "Vou à padaria buscar pão quente.",
+      "audio": true
+    },
+    {
+      "pt": "a pastelaria",
+      "ru": "кондитерская (с кафе)",
+      "gender": "f",
+      "example": "Tomamos o pequeno-almoço na pastelaria ao lado.",
+      "audio": true
+    },
+    {
+      "pt": "a frutaria",
+      "ru": "фруктово-овощная лавка",
+      "gender": "f",
+      "example": "A frutaria tem fruta da época a bom preço.",
+      "audio": true
+    },
+    {
+      "pt": "o carrinho",
+      "ru": "тележка",
+      "gender": "m",
+      "example": "Vou buscar um carrinho, isto não cabe no cesto.",
+      "audio": true
+    },
+    {
+      "pt": "o cesto",
+      "ru": "корзинка",
+      "gender": "m",
+      "example": "Só preciso de um cesto, levo pouca coisa.",
+      "audio": true
+    },
+    {
+      "pt": "a caixa",
+      "ru": "касса",
+      "gender": "f",
+      "example": "Há uma fila enorme na caixa.",
+      "audio": true
+    },
+    {
+      "pt": "o talão",
+      "ru": "чек",
+      "gender": "m",
+      "example": "Quer o talão? — Sim, com contribuinte, se faz favor.",
+      "audio": true
+    },
+    {
+      "pt": "o saco",
+      "ru": "пакет",
+      "gender": "m",
+      "example": "Os sacos de plástico pagam-se.",
+      "audio": true
+    },
+    {
+      "pt": "a promoção",
+      "ru": "акция, скидка",
+      "gender": "f",
+      "example": "O azeite está em promoção esta semana.",
+      "audio": true
+    },
+    {
+      "pt": "o cartão de cliente",
+      "ru": "карта постоянного покупателя",
+      "gender": "m",
+      "example": "Tem cartão de cliente?",
+      "audio": true
+    },
+    {
+      "pt": "o prazo de validade",
+      "ru": "срок годности",
+      "gender": "m",
+      "example": "Veja o prazo de validade do iogurte.",
+      "audio": true
+    },
+    {
+      "pt": "o quilo",
+      "ru": "килограмм",
+      "gender": "m",
+      "example": "Queria um quilo de laranjas, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "meio quilo",
+      "ru": "полкило",
+      "gender": "m",
+      "example": "Dê-me meio quilo de carne picada.",
+      "audio": true
+    },
+    {
+      "pt": "o grama",
+      "ru": "грамм",
+      "gender": "m",
+      "example": "Duzentos gramas de fiambre, fatiado.",
+      "audio": true
+    },
+    {
+      "pt": "a dúzia",
+      "ru": "дюжина",
+      "gender": "f",
+      "example": "Leve meia dúzia de ovos.",
+      "audio": true
+    },
+    {
+      "pt": "a fatia",
+      "ru": "ломтик",
+      "gender": "f",
+      "example": "Quatro fatias de queijo, bem fininhas.",
+      "audio": true
+    },
+    {
+      "pt": "o pacote",
+      "ru": "пакет, пачка",
+      "gender": "m",
+      "example": "Compra dois pacotes de leite.",
+      "audio": true
+    },
+    {
+      "pt": "a lata",
+      "ru": "жестяная банка",
+      "gender": "f",
+      "example": "Uma lata de atum dá para duas sandes.",
+      "audio": true
+    },
+    {
+      "pt": "o frasco",
+      "ru": "стеклянная банка",
+      "gender": "m",
+      "example": "Abri um frasco de compota.",
+      "audio": true
+    },
+    {
+      "pt": "a garrafa",
+      "ru": "бутылка",
+      "gender": "f",
+      "example": "Uma garrafa de água de litro e meio.",
+      "audio": true
+    },
+    {
+      "pt": "a embalagem",
+      "ru": "упаковка",
+      "gender": "f",
+      "example": "Prefiro a embalagem familiar, sai mais barata.",
+      "audio": true
+    },
+    {
+      "pt": "o molho",
+      "ru": "пучок",
+      "gender": "m",
+      "example": "Um molho de coentros, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "a posta",
+      "ru": "кусок рыбы (поперечный срез)",
+      "gender": "f",
+      "example": "Duas postas de pescada para cozer.",
+      "audio": true
+    },
+    {
+      "pt": "pesar",
+      "ru": "взвешивать",
+      "example": "Pode pesar estas maçãs?",
+      "audio": true
+    },
+    {
+      "pt": "Mais alguma coisa?",
+      "ru": "Что-нибудь ещё? (вопрос продавца)",
+      "example": "Mais alguma coisa? — Não, é tudo, obrigado.",
+      "audio": true
+    },
+    {
+      "pt": "É tudo.",
+      "ru": "Это всё.",
+      "example": "É tudo, quanto é?",
+      "audio": true
+    },
+    {
+      "pt": "o pão",
+      "ru": "хлеб",
+      "gender": "m",
+      "example": "O pão português é ótimo.",
+      "audio": true
+    },
+    {
+      "pt": "a carcaça",
+      "ru": "булочка (белый хлеб)",
+      "gender": "f",
+      "example": "Comprei seis carcaças para o lanche.",
+      "audio": true
+    },
+    {
+      "pt": "o fiambre",
+      "ru": "варёная ветчина",
+      "gender": "m",
+      "example": "Uma sandes de fiambre e queijo.",
+      "audio": true
+    },
+    {
+      "pt": "o presunto",
+      "ru": "вяленая ветчина (хамон)",
+      "gender": "m",
+      "example": "O presunto de Chaves é famoso.",
+      "audio": true
+    },
+    {
+      "pt": "o chouriço",
+      "ru": "колбаса чоризо",
+      "gender": "m",
+      "example": "Pus chouriço no caldo verde.",
+      "audio": true
+    },
+    {
+      "pt": "o queijo fresco",
+      "ru": "свежий сыр",
+      "gender": "m",
+      "example": "Ao pequeno-almoço como pão com queijo fresco.",
+      "audio": true
+    },
+    {
+      "pt": "o requeijão",
+      "ru": "мягкий творожный сыр",
+      "gender": "m",
+      "example": "O requeijão com doce de abóbora é uma delícia.",
+      "audio": true
+    },
+    {
+      "pt": "o bacalhau",
+      "ru": "солёная треска",
+      "gender": "m",
+      "example": "O bacalhau tem de ficar de molho um ou dois dias.",
+      "audio": true
+    },
+    {
+      "pt": "a sardinha",
+      "ru": "сардина",
+      "gender": "f",
+      "example": "Em junho, as sardinhas estão no ponto.",
+      "audio": true
+    },
+    {
+      "pt": "o polvo",
+      "ru": "осьминог",
+      "gender": "m",
+      "example": "O polvo compra-se congelado, fica mais tenro.",
+      "audio": true
+    },
+    {
+      "pt": "a pescada",
+      "ru": "хек",
+      "gender": "f",
+      "example": "A pescada é um peixe barato e saudável.",
+      "audio": true
+    },
+    {
+      "pt": "o frango",
+      "ru": "курица (как продукт)",
+      "gender": "m",
+      "example": "Hoje fazemos frango assado.",
+      "audio": true
+    },
+    {
+      "pt": "a carne picada",
+      "ru": "фарш",
+      "gender": "f",
+      "example": "Preciso de carne picada para o esparguete.",
+      "audio": true
+    },
+    {
+      "pt": "o azeite",
+      "ru": "оливковое масло",
+      "gender": "m",
+      "example": "Um bom azeite faz toda a diferença.",
+      "audio": true
+    },
+    {
+      "pt": "o leite meio-gordo",
+      "ru": "полужирное молоко",
+      "gender": "m",
+      "example": "Em casa só bebemos leite meio-gordo.",
+      "audio": true
+    },
+    {
+      "pt": "as natas",
+      "ru": "сливки",
+      "gender": "f",
+      "example": "Juntas as natas no fim.",
+      "audio": true
+    },
+    {
+      "pt": "a manteiga",
+      "ru": "сливочное масло",
+      "gender": "f",
+      "example": "Pão com manteiga e uma meia de leite.",
+      "audio": true
+    },
+    {
+      "pt": "os legumes",
+      "ru": "овощи",
+      "gender": "m",
+      "example": "A sopa leva muitos legumes.",
+      "audio": true
+    },
+    {
+      "pt": "a fruta da época",
+      "ru": "сезонные фрукты",
+      "gender": "f",
+      "example": "A fruta da época é mais barata e mais saborosa.",
+      "audio": true
+    },
+    {
+      "pt": "a pera rocha",
+      "ru": "груша сорта «роша»",
+      "gender": "f",
+      "example": "A pera rocha é uma fruta típica do Oeste.",
+      "audio": true
+    },
+    {
+      "pt": "o grão-de-bico",
+      "ru": "нут",
+      "gender": "m",
+      "example": "Fiz uma salada de grão-de-bico com atum.",
+      "audio": true
+    },
+    {
+      "pt": "o feijão",
+      "ru": "фасоль",
+      "gender": "m",
+      "example": "A feijoada leva feijão e enchidos.",
+      "audio": true
+    },
+    {
+      "pt": "os coentros",
+      "ru": "кинза",
+      "gender": "m",
+      "example": "A açorda leva muitos coentros.",
+      "audio": true
+    },
+    {
+      "pt": "a couve",
+      "ru": "капуста",
+      "gender": "f",
+      "example": "Para o caldo verde, compra couve galega cortada.",
+      "audio": true
+    },
+    {
+      "pt": "o sumo",
+      "ru": "сок",
+      "gender": "m",
+      "example": "Um sumo de laranja natural, por favor.",
+      "audio": true
+    },
+    {
+      "pt": "o gelado",
+      "ru": "мороженое",
+      "gender": "m",
+      "example": "No verão comemos gelado na praia.",
+      "audio": true
+    }
+  ]
+}

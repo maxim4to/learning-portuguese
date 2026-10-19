@@ -1,0 +1,432 @@
+{
+  "id": "a1-pronomes-pessoais-tratamento",
+  "level": "A1",
+  "module": "a1-basics",
+  "title": "Личные местоимения и формы обращения",
+  "titlePt": "Pronomes pessoais e formas de tratamento",
+  "requires": [
+    "a1-artigos-genero-numero"
+  ],
+  "theory": "## Личные местоимения\n\n| лицо | местоимение | ser | falar |\n|---|---|---|---|\n| я | **eu** | sou | falo |\n| ты | **tu** | és | falas |\n| он / она | **ele / ela** | é | fala |\n| вы (вежл., одному) | **o senhor / a senhora / você** | é | fala |\n| мы | **nós** | somos | falamos |\n| вы (группе) | **vocês** (вежл.: **os senhores / as senhoras**) | são | falam |\n| они | **eles / elas** | são | falam |\n\nФорма **vós** в современной речи не используется — вместо неё **vocês**.\n\nВажно: все вежливые формы (**o senhor, a senhora, você**) требуют глагола **3-го лица**, как «он/она»: **A senhora fala inglês?** — Вы говорите по-английски?\n\n## Местоимение-подлежащее обычно опускают\n\nОкончание глагола и так показывает лицо: **Falo português. Moramos em Lisboa. És de Moscovo?** Местоимение добавляют для контраста или ясности: **Eu sou russo, mas ela é portuguesa.**\n\n## Как обращаться к собеседнику в Португалии\n\n| ситуация | форма | пример |\n|---|---|---|\n| друзья, семья, дети, коллеги-ровесники | **tu** + 2-е лицо | **Queres um café?** |\n| незнакомые, старшие, официанты, продавцы | **o senhor / a senhora** + 3-е лицо | **O senhor precisa de ajuda?** |\n| нейтрально-вежливо, когда не знаете, как обратиться | глагол 3-го лица **без местоимения** | **Desculpe, sabe onde fica a farmácia?** |\n| знакомый человек, но не на «ты» | **имя + 3-е лицо** | **A Joana quer mais café?** |\n| группа людей (любая) | **vocês** + 3-е лицо мн. ч. | **Vocês vêm jantar?** |\n\nС титулом обращаются очень часто: **o senhor doutor, a senhora engenheira**.\n\n**você** существует, но, сказанное прямо в лицо, звучит суховато или даже свысока. Надёжнее всего — глагол без местоимения: **Fala inglês?** В рекламе и письменных текстах **você** нормально.\n\n## ele / ela для предметов\n\nСреднего рода нет: о предметах тоже говорят **ele / ela** по роду слова. Но в роли подлежащего местоимение обычно опускают: **— Onde está a chave? — Está na mesa.** (Она на столе.)\n\n## «А ты?», «я тоже»\n\n**E tu?** — А ты? **E o senhor?** — А вы? **Eu também.** — Я тоже. **Eu não.** — А я нет. Здесь местоимение нужно, потому что глагола нет.\n\n## После предлогов\n\n| | после предлога | с **com** |\n|---|---|---|\n| eu | **para mim** | **comigo** |\n| tu | **para ti** | **contigo** |\n| o senhor / a senhora | **para si**, para o senhor | **consigo**, com o senhor |\n| ele / ela | **para ele / ela** | **com ele / ela** |\n| nós | **para nós** | **connosco** |\n| vocês | **para vocês** | **convosco**, com vocês |\n\n- **Isto é para ti.** — Это тебе.\n- **Queres vir comigo?** — Хочешь пойти со мной?\n- **Posso falar consigo?** — Могу я с вами поговорить?\n\nПосле предлога никогда не ставим **eu** или **tu**: **para mim**, **contigo**.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Tu falas** português? | Você fala português? | в Португалии с друзьями — **tu** + 2-е лицо |\n| **O senhor / Fala** inglês? | O senhor / Você fala inglês? | **você** в лицо в pt-PT звучит суховато |\n| **Tu vais**? | Tu vai? (разг., юг Бразилии) | в pt-PT с **tu** — только 2-е лицо |\n| **Nós vamos** | A gente vai | *a gente* есть и в Португалии, но в нормальной речи — **nós** |\n| **Posso falar consigo?** | Posso falar com você? | **consigo** = «с вами» (вежливо) |\n| **connosco** | conosco | орфография |\n\nВ бразильских материалах почти везде **você**, поэтому русскоязычные часто переносят его в Португалию. Для pt-PT запомните пару **tu** (свои) — **o senhor / a senhora** или глагол без местоимения (чужие).",
+  "commonErrors": "- **Лишние местоимения** (русская привычка): *Eu sou o Maxim. Eu moro em Lisboa. Eu trabalho...* → **Sou o Maxim. Moro em Lisboa. Trabalho...** ✓\n- **tu с незнакомыми**: *Tu sabes onde fica a estação?* (прохожему) ✗ → **Sabe onde fica a estação?** ✓\n- **Вежливая форма + глагол 2-го лица**: *O senhor tens...* ✗ → **O senhor tem...** ✓; *Você falas* ✗ → **Você fala** ✓.\n- **vós в речи**: *Vós sois...* ✗ → **Vocês são...** ✓\n- **«Вы» друзьям как к господам**: *Os senhores querem pizza?* (друзьям) ✗ → **Vocês querem pizza?** ✓\n- **Местоимение после предлога**: *para eu* ✗ → **para mim** ✓; *com tu* ✗ → **contigo** ✓; *com você* ✗ → **consigo / com o senhor** ✓.",
+  "examples": [
+    {
+      "pt": "Desculpe, fala inglês?",
+      "ru": "Извините, вы говорите по-английски?",
+      "audio": true
+    },
+    {
+      "pt": "Tu és de Lisboa ou do Porto?",
+      "ru": "Ты из Лиссабона или из Порту?",
+      "audio": true
+    },
+    {
+      "pt": "A senhora quer mais alguma coisa?",
+      "ru": "Вам (женщине) ещё что-нибудь?",
+      "audio": true
+    },
+    {
+      "pt": "Vocês vêm jantar connosco?",
+      "ru": "Вы придёте к нам на ужин?",
+      "audio": true
+    },
+    {
+      "pt": "O senhor doutor já está no consultório.",
+      "ru": "Доктор уже в кабинете.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-01",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (falar) inglês?",
+      "answer": [
+        "falas"
+      ],
+      "ru": "Ты говоришь по-английски?"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-02",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "A senhora ___ (querer) um café?",
+      "answer": [
+        "quer"
+      ],
+      "ru": "Вы хотите кофе?",
+      "explanation": "o senhor / a senhora → глагол 3-го лица."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-03",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Vocês ___ (ser) de Lisboa?",
+      "answer": [
+        "são"
+      ],
+      "ru": "Вы из Лиссабона?"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-04",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Desculpe, ___ (saber) onde fica a farmácia?",
+      "answer": [
+        "sabe"
+      ],
+      "hint": "вежливо, к незнакомому",
+      "ru": "Извините, вы не знаете, где аптека?"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-05",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "O presente é para ___.",
+      "answer": [
+        "ti"
+      ],
+      "hint": "тебе (после предлога)",
+      "ru": "Подарок — тебе.",
+      "explanation": "После предлога: para mim, para ti."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-06",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Queres jantar ___ hoje?",
+      "answer": [
+        "comigo"
+      ],
+      "hint": "со мной",
+      "ru": "Хочешь поужинать со мной сегодня?"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-07",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Os senhores ___ (ter) reserva?",
+      "answer": [
+        "têm"
+      ],
+      "ru": "У вас есть бронь?"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-08",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (ser) russos, mas vivemos em Lisboa.",
+      "answer": [
+        "somos"
+      ],
+      "ru": "Мы русские, но живём в Лиссабоне."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-09",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "(прохожему на улице) Desculpe, ___ onde é a estação?",
+      "options": [
+        "sabes",
+        "sabe",
+        "tu sabes",
+        "sabem"
+      ],
+      "correct": 1,
+      "explanation": "К незнакомому — 3-е лицо без местоимения."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-10",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "(другу) Rui, tu ___ vir à festa?",
+      "options": [
+        "querem",
+        "quere",
+        "queres",
+        "quer"
+      ],
+      "correct": 2,
+      "explanation": "tu → 2-е лицо: queres."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-11",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "(группе друзей) Pessoal, ___ querem ir ao cinema?",
+      "options": [
+        "vocês",
+        "vós",
+        "os senhores",
+        "a gente"
+      ],
+      "correct": 0,
+      "explanation": "Множественное «вы» для любой группы — vocês."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-12",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "— Para quem é o café? — É para ___.",
+      "options": [
+        "eu",
+        "me",
+        "mim",
+        "migo"
+      ],
+      "correct": 2,
+      "explanation": "После предлога — mim."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-13",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "Posso falar ___, senhor Duarte?",
+      "options": [
+        "com você",
+        "com tu",
+        "contigo",
+        "consigo"
+      ],
+      "correct": 3,
+      "explanation": "Вежливое «с вами» в pt-PT — consigo (или com o senhor)."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-14",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "transform",
+      "prompt": "Tu és de Moscovo?",
+      "instruction": "Задайте тот же вопрос вежливо пожилому мужчине (o senhor).",
+      "answer": [
+        "O senhor é de Moscovo?",
+        "É de Moscovo?"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-15",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "transform",
+      "prompt": "A senhora tem filhos?",
+      "instruction": "Задайте тот же вопрос подруге (на «ты»).",
+      "answer": [
+        "Tu tens filhos?",
+        "Tens filhos?"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-16",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "transform",
+      "prompt": "Tu falas português muito bem.",
+      "instruction": "Обратитесь к группе людей (vocês).",
+      "answer": [
+        "Vocês falam português muito bem.",
+        "Falam português muito bem."
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-17",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "order-words",
+      "words": [
+        "senhora",
+        "A",
+        "precisa",
+        "de",
+        "ajuda?"
+      ],
+      "answer": "A senhora precisa de ajuda?",
+      "ru": "Вам (женщине) нужна помощь?"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-18",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "order-words",
+      "words": [
+        "Eu",
+        "sou",
+        "russo,",
+        "mas",
+        "ela",
+        "é",
+        "portuguesa"
+      ],
+      "answer": "Eu sou russo, mas ela é portuguesa",
+      "ru": "Я русский, а она португалка."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-19",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "translate-ru-pt",
+      "ru": "Вы (к пожилой женщине) говорите по-английски?",
+      "answer": [
+        "A senhora fala inglês?",
+        "Fala inglês?"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-20",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "translate-ru-pt",
+      "ru": "Мы из России, а вы? (группе друзей)",
+      "answer": [
+        "Nós somos da Rússia, e vocês?",
+        "Somos da Rússia, e vocês?",
+        "Nós somos russos, e vocês?",
+        "Somos russos, e vocês?"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-21",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "listen-type",
+      "text": "A senhora precisa de mais alguma coisa?",
+      "answer": [
+        "A senhora precisa de mais alguma coisa?"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-ex-22",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "match",
+      "pairs": [
+        {
+          "left": "eu",
+          "right": "sou"
+        },
+        {
+          "left": "tu",
+          "right": "és"
+        },
+        {
+          "left": "o senhor",
+          "right": "é"
+        },
+        {
+          "left": "nós",
+          "right": "somos"
+        },
+        {
+          "left": "vocês",
+          "right": "são"
+        }
+      ],
+      "prompt": "Соедините местоимение с формой глагола ser."
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-01",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Tu ___ (ter) tempo amanhã?",
+      "answer": [
+        "tens"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-02",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Os senhores ___ (querer) a ementa?",
+      "answer": [
+        "querem"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-03",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Ana, este livro é para ___.",
+      "answer": [
+        "ti"
+      ],
+      "hint": "тебе"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-04",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "fill-gap",
+      "prompt": "Desculpe, ___ (poder) repetir, por favor?",
+      "answer": [
+        "pode"
+      ],
+      "hint": "вежливо, к незнакомому"
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-05",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "(официанту) Desculpe, ___ trazer a conta?",
+      "options": [
+        "pode",
+        "podes",
+        "podemos"
+      ],
+      "correct": 0,
+      "explanation": "К официанту — вежливая форма 3-го лица."
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-06",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "Vocês ___ cansados?",
+      "options": [
+        "estamos",
+        "está",
+        "estais",
+        "estão"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-07",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "choice",
+      "prompt": "A Rita vai ao médico ___.",
+      "options": [
+        "com tu",
+        "com ti",
+        "contigo",
+        "com te"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-08",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "transform",
+      "prompt": "O senhor mora aqui?",
+      "instruction": "Задайте тот же вопрос другу (на «ты»).",
+      "answer": [
+        "Tu moras aqui?",
+        "Moras aqui?"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-09",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "translate-ru-pt",
+      "ru": "Ты из Порту?",
+      "answer": [
+        "Tu és do Porto?",
+        "És do Porto?"
+      ]
+    },
+    {
+      "id": "a1-pronomes-pessoais-tratamento-mt-10",
+      "topicId": "a1-pronomes-pessoais-tratamento",
+      "type": "listen-choice",
+      "text": "Vocês são de Moscovo?",
+      "options": [
+        "Ты из Москвы?",
+        "Вы (группа) из Москвы?",
+        "Они из Москвы?",
+        "Мы из Москвы?"
+      ],
+      "correct": 1
+    }
+  ]
+}

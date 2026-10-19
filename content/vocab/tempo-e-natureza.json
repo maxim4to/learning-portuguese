@@ -1,0 +1,400 @@
+{
+  "id": "tempo-e-natureza",
+  "title": "Погода и природа",
+  "titlePt": "O tempo e a natureza",
+  "level": "A2",
+  "words": [
+    {
+      "pt": "o tempo",
+      "ru": "погода; время",
+      "gender": "m",
+      "example": "Que tempo está hoje?",
+      "audio": true
+    },
+    {
+      "pt": "a previsão do tempo",
+      "ru": "прогноз погоды",
+      "gender": "f",
+      "example": "A previsão do tempo diz que vai chover.",
+      "audio": true
+    },
+    {
+      "pt": "o IPMA",
+      "ru": "португальская метеослужба",
+      "gender": "m",
+      "example": "O IPMA emitiu aviso amarelo para o litoral.",
+      "audio": true
+    },
+    {
+      "pt": "o aviso amarelo",
+      "ru": "жёлтое (штормовое) предупреждение",
+      "gender": "m",
+      "example": "Há aviso amarelo por causa do vento.",
+      "audio": true
+    },
+    {
+      "pt": "o sol",
+      "ru": "солнце",
+      "gender": "m",
+      "example": "Hoje está sol, vamos à praia!",
+      "audio": true
+    },
+    {
+      "pt": "a chuva",
+      "ru": "дождь",
+      "gender": "f",
+      "example": "Com esta chuva, não saio de casa.",
+      "audio": true
+    },
+    {
+      "pt": "chover",
+      "ru": "идти (о дожде)",
+      "example": "Choveu a noite toda.",
+      "audio": true
+    },
+    {
+      "pt": "chover a potes",
+      "ru": "лить как из ведра",
+      "example": "Leva o guarda-chuva, está a chover a potes.",
+      "audio": true
+    },
+    {
+      "pt": "o aguaceiro",
+      "ru": "ливень (короткий)",
+      "gender": "m",
+      "example": "Preveem-se aguaceiros durante a tarde.",
+      "audio": true
+    },
+    {
+      "pt": "o guarda-chuva",
+      "ru": "зонт",
+      "gender": "m",
+      "example": "Esqueci-me do guarda-chuva no autocarro.",
+      "audio": true
+    },
+    {
+      "pt": "o vento",
+      "ru": "ветер",
+      "gender": "m",
+      "example": "Está muito vento na praia.",
+      "audio": true
+    },
+    {
+      "pt": "a nuvem",
+      "ru": "облако",
+      "gender": "f",
+      "example": "Não há uma única nuvem no céu.",
+      "audio": true
+    },
+    {
+      "pt": "nublado",
+      "ru": "облачный, пасмурный",
+      "example": "De manhã, o céu vai estar nublado.",
+      "audio": true
+    },
+    {
+      "pt": "o nevoeiro",
+      "ru": "туман",
+      "gender": "m",
+      "example": "Há nevoeiro na ponte 25 de Abril.",
+      "audio": true
+    },
+    {
+      "pt": "a trovoada",
+      "ru": "гроза",
+      "gender": "f",
+      "example": "Ontem à noite houve uma trovoada fortíssima.",
+      "audio": true
+    },
+    {
+      "pt": "o relâmpago",
+      "ru": "молния",
+      "gender": "m",
+      "example": "Vi um relâmpago sobre o mar.",
+      "audio": true
+    },
+    {
+      "pt": "a neve",
+      "ru": "снег",
+      "gender": "f",
+      "example": "Na Serra da Estrela há neve no inverno.",
+      "audio": true
+    },
+    {
+      "pt": "nevar",
+      "ru": "идти (о снеге)",
+      "example": "Em Lisboa quase nunca neva.",
+      "audio": true
+    },
+    {
+      "pt": "o granizo",
+      "ru": "град",
+      "gender": "m",
+      "example": "O granizo estragou as vinhas.",
+      "audio": true
+    },
+    {
+      "pt": "o calor",
+      "ru": "жара",
+      "gender": "m",
+      "example": "Está um calor insuportável.",
+      "audio": true
+    },
+    {
+      "pt": "o frio",
+      "ru": "холод",
+      "gender": "m",
+      "example": "Nas casas portuguesas faz muito frio no inverno.",
+      "audio": true
+    },
+    {
+      "pt": "a temperatura",
+      "ru": "температура",
+      "gender": "f",
+      "example": "A temperatura vai descer amanhã.",
+      "audio": true
+    },
+    {
+      "pt": "os graus",
+      "ru": "градусы",
+      "gender": "m",
+      "example": "Estão trinta e oito graus em Évora.",
+      "audio": true
+    },
+    {
+      "pt": "abafado",
+      "ru": "душный",
+      "example": "O tempo está abafado, vai trovejar.",
+      "audio": true
+    },
+    {
+      "pt": "húmido",
+      "ru": "влажный",
+      "example": "O inverno no Porto é frio e húmido.",
+      "audio": true
+    },
+    {
+      "pt": "a onda de calor",
+      "ru": "волна жары",
+      "gender": "f",
+      "example": "Durante a onda de calor, beba muita água.",
+      "audio": true
+    },
+    {
+      "pt": "as estações do ano",
+      "ru": "времена года",
+      "gender": "f",
+      "example": "Em Portugal, as estações do ano são bem marcadas.",
+      "audio": true
+    },
+    {
+      "pt": "a primavera",
+      "ru": "весна",
+      "gender": "f",
+      "example": "Na primavera, o Alentejo fica todo verde.",
+      "audio": true
+    },
+    {
+      "pt": "o verão",
+      "ru": "лето",
+      "gender": "m",
+      "example": "No verão, vamos sempre para o Algarve.",
+      "audio": true
+    },
+    {
+      "pt": "o outono",
+      "ru": "осень",
+      "gender": "m",
+      "example": "O outono é a época das castanhas.",
+      "audio": true
+    },
+    {
+      "pt": "o inverno",
+      "ru": "зима",
+      "gender": "m",
+      "example": "O inverno aqui é chuvoso.",
+      "audio": true
+    },
+    {
+      "pt": "o mar",
+      "ru": "море; океан",
+      "gender": "m",
+      "example": "O mar hoje está muito agitado.",
+      "audio": true
+    },
+    {
+      "pt": "a praia",
+      "ru": "пляж",
+      "gender": "f",
+      "example": "Passámos o dia na praia.",
+      "audio": true
+    },
+    {
+      "pt": "a areia",
+      "ru": "песок",
+      "gender": "f",
+      "example": "A areia está a escaldar.",
+      "audio": true
+    },
+    {
+      "pt": "a onda",
+      "ru": "волна",
+      "gender": "f",
+      "example": "As ondas da Nazaré são famosas.",
+      "audio": true
+    },
+    {
+      "pt": "a maré",
+      "ru": "прилив, отлив",
+      "gender": "f",
+      "example": "Com a maré baixa, dá para ir até às rochas.",
+      "audio": true
+    },
+    {
+      "pt": "o nadador-salvador",
+      "ru": "спасатель на пляже",
+      "gender": "m",
+      "example": "Tome banho só onde há nadador-salvador.",
+      "audio": true
+    },
+    {
+      "pt": "a bandeira vermelha",
+      "ru": "красный флаг (купаться запрещено)",
+      "gender": "f",
+      "example": "Hoje está bandeira vermelha, não se pode ir à água.",
+      "audio": true
+    },
+    {
+      "pt": "a costa",
+      "ru": "побережье",
+      "gender": "f",
+      "example": "A costa alentejana é selvagem e bonita.",
+      "audio": true
+    },
+    {
+      "pt": "a falésia",
+      "ru": "прибрежная скала, обрыв",
+      "gender": "f",
+      "example": "Não se aproxime da falésia.",
+      "audio": true
+    },
+    {
+      "pt": "a serra",
+      "ru": "горный хребет, горы",
+      "gender": "f",
+      "example": "Ao fim de semana fazemos caminhadas na serra.",
+      "audio": true
+    },
+    {
+      "pt": "a montanha",
+      "ru": "гора",
+      "gender": "f",
+      "example": "Do alto da montanha vê-se o mar.",
+      "audio": true
+    },
+    {
+      "pt": "o rio",
+      "ru": "река",
+      "gender": "m",
+      "example": "Lisboa fica junto ao rio Tejo.",
+      "audio": true
+    },
+    {
+      "pt": "a floresta",
+      "ru": "лес",
+      "gender": "f",
+      "example": "A floresta ardeu no verão passado.",
+      "audio": true
+    },
+    {
+      "pt": "o pinhal",
+      "ru": "сосновый бор",
+      "gender": "m",
+      "example": "Fizemos um piquenique no pinhal.",
+      "audio": true
+    },
+    {
+      "pt": "o campo",
+      "ru": "деревня, сельская местность; поле",
+      "gender": "m",
+      "example": "Os meus avós vivem no campo.",
+      "audio": true
+    },
+    {
+      "pt": "a paisagem",
+      "ru": "пейзаж",
+      "gender": "f",
+      "example": "A paisagem do Douro é espetacular.",
+      "audio": true
+    },
+    {
+      "pt": "o incêndio florestal",
+      "ru": "лесной пожар",
+      "gender": "m",
+      "example": "Os incêndios florestais são um grande problema no verão.",
+      "audio": true
+    },
+    {
+      "pt": "a seca",
+      "ru": "засуха",
+      "gender": "f",
+      "example": "O Algarve está a sofrer com a seca.",
+      "audio": true
+    },
+    {
+      "pt": "o ambiente",
+      "ru": "окружающая среда",
+      "gender": "m",
+      "example": "Temos de proteger o ambiente.",
+      "audio": true
+    },
+    {
+      "pt": "as alterações climáticas",
+      "ru": "изменение климата",
+      "gender": "f",
+      "example": "As alterações climáticas já se notam nos invernos.",
+      "audio": true
+    },
+    {
+      "pt": "a poluição",
+      "ru": "загрязнение",
+      "gender": "f",
+      "example": "A poluição do ar é maior no centro.",
+      "audio": true
+    },
+    {
+      "pt": "a reciclagem",
+      "ru": "переработка отходов",
+      "gender": "f",
+      "example": "Em casa, fazemos reciclagem.",
+      "audio": true
+    },
+    {
+      "pt": "o ecoponto",
+      "ru": "контейнеры для раздельного сбора",
+      "gender": "m",
+      "example": "O vidro vai para o ecoponto verde.",
+      "audio": true
+    },
+    {
+      "pt": "separar o lixo",
+      "ru": "сортировать мусор",
+      "example": "Aqui separamos o lixo: papel, plástico e vidro.",
+      "audio": true
+    },
+    {
+      "pt": "o painel solar",
+      "ru": "солнечная панель",
+      "gender": "m",
+      "example": "Pusemos painéis solares no telhado.",
+      "audio": true
+    },
+    {
+      "pt": "o pôr do sol",
+      "ru": "закат",
+      "gender": "m",
+      "example": "O pôr do sol no Cabo da Roca é inesquecível.",
+      "audio": true
+    }
+  ]
+}

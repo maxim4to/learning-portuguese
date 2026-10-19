@@ -1,0 +1,421 @@
+{
+  "id": "b1-participios-duplos",
+  "level": "B1",
+  "module": "b1-sintaxe",
+  "title": "Двойные причастия",
+  "titlePt": "Particípios duplos",
+  "requires": [
+    "a2-mais-que-perfeito",
+    "b1-voz-passiva"
+  ],
+  "theory": "## Два причастия у одного глагола\n\nУ ряда глаголов есть **два причастия**: правильное (на **-ado / -ido**) и короткое, неправильное. Общее правило:\n\n- **ter / haver** + **правильное** причастие → активные сложные времена (что *сделал* субъект). Причастие **не меняется**.\n- **ser / estar / ficar** + **короткое** причастие → пассив и состояние (что *сделали* с объектом). Причастие **согласуется** в роде и числе, как прилагательное.\n\n| инфинитив | с ter / haver | с ser / estar / ficar |\n|---|---|---|\n| aceitar | **tinha aceitado** | **foi aceite** |\n| entregar | **tinha entregado** | **está entregue** |\n| acender | **tinha acendido** | **está aceso / acesa** |\n| prender | **tinha prendido** | **foi preso** |\n| eleger | **tinha elegido** | **foi eleito** |\n| salvar | **tinha salvado** | **foi salvo** |\n| soltar | **tinha soltado** | **foi solto** |\n| limpar | **tinha limpado** | **está limpo** |\n| matar | **tinha matado** | **foi morto** |\n| morrer | **tinha morrido** | **está morto** |\n\nПримеры:\n- **O árbitro tinha aceitado o recurso.** — **O recurso foi aceite.**\n- **Quem tinha acendido as velas?** — **As velas estão acesas.**\n- **A polícia tinha prendido o suspeito.** — **O suspeito foi preso.**\n\n## Matar и morrer — особый случай\n\nУ **matar** короткого причастия «своего» нет: в пассиве используется **morto** (от **morrer**). **O caçador tinha matado o lobo.** → **O lobo foi morto pelo caçador.** Форма *foi matado* — ошибка.\n\n## Только короткая форма: pago, ganho, gasto\n\nТри глагола в современном pt-PT используют короткое причастие **везде**, в том числе с **ter**. Формы *pagado, ganhado, gastado* звучат устаревше или диалектно.\n\n| инфинитив | с ter | с ser / estar |\n|---|---|---|\n| pagar | **tinha pago** | **a conta está paga** |\n| ganhar | **tinha ganho** | **o jogo foi ganho** |\n| gastar | **tinha gasto** | **o dinheiro está gasto** |\n\n## Живая норма: aceite, entregue\n\nВ речи португальцев короткие **aceite** и **entregue** часто проникают и в сочетание с **ter**: **tinha entregue o relatório** — так говорят и пишут многие, справочники это допускают. Безопасная стратегия: с **ter** — **aceitado, entregado** (никто не исправит), с **ser/estar** — только **aceite, entregue**.\n\n## Глаголы с одним, но неправильным причастием\n\nНе путайте с глаголами, у которых причастие одно (и оно неправильное): **fazer → feito**, **dizer → dito**, **ver → visto**, **pôr → posto**, **escrever → escrito**, **abrir → aberto**. Их используют со всеми вспомогательными: **tinha feito / foi feito**.\n\n## Как выбрать за три секунды\n\n1. Перед причастием **ter / haver**? → правильная форма (кроме **pago, ganho, gasto**).\n2. Перед ним **ser / estar / ficar** или оно стоит при существительном как прилагательное? → короткая форма с согласованием: **um copo limpo, as janelas acesas, um homem preso, um pedido aceite**.\n3. Сомневаетесь — проверьте, кто действует: если подлежащее само совершает действие, это **ter**; если действие совершают над ним — **ser/estar**.\n\n## Согласование\n\nС **ter** причастие неизменяемо: **Ela tinha aceitado as condições.** С **ser/estar/ficar** — согласуется с подлежащим: **As condições foram aceites. A luz está acesa. Os documentos estão entregues.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **foi aceite** | **foi aceito** | в pt-PT короткая форма — **aceite** (как и **entregue**); **aceito** в Португалии — это «я принимаю» |\n| **tinha pago, tinha ganho** | **tinha pago / tinha pagado, tinha ganhado** | в Бразилии длинные формы живее |\n| **a proposta foi aceite** | **a proposta foi aceita** | в pt-BR есть женская форма *aceita*; в pt-PT **aceite** одинаково для м. и ж. р. |\n\nВ остальном система одна и та же: **ter** + правильное, **ser/estar** + короткое.",
+  "commonErrors": "- **Бразильская форма**: *A proposta foi aceita* ✗ → **A proposta foi aceite** ✓ (**aceite** не меняется по роду: **o pedido foi aceite**, **a proposta foi aceite**; мн. ч. — **aceites**).\n- **matar в пассиве**: *O lobo foi matado* ✗ → **O lobo foi morto** ✓.\n- **Короткая форма без согласования**: *As cartas foram entregue* ✗ → **As cartas foram entregues** ✓; *A luz está aceso* ✗ → **A luz está acesa** ✓.\n- **Длинная форма в пассиве**: *O ladrão foi prendido* ✗ → **O ladrão foi preso** ✓; *foi elegido* ✗ → **foi eleito** ✓.\n- **Устаревшие длинные формы**: *Já tinha pagado* → **Já tinha pago** ✓; *tinha ganhado* → **tinha ganho** ✓.\n- **Согласование после ter** (как в русском «она была принята»): *Ela tinha aceitada* ✗ → **Ela tinha aceitado** ✓.\n- **Путаница morto / morrido**: *Ele tinha morto* ✗ → **Ele tinha morrido** ✓; *Ele está morrido* ✗ → **Ele está morto** ✓.",
+  "examples": [
+    {
+      "pt": "A tua candidatura foi aceite.",
+      "ru": "Твоя заявка принята.",
+      "audio": true
+    },
+    {
+      "pt": "A encomenda já foi entregue ao vizinho.",
+      "ru": "Посылку уже отдали соседу.",
+      "audio": true
+    },
+    {
+      "pt": "Já tinha pago a conta quando eles chegaram.",
+      "ru": "Я уже оплатил счёт, когда они пришли.",
+      "audio": true
+    },
+    {
+      "pt": "Deixaste a luz da cozinha acesa.",
+      "ru": "Ты оставил свет на кухне включённым.",
+      "audio": true
+    },
+    {
+      "pt": "O suspeito foi preso ontem à noite.",
+      "ru": "Подозреваемого арестовали вчера вечером.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-participios-duplos-ex-01",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "A proposta foi ___ (aceitar) por todos.",
+      "answer": [
+        "aceite"
+      ],
+      "ru": "Предложение было принято всеми.",
+      "explanation": "ser + короткое причастие; aceite не меняется по роду."
+    },
+    {
+      "id": "b1-participios-duplos-ex-02",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "A encomenda já está ___ (entregar).",
+      "answer": [
+        "entregue"
+      ],
+      "ru": "Посылка уже доставлена."
+    },
+    {
+      "id": "b1-participios-duplos-ex-03",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "Já tinhas ___ (pagar) a conta da luz?",
+      "answer": [
+        "pago"
+      ],
+      "ru": "Ты уже оплатил счёт за свет?",
+      "explanation": "pagar → pago и с ter."
+    },
+    {
+      "id": "b1-participios-duplos-ex-04",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "Ela tinha ___ (ganhar) o prémio duas vezes.",
+      "answer": [
+        "ganho"
+      ],
+      "ru": "Она дважды получала эту премию."
+    },
+    {
+      "id": "b1-participios-duplos-ex-05",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "O gato foi ___ (salvar) pelos vizinhos.",
+      "answer": [
+        "salvo"
+      ],
+      "ru": "Кота спасли соседи."
+    },
+    {
+      "id": "b1-participios-duplos-ex-06",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "O caçador tinha ___ (matar) o lobo.",
+      "answer": [
+        "matado"
+      ],
+      "ru": "Охотник убил волка.",
+      "explanation": "ter + правильное причастие."
+    },
+    {
+      "id": "b1-participios-duplos-ex-07",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "O lobo foi ___ (matar) pelo caçador.",
+      "answer": [
+        "morto"
+      ],
+      "ru": "Волк был убит охотником.",
+      "explanation": "В пассиве matar использует morto."
+    },
+    {
+      "id": "b1-participios-duplos-ex-08",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "A luz da cozinha está ___ (acender).",
+      "answer": [
+        "acesa"
+      ],
+      "ru": "Свет на кухне включён.",
+      "explanation": "estar + aceso, согласование с luz (ж. р.)."
+    },
+    {
+      "id": "b1-participios-duplos-ex-09",
+      "topicId": "b1-participios-duplos",
+      "type": "choice",
+      "prompt": "O presidente da câmara foi ___ em 2021.",
+      "options": [
+        "elegido",
+        "eleito",
+        "elegeu",
+        "eleita"
+      ],
+      "correct": 1,
+      "explanation": "ser + короткое причастие eleito; согласование с presidente (м. р.)."
+    },
+    {
+      "id": "b1-participios-duplos-ex-10",
+      "topicId": "b1-participios-duplos",
+      "type": "choice",
+      "prompt": "Quem tinha ___ a lareira?",
+      "options": [
+        "aceso",
+        "acesa",
+        "acendido",
+        "acendida"
+      ],
+      "correct": 2,
+      "explanation": "ter + правильное причастие, без согласования."
+    },
+    {
+      "id": "b1-participios-duplos-ex-11",
+      "topicId": "b1-participios-duplos",
+      "type": "choice",
+      "prompt": "As cartas já foram ___.",
+      "options": [
+        "entregadas",
+        "entregados",
+        "entregue",
+        "entregues"
+      ],
+      "correct": 3,
+      "explanation": "ser + entregue, мн. ч. → entregues."
+    },
+    {
+      "id": "b1-participios-duplos-ex-12",
+      "topicId": "b1-participios-duplos",
+      "type": "choice",
+      "prompt": "Este mês já tenho ___ demasiado em restaurantes.",
+      "options": [
+        "gasto",
+        "gastada",
+        "gastei",
+        "gastos"
+      ],
+      "correct": 0,
+      "explanation": "gastar → gasto и с ter; с ter причастие не согласуется (не gastada, не gastos). Форма gastado в pt-PT редка."
+    },
+    {
+      "id": "b1-participios-duplos-ex-13",
+      "topicId": "b1-participios-duplos",
+      "type": "transform",
+      "prompt": "Os vizinhos aceitaram a proposta.",
+      "instruction": "Перестройте в пассив (ser).",
+      "answer": [
+        "A proposta foi aceite pelos vizinhos.",
+        "A proposta foi aceite."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-ex-14",
+      "topicId": "b1-participios-duplos",
+      "type": "transform",
+      "prompt": "A polícia prendeu o suspeito.",
+      "instruction": "Перестройте в пассив (ser).",
+      "answer": [
+        "O suspeito foi preso pela polícia.",
+        "O suspeito foi preso."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-ex-15",
+      "topicId": "b1-participios-duplos",
+      "type": "transform",
+      "prompt": "Alguém acendeu as velas.",
+      "instruction": "Опишите результат с помощью estar.",
+      "answer": [
+        "As velas estão acesas.",
+        "As velas já estão acesas."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-ex-16",
+      "topicId": "b1-participios-duplos",
+      "type": "order-words",
+      "words": [
+        "não",
+        "O",
+        "matado",
+        "tinha",
+        "ladrão",
+        "ninguém"
+      ],
+      "answer": "O ladrão não tinha matado ninguém"
+    },
+    {
+      "id": "b1-participios-duplos-ex-17",
+      "topicId": "b1-participios-duplos",
+      "type": "order-words",
+      "words": [
+        "foram",
+        "As",
+        "entregues",
+        "encomendas",
+        "ontem"
+      ],
+      "answer": "As encomendas foram entregues ontem"
+    },
+    {
+      "id": "b1-participios-duplos-ex-18",
+      "topicId": "b1-participios-duplos",
+      "type": "translate-ru-pt",
+      "ru": "Счёт уже оплачен.",
+      "answer": [
+        "A conta já está paga.",
+        "A conta já foi paga.",
+        "A fatura já está paga.",
+        "A fatura já foi paga."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-ex-19",
+      "topicId": "b1-participios-duplos",
+      "type": "translate-ru-pt",
+      "ru": "Кота спасли соседи.",
+      "answer": [
+        "O gato foi salvo pelos vizinhos.",
+        "Os vizinhos salvaram o gato."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-ex-20",
+      "topicId": "b1-participios-duplos",
+      "type": "listen-type",
+      "text": "O jogo foi ganho nos últimos minutos.",
+      "answer": [
+        "O jogo foi ganho nos últimos minutos."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-ex-21",
+      "topicId": "b1-participios-duplos",
+      "type": "match",
+      "prompt": "Соедините инфинитив с коротким причастием.",
+      "pairs": [
+        {
+          "left": "aceitar",
+          "right": "aceite"
+        },
+        {
+          "left": "entregar",
+          "right": "entregue"
+        },
+        {
+          "left": "prender",
+          "right": "preso"
+        },
+        {
+          "left": "acender",
+          "right": "aceso"
+        },
+        {
+          "left": "eleger",
+          "right": "eleito"
+        },
+        {
+          "left": "matar",
+          "right": "morto"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-participios-duplos-mt-01",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "O contrato já foi ___ (aceitar).",
+      "answer": [
+        "aceite"
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-mt-02",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "Ainda não tinham ___ (pagar) o jantar.",
+      "answer": [
+        "pago"
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-mt-03",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "As luzes estão todas ___ (acender).",
+      "answer": [
+        "acesas"
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-mt-04",
+      "topicId": "b1-participios-duplos",
+      "type": "fill-gap",
+      "prompt": "Nós tínhamos ___ (eleger) a Rita como delegada.",
+      "answer": [
+        "elegido"
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-mt-05",
+      "topicId": "b1-participios-duplos",
+      "type": "choice",
+      "prompt": "O rato foi ___ pelo gato.",
+      "options": [
+        "matado",
+        "morto",
+        "morrido",
+        "matou"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-participios-duplos-mt-06",
+      "topicId": "b1-participios-duplos",
+      "type": "choice",
+      "prompt": "Ela tinha ___ a lotaria!",
+      "options": [
+        "ganhou",
+        "ganha",
+        "ganhada",
+        "ganho"
+      ],
+      "correct": 3,
+      "explanation": "Ter + ganho, без согласования. Ganhado возможно, но в pt-PT встречается заметно реже."
+    },
+    {
+      "id": "b1-participios-duplos-mt-07",
+      "topicId": "b1-participios-duplos",
+      "type": "choice",
+      "prompt": "Os documentos já estão ___.",
+      "options": [
+        "entregados",
+        "entregue",
+        "entregues",
+        "entregadas"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-participios-duplos-mt-08",
+      "topicId": "b1-participios-duplos",
+      "type": "transform",
+      "prompt": "O tribunal soltou os presos.",
+      "instruction": "Перестройте в пассив (ser).",
+      "answer": [
+        "Os presos foram soltos pelo tribunal.",
+        "Os presos foram soltos."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-mt-09",
+      "topicId": "b1-participios-duplos",
+      "type": "translate-ru-pt",
+      "ru": "Подарок уже доставлен.",
+      "answer": [
+        "O presente já foi entregue.",
+        "O presente já está entregue.",
+        "A prenda já foi entregue.",
+        "A prenda já está entregue."
+      ]
+    },
+    {
+      "id": "b1-participios-duplos-mt-10",
+      "topicId": "b1-participios-duplos",
+      "type": "listen-choice",
+      "text": "O ladrão foi preso ontem.",
+      "options": [
+        "Вор вчера сбежал.",
+        "Вора вчера арестовали.",
+        "Вор вчера был в тюрьме.",
+        "Вор вчера всё вернул."
+      ],
+      "correct": 1
+    }
+  ]
+}

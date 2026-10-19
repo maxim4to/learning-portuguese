@@ -1,0 +1,449 @@
+{
+  "id": "a2-pronomes-complemento",
+  "level": "A2",
+  "module": "a2-pronomes",
+  "title": "Местоимения-дополнения: o, a, lhe, mo, lho",
+  "titlePt": "Pronomes pessoais de complemento direto e indireto",
+  "requires": [
+    "a1-pronomes-pessoais-tratamento",
+    "a2-preterito-perfeito-simples"
+  ],
+  "theory": "## Два типа дополнений\n\n| лицо | прямое (кого? что?) | косвенное (кому?) | после предлога |\n|---|---|---|---|\n| eu | me | me | mim (**comigo**) |\n| tu | te | te | ti (**contigo**) |\n| ele / ela / você, o senhor | **o / a** | **lhe** | ele / ela / si |\n| nós | nos | nos | nós (**connosco**) |\n| eles / elas / vocês | **os / as** | **lhes** | eles / elas |\n\n**Me, te, nos** одинаковы для обоих типов. Различаются только 3-е лица: **o/a/os/as** — «его, её, их» (кого? что?), **lhe/lhes** — «ему, ей, им» (кому?).\n\n**O livro? Comprei-o ontem.** — Книгу? Я купил её вчера.\n**Telefonei à Rita e disse-lhe tudo.** — Я позвонил Рите и всё ей сказал.\n\nФормы 3-го лица относятся и к вежливому «вы»: **Posso ajudá-lo?** — Могу вам помочь? (мужчине). **Já lhe digo.** — Сейчас вам скажу.\n\n## Управление — по-португальски, а не по-русски\n\n| глагол | дополнение | пример |\n|---|---|---|\n| ver, conhecer, ouvir, convidar, visitar | прямое | **Conheço-a. Convidei-os.** |\n| **ajudar** (помогать **кому**) | **прямое!** | **Ajudo-o.** — Я ему помогаю. |\n| dizer, dar, mostrar, explicar, escrever **a alguém** | косвенное | **Dei-lhe o livro.** |\n| **telefonar / ligar a**, **perguntar a**, **pedir a** | косвенное | **Liguei-lhe. Perguntei-lhe.** |\n\n## Изменение o / a / os / as после глагола\n\n| глагол кончается на | изменение | пример |\n|---|---|---|\n| -r, -s, -z | конечная буква выпадает, **o → lo** | comprar + o → **comprá-lo**; fazemos + a → **fazemo-la**; fiz + os → **fi-los** |\n| -m, -ão, -õe | **o → no** | compram + o → **compram-no**; dão + a → **dão-na**; põe + os → **põe-nos** |\n| гласная | без изменений | comprei + a → **comprei-a** |\n\nПри выпадении -r появляется ударение: **comprá-lo, vendê-la, abri-lo, pô-lo**.\n\nПеред **nos** у формы на **-mos** выпадает **s**: **vemos + nos → vemo-nos** (увидимся).\n\n## Слияние двух местоимений\n\nЕсли в одном предложении есть и «кому», и «что», местоимения сливаются (косвенное + прямое):\n\n| | + o | + a | + os | + as |\n|---|---|---|---|---|\n| me | **mo** | ma | mos | mas |\n| te | **to** | ta | tos | tas |\n| lhe / lhes | **lho** | lha | lhos | lhas |\n\n**O sal? Dá-mo, por favor.** — Соль? Дай мне её, пожалуйста.\n**Já to disse.** — Я тебе это уже говорил.\n**O presente? Dei-lho ontem.** — Подарок? Я ему его вчера отдал.\n\n**Lho** может означать и «ему его», и «им его» — смысл ясен из контекста.\n\n## После предлога\n\nПосле предлогов — ударные формы: **para mim, para ti, de ti, sem ele**; с **com** — особые: **comigo, contigo, connosco**.\n\n## Место в предложении\n\nПо умолчанию местоимение стоит **после глагола через дефис** (**Vi-o**), а после **não, já, que** и других «магнитов» — **перед глаголом** (**Não o vi**). Все правила — в теме «Безударные местоимения и их место в предложении».",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Vi-o** ontem. | Vi ele ontem. | в pt-PT *ele* как дополнение — грубая ошибка |\n| **Conheço-a.** | A conheço. / Conheço ela. | |\n| **Liguei-lhe.** | Liguei pra ele. | в Бразилии lhe часто заменяют на «para ele» |\n| **Dei-lho.** | Dei para ele. | слияния lho, mo, to в Бразилии почти не используются |\n| **Posso ajudá-lo?** | Posso te ajudar? | вежливое «вам» в pt-PT — формы 3-го лица |\n\nВ pt-PT безударные местоимения — основа разговорной речи; замена их на *ele/ela* сразу выдаёт бразильский вариант или иностранца.",
+  "commonErrors": "- **Ele/ela вместо клитики**: *Vi ele, Conheço ela* ✗ → **Vi-o, Conheço-a** ✓.\n- **Русское управление у ajudar**: «помогаю ему» → *Ajudo-lhe* ✗ → **Ajudo-o** ✓.\n- **Прямое вместо косвенного**: *Telefonei-o, Perguntei-a* ✗ → **Telefonei-lhe, Perguntei-lhe** ✓.\n- **lhe вместо o**: *Vi-lhe* ✗ → **Vi-o** ✓ (видеть кого? — прямое).\n- **Неизменённая форма**: *comprar-o, faz-o* ✗ → **comprá-lo, fá-lo** ✓; *compram-o* ✗ → **compram-no** ✓.\n- **Нет слияния**: *Dei-lhe-o, Dás-me-o* ✗ → **Dei-lho, Dás-mo** ✓.\n- **Предлог + eu/tu**: *para eu, com mim, com tu* ✗ → **para mim, comigo, contigo** ✓.",
+  "examples": [
+    {
+      "pt": "O Rui? Conheço-o há muitos anos.",
+      "ru": "Руй? Я знаю его много лет.",
+      "audio": true
+    },
+    {
+      "pt": "Telefonei à minha mãe e disse-lhe que chegava tarde.",
+      "ru": "Я позвонил маме и сказал ей, что приду поздно.",
+      "audio": true
+    },
+    {
+      "pt": "Estes bilhetes? Comprei-os ontem na estação.",
+      "ru": "Эти билеты? Я купил их вчера на вокзале.",
+      "audio": true
+    },
+    {
+      "pt": "O sal? Dá-mo, por favor.",
+      "ru": "Соль? Дай мне её, пожалуйста.",
+      "audio": true
+    },
+    {
+      "pt": "Posso ajudá-la com as malas?",
+      "ru": "Могу я помочь вам с чемоданами?",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-pronomes-complemento-ex-01",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "O Rui? Conheço-___ bem.",
+      "answer": [
+        "o"
+      ],
+      "ru": "Руй? Я хорошо его знаю.",
+      "explanation": "conhecer кого? → прямое дополнение: o."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-02",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "A Rita fez anos e eu dei-___ um livro.",
+      "answer": [
+        "lhe"
+      ],
+      "hint": "кому?",
+      "ru": "У Риты был день рождения, и я подарил ей книгу."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-03",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "Os bilhetes? Comprei-___ ontem.",
+      "answer": [
+        "os"
+      ],
+      "ru": "Билеты? Я купил их вчера."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-04",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "A senhora tem muitas malas. Vou ajudá-___.",
+      "answer": [
+        "la"
+      ],
+      "ru": "У дамы много чемоданов. Я ей помогу.",
+      "explanation": "ajudar — прямое дополнение (a); после -r → la: ajudá-la."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-05",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "Ligaste aos teus pais? — Sim, liguei-___ ontem.",
+      "answer": [
+        "lhes"
+      ],
+      "ru": "Ты звонил родителям? — Да, я им звонил вчера.",
+      "explanation": "ligar a alguém → косвенное: lhes."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-06",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "As janelas? Eles abrem-___ todas as manhãs.",
+      "answer": [
+        "nas"
+      ],
+      "hint": "глагол кончается на -m",
+      "ru": "Окна? Они открывают их каждое утро."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-07",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "O bolo? Fizemo-___ juntos.",
+      "answer": [
+        "lo"
+      ],
+      "ru": "Торт? Мы испекли его вместе.",
+      "explanation": "fizemos + o → fizemo-lo (s выпадает)."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-08",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "O casaco? Dá-___, por favor. (me + o)",
+      "answer": [
+        "mo"
+      ],
+      "ru": "Куртку? Дай мне её, пожалуйста.",
+      "explanation": "me + o = mo."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-09",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Vi o Pedro ontem. → ___ ontem.",
+      "options": [
+        "Vi ele",
+        "Vi-lhe",
+        "Vi-o",
+        "O vi"
+      ],
+      "correct": 2,
+      "explanation": "Прямое дополнение — o, после глагола через дефис."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-10",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Telefonei à Inês. → ___ .",
+      "options": [
+        "Telefonei-a",
+        "Telefonei-lhe",
+        "Telefonei-la",
+        "A telefonei"
+      ],
+      "correct": 1,
+      "explanation": "telefonar a alguém → косвенное дополнение: lhe."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-11",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Posso ___ com o trabalho de casa?",
+      "options": [
+        "ajudar-lhe",
+        "te ajudar",
+        "ajudar ele",
+        "ajudar-te"
+      ],
+      "correct": 3,
+      "explanation": "ajudar — прямое дополнение; в pt-PT с дефисом после инфинитива."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-12",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Já deste o presente à Ana? — Sim, já ___ dei.",
+      "options": [
+        "lho",
+        "lhe o",
+        "lhe",
+        "o-lhe"
+      ],
+      "correct": 0,
+      "explanation": "lhe + o = lho; já — магнит, местоимение перед глаголом."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-13",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Querem comprar a casa? — Sim, querem ___ .",
+      "options": [
+        "comprar-a",
+        "comprá-la",
+        "comprar-la",
+        "comprá-a"
+      ],
+      "correct": 1,
+      "explanation": "-r выпадает, a → la, ударение: comprá-la."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-14",
+      "topicId": "a2-pronomes-complemento",
+      "type": "transform",
+      "prompt": "Eu faço o jantar.",
+      "instruction": "Замените «o jantar» местоимением.",
+      "answer": [
+        "Eu faço-o.",
+        "Faço-o."
+      ]
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-15",
+      "topicId": "a2-pronomes-complemento",
+      "type": "transform",
+      "prompt": "Eles compram as flores.",
+      "instruction": "Замените «as flores» местоимением.",
+      "answer": [
+        "Eles compram-nas.",
+        "Compram-nas."
+      ],
+      "explanation": "После -m: as → nas."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-16",
+      "topicId": "a2-pronomes-complemento",
+      "type": "transform",
+      "prompt": "Mostrei a casa aos meus pais.",
+      "instruction": "Замените оба дополнения местоимениями.",
+      "answer": [
+        "Mostrei-lha.",
+        "Eu mostrei-lha."
+      ],
+      "explanation": "lhes + a = lha."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-17",
+      "topicId": "a2-pronomes-complemento",
+      "type": "order-words",
+      "words": [
+        "lhe",
+        "Ainda",
+        "não",
+        "disse"
+      ],
+      "answer": "Ainda não lhe disse",
+      "explanation": "não притягивает местоимение."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-18",
+      "topicId": "a2-pronomes-complemento",
+      "type": "order-words",
+      "words": [
+        "Vou",
+        "no",
+        "visitá-los",
+        "sábado"
+      ],
+      "answer": "Vou visitá-los no sábado"
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-19",
+      "topicId": "a2-pronomes-complemento",
+      "type": "translate-ru-pt",
+      "ru": "Я ему позвонил.",
+      "answer": [
+        "Liguei-lhe.",
+        "Eu liguei-lhe.",
+        "Telefonei-lhe.",
+        "Eu telefonei-lhe."
+      ],
+      "explanation": "ligar / telefonar a alguém → lhe."
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-20",
+      "topicId": "a2-pronomes-complemento",
+      "type": "translate-ru-pt",
+      "ru": "Я тебя не понимаю.",
+      "answer": [
+        "Não te percebo.",
+        "Eu não te percebo.",
+        "Não te compreendo.",
+        "Eu não te compreendo.",
+        "Não te entendo.",
+        "Eu não te entendo."
+      ]
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-21",
+      "topicId": "a2-pronomes-complemento",
+      "type": "listen-type",
+      "text": "Já lho disse ontem.",
+      "answer": [
+        "Já lho disse ontem."
+      ]
+    },
+    {
+      "id": "a2-pronomes-complemento-ex-22",
+      "topicId": "a2-pronomes-complemento",
+      "type": "match",
+      "prompt": "Соедините русскую фразу с португальской.",
+      "pairs": [
+        {
+          "left": "помогаю ему",
+          "right": "ajudo-o"
+        },
+        {
+          "left": "звоню ему",
+          "right": "ligo-lhe"
+        },
+        {
+          "left": "вижу её",
+          "right": "vejo-a"
+        },
+        {
+          "left": "говорю ей",
+          "right": "digo-lhe"
+        },
+        {
+          "left": "покупаю их",
+          "right": "compro-os"
+        },
+        {
+          "left": "даю ему это",
+          "right": "dou-lho"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-pronomes-complemento-mt-01",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "A Joana? Ainda não ___ conheço.",
+      "answer": [
+        "a"
+      ],
+      "ru": "Жоану? Я её ещё не знаю."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-02",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "O carro? Eles venderam-___.",
+      "answer": [
+        "no"
+      ],
+      "ru": "Машину? Они её продали."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-03",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "Os clientes? Vou escrever-___ amanhã.",
+      "answer": [
+        "lhes"
+      ],
+      "ru": "Клиентам? Я напишу им завтра."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-04",
+      "topicId": "a2-pronomes-complemento",
+      "type": "fill-gap",
+      "prompt": "A pizza? Vamos comê-___ já.",
+      "answer": [
+        "la"
+      ],
+      "ru": "Пиццу? Давай съедим её сейчас."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-05",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Ajudas a tua mãe? — Sim, ___ todos os dias.",
+      "options": [
+        "ajudo-lhe",
+        "ajudo-a",
+        "ajudo ela",
+        "lhe ajudo"
+      ],
+      "correct": 1,
+      "explanation": "ajudar — прямое дополнение: ajudo-a."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-06",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Perguntaste ao professor? — Sim, perguntei-___ .",
+      "options": [
+        "o",
+        "lo",
+        "lhe",
+        "a"
+      ],
+      "correct": 2,
+      "explanation": "perguntar a alguém → lhe."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-07",
+      "topicId": "a2-pronomes-complemento",
+      "type": "choice",
+      "prompt": "Quem te deu esse livro? — Foi o Rui que ___ deu.",
+      "options": [
+        "me o",
+        "lho",
+        "to",
+        "mo"
+      ],
+      "correct": 3,
+      "explanation": "me + o = mo; que — магнит."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-08",
+      "topicId": "a2-pronomes-complemento",
+      "type": "transform",
+      "prompt": "Fiz os trabalhos.",
+      "instruction": "Замените «os trabalhos» местоимением.",
+      "answer": [
+        "Fi-los.",
+        "Eu fi-los."
+      ],
+      "explanation": "fiz + os → fi-los."
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-09",
+      "topicId": "a2-pronomes-complemento",
+      "type": "translate-ru-pt",
+      "ru": "Я вижу их каждый день.",
+      "answer": [
+        "Vejo-os todos os dias.",
+        "Eu vejo-os todos os dias.",
+        "Vejo-as todos os dias.",
+        "Eu vejo-as todos os dias."
+      ]
+    },
+    {
+      "id": "a2-pronomes-complemento-mt-10",
+      "topicId": "a2-pronomes-complemento",
+      "type": "listen-choice",
+      "text": "Ela deu-lho ontem.",
+      "options": [
+        "Она дала ему это вчера.",
+        "Она дала мне это вчера.",
+        "Она видела его вчера.",
+        "Он дал ей это вчера."
+      ],
+      "correct": 0
+    }
+  ]
+}

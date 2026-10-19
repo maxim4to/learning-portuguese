@@ -1,0 +1,191 @@
+{
+  "id": "aima-documentos",
+  "title": "AIMA: вид на жительство",
+  "titlePt": "Na AIMA: autorização de residência",
+  "level": "B1",
+  "dialogue": [
+    { "speaker": "A", "pt": "Bom dia. Tem agendamento?", "ru": "Доброе утро. Вы записаны?" },
+    { "speaker": "B", "pt": "Bom dia. Tenho, sim, às dez e meia, para a renovação da autorização de residência.", "ru": "Доброе утро. Да, на половину одиннадцатого, на продление вида на жительство." },
+    { "speaker": "A", "pt": "Pode dar-me o passaporte e o título de residência atual, se faz favor?", "ru": "Дайте, пожалуйста, паспорт и действующий вид на жительство." },
+    { "speaker": "B", "pt": "Aqui tem. O meu título caduca no fim do mês. Ainda vou a tempo?", "ru": "Вот, пожалуйста. Мой вид на жительство истекает в конце месяца. Я ещё успеваю?" },
+    { "speaker": "A", "pt": "Vai, sim. O importante é fazer o pedido antes de caducar. Trouxe o comprovativo de morada?", "ru": "Успеваете. Главное — подать заявление до истечения срока. Вы принесли подтверждение адреса?" },
+    { "speaker": "B", "pt": "Trouxe o contrato de arrendamento e um atestado da junta de freguesia.", "ru": "Я принёс договор аренды и справку о месте жительства из junta de freguesia (местной администрации)." },
+    { "speaker": "A", "pt": "Muito bem. E os comprovativos de meios de subsistência?", "ru": "Хорошо. А подтверждение средств к существованию?" },
+    { "speaker": "B", "pt": "Tenho o contrato de trabalho e os últimos recibos de vencimento. Também precisa da declaração da Segurança Social?", "ru": "У меня трудовой договор и последние расчётные листки. Справка из Segurança Social тоже нужна?" },
+    { "speaker": "A", "pt": "Preciso, sim, e também da certidão de situação tributária regularizada, das Finanças.", "ru": "Да, нужна, и ещё справка из налоговой об отсутствии задолженности." },
+    { "speaker": "B", "pt": "Está aqui tudo. Tenho de tirar fotografia?", "ru": "Здесь всё. Мне нужно фотографироваться?" },
+    { "speaker": "A", "pt": "Sim, tiramos aqui a fotografia e as impressões digitais. Ponha o indicador no leitor, se faz favor.", "ru": "Да, фотографию и отпечатки пальцев снимаем здесь. Положите, пожалуйста, указательный палец на сканер." },
+    { "speaker": "B", "pt": "Assim está bem? E quanto tempo demora até receber o cartão?", "ru": "Так нормально? А сколько времени ждать карточку?" },
+    { "speaker": "A", "pt": "Normalmente umas semanas. O cartão é enviado por correio para a sua morada.", "ru": "Обычно несколько недель. Карточку пришлют почтой на ваш адрес." },
+    { "speaker": "B", "pt": "E até lá, como é que provo que o pedido está em curso?", "ru": "А до тех пор как мне доказать, что заявление на рассмотрении?" },
+    { "speaker": "A", "pt": "Guarde este comprovativo do pedido. Serve de documento até receber o novo título.", "ru": "Сохраните эту квитанцию о подаче заявления. Она служит документом, пока вы не получите новый вид на жительство." }
+  ],
+  "phrases": [
+    { "pt": "Tenho agendamento às dez e meia.", "ru": "Я записан на половину одиннадцатого." },
+    { "pt": "Queria renovar a minha autorização de residência.", "ru": "Я хотел бы продлить вид на жительство." },
+    { "pt": "O meu título caduca no fim do mês.", "ru": "Мой вид на жительство истекает в конце месяца." },
+    { "pt": "Ainda vou a tempo?", "ru": "Я ещё успеваю?" },
+    { "pt": "Que documentos é que tenho de trazer?", "ru": "Какие документы мне нужно принести?" },
+    { "pt": "Falta-me algum documento?", "ru": "Мне не хватает какого-то документа?" },
+    { "pt": "Os documentos têm de ser originais ou podem ser cópias?", "ru": "Документы нужны в оригинале или можно копии?" },
+    { "pt": "Quanto tempo demora até receber o cartão?", "ru": "Сколько времени ждать карточку?" },
+    { "pt": "Pode dar-me um comprovativo do pedido?", "ru": "Можете дать мне квитанцию о подаче заявления?" },
+    { "pt": "Como é que posso acompanhar o processo?", "ru": "Как я могу отслеживать своё дело?" }
+  ],
+  "vocab": [
+    { "pt": "a AIMA", "ru": "Агентство по интеграции, миграции и убежищу", "example": "A AIMA substituiu o antigo SEF." },
+    { "pt": "a autorização de residência", "ru": "разрешение на проживание (ВНЖ)", "example": "A primeira autorização de residência é válida por dois anos." },
+    { "pt": "o título de residência", "ru": "вид на жительство (карточка)", "example": "Mostrei o título de residência no aeroporto." },
+    { "pt": "o agendamento", "ru": "запись (на приём)", "example": "Consegui um agendamento para março." },
+    { "pt": "agendar", "ru": "записаться, назначить", "example": "Agendei o atendimento pelo portal da AIMA." },
+    { "pt": "a renovação", "ru": "продление", "example": "A renovação pode ser pedida online." },
+    { "pt": "renovar", "ru": "продлевать", "example": "Tenho de renovar o título até junho." },
+    { "pt": "caducar", "ru": "истекать (о сроке документа)", "example": "O passaporte caduca daqui a dois anos." },
+    { "pt": "a validade", "ru": "срок действия", "example": "Verifique a validade do passaporte." },
+    { "pt": "o pedido", "ru": "заявление, запрос", "example": "O pedido foi aceite." },
+    { "pt": "o processo", "ru": "дело, процедура", "example": "O meu processo ainda está em análise." },
+    { "pt": "em curso / em análise", "ru": "в процессе / на рассмотрении", "example": "O pedido continua em análise." },
+    { "pt": "o comprovativo do pedido", "ru": "квитанция о подаче заявления", "example": "Guardei o comprovativo do pedido na pasta." },
+    { "pt": "o passaporte", "ru": "загранпаспорт", "example": "O passaporte tem de estar válido." },
+    { "pt": "o comprovativo de morada", "ru": "подтверждение адреса", "example": "Levei o contrato como comprovativo de morada." },
+    { "pt": "o atestado de residência", "ru": "справка о месте жительства", "example": "Pedi o atestado de residência na junta de freguesia." },
+    { "pt": "os meios de subsistência", "ru": "средства к существованию", "example": "Tem de provar meios de subsistência suficientes." },
+    { "pt": "o contrato de trabalho", "ru": "трудовой договор", "example": "O contrato de trabalho é sem termo." },
+    { "pt": "o recibo de vencimento", "ru": "расчётный листок", "example": "Trouxe os recibos de vencimento dos últimos três meses." },
+    { "pt": "a Segurança Social", "ru": "социальное страхование (соцстрах)", "example": "Estou inscrito na Segurança Social desde o ano passado." },
+    { "pt": "o NISS", "ru": "номер социального страхования", "example": "O NISS está na declaração da Segurança Social." },
+    { "pt": "a situação regularizada", "ru": "отсутствие задолженностей", "example": "Pedi a certidão de situação regularizada no Portal." },
+    { "pt": "o registo criminal", "ru": "справка о несудимости", "example": "O registo criminal tem de ser traduzido e apostilado." },
+    { "pt": "a apostila", "ru": "апостиль", "example": "A certidão russa precisa de apostila." },
+    { "pt": "a tradução certificada", "ru": "заверенный перевод", "example": "Mandei fazer a tradução certificada num notário." },
+    { "pt": "os dados biométricos", "ru": "биометрические данные", "example": "Os dados biométricos são recolhidos no atendimento." },
+    { "pt": "as impressões digitais", "ru": "отпечатки пальцев", "example": "Recolheram-me as impressões digitais." },
+    { "pt": "o reagrupamento familiar", "ru": "воссоединение семьи", "example": "A minha mulher veio por reagrupamento familiar." },
+    { "pt": "a taxa", "ru": "пошлина, сбор", "example": "A taxa paga-se no próprio dia." },
+    { "pt": "o original / a cópia", "ru": "оригинал / копия", "example": "Traga os originais e uma cópia de cada documento." },
+    { "pt": "a cópia autenticada", "ru": "заверенная копия", "example": "Pediram uma cópia autenticada do diploma." },
+    { "pt": "o correio", "ru": "почта", "example": "O cartão chegou pelo correio." },
+    { "pt": "o requerente", "ru": "заявитель", "example": "O requerente tem de estar presente." },
+    { "pt": "a fila de espera", "ru": "очередь", "example": "Havia uma fila de espera enorme à porta." }
+  ],
+  "exercises": [
+    {
+      "id": "aima-documentos-ex-01",
+      "topicId": "aima-documentos",
+      "type": "choice",
+      "prompt": "O meu título de residência ___ no fim do mês.",
+      "options": ["vence-se", "termina-se", "caduca", "acaba-se"],
+      "correct": 2,
+      "explanation": "О документах говорят **caducar** — «истекать, терять силу»: **o título caduca**, **o passaporte está caducado**. Возвратные формы здесь не нужны."
+    },
+    {
+      "id": "aima-documentos-ex-02",
+      "topicId": "aima-documentos",
+      "type": "match",
+      "prompt": "Соедини слова с переводом",
+      "pairs": [
+        { "left": "o agendamento", "right": "запись на приём" },
+        { "left": "a renovação", "right": "продление" },
+        { "left": "as impressões digitais", "right": "отпечатки пальцев" },
+        { "left": "o registo criminal", "right": "справка о несудимости" },
+        { "left": "os meios de subsistência", "right": "средства к существованию" }
+      ]
+    },
+    {
+      "id": "aima-documentos-ex-03",
+      "topicId": "aima-documentos",
+      "type": "fill-gap",
+      "prompt": "O importante é fazer o pedido antes de o título ___.",
+      "answer": ["caducar"],
+      "hint": "«истечь» о документе; после antes de — инфинитив",
+      "ru": "Главное — подать заявление до того, как истечёт срок документа.",
+      "explanation": "После **antes de** ставится инфинитив, даже со своим подлежащим: **antes de o título caducar**. В pt-PT перед подлежащим инфинитива предлог обычно не сливается с артиклем (**de o**, а не *do*)."
+    },
+    {
+      "id": "aima-documentos-ex-04",
+      "topicId": "aima-documentos",
+      "type": "listen-type",
+      "text": "Bom dia. Tem agendamento?",
+      "answer": ["Bom dia. Tem agendamento?"],
+      "explanation": "Первый вопрос в AIMA: **Tem agendamento?** — «Вы записаны?». Синоним — **Tem marcação?**"
+    },
+    {
+      "id": "aima-documentos-ex-05",
+      "topicId": "aima-documentos",
+      "type": "listen-choice",
+      "text": "Guarde este comprovativo do pedido. Serve de documento até receber o novo título.",
+      "prompt": "Что советует сотрудница?",
+      "options": ["Сохранить квитанцию: она заменяет документ до получения новой карточки", "Прийти за карточкой через неделю", "Сделать копию старого вида на жительство", "Отправить квитанцию по почте"],
+      "correct": 0,
+      "explanation": "**Guarde** — «сохраните» (imperativo от **guardar**). **Serve de documento** — «служит документом». **Até receber** — «пока не получите»."
+    },
+    {
+      "id": "aima-documentos-ex-06",
+      "topicId": "aima-documentos",
+      "type": "order-words",
+      "words": ["é", "documentos", "Que", "tenho", "que", "trazer?", "de"],
+      "answer": "Que documentos é que tenho de trazer?",
+      "ru": "Какие документы мне нужно принести?",
+      "explanation": "Типичный португальский вопрос с усилителем **é que**: **Que documentos é que…?** и **ter de + infinitivo**."
+    },
+    {
+      "id": "aima-documentos-ex-07",
+      "topicId": "aima-documentos",
+      "type": "translate-ru-pt",
+      "ru": "Я хотел бы продлить вид на жительство.",
+      "answer": [
+        "Queria renovar a minha autorização de residência.",
+        "Queria renovar a autorização de residência.",
+        "Queria renovar o meu título de residência.",
+        "Queria renovar o título de residência.",
+        "Gostava de renovar a minha autorização de residência.",
+        "Gostava de renovar a autorização de residência.",
+        "Gostava de renovar o meu título de residência.",
+        "Gostava de renovar o título de residência.",
+        "Queria pedir a renovação da autorização de residência.",
+        "Queria pedir a renovação do título de residência.",
+        "Gostava de pedir a renovação da autorização de residência."
+      ],
+      "explanation": "«Продлить» документ — **renovar**. **Autorização de residência** — само разрешение, **título de residência** — карточка; в разговоре их часто путают, понятно будет и так."
+    },
+    {
+      "id": "aima-documentos-ex-08",
+      "topicId": "aima-documentos",
+      "type": "choice",
+      "prompt": "A funcionária pergunta: «Ainda vai a tempo?» Isto quer dizer…",
+      "options": ["«Вы ещё идёте?»", "«Вы ещё успеваете (до срока)?»", "«Сколько времени вы здесь?»", "«Вы придёте вовремя?»"],
+      "correct": 1,
+      "explanation": "**Ir a tempo** — «успевать (до срока)»: **Ainda vou a tempo?** — «Я ещё успеваю?». **Chegar a horas** — прийти вовремя."
+    },
+    {
+      "id": "aima-documentos-ex-09",
+      "topicId": "aima-documentos",
+      "type": "fill-gap",
+      "prompt": "O cartão é enviado por ___ para a sua morada.",
+      "answer": ["correio"],
+      "hint": "почта",
+      "ru": "Карточку пришлют почтой на ваш адрес.",
+      "explanation": "**Por correio / pelo correio** — почтой. Сама почтовая служба в Португалии — **os CTT**."
+    },
+    {
+      "id": "aima-documentos-ex-10",
+      "topicId": "aima-documentos",
+      "type": "transform",
+      "prompt": "Dê-me o passaporte.",
+      "instruction": "Преврати приказ в вежливую просьбу-вопрос с Pode…? и se faz favor",
+      "answer": ["Pode dar-me o passaporte, se faz favor?", "Pode dar-me o passaporte, por favor?", "Pode-me dar o passaporte, se faz favor?", "Pode-me dar o passaporte, por favor?"],
+      "explanation": "**Pode + infinitivo?** — вежливая просьба. Клитика после инфинитива через дефис: **dar-me** (в разговоре и **Pode-me dar**), но не *Pode me dar* — это бразильский вариант."
+    }
+  ],
+  "writingTask": {
+    "prompt": "Ваш вид на жительство истекает через месяц, а записи в AIMA пока нет. Напишите письмо (email) в AIMA (6–10 строк): представьтесь и укажите номер дела; объясните, когда истекает ваш документ; попросите запись на продление; спросите, какие документы нужно принести; спросите, будет ли действителен старый документ, пока дело рассматривается.",
+    "sample": "Exmos. Senhores,\nO meu nome é Andrei Volkov e o meu número de processo é 123456/2024.\nO meu título de residência caduca no dia trinta de novembro.\nGostava de pedir um agendamento para a renovação da autorização de residência.\nPodiam informar-me que documentos é que tenho de levar?\nGostava também de saber se o título atual continua válido enquanto o pedido está em análise.\nAgradeço desde já a vossa atenção.\nCom os melhores cumprimentos,\nAndrei Volkov",
+    "checklist": [
+      "Официальное обращение и подпись: Exmos. Senhores… / Com os melhores cumprimentos",
+      "Указаны номер дела и дата истечения документа (caduca no dia…)",
+      "Есть просьба о записи: pedir um agendamento para a renovação",
+      "Просьбы смягчены: Gostava de…, Podiam informar-me…?",
+      "Клитики после глагола: informar-me, а не me informar"
+    ]
+  }
+}

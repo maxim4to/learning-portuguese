@@ -1,0 +1,437 @@
+{
+  "id": "a2-haver-ter-expressoes",
+  "level": "A2",
+  "module": "a2-frase",
+  "title": "Haver и ter: устойчивые выражения",
+  "titlePt": "Expressões com haver e ter",
+  "requires": [
+    "a1-ter-haver",
+    "a1-presente-irregulares"
+  ],
+  "theory": "## HÁ — «есть, имеется»\n\nВ значении «существует, есть» **haver** безличный: только 3-е лицо **единственного** числа, даже с множественным: **Há um café aqui perto? Há muitas pessoas na praia.**\n\n| время | форма | пример |\n|---|---|---|\n| presente | **há** | **Não há leite.** |\n| imperfeito (фон) | **havia** | **Havia muita gente.** |\n| perfeito (событие) | **houve** | **Houve um acidente.** |\n| futuro | **vai haver / haverá** | **Amanhã vai haver greve.** |\n\nВ pt-PT в этом значении не говорят *tem* (это бразильская норма).\n\n## HÁ — «назад» и «уже»\n\n- **há** + срок = «назад»: **Cheguei há uma hora.**\n- **há** + срок с настоящим = «уже (длится)»: **Moro cá há dois anos. Há quanto tempo esperas?**\n- Не путать: **há** (глагол) — **à** (предлог + артикль) — **a**: **há uma hora** (час назад), **à uma hora** (в час), **daqui a uma hora** (через час).\n\n## TER DE + инфинитив — «должен, надо»\n\n| ter | |\n|---|---|\n| eu | **tenho de** |\n| tu | **tens de** |\n| ele / você | **tem de** |\n| nós | **temos de** |\n| eles / vocês | **têm de** |\n\n**Tenho de ir. Tivemos de esperar.** Норма pt-PT — **ter de**; **ter que** встречается в разговоре, но **ter de** — предпочтительно. Безличное «нужно» — **há que** + инф.: **Há que ter paciência.**\n\n## TER + существительное: ощущения и состояния\n\nТам, где по-русски «мне холодно» или «я голоден», в португальском — **ter** + существительное:\n\n| выражение | перевод |\n|---|---|\n| **ter fome / sede** | быть голодным / хотеть пить |\n| **ter frio / calor** | мёрзнуть / испытывать жару |\n| **ter sono** | хотеть спать |\n| **ter medo (de)** | бояться |\n| **ter pressa** | спешить |\n| **ter razão** | быть правым |\n| **ter sorte** | везти |\n| **ter saudades (de)** | скучать |\n| **ter vontade de** | хотеть, иметь желание |\n| **ter cuidado (com)** | быть осторожным |\n\nУсиление — **muito / muita** по роду существительного: **muita fome, muita sede, muitas saudades**, но **muito frio, muito sono, muito medo**. Возраст: **Tenho 30 anos.**\n\n## Устойчивые выражения\n\n- **Não há de quê.** — Не за что (на «obrigado»).\n- **Não há problema.** — Без проблем.\n- **Não faz mal.** — Ничего страшного.\n- **O que é que tens?** — Что с тобой?\n\n## HAVER DE + инфинитив — «обязательно, когда-нибудь да»\n\n| eu | tu | ele | nós | eles |\n|---|---|---|---|---|\n| **hei de** | **hás de** | **há de** | **havemos de** | **hão de** |\n\nТвёрдое намерение или уверенность в будущем: **Hei de ir ao Japão.** — Я обязательно съезжу в Японию. **Isso há de passar.** — Это пройдёт. По Acordo Ortográfico пишется **без дефиса**: **hei de** (раньше *hei-de*). Очень живая форма в Португалии.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Há** um café aqui? | **Tem** um café aqui? | «есть» в pt-PT — только há |\n| **há** dois anos | **faz** dois anos / dois anos atrás | |\n| **Tenho de** ir. | **Tenho que** ir. | ter de — норма pt-PT |\n| **Hei de** ir. | Vou ir. | haver de в Бразилии редок |\n| **Tenho fome.** | **Estou com fome.** | estar com встречается и в pt-PT, но ter — основной вариант |\n| **Não há de quê.** | De nada. / Imagina! | **De nada** нормально и в pt-PT |",
+  "commonErrors": "- **«Есть» через ter**: *Tem muitos turistas em Lisboa* ✗ → **Há muitos turistas em Lisboa** ✓.\n- **Множественное у há**: *Hão muitas pessoas* ✗ → **Há muitas pessoas** ✓.\n- **«Я голоден» по-русски**: *Estou fome*, *Sou faminto* ✗ → **Tenho fome** ✓; «мне холодно» → **Tenho frio** ✓ (а **Está frio** — «на улице холодно»).\n- **Род при усилении**: *Tenho muito fome* ✗ → **Tenho muita fome** ✓; *muita frio* ✗ → **muito frio** ✓.\n- **«Ты прав»**: *Estás certo* возможно, но звучит калькой с русского/английского; самое естественное — **Tens razão** ✓.\n- **Бразильское faz**: *Faz um ano que moro aqui* ✗ → **Há um ano que moro aqui** ✓.\n- **há / à**: *Cheguei à uma hora* — «в час», а «час назад» → **Cheguei há uma hora** ✓.\n- **Старая орфография**: *hei-de* ✗ → **hei de** ✓.",
+  "examples": [
+    {
+      "pt": "Há uma farmácia aqui perto?",
+      "ru": "Здесь поблизости есть аптека?",
+      "audio": true
+    },
+    {
+      "pt": "Tenho de renovar o cartão de cidadão este mês.",
+      "ru": "В этом месяце мне нужно продлить удостоверение личности.",
+      "audio": true
+    },
+    {
+      "pt": "Fecha a janela, por favor, tenho muito frio.",
+      "ru": "Закрой окно, пожалуйста, мне очень холодно.",
+      "audio": true
+    },
+    {
+      "pt": "Tenho tantas saudades do mar!",
+      "ru": "Я так скучаю по морю!",
+      "audio": true
+    },
+    {
+      "pt": "— Muito obrigado! — Não há de quê.",
+      "ru": "— Большое спасибо! — Не за что.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-haver-ter-expressoes-ex-01",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "match",
+      "prompt": "Соедините выражение с переводом.",
+      "pairs": [
+        {
+          "left": "ter fome",
+          "right": "быть голодным"
+        },
+        {
+          "left": "ter sede",
+          "right": "хотеть пить"
+        },
+        {
+          "left": "ter sono",
+          "right": "хотеть спать"
+        },
+        {
+          "left": "ter pressa",
+          "right": "спешить"
+        },
+        {
+          "left": "ter razão",
+          "right": "быть правым"
+        },
+        {
+          "left": "ter saudades",
+          "right": "скучать"
+        }
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-02",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "___ uma farmácia aqui perto?",
+      "answer": [
+        "há"
+      ],
+      "ru": "Здесь поблизости есть аптека?"
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-03",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Ontem ___ (haver) um acidente na autoestrada.",
+      "answer": [
+        "houve"
+      ],
+      "ru": "Вчера на трассе произошла авария.",
+      "explanation": "Однократное событие в прошлом — houve."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-04",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Moro em Lisboa ___ três anos.",
+      "answer": [
+        "há"
+      ],
+      "ru": "Я живу в Лиссабоне уже три года."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-05",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Amanhã ___ (ter) de acordar cedo.",
+      "answer": [
+        "tenho"
+      ],
+      "ru": "Завтра мне нужно рано встать."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-06",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Fecha a janela, por favor: ___ (ter) frio.",
+      "answer": [
+        "tenho"
+      ],
+      "ru": "Закрой окно, пожалуйста: мне холодно."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-07",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Tenho ___ fome!",
+      "answer": [
+        "muita"
+      ],
+      "hint": "очень",
+      "ru": "Я очень голоден!",
+      "explanation": "fome — женского рода: muita fome."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-08",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "— Obrigado! — Não há ___ quê.",
+      "answer": [
+        "de"
+      ],
+      "ru": "— Спасибо! — Не за что."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-09",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Um dia ___ (haver de, eu) visitar os Açores.",
+      "answer": [
+        "hei de"
+      ],
+      "ru": "Однажды я обязательно побываю на Азорах.",
+      "explanation": "По AO90 — без дефиса: hei de."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-10",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "Выберите вариант pt-PT:",
+      "options": [
+        "Tem muitas pessoas na praia.",
+        "Têm muitas pessoas na praia.",
+        "Há muitas pessoas na praia.",
+        "Hão muitas pessoas na praia."
+      ],
+      "correct": 2,
+      "explanation": "«Есть, имеется» — безличное há, всегда в ед. ч."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-11",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "«Ты прав.»",
+      "options": [
+        "Tens razão.",
+        "Estás razão.",
+        "És razão.",
+        "Tens a razão."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-12",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "Estou à tua espera ___ meia hora!",
+      "options": [
+        "a",
+        "à",
+        "há",
+        "em"
+      ],
+      "correct": 2,
+      "explanation": "«Уже полчаса» — há + срок."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-13",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "«Я скучаю по тебе.»",
+      "options": [
+        "Estou saudades de ti.",
+        "Sinto falta você.",
+        "Tenho saudade a ti.",
+        "Tenho saudades tuas."
+      ],
+      "correct": 3,
+      "explanation": "В pt-PT обычно во мн. ч.: ter saudades tuas / de ti."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-14",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "«Мне нужно идти.» (норма pt-PT)",
+      "options": [
+        "Tenho que de ir.",
+        "Tenho de ir.",
+        "Tenho ir.",
+        "Há de ir."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-15",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "transform",
+      "prompt": "Devo trabalhar amanhã.",
+      "instruction": "Замените dever на ter de.",
+      "answer": [
+        "Tenho de trabalhar amanhã.",
+        "Amanhã tenho de trabalhar.",
+        "Eu tenho de trabalhar amanhã."
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-16",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "transform",
+      "prompt": "Vou visitar a minha avó, sem falta.",
+      "instruction": "Выразите твёрдое намерение через haver de (без «sem falta»).",
+      "answer": [
+        "Hei de visitar a minha avó.",
+        "Eu hei de visitar a minha avó."
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-17",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "transform",
+      "prompt": "Estou com fome.",
+      "instruction": "Перепишите через ter (основной вариант в pt-PT).",
+      "answer": [
+        "Tenho fome.",
+        "Eu tenho fome."
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-18",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "order-words",
+      "words": [
+        "quanto",
+        "Há",
+        "tempo",
+        "moras",
+        "cá?"
+      ],
+      "answer": "Há quanto tempo moras cá?"
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-19",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "order-words",
+      "words": [
+        "cuidado",
+        "Tem",
+        "com",
+        "o",
+        "cão"
+      ],
+      "answer": "Tem cuidado com o cão"
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-20",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "translate-ru-pt",
+      "ru": "В холодильнике нет молока.",
+      "answer": [
+        "Não há leite no frigorífico.",
+        "No frigorífico não há leite."
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-21",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "translate-ru-pt",
+      "ru": "Я очень хочу спать.",
+      "answer": [
+        "Tenho muito sono.",
+        "Eu tenho muito sono.",
+        "Tenho imenso sono.",
+        "Estou cheio de sono.",
+        "Estou cheia de sono."
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-ex-22",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "listen-type",
+      "text": "Não há de quê, foi um prazer.",
+      "answer": [
+        "Não há de quê, foi um prazer."
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-haver-ter-expressoes-mt-01",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "___ quanto tempo estudas português?",
+      "answer": [
+        "há"
+      ],
+      "ru": "Сколько ты уже учишь португальский?"
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-02",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Abre a janela, ___ (ter) muito calor.",
+      "answer": [
+        "tenho"
+      ],
+      "ru": "Открой окно, мне очень жарко."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-03",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Amanhã ___ (haver) greve dos comboios.",
+      "answer": [
+        "vai haver",
+        "haverá"
+      ],
+      "hint": "будущее время",
+      "ru": "Завтра будет забастовка на железной дороге."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-04",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "fill-gap",
+      "prompt": "Eles ___ (ter) de pagar a renda até dia 8.",
+      "answer": [
+        "têm"
+      ],
+      "ru": "Они должны заплатить за аренду до 8-го числа.",
+      "explanation": "têm (мн. ч.) — с циркумфлексом."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-05",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "«Не за что.» (pt-PT)",
+      "options": [
+        "Imagina!",
+        "Não há de quê.",
+        "Por nada de quê.",
+        "Não tem nada."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-06",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "Tenho ___ medo de cães.",
+      "options": [
+        "muito",
+        "muita",
+        "muitos",
+        "muitas"
+      ],
+      "correct": 0,
+      "explanation": "medo — мужского рода: muito medo."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-07",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "choice",
+      "prompt": "Выберите правильный вариант:",
+      "options": [
+        "Ele há-de chegar amanhã.",
+        "Ele hão de chegar amanhã.",
+        "Ele há de chegando amanhã.",
+        "Ele há de chegar amanhã."
+      ],
+      "correct": 3,
+      "explanation": "По AO90 — без дефиса; после haver de — инфинитив."
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-08",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "transform",
+      "prompt": "Faz dois anos que moro no Porto.",
+      "instruction": "Перепишите на pt-PT: замените бразильское faz.",
+      "answer": [
+        "Há dois anos que moro no Porto.",
+        "Moro no Porto há dois anos."
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-09",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "translate-ru-pt",
+      "ru": "Я голоден и хочу пить.",
+      "answer": [
+        "Tenho fome e sede.",
+        "Tenho fome e tenho sede.",
+        "Eu tenho fome e sede.",
+        "Eu tenho fome e tenho sede."
+      ]
+    },
+    {
+      "id": "a2-haver-ter-expressoes-mt-10",
+      "topicId": "a2-haver-ter-expressoes",
+      "type": "listen-type",
+      "text": "Um dia hei de voltar a Portugal.",
+      "answer": [
+        "Um dia hei de voltar a Portugal."
+      ]
+    }
+  ]
+}

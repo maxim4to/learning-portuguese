@@ -1,0 +1,428 @@
+{
+  "id": "b1-presente-conjuntivo",
+  "level": "B1",
+  "module": "b1-conjuntivo",
+  "title": "Настоящее время сослагательного наклонения",
+  "titlePt": "Presente do conjuntivo",
+  "requires": [
+    "a1-presente-irregulares",
+    "a2-imperativo"
+  ],
+  "theory": "## Что это такое\n\n**Conjuntivo** — наклонение «нереальности»: желания, сомнения, эмоции, оценки. В русском похожую роль играет «чтобы» + прошедшее время: *Хочу, чтобы ты пришёл* → **Quero que venhas.**\n\n## Образование\n\nБерём форму **eu** настоящего времени, отбрасываем **-o** и добавляем «противоположную» гласную: у глаголов на **-ar** → **-e**, на **-er/-ir** → **-a**.\n\n| | falar (falo) | comer (como) | partir (parto) |\n|---|---|---|---|\n| eu | fal**e** | com**a** | part**a** |\n| tu | fal**es** | com**as** | part**as** |\n| ele / você | fal**e** | com**a** | part**a** |\n| nós | fal**emos** | com**amos** | part**amos** |\n| eles / vocês | fal**em** | com**am** | part**am** |\n\nНеправильная форма **eu** «переезжает» во все лица: fazer (faço) → **faça**; dizer (digo) → **diga**; ter (tenho) → **tenha**; vir (venho) → **venha**; pôr (ponho) → **ponha**; poder (posso) → **possa**; ver (vejo) → **veja**; ouvir (ouço) → **ouça**; pedir (peço) → **peça**; trazer (trago) → **traga**; perder (perco) → **perca**.\n\nОрфография: chegar → **chegue**, ficar → **fique**, começar → **comece**, proteger → **proteja**.\n\n## Шесть «настоящих» неправильных\n\n| | ser | estar | ir | dar | saber | querer |\n|---|---|---|---|---|---|---|\n| eu | seja | esteja | vá | dê | saiba | queira |\n| tu | sejas | estejas | vás | dês | saibas | queiras |\n| ele | seja | esteja | vá | dê | saiba | queira |\n| nós | sejamos | estejamos | vamos | demos | saibamos | queiramos |\n| eles | sejam | estejam | vão | deem | saibam | queiram |\n\nТакже **haver → haja** (**Que haja paz!**).\n\n## Когда употребляется\n\n| после чего | примеры |\n|---|---|\n| желание, просьба, совет | querer que, esperar que, preferir que, pedir que, aconselhar que |\n| эмоция | gostar que, ter medo que, ficar contente que, é pena que |\n| сомнение, отрицание | duvidar que, não acreditar que, não achar que, não ter a certeza de que |\n| безличные оценки | é importante / possível / preciso / melhor / normal que |\n| talvez, oxalá, que (пожелание) | **Talvez chova.** **Oxalá corra bem!** **Que sejas feliz!** |\n\n## Когда НЕ употребляется\n\n1. **Утверждение и мнение** → индикатив: **Acho que ele tem razão. É verdade que ela vem. Tenho a certeza de que sabes.** Сравните: **Não acho que ele tenha razão.**\n2. **Одно и то же подлежащее** → инфинитив: **Quero sair** (я хочу, я выйду) — но **Quero que saias** (я хочу, ты выйдешь).\n3. **Talvez после глагола** → индикатив: **Ele vem, talvez.**\n\nОтрицательный императив и вежливый императив — это тоже формы conjuntivo: **Não fales!** **Fale mais devagar, por favor.**",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| Espero que **estejas** bem. | Espero que **você esteja** bem. | tu + 2-е лицо |\n| **Não faças** isso! | **Não faz** isso! (разг.) | в pt-PT отрицательный императив — только conjuntivo |\n| **Oxalá** corra bem! | **Tomara que** dê certo! | *oxalá* в pt-PT очень частотно |\n| que nós **demos** / **dêmos** | que nós **demos** | в pt-PT по AO 1990 допускается акцент *dêmos* для отличия от прошедшего |\n\nСами формы conjuntivo в двух нормах совпадают; разница — в выборе лица (tu/você) и в разговорной бразильской замене conjuntivo индикативом.",
+  "commonErrors": "- **Индикатив после желания**: *Quero que tu vens* ✗ → **Quero que venhas** ✓.\n- **Conjuntivo при одном подлежащем**: *Quero que eu vá* ✗ → **Quero ir** ✓.\n- **Conjuntivo после утвердительного achar**: *Acho que seja boa ideia* ✗ → **Acho que é boa ideia** ✓.\n- **Просторечные формы**: *seje, esteje* ✗ → **seja, esteja** ✓ (встречается и у носителей, но это ошибка).\n- **Неправильная основа**: *faza, diza, poda* ✗ → **faça, diga, possa** (основа — от формы eu).\n- **Русское «чтобы» → para**: *Peço para que me ajudes* — избыточно; обычно **Peço-te que me ajudes** или **Peço-te para me ajudares**.\n- **Talvez + индикатив** перед глаголом: *Talvez ele vem* ✗ → **Talvez ele venha** ✓.",
+  "examples": [
+    {
+      "pt": "Espero que estejas melhor.",
+      "ru": "Надеюсь, тебе лучше.",
+      "audio": true
+    },
+    {
+      "pt": "Quero que venhas jantar connosco no sábado.",
+      "ru": "Я хочу, чтобы ты пришёл поужинать с нами в субботу.",
+      "audio": true
+    },
+    {
+      "pt": "É importante que tragam o cartão de cidadão.",
+      "ru": "Важно, чтобы вы принесли удостоверение личности.",
+      "audio": true
+    },
+    {
+      "pt": "Talvez chova amanhã, leva o guarda-chuva.",
+      "ru": "Завтра, возможно, будет дождь — возьми зонт.",
+      "audio": true
+    },
+    {
+      "pt": "Não acho que seja boa ideia.",
+      "ru": "Не думаю, что это хорошая идея.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-presente-conjuntivo-ex-01",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Quero que tu ___ (falar) com o senhorio.",
+      "answer": [
+        "fales"
+      ],
+      "ru": "Я хочу, чтобы ты поговорил с арендодателем."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-02",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "É preciso que nós ___ (chegar) cedo.",
+      "answer": [
+        "cheguemos"
+      ],
+      "hint": "g → gu перед e",
+      "ru": "Нужно, чтобы мы пришли рано."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-03",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Espero que vocês ___ (gostar) do jantar.",
+      "answer": [
+        "gostem"
+      ],
+      "ru": "Надеюсь, вам понравится ужин."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-04",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Peço-lhe que ___ (fazer) o favor de esperar.",
+      "answer": [
+        "faça"
+      ],
+      "ru": "Прошу вас подождать."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-05",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Talvez ela ___ (ter) razão.",
+      "answer": [
+        "tenha"
+      ],
+      "ru": "Возможно, она права."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-06",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Duvido que eles ___ (saber) a morada.",
+      "answer": [
+        "saibam"
+      ],
+      "ru": "Сомневаюсь, что они знают адрес."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-07",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "É pena que não ___ (poder) vir, Ana.",
+      "answer": [
+        "possas"
+      ],
+      "ru": "Жаль, что ты не можешь прийти, Ана."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-08",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Oxalá ___ (estar) bom tempo no fim de semana!",
+      "answer": [
+        "esteja"
+      ],
+      "ru": "Хоть бы на выходных была хорошая погода!"
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-09",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "Acho que o comboio ___ atrasado.",
+      "options": [
+        "esteje",
+        "esteja",
+        "está",
+        "estar"
+      ],
+      "correct": 2,
+      "explanation": "Утвердительное achar que выражает мнение → индикатив."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-10",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "Não acho que o comboio ___ atrasado.",
+      "options": [
+        "estará",
+        "estiver",
+        "está",
+        "esteja"
+      ],
+      "correct": 3,
+      "explanation": "Отрицание мнения → conjuntivo."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-11",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "Quero ___ mais cedo hoje.",
+      "options": [
+        "sair",
+        "que saio",
+        "saia",
+        "que eu saia"
+      ],
+      "correct": 0,
+      "explanation": "Одно подлежащее (я хочу — я выйду) → инфинитив. *Quero que eu saia* — ошибка."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-12",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "A médica aconselha que eu ___ mais água.",
+      "options": [
+        "bebo",
+        "bebe",
+        "beba",
+        "beber"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-13",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "— Vou fazer o exame amanhã. — Que ___ bem!",
+      "options": [
+        "corrija",
+        "corre",
+        "corra",
+        "correr"
+      ],
+      "correct": 2,
+      "explanation": "Que + conjuntivo — пожелание."
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-14",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "transform",
+      "prompt": "Tu vens à festa.",
+      "instruction": "Начните с «Espero que...».",
+      "answer": [
+        "Espero que venhas à festa.",
+        "Espero que tu venhas à festa."
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-15",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "transform",
+      "prompt": "Eles são felizes.",
+      "instruction": "Начните с «Desejo que...».",
+      "answer": [
+        "Desejo que eles sejam felizes.",
+        "Desejo que sejam felizes."
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-16",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "transform",
+      "prompt": "Ela vai ao médico.",
+      "instruction": "Начните с «É melhor que...».",
+      "answer": [
+        "É melhor que ela vá ao médico.",
+        "É melhor que vá ao médico."
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-17",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "order-words",
+      "words": [
+        "que",
+        "É",
+        "possível",
+        "chova",
+        "amanhã"
+      ],
+      "answer": "É possível que chova amanhã"
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-18",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "order-words",
+      "words": [
+        "Não",
+        "quero",
+        "te",
+        "preocupes",
+        "que"
+      ],
+      "answer": "Não quero que te preocupes"
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-19",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "translate-ru-pt",
+      "ru": "Я хочу, чтобы ты мне помог.",
+      "answer": [
+        "Quero que me ajudes.",
+        "Eu quero que me ajudes.",
+        "Quero que tu me ajudes."
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-20",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "translate-ru-pt",
+      "ru": "Не говори ему ничего!",
+      "answer": [
+        "Não lhe digas nada!",
+        "Não lhe contes nada!"
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-21",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "listen-type",
+      "text": "É importante que saibas isto.",
+      "answer": [
+        "É importante que saibas isto."
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-ex-22",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой presente do conjuntivo (eu).",
+      "pairs": [
+        {
+          "left": "ser",
+          "right": "seja"
+        },
+        {
+          "left": "ir",
+          "right": "vá"
+        },
+        {
+          "left": "dar",
+          "right": "dê"
+        },
+        {
+          "left": "saber",
+          "right": "saiba"
+        },
+        {
+          "left": "querer",
+          "right": "queira"
+        },
+        {
+          "left": "haver",
+          "right": "haja"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "b1-presente-conjuntivo-mt-01",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Espero que tu ___ (ter) um bom dia.",
+      "answer": [
+        "tenhas"
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-02",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "É possível que eles ___ (vir) amanhã.",
+      "answer": [
+        "venham"
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-03",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Prefiro que vocês ___ (ficar) em casa.",
+      "answer": [
+        "fiquem"
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-04",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "fill-gap",
+      "prompt": "Não acredito que ele ___ (dizer) a verdade.",
+      "answer": [
+        "diga"
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-05",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "Tenho a certeza de que ela ___ a resposta.",
+      "options": [
+        "souber",
+        "saiba",
+        "sabe",
+        "saber"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-06",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "Ela quer que nós ___ mais cedo.",
+      "options": [
+        "chegámos",
+        "chegar",
+        "chegamos",
+        "cheguemos"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-07",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "choice",
+      "prompt": "Выберите правильную форму:",
+      "options": [
+        "Espero que está tudo bem.",
+        "Espero que esteja tudo bem.",
+        "Espero que estiver tudo bem.",
+        "Espero que esteje tudo bem."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-08",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "transform",
+      "prompt": "Tu pões o casaco.",
+      "instruction": "Начните с «É melhor que...».",
+      "answer": [
+        "É melhor que ponhas o casaco.",
+        "É melhor que tu ponhas o casaco."
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-09",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "translate-ru-pt",
+      "ru": "Возможно, он не знает.",
+      "answer": [
+        "Talvez ele não saiba.",
+        "Talvez não saiba.",
+        "Pode ser que ele não saiba.",
+        "Se calhar ele não sabe.",
+        "Se calhar não sabe."
+      ]
+    },
+    {
+      "id": "b1-presente-conjuntivo-mt-10",
+      "topicId": "b1-presente-conjuntivo",
+      "type": "listen-choice",
+      "text": "Quero que vás comigo.",
+      "options": [
+        "Ты хочешь пойти со мной.",
+        "Я пойду с тобой.",
+        "Я хочу, чтобы ты пошёл со мной.",
+        "Я хочу пойти с тобой."
+      ],
+      "correct": 2
+    }
+  ]
+}

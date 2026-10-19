@@ -1,0 +1,464 @@
+{
+  "id": "a2-preterito-imperfeito",
+  "level": "A2",
+  "module": "a2-passado",
+  "title": "Прошедшее несовершенное (pretérito imperfeito)",
+  "titlePt": "Pretérito imperfeito do indicativo",
+  "requires": [
+    "a1-presente-indicativo-regulares",
+    "a1-presente-irregulares"
+  ],
+  "theory": "## Значение\n\n**Pretérito imperfeito** — прошедшее время для **процесса, фона и привычки**. По-русски обычно соответствует несовершенному виду: *жил, работал, бывало, ходил (регулярно)*.\n\n| употребление | пример |\n|---|---|\n| привычка в прошлом | **Dantes ia ao ginásio todos os dias.** — Раньше я каждый день ходил в спортзал. |\n| описание, фон | **Era uma noite fria e chovia.** — Была холодная ночь, шёл дождь. |\n| время, возраст | **Eram oito horas. Tinha dez anos.** — Было восемь часов. Мне было десять лет. |\n| процесс в момент прошлого | **Estava a jantar quando ligaste.** — Я ужинал, когда ты позвонил. |\n| одновременные действия | **Enquanto ele cozinhava, ela punha a mesa.** |\n| вежливая просьба | **Queria um galão, se faz favor. Podia ajudar-me?** |\n\n## Правильные глаголы\n\n| | falar | comer | partir |\n|---|---|---|---|\n| eu | fal**ava** | com**ia** | part**ia** |\n| tu | fal**avas** | com**ias** | part**ias** |\n| ele / você | fal**ava** | com**ia** | part**ia** |\n| nós | fal**ávamos** | com**íamos** | part**íamos** |\n| eles / vocês | fal**avam** | com**iam** | part**iam** |\n\nФормы **eu** и **ele** совпадают — подлежащее понятно из контекста или его добавляют: **Eu trabalhava, ele estudava.** В форме **nós** обязательно ударение: **falávamos, comíamos**.\n\nГлагол **ir** образуется по схеме -er/-ir: **ia, ias, ia, íamos, iam**. **Estar** правильный: **estava, estavas, estava, estávamos, estavam**.\n\n## Всего четыре неправильных глагола\n\n| | ser | ter | vir | pôr |\n|---|---|---|---|---|\n| eu | era | tinha | vinha | punha |\n| tu | eras | tinhas | vinhas | punhas |\n| ele / você | era | tinha | vinha | punha |\n| nós | **éramos** | **tínhamos** | **vínhamos** | **púnhamos** |\n| eles / vocês | eram | tinham | vinham | punham |\n\nПроизводные спрягаются так же: **manter → mantinha, propor → propunha, convir → convinha**.\n\n## Процесс: estava a + инфинитив\n\nДействие, которое *шло* в определённый момент, в pt-PT выражается через **estar a + infinitivo** в imperfeito: **Às nove ainda estávamos a trabalhar.** — В девять мы ещё работали. Простое **trabalhávamos** тоже возможно, но **estava a** подчёркивает процесс.\n\n## Маркеры\n\n**dantes, antigamente** (раньше), **quando era pequeno / em criança** (в детстве), **todos os dias, sempre, normalmente, muitas vezes, às vezes, enquanto** (пока, в то время как).\n\n## Вежливость и «условное» значение\n\nВ Португалии imperfeito постоянно звучит вместо условного наклонения: **Queria** (хотел бы), **Podia** (не могли бы), **Gostava de** (хотел бы). В разговоре: **Se tivesse tempo, ia contigo.** — Если бы было время, я бы пошёл с тобой.\n\nО выборе между **fiz** и **fazia** в рассказе — в теме «Perfeito или imperfeito».",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **Estava a ler** quando ligaste. | Estava lendo quando você ligou. | процесс в прошлом: в pt-PT — estar a + inf |\n| **Podia ajudar-me?** | Poderia me ajudar? | в pt-PT вежливая просьба чаще в imperfeito |\n| Se pudesse, **ia**. | Se pudesse, iria. | в разговорном pt-PT imperfeito заменяет condicional |\n| **Dantes** morava em Braga. | Antigamente morava em Belo Horizonte. | **dantes** — характерно для Португалии (antigamente есть в обеих нормах) |\n\nОкончания imperfeito в обеих нормах одинаковы; отличаются конструкции вокруг него.",
+  "commonErrors": "- **Однократный глагол вместо привычки**: *Em criança fui à praia todos os dias* ✗ → **Em criança ia à praia todos os dias** ✓ (повторялось регулярно).\n- **Русское «был» всегда как foi**: *Foi uma noite fria e chovia* ✗ (при описании фона) → **Era uma noite fria** ✓; возраст и время — тоже imperfeito: **Tinha vinte anos, eram duas horas**.\n- **Нет ударения**: *falavamos, tinhamos, eramos* ✗ → **falávamos, tínhamos, éramos** ✓.\n- **Неправильный pôr**: *ponhava, pônhamos* ✗ → **punha, púnhamos** ✓.\n- **Путаница tive / tinha**: *Quando tive dez anos...* ✗ → **Quando tinha dez anos...** ✓.\n- **Герундий из бразильских материалов**: *Estava trabalhando* ✗ → **Estava a trabalhar** ✓.\n- **Слишком прямая просьба**: *Quero um café* звучит резко → **Queria um café, se faz favor** ✓.",
+  "examples": [
+    {
+      "pt": "Quando era pequeno, passava as férias em casa dos meus avós.",
+      "ru": "Когда я был маленьким, я проводил каникулы у бабушки с дедушкой.",
+      "audio": true
+    },
+    {
+      "pt": "Dantes apanhava o autocarro, agora vou de metro.",
+      "ru": "Раньше я ездил на автобусе, а теперь езжу на метро.",
+      "audio": true
+    },
+    {
+      "pt": "Eram nove horas e ainda estávamos a trabalhar.",
+      "ru": "Было девять часов, а мы всё ещё работали.",
+      "audio": true
+    },
+    {
+      "pt": "Enquanto a Inês cozinhava, o Rui punha a mesa.",
+      "ru": "Пока Инеш готовила, Руй накрывал на стол.",
+      "audio": true
+    },
+    {
+      "pt": "Queria uma bica e um pastel de nata, se faz favor.",
+      "ru": "Мне, пожалуйста, эспрессо и пастел-де-ната.",
+      "audio": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-preterito-imperfeito-ex-01",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Quando eu era pequeno, ___ (morar) em Coimbra.",
+      "answer": [
+        "morava"
+      ],
+      "ru": "Когда я был маленьким, я жил в Коимбре."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-02",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Nós ___ (jantar) sempre às oito.",
+      "answer": [
+        "jantávamos"
+      ],
+      "hint": "nós: ударение на -ávamos",
+      "ru": "Мы всегда ужинали в восемь.",
+      "explanation": "Привычка в прошлом → imperfeito; в форме nós пишется ударение: jantávamos."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-03",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Antigamente tu ___ (beber) muito café.",
+      "answer": [
+        "bebias"
+      ],
+      "ru": "Раньше ты пил много кофе."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-04",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Quando eu era pequeno, a minha avó ___ (ser) professora primária.",
+      "answer": [
+        "era"
+      ],
+      "ru": "Когда я был маленьким, моя бабушка была учительницей начальных классов.",
+      "explanation": "Описание человека в прошлом — ser в imperfeito: era."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-05",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Quando éramos estudantes, ___ (ter) pouco dinheiro.",
+      "answer": [
+        "tínhamos"
+      ],
+      "ru": "Когда мы были студентами, у нас было мало денег.",
+      "explanation": "ter → tínhamos (с ударением)."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-06",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Os meus primos ___ (vir) cá todos os verões.",
+      "answer": [
+        "vinham"
+      ],
+      "ru": "Мои двоюродные братья приезжали сюда каждое лето.",
+      "explanation": "vir — один из четырёх неправильных: vinha, vinhas, vinha, vínhamos, vinham."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-07",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "O meu pai ___ (pôr) sempre muito açúcar no café.",
+      "answer": [
+        "punha"
+      ],
+      "ru": "Мой отец всегда клал много сахара в кофе.",
+      "explanation": "pôr → punha (не *ponhava*)."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-08",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Eu ___ (estar) a ler quando a Inês ligou.",
+      "answer": [
+        "estava"
+      ],
+      "ru": "Я читал, когда позвонила Инеш.",
+      "explanation": "Процесс в момент прошлого: estava a + инфинитив."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-09",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "choice",
+      "prompt": "Quando tinha dez anos, ___ futebol todos os sábados.",
+      "options": [
+        "joguei",
+        "jogava",
+        "tenho jogado",
+        "jogo"
+      ],
+      "correct": 1,
+      "explanation": "Регулярное действие в прошлом (todos os sábados) → imperfeito."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-10",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "choice",
+      "prompt": "___ uma noite fria e chovia muito.",
+      "options": [
+        "Foi",
+        "Esteve",
+        "Era",
+        "Estava"
+      ],
+      "correct": 2,
+      "explanation": "Описание обстановки — ser в imperfeito: Era uma noite..."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-11",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "choice",
+      "prompt": "Às sete da manhã eu ainda ___ .",
+      "options": [
+        "dormi",
+        "estava dormindo",
+        "durmo",
+        "estava a dormir"
+      ],
+      "correct": 3,
+      "explanation": "Процесс в момент прошлого; в pt-PT — estar a + инфинитив, без герундия."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-12",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "choice",
+      "prompt": "Ao balcão do café: «___ um galão, se faz favor.»",
+      "options": [
+        "Queria",
+        "Quis",
+        "Quisesse",
+        "Quererei"
+      ],
+      "correct": 0,
+      "explanation": "Вежливая просьба в Португалии — imperfeito: Queria..."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-13",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "transform",
+      "prompt": "Vou ao ginásio todos os dias.",
+      "instruction": "Расскажите, что так было раньше: поставьте глагол в imperfeito.",
+      "answer": [
+        "Ia ao ginásio todos os dias.",
+        "Eu ia ao ginásio todos os dias."
+      ],
+      "explanation": "ir → ia (eu)."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-14",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "transform",
+      "prompt": "Nós somos vizinhos.",
+      "instruction": "Поставьте глагол в imperfeito.",
+      "answer": [
+        "Nós éramos vizinhos.",
+        "Éramos vizinhos."
+      ]
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-15",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "transform",
+      "prompt": "Eles estão a ver televisão.",
+      "instruction": "Поставьте в прошедшее время (процесс).",
+      "answer": [
+        "Eles estavam a ver televisão.",
+        "Estavam a ver televisão."
+      ],
+      "explanation": "estar a + инфинитив: меняется только форма estar."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-16",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "order-words",
+      "words": [
+        "eu",
+        "Quando",
+        "pequeno,",
+        "era",
+        "medo",
+        "do",
+        "tinha",
+        "escuro"
+      ],
+      "answer": "Quando eu era pequeno, tinha medo do escuro",
+      "explanation": "Возраст и состояние в прошлом — imperfeito: era, tinha."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-17",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "order-words",
+      "words": [
+        "a",
+        "Enquanto",
+        "ele",
+        "cozinhava,",
+        "ela",
+        "punha",
+        "mesa"
+      ],
+      "answer": "Enquanto ele cozinhava, ela punha a mesa",
+      "explanation": "Два одновременных процесса — оба в imperfeito."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-18",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "translate-ru-pt",
+      "ru": "Раньше я жил в Москве.",
+      "answer": [
+        "Antes morava em Moscovo.",
+        "Antes vivia em Moscovo.",
+        "Antes eu morava em Moscovo.",
+        "Antes eu vivia em Moscovo.",
+        "Dantes morava em Moscovo.",
+        "Dantes vivia em Moscovo.",
+        "Dantes eu morava em Moscovo.",
+        "Dantes eu vivia em Moscovo.",
+        "Antigamente morava em Moscovo.",
+        "Antigamente vivia em Moscovo.",
+        "Antigamente eu morava em Moscovo.",
+        "Antigamente eu vivia em Moscovo."
+      ],
+      "explanation": "Прошлое состояние, которое уже не актуально: dantes / antes / antigamente + imperfeito."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-19",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "translate-ru-pt",
+      "ru": "Вы не могли бы мне помочь? (вежливо)",
+      "answer": [
+        "Podia ajudar-me?",
+        "Podia-me ajudar?",
+        "O senhor podia ajudar-me?",
+        "A senhora podia ajudar-me?",
+        "Podia ajudar-me, por favor?",
+        "Podia ajudar-me, se faz favor?",
+        "O senhor podia-me ajudar?",
+        "Podia-me ajudar, por favor?"
+      ],
+      "explanation": "В pt-PT вежливая просьба — Podia...? (imperfeito вместо condicional)."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-20",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "listen-type",
+      "text": "Era tarde e estava a chover.",
+      "answer": [
+        "Era tarde e estava a chover."
+      ]
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-21",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "listen-choice",
+      "text": "Dantes íamos à praia todos os domingos.",
+      "options": [
+        "В прошлое воскресенье мы ходили на пляж.",
+        "Раньше мы ходили на пляж каждое воскресенье.",
+        "Мы пойдём на пляж в воскресенье.",
+        "Раньше они ходили на пляж каждое воскресенье."
+      ],
+      "correct": 1,
+      "explanation": "íamos — nós от ir в imperfeito; dantes = раньше."
+    },
+    {
+      "id": "a2-preterito-imperfeito-ex-22",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "match",
+      "prompt": "Соедините инфинитив с формой «eu» в imperfeito.",
+      "pairs": [
+        {
+          "left": "ser",
+          "right": "era"
+        },
+        {
+          "left": "ter",
+          "right": "tinha"
+        },
+        {
+          "left": "vir",
+          "right": "vinha"
+        },
+        {
+          "left": "pôr",
+          "right": "punha"
+        },
+        {
+          "left": "ir",
+          "right": "ia"
+        },
+        {
+          "left": "fazer",
+          "right": "fazia"
+        }
+      ]
+    }
+  ],
+  "miniTest": [
+    {
+      "id": "a2-preterito-imperfeito-mt-01",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Dantes nós ___ (viver) perto do rio.",
+      "answer": [
+        "vivíamos"
+      ],
+      "ru": "Раньше мы жили недалеко от реки."
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-02",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Em criança tu ___ (ser) muito tímido.",
+      "answer": [
+        "eras"
+      ],
+      "ru": "В детстве ты был очень застенчивым."
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-03",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Quando moravam no campo, eles ___ (ter) um cão chamado Tejo.",
+      "answer": [
+        "tinham"
+      ],
+      "ru": "Когда они жили за городом, у них была собака по кличке Тежу."
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-04",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "fill-gap",
+      "prompt": "Em criança, eu ___ (ir) sempre para a escola a pé.",
+      "answer": [
+        "ia"
+      ],
+      "ru": "В детстве я всегда ходил в школу пешком."
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-05",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "choice",
+      "prompt": "Quando saí de casa, ___ muito frio.",
+      "options": [
+        "fez",
+        "fazia",
+        "faz",
+        "fazemos"
+      ],
+      "correct": 1,
+      "explanation": "Погода как фон к событию → imperfeito."
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-06",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "choice",
+      "prompt": "Antigamente nós ___ ao cinema todas as semanas.",
+      "options": [
+        "fomos",
+        "vamos",
+        "temos ido",
+        "íamos"
+      ],
+      "correct": 3,
+      "explanation": "Привычка в прошлом → imperfeito."
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-07",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "choice",
+      "prompt": "___ fazer-me um favor? (вежливо)",
+      "options": [
+        "Podia",
+        "Pôde",
+        "Pude",
+        "Pudesse"
+      ],
+      "correct": 0,
+      "explanation": "Вежливая просьба: Podia...?"
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-08",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "transform",
+      "prompt": "Ela trabalha num banco.",
+      "instruction": "Поставьте глагол в imperfeito.",
+      "answer": [
+        "Ela trabalhava num banco.",
+        "Trabalhava num banco."
+      ]
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-09",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "translate-ru-pt",
+      "ru": "Когда мне было двадцать лет, я жил в Порту.",
+      "answer": [
+        "Quando tinha vinte anos, morava no Porto.",
+        "Quando tinha vinte anos, vivia no Porto.",
+        "Quando eu tinha vinte anos, morava no Porto.",
+        "Quando eu tinha vinte anos, vivia no Porto."
+      ],
+      "explanation": "Возраст в прошлом — tinha; «Порту» по-португальски — o Porto (no Porto)."
+    },
+    {
+      "id": "a2-preterito-imperfeito-mt-10",
+      "topicId": "a2-preterito-imperfeito",
+      "type": "listen-type",
+      "text": "Eu estava a trabalhar quando ligaste.",
+      "answer": [
+        "Eu estava a trabalhar quando ligaste."
+      ]
+    }
+  ]
+}
