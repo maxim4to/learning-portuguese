@@ -88,9 +88,7 @@ export function ResultScreen(p: ResultScreenProps) {
     <div className="animate-enter space-y-4">
       <section data-halftone-surface="" className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
         {pct >= 60 && <AzulejoCorner />}
-        <p className="text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
-          {p.retry ? 'Работа над ошибками' : 'Результат'}
-        </p>
+        <p className="text-sm font-semibold text-ink-muted">{p.retry ? 'Работа над ошибками' : 'Результат'}</p>
         <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6 sm:text-left">
           <ProgressRing value={pct / 100} size={152} stroke={14} tone={toneForPct(pct)}>
             <span className="font-display text-[2.75rem] leading-none font-black tabular-nums" aria-hidden>
@@ -98,7 +96,7 @@ export function ResultScreen(p: ResultScreenProps) {
             </span>
           </ProgressRing>
           <div className="space-y-1">
-            <p className="font-display text-[2.25rem] leading-[0.95] sm:text-4xl">{headline(pct)}</p>
+            <p className="font-display text-[1.75rem] leading-[1] sm:text-2xl">{headline(pct)}</p>
             <p className="text-ink-muted">
               <span className="sr-only">Результат: {pct} процентов, </span>Верно {summary.correct} из {summary.total}
             </p>

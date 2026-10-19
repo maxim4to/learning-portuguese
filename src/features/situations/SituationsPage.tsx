@@ -1,17 +1,14 @@
-import { createElement } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { MessagesSquare } from 'lucide-react'
 import { Chip, ChipGroup } from '@/components/Chip'
-import { cx } from '@/components/cx'
 import { Illustration } from '@/components/Illustration'
 import { situationArt } from '@/components/illustrations'
 import { EmptyState } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
 import { plural } from '@/features/library/format'
-import { sceneIcon, sceneTint } from './sceneIcon'
 import { LEVELS, listSituations, type Level, type Situation } from '@/content'
 import type { TopicProgress } from '@/data'
-import { LevelBadge, StatusBadge } from '@/components/StatusBadge'
+import { StatusBadge } from '@/components/StatusBadge'
 import { useProgressMap } from '@/features/lessons/useTopicProgress'
 import { MaterialsTabs } from '@/features/library/LibraryPage'
 
@@ -59,7 +56,11 @@ export function SituationsPage() {
                   pressed={filter === l}
                   count={n}
                   muted={!n}
-                  onClick={() => setParams(l === 'all' ? {} : { level: l }, { replace: true })}
+                  onClick={() =>
+                    setParams(l === 'all' ? {} : { level: l }, {
+                      replace: true,
+                    })
+                  }
                 >
                   {l === 'all' ? 'Все' : l}
                 </Chip>
@@ -71,13 +72,13 @@ export function SituationsPage() {
 
           {groups.map((g) => (
             <section key={g.level} className="space-y-3">
-              <h2 className="flex items-baseline gap-3 pt-4 font-display text-[3.5rem] leading-[0.85] font-black md:text-display">
-                {g.level}
-                <span className="font-sans text-sm font-semibold tracking-normal text-ink-muted">· {g.items.length}</span>
-              </h2>
-              <ul className="grid gap-3 sm:grid-cols-2">
+              <div className="flex items-baseline gap-3 pt-4">
+                <h2>{g.level}</h2>
+                <span className="text-sm font-semibold text-ink-muted">{plural(g.items.length, 'ситуация', 'ситуации', 'ситуаций')}</span>
+              </div>
+              <ul className="card divide-y divide-line p-0">
                 {g.items.map((s) => (
-                  <li key={s.id}>
+                  <li key={s.id} className="first:[&>a]:rounded-t-card last:[&>a]:rounded-b-card">
                     <SituationCard situation={s} progress={progress.get(s.id)} />
                   </li>
                 ))}
@@ -90,36 +91,36 @@ export function SituationsPage() {
   )
 }
 
+/** Compact list row: 56px cover, title + Portuguese title, muted counts, status on the right. */
 function SituationCard({ situation: s, progress }: { situation: Situation; progress?: TopicProgress }) {
   return (
-    <Link to={`/situation/${s.id}`} className="card card-link flex h-full flex-col gap-4 sm:p-6">
-      <span className="flex items-start justify-between gap-2">
-        <span className="relative shrink-0">
-          <Illustration name={situationArt(s.id)} sizes="88px" className="size-22 rounded-[1.5rem]" />
-          <span aria-hidden className={cx('absolute -right-1.5 -bottom-1.5 grid size-9 place-items-center rounded-full ring-4 ring-surface', sceneTint(s.id))}>
-            {createElement(sceneIcon(s.id), { className: 'size-4.5', strokeWidth: 2 })}
+    <Link
+      to={`/situation/${s.id}`}
+      className="group flex min-h-[4.5rem] items-center gap-3 px-3 py-2.5 no-underline transition-colors hover:bg-surface-2 sm:gap-4 sm:px-4"
+    >
+      <Illustration name={situationArt(s.id)} sizes="56px" className="size-14 shrink-0 rounded-[0.875rem] object-cover" />
+      <span className="min-w-0 flex-1">
+        <span className="block leading-tight font-semibold text-ink">{s.title}</span>
+        <span className="mt-0.5 block truncate text-sm text-ink-muted">
+          <span lang="pt-PT" className="font-pt">
+            {s.titlePt}
+          </span>
+          <span className="max-sm:hidden">
+            {' · '}
+            {plural(s.dialogue.length, 'реплика', 'реплики', 'реплик')} · {plural(s.vocab.length, 'слово', 'слова', 'слов')}
           </span>
         </span>
-        <LevelBadge level={s.level} className="shrink-0" />
-      </span>
-      <span className="flex min-w-0 flex-1 flex-col gap-3">
-        <span className="flex items-start justify-between gap-2">
-          <span className="min-w-0">
-            <span className="block font-display text-[1.75rem] leading-[1.02]">{s.title}</span>
-            <span className="block font-pt text-sm text-ink-muted" lang="pt-PT">
-              {s.titlePt}
-            </span>
-          </span>
-        </span>
-        <span className="rule-dotted mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 pt-3 text-xs text-ink-muted">
-          <StatusBadge status={progress?.status ?? 'not-started'} />
-          {progress && <span className="tabular-nums">лучший {Math.round(progress.bestPct * 100)}%</span>}
-          <span>
-            {plural(s.dialogue.length, 'реплика', 'реплики', 'реплик')} · {plural(s.vocab.length, 'слово', 'слова', 'слов')} ·{' '}
-            {plural(s.exercises.length, 'задание', 'задания', 'заданий')}
-          </span>
+        <span className="mt-0.5 block text-xs text-ink-muted sm:hidden">
+          {plural(s.dialogue.length, 'реплика', 'реплики', 'реплик')} · {plural(s.vocab.length, 'слово', 'слова', 'слов')}
         </span>
       </span>
+      {/* Status only once started: a column of «Не начато» on every row is noise and squeezes the title on phones. */}
+      {progress && progress.status !== 'not-started' && (
+        <span className="flex shrink-0 flex-col items-end gap-1 text-xs text-ink-muted">
+          <StatusBadge status={progress.status} />
+          <span className="tabular-nums">{Math.round(progress.bestPct * 100)}%</span>
+        </span>
+      )}
     </Link>
   )
 }

@@ -79,6 +79,17 @@ function DueBadge({ n, className }: { n: number; className?: string }) {
   )
 }
 
+/** Logo mark + product name, links home (same in the phone row and the desktop bar). */
+function HomeLogo({ size }: { size: number }) {
+  return (
+    <NavLink to="/" data-halftone-surface="" aria-label="Português PT — главная" className="flex items-center gap-2.5 text-ink no-underline">
+      <AzulejoMark size={size} />
+      <span className={cx('font-display leading-none font-black', size < 32 ? 'text-[1.375rem]' : 'text-[1.75rem]')}>Português</span>
+      <span className="rounded-pill bg-sun-soft px-2 py-0.5 text-[0.6875rem] font-bold whitespace-nowrap text-sun">PT-PT</span>
+    </NavLink>
+  )
+}
+
 export function Layout() {
   const { pathname } = useLocation()
   const navType = useNavigationType()
@@ -100,16 +111,17 @@ export function Layout() {
           К содержанию
         </a>
 
-        {/* Desktop top bar (fixed height = --header-h; in-page sticky bars stick right under it). */}
-        <header className="sticky top-[0px] z-20 hidden h-(--header-h) bg-bg/90 backdrop-blur-md md:block">
+        {/* Phone / tablet: slim product row (not sticky); navigation lives in the bottom tab bar until lg. */}
+        <header className="pt-(--safe-top) pr-[max(1rem,var(--safe-right))] pl-[max(1rem,var(--safe-left))] md:px-6 lg:hidden">
+          <div className="mx-auto flex h-12 max-w-5xl items-center">
+            <HomeLogo size={24} />
+          </div>
+        </header>
+
+        {/* Desktop top bar from lg (fixed height = --header-h; in-page sticky bars stick right under it). */}
+        <header className="sticky top-[0px] z-20 hidden h-(--header-h) bg-bg lg:block">
           <div className="mx-auto flex h-full max-w-5xl items-center gap-6 px-6">
-            <NavLink to="/" data-halftone-surface="" aria-label="Português PT — главная" className="flex items-center gap-2.5 text-ink no-underline">
-              <AzulejoMark size={32} />
-              <span className="font-display text-[1.75rem] leading-none font-black">Português</span>
-              <span className="rounded-pill bg-sun-soft px-2 py-0.5 text-[0.6875rem] font-bold tracking-wider whitespace-nowrap text-sun">
-                PT-PT
-              </span>
-            </NavLink>
+            <HomeLogo size={32} />
             <nav aria-label="Основные разделы" className="ml-auto flex items-center gap-1 rounded-pill bg-surface p-1">
               {NAV_ITEMS.map((item) => {
                 const active = isNavActive(item, pathname)
@@ -137,7 +149,7 @@ export function Layout() {
         <main
           id="main"
           tabIndex={-1}
-          className="mx-auto max-w-5xl pt-[max(1rem,var(--safe-top))] pr-[max(1rem,var(--safe-right))] pb-[calc(var(--bottom-chrome)+2.5rem)] pl-[max(1rem,var(--safe-left))] outline-none md:px-6 md:pt-6 md:pb-20"
+          className="mx-auto max-w-5xl pt-2 pr-[max(1rem,var(--safe-right))] pb-[calc(var(--bottom-chrome)+2.5rem)] pl-[max(1rem,var(--safe-left))] outline-none md:px-6 lg:pt-6 lg:pb-20"
         >
           <OfflineBanner synced={repo.kind === 'firestore'} />
           <Outlet />
@@ -146,7 +158,7 @@ export function Layout() {
         {/* Mobile bottom tab bar (height --tabbar-h + home-indicator inset). */}
         <nav
           aria-label="Основные разделы"
-          className="fixed inset-x-0 bottom-0 z-20 pr-[max(0.75rem,var(--safe-right))] pb-[calc(var(--safe-bottom)+0.5rem)] pl-[max(0.75rem,var(--safe-left))] md:hidden"
+          className="fixed inset-x-0 bottom-0 z-20 pr-[max(0.75rem,var(--safe-right))] pb-[calc(var(--safe-bottom)+0.5rem)] pl-[max(0.75rem,var(--safe-left))] lg:hidden"
         >
           <ul className="grid h-(--tabbar-h) rounded-pill bg-ink px-1 text-surface" style={{ gridTemplateColumns: `repeat(${NAV_ITEMS.length}, minmax(0, 1fr))` }}>
             {NAV_ITEMS.map((item) => {

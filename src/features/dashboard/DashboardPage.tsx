@@ -68,17 +68,21 @@ export function DashboardPage() {
   const diagStale = lastDiag !== undefined && now - lastDiag > 42 * DAY
   const firstRun = progress.size === 0 && cards.length === 0 && lastDiag === undefined
   const first = view.suggestions[0]
+  const dueMin = Math.max(1, Math.round(view.due * 0.25))
+  const todayLine = firstRun
+    ? 'Начните с диагностики: около 20 минут, и курс подскажет, с чего начать.'
+    : view.due > 0
+      ? `К повторению ${plural(view.due, 'карточка', 'карточки', 'карточек')} — это около ${dueMin} мин.`
+      : first
+        ? `Повторение готово. Дальше по курсу: ${first.topic.title}.`
+        : 'На сегодня всё сделано.'
 
   return (
     <div className="space-y-4 md:space-y-5">
       <header className="flex flex-wrap items-end justify-between gap-3 pt-2">
         <div className="space-y-2">
-          <p className="text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
-            {new Date(now).toLocaleDateString('ru-RU', { weekday: 'long', day: 'numeric', month: 'long' })}
-          </p>
-          <h1 className="text-[5rem] leading-[0.86] font-black md:text-mega" lang="pt-PT">
-            Olá!
-          </h1>
+          <h1>Сегодня</h1>
+          <p className="text-ink-muted">{todayLine}</p>
         </div>
         {!firstRun && <StreakBadge streak={view.streak.streak} activeToday={view.streak.activeToday} />}
       </header>
@@ -105,7 +109,7 @@ export function DashboardPage() {
                 <ClipboardCheck className="size-5" />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block font-display text-[1.625rem] leading-none">
+                <span className="block font-display text-[1.375rem] leading-tight">
                   {lastDiag === undefined ? 'Пройдите диагностику' : 'Пора сверить уровень'}
                 </span>
                 <span className="block text-sm text-ink-muted">
@@ -120,14 +124,14 @@ export function DashboardPage() {
 
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             <section className="card space-y-4 sm:p-7" aria-labelledby="dash-week">
-              <h2 id="dash-week" className="text-[1.75rem]">
+              <h2 id="dash-week">
                 Активность за неделю
               </h2>
               <WeekBars week={view.week} />
             </section>
 
             <section className="card space-y-4 sm:p-7" aria-labelledby="dash-errors">
-              <h2 id="dash-errors" className="text-[1.75rem]">
+              <h2 id="dash-errors">
                 Последние ошибки
               </h2>
               {errors.length === 0 ? (
@@ -149,7 +153,7 @@ export function DashboardPage() {
 
           <section className="card space-y-5 sm:p-7" aria-labelledby="dash-levels">
             <div className="flex items-center justify-between gap-3">
-              <h2 id="dash-levels" className="text-[1.75rem]">
+              <h2 id="dash-levels">
                 Прогресс по уровням
               </h2>
               <Link to="/syllabus" className="inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-semibold whitespace-nowrap">
@@ -179,10 +183,9 @@ function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string }
       />
       <div className="space-y-6">
       <div className="max-w-[46ch] space-y-3">
-        <p className="inline-flex rounded-pill bg-sun-soft px-3 py-1 text-xs font-semibold tracking-[0.08em] text-sun uppercase">
-          Bem-vindo · добро пожаловать
-        </p>
-        <h2 className="text-[2.75rem] leading-[0.95] sm:text-display">Начнём с главного</h2>
+        <h2>
+          <span lang="pt-PT">Bem-vindo!</span> Начнём с главного
+        </h2>
         <p className="text-ink-muted">
           Пройдите диагностику (≈20 минут) — курс подсветит, что вы уже знаете и с чего начать. Или сразу откройте первую
           тему уровня A1.
@@ -193,8 +196,8 @@ function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string }
           Пройти диагностику
         </ButtonLink>
         {firstTopic && (
-          <ButtonLink to={`/topic/${firstTopic.id}`} variant="secondary" size="lg" className="rounded-[1.75rem] py-3 text-base">
-            Первая тема: {firstTopic.title}
+          <ButtonLink to={`/topic/${firstTopic.id}`} variant="secondary" size="lg" title={firstTopic.title}>
+            Открыть первую тему
           </ButtonLink>
         )}
       </div>
@@ -226,16 +229,15 @@ function TodayHero({
     <section className="grid gap-3 md:grid-cols-[1.35fr_1fr]" aria-labelledby="dash-today">
       <div data-halftone-surface="" className="card-raised relative isolate overflow-hidden rounded-hero p-6 sm:p-10">
         <AzulejoCorner opacity={0.8} />
-        <h2 id="dash-today" className="font-sans text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
-          Сегодня
+        <h2 id="dash-today" className="sr-only">
+          План на сегодня
         </h2>
         {due > 0 ? (
           <>
-            <p className="mt-3 flex items-end gap-3">
-              <span className="font-display text-[6rem] leading-[0.8] font-black tabular-nums sm:text-mega">{due}</span>
-              <span className="pb-1 font-display text-2xl leading-none sm:text-3xl">
-                {plural(due, 'карточка', 'карточки', 'карточек').replace(/^\d+\s/, '')}
-                <br />к повторению
+            <p className="flex items-baseline gap-2.5">
+              <span className="font-display text-[2.5rem] leading-none font-black tabular-nums">{due}</span>
+              <span className="font-display text-xl leading-tight">
+                {plural(due, 'карточка', 'карточки', 'карточек').replace(/^\d+\s/, '')} к повторению
               </span>
             </p>
             <p className="mt-4 text-sm text-ink-muted">
@@ -245,7 +247,7 @@ function TodayHero({
           </>
         ) : primaryTopic ? (
           <>
-            <p className="mt-3 font-display text-[2.75rem] leading-[0.95] sm:text-display">
+            <p className="font-display text-[1.75rem] leading-[1.05]">
               {hasCards ? 'Повторение на сегодня готово' : 'Продолжим курс'}
             </p>
             <p className="mt-3 text-sm text-ink-muted">
@@ -253,7 +255,7 @@ function TodayHero({
             </p>
           </>
         ) : (
-          <p className="mt-3 font-display text-[2.75rem] leading-[0.95] sm:text-display">На сегодня всё — parabéns!</p>
+          <p className="font-display text-[1.75rem] leading-[1.05]">На сегодня всё — parabéns!</p>
         )}
 
         <div className="mt-6">
@@ -340,8 +342,8 @@ function TutorCard({ daily }: { daily: ReturnType<typeof pickDaily> }) {
         <Sparkles className="size-6" />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-xs font-semibold tracking-[0.08em] uppercase">Практика с агентом</span>
-        <span className="mt-1 block font-display text-[1.375rem] leading-[1.05] sm:text-[1.625rem]">
+        <span className="block text-sm font-semibold">Практика с агентом</span>
+        <span className="mt-1 block font-display text-[1.25rem] leading-[1.1] sm:text-[1.5rem]">
           Беседа дня: <span className="line-clamp-2 inline">{items.join(' · ') || 'разговор на свободную тему'}</span>
         </span>
         <span className="mt-1 block text-sm">Готовый промпт для Claude или ChatGPT — в одно касание</span>

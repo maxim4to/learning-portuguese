@@ -60,7 +60,7 @@ export function ReviewExercise({ exercise: ex, onAnswered, note }: Props) {
           id={`${ex.id}-rh`}
           ref={headingRef}
           tabIndex={-1}
-          className="inline-flex rounded-pill bg-sun-soft px-3 py-1 text-xs font-semibold tracking-[0.08em] text-sun uppercase outline-none"
+          className="text-sm font-semibold text-ink-muted outline-none"
         >
           {exerciseHeading(ex)}
         </h3>

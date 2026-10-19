@@ -46,7 +46,7 @@ export function FillGapExercise({ exercise: ex, locked, result, onSubmit, onSkip
   const id = useId()
   return (
     <div className="space-y-4">
-      <p id={`${id}-p`} className="text-xl leading-relaxed text-pretty" lang="pt-PT">
+      <p id={`${id}-p`} className="text-prompt text-pretty" lang="pt-PT">
         <GapSentence prompt={ex.prompt} fill={locked ? (result?.expected ?? ex.answer[0]) : undefined} />
       </p>
       {(ex.ru || ex.hint) && (

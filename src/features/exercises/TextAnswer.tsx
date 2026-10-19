@@ -146,7 +146,8 @@ export function TextAnswer({
               </button>
             ))}
           </div>
-          <div className="sticky-actions -mx-2 flex gap-2 rounded-pill bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+          {/* Not sticky: a pinned bar would cover the accent keys right above it on phones. */}
+          <div className="flex gap-2">
             <button type="submit" className="btn-primary flex-1 sm:flex-none sm:min-w-36" disabled={!filled}>
               Проверить
             </button>

@@ -20,12 +20,12 @@ export function BackLink({ to, label, className }: { to: string; label: string; 
 }
 
 /**
- * Unified page start: optional back link, eyebrow (section / meta badges), display h1, subtitle, actions on the right.
+ * Unified page start: optional back link, display h1, a plain meta line (badges, last result), subtitle, actions on the right.
  * Sets the same rhythm on every screen (audit §2.5, §2.10, §3.10).
  */
 export function PageHeader({
   back,
-  eyebrow,
+  meta,
   title,
   titleLang,
   subtitle,
@@ -34,7 +34,8 @@ export function PageHeader({
   className,
 }: {
   back?: { to: string; label: string }
-  eyebrow?: ReactNode
+  /** Short sentence-case line under the title (level / status badges, last result). No uppercase kicker. */
+  meta?: ReactNode
   title: ReactNode
   titleLang?: string
   subtitle?: ReactNode
@@ -47,15 +48,11 @@ export function PageHeader({
     <header className={cx('space-y-4', className)}>
       {back && <BackLink {...back} />}
       <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3">
-        <div className="min-w-0 flex-1 space-y-3">
-          {eyebrow && (
-            <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
-              {eyebrow}
-            </div>
-          )}
+        <div className="min-w-0 flex-1 space-y-2">
           <h1 lang={titleLang} className="text-balance">
             {title}
           </h1>
+          {meta && <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">{meta}</div>}
           {subtitle && <div className="max-w-[60ch] text-ink-muted md:text-lg">{subtitle}</div>}
         </div>
         {actions && <div className="flex shrink-0 flex-wrap items-center gap-2">{actions}</div>}

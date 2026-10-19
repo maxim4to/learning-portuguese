@@ -89,12 +89,12 @@ function SituationModule({ situation }: { situation: Situation }) {
     <article className="space-y-5">
       <PageHeader
         back={{ to: '/situations', label: 'Ситуации' }}
-        eyebrow={
+        meta={
           <>
             <LevelBadge level={situation.level} />
-            <StatusBadge status={own?.status ?? 'not-started'} className="normal-case" />
+            <StatusBadge status={own?.status ?? 'not-started'} />
             {own && (
-              <span className="font-medium tracking-normal normal-case tabular-nums">
+              <span className="tabular-nums">
                 последний результат {Math.round(own.lastPct * 100)}% · попыток {own.attempts}
               </span>
             )}

@@ -98,7 +98,7 @@ function Options({
 export function ChoiceExercise({ exercise: ex, locked, result, onSubmit }: ExerciseProps<'choice'>) {
   return (
     <div className="space-y-4">
-      <p className="text-xl leading-relaxed text-pretty" lang="pt-PT">
+      <p className="text-prompt text-pretty" lang="pt-PT">
         {ex.prompt}
       </p>
       <Options
@@ -122,7 +122,7 @@ export function ListenChoiceExercise({ exercise: ex, locked, result, onSubmit }:
         <SpeakButton text={ex.text} size="lg" variant="solid" label="Слушать" />
         <SpeakButton text={ex.text} rateFactor={0.75} label="Медленно" />
       </div>
-      {ex.prompt && <p className="text-lg">{ex.prompt}</p>}
+      {ex.prompt && <p className="text-prompt text-pretty">{ex.prompt}</p>}
       {locked && (
         <p className="card-sunken flex animate-enter items-center gap-2 px-4 py-2.5" lang="pt-PT">
           <Volume2 aria-hidden className="size-4 shrink-0 text-ink" />

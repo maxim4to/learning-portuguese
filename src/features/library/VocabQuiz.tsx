@@ -192,7 +192,7 @@ export function VocabQuiz({
         </>
       ) : (
         <div className="animate-enter space-y-4 text-center">
-          <p className="font-display text-4xl text-brand-ink tabular-nums">
+          <p className="font-display text-3xl text-brand-ink tabular-nums">
             {round.known.length} / {total}
           </p>
           <p className="text-ink-muted">

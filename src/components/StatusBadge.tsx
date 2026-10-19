@@ -26,7 +26,7 @@ export function LevelBadge({ level, className = '' }: { level: string; className
   return (
     <span
       className={cx(
-        'inline-flex shrink-0 items-center rounded-pill px-2 py-0.5 text-xs font-bold tracking-wide tabular-nums',
+        'inline-flex shrink-0 items-center rounded-pill px-2 py-0.5 text-xs font-bold tabular-nums',
         LEVEL_TONE[level] ?? LEVEL_TONE.A1,
         className,
       )}

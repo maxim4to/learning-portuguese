@@ -59,13 +59,7 @@ export function Tabs<T extends string>({
   }
 
   return (
-    <div
-      className={cx(
-        sticky &&
-          'sticky top-(--sticky-top) z-10 -mx-4 bg-bg/90 px-4 py-2 backdrop-blur-md md:-mx-2 md:px-2',
-        className,
-      )}
-    >
+    <div className={cx(sticky && 'sticky top-(--sticky-top) z-10 -mx-4 bg-bg px-4 py-2 md:-mx-2 md:px-2', className)}>
       <div
         ref={barRef}
         role="tablist"
@@ -86,7 +80,7 @@ export function Tabs<T extends string>({
               tabIndex={on ? 0 : -1}
               onClick={() => onChange(t.value)}
               className={cx(
-                'inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-pill px-4 text-sm font-semibold whitespace-nowrap transition-[background-color,color] duration-150 sm:px-5',
+                'inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-pill px-4 text-sm font-semibold whitespace-nowrap transition-[background-color,color] duration-150 lg:px-5',
                 on ? 'bg-ink text-surface' : 'text-ink-muted hover:bg-surface-2 hover:text-ink',
               )}
             >

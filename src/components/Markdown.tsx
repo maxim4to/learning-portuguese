@@ -1,10 +1,12 @@
+import { Children, cloneElement, createContext, isValidElement, useContext, type ComponentProps } from 'react'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { cx } from './cx'
 
 /**
  * Markdown renderer for theory / pt-vs-br / common-errors blocks.
  * GFM enabled (tables, ~~strike~~). Typography is styled by hand with Tailwind;
- * wide tables scroll horizontally inside their own container (no page overflow on mobile).
+ * tables are plain row-ruled grids on ≥sm and turn into stacked records on phones (no page overflow).
  */
 const components: Components = {
   h1: ({ children }) => <h2 className="mt-7 mb-2 font-display first:mt-0">{children}</h2>,
@@ -45,27 +47,75 @@ const components: Components = {
       {children}
     </pre>
   ),
-  table: ({ children }) => (
-    <div className="my-4 -mx-1 w-[calc(100%+0.5rem)] max-w-[calc(100vw-2rem)] overflow-x-auto overscroll-x-contain rounded-control border border-line md:max-w-none">
-      <table className="w-full border-collapse text-left text-[0.9375rem] leading-snug">{children}</table>
-    </div>
+  table: ({ children, node }) => (
+    <HeadersContext.Provider value={headerTexts(node)}>
+      <div className="my-4 min-w-0 sm:overflow-x-auto sm:overscroll-x-contain">
+        <table className="w-full border-collapse text-left text-[0.9375rem] leading-snug max-sm:block">{children}</table>
+      </div>
+    </HeadersContext.Provider>
   ),
-  thead: ({ children }) => <thead className="bg-ink text-surface">{children}</thead>,
-  tr: ({ children }) => (
-    <tr className="border-b border-line last:border-b-0 even:bg-bg/60">
-      {children}
-    </tr>
-  ),
+  thead: ({ children }) => <thead className="max-sm:hidden">{children}</thead>,
+  tbody: ({ children }) => <tbody className="max-sm:block max-sm:border-t max-sm:border-line">{children}</tbody>,
+  tr: ({ children }) => {
+    // Hand each cell its column index so it can lay itself out as a stacked record below `sm`.
+    let col = 0
+    const cells = Children.map(children, (c) =>
+      isValidElement<{ col?: number }>(c) ? cloneElement(c, { col: col++ }) : c,
+    )
+    return <tr className="border-b border-line last:border-b-0 max-sm:block max-sm:py-3">{cells}</tr>
+  },
   th: ({ children, style }) => (
-    <th style={style} className="px-3 py-2 font-semibold whitespace-nowrap">
+    <th
+      style={style}
+      className="border-b border-line-strong px-3 pt-1 pb-2 align-bottom text-[0.8125rem] font-semibold whitespace-nowrap text-ink-muted first:pl-0"
+    >
       {children}
     </th>
   ),
-  td: ({ children, style }) => (
-    <td style={style} className="px-3 py-2 align-top">
+  td: Cell as Components['td'],
+}
+
+/** Header texts of the current table, used as inline labels in the phone layout. */
+const HeadersContext = createContext<string[]>([])
+
+type HastNode = { type: string; tagName?: string; value?: string; children?: HastNode[] }
+
+function textOf(n: HastNode): string {
+  return n.type === 'text' ? (n.value ?? '') : (n.children ?? []).map(textOf).join('')
+}
+
+function headerTexts(node?: HastNode): string[] {
+  const thead = node?.children?.find((c) => c.tagName === 'thead')
+  const row = thead?.children?.find((c) => c.tagName === 'tr')
+  return (row?.children ?? []).filter((c) => c.tagName === 'th').map((c) => textOf(c).trim())
+}
+
+/**
+ * Table cell. ≥sm: a plain cell. Below sm the row becomes a record: column 1 + column 2 on the first line,
+ * the remaining cells stacked underneath in muted type, each prefixed with its header as a label.
+ */
+function Cell({ children, style, col = 0 }: ComponentProps<'td'> & { col?: number }) {
+  const headers = useContext(HeadersContext)
+  const label = col >= 2 ? headers[col] : undefined
+  return (
+    <td
+      style={style}
+      className={cx(
+        'px-3 py-2 align-top first:pl-0 max-sm:p-0',
+        col === 0 && 'max-sm:inline max-sm:font-semibold',
+        col === 1 && 'max-sm:inline',
+        col >= 2 && 'max-sm:mt-1 max-sm:block max-sm:text-sm max-sm:text-ink-muted',
+      )}
+    >
+      {col === 1 && (
+        <span aria-hidden className="text-ink-subtle sm:hidden">
+          {' — '}
+        </span>
+      )}
+      {label && <span className="mr-1.5 text-xs font-semibold text-ink-subtle sm:hidden">{label}:</span>}
       {children}
     </td>
-  ),
+  )
 }
 
 const remarkPlugins = [remarkGfm]

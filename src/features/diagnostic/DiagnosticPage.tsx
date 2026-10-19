@@ -268,8 +268,8 @@ export function DiagnosticPage() {
   // --- Intro -------------------------------------------------------------------
   const stat = 'card-sunken px-3 py-3'
   return (
-    <div className="mx-auto max-w-2xl space-y-5">
-      <PageHeader back={{ to: '/syllabus', label: 'Курс' }} eyebrow="Проверка уровня" title="Диагностика" />
+    <div className="max-w-2xl space-y-5">
+      <PageHeader back={{ to: '/syllabus', label: 'Курс' }} title="Диагностика уровня" />
 
       {saved && (
         <section className="card animate-enter flex flex-col gap-3 border-azulejo/30 bg-azulejo-soft sm:flex-row sm:items-center">
@@ -290,7 +290,7 @@ export function DiagnosticPage() {
           </span>
           <p className="text-ink">
             Короткий тест по грамматике европейского португальского: по 1–2 вопроса на каждую тему курса. По результату
-            темы окрашиваются в зелёный, жёлтый или красный, и вы получаете персональный маршрут — сначала то, что
+            каждая тема получает статус «уверенно», «изучаю» или «слабо», и вы получаете персональный маршрут — сначала то, что
             проседает.
           </p>
         </div>

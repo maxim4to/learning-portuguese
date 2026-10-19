@@ -102,7 +102,7 @@ export function SettingsPage() {
   const fill = (v: number, min: number, max: number) => ({ ['--fill' as string]: `${((v - min) / (max - min)) * 100}%` })
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6">
+    <div className="max-w-2xl space-y-6">
       <PageHeader title="Настройки" />
 
       <Section title="Оформление">

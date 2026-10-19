@@ -54,8 +54,8 @@ export function CheatsheetPage() {
       </div>
 
       <header className="space-y-1">
-        <p className="no-print text-xs font-semibold tracking-wide text-azulejo uppercase">Шпаргалка</p>
         <h1>{sheet.title}</h1>
+        <p className="no-print text-sm text-ink-muted">Шпаргалка</p>
       </header>
 
       {sheet.toc.length > 2 && (

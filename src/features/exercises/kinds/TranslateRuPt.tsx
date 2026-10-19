@@ -7,7 +7,7 @@ export function TranslateRuPtExercise({ exercise: ex, locked, result, onSubmit, 
   const id = useId()
   return (
     <div className="space-y-4">
-      <p id={id} className="text-xl text-pretty">
+      <p id={id} className="text-prompt text-pretty">
         {ex.ru}
       </p>
       <TextAnswer

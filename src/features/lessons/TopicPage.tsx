@@ -53,7 +53,7 @@ function TopicLesson({ topic }: { topic: Topic }) {
   const id = 'topic'
   return (
     <article className="space-y-5">
-      <TopicHeader topic={topic} progress={progress} />
+      <TopicHeader topic={topic} progress={progress} compact={tab === 'exercises' || tab === 'mini-test'} />
 
       <Tabs
         idBase={id}

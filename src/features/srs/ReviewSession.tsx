@@ -182,7 +182,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
             <PartyPopper className="size-9" />
           </span>
         </div>
-        <h2 ref={summaryRef} tabIndex={-1} className="pt-6 text-[2.75rem] leading-[0.95] outline-none sm:text-display">
+        <h2 ref={summaryRef} tabIndex={-1} className="pt-6 text-[1.75rem] outline-none">
           Сессия завершена
         </h2>
         <p className="text-ink-muted">

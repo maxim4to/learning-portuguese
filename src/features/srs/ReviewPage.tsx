@@ -52,7 +52,7 @@ export function ReviewPage() {
 
   if (session) {
     return (
-      <div className="mx-auto max-w-2xl space-y-4">
+      <div className="max-w-2xl space-y-4">
         <h1 className="sr-only">Повторение</h1>
         <ReviewSession initial={session} settings={data.settings} onCardUpdated={noop} onFinish={finish} />
       </div>
@@ -68,7 +68,7 @@ export function ReviewPage() {
   const setTab = (t: 'session' | 'all') => setParams(t === 'all' ? { tab: 'all' } : {}, { replace: true })
 
   return (
-    <div className="mx-auto max-w-2xl space-y-5">
+    <div className="max-w-2xl space-y-5">
       <PageHeader title="Повторение" subtitle="Интервальное повторение: карточки возвращаются, когда пора вспомнить." />
 
       <Tabs
@@ -119,9 +119,9 @@ export function ReviewPage() {
             {due.length > 0 ? (
               <div className="flex flex-col items-center gap-4">
                 <AzulejoCorner />
-                <p className="leading-none">
-                  <span className="block font-display text-[7rem] leading-[0.8] font-black tabular-nums sm:text-[9rem]">{due.length}</span>
-                  <span className="mt-2 block font-display text-2xl">к повторению</span>
+                <p className="flex items-baseline gap-2.5">
+                  <span className="font-display text-[2.5rem] leading-none font-black tabular-nums">{due.length}</span>
+                  <span className="font-display text-xl leading-tight">к повторению</span>
                 </p>
                 <p className="text-ink-muted">
                   {newCount ? (newCount === due.length ? 'Все карточки новые' : `Из них новых: ${newCount}`) : 'Только повторение'}

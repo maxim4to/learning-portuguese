@@ -7,7 +7,7 @@ export function TransformExercise({ exercise: ex, locked, result, onSubmit, onSk
   const id = useId()
   return (
     <div className="space-y-4">
-      <p id={id} className="card-sunken px-4 py-3 text-xl" lang="pt-PT">
+      <p id={id} className="card-sunken px-4 py-3 text-prompt" lang="pt-PT">
         {ex.prompt}
       </p>
       <TextAnswer

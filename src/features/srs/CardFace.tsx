@@ -107,7 +107,7 @@ export function CardFace({ card, revealed, settings }: Props) {
           </div>
           {example && (
             <div className="card-sunken mx-auto max-w-md p-3 text-left text-sm">
-              <p className="text-xs font-semibold tracking-wide text-ink-muted uppercase">Пример</p>
+              <p className="text-xs font-semibold text-ink-muted">Пример</p>
               <div className="flex items-center gap-2">
                 <p lang="pt-PT" className="flex-1 font-medium">
                   {example.pt}

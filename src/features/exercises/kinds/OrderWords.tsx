@@ -53,7 +53,7 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
 
   return (
     <div ref={rootRef} className="space-y-4">
-      {ex.ru && <p className="text-xl text-pretty">{ex.ru}</p>}
+      {ex.ru && <p className="text-prompt text-pretty">{ex.ru}</p>}
       <div
         role="group"
         aria-label="Ваше предложение"
@@ -95,7 +95,7 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
         ))}
       </div>
       {!locked && (
-        <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-[1.875rem] bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+        <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-[1.875rem] bg-surface p-2 sm:static sm:mx-0 sm:bg-transparent sm:p-0">
           <button type="button" className="btn-primary flex-[1_0_auto] sm:min-w-36 sm:flex-none" disabled={!built.length} onClick={check}>
             Проверить
           </button>

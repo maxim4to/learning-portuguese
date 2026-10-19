@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronRight, History, MessagesSquare, Sun, Target } from 'lucide-react'
+import { ChevronRight, History } from 'lucide-react'
 import { EmptyState, Skeleton } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
 import { LevelBadge, StatusBadge } from '@/components/StatusBadge'
@@ -14,15 +14,9 @@ import { TutorPanel } from './TutorPanel'
 const linkCard = 'card card-link group flex h-full items-start gap-3'
 const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
 
-function SectionTitle({ icon, tone, children }: { icon: ReactNode; tone: string; children: ReactNode }) {
-  return (
-    <h2 className="flex items-center gap-2.5">
-      <span aria-hidden className={`grid size-9 place-items-center rounded-full ${tone}`}>
-        {icon}
-      </span>
-      {children}
-    </h2>
-  )
+/** Plain section heading: no icon chips (design review: tinted icon circles read as a generated dashboard). */
+function SectionTitle({ children }: { children: ReactNode }) {
+  return <h2>{children}</h2>
 }
 
 /** /tutor — «Практика с агентом»: daily combined session, suggestions, history of completed sessions. */
@@ -53,7 +47,6 @@ export function TutorHubPage() {
     <div className="space-y-8">
       <PageHeader
         back={{ to: '/', label: 'Главная' }}
-        eyebrow={<span className="text-terracotta">ИИ-репетитор</span>}
         title="Практика с агентом"
         subtitle={
           <p>
@@ -66,9 +59,7 @@ export function TutorHubPage() {
 
       <section className="space-y-3">
         <div className="space-y-1">
-          <SectionTitle icon={<Sun className="size-5" />} tone="bg-sun-soft text-sun">
-            Беседа дня
-          </SectionTitle>
+          <SectionTitle>Беседа дня</SectionTitle>
           {loaded && (
             <p className="text-sm text-ink-muted">
               {daily.topics.length > 0 && (
@@ -109,9 +100,7 @@ export function TutorHubPage() {
       </section>
 
       <section className="space-y-3">
-        <SectionTitle icon={<Target className="size-5" />} tone="bg-terracotta-soft text-terracotta">
-          Темы для занятия
-        </SectionTitle>
+        <SectionTitle>Темы для занятия</SectionTitle>
         <p className="text-sm text-ink-muted">Сначала слабые темы, затем следующие по курсу.</p>
         <ul className="grid gap-3 sm:grid-cols-2">
           {view.shaky.map(({ topic, progress: p }) => (
@@ -144,9 +133,7 @@ export function TutorHubPage() {
       </section>
 
       <section className="space-y-3">
-        <SectionTitle icon={<MessagesSquare className="size-5" />} tone="bg-azulejo-soft text-azulejo">
-          Ситуации для сценок
-        </SectionTitle>
+        <SectionTitle>Ситуации для сценок</SectionTitle>
         <ul className="grid gap-3 sm:grid-cols-2">
           {view.situations.map((s) => {
             const p = progress.get(s.id)
@@ -174,9 +161,7 @@ export function TutorHubPage() {
       </section>
 
       <section className="space-y-3">
-        <SectionTitle icon={<History className="size-5" />} tone="bg-surface-2 text-ink-muted">
-          История занятий
-        </SectionTitle>
+        <SectionTitle>История занятий</SectionTitle>
         {view.history.length === 0 ? (
           <div className="rounded-card border border-dashed border-line-strong">
             <EmptyState
@@ -193,7 +178,10 @@ export function TutorHubPage() {
               <li key={`${h.at}-${h.mode}`} className="space-y-0.5 px-4 py-3 text-sm">
                 <div className="flex flex-wrap items-baseline gap-x-2">
                   <span className="text-ink-muted">
-                    {new Date(h.at).toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' })}
+                    {new Date(h.at).toLocaleDateString('ru-RU', {
+                      day: 'numeric',
+                      month: 'short',
+                    })}
                   </span>
                   <span className="font-semibold">{modeTitle(h.mode)}</span>
                   <span className="ml-auto rounded-full bg-brand-soft px-2 py-0.5 text-xs font-bold text-brand-ink tabular-nums">

@@ -76,7 +76,7 @@ function ReadingView({ text }: { text: ReadingText }) {
     <article className="space-y-6">
       <PageHeader
         back={{ to: '/library', label: 'Библиотека' }}
-        eyebrow={
+        meta={
           <>
             <LevelBadge level={text.level} />
             <span>Чтение · {plural(text.paragraphs.length, 'абзац', 'абзаца', 'абзацев')}</span>

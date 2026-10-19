@@ -77,7 +77,7 @@ export function SpeakShadowExercise({ exercise: ex, locked, onSubmit }: Exercise
   return (
     <div className="space-y-4">
       <div className="space-y-1">
-        <p className="text-xl leading-relaxed" lang="pt-PT">
+        <p className="text-prompt text-pretty" lang="pt-PT">
           {ex.text}
         </p>
         {ex.ru && <p className="text-sm text-ink-muted">{ex.ru}</p>}
@@ -90,7 +90,7 @@ export function SpeakShadowExercise({ exercise: ex, locked, onSubmit }: Exercise
       {!locked && (
         <div className="space-y-2 border-t border-line pt-4">
           <p className="text-sm text-ink-muted">Сравните с оригиналом и оцените себя:</p>
-          <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-pill bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+          <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-pill bg-surface p-2 sm:static sm:mx-0 sm:bg-transparent sm:p-0">
             <button type="button" className="btn-primary" onClick={() => onSubmit({ given: 'получилось', verdict: 'correct' })}>
               <Check aria-hidden className="size-5" /> Получилось
             </button>

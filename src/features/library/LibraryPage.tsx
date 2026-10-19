@@ -1,12 +1,11 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { BookA, BookOpenText, ChevronRight, FileText, Library, MessagesSquare, type LucideIcon } from 'lucide-react'
+import { ChevronRight, Library, MessagesSquare } from 'lucide-react'
 import { LEVELS, listReadingTexts, listVocabThemes } from '@/content'
-import { AzulejoCorner } from '@/components/Card'
 import { cx } from '@/components/cx'
 import { EmptyState } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
-import { StatusBadge, LevelBadge } from '@/components/StatusBadge'
+import { StatusBadge } from '@/components/StatusBadge'
 import { useProgressMap } from '@/features/lessons/useTopicProgress'
 import { listParsedCheatsheets } from './cheatsheets'
 import { plural } from './format'
@@ -32,14 +31,11 @@ export function MaterialsTabs({ active }: { active: 'library' | 'situations' }) 
   )
 }
 
-function Section({ title, hint, icon: Icon, tone, children }: { title: string; hint?: string; icon: LucideIcon; tone: string; children: ReactNode }) {
+function Section({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
   return (
     <section className="space-y-4">
-      <div className="flex items-center gap-3">
-        <span aria-hidden className={cx('grid size-12 place-items-center rounded-full', tone)}>
-          <Icon className="size-5" />
-        </span>
-        <h2 className="flex-1 text-[2.5rem] leading-none md:text-4xl">{title}</h2>
+      <div className="flex items-baseline gap-3">
+        <h2 className="flex-1">{title}</h2>
         {hint && <span className="text-sm text-ink-muted">{hint}</span>}
       </div>
       {children}
@@ -55,18 +51,7 @@ function Empty({ children }: { children: ReactNode }) {
   )
 }
 
-const cardLink = 'card card-link group relative isolate flex h-full items-start gap-3 overflow-hidden sm:p-6'
-
-/** Library card (text only): a link with a small interactive dot-grid corner. */
-function CardLink({ to, children }: { to: string; children: ReactNode }) {
-  return (
-    <Link to={to} data-halftone-surface="" className={cardLink}>
-      <AzulejoCorner size="sm" />
-      {children}
-    </Link>
-  )
-}
-const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
+const chevron = <ChevronRight aria-hidden className="size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
 
 export function LibraryPage() {
   const sheets = listParsedCheatsheets()
@@ -85,82 +70,87 @@ export function LibraryPage() {
         <PageHeader title="Библиотека" subtitle="Шпаргалки для быстрой справки, тематические словари и тексты для чтения." />
       </div>
 
-      <Section title="Шпаргалки" icon={FileText} tone="bg-ink text-surface" hint={sheets.length ? plural(sheets.length, 'лист', 'листа', 'листов') : undefined}>
+      <Section title="Шпаргалки" hint={sheets.length ? plural(sheets.length, 'лист', 'листа', 'листов') : undefined}>
         {sheets.length === 0 ? (
           <Empty>Шпаргалок пока нет.</Empty>
         ) : (
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="card divide-y divide-line p-0">
             {sheets.map((s) => (
-              <li key={s.id}>
-                <CardLink to={`/library/cheatsheet/${s.id}`}>
+              <li key={s.id} className="first:[&>a]:rounded-t-card last:[&>a]:rounded-b-card">
+                <Link
+                  to={`/library/cheatsheet/${s.id}`}
+                  className="group flex min-h-16 items-center gap-3 px-4 py-3 no-underline transition-colors hover:bg-surface-2 sm:px-5"
+                >
                   <span className="min-w-0 flex-1">
-                    <span className="block font-display text-[1.625rem] leading-[1.05]">{s.title}</span>
-                    {s.intro && <span className="mt-1 line-clamp-2 text-sm text-ink-muted">{s.intro}</span>}
+                    <span className="block leading-tight font-semibold text-ink">{s.title}</span>
+                    {s.intro && <span className="mt-0.5 line-clamp-1 text-sm text-ink-muted">{s.intro}</span>}
                   </span>
                   {chevron}
-                </CardLink>
+                </Link>
               </li>
             ))}
           </ul>
         )}
       </Section>
 
-      <Section title="Словари" icon={BookA} tone="bg-sun-soft text-sun" hint={themes.length ? plural(themes.length, 'тема', 'темы', 'тем') : undefined}>
+      <Section title="Словари" hint={themes.length ? plural(themes.length, 'тема', 'темы', 'тем') : undefined}>
         {themes.length === 0 ? (
           <Empty>Тематических словарей пока нет — они появятся здесь, как только будут добавлены.</Empty>
         ) : (
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
             {themes.map((t) => (
               <li key={t.id}>
-                <CardLink to={`/library/vocab/${t.id}`}>
-                  <span className="min-w-0 flex-1">
-                    <span className="flex items-center gap-2 font-display text-[1.625rem] leading-[1.05]">
-                      {t.level && <LevelBadge level={t.level} className="font-sans tracking-normal" />}
+                <Link to={`/library/vocab/${t.id}`} className="card card-link flex h-full flex-col gap-3 p-4 no-underline sm:p-4">
+                  <span className="min-w-0">
+                    <span className="block leading-tight font-semibold text-ink hyphens-auto" lang="ru">
                       {t.title}
                     </span>
-                    <span className="mt-0.5 block text-sm text-ink-muted">
-                      {t.titlePt && (
-                        <i lang="pt-PT" className="font-pt">
-                          {t.titlePt}
-                          {' · '}
-                        </i>
-                      )}
-                      {plural(t.words.length, 'слово', 'слова', 'слов')}
-                    </span>
+                    {t.titlePt && (
+                      <span lang="pt-PT" className="mt-0.5 block font-pt text-sm text-ink-muted italic hyphens-auto">
+                        {t.titlePt}
+                      </span>
+                    )}
                   </span>
-                  {chevron}
-                </CardLink>
+                  <span className="mt-auto flex items-baseline justify-between gap-2 text-sm text-ink-muted">
+                    <span>
+                      <span className="font-display text-[1.75rem] leading-none text-ink tabular-nums">{t.words.length}</span>{' '}
+                      {plural(t.words.length, 'слово', 'слова', 'слов').replace(/^\d+\s/, '')}
+                    </span>
+                    {t.level && <span className="text-xs font-semibold tracking-wide">{t.level}</span>}
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>
         )}
       </Section>
 
-      <Section title="Чтение" icon={BookOpenText} tone="bg-brand text-on-brand" hint={texts.length ? plural(texts.length, 'текст', 'текста', 'текстов') : undefined}>
+      <Section title="Чтение" hint={texts.length ? plural(texts.length, 'текст', 'текста', 'текстов') : undefined}>
         {texts.length === 0 ? (
           <Empty>Текстов для чтения пока нет — они появятся здесь, как только будут добавлены.</Empty>
         ) : (
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="border-t border-line">
             {texts.map((r) => {
               const p = progress.get(r.id)
               return (
-                <li key={r.id}>
-                  <CardLink to={`/library/reading/${r.id}`}>
+                <li key={r.id} className="border-b border-line">
+                  <Link
+                    to={`/library/reading/${r.id}`}
+                    className="group flex min-h-16 items-center gap-4 rounded-control px-1 py-3 no-underline transition-colors hover:bg-surface"
+                  >
+                    <span className="w-8 shrink-0 text-sm font-bold tracking-wide text-ink-muted tabular-nums">{r.level}</span>
                     <span className="min-w-0 flex-1">
-                      <span className="flex items-center gap-2">
-                        <LevelBadge level={r.level} />
-                        <span className="font-display text-[1.625rem] leading-[1.05]" lang="pt-PT">
-                          {r.title}
-                        </span>
+                      <span className="block font-display text-[1.5rem] leading-[1.05] text-ink" lang="pt-PT">
+                        {r.title}
                       </span>
-                      <span className="mt-1 flex flex-wrap items-center gap-2 text-sm text-ink-muted">
+                      <span className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
                         {plural(r.paragraphs.length, 'абзац', 'абзаца', 'абзацев')}
                         {r.questions.length > 0 && <> · {plural(r.questions.length, 'вопрос', 'вопроса', 'вопросов')}</>}
                         {p && <StatusBadge status={p.status} />}
                       </span>
                     </span>
                     {chevron}
-                  </CardLink>
+                  </Link>
                 </li>
               )
             })}

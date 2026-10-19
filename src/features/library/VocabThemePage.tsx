@@ -27,7 +27,7 @@ export function VocabThemePage() {
     <article className="space-y-5">
       <PageHeader
         back={{ to: '/library', label: 'Библиотека' }}
-        eyebrow={
+        meta={
           <>
             {theme.level && <LevelBadge level={theme.level} />}
             <span>Словарь · {plural(theme.words.length, 'слово', 'слова', 'слов')}</span>
@@ -75,58 +75,64 @@ export function VocabThemePage() {
         />
       )}
 
-      <div className="card overflow-hidden p-0">
-        <table className="w-full table-fixed border-collapse text-left break-words">
-          <thead className="bg-surface-2 text-sm text-ink-muted">
-            <tr>
-              <th className="w-[50%] px-2 py-2.5 font-semibold sm:px-3 md:w-[32%]">Português</th>
-              <th className="px-2 py-2.5 font-semibold sm:px-3">Перевод</th>
-              <th className="hidden w-[34%] px-3 py-2.5 font-semibold md:table-cell">Пример</th>
-              <th className="w-14 px-1.5 py-2 sm:w-16 sm:px-2">
-                <span className="sr-only">В повторение</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {theme.words.map((w, i) => {
-              const spec = specs[i]
-              return (
-                <tr key={i} className="border-t border-line align-top">
-                  <td className="px-2 py-2 sm:px-3">
-                    <div className="flex items-start gap-2">
-                      <SpeakButton text={w.pt} size="sm" />
-                      <div className="min-w-0 pt-2">
-                        <span className="font-semibold" lang="pt-PT">
-                          {w.pt}
-                        </span>{' '}
-                        <GenderBadge gender={w.gender} />
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-2 py-2 pt-4 sm:px-3">
+      {/* Word list. Phone: word + translation on line 1, example muted on line 2, «+» on the right.
+          ≥md: four aligned columns (word · translation · example · action) with a quiet header. */}
+      <section aria-label="Слова темы" className="card p-0">
+        <div
+          aria-hidden
+          className="hidden grid-cols-[2.5rem_minmax(0,13fr)_minmax(0,11fr)_minmax(0,16fr)_auto] gap-x-4 border-b border-line-strong px-4 pt-3 pb-2 text-[0.8125rem] font-semibold text-ink-muted md:grid"
+        >
+          <span />
+          <span>Português</span>
+          <span>Перевод</span>
+          <span>Пример</span>
+          <span className="w-11" />
+        </div>
+        <ul>
+          {theme.words.map((w, i) => {
+            const spec = specs[i]
+            return (
+              <li
+                key={i}
+                className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-x-2 border-b border-line px-2 py-2 last:border-b-0 sm:px-3 md:grid-cols-[auto_minmax(0,13fr)_minmax(0,11fr)_minmax(0,16fr)_auto] md:gap-x-4 md:px-4"
+              >
+                <SpeakButton text={w.pt} size="sm" />
+                {/* Phone: one flowing line «word (gender) — translation», example below. md: contents split into columns. */}
+                <div className="min-w-0 pt-2 md:contents">
+                  <p className="min-w-0 md:pt-2">
+                    <span className="font-semibold hyphens-auto" lang="pt-PT">
+                      {w.pt}
+                    </span>{' '}
+                    <GenderBadge gender={w.gender} />
+                    <span aria-hidden className="text-ink-subtle md:hidden">
+                      {' — '}
+                    </span>
+                    <span className="hyphens-auto md:hidden" lang="ru">
+                      {w.ru}
+                    </span>
+                  </p>
+                  <p className="hidden min-w-0 pt-2 hyphens-auto md:block" lang="ru">
                     {w.ru}
-                    {w.example && (
-                      <p className="mt-1 font-pt text-sm text-ink-muted md:hidden" lang="pt-PT">
-                        {w.example}
-                      </p>
-                    )}
-                  </td>
-                  <td className="hidden px-3 py-2 pt-4 font-pt text-sm text-ink-muted md:table-cell" lang="pt-PT">
-                    {w.example}
-                  </td>
-                  <td className="px-1.5 py-2 sm:px-2">
-                    <AddCardButton
-                      added={!!cards.have?.has(spec.id)}
-                      disabled={cards.busy || cards.have === null}
-                      onClick={() => void cards.add([spec])}
-                    />
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </div>
+                  </p>
+                  {w.example ? (
+                    <p className="mt-0.5 min-w-0 font-pt text-sm text-ink-muted hyphens-auto md:mt-0 md:pt-2.5" lang="pt-PT">
+                      {w.example}
+                    </p>
+                  ) : (
+                    <span className="hidden md:block" />
+                  )}
+                </div>
+                <AddCardButton
+                  variant="text"
+                  added={!!cards.have?.has(spec.id)}
+                  disabled={cards.busy || cards.have === null}
+                  onClick={() => void cards.add([spec])}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      </section>
 
       <VocabTutor theme={theme} />
     </article>

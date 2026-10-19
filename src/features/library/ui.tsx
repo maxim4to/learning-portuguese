@@ -25,15 +25,48 @@ export function GenderBadge({ gender }: { gender?: VocabWord['gender'] }) {
   )
 }
 
-/** Round «+» button (44px) that turns into «✓» once the card exists. */
-export function AddCardButton({ added, disabled, onClick }: { added: boolean; disabled?: boolean; onClick(): void }) {
+/**
+ * «+» action that turns into «✓» once the card exists.
+ * `round` (default): 44px outlined circle. `text`: a quiet text action for dense lists — the hit area stays 44px.
+ */
+export function AddCardButton({
+  added,
+  disabled,
+  onClick,
+  variant = 'round',
+}: {
+  added: boolean
+  disabled?: boolean
+  onClick(): void
+  variant?: 'round' | 'text'
+}) {
+  const label = added ? 'Уже в повторении' : 'Добавить в повторение'
+  const icon = added ? <Check aria-hidden className={variant === 'text' ? 'size-4' : 'size-5'} strokeWidth={2.5} /> : <Plus aria-hidden className={variant === 'text' ? 'size-4' : 'size-5'} />
+  if (variant === 'text') {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        disabled={added || disabled}
+        aria-label={label}
+        title={label}
+        className={cx(
+          'inline-flex size-11 shrink-0 items-center justify-center rounded-control text-sm font-semibold transition-colors disabled:cursor-default',
+          added ? 'text-brand-ink' : 'text-ink-muted hover:bg-surface-2 hover:text-ink',
+          disabled && !added && 'opacity-50',
+        )}
+      >
+        {icon}
+      </button>
+    )
+  }
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={added || disabled}
-      aria-label={added ? 'Уже в повторении' : 'Добавить в повторение'}
-      title={added ? 'Уже в повторении' : 'Добавить в повторение'}
+      aria-label={label}
+      title={label}
       className={cx(
         'grid size-11 shrink-0 place-items-center rounded-full border transition-[background-color,border-color,transform] duration-150 active:scale-95 disabled:cursor-default',
         added
@@ -42,7 +75,7 @@ export function AddCardButton({ added, disabled, onClick }: { added: boolean; di
         disabled && !added && 'opacity-50',
       )}
     >
-      {added ? <Check aria-hidden className="size-5" strokeWidth={2.5} /> : <Plus aria-hidden className="size-5" />}
+      {icon}
     </button>
   )
 }

@@ -223,7 +223,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
           id={`${ex.id}-h`}
           ref={headingRef}
           tabIndex={-1}
-          className="inline-flex rounded-pill bg-sun-soft px-3 py-1 text-xs font-semibold tracking-[0.08em] text-sun uppercase outline-none"
+          className="text-sm font-semibold text-ink-muted outline-none"
         >
           {exerciseHeading(ex)}
         </h3>
@@ -238,7 +238,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
         {current && (
           <>
             <ExerciseFeedback ex={ex} rec={current} lenient={lenientAccents} />
-            <div className="sticky-actions -mx-2 rounded-pill bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+            <div className="sticky-actions -mx-2 rounded-pill bg-surface p-2 sm:static sm:mx-0 sm:bg-transparent sm:p-0">
               <button
                 ref={nextRef}
                 type="button"
