@@ -25,6 +25,7 @@ import { WordEditor } from './WordEditor.tsx'
 import { WordList } from './WordList.tsx'
 import { WordSearchDialog } from './WordSearchDialog.tsx'
 import { exampleSource, wordCardId, wordPt } from './wordOps.ts'
+import { practicePath } from '@/features/practice/paths'
 
 const STATUSES: WordStatus[] = ['new', 'learning', 'known', 'paused']
 const STATUS_CHIP: Record<WordStatus, string> = { new: 'Новые', learning: 'Учу', known: 'Знаю', paused: 'На паузе' }
@@ -226,14 +227,14 @@ export function WordsPage() {
                   icon={<BookA className="size-7" />}
                   tone="azulejo"
                   title={<span id="words-empty">Словарь пока пуст</span>}
-                  text="Сохраняйте слова кнопкой «в словарь» в темах библиотеки и в лексике ситуаций — или найдите слово здесь. Если его нет в приложении, добавьте со своим переводом."
+                  text="Сохраняйте слова кнопкой «в словарь» в тематических словарях и в лексике ситуаций — или найдите слово здесь. Если его нет в приложении, добавьте со своим переводом."
                   action={
                     <>
                       <Button ref={addRef} icon={<Plus />} onClick={() => setAdding(true)}>
                         Добавить слово
                       </Button>
-                      <ButtonLink to="/library" variant="secondary">
-                        Темы библиотеки
+                      <ButtonLink to={practicePath('vocab')} variant="secondary">
+                        Тематические словари
                       </ButtonLink>
                     </>
                   }

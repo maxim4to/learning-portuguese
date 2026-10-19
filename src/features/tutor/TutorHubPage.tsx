@@ -2,9 +2,10 @@ import { useCallback, useMemo, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight, History } from 'lucide-react'
 import { EmptyState, Skeleton } from '@/components/EmptyState'
-import { PageHeader } from '@/components/PageHeader'
 import { LevelBadge, StatusBadge } from '@/components/StatusBadge'
 import { useProgressMap } from '@/features/lessons/useTopicProgress'
+import { PracticeHeader } from '@/features/practice/PracticeHeader'
+import { practicePath, situationHref } from '@/features/practice/paths'
 import { nextTopics, pickDaily, resolveTutorItem, shakyTopics, suggestedSituations } from './items'
 import { DAILY_MODES, modeTitle } from './modes'
 import { buildDailyPrompt, type DailyPick } from './prompts'
@@ -19,7 +20,7 @@ function SectionTitle({ children }: { children: ReactNode }) {
   return <h2>{children}</h2>
 }
 
-/** /tutor — «Практика с агентом»: daily combined session, suggestions, history of completed sessions. */
+/** /practice/tutor — «Практика с агентом»: daily combined session, suggestions, history of completed sessions. */
 export function TutorHubPage() {
   const { map: progress, loaded, reload } = useProgressMap()
   const [now] = useState(() => Date.now())
@@ -45,14 +46,13 @@ export function TutorHubPage() {
 
   return (
     <div className="page">
-      <PageHeader
-        back={{ to: '/', label: 'Главная' }}
-        title="Практика с агентом"
-        subtitle={
+      <PracticeHeader
+        section="tutor"
+        lead={
           <p>
-          Занятия с ИИ-ассистентом (Claude, ChatGPT…) по материалам курса. Выберите занятие, скопируйте промпт и вставьте его в новый
-          чат — ассистент проведёт урок по-русски, строго на европейском португальском. В конце он выдаст строку «Итог: …» — вставьте её
-          при отметке занятия, и оно засчитается в прогресс темы.
+            Занятия с ИИ-ассистентом (Claude, ChatGPT…) по материалам курса. Выберите занятие, скопируйте промпт и вставьте его в новый
+            чат — ассистент проведёт урок по-русски, строго на европейском португальском. В конце он выдаст строку «Итог: …» — вставьте её
+            при отметке занятия, и оно засчитается в прогресс темы.
           </p>
         }
       />
@@ -76,7 +76,7 @@ export function TutorHubPage() {
               {daily.situation && (
                 <>
                   {daily.topics.length > 0 && ' · '}
-                  Ситуация: <Link to={`/situation/${daily.situation.id}`}>{daily.situation.title}</Link>
+                  Ситуация: <Link to={situationHref(daily.situation.id)}>{daily.situation.title}</Link>
                 </>
               )}
             </p>
@@ -139,7 +139,7 @@ export function TutorHubPage() {
             const p = progress.get(s.id)
             return (
               <li key={s.id}>
-                <Link to={`/situation/${s.id}?tab=tutor`} className={linkCard}>
+                <Link to={`${situationHref(s.id)}?tab=tutor`} className={linkCard}>
                   <LevelBadge level={s.level} className="mt-0.5" />
                   <span className="min-w-0 flex-1">
                     <span className="block font-semibold">{s.title}</span>
@@ -155,8 +155,8 @@ export function TutorHubPage() {
           })}
         </ul>
         <p className="text-sm text-ink-muted">
-          Тексты и словари тоже можно отработать с агентом — раздел «Практика с агентом» внизу страницы в{' '}
-          <Link to="/library">Библиотеке</Link>.
+          Тексты и словари тоже можно отработать с агентом — раздел «Практика с агентом» внизу каждого{' '}
+          <Link to={practicePath('reading')}>текста</Link> и <Link to={practicePath('vocab')}>словаря</Link>.
         </p>
       </section>
 

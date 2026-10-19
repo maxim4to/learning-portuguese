@@ -15,6 +15,7 @@ import { DialogueSection } from './DialogueSection'
 import { SituationPractice } from './SituationPractice'
 import { PhrasesSection, VocabSection } from './StudySections'
 import { WritingSection } from './WritingSection'
+import { practicePath } from '@/features/practice/paths'
 
 const TABS = ['dialogue', 'phrases', 'vocab', 'exercises', 'writing', 'tutor'] as const
 type Tab = (typeof TABS)[number]
@@ -39,7 +40,7 @@ export function SituationPage() {
           tone="neutral"
           title="Ситуация не найдена"
           text={`Ситуации «${id}» нет в курсе — возможно, ссылка устарела.`}
-          action={<ButtonLink to="/situations">К ситуациям</ButtonLink>}
+          action={<ButtonLink to={practicePath('situations')}>К ситуациям</ButtonLink>}
         />
       </div>
     )
@@ -88,7 +89,7 @@ function SituationModule({ situation }: { situation: Situation }) {
   return (
     <article className="page">
       <PageHeader
-        back={{ to: '/situations', label: 'Ситуации' }}
+        back={{ to: practicePath('situations'), label: 'Практика · Ситуации' }}
         meta={
           <>
             <LevelBadge level={situation.level} />

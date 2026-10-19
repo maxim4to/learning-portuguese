@@ -2,6 +2,7 @@
 import { findExercise, getSituation, getTopic, getVocabTheme, type Exercise } from '@/content'
 import type { SrsCard } from '@/data/types.ts'
 import type { PtSource } from '@/features/words/source'
+import { situationHref } from '@/features/practice/paths'
 
 /** Link target for a topicId that may be a grammar topic or a situation. */
 export function errorTopicLink(topicId: string | undefined): { to: string; title: string } | null {
@@ -9,7 +10,7 @@ export function errorTopicLink(topicId: string | undefined): { to: string; title
   const t = getTopic(topicId)
   if (t) return { to: `/topic/${t.id}`, title: t.title }
   const s = getSituation(topicId)
-  if (s) return { to: `/situation/${s.id}`, title: s.title }
+  if (s) return { to: situationHref(s.id), title: s.title }
   return null
 }
 

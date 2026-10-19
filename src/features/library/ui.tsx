@@ -3,6 +3,7 @@ import type { VocabWord } from '@/content'
 import { cx } from '@/components/cx'
 import { EmptyState } from '@/components/EmptyState'
 import { BackLink as SharedBackLink } from '@/components/PageHeader'
+import { practicePath } from '@/features/practice/paths'
 
 /** Grammatical gender: neutral chip (no blue/pink coding), letter + article. */
 const GENDER: Record<NonNullable<VocabWord['gender']>, { label: string; title: string }> = {
@@ -94,14 +95,14 @@ export function AddCardButton({
   )
 }
 
-export function BackLink({ to = '/library', label = 'Библиотека' }: { to?: string; label?: string }) {
+export function BackLink({ to = practicePath('cheatsheets'), label = 'Практика · Шпаргалки' }: { to?: string; label?: string }) {
   return <SharedBackLink to={to} label={label} />
 }
 
-export function NotFound({ what }: { what: string }) {
+export function NotFound({ what, back }: { what: string; back?: { to: string; label: string } }) {
   return (
     <div className="space-y-3">
-      <BackLink />
+      <BackLink {...back} />
       <div className="card">
         <EmptyState
           icon={<SearchX className="size-7" />}

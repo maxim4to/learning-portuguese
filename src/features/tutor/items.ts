@@ -13,6 +13,7 @@ import {
 import type { TopicProgress } from '@/data'
 import type { TutorKind } from './modes'
 import type { DailyPick } from './prompts'
+import { readingHref, situationHref, vocabHref } from '@/features/practice/paths'
 
 export interface TutorItemRef {
   id: string
@@ -27,11 +28,11 @@ export function resolveTutorItem(id: string): TutorItemRef | undefined {
   const t = getTopic(id)
   if (t) return { id, kind: 'topic', title: t.title, to: `/topic/${id}?tab=tutor` }
   const s = getSituation(id)
-  if (s) return { id, kind: 'situation', title: s.title, to: `/situation/${id}?tab=tutor` }
+  if (s) return { id, kind: 'situation', title: s.title, to: `${situationHref(id)}?tab=tutor` }
   const r = getReadingText(id)
-  if (r) return { id, kind: 'reading', title: r.title, to: `/library/reading/${id}#tutor` }
+  if (r) return { id, kind: 'reading', title: r.title, to: `${readingHref(id)}#tutor` }
   const v = getVocabTheme(id)
-  if (v) return { id, kind: 'vocab', title: v.title, to: `/library/vocab/${id}#tutor` }
+  if (v) return { id, kind: 'vocab', title: v.title, to: `${vocabHref(id)}#tutor` }
   return undefined
 }
 

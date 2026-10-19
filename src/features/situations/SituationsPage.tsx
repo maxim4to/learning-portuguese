@@ -1,41 +1,47 @@
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { MessagesSquare } from 'lucide-react'
-import { Chip, ChipGroup } from '@/components/Chip'
 import { Illustration } from '@/components/Illustration'
 import { situationArt, situationCrops } from '@/components/illustrations'
 import { EmptyState } from '@/components/EmptyState'
-import { PageHeader } from '@/components/PageHeader'
 import { plural } from '@/features/library/format'
-import { LEVELS, listSituations, type Level, type Situation } from '@/content'
+import { listSituations, type Situation } from '@/content'
 import type { TopicProgress } from '@/data'
 import { StatusBadge } from '@/components/StatusBadge'
 import { useProgressMap } from '@/features/lessons/useTopicProgress'
-import { MaterialsTabs } from '@/features/library/LibraryPage'
+import { groupByLevel, useLevelFilter } from '@/features/practice/levels'
+import { PracticeHeader } from '@/features/practice/PracticeHeader'
+import { situationHref } from '@/features/practice/paths'
+import { GroupTitle, LevelChips } from '@/features/practice/ui'
 
-type Filter = Level | 'all'
-
+/** /practice/situations — everyday scenes, grouped by level. */
 export function SituationsPage() {
   const situations = listSituations()
   const crops = situationCrops(situations.map((s) => s.id))
   const { map: progress } = useProgressMap()
-  const [params, setParams] = useSearchParams()
-  const raw = params.get('level')
-  const filter: Filter = raw && (LEVELS as readonly string[]).includes(raw) ? (raw as Level) : 'all'
-
-  const groups = LEVELS.map((level) => ({
-    level,
-    items: situations.filter((s) => s.level === level).sort((a, b) => a.title.localeCompare(b.title, 'ru')),
-  })).filter((g) => g.items.length > 0 && (filter === 'all' || g.level === filter))
+  const [filter, setFilter] = useLevelFilter()
+  const sorted = [...situations].sort((a, b) => a.title.localeCompare(b.title, 'ru'))
+  const groups = groupByLevel(sorted, filter)
+  const started = situations.filter((s) => (progress.get(s.id)?.status ?? 'not-started') !== 'not-started').length
 
   return (
     <div className="page">
-      <div className="space-y-4">
-        <MaterialsTabs active="situations" />
-        <PageHeader
-          title="Ситуации"
-          subtitle="Диалоги из жизни в Португалии: слушайте, разыгрывайте по ролям, учите фразы и слова."
-        />
-      </div>
+      <PracticeHeader
+        section="situations"
+        lead={
+          <p>
+            Диалоги из жизни в Португалии: слушайте, разыгрывайте по ролям, учите фразы и слова.
+            {situations.length > 0 && (
+              <>
+                {' '}
+                {plural(situations.length, 'ситуация', 'ситуации', 'ситуаций')}
+                {started > 0 && <>, начато {started}</>}.
+              </>
+            )}
+          </p>
+        }
+      >
+        {situations.length > 0 && <LevelChips items={situations} value={filter} onChange={setFilter} />}
+      </PracticeHeader>
 
       {situations.length === 0 ? (
         <div className="card">
@@ -48,35 +54,11 @@ export function SituationsPage() {
         </div>
       ) : (
         <>
-          <ChipGroup label="Фильтр по уровню">
-            {(['all', ...LEVELS] as Filter[]).map((l) => {
-              const n = l === 'all' ? situations.length : situations.filter((s) => s.level === l).length
-              return (
-                <Chip
-                  key={l}
-                  pressed={filter === l}
-                  count={n}
-                  muted={!n}
-                  onClick={() =>
-                    setParams(l === 'all' ? {} : { level: l }, {
-                      replace: true,
-                    })
-                  }
-                >
-                  {l === 'all' ? 'Все' : l}
-                </Chip>
-              )
-            })}
-          </ChipGroup>
-
           {groups.length === 0 && <p className="card text-sm text-ink-muted">На уровне {filter} ситуаций пока нет.</p>}
 
           {groups.map((g) => (
-            <section key={g.level} className="space-y-3">
-              <div className="flex items-baseline gap-3">
-                <h2>{g.level}</h2>
-                <span className="text-sm font-semibold text-ink-muted">{plural(g.items.length, 'ситуация', 'ситуации', 'ситуаций')}</span>
-              </div>
+            <section key={g.level ?? 'none'} className="space-y-3">
+              <GroupTitle title={g.level ?? 'Без уровня'} hint={plural(g.items.length, 'ситуация', 'ситуации', 'ситуаций')} />
               {/* Two balanced columns from lg, so the rows use the container width instead of a 1150px strip. */}
               <ul className="card overflow-hidden p-0 lg:columns-2 lg:gap-0 lg:[column-rule:1px_solid_var(--border)]">
                 {g.items.map((s) => (
@@ -105,7 +87,7 @@ function SituationCard({
 }) {
   return (
     <Link
-      to={`/situation/${s.id}`}
+      to={situationHref(s.id)}
       className="group flex min-h-[4.5rem] items-center gap-3 px-3 py-2.5 no-underline transition-colors duration-150 hover:bg-surface-2 active:bg-sunken/50 sm:gap-4 sm:px-4"
     >
       <span aria-hidden className="relative size-14 shrink-0 overflow-hidden rounded-2xl bg-surface-2">

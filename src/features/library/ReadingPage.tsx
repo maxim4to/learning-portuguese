@@ -14,11 +14,12 @@ import { makeSegmenter } from './highlight'
 import { ReadingQuestions } from './ReadingQuestions'
 import { AddCardButton, NotFound } from './ui'
 import { plural } from './format'
+import { practicePath } from '@/features/practice/paths'
 
 export function ReadingPage() {
   const { id = '' } = useParams()
   const text = getReadingText(id)
-  if (!text) return <NotFound what="Текст" />
+  if (!text) return <NotFound what="Текст" back={{ to: practicePath('reading'), label: 'Практика · Чтение' }} />
   return <ReadingView key={text.id} text={text} />
 }
 
@@ -74,7 +75,7 @@ function ReadingView({ text }: { text: ReadingText }) {
   return (
     <article className="page">
       <PageHeader
-        back={{ to: '/library', label: 'Библиотека' }}
+        back={{ to: practicePath('reading'), label: 'Практика · Чтение' }}
         meta={
           <>
             <LevelBadge level={text.level} />

@@ -5,6 +5,7 @@ import { ExerciseRunner, type RunSummary } from '@/features/exercises'
 import { saveRun, type SaveOutcome } from '@/features/lessons/persist'
 import { ResultScreen } from '@/features/lessons/ResultScreen'
 import { plural } from './format'
+import { practicePath } from '@/features/practice/paths'
 
 interface Run {
   key: number
@@ -69,7 +70,7 @@ export function ReadingQuestions({ text }: { text: ReadingText }) {
     return (
       <ResultScreen
         statusLabel="Статус текста:"
-        back={{ to: '/library', label: 'В библиотеку' }}
+        back={{ to: practicePath('reading'), label: 'К текстам' }}
         summary={result.summary}
         exercises={result.list}
         retry={result.retry}

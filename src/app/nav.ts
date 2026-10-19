@@ -12,18 +12,16 @@ export interface NavItem {
 
 /**
  * Main navigation (top bar on desktop, bottom tab bar on mobile — 5 columns).
- * «Практика» = situations (/situations, /situation/:id — the second learning track, default sub-tab) and the
- * reference library (/library and its pages) as the second sub-tab (audit P1-12).
- * «Практика с агентом» (/tutor) has no slot of its own (the bottom bar stays at 5): it is reached from the
- * dashboard card and the «С агентом» tab / section of every topic, situation, text and vocab theme, and
- * highlights «Главная».
+ * «Практика» (/practice) has five sub-sections on their own routes — situations (default), cheatsheets, vocab
+ * themes, reading, the agent hub — switched by a second-level SubNav (see features/practice). The old URLs
+ * (/situations, /situation/:id, /library…, /tutor) redirect there and also keep the item active.
  * «Мой словарь» (/words, /words/:id) lives under «Повторение» as its second sub-tab (ReviewTabs).
  */
 export const NAV_ITEMS: NavItem[] = [
-  { to: '/', label: 'Главная', match: ['/tutor'] },
+  { to: '/', label: 'Главная' },
   { to: '/syllabus', label: 'Курс', match: ['/topic', '/diagnostic'] },
   { to: '/review', label: 'Повторение', short: 'Карточки', match: ['/words'] },
-  { to: '/situations', label: 'Практика', match: ['/situation', '/library'] },
+  { to: '/practice', label: 'Практика', match: ['/situations', '/situation', '/library', '/tutor'] },
   { to: '/settings', label: 'Настройки' },
 ]
 

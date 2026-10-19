@@ -4,6 +4,7 @@
  * adds dialogue lines, reading paragraphs, examples and exercises with the same encoding.
  */
 import { findExercise, getCheatsheet, getReadingText, getSituation, getTopic, getVocabTheme } from '@/content'
+import { cheatsheetHref, readingHref, situationHref, vocabHref } from '@/features/practice/paths'
 
 export type SourceKind = 'situation' | 'reading' | 'topic' | 'vocab' | 'exercise' | 'cheatsheet' | 'review' | 'writing' | 'manual'
 
@@ -38,7 +39,7 @@ export function decodeSource(src: string): PtSource {
 export type SourceGroup = 'vocab' | 'situation' | 'reading' | 'other' | 'manual'
 
 export const SOURCE_GROUP_LABEL: Record<SourceGroup, string> = {
-  vocab: 'Темы библиотеки',
+  vocab: 'Тематические словари',
   situation: 'Ситуации',
   reading: 'Тексты',
   other: 'Уроки и упражнения',
@@ -114,10 +115,10 @@ export function sourceHref(src: string): string | undefined {
   const at = (prefix: string) => (s.index !== undefined ? `#${prefix}-${s.index}` : '')
   switch (s.kind) {
     case 'vocab':
-      return getVocabTheme(s.id) ? `/library/vocab/${s.id}${s.part === 'examples' ? at('w') : ''}` : undefined
+      return getVocabTheme(s.id) ? `${vocabHref(s.id)}${s.part === 'examples' ? at('w') : ''}` : undefined
     case 'situation': {
       if (!getSituation(s.id)) return undefined
-      const base = `/situation/${s.id}`
+      const base = situationHref(s.id)
       switch (s.part) {
         case 'dialogue':
           return `${base}${at('dlg-line')}`
@@ -134,12 +135,12 @@ export function sourceHref(src: string): string | undefined {
     case 'reading': {
       if (!getReadingText(s.id)) return undefined
       const hash = s.part === 'paragraph' ? at('p') : s.part === 'glossary' ? at('gl') : ''
-      return `/library/reading/${s.id}${hash}`
+      return `${readingHref(s.id)}${hash}`
     }
     case 'topic':
       return getTopic(s.id) ? `/topic/${s.id}${s.part === 'examples' ? `?tab=examples${at('ex')}` : ''}` : undefined
     case 'cheatsheet':
-      return getCheatsheet(s.id) ? `/library/cheatsheet/${s.id}` : undefined
+      return getCheatsheet(s.id) ? cheatsheetHref(s.id) : undefined
     case 'exercise': {
       const loc = findExercise(s.id)
       if (!loc) return undefined
@@ -149,9 +150,9 @@ export function sourceHref(src: string): string | undefined {
         case 'topic-minitest':
           return `/topic/${loc.ownerId}?tab=mini-test`
         case 'situation':
-          return `/situation/${loc.ownerId}?tab=exercises`
+          return `${situationHref(loc.ownerId)}?tab=exercises`
         case 'reading':
-          return `/library/reading/${loc.ownerId}#questions`
+          return `${readingHref(loc.ownerId)}#questions`
         case 'diagnostic':
           return '/diagnostic'
       }

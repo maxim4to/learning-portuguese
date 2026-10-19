@@ -10,6 +10,7 @@ import { copyText } from './clipboard'
 import type { TutorModeDef } from './modes'
 import { CLAUDE_URL, modeTitle } from './modes'
 import { ASSESSMENTS, assessmentFromPct, parseScore, saveTutorSession, sessionScore, tutorHistory, type Assessment } from './persist'
+import { TUTOR_HREF } from '@/features/practice/paths'
 
 
 /** WAI-ARIA radio group keys (as in SegmentedControl): arrows / Home / End select and move focus. */
@@ -315,7 +316,7 @@ function CompleteForm({
           )}
           {!hideHubLink && (
             <p>
-              <Link to="/tutor" className="inline-flex min-h-11 items-center gap-1 font-semibold">
+              <Link to={TUTOR_HREF} className="inline-flex min-h-11 items-center gap-1 font-semibold">
                 Все занятия с агентом и история <ArrowRight aria-hidden className="size-4" />
               </Link>
             </p>

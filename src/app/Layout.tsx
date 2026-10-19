@@ -1,15 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigationType } from 'react-router-dom'
 import {
-  BookOpen,
   Circle,
   GraduationCap,
   House,
   Layers,
-  Library,
   MessagesSquare,
   Settings2,
-  Sparkles,
   type LucideIcon,
 } from 'lucide-react'
 import { onProgressReset, useRepository } from '@/data'
@@ -29,11 +26,8 @@ const ICONS: Record<string, LucideIcon> = {
   '/': House,
   '/syllabus': GraduationCap,
   '/review': Layers,
-  '/library': Library,
-  '/situations': MessagesSquare,
+  '/practice': MessagesSquare,
   '/settings': Settings2,
-  '/tutor': Sparkles,
-  '/reading': BookOpen,
 }
 const iconFor = (to: string) => ICONS[to] ?? Circle
 

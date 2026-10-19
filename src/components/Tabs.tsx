@@ -1,5 +1,6 @@
-import { useEffect, useRef, type KeyboardEvent, type ReactNode } from 'react'
-import { cx, scrollBehavior } from './cx'
+import { useRef, type KeyboardEvent, type ReactNode } from 'react'
+import { cx } from './cx'
+import { subItemClass, subMetaClass, subRowOuter, subRowScroller, useActiveInView } from './subNavStyle'
 import { useScrollEdges } from './useScrollEdges'
 
 export interface TabItem<T extends string> {
@@ -15,6 +16,7 @@ const panelId = (idBase: string, value: string) => `${idBase}-panel-${value}`
 /**
  * WAI-ARIA tabs: roving tabindex, ←/→/Home/End (automatic activation), ids wired to panels,
  * active tab kept in view in the horizontally scrolling bar, edges faded only where tabs are hidden.
+ * Looks like `SubNav` (the shared second-level style); use SubNav instead when each item is its own route.
  * `sticky` pins the bar under the status bar (mobile) / top bar (desktop) via --sticky-top.
  * Render panels with <TabPanel idBase value active>.
  */
@@ -38,14 +40,7 @@ export function Tabs<T extends string>({
   const barRef = useRef<HTMLDivElement>(null)
   useScrollEdges(barRef)
 
-  useEffect(() => {
-    const bar = barRef.current
-    const el = bar?.querySelector<HTMLElement>('[aria-selected="true"]')
-    if (!bar || !el) return
-    const l = el.offsetLeft - bar.offsetLeft
-    if (l < bar.scrollLeft + 24 || l + el.offsetWidth > bar.scrollLeft + bar.clientWidth - 24)
-      bar.scrollTo({ left: l - 24, behavior: scrollBehavior() })
-  }, [value])
+  useActiveInView(barRef, '[aria-selected="true"]', value)
 
   function onKey(e: KeyboardEvent) {
     const i = items.findIndex((t) => t.value === value)
@@ -61,15 +56,9 @@ export function Tabs<T extends string>({
   }
 
   return (
-    <div className={cx(sticky && 'sticky top-(--sticky-top) z-10 -mx-4 bg-bg px-4 py-2 md:-mx-2 md:px-2', className)}>
-      <div
-        ref={barRef}
-        role="tablist"
-        aria-label={label}
-        onKeyDown={onKey}
-        // Phones: the tabs wrap onto a second row (nothing hidden behind a fade); from md one pill that hugs its tabs.
-        className="flex flex-wrap gap-1 rounded-[1.375rem] bg-surface p-1 md:scroll-fade-x md:w-fit md:max-w-full md:flex-nowrap md:overflow-x-auto md:rounded-pill"
-      >
+    // Same second-level style as SubNav: text tabs with an ink underline on a 1px baseline, one row that scrolls on phones.
+    <div className={cx(subRowOuter, '-mx-4', sticky ? 'sticky top-(--sticky-top) z-10 bg-bg md:-mx-2 md:px-2 md:before:inset-x-2' : 'md:mx-0', className)}>
+      <div ref={barRef} role="tablist" aria-label={label} onKeyDown={onKey} className={cx(subRowScroller, 'px-4 md:px-0')}>
         {items.map((t) => {
           const on = t.value === value
           return (
@@ -82,15 +71,10 @@ export function Tabs<T extends string>({
               aria-controls={panelId(idBase, t.value)}
               tabIndex={on ? 0 : -1}
               onClick={() => onChange(t.value)}
-              className={cx(
-                'inline-flex min-h-11 flex-auto items-center justify-center gap-1.5 rounded-pill px-4 active:scale-[0.97] motion-reduce:active:scale-100 md:flex-none md:shrink-0 text-sm font-semibold whitespace-nowrap transition-[background-color,color,transform] duration-150 lg:px-5',
-                on ? 'bg-ink text-surface' : 'text-ink-muted hover:bg-surface-2 hover:text-ink',
-              )}
+              className={subItemClass(on)}
             >
               {t.label}
-              {t.meta !== undefined && (
-                <span className={cx('text-xs tabular-nums', on ? 'text-on-ink-accent' : 'text-ink-muted')}>{t.meta}</span>
-              )}
+              {t.meta !== undefined && <span className={subMetaClass}>{t.meta}</span>}
             </button>
           )
         })}

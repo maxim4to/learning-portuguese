@@ -11,6 +11,7 @@ import { useContentWords } from '@/features/words/useContentWords'
 import { VocabQuiz } from './VocabQuiz'
 import { AddCardButton, GenderBadge, NotFound } from './ui'
 import { plural } from './format'
+import { practicePath } from '@/features/practice/paths'
 
 const NO_WORDS: never[] = []
 
@@ -25,14 +26,14 @@ export function VocabThemePage() {
   })
   const [quiz, setQuiz] = useState(false)
 
-  if (!theme) return <NotFound what="Словарь" />
+  if (!theme) return <NotFound what="Словарь" back={{ to: practicePath('vocab'), label: 'Практика · Словари' }} />
 
   const allAdded = dict.ready && dict.missing.length === 0
 
   return (
     <article className="page">
       <PageHeader
-        back={{ to: '/library', label: 'Библиотека' }}
+        back={{ to: practicePath('vocab'), label: 'Практика · Словари' }}
         meta={
           <>
             {theme.level && <LevelBadge level={theme.level} />}

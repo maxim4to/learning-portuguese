@@ -28,6 +28,7 @@ import { plural } from '@/features/library/format'
 import { pickDaily } from '@/features/tutor/items'
 import { activityDays, computeStreak, levelStats, suggestTopics, weeklyActivity, type LevelStats } from './stats'
 import { useProgressData } from './useProgressData'
+import { practicePath, TUTOR_HREF } from '@/features/practice/paths'
 
 const DAY = 86_400_000
 const rtf = new Intl.RelativeTimeFormat('ru', { numeric: 'auto' })
@@ -176,7 +177,7 @@ export function DashboardPage() {
             <TutorCard daily={view.daily} />
             {diagCard || (
               <EntryCard
-                to="/situations"
+                to={practicePath('situations')}
                 icon={<MessagesSquare />}
                 title="Ситуации"
                 text={`${plural(situationsTotal, 'бытовая сцена', 'бытовые сцены', 'бытовых сцен')}: диалоги, фразы и письма для жизни в Португалии.`}
@@ -386,7 +387,7 @@ function DayGoal({ reviewed, due, exercises, hasCards }: { reviewed: number; due
 function TutorCard({ daily }: { daily: ReturnType<typeof pickDaily> }) {
   const items = [...daily.topics.map((t) => t.title), ...(daily.situation ? [daily.situation.title] : [])]
   return (
-    <EntryCard to="/tutor" icon={<Sparkles />} title="Беседа дня с агентом" text="Готовый промпт для Claude или ChatGPT — в одно касание.">
+    <EntryCard to={TUTOR_HREF} icon={<Sparkles />} title="Беседа дня с агентом" text="Готовый промпт для Claude или ChatGPT — в одно касание.">
       <span className="line-clamp-2 block font-semibold">{items.join(' · ') || 'Разговор на свободную тему'}</span>
     </EntryCard>
   )

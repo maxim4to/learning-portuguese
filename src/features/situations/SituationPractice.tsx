@@ -4,6 +4,7 @@ import { useRepository, type TopicProgress, type TopicStatus } from '@/data'
 import { ExerciseRunner, type RunSummary } from '@/features/exercises'
 import { saveRun, type SaveOutcome } from '@/features/lessons/persist'
 import { ResultScreen } from '@/features/lessons/ResultScreen'
+import { practicePath } from '@/features/practice/paths'
 
 interface Props {
   situation: Situation
@@ -66,7 +67,7 @@ export function SituationPractice({ situation, progress, onSaved, next }: Props)
         outcome={result.outcome}
         error={result.error}
         statusLabel="Статус ситуации:"
-        back={{ to: '/situations', label: 'К ситуациям' }}
+        back={{ to: practicePath('situations'), label: 'К ситуациям' }}
         onRetryWrong={() => start(result.list.filter((e) => wrongIds.has(e.id)), true)}
         onRestart={() => start(exercises, false)}
         next={next}
