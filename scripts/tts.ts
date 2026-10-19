@@ -54,6 +54,7 @@ function collect(): Item[] {
 
   for (const file of listJson(CONTENT)) {
     const rel = path.relative(CONTENT, file);
+    if (rel.split(path.sep)[0] === "lexicon") continue; // лексикон озвучивается отдельно (фаза 4: --lexicon)
     let data: unknown;
     try {
       data = JSON.parse(fs.readFileSync(file, "utf8"));

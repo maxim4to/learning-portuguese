@@ -9,6 +9,7 @@ import { LevelBadge } from '@/components/StatusBadge'
 import { useToast } from '@/components/toastContext'
 import type { WordEntry, WordSource } from '@/data'
 import type { LexEntry } from '@/engine/lexicon/lookup'
+import { morphLabel } from '@/engine/lexicon/morph'
 import { normalizeForm, splitContraction } from '@/engine/lexicon/normalize'
 import { GenderBadge } from '@/features/library/ui'
 import { useCanSpeak } from '../audio.ts'
@@ -22,21 +23,26 @@ import type { CaptureTarget } from './hitTest.ts'
 import { lookupOptions, type LookupOption } from './options.ts'
 import { wordsOf } from './text.ts'
 
-const TAG_LABEL: Record<string, string> = { PL: 'мн. ч.', F: 'ж. р.', FPL: 'ж. р., мн. ч.' }
-
-/** «do = de + o», «levanto-me = levanto + me», «мн. ч. от o pão». */
+/**
+ * «do = de + o», «levanto-me = levanto + me · presente do indicativo (eu)», «мн. ч. от o pão»,
+ * «pretérito perfeito (nós) от «falar»», «бразильский вариант; в Португалии — autocarro».
+ */
 function formNote(form: string, o: LookupOption | undefined): string | undefined {
   const n = normalizeForm(form)
   const c = o?.cand
   if (o?.mwe) return `выражение со словом «${form}»`
   const contraction = c?.contraction ?? (!c ? splitContraction(n) : null)
   if (contraction) return `стяжение: ${n} = ${contraction.prep} + ${contraction.rest}`
+  const morph = c ? morphLabel(c.tag) : ''
   if (c?.clitics?.length) {
     const host = n.split('-')[0]
-    return `${n} = ${host} + ${c.clitics.join(' + ')}${c.mesoclitic ? ' (мезоклиза)' : ''}`
+    return `${n} = ${host} + ${c.clitics.join(' + ')}${c.mesoclitic ? ' (мезоклиза)' : ''}${morph ? ` · ${morph}` : ''}`
   }
   if (c?.article) return `с артиклем «${c.article}»`
-  if (c && TAG_LABEL[c.tag]) return `${TAG_LABEL[c.tag]} от «${wordPt({ lemma: c.entry.lemma, pos: c.entry.pos, gender: c.entry.gender })}»`
+  if (!c) return undefined
+  const lemma = wordPt({ lemma: c.entry.lemma, pos: c.entry.pos, gender: c.entry.gender })
+  if (c.tag === 'BR') return `бразильский вариант; в Португалии — «${lemma}»`
+  if (morph) return `${morph} от «${lemma}»`
   return undefined
 }
 

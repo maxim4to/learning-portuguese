@@ -307,7 +307,7 @@ export const DiagnosticSchema = z.strictObject({
 export type Diagnostic = z.infer<typeof DiagnosticSchema>
 
 // ---------------------------------------------------------------------------
-// Lexicon (content/lexicon/<letter>.json — NOT part of the runtime content glob;
+// Lexicon (content/lexicon/{function,verbs-*,nouns-*,words-*}.json — NOT part of the runtime content glob;
 // compiled by `npm run lexicon -- build` into src/generated/lexicon.json)
 // ---------------------------------------------------------------------------
 

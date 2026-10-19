@@ -25,9 +25,10 @@ export interface LexiconBundle {
   hash: string
   entries: LexEntryTuple[]
   /**
-   * Normalised form → [[entryIndex, morphTag], …]. Lemmas, explicit `forms`, and regular
-   * plural / feminine forms that occur in the corpus. morphTag: '' = lemma, 'X' = explicit
-   * form (unspecified), 'PL' plural, 'F' feminine, 'FPL' feminine plural.
+   * Normalised form → [[entryIndex, morphTag], …]. Lemmas, explicit `forms`, pt-BR variants (`br`) and the
+   * generated forms (conjugation, plural / feminine) that occur in the course corpus. morphTag: '' = lemma,
+   * 'X' = explicit form (unanalysed), 'PI1s' / 'PPS1p' / 'GER' / 'PP' … verb forms, 'PL' / 'F' / 'FPL' nominal,
+   * 'BR' pt-BR; several tags of one entry are comma-joined ('PC1s,PC3s,IMP3s'). Labels: ./morph.ts.
    */
   forms: Record<string, [number, string][]>
   /** 'vocab:<themeId>' | 'situation:<id>' | 'reading:<id>' → entry indices. */
@@ -53,7 +54,8 @@ export interface LexEntry {
   themes: string[]
 }
 
-export type LexMatchVia = 'exact' | 'article' | 'contraction' | 'clitic'
+/** How the form was matched; 'guess' = lemma proposed by ./guess.ts (always approximate). */
+export type LexMatchVia = 'exact' | 'article' | 'contraction' | 'clitic' | 'guess'
 
 export interface LexCandidate {
   entry: LexEntry
@@ -71,7 +73,7 @@ export interface LexCandidate {
   /** Detached pronouns: levanto-me → ['me']; dir-lhe-ei → ['lhe']. */
   clitics?: string[]
   mesoclitic?: boolean
-  /** Found only by the accent-insensitive fallback («voce» → «você»): show as «возможно». */
+  /** Found only by the accent-insensitive fallback («voce» → «você») or the ending guesser: show as «возможно». */
   approximate: boolean
 }
 

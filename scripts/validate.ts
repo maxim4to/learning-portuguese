@@ -4,7 +4,9 @@
  * 1. Loads every /content/**.json, validates with zod schemas and cross-references
  *    (same code as the app loader: src/content/build.ts).
  * 2. Brazilianism linter over Portuguese strings.
- * 3. With --check-audio: reports `audio: true` items without /public/audio/<sha1>.mp3.
+ * 3. Lexicon (content/lexicon → src/generated/lexicon.json, see scripts/lexicon.ts): the bundle must be up to date
+ *    (error) and cover the corpus (warning until the end of phase 4, see LEXICON_COVERAGE_TARGET).
+ * 4. With --check-audio: reports `audio: true` items without /public/audio/<sha1>.mp3.
  * Exit code 1 on any error.
  */
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
@@ -13,9 +15,11 @@ import { fileURLToPath } from 'node:url'
 import { buildContentIndex, type ContentIndex } from '../src/content/build.ts'
 import { audioHash } from '../src/engine/audioHash.ts'
 import { lintText } from './brazilianisms.ts'
+import { collectCorpus, contentHash, coverage, readIgnore, readLexicon } from './lexicon.ts'
 
 const root = fileURLToPath(new URL('..', import.meta.url))
 const contentDir = join(root, 'content')
+const lexiconDir = join(contentDir, 'lexicon')
 
 function walk(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
@@ -28,6 +32,7 @@ const errors: string[] = []
 const warnings: string[] = []
 const files: Record<string, unknown> = {}
 for (const abs of walk(contentDir)) {
+  if (abs.startsWith(lexiconDir)) continue // the lexicon has its own schema and pipeline (section 3)
   const key = '/' + relative(root, abs).split('\\').join('/')
   try {
     files[key] = JSON.parse(readFileSync(abs, 'utf8'))
@@ -70,6 +75,35 @@ function lintValue(value: unknown, path: string, soft: boolean) {
 }
 
 for (const [file, data] of Object.entries(files)) lintValue(data, file, false)
+
+// ---------------------------------------------------------------------------
+// Lexicon: bundle freshness + corpus coverage
+// ---------------------------------------------------------------------------
+
+/**
+ * Share of unique corpus forms the lexicon must resolve.
+ * TODO(phase 4 end): when content/lexicon/_todo.json is empty, make this an error (target 1.0 = 100 % of unique forms;
+ * at the end of the tooling step it was 45.2 % of unique forms / 75.6 % of tokens).
+ */
+const LEXICON_COVERAGE_TARGET = 1.0
+try {
+  const lexicon = readLexicon().flatMap((f) => f.entries)
+  const bundle = JSON.parse(readFileSync(join(root, 'src', 'generated', 'lexicon.json'), 'utf8'))
+  if (bundle.hash !== contentHash(files, lexicon)) {
+    errors.push('src/generated/lexicon.json is stale (content, lexicon or morphology changed) — run `npm run lexicon -- build`')
+  }
+  const cov = coverage(bundle, collectCorpus(files).freq, new Set(readIgnore().keys()))
+  const pct = (a: number, b: number) => `${((100 * a) / Math.max(1, b)).toFixed(1)}%`
+  if (cov.uniqueCovered < cov.uniqueForms * LEXICON_COVERAGE_TARGET) {
+    warnings.push(
+      `lexicon coverage ${pct(cov.uniqueCovered, cov.uniqueForms)} of unique forms, ${pct(cov.tokensCovered, cov.tokens)} of tokens ` +
+        `(target ${LEXICON_COVERAGE_TARGET * 100}%) — fill content/lexicon from _todo.json (npm run lexicon); e.g. ` +
+        cov.topMissing.slice(0, 8).map(([f]) => f).join(', '),
+    )
+  }
+} catch (e) {
+  errors.push(`lexicon: ${(e as Error).message}`)
+}
 
 // ---------------------------------------------------------------------------
 // Audio presence (optional)

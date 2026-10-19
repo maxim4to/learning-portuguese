@@ -8,6 +8,7 @@
  * `createLexicon(bundle)` builds the same object synchronously (Node scripts and tests).
  */
 import type { Level } from '../../content/schema.ts'
+import { guessLemmas } from './guess.ts'
 import { analyzeForm, foldDiacritics, normalizeForm, reflexiveLemma, type FormAnalysis } from './normalize.ts'
 import {
   LEX_FLAG,
@@ -21,7 +22,10 @@ import {
 export type * from './types.ts'
 
 const LEVEL_RANK: Record<Level, number> = { A1: 0, A2: 1, B1: 2, B2: 3 }
-const VIA_RANK: Record<LexCandidate['via'], number> = { exact: 0, article: 0, clitic: 1, contraction: 2 }
+const VIA_RANK: Record<LexCandidate['via'], number> = { exact: 0, article: 0, clitic: 1, contraction: 2, guess: 3 }
+const NOMINAL_POS = new Set<string>(['noun', 'adj', 'det', 'pron', 'num'])
+/** Guessed candidates kept per lookup. */
+const MAX_GUESSES = 4
 
 /** After these words a noun/adjective is expected (articles, prepositions, contractions, possessives). */
 const NOMINAL_CONTEXT = new Set(
@@ -120,6 +124,20 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
     }
   }
 
+  /** Unknown form: lemmas proposed by the ending guesser that exist in the lexicon (approximate). */
+  function guessHits(a: FormAnalysis, form: string, out: LexCandidate[]) {
+    const base = { form, article: a.article, contraction: a.contraction, clitics: a.clitics, mesoclitic: a.mesoclitic }
+    for (const g of guessLemmas(a.key)) {
+      const keys = forms.has(g.lemma) ? [g.lemma] : (folded.get(foldDiacritics(g.lemma)) ?? [])
+      const cands = keys.flatMap((k) => lemmaHits(k).map((e) => [k, e] as const))
+      if (g.pos === 'verb') for (const e of lemmaHits(g.lemma + '-se')) cands.push([g.lemma + '-se', e])
+      for (const [matched, entry] of cands) {
+        const ok = g.pos === 'verb' ? entry.pos === 'verb' : g.pos === 'adv' ? entry.pos === 'adj' : NOMINAL_POS.has(entry.pos)
+        if (ok) out.push({ ...base, entry, matched, tag: g.tag, via: 'guess', approximate: true })
+      }
+    }
+  }
+
   function score(c: LexCandidate, ctx: LookupContext | undefined, singleWord: boolean): number {
     let s = VIA_RANK[c.via]
     if (c.via === 'clitic' && c.entry.reflexive) s -= 0.5
@@ -148,6 +166,12 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
         for (const key of folded.get(foldDiacritics(a.key)) ?? []) hitsFor(a, key, true, form, found)
       }
     }
+    if (!found.length && !form.includes(' ')) {
+      // Ending guesser: «falaremos» → falar (FI1p), «canções» → canção (PL) — only lemmas that exist
+      const guessed: LexCandidate[] = []
+      for (const a of analyses) if (a.via !== 'contraction') guessHits(a, form, guessed)
+      found = guessed.slice(0, MAX_GUESSES * 4)
+    }
     const single = !form.includes(' ')
     const scored = found.map((c, order) => ({ c, s: score(c, ctx, single), order }))
     scored.sort((x, y) => x.s - y.s || x.order - y.order)
@@ -158,7 +182,7 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
       seen.add(c.entry.index)
       found.push(c)
     }
-    return found
+    return found[0]?.via === 'guess' ? found.slice(0, MAX_GUESSES) : found
   }
 
   function matchMwe(tokens: readonly string[], i: number): MweMatch | null {
