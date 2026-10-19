@@ -19,6 +19,10 @@
     "text": "assinar",
     "voice": "pt-PT-RaquelNeural"
   },
+  "01b463150ece310839548d706192d6fd2426cef5": {
+    "text": "Isso trata-se na Câmara ou na empresa municipal de estacionamento — em Lisboa, por exemplo, é na EMEL. Precisa do certificado de matrícula do carro e do comprovativo de morada.",
+    "voice": "pt-PT-RaquelNeural"
+  },
   "01eb83cac6c1a8731b76a06a9c4560f162a41bfc": {
     "text": "Tem chovido imenso este inverno.",
     "voice": "pt-PT-RaquelNeural"
@@ -1617,6 +1621,10 @@
   },
   "2cf37a73216f298df48c8f292998ba31b733bc43": {
     "text": "Quando ligaste, já tínhamos jantado.",
+    "voice": "pt-PT-RaquelNeural"
+  },
+  "2d318a2e0fcc5fbe62200b45a195cdc38ba22b91": {
+    "text": "Não faz, desde que ela viva na mesma morada. Normalmente também pode tratar disso online.",
     "voice": "pt-PT-RaquelNeural"
   },
   "2d3fa3004864e380b3ec1be8920b850c1c91dbd6": {
@@ -6971,10 +6979,6 @@
     "text": "o analgésico",
     "voice": "pt-PT-RaquelNeural"
   },
-  "c0689aaddca636e083478fa66688d4ffb325a858": {
-    "text": "Isso é cá na Câmara. Precisa do certificado de matrícula do carro e do comprovativo de morada.",
-    "voice": "pt-PT-RaquelNeural"
-  },
   "c089d13ccf359cfee3c2b5fc6dbf834cbacf63ad": {
     "text": "Hoje não lhe peças nada, está com os azeites.",
     "voice": "pt-PT-RaquelNeural"
@@ -7545,10 +7549,6 @@
   },
   "ce886a7a76b47dd089604a3e5cbe150659fbf282": {
     "text": "o gelado",
-    "voice": "pt-PT-RaquelNeural"
-  },
-  "ce91401a3bc751d3dfbe5f6a4ef35be53adeb850": {
-    "text": "Não faz, desde que ela viva na mesma morada. Também pode tratar disso online, no portal da Câmara.",
     "voice": "pt-PT-RaquelNeural"
   },
   "ceb77bbd4f035f10e579e7d00e9f1b95965469fe": {

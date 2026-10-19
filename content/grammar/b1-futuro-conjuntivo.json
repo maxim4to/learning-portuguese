@@ -194,7 +194,7 @@
       "topicId": "b1-futuro-conjuntivo",
       "type": "transform",
       "prompt": "Se tens dúvidas, pergunta.",
-      "instruction": "Замените presente на futuro do conjuntivo (норма).",
+      "instruction": "Замените presente на futuro do conjuntivo (возможная ситуация в будущем; presente тоже верен — как общее правило).",
       "answer": [
         "Se tiveres dúvidas, pergunta."
       ]

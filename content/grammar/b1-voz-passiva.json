@@ -259,9 +259,10 @@
       "ru": "Здесь сдаются комнаты.",
       "answer": [
         "Aqui alugam-se quartos.",
-        "Alugam-se quartos aqui."
+        "Alugam-se quartos aqui.",
+        "Aqui se alugam quartos."
       ],
-      "explanation": "Aqui не «магнит», поэтому в pt-PT — ênclise: alugam-se. Глагол во мн. ч., потому что quartos во мн. ч."
+      "explanation": "Нейтрально — ênclise: Aqui alugam-se quartos (aqui сам по себе не «магнит»). Aqui se alugam quartos тоже верно, но с логическим ударением «именно здесь». Глагол во мн. ч., потому что quartos во мн. ч."
     },
     {
       "id": "b1-voz-passiva-ex-20",

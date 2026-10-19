@@ -9,8 +9,8 @@
     "a1-preposicoes-lugar-contracoes"
   ],
   "theory": "## Часы: a + артикль\n\n| | пример |\n|---|---|\n| **às** + часы | **às cinco**, **às nove e meia** |\n| **à** uma | **à uma (hora)** — в час |\n| **ao** meio-dia, **à** meia-noite | в полдень, в полночь |\n| **das … às …** | **das nove às cinco** — с девяти до пяти |\n| **até às …** | **até às seis** — до шести |\n| **por volta das …** | **por volta das oito** — около восьми |\n\n## Части дня\n\n**de manhã** (утром), **à tarde** (днём, после обеда), **à noite** (вечером, ночью), **de madrugada** (глубокой ночью, под утро). С часами: **às três da tarde**, **às dez da noite**. Не *na manhã* и не *em noite*.\n\n## Дни недели и выходные\n\n| однократно | регулярно |\n|---|---|\n| **na segunda(-feira)** — в (этот) понедельник | **à segunda / às segundas** — по понедельникам |\n| **no sábado** | **ao sábado / aos sábados** |\n| **no fim de semana** — в эти выходные | **ao fim de semana / aos fins de semana** — по выходным |\n\nКонструкция **à / às** + день недели для регулярности — типично португальская.\n\n## Месяцы, годы, сезоны, даты\n\n- **em** + месяц / год: **em agosto, em 2025**;\n- **no / na** + сезон: **no verão, no inverno, na primavera, no outono**;\n- дата: **a 25 de abril** или **no dia 25 de abril**; **Hoje são 3 de maio.** / **Hoje é dia 3.**\n\n## Отрезки времени\n\n| предлог | значение | пример |\n|---|---|---|\n| **há** | …назад; уже (сколько длится) | **Cheguei há dois dias.** **Moro aqui há um ano.** |\n| **desde** | с (момента) | **Moro aqui desde 2021.** **desde segunda-feira** |\n| **até** | до | **Até amanhã!** **Fico até domingo.** |\n| **durante** | в течение | **Dormi durante a viagem.** |\n| **daqui a** | через (от сейчас, в будущем) | **O comboio parte daqui a dez minutos.** |\n| **dentro de** | через, в пределах | **Volto dentro de uma semana.** |\n| **em** + срок | за (сколько потребовалось) | **Fiz isto em dez minutos.** |\n| **de … a …** | с … по … | **de segunda a sexta** |\n\n## Важные контрасты\n\n- **há** (назад) ↔ **daqui a** (через): **há uma hora** / **daqui a uma hora**.\n- **há** ↔ **desde**: **há** + длительность (**há dois anos**), **desde** + точка (**desde 2022**, **desde janeiro**).\n- **há** ↔ **à**: **Cheguei há uma hora** (час назад) ≠ **Cheguei à uma hora** (в час).\n- **durante** ↔ **há**: **Vivi em Faro durante três anos** (жил три года) ≠ **Vivi em Faro há três anos** (жил три года назад).\n\nДля «уже»: **Há quanto tempo estudas português? — Há seis meses.** — Сколько ты уже учишь португальский? — Полгода.",
-  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **às segundas / à segunda** | nas segundas / às segundas | регулярность |\n| **ao fim de semana** | no fim de semana | в pt-PT «по выходным» — ao |\n| **até às seis** | até as seis / até seis | в pt-PT обычно с грависом |\n| **a 25 de abril** | em 25 de abril / no dia 25 | |\n| **há dois dias** | faz dois dias / dois dias atrás | *faz* — бразилизм |\n| **daqui a uma hora** | daqui a uma hora / em uma hora | *em uma hora* — калька с английского |\n\nКонструкция **a + дата** и **à segunda** сразу выдают португальскую норму.",
-  "commonErrors": "- **«В понедельник» дословно**: *Em segunda-feira* ✗ → **Na segunda-feira** ✓.\n- **«Утром, вечером»**: *Na manhã bebo café* ✗ → **De manhã bebo café** ✓; *Na noite* ✗ → **À noite** ✓.\n- **«В пять часов»**: *Em cinco horas* ✗ → **Às cinco** ✓.\n- **«Уже два года» через desde**: *Moro aqui desde dois anos* ✗ → **Moro aqui há dois anos** ✓.\n- **Бразильское faz / atrás**: *Faz um mês* ✗ → **Há um mês** ✓.\n- **«Через» через em**: *O filme começa em dez minutos* ✗ → **daqui a dez minutos** ✓.\n- **Гравис**: *a uma* (в час) ✗ → **à uma** ✓; *as cinco* ✗ → **às cinco** ✓.\n- **«Жил три года»**: *Vivi lá há três anos* — это «три года назад»; длительность → **durante três anos** ✓.",
+  "ptVsBr": "| pt-PT | pt-BR | комментарий |\n|---|---|---|\n| **às segundas / à segunda** | nas segundas / às segundas | регулярность |\n| **ao fim de semana** | no fim de semana | в pt-PT «по выходным» — ao |\n| **até às seis** | até as seis / até seis | в pt-PT обычно с грависом |\n| **a 25 de abril** / **no dia 25 de abril** | em 25 de abril / no dia 25 de abril | в pt-PT обе формы нормальны; *em 25 de abril* — бразильское |\n| **há dois dias** | faz dois dias / dois dias atrás | *faz* в Португалии тоже возможно, но звучит по-бразильски; *há … atrás* — плеоназм |\n| **daqui a uma hora** | daqui a uma hora / em uma hora | *em uma hora* — калька с английского |\n\nКонструкция **a + дата** и **à segunda** сразу выдают португальскую норму.",
+  "commonErrors": "- **«В понедельник» дословно**: *Em segunda-feira* ✗ → **Na segunda-feira** ✓.\n- **«Утром, вечером»**: *Na manhã bebo café* ✗ → **De manhã bebo café** ✓; *Na noite* ✗ → **À noite** ✓.\n- **«В пять часов»**: *Em cinco horas* ✗ → **Às cinco** ✓.\n- **«Уже два года» через desde**: *Moro aqui desde dois anos* ✗ → **Moro aqui há dois anos** ✓.\n- **Бразильское faz / atrás**: *Faz um mês*, *um mês atrás* (возможны, но типичны для Бразилии) → **Há um mês** ✓.\n- **«Через» через em**: *O filme começa em dez minutos* ✗ → **daqui a dez minutos** ✓.\n- **Гравис**: *a uma* (в час) ✗ → **à uma** ✓; *as cinco* ✗ → **às cinco** ✓.\n- **«Жил три года»**: *Vivi lá há três anos* — это «три года назад»; длительность → **durante três anos** ✓.",
   "examples": [
     {
       "pt": "A farmácia está aberta das nove às sete.",
@@ -190,12 +190,12 @@
       "prompt": "«Я живу здесь уже пять лет.»",
       "options": [
         "Moro aqui desde cinco anos.",
-        "Moro aqui faz cinco anos.",
+        "Moro aqui durante cinco anos.",
         "Moro aqui em cinco anos.",
         "Moro aqui há cinco anos."
       ],
       "correct": 3,
-      "explanation": "Длительность до настоящего момента — há + срок. Faz — бразилизм."
+      "explanation": "Длительность до настоящего момента — há + срок. Durante — «в течение» (обычно о законченном отрезке), desde — только с точкой отсчёта."
     },
     {
       "id": "a2-preposicoes-tempo-ex-13",
@@ -399,11 +399,12 @@
       "prompt": "«Три дня назад»",
       "options": [
         "Há três dias",
-        "Faz três dias",
+        "Durante três dias",
         "Daqui a três dias",
         "Desde três dias"
       ],
-      "correct": 0
+      "correct": 0,
+      "explanation": "«Назад» — há + срок. Durante três dias — «в течение трёх дней»."
     },
     {
       "id": "a2-preposicoes-tempo-mt-08",

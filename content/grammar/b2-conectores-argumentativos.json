@@ -369,7 +369,8 @@
       "answer": [
         "chegues"
       ],
-      "ru": "Как только доберёшься до отеля, позвони мне."
+      "ru": "Как только (если) доберёшься до отеля, позвони мне.",
+      "explanation": "Uma vez que + conjuntivo — условие («как только, если»); с индикативом — причина («поскольку»). В разговоре естественнее Assim que / Quando chegares."
     },
     {
       "id": "b2-conectores-argumentativos-mt-04",

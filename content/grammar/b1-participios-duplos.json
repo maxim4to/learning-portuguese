@@ -66,10 +66,11 @@
       "type": "fill-gap",
       "prompt": "Já tinhas ___ (pagar) a conta da luz?",
       "answer": [
-        "pago"
+        "pago",
+        "pagado"
       ],
       "ru": "Ты уже оплатил счёт за свет?",
-      "explanation": "pagar → pago и с ter."
+      "explanation": "С ter в современном pt-PT обычно pago; традиционная грамматика даёт pagado — тоже верно."
     },
     {
       "id": "b1-participios-duplos-ex-04",
@@ -320,8 +321,10 @@
       "type": "fill-gap",
       "prompt": "Ainda não tinham ___ (pagar) o jantar.",
       "answer": [
-        "pago"
-      ]
+        "pago",
+        "pagado"
+      ],
+      "explanation": "С ter в современном pt-PT обычно pago; традиционная грамматика даёт pagado — тоже верно."
     },
     {
       "id": "b1-participios-duplos-mt-03",

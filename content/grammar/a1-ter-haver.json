@@ -386,11 +386,11 @@
       "options": [
         "tem",
         "hão",
-        "têm",
+        "estão",
         "há"
       ],
       "correct": 3,
-      "explanation": "Фраза начинается с места (neste hotel) — нужен há."
+      "explanation": "Безличное «есть, имеется» — há: Neste hotel há quartos livres? (Обращаясь прямо к администратору, говорят и «Têm quartos livres?» — «У вас есть…?», но это уже ter с подлежащим «вы».) *Tem quartos* в значении «есть» — бразильское."
     },
     {
       "id": "a1-ter-haver-mt-07",
