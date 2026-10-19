@@ -18,6 +18,8 @@ import { TransformExercise } from './kinds/Transform'
 import { TranslateRuPtExercise } from './kinds/TranslateRuPt'
 import type { AnswerRecord, RunSummary, Submission } from './types'
 import { useSettings } from './useSettings'
+import { isLookupOpen } from '@/features/words/capture/store'
+import { lookupAttrs } from '@/features/words/source'
 
 export interface ExerciseRunnerProps {
   exercises: readonly Exercise[]
@@ -213,6 +215,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
   useEffect(() => {
     if (current) return
     const onKey = (e: KeyboardEvent) => {
+      if (isLookupOpen()) return // keys belong to the word card while it is open
       const a = document.activeElement
       if (a && a !== document.body && a !== headingRef.current) return
       if (!noMods(e) || e.isComposing || isInHiddenPanel(topRef.current)) return
@@ -236,6 +239,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     nextRef.current?.focus({ preventScroll: true })
     nextRef.current?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() })
     const onKey = (e: KeyboardEvent) => {
+      if (isLookupOpen()) return // Enter belongs to the word card while it is open
       if (e.key !== 'Enter' || e.repeat || e.isComposing || !noMods(e)) return
       if (isInHiddenPanel(topRef.current)) return
       const t = e.target as HTMLElement | null
@@ -295,7 +299,13 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
         </div>
       )}
 
-      <section ref={sectionRef} className="card space-y-6" aria-labelledby={`${ex.id}-h`}>
+      {/* Word lookup is off until the answer is checked (no hints), then on for the prompt, answer and feedback. */}
+      <section
+        ref={sectionRef}
+        className="card space-y-6"
+        aria-labelledby={`${ex.id}-h`}
+        {...lookupAttrs({ src: { kind: 'exercise', id: ex.id }, locked: !current })}
+      >
         <h3
           id={`${ex.id}-h`}
           ref={headingRef}

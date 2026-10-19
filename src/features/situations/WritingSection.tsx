@@ -1,14 +1,18 @@
 import { useEffect, useId, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import type { Situation } from '@/content'
 import { CircleCheck, Eye, EyeOff } from 'lucide-react'
 import { SpeakButton } from '@/components/SpeakButton'
+import { Pt } from '@/features/words/Pt'
 import { loadWriting, saveWriting } from './persist'
 
 /** «Письмо»: task, draft (localStorage `ptpt:v1:writing:<id>`), reference sample, self-check list. */
 export function WritingSection({ situation }: { situation: Situation }) {
   const task = situation.writingTask
   const [text, setText] = useState(() => loadWriting(situation.id))
-  const [showSample, setShowSample] = useState(false)
+  // A saved word's source link (`#writing-sample`) opens the sample it came from.
+  const { hash } = useLocation()
+  const [showSample, setShowSample] = useState(() => hash === '#writing-sample')
   const [checked, setChecked] = useState<Set<number>>(new Set())
   const [saved, setSaved] = useState(false)
   const fieldId = useId()
@@ -42,6 +46,7 @@ export function WritingSection({ situation }: { situation: Situation }) {
           lang="pt-PT"
           spellCheck
           rows={9}
+          data-lookup="off"
           value={text}
           onChange={(e) => {
             setSaved(false)
@@ -93,14 +98,14 @@ export function WritingSection({ situation }: { situation: Situation }) {
           {showSample ? 'Скрыть образец' : 'Показать образец'}
         </button>
         {showSample && (
-          <div className="card animate-enter space-y-3">
+          <div id="writing-sample" className="card scroll-mt-28 animate-enter space-y-3">
             <div className="flex items-center justify-between gap-3">
               <h3 className="text-base">Образец</h3>
               <SpeakButton text={task.sample} label="Прослушать" />
             </div>
-            <p className="leading-relaxed whitespace-pre-line" lang="pt-PT">
+            <Pt as="p" src={{ kind: 'situation', id: situation.id, part: 'writing' }} className="leading-relaxed whitespace-pre-line">
               {task.sample}
-            </p>
+            </Pt>
           </div>
         )}
       </section>

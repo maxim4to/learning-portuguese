@@ -13,6 +13,7 @@ import { cx, scrollBehavior } from '@/components/cx'
 import { ReviewExercise, type AnswerRecord } from '@/features/exercises'
 import { CardFace, CardHeader, TopicRepeatLink } from './CardFace'
 import { bumpNewSeenToday } from './newCardCounter'
+import { isLookupOpen } from '@/features/words/capture/store'
 
 /** Cards due again within this window are re-shown in the same session (learning steps). */
 const REQUEUE_MS = 20 * 60_000
@@ -105,6 +106,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      if (isLookupOpen()) return // 1–4 / Space / Enter belong to the word card while it is open
       const el = e.target as HTMLElement | null
       if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable)) return
       if (e.metaKey || e.ctrlKey || e.altKey) return

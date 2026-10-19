@@ -13,7 +13,8 @@ import { formatInterval, isNewCard } from '@/engine/fsrs'
 import { useSettings } from '@/features/exercises/useSettings'
 import { useCanSpeak } from './audio.ts'
 import { GENDER_LABEL, POS_LABEL, useLexicon } from './lexicon.ts'
-import { sourceHref, sourceLabel } from './source.ts'
+import { Pt } from './Pt.tsx'
+import { decodeSource, sourceHref, sourceLabel } from './source.ts'
 import { MODE_UNLOCK_HINT, WORD_MODE_LABEL, modeStates, type ModeState } from './status.ts'
 import { useWordActions, useWordCards, useWords, useWordStatus, type WordActionResult } from './useWords.ts'
 import { WordEditor } from './WordEditor.tsx'
@@ -197,9 +198,9 @@ function SourceItem({ source: s }: { source: WordSource }) {
       </p>
       {s.sentence && (
         <div className="flex items-start gap-2">
-          <p className="measure min-w-0 flex-1 pt-1.5 font-pt" lang="pt-PT">
+          <Pt as="p" src={decodeSource(s.src)} ru={s.sentenceRu} className="measure min-w-0 flex-1 pt-1.5 font-pt">
             {s.sentence}
-          </p>
+          </Pt>
           {canSpeak && <SpeakButton text={s.sentence} size="sm" variant="ghost" ariaLabel="Прослушать пример" />}
         </div>
       )}

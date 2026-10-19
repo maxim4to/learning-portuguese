@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { CircleCheck, Info, TriangleAlert, X } from 'lucide-react'
 import { cx } from './cx'
 import { ToastContext, type ToastOptions } from './toastContext'
@@ -26,6 +26,25 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => () => clearTimeout(timer.current), [])
 
+  // Other bottom bars (the word-capture selection bar on phones) stack above a visible toast: `--toast-offset`.
+  const boxRef = useRef<HTMLDivElement>(null)
+  useLayoutEffect(() => {
+    const root = document.documentElement
+    const el = boxRef.current
+    if (!item || !el) {
+      root.style.removeProperty('--toast-offset')
+      return
+    }
+    const set = () => root.style.setProperty('--toast-offset', `${el.offsetHeight + 8}px`)
+    set()
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(set) : null
+    ro?.observe(el)
+    return () => {
+      ro?.disconnect()
+      root.style.removeProperty('--toast-offset')
+    }
+  }, [item])
+
   const Icon = item?.tone === 'danger' ? TriangleAlert : item?.tone === 'success' ? CircleCheck : Info
 
   return (
@@ -39,6 +58,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           {item && (
             <div
               key={item.id}
+              ref={boxRef}
               className="pointer-events-auto flex animate-toast items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-5 text-sm text-bg"
             >
               <Icon

@@ -4,21 +4,41 @@ import { cx, scrollBehavior } from '@/components/cx'
 import type { DialogueLine, Situation } from '@/content'
 import type { VoiceGender } from '@/engine/audio'
 import { useSpeak } from '@/features/exercises'
+import { isLookupOpen } from '@/features/words/capture/store'
+import { Pt } from '@/features/words/Pt'
 
 /** Dialogue voices: A — female (staff, official…), B — male (the learner's role). */
 const SPEAKER_VOICE: Record<DialogueLine['speaker'], VoiceGender> = { A: 'female', B: 'male' }
 
 const PAUSE_MS = 450
+/** «Показывать переводы» is remembered per device. */
+const SHOW_RU_KEY = 'ptpt:v1:dialogue-show-ru'
+
+function readShowRu(): boolean {
+  try {
+    return localStorage.getItem(SHOW_RU_KEY) !== '0'
+  } catch {
+    return true
+  }
+}
+function writeShowRu(v: boolean) {
+  try {
+    localStorage.setItem(SHOW_RU_KEY, v ? '1' : '0')
+  } catch {
+    /* private mode: per session only */
+  }
+}
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
 /**
  * Dialogue: per-line play (speaker's voice), «Прослушать весь диалог» (sequential),
- * translation toggles, role-play (B lines hidden; learner says them, then reveals).
+ * translations (global «Показывать переводы» + a per-line 文A button), role-play (B lines hidden; learner says
+ * them, then reveals). Line text is plain pt (<Pt>): a tap on a word opens the word lookup card.
  */
 export function DialogueSection({ situation }: { situation: Situation }) {
   const lines = situation.dialogue
   const { speak, stop, unavailable } = useSpeak()
-  const [showRu, setShowRu] = useState(true)
+  const [showRu, setShowRu] = useState(readShowRu)
   /** Per-line translation overrides (line index → shown). Cleared by the global toggle. */
   const [ruOverride, setRuOverride] = useState<Map<number, boolean>>(new Map())
   const [roleplay, setRoleplay] = useState(false)
@@ -118,6 +138,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
   useEffect(() => {
     if (waiting === null) return
     const onKey = (e: KeyboardEvent) => {
+      if (isLookupOpen()) return // Enter / Space belong to the word card while it is open
       const t = e.target as HTMLElement | null
       if (t && ['INPUT', 'TEXTAREA', 'BUTTON', 'A', 'SELECT'].includes(t.tagName)) return
       if (e.key === 'Enter' || e.key === ' ') {
@@ -156,13 +177,15 @@ export function DialogueSection({ situation }: { situation: Situation }) {
           type="button"
           className={toggle(showRu)}
           aria-pressed={showRu}
-          aria-label="Перевод"
+          aria-label="Показывать переводы"
           onClick={() => {
-            setShowRu((v) => !v)
+            const next = !showRu
+            setShowRu(next)
+            writeShowRu(next)
             setRuOverride(new Map())
           }}
         >
-          <Languages aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Перевод</span>
+          <Languages aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Переводы</span>
         </button>
         <button type="button" className={toggle(roleplay)} aria-pressed={roleplay} aria-label="Ролевая игра: вы — B" onClick={toggleRoleplay}>
           <Drama aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Роль B</span>
@@ -193,7 +216,13 @@ export function DialogueSection({ situation }: { situation: Situation }) {
         </div>
       )}
 
-      {!roleplay && <p className="text-sm text-ink-muted">Нажмите на реплику, чтобы показать или скрыть перевод.</p>}
+      {!roleplay && (
+        <p className="text-sm text-ink-muted">
+          Нажмите на слово — перевод и «в словарь»; значок{' '}
+          <Languages aria-hidden className="inline size-4 align-[-3px]" />
+          <span className="sr-only">«Перевод реплики»</span> — перевод реплики.
+        </p>
+      )}
 
       <ol className="space-y-3">
         {lines.map((line, i) => {
@@ -242,21 +271,39 @@ export function DialogueSection({ situation }: { situation: Situation }) {
                   </div>
                 ) : (
                   <>
+                    <div className="min-w-0 flex-1 py-0.5">
+                      {/* Plain pt text (not a button): tap / double-click / select a word → word card;
+                          focus + Enter → «Все слова фразы». */}
+                      <Pt
+                        as="p"
+                        id={`dlg-line-${i}`}
+                        tabIndex={0}
+                        src={{ kind: 'situation', id: situation.id, part: 'dialogue', index: i }}
+                        ru={line.ru}
+                        aria-describedby={ruShown(i) ? `dlg-ru-${i}` : undefined}
+                        className="scroll-mt-28 rounded-sm text-base leading-snug font-semibold"
+                      >
+                        {line.pt}
+                      </Pt>
+                      {ruShown(i) && (
+                        <p id={`dlg-ru-${i}`} className="mt-0.5 text-sm text-ink-muted">
+                          {line.ru}
+                        </p>
+                      )}
+                    </div>
                     <button
                       type="button"
-                      id={`dlg-line-${i}`}
-                      className="min-w-0 flex-1 cursor-pointer py-0.5 text-left"
                       aria-expanded={ruShown(i)}
+                      aria-controls={ruShown(i) ? `dlg-ru-${i}` : undefined}
+                      aria-label={`Перевод реплики ${i + 1}`}
+                      title="Перевод реплики"
                       onClick={() => setRuOverride((m) => new Map(m).set(i, !ruShown(i)))}
-                    >
-                      <span className="block text-base leading-snug font-semibold" lang="pt-PT">
-                        {line.pt}
-                      </span>
-                      {ruShown(i) ? (
-                        <span className="mt-0.5 block text-sm text-ink-muted">{line.ru}</span>
-                      ) : (
-                        <span className="sr-only">Показать перевод</span>
+                      className={cx(
+                        'grid size-11 shrink-0 place-items-center rounded-full transition-colors hover:bg-surface-2 active:scale-95',
+                        ruShown(i) ? 'text-ink' : 'text-ink-muted',
                       )}
+                    >
+                      <Languages aria-hidden className="size-4.5" />
                     </button>
                     <button
                       type="button"

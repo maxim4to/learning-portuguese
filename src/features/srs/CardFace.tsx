@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { getTopic } from '@/content'
 import type { CardKind, Settings, SrsCard } from '@/data/types.ts'
-import { errorTopicLink } from './cardContent'
+import { cardSource, errorTopicLink } from './cardContent'
 import { KIND_CHIP, KIND_LABEL, LISTEN_MARK, WORD_TASK } from './kinds'
+import { lookupAttrs } from '@/features/words/source'
 import { SpeakButton } from './SpeakButton'
 
 function hashIndex(s: string, n: number) {
@@ -71,7 +72,11 @@ export function CardFace({ card, revealed, settings }: Props) {
   const listenOnly = card.mode === 'listen'
 
   return (
-    <div className="flex flex-col">
+    // Word lookup only after «Показать ответ»: before it the card is the question itself.
+    <div
+      className="flex flex-col"
+      {...lookupAttrs({ src: cardSource(card), ru: isError ? undefined : backPt ? card.front : frontPt ? card.back : undefined, locked: !revealed })}
+    >
       <CardHeader card={card} />
 
       {/* Front */}
@@ -123,7 +128,7 @@ export function CardFace({ card, revealed, settings }: Props) {
             <div className="card-sunken mx-auto max-w-md text-left text-sm">
               <p className="text-sm font-semibold text-ink-muted">Пример</p>
               <div className="flex items-center gap-2">
-                <p lang="pt-PT" className="flex-1 font-medium">
+                <p lang="pt-PT" data-pt-ru={example.ru} className="flex-1 font-medium">
                   {example.pt}
                 </p>
                 <SpeakButton text={example.pt} voice={voice} rate={rate} size="sm" />

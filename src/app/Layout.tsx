@@ -20,6 +20,8 @@ import { AzulejoMark } from '@/components/Logo'
 import { ToastProvider } from '@/components/Toast'
 import { useFitText } from '@/components/useFitText'
 import { newSeenToday } from '@/features/srs/newCardCounter'
+import { WordCaptureProvider } from '@/features/words/capture/WordCaptureProvider'
+import { WordSearchButton } from '@/features/words/capture/WordSearchButton'
 import { isNavActive, NAV_ITEMS } from './nav'
 
 /** Icons by route (one outline icon set for the whole nav). */
@@ -131,6 +133,8 @@ export function Layout() {
 
   return (
     <ToastProvider>
+      {/* Word capture: tap / select a pt word anywhere → lookup card; «/» → word search. */}
+      <WordCaptureProvider>
       <div className="min-h-dvh">
         <a
           href="#main"
@@ -141,8 +145,9 @@ export function Layout() {
 
         {/* Phone / tablet: slim product row (not sticky); navigation lives in the bottom tab bar until lg. */}
         <header className="page-container pt-(--safe-top) lg:hidden">
-          <div className="flex h-12 items-center">
+          <div className="flex h-12 items-center justify-between">
             <HomeLogo size={24} />
+            <WordSearchButton className="-mr-2.5" />
           </div>
         </header>
 
@@ -150,7 +155,8 @@ export function Layout() {
         <header className="sticky top-[0px] z-20 hidden h-(--header-h) bg-bg lg:block">
           <div className="page-container flex h-full items-center gap-6">
             <HomeLogo size={32} />
-            <nav aria-label="Основные разделы" className="ml-auto flex items-center gap-1 rounded-pill bg-surface p-1">
+            <WordSearchButton className="ml-auto" />
+            <nav aria-label="Основные разделы" className="-ml-3 flex items-center gap-1 rounded-pill bg-surface p-1">
               {NAV_ITEMS.map((item) => {
                 const active = isNavActive(item, pathname)
                 const Icon = iconFor(item.to)
@@ -236,6 +242,7 @@ export function Layout() {
 
         <UpdatePrompt />
       </div>
+      </WordCaptureProvider>
     </ToastProvider>
   )
 }

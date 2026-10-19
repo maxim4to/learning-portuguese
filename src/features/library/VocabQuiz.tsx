@@ -4,6 +4,9 @@ import { Check, RotateCcw, X } from 'lucide-react'
 import { ProgressBar } from '@/components/ProgressBar'
 import { SegmentedControl } from '@/components/SegmentedControl'
 import { SpeakButton } from '@/components/SpeakButton'
+import { isLookupOpen } from '@/features/words/capture/store'
+import { Pt } from '@/features/words/Pt'
+import { lookupAttrs } from '@/features/words/source'
 import { GenderBadge } from './ui'
 
 type Direction = 'pt-ru' | 'ru-pt'
@@ -75,6 +78,7 @@ export function VocabQuiz({
   }
 
   const onKey = useEffectEvent((e: KeyboardEvent) => {
+    if (isLookupOpen()) return // 1 / 2 / Space belong to the word card while it is open
     const t = e.target as HTMLElement | null
     if (t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return
     if (done) return
@@ -98,7 +102,12 @@ export function VocabQuiz({
   const flip = () => setRound((r) => ({ ...r, flipped: !r.flipped }))
 
   return (
-    <section className="card-raised space-y-4 p-4" aria-label="Самопроверка">
+    // Word lookup stays off until the card is flipped (the front must not give the translation away).
+    <section
+      className="card-raised space-y-4 p-4"
+      aria-label="Самопроверка"
+      {...lookupAttrs({ src: { kind: 'vocab', id: theme.id }, locked: !!word && !round.flipped })}
+    >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <SegmentedControl<Direction>
           label="Направление"
@@ -154,14 +163,19 @@ export function VocabQuiz({
                   {back}
                 </span>
                 {dir === 'ru-pt' && <GenderBadge gender={word.gender} />}
-                {word.example && (
-                  <span className="font-pt text-sm text-ink-muted" lang="pt-PT">
-                    {word.example}
-                  </span>
-                )}
               </span>
             )}
           </button>
+          {/* Outside the card button, so a word of the example can be looked up after the flip. */}
+          {round.flipped && word.example && (
+            <Pt
+              as="p"
+              src={{ kind: 'vocab', id: theme.id, part: 'examples', index: idx }}
+              className="-mt-1 animate-enter text-center font-pt text-sm text-ink-muted"
+            >
+              {word.example}
+            </Pt>
+          )}
           <p id="vq-hint" className={round.flipped ? 'sr-only' : 'text-center text-sm text-ink-muted'}>
             {round.flipped ? 'Нажмите, чтобы скрыть перевод' : 'Нажмите на карточку, чтобы увидеть перевод (пробел)'}
           </p>
@@ -204,7 +218,9 @@ export function VocabQuiz({
             <ul className="card-sunken mx-auto max-w-md divide-y divide-line p-0 text-left">
               {round.unknown.map((i) => (
                 <li key={i} className="flex justify-between gap-3 px-3 py-2">
-                  <b lang="pt-PT">{theme.words[i].pt}</b>
+                  <Pt as="b" src={{ kind: 'vocab', id: theme.id, part: 'examples', index: i }} ru={theme.words[i].ru}>
+                    {theme.words[i].pt}
+                  </Pt>
                   <span className="text-ink-muted">{theme.words[i].ru}</span>
                 </li>
               ))}

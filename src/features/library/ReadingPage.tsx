@@ -8,8 +8,8 @@ import { LevelBadge } from '@/components/StatusBadge'
 import { cx } from '@/components/cx'
 import { useSpeak } from '@/features/exercises'
 import { ReadingTutor } from '@/features/tutor/panels'
-import { glossaryCardSpecs, useLibraryCards } from './cards'
-import { GlossaryPopover, type PopoverAnchor } from './GlossaryPopover'
+import { Pt } from '@/features/words/Pt'
+import { useContentWords } from '@/features/words/useContentWords'
 import { makeSegmenter } from './highlight'
 import { ReadingQuestions } from './ReadingQuestions'
 import { AddCardButton, NotFound } from './ui'
@@ -58,19 +58,18 @@ function useReadAll(paragraphs: readonly string[]) {
 function ReadingView({ text }: { text: ReadingText }) {
   const segment = useMemo(() => makeSegmenter(text.glossary), [text.glossary])
   const paragraphs = useMemo(() => text.paragraphs.map((p) => segment(p)), [text.paragraphs, segment])
-  const specs = useMemo(() => glossaryCardSpecs(text), [text])
-  const cards = useLibraryCards(text.id, specs)
+  // Glossary words go to the personal dictionary (source `reading:<id>:glossary:<i>`), like situation vocab.
+  const glossWords = useMemo(() => text.glossary.map((g) => ({ pt: g.word, ru: g.ru })), [text.glossary])
+  const dict = useContentWords(glossWords, {
+    themeKey: `reading:${text.id}`,
+    src: `reading:${text.id}:glossary`,
+    indexed: true,
+    level: text.level,
+  })
   const reader = useReadAll(text.paragraphs)
-  const [anchor, setAnchor] = useState<PopoverAnchor | null>(null)
-  const closePopover = useCallback(() => setAnchor(null), [])
 
-  const missing = cards.have ? specs.filter((s) => !cards.have!.has(s.id)) : specs
-  const allAdded = cards.have !== null && missing.length === 0
+  const allAdded = dict.ready && dict.missing.length === 0
   const reading = reader.current !== null
-  const openEntry = anchor ? text.glossary[anchor.gi] : undefined
-
-  const openWord = (el: HTMLElement, gi: number, viaKey = false) =>
-    setAnchor((a) => (a?.el === el ? null : { gi, rect: el.getBoundingClientRect(), el, viaKey }))
 
   return (
     <article className="page">
@@ -93,7 +92,8 @@ function ReadingView({ text }: { text: ReadingText }) {
         </button>
         {text.glossary.length > 0 && (
           <span className="text-sm text-ink-muted">
-            Нажмите на <span className="border-b-2 border-dotted border-azulejo">подчёркнутое</span> слово — перевод
+            Нажмите на любое слово — перевод и «в словарь»;{' '}
+            <span className="border-b-2 border-dotted border-azulejo">подчёркнуты</span> слова словарика
           </span>
         )}
         <a href="#tutor" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold sm:ml-auto">
@@ -115,51 +115,28 @@ function ReadingView({ text }: { text: ReadingText }) {
             <span onClickCapture={reader.cancel} className="pt-0.5">
               <SpeakButton text={text.paragraphs[pi]} size="sm" ariaLabel={`Прослушать абзац ${pi + 1}`} />
             </span>
-            <p className="measure min-w-0 flex-1 text-base leading-7">
+            {/* Plain pt text: tap / double-click / select a word → word card (glossary words are only marked);
+                focus + Enter → «Все слова фразы». */}
+            <Pt
+              as="p"
+              id={`p-${pi}`}
+              tabIndex={0}
+              src={{ kind: 'reading', id: text.id, part: 'paragraph', index: pi }}
+              className="measure min-w-0 flex-1 scroll-mt-28 rounded-sm text-base leading-7"
+            >
               {segs.map((s, si) =>
                 s.gi === undefined ? (
                   <span key={si}>{s.text}</span>
                 ) : (
-                  // A real inline element (a <button> is always laid out as inline-block, which broke lines — audit P0-12).
-                  <span
-                    key={si}
-                    role="button"
-                    tabIndex={0}
-                    aria-haspopup="dialog"
-                    aria-expanded={anchor?.gi === s.gi}
-                    onClick={(e) => openWord(e.currentTarget, s.gi!)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault()
-                        openWord(e.currentTarget, s.gi!, true)
-                      }
-                    }}
-                    className={cx(
-                      'cursor-pointer rounded-sm border-b-2 border-dotted border-azulejo/70 [box-decoration-break:clone] transition-colors hover:bg-azulejo-soft',
-                      anchor?.gi === s.gi && 'bg-azulejo-soft',
-                    )}
-                  >
+                  <span key={si} className="border-b-2 border-dotted border-azulejo/70 [box-decoration-break:clone]">
                     {s.text}
                   </span>
                 ),
               )}
-            </p>
+            </Pt>
           </div>
         ))}
       </section>
-
-      {anchor && openEntry && (
-        <GlossaryPopover
-          anchor={anchor}
-          word={openEntry.word}
-          ru={openEntry.ru}
-          added={!!cards.have?.has(specs[anchor.gi].id)}
-          busy={cards.busy || cards.have === null}
-          onAdd={() => void cards.add([specs[anchor.gi]])}
-          onClose={closePopover}
-          onSpeak={reader.cancel}
-        />
-      )}
 
       {text.glossary.length > 0 && (
         <section aria-labelledby="reading-gloss" className="space-y-3">
@@ -168,35 +145,33 @@ function ReadingView({ text }: { text: ReadingText }) {
             <button
               type="button"
               className="btn-secondary"
-              disabled={cards.busy || cards.have === null || allAdded}
-              onClick={() => void cards.add(missing)}
+              disabled={dict.busy || !dict.ready || allAdded}
+              onClick={() => void dict.add(dict.missing)}
             >
               {allAdded ? <Check aria-hidden className="size-4.5 text-brand" /> : <Plus aria-hidden className="size-4.5" />}
-              {allAdded ? 'Все в повторении' : 'Добавить все в повторение'}
+              {allAdded ? 'Все в словаре' : 'Добавить все в словарь'}
             </button>
           </div>
-          {cards.msg && (
-            <p className="text-sm text-ink-muted" role="status">
-              {cards.msg}
-            </p>
-          )}
           <ul className="card divide-y divide-line p-0">
             {text.glossary.map((g, i) => (
-              <li key={i} className="flex items-center gap-3 px-3 py-2">
+              <li key={i} id={`gl-${i}`} className="flex scroll-mt-28 items-center gap-3 px-3 py-2">
                 <span onClickCapture={reader.cancel}>
                   <SpeakButton text={g.word} size="sm" />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <b className="font-semibold" lang="pt-PT">
+                  <Pt as="b" src={{ kind: 'reading', id: text.id, part: 'glossary', index: i }} ru={g.ru} className="font-semibold">
                     {g.word}
-                  </b>
+                  </Pt>
                   <span className="text-ink-subtle"> — </span>
                   <span className="text-ink-muted">{g.ru}</span>
                 </span>
                 <AddCardButton
-                  added={!!cards.have?.has(specs[i].id)}
-                  disabled={cards.busy || cards.have === null}
-                  onClick={() => void cards.add([specs[i]])}
+                  variant="text"
+                  target="words"
+                  name={g.word}
+                  added={!!dict.saved?.[i]}
+                  disabled={dict.busy || !dict.ready}
+                  onClick={() => void dict.add([i])}
                 />
               </li>
             ))}
@@ -206,7 +181,7 @@ function ReadingView({ text }: { text: ReadingText }) {
       </div>
 
       {text.questions.length > 0 && (
-        <section className="space-y-3">
+        <section id="questions" className="scroll-mt-28 space-y-3">
           <h2>Вопросы к тексту</h2>
           <ReadingQuestions text={text} />
         </section>

@@ -6,6 +6,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { SpeakButton } from '@/components/SpeakButton'
 import { LevelBadge } from '@/components/StatusBadge'
 import { VocabTutor } from '@/features/tutor/panels'
+import { Pt } from '@/features/words/Pt'
 import { useContentWords } from '@/features/words/useContentWords'
 import { VocabQuiz } from './VocabQuiz'
 import { AddCardButton, GenderBadge, NotFound } from './ui'
@@ -100,15 +101,16 @@ export function VocabThemePage() {
             return (
               <li
                 key={i}
-                className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-x-2 border-b border-line px-2 py-2 last:border-b-0 sm:px-3 md:grid-cols-[auto_minmax(0,13fr)_minmax(0,11fr)_minmax(0,16fr)_auto] md:gap-x-4 md:px-4"
+                id={`w-${i}`}
+                className="grid scroll-mt-28 grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-x-2 border-b border-line px-2 py-2 last:border-b-0 sm:px-3 md:grid-cols-[auto_minmax(0,13fr)_minmax(0,11fr)_minmax(0,16fr)_auto] md:gap-x-4 md:px-4"
               >
                 <SpeakButton text={w.pt} size="sm" />
                 {/* Phone: one flowing line «word (gender) — translation», example below. md: contents split into columns. */}
                 <div className="min-w-0 pt-2 md:contents">
                   <p className="min-w-0 md:pt-2">
-                    <span className="font-semibold hyphens-auto" lang="pt-PT">
+                    <Pt src={{ kind: 'vocab', id: theme.id, part: 'examples', index: i }} ru={w.ru} className="font-semibold hyphens-auto">
                       {w.pt}
-                    </span>{' '}
+                    </Pt>{' '}
                     <GenderBadge gender={w.gender} />
                     <span aria-hidden className="text-ink-subtle md:hidden">
                       {' — '}
@@ -121,9 +123,13 @@ export function VocabThemePage() {
                     {w.ru}
                   </p>
                   {w.example ? (
-                    <p className="mt-0.5 min-w-0 font-pt text-sm text-ink-muted hyphens-auto md:mt-0 md:pt-2.5" lang="pt-PT">
+                    <Pt
+                      as="p"
+                      src={{ kind: 'vocab', id: theme.id, part: 'examples', index: i }}
+                      className="mt-0.5 min-w-0 font-pt text-sm text-ink-muted hyphens-auto md:mt-0 md:pt-2.5"
+                    >
                       {w.example}
-                    </p>
+                    </Pt>
                   ) : (
                     <span className="hidden md:block" />
                   )}

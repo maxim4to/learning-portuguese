@@ -84,16 +84,16 @@ function TopicLesson({ topic }: { topic: Topic }) {
       <TabPanel idBase={id} value="theory" active={tab === 'theory'} className="page-grid">
         <div className="min-w-0 space-y-4">
         <div className="card">
-          <Markdown>{topic.theory}</Markdown>
+          <Markdown pt={{ kind: 'topic', id: topic.id, part: 'theory' }}>{topic.theory}</Markdown>
         </div>
         {topic.ptVsBr && (
           <Collapsible title="PT vs BR" icon={<Flag className="size-4" />}>
-            <Markdown>{topic.ptVsBr}</Markdown>
+            <Markdown pt={{ kind: 'topic', id: topic.id, part: 'theory' }}>{topic.ptVsBr}</Markdown>
           </Collapsible>
         )}
         {topic.commonErrors && (
           <Collapsible title="Частые ошибки" icon={<TriangleAlert className="size-4" />}>
-            <Markdown>{topic.commonErrors}</Markdown>
+            <Markdown pt={{ kind: 'topic', id: topic.id, part: 'theory' }}>{topic.commonErrors}</Markdown>
           </Collapsible>
         )}
         </div>

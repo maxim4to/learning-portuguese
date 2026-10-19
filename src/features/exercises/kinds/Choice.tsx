@@ -4,6 +4,7 @@ import { cx, haptic } from '@/components/cx'
 import { focusMark, isInHiddenPanel, noMods, rovingIndex } from '../keyboard'
 import { SpeakButton } from '../SpeakButton'
 import type { ExerciseProps } from '../types'
+import { isLookupOpen } from '@/features/words/capture/store'
 
 function Options({
   options,
@@ -26,6 +27,7 @@ function Options({
   useEffect(() => {
     if (locked) return
     const onKey = (e: KeyboardEvent) => {
+      if (isLookupOpen()) return // digits belong to the word card / search while it is open
       if (isInHiddenPanel(listRef.current)) return
       const t = e.target as HTMLElement | null
       if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) return
@@ -48,7 +50,7 @@ function Options({
       className="grid gap-2"
       {...focusMark}
       onKeyDown={(e) => {
-        if (locked || !noMods(e) || e.shiftKey) return
+        if (isLookupOpen() || locked || !noMods(e) || e.shiftKey) return
         const to = rovingIndex(e.key, active, options.length)
         if (to === null) return
         e.preventDefault()

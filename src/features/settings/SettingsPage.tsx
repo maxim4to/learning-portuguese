@@ -14,6 +14,7 @@ import { WORD_CARD_MODES, type Settings, type WordCardMode } from '@/data/types.
 import { getPtPtVoices, pickPtPtVoice, speak } from '@/engine/audio'
 import { activityDays, computeStreak } from '@/features/dashboard/stats'
 import { plural } from '@/features/library/format'
+import { setLookupOnTapPref } from '@/features/words/capture/store'
 import { MODE_UNLOCK_HINT, WORD_MODE_LABEL } from '@/features/words/status'
 import { WordsContext } from '@/features/words/useWords'
 
@@ -37,6 +38,12 @@ export function SettingsPage() {
   useEffect(() => {
     void repo.getSettings().then(setSettings)
   }, [repo])
+
+  // Word capture reads the tap setting live (no reload needed after toggling / importing).
+  const lookupOnTap = settings?.lookupOnTap
+  useEffect(() => {
+    if (lookupOnTap !== undefined) setLookupOnTapPref(lookupOnTap)
+  }, [lookupOnTap])
 
   useEffect(() => {
     if (!settings) return
@@ -254,8 +261,14 @@ export function SettingsPage() {
             title="Словарь"
             description="Как сохраняются и повторяются слова из «Моего словаря». Карточки слова открываются по очереди."
           >
-            {/* lookupOnTap / highlightSavedWords / typeWordAnswers stay in Settings; their switches return
-                when word capture (phase 2) and typed word cards (phase 3) use them. */}
+            <Switch
+              checked={settings.lookupOnTap}
+              onChange={(v) => update({ lookupOnTap: v })}
+              label="Перевод по нажатию на слово"
+              description="Нажатие на слово в португальском тексте открывает перевод и «в словарь». Двойной клик, выделение и поиск «/» работают всегда."
+            />
+            {/* highlightSavedWords / typeWordAnswers stay in Settings; their switches return when saved-word
+                highlighting (phase 5) and typed word cards (phase 3) use them. */}
             <WordModesField value={settings.wordModes} onChange={(wordModes) => update({ wordModes })} />
           </Section>
         </>

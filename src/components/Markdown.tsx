@@ -1,6 +1,7 @@
 import { Children, cloneElement, createContext, isValidElement, useContext, type ComponentProps } from 'react'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { encodeSource, type PtSource } from '@/features/words/source'
 import { cx } from './cx'
 
 /**
@@ -120,9 +121,18 @@ function Cell({ children, style, col = 0 }: ComponentProps<'td'> & { col?: numbe
 
 const remarkPlugins = [remarkGfm]
 
-export function Markdown({ children, className = '' }: { children: string; className?: string }) {
+/**
+ * `pt`: the text has pt-PT examples inside Russian prose (theory, cheat-sheets, explanations) — selecting a
+ * pt word or phrase (no Cyrillic, ≤ 6 words) offers the lookup card; single taps stay off here (no `lang`).
+ * Pass a source (`{ kind: 'cheatsheet', id }`) so saved words link back to it.
+ */
+export function Markdown({ children, className = '', pt }: { children: string; className?: string; pt?: boolean | PtSource }) {
   return (
-    <div className={`min-w-0 break-words ${className}`}>
+    <div
+      className={`min-w-0 break-words ${className}`}
+      data-lookup={pt ? 'select' : undefined}
+      data-pt-src={pt && pt !== true ? encodeSource(pt) : undefined}
+    >
       <ReactMarkdown remarkPlugins={remarkPlugins} components={components}>
         {children}
       </ReactMarkdown>

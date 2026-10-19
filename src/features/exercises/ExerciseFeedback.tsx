@@ -126,7 +126,11 @@ export function ExerciseFeedback({ ex, rec, lenient }: { ex: Exercise; rec: Answ
           </ul>
         </div>
       )}
-      {ex.explanation && <Markdown className="text-sm text-ink-muted">{ex.explanation}</Markdown>}
+      {ex.explanation && (
+        <Markdown pt className="text-sm text-ink-muted">
+          {ex.explanation}
+        </Markdown>
+      )}
     </div>
   )
 }

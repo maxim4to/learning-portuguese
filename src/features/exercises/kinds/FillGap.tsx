@@ -2,6 +2,7 @@ import { Fragment, useId } from 'react'
 import { gradeTyped } from '../grade'
 import { TextAnswer } from '../TextAnswer'
 import type { ExerciseProps } from '../types'
+import { Pt } from '@/features/words/Pt'
 
 function GapSentence({ prompt, fill }: { prompt: string; fill?: string }) {
   if (fill !== undefined) {
@@ -46,9 +47,9 @@ export function FillGapExercise({ exercise: ex, locked, result, onSubmit, onSkip
   const id = useId()
   return (
     <div className="space-y-4">
-      <p id={`${id}-p`} className="text-prompt text-pretty" lang="pt-PT">
+      <Pt as="p" id={`${id}-p`} ru={ex.ru} className="text-prompt text-pretty">
         <GapSentence prompt={ex.prompt} fill={locked ? (result?.expected ?? ex.answer[0]) : undefined} />
-      </p>
+      </Pt>
       {(ex.ru || ex.hint) && (
         <div className="space-y-0.5 text-sm text-ink-muted">
           {ex.ru && <p id={`${id}-ru`}>{ex.ru}</p>}

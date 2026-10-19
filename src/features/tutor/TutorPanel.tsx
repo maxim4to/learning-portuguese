@@ -148,6 +148,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
               ref={preRef}
               tabIndex={0}
               aria-label="Текст промпта"
+              data-lookup="select"
               className="max-h-[28rem] animate-enter overflow-auto rounded-control border border-line bg-sunken p-3 font-mono text-xs leading-relaxed break-words whitespace-pre-wrap select-text"
             >
               {prompt}

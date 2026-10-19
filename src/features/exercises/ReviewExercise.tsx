@@ -8,6 +8,7 @@ import { feedbackSummary } from './feedbackText'
 import type { AnswerRecord, Submission } from './types'
 import { useSettings } from './useSettings'
 import { focusPrimary, hasFinePointer } from './keyboard'
+import { lookupAttrs } from '@/features/words/source'
 
 interface Props {
   exercise: Exercise
@@ -61,7 +62,14 @@ export function ReviewExercise({ exercise: ex, onAnswered, note, focusControl }:
   }
 
   return (
-    <div ref={rootRef} className="space-y-5" aria-labelledby={`${ex.id}-rh`} role="group">
+    // Word lookup is off until the answer is checked (no hints).
+    <div
+      ref={rootRef}
+      className="space-y-5"
+      aria-labelledby={`${ex.id}-rh`}
+      role="group"
+      {...lookupAttrs({ src: { kind: 'exercise', id: ex.id }, locked: !current })}
+    >
       <div className="space-y-2">
         {note && <p className="text-sm text-ink-muted">{note}</p>}
         <h3

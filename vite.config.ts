@@ -57,6 +57,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_')
   const rawBase = env.VITE_BASE_PATH || '/learning-portuguese/'
   const base = `/${rawBase.replace(/^\/+|\/+$/g, '')}/`.replace(/^\/\/$/, '/')
+  const contentDir = fileURLToPath(new URL('./content/', import.meta.url))
   const esc = base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
   return {
@@ -69,6 +70,16 @@ export default defineConfig(({ mode }) => {
     build: {
       // Firebase SDK chunk (lazy, only when configured) is ~540 kB.
       chunkSizeWarningLimit: 700,
+      rolldownOptions: {
+        output: {
+          codeSplitting: {
+            // All course content (content/**/*.json, cheat-sheets) in one named chunk. It is needed at start-up anyway
+            // (the app validates it on import), but shared with lazy pages it otherwise got merged with — and named
+            // after — whatever UI module those pages share (e.g. «WordList»), pulling that UI into start-up.
+            groups: [{ name: 'content', test: (id: string) => id.startsWith(contentDir) }],
+          },
+        },
+      },
     },
     plugins: [
       react(),

@@ -85,7 +85,7 @@ export function CheatsheetPage() {
       )}
 
       <div ref={bodyRef} className="card print:border-0 print:p-0">
-        <Markdown>{sheet.body}</Markdown>
+        <Markdown pt={{ kind: 'cheatsheet', id }}>{sheet.body}</Markdown>
       </div>
 
       <div className="no-print">

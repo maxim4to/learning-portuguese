@@ -4,6 +4,8 @@ import type { Situation } from '@/content'
 import { Check, Plus } from 'lucide-react'
 import { SpeakButton } from '@/components/SpeakButton'
 import { AddCardButton } from '@/features/library/ui'
+import { Pt } from '@/features/words/Pt'
+import type { PtSource } from '@/features/words/source'
 import { useContentWords } from '@/features/words/useContentWords'
 import { phraseCards } from './persist'
 import { useSituationCards } from './useSituationCards'
@@ -25,9 +27,15 @@ export function PhrasesSection({ situation }: { situation: Situation }) {
             <li key={i} className="flex items-start gap-3 px-3 py-3 sm:px-4">
               <SpeakButton text={p.pt} />
               <div className="min-w-0 flex-1 pt-1">
-                <p className="text-base leading-snug font-semibold" lang="pt-PT">
+                <Pt
+                  as="p"
+                  id={`ph-${i}`}
+                  src={{ kind: 'situation', id: situation.id, part: 'phrases', index: i }}
+                  ru={p.ru}
+                  className="scroll-mt-28 text-base leading-snug font-semibold"
+                >
                   {p.pt}
-                </p>
+                </Pt>
                 <p className="mt-0.5 text-sm text-ink-muted">{p.ru}</p>
               </div>
               <AddCardButton name={p.pt} added={inSrs} disabled={busy || have === null} onClick={() => void add([specs[i]])} />
@@ -64,6 +72,7 @@ export function VocabSection({ situation }: { situation: Situation }) {
     level: situation.level,
   })
   const allAdded = dict.ready && dict.missing.length === 0
+  const src = (i: number): PtSource => ({ kind: 'situation', id: situation.id, part: 'vocab', index: i })
 
   if (!words.length) return <p className="text-ink-muted">В этой ситуации нет словаря.</p>
 
@@ -104,20 +113,20 @@ export function VocabSection({ situation }: { situation: Situation }) {
       {/* Mobile: stacked rows. */}
       <ul className="card divide-y divide-line p-0 md:hidden">
         {words.map((w, i) => (
-          <li key={i} className="flex items-start gap-2 py-2.5 pr-1.5 pl-3">
+          <li key={i} data-anchor={`voc-${i}`} className="flex scroll-mt-28 items-start gap-2 py-2.5 pr-1.5 pl-3">
             <SpeakButton text={w.pt} />
             <div className="min-w-0 flex-1 pt-1">
               <p className="flex flex-wrap items-baseline gap-x-2">
-                <span className="font-semibold" lang="pt-PT">
+                <Pt src={src(i)} ru={w.ru} className="font-semibold">
                   {w.pt}
-                </span>
+                </Pt>
                 <span className="text-sm text-ink-muted">{w.ru}</span>
               </p>
               {w.example && (
                 <p className="mt-1 flex items-center gap-2 font-pt text-sm text-ink-muted">
-                  <span className="flex-1" lang="pt-PT">
+                  <Pt src={src(i)} className="flex-1">
                     {w.example}
-                  </span>
+                  </Pt>
                   <SpeakButton text={w.example} size="sm" variant="ghost" ariaLabel="Прослушать пример" className="not-italic" />
                 </p>
               )}
@@ -141,20 +150,22 @@ export function VocabSection({ situation }: { situation: Situation }) {
           </thead>
           <tbody>
             {words.map((w, i) => (
-              <tr key={i} className="border-t border-line first:border-t-0">
+              <tr key={i} data-anchor={`voc-${i}`} className="scroll-mt-28 border-t border-line first:border-t-0">
                 <td className="px-3 py-2 align-top">
                   <SpeakButton text={w.pt} />
                 </td>
-                <td className="px-3 py-2 pt-4 align-top font-semibold whitespace-nowrap" lang="pt-PT">
-                  {w.pt}
+                <td className="px-3 py-2 pt-4 align-top font-semibold whitespace-nowrap">
+                  <Pt src={src(i)} ru={w.ru}>
+                    {w.pt}
+                  </Pt>
                 </td>
                 <td className="px-3 py-2 pt-4 align-top text-ink-muted">{w.ru}</td>
                 <td className="px-3 py-2 align-top">
                   {w.example && (
                     <span className="flex items-start gap-2">
-                      <span className="flex-1 pt-2 font-pt" lang="pt-PT">
+                      <Pt src={src(i)} className="flex-1 pt-2 font-pt">
                         {w.example}
-                      </span>
+                      </Pt>
                       <SpeakButton text={w.example} size="sm" variant="ghost" ariaLabel="Прослушать пример" />
                     </span>
                   )}

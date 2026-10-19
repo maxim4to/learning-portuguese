@@ -3,6 +3,7 @@ import { cx } from '@/components/cx'
 import { gradeTyped, shuffle } from '../grade'
 import { focusMark, isInHiddenPanel, rovingIndex } from '../keyboard'
 import type { ExerciseProps } from '../types'
+import { isLookupOpen } from '@/features/words/capture/store'
 
 const chip =
   'inline-flex min-h-11 items-center rounded-pill border-[1.5px] px-4 text-base leading-none transition-[background-color,border-color,transform,opacity] duration-150 active:scale-95 disabled:cursor-default'
@@ -71,7 +72,7 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
   })
 
   function rowKeys(row: 'bank' | 'ans', e: ReactKeyboardEvent) {
-    if (locked || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return
+    if (isLookupOpen() || locked || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
       const goAns = e.key === 'ArrowUp'
       if (goAns && row === 'bank' && built.length) {
@@ -103,6 +104,7 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
   useEffect(() => {
     if (locked) return
     const onKey = (e: KeyboardEvent) => {
+      if (isLookupOpen()) return // Enter / Backspace belong to the word card / search while it is open
       if (isInHiddenPanel(rootRef.current)) return
       const t = e.target as HTMLElement | null
       if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return

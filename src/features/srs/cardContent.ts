@@ -1,5 +1,7 @@
 /** Content lookups used to render SRS cards and error entries. */
-import { findExercise, getSituation, getTopic, type Exercise } from '@/content'
+import { findExercise, getSituation, getTopic, getVocabTheme, type Exercise } from '@/content'
+import type { SrsCard } from '@/data/types.ts'
+import type { PtSource } from '@/features/words/source'
 
 /** Link target for a topicId that may be a grammar topic or a situation. */
 export function errorTopicLink(topicId: string | undefined): { to: string; title: string } | null {
@@ -38,4 +40,18 @@ export function describeExercise(ex: Exercise): { prompt: string; instruction?: 
 export function exercisePromptText(exerciseId: string | undefined): string | undefined {
   const ex = exerciseId ? findExercise(exerciseId)?.exercise : undefined
   return ex ? describeExercise(ex).prompt : undefined
+}
+
+/**
+ * Where the card's pt text comes from, for words saved from the card: topic example (`ex:<topic>:<i>`),
+ * situation phrase (`ph:<situation>:<i>`), theme / situation word (`w:<owner>:<i>`); otherwise the review itself.
+ */
+export function cardSource(card: SrsCard): PtSource {
+  const [prefix, owner = '', i] = card.id.split(':')
+  const index = i !== undefined && /^\d+$/.test(i) ? Number(i) : undefined
+  if (prefix === 'ex' && getTopic(owner)) return { kind: 'topic', id: owner, part: 'examples', index }
+  if (prefix === 'ph' && getSituation(owner)) return { kind: 'situation', id: owner, part: 'phrases', index }
+  if (prefix === 'w' && getVocabTheme(owner)) return { kind: 'vocab', id: owner, part: 'examples', index }
+  if (prefix === 'w' && getSituation(owner)) return { kind: 'situation', id: owner, part: 'vocab', index }
+  return { kind: 'review', id: card.id }
 }

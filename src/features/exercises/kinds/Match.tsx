@@ -4,6 +4,7 @@ import { cx } from '@/components/cx'
 import { shuffle } from '../grade'
 import { focusMark } from '../keyboard'
 import type { ExerciseProps } from '../types'
+import { isLookupOpen } from '@/features/words/capture/store'
 
 type Side = 'L' | 'R'
 
@@ -46,7 +47,7 @@ export function MatchExercise({ exercise: ex, locked, onSubmit }: ExerciseProps<
   }
 
   function onGridKey(e: KeyboardEvent) {
-    if (locked || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || !active) return
+    if (isLookupOpen() || locked || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || !active) return
     const col = order(active.side)
     const row = col.indexOf(active.i)
     const openHere = open(active.side)

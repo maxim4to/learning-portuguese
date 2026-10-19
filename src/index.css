@@ -673,6 +673,58 @@ input[type='range'].range::-moz-range-thumb {
   border: 2px solid var(--brand);
 }
 
+/* Word capture (features/words/capture): the looked-up word is marked without touching the DOM (CSS Custom
+   Highlight API; unsupported browsers simply show no mark). The phone lookup card is a bottom sheet on <dialog>. */
+::highlight(lookup-active) {
+  background-color: var(--brand-soft);
+  color: var(--ink);
+}
+/* Source anchor (a saved word's «where it was met» link): the line / paragraph flashes once on arrival. */
+.anchor-flash {
+  animation: anchor-flash 2.4s var(--ease-out);
+}
+@keyframes anchor-flash {
+  0%,
+  35% {
+    background-color: var(--brand-soft);
+    box-shadow: 0 0 0 0.375rem var(--brand-soft);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 0.375rem transparent;
+  }
+}
+dialog.lookup-sheet {
+  margin: auto auto 0;
+  width: 100%;
+  max-width: 36rem;
+  max-height: calc(100dvh - var(--safe-top) - 2.5rem);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  overflow: visible;
+}
+dialog.lookup-sheet::backdrop {
+  background: var(--scrim);
+}
+.lookup-sheet-panel {
+  max-height: inherit;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--surface);
+  padding-bottom: var(--safe-bottom);
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+  animation: sheet-in 220ms var(--ease-out);
+}
+@keyframes sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+
 /* Reduced motion: no animations, transitions or smooth scrolling (audit §4.7). JS uses scrollBehavior(). */
 @media (prefers-reduced-motion: reduce) {
   *,

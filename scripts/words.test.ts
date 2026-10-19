@@ -6,6 +6,20 @@ import { describe, test } from 'node:test'
 import assert from 'node:assert/strict'
 import { parseExportBundle, type ExportBundle, type SrsCard, type WordEntry } from '../src/data/types.ts'
 import { schedule } from '../src/engine/fsrs.ts'
+import { lookupOptions } from '../src/features/words/capture/options.ts'
+import {
+  hasCyrillic,
+  interactiveAncestor,
+  isTap,
+  lookupModeOf,
+  selectionLookupText,
+  sentenceAt,
+  tokenIndexAt,
+  wordAt,
+  wordsOf,
+  type ElementLike,
+} from '../src/features/words/capture/text.ts'
+import { tokenize } from '../src/engine/lexicon/normalize.ts'
 import { countByStatus, modeStates, readyModes, wordStatus, wordStatuses } from '../src/features/words/status.ts'
 import {
   applyWrite,
@@ -314,5 +328,158 @@ describe('parseExportBundle', () => {
 
   test('rejects foreign files', () => {
     assert.throws(() => parseExportBundle('{"app":"x","version":1}'))
+  })
+})
+
+// ─── Word capture (Phase 2): pure hit-test helpers ───────────────────────────────────────
+
+describe('capture: wordAt (Intl.Segmenter + joins)', () => {
+  const at = (text: string, i: number) => wordAt(text, i)?.text ?? null
+  test('word under the caret, any position inside it', () => {
+    const s = 'Bom dia, sente-se. Em que posso ajudá-lo?'
+    assert.equal(at(s, 0), 'Bom')
+    assert.equal(at(s, 5), 'dia')
+    assert.equal(at(s, s.indexOf('posso') + 3), 'posso')
+  })
+  test('hyphenated clitics and compounds stay one word (from either part)', () => {
+    const s = 'Levanto-me cedo e tomo o pequeno-almoço; dir-lhe-ei amanhã.'
+    assert.equal(at(s, 2), 'Levanto-me')
+    assert.equal(at(s, s.indexOf('me ')), 'Levanto-me')
+    assert.equal(at(s, s.indexOf('almoço')), 'pequeno-almoço')
+    assert.equal(at(s, s.indexOf('lhe')), 'dir-lhe-ei')
+    assert.equal(at('Fá‑lo já.', 1), 'Fá‑lo') // non-breaking hyphen
+  })
+  test('apostrophe joins (copo d’água)', () => {
+    assert.equal(at('um copo d’água fresca', 10), 'd’água')
+  })
+  test('caret right after a word picks it; spaces, punctuation and numbers give null', () => {
+    const s = 'Aqui está. São 5 euros'
+    assert.equal(at(s, 4), 'Aqui')
+    assert.equal(at(s, s.indexOf('.') + 1), null)
+    assert.equal(at(s, s.indexOf('5')), null)
+    assert.equal(at('', 0), null)
+  })
+  test('wordsOf lists the words of a phrase', () => {
+    assert.deepEqual(
+      wordsOf('Onde é que assino? Aqui em baixo!').map((w) => w.text),
+      ['Onde', 'é', 'que', 'assino', 'Aqui', 'em', 'baixo'],
+    )
+    assert.deepEqual(wordsOf('Sente-se, se faz favor.').map((w) => w.text), ['Sente-se', 'se', 'faz', 'favor'])
+  })
+})
+
+describe('capture: sentenceAt', () => {
+  test('cuts the sentence around the word and maps its position', () => {
+    const text = 'Pode. Depois de ativar o cartão, instala a aplicação. Já está!'
+    const i = text.indexOf('cartão')
+    const s = sentenceAt(text, i, i + 6)
+    assert.equal(s.text, 'Depois de ativar o cartão, instala a aplicação.')
+    assert.equal(s.text.slice(s.wordStart, s.wordEnd), 'cartão')
+    assert.equal(text.slice(i - s.wordStart + 0, i - s.wordStart + s.text.length), s.text)
+  })
+  test('long sentences become a window ≤ 300 chars with ellipses, word kept', () => {
+    const long = Array.from({ length: 120 }, (_, k) => `palavra${k}`).join(' ') + '.'
+    const i = long.indexOf('palavra60')
+    const s = sentenceAt(long, i, i + 9)
+    assert.ok(s.text.length <= 302, String(s.text.length))
+    assert.ok(s.text.startsWith('…') && s.text.endsWith('…'))
+    assert.equal(s.text.slice(s.wordStart, s.wordEnd), 'palavra60')
+  })
+})
+
+describe('capture: selection filter (Cyrillic, ≤ 6 words)', () => {
+  test('accepts pt words and short phrases, normalises spaces', () => {
+    assert.equal(selectionLookupText('  conta à\n ordem '), 'conta à ordem')
+    assert.equal(selectionLookupText('levanto-me'), 'levanto-me')
+  })
+  test('rejects Cyrillic, empty, more than 6 words, very long', () => {
+    assert.equal(selectionLookupText('счёт'), null)
+    assert.equal(selectionLookupText('conta — счёт'), null)
+    assert.equal(selectionLookupText('   '), null)
+    assert.equal(selectionLookupText('um dois três quatro cinco seis sete'), null)
+    assert.equal(selectionLookupText('a'.repeat(130)), null)
+    assert.equal(hasCyrillic('Ёлка'), true)
+  })
+  test('tap = small move, short press', () => {
+    assert.equal(isTap(3, 4, 200), true)
+    assert.equal(isTap(8, 0, 100), false)
+    assert.equal(isTap(0, 0, 600), false)
+  })
+})
+
+describe('capture: scope rules (lang, data-lookup, interactive)', () => {
+  /** Tiny element stub: el('P', { lang: 'pt-PT' }, parent) */
+  const el = (tagName: string, attrs: Record<string, string> = {}, parentElement: ElementLike | null = null): ElementLike => ({
+    tagName,
+    parentElement,
+    getAttribute: (n) => attrs[n] ?? null,
+    hasAttribute: (n) => n in attrs,
+  })
+  const html = el('HTML', { lang: 'ru' })
+  const body = el('BODY', {}, html)
+
+  test('pt text → tap; Russian text → none; markdown select container → select', () => {
+    const p = el('P', { lang: 'pt-PT' }, body)
+    assert.equal(lookupModeOf(el('B', {}, p)), 'tap')
+    assert.equal(lookupModeOf(el('P', {}, body)), 'none')
+    const md = el('DIV', { 'data-lookup': 'select', 'data-pt-src': 'cheatsheet:x' }, body)
+    assert.equal(lookupModeOf(el('LI', {}, md)), 'select')
+    assert.equal(lookupModeOf(el('SPAN', { lang: 'pt-PT' }, md)), 'tap')
+  })
+  test('locked (data-lookup="off") wins over pt and select; "on" re-enables inside', () => {
+    const locked = el('DIV', { 'data-lookup': 'off' }, body)
+    assert.equal(lookupModeOf(el('P', { lang: 'pt-PT' }, locked)), 'off')
+    assert.equal(lookupModeOf(el('DIV', { 'data-lookup': 'select' }, locked)), 'off')
+    const open = el('DIV', { 'data-lookup': 'on' }, locked)
+    assert.equal(lookupModeOf(el('P', { lang: 'pt-PT' }, open)), 'tap')
+    assert.equal(lookupModeOf(el('P', {}, open)), 'none')
+  })
+  test('the lookup card itself is never a capture area', () => {
+    const card = el('DIV', { 'data-lookup-ui': '' }, body)
+    assert.equal(lookupModeOf(el('H2', { lang: 'pt-PT' }, card)), 'none')
+  })
+  test('interactive ancestors are found; plain text and anchors without href are not', () => {
+    const p = el('P', { lang: 'pt-PT' }, body)
+    assert.equal(interactiveAncestor(el('SPAN', {}, p)), null)
+    for (const [tag, attrs] of [
+      ['BUTTON', {}],
+      ['A', { href: '/x' }],
+      ['INPUT', {}],
+      ['TEXTAREA', {}],
+      ['SELECT', {}],
+      ['LABEL', {}],
+      ['SUMMARY', {}],
+      ['DIV', { role: 'button' }],
+      ['DIV', { contenteditable: 'true' }],
+    ] as const) {
+      const ctl = el(tag, attrs, p)
+      assert.equal(interactiveAncestor(el('SPAN', {}, ctl)), ctl, tag)
+    }
+    assert.equal(interactiveAncestor(el('A', {}, p)), null)
+    assert.equal(interactiveAncestor(el('DIV', { contenteditable: 'false' }, p)), null)
+  })
+})
+
+describe('capture: tokenIndexAt + lookupOptions (expressions first)', () => {
+  test('token index of an offset', () => {
+    const toks = tokenize('Queria abrir uma conta à ordem')
+    assert.equal(tokenIndexAt(toks, 0), 0)
+    assert.equal(toks[tokenIndexAt(toks, 'Queria abrir uma co'.length)].text, 'conta')
+    assert.equal(tokenIndexAt([], 3), -1)
+  })
+  test('a short expression around the word goes first, a whole stored sentence after the word', async () => {
+    const { createLexicon } = await import('../src/engine/lexicon/lookup.ts')
+    const { readFileSync } = await import('node:fs')
+    const lex = createLexicon(JSON.parse(readFileSync(new URL('../src/generated/lexicon.json', import.meta.url), 'utf8')))
+    const tokens = 'Queria abrir uma conta à ordem , se faz favor'.split(' ').filter((t) => t !== ',')
+    const opts = lookupOptions(lex, { form: 'conta', tokens, tokenIndex: 3, multi: false })
+    assert.ok(opts.length >= 2)
+    assert.equal(opts[0].mwe, true)
+    assert.ok(opts[0].entry.lemma.split(' ').length <= 4, opts[0].entry.lemma)
+    const word = opts.findIndex((o) => !o.mwe)
+    assert.equal(opts[word].entry.lemma, 'conta')
+    // multi-word selections resolve as a whole, without expression lookup around
+    const sel = lookupOptions(lex, { form: 'se faz favor', multi: true })
+    assert.equal(sel[0]?.entry.lemma, 'se faz favor')
   })
 })

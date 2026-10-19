@@ -2,6 +2,7 @@ import { useRef, useState, type FormEvent, type KeyboardEvent } from 'react'
 import { cx } from '@/components/cx'
 import { focusMark, isImeEnter, noMods } from './keyboard'
 import type { AnswerRecord } from './types'
+import { isLookupOpen } from '@/features/words/capture/store'
 
 const ACCENTS = ['á', 'à', 'â', 'ã', 'ç', 'é', 'ê', 'í', 'ó', 'ô', 'õ', 'ú']
 
@@ -50,7 +51,7 @@ export function TextAnswer({
   }
 
   function onKeyDown(e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, i: number) {
-    if (e.key !== 'Enter' || !noMods(e)) return
+    if (isLookupOpen() || e.key !== 'Enter' || !noMods(e)) return
     if (isImeEnter(e)) {
       // Safari fires this Enter right after the IME committed: don't let it submit the form implicitly.
       if (!e.nativeEvent.isComposing) e.preventDefault()

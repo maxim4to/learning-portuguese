@@ -8,6 +8,7 @@ import { ProgressRing } from '@/components/ProgressRing'
 import { toneForPct } from '@/components/tones'
 import { StatusBadge } from '@/components/StatusBadge'
 import { exerciseFront, type RunSummary } from '@/features/exercises'
+import { lookupAttrs } from '@/features/words/source'
 import { AddExamplesButton } from './ExamplesSection'
 import type { SaveOutcome } from './persist'
 
@@ -159,7 +160,7 @@ export function ResultScreen(p: ResultScreenProps) {
               const ex = byId.get(a.exerciseId)
               const typed = ex?.type !== 'speak-shadow' && ex?.type !== 'match'
               return (
-                <li key={a.exerciseId} className="space-y-1.5 px-4 py-3">
+                <li key={a.exerciseId} className="space-y-1.5 px-4 py-3" {...lookupAttrs({ src: { kind: 'exercise', id: a.exerciseId, part: 'feedback' } })}>
                   {ex && <p className="text-sm whitespace-pre-line text-ink-muted">{exerciseFront(ex)}</p>}
                   <dl className="grid grid-cols-[5.5rem_1fr] gap-x-3 gap-y-0.5 text-sm">
                     {typed && (

@@ -3,6 +3,7 @@ import { Check, Mic, Square } from 'lucide-react'
 import { focusMark } from '../keyboard'
 import { SpeakButton } from '../SpeakButton'
 import type { ExerciseProps } from '../types'
+import { Pt } from '@/features/words/Pt'
 
 type RecState = 'idle' | 'recording' | 'recorded' | 'error'
 
@@ -78,9 +79,9 @@ export function SpeakShadowExercise({ exercise: ex, locked, onSubmit }: Exercise
   return (
     <div className="space-y-4">
       <div className="space-y-1">
-        <p className="text-prompt text-pretty" lang="pt-PT">
+        <Pt as="p" ru={ex.ru} className="text-prompt text-pretty">
           {ex.text}
-        </p>
+        </Pt>
         {ex.ru && <p className="text-sm text-ink-muted">{ex.ru}</p>}
       </div>
       <div className="flex flex-wrap items-center gap-3">

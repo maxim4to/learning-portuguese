@@ -3,6 +3,7 @@ import { Check, Plus } from 'lucide-react'
 import type { Topic } from '@/content'
 import { useRepository } from '@/data'
 import { SpeakButton } from '@/components/SpeakButton'
+import { Pt } from '@/features/words/Pt'
 import { addExampleCards, countExampleCards } from './persist'
 
 /** «Добавить примеры в повторение» — creates grammar SRS cards from the topic examples. */
@@ -59,9 +60,15 @@ export function ExamplesSection({ topic }: { topic: Topic }) {
           <li key={i} className="flex items-start gap-3 px-3 py-3 sm:px-4">
             <SpeakButton text={ex.pt} />
             <div className="min-w-0 flex-1 pt-1">
-              <p className="text-base leading-snug font-semibold" lang="pt-PT">
+              <Pt
+                as="p"
+                id={`ex-${i}`}
+                src={{ kind: 'topic', id: topic.id, part: 'examples', index: i }}
+                ru={ex.ru}
+                className="scroll-mt-28 text-base leading-snug font-semibold"
+              >
                 {ex.pt}
-              </p>
+              </Pt>
               <p className="mt-0.5 text-sm text-ink-muted">{ex.ru}</p>
             </div>
           </li>
