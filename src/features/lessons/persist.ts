@@ -1,9 +1,9 @@
 /** Saving lesson / mini-test results: progress, error log, SRS cards. */
 import type { Exercise, Topic } from '@/content'
 import type { ErrorEntryInput, ProgressRepository, ResultSource, SrsCard, TopicProgress } from '@/data'
-import { createSrsCard } from '@/engine/fsrs'
 import type { RunSummary } from '@/features/exercises'
 import { cardsFromErrors } from '@/features/srs/cardOps'
+import type { PickSpec } from '@/features/srs/useReviewPicker'
 
 /** Id of an SRS card made from a topic example. */
 export const exampleCardId = (topicId: string, index: number) => `ex:${topicId}:${index}`
@@ -87,20 +87,6 @@ export async function saveRun(
   return { progress, errorsLogged: logged.length, cardsAdded, pendingCards }
 }
 
-/** Creates 'grammar' cards (front = ru, back = pt) for topic examples that aren't cards yet. Returns how many were added. */
-export async function addExampleCards(repo: ProgressRepository, topic: Topic): Promise<number> {
-  const have = new Set((await repo.getCards()).map((c) => c.id))
-  const now = Date.now()
-  const fresh: SrsCard[] = topic.examples
-    .map((ex, i) => ({ ex, id: exampleCardId(topic.id, i) }))
-    .filter(({ id }) => !have.has(id))
-    .map(({ ex, id }) => createSrsCard({ id, kind: 'grammar', front: ex.ru, back: ex.pt, topicId: topic.id }, now))
-  if (fresh.length) await repo.upsertCards(fresh)
-  return fresh.length
-}
-
-/** Number of topic examples already present as SRS cards. */
-export async function countExampleCards(repo: ProgressRepository, topic: Topic): Promise<number> {
-  const have = new Set((await repo.getCards()).map((c) => c.id))
-  return topic.examples.filter((_, i) => have.has(exampleCardId(topic.id, i))).length
-}
+/** Review specs for the topic examples ('grammar' cards: front = ru, back = pt), ids `ex:<topicId>:<i>`. */
+export const exampleCardSpecs = (topic: Topic): PickSpec[] =>
+  topic.examples.map((ex, i) => ({ id: exampleCardId(topic.id, i), kind: 'grammar', front: ex.ru, back: ex.pt, topicId: topic.id }))

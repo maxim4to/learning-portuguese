@@ -8,53 +8,40 @@ import { Pt } from '@/features/words/Pt'
 import type { PtSource } from '@/features/words/source'
 import { useContentWords } from '@/features/words/useContentWords'
 import { phraseCards } from './persist'
-import { useSituationCards } from './useSituationCards'
+import { ReviewPickerBar, ReviewPickerConfirm, ReviewToggle } from '@/features/srs/ReviewPicker'
+import { useReviewPicker } from '@/features/srs/useReviewPicker'
 
-/** «Фразы»: clichés with play + «в повторение» per phrase (cards `ph:<situationId>:<i>`). */
+/** «Фразы»: clichés with play + a per-phrase «в повторение» toggle and multi-select (cards `ph:<situationId>:<i>`). */
 export function PhrasesSection({ situation }: { situation: Situation }) {
-  const specs = useMemo(() => phraseCards(situation), [situation])
-  const { have, busy, msg, add } = useSituationCards(situation.id, specs)
-  const missing = have ? specs.filter((c) => !have.has(c.id)) : []
+  const specs = useMemo(() => phraseCards(situation).map((c) => ({ ...c, topicId: situation.id })), [situation])
+  const picker = useReviewPicker(specs)
 
   if (!situation.phrases.length) return <p className="text-ink-muted">В этой ситуации нет фраз.</p>
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
+      <ReviewPickerBar picker={picker} noun={['фразы', 'фраз', 'фраз']} />
       <ul className="card divide-y divide-line p-0">
-        {situation.phrases.map((p, i) => {
-          const inSrs = have?.has(specs[i].id) ?? false
-          return (
-            <li key={i} className="flex items-start gap-3 px-3 py-3 sm:px-4">
-              <SpeakButton text={p.pt} />
-              <div className="min-w-0 flex-1 pt-1">
-                <Pt
-                  as="p"
-                  id={`ph-${i}`}
-                  src={{ kind: 'situation', id: situation.id, part: 'phrases', index: i }}
-                  ru={p.ru}
-                  className="scroll-mt-28 text-base leading-snug font-semibold"
-                >
-                  {p.pt}
-                </Pt>
-                <p className="mt-0.5 text-sm text-ink-muted">{p.ru}</p>
-              </div>
-              <AddCardButton name={p.pt} added={inSrs} disabled={busy || have === null} onClick={() => void add([specs[i]])} />
-            </li>
-          )
-        })}
+        {situation.phrases.map((p, i) => (
+          <li key={i} className="flex items-start gap-3 py-3 pr-2 pl-3 sm:pl-4">
+            <SpeakButton text={p.pt} />
+            <div className="min-w-0 flex-1 pt-1">
+              <Pt
+                as="p"
+                id={`ph-${i}`}
+                src={{ kind: 'situation', id: situation.id, part: 'phrases', index: i }}
+                ru={p.ru}
+                className="scroll-mt-28 text-base leading-snug font-semibold"
+              >
+                {p.pt}
+              </Pt>
+              <p className="mt-0.5 text-sm text-ink-muted">{p.ru}</p>
+            </div>
+            <ReviewToggle picker={picker} id={specs[i].id} name={p.pt} />
+          </li>
+        ))}
       </ul>
-      <div className="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          className="btn-secondary"
-          disabled={busy || have === null || missing.length === 0}
-          onClick={() => void add(missing)}
-        >
-          {have !== null && missing.length === 0 ? <Check aria-hidden className="size-5 text-brand" /> : <Plus aria-hidden className="size-5" />}
-          {have !== null && missing.length === 0 ? 'Все фразы в повторении' : `Все фразы в повторение (${missing.length})`}
-        </button>
-        {msg && <span role="status" className="text-sm text-ink-muted">{msg}</span>}
-      </div>
+      <ReviewPickerConfirm picker={picker} />
     </div>
   )
 }

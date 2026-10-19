@@ -5,8 +5,7 @@ import { getSituation, type Situation } from '@/content'
 import { ButtonLink } from '@/components/Button'
 import { cx, scrollBehavior } from '@/components/cx'
 import { EmptyState } from '@/components/EmptyState'
-import { PageHeader } from '@/components/PageHeader'
-import { LevelBadge, StatusBadge } from '@/components/StatusBadge'
+import { LessonHeader } from '@/components/LessonHeader'
 import { TabPanel, Tabs } from '@/components/Tabs'
 import { sceneIcon, sceneTint } from './sceneIcon'
 import { useProgressMap } from '@/features/lessons/useTopicProgress'
@@ -87,32 +86,22 @@ function SituationModule({ situation }: { situation: Situation }) {
   const id = 'sit'
 
   return (
-    <article className="page">
-      <PageHeader
-        back={{ to: practicePath('situations'), label: 'Практика · Ситуации' }}
-        meta={
-          <>
-            <LevelBadge level={situation.level} />
-            <StatusBadge status={own?.status ?? 'not-started'} />
-            {own && (
-              <span className="tabular-nums">
-                последний результат {Math.round(own.lastPct * 100)}% · попыток {own.attempts}
-              </span>
-            )}
-          </>
-        }
-        title={
-          <span className="flex items-center gap-3">
-            <span aria-hidden className={cx('grid size-11 shrink-0 place-items-center rounded-full', sceneTint(situation.id))}>
-              {createElement(sceneIcon(situation.id), { className: 'size-6', strokeWidth: 1.8 })}
-            </span>
-            {situation.title}
+    <article className="flex min-w-0 flex-col gap-2">
+      <LessonHeader
+        back={{ to: practicePath('situations'), label: 'Ситуации', title: 'Практика · Ситуации' }}
+        level={situation.level}
+        icon={
+          <span aria-hidden className={cx('grid size-8 shrink-0 place-items-center rounded-full', sceneTint(situation.id))}>
+            {createElement(sceneIcon(situation.id), { className: 'size-4.5', strokeWidth: 1.9 })}
           </span>
         }
-        subtitle={
-          <p className="font-pt text-base" lang="pt-PT">
-            {situation.titlePt}
-          </p>
+        title={situation.title}
+        below={
+          tab === 'dialogue' && (
+            <span className="font-pt" lang="pt-PT">
+              {situation.titlePt}
+            </span>
+          )
         }
       />
 
@@ -160,7 +149,7 @@ function SituationModule({ situation }: { situation: Situation }) {
           situation={situation}
           progress={own}
           onSaved={() => void reload()}
-          next={nextTab('exercises') ? { label: `${TAB_LABEL[nextTab('exercises')!]} →`, onClick: () => goTab(nextTab('exercises')!) } : undefined}
+          next={nextTab('exercises') ? { label: TAB_LABEL[nextTab('exercises')!], onClick: () => goTab(nextTab('exercises')!) } : undefined}
         />
       </TabPanel>
 

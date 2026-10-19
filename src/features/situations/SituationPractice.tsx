@@ -59,6 +59,7 @@ export function SituationPractice({ situation, progress, onSaved, next }: Props)
     const wrongIds = new Set(result.summary.answers.filter((a) => !a.ok).map((a) => a.exerciseId))
     return (
       <ResultScreen
+        runTitle="Упражнения пройдены"
         summary={result.summary}
         exercises={result.list}
         retry={result.retry}

@@ -1,7 +1,6 @@
 /** SRS cards and local drafts for situation modules. */
 import type { Situation } from '@/content'
-import type { CardKind, ProgressRepository } from '@/data'
-import { createSrsCard } from '@/engine/fsrs'
+import type { CardKind } from '@/data'
 
 /** Id of an SRS card made from a situation phrase. */
 export const phraseCardId = (situationId: string, index: number) => `ph:${situationId}:${index}`
@@ -22,23 +21,6 @@ export const phraseCards = (s: Situation): CardSpec[] =>
 
 export const wordCards = (s: Situation): CardSpec[] =>
   s.vocab.map((w, i) => ({ id: wordCardId(s.id, i), kind: 'word', front: w.ru, back: w.pt }))
-
-/** Ids of the given specs that already exist as SRS cards. */
-export async function existingCardIds(repo: ProgressRepository, specs: readonly CardSpec[]): Promise<Set<string>> {
-  const want = new Set(specs.map((c) => c.id))
-  return new Set((await repo.getCards()).map((c) => c.id).filter((id) => want.has(id)))
-}
-
-/** Creates SRS cards for specs that aren't cards yet (existing cards keep their FSRS state). Returns how many were added. */
-export async function addCards(repo: ProgressRepository, situationId: string, specs: readonly CardSpec[]): Promise<number> {
-  const have = await existingCardIds(repo, specs)
-  const now = Date.now()
-  const fresh = specs
-    .filter((c) => !have.has(c.id))
-    .map((c) => createSrsCard({ ...c, topicId: situationId }, now))
-  if (fresh.length) await repo.upsertCards(fresh)
-  return fresh.length
-}
 
 // --- Writing drafts (per device, localStorage) --------------------------------
 

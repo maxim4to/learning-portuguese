@@ -69,6 +69,7 @@ export function ReadingQuestions({ text }: { text: ReadingText }) {
     const wrongIds = new Set(result.summary.answers.filter((a) => !a.ok).map((a) => a.exerciseId))
     return (
       <ResultScreen
+        runTitle="Вопросы к тексту"
         statusLabel="Статус текста:"
         back={{ to: practicePath('reading'), label: 'К текстам' }}
         summary={result.summary}

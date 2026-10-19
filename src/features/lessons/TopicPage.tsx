@@ -54,8 +54,8 @@ function TopicLesson({ topic }: { topic: Topic }) {
 
   const id = 'topic'
   return (
-    <article className="page">
-      <TopicHeader topic={topic} progress={progress} compact={tab === 'exercises' || tab === 'mini-test'} />
+    <article className="flex min-w-0 flex-col gap-2">
+      <TopicHeader topic={topic} progress={progress} details={tab === 'theory'} />
 
       <div className="space-y-4">
 
@@ -123,8 +123,9 @@ function TopicLesson({ topic }: { topic: Topic }) {
           source="lesson"
           title="Упражнения"
           progress={progress.get(topic.id)}
+          progressMap={progress}
           onSaved={() => void reload()}
-          next={topic.miniTest.length ? { label: 'Мини-тест →', onClick: () => goTab('mini-test') } : undefined}
+          onMiniTest={topic.miniTest.length ? () => goTab('mini-test') : undefined}
         />
       </TabPanel>
 
@@ -136,6 +137,7 @@ function TopicLesson({ topic }: { topic: Topic }) {
           source="mini-test"
           title="Мини-тест"
           progress={progress.get(topic.id)}
+          progressMap={progress}
           onSaved={() => void reload()}
         />
       </TabPanel>
