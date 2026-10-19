@@ -14,6 +14,8 @@ import { dueCards, formatInterval, isNewCard } from '@/engine/fsrs'
 import { useProgressData } from '@/features/dashboard/useProgressData'
 import { activityDays, computeStreak } from '@/features/dashboard/stats'
 import { plural } from '@/features/library/format'
+import { ReviewTabs } from '@/features/words/ReviewTabs'
+import { useWordActions, useWords } from '@/features/words/useWords'
 import { CardList } from './CardList'
 import { cardsFromErrors, isDeleted } from './cardOps'
 import { newSeenToday } from './newCardCounter'
@@ -22,6 +24,10 @@ import { ReviewSession } from './ReviewSession'
 export function ReviewPage() {
   const repo = useRepository()
   const data = useProgressData()
+  const wordCount = useWords().counts.total
+  const { onCardsUpdated, reload: reloadWords } = useWordActions()
+  // Keep the dictionary cache (statuses, next review) in step with cards rated in the session.
+  const onCardUpdated = useCallback((c: SrsCard) => onCardsUpdated([c]), [onCardsUpdated])
   const [params, setParams] = useSearchParams()
   const tab = params.get('tab') === 'all' ? 'all' : 'session'
   const [session, setSession] = useState<SrsCard[] | null>(null)
@@ -61,7 +67,7 @@ export function ReviewPage() {
       <div className="page-grid">
         <div className="min-w-0">
           <h1 className="sr-only">Повторение</h1>
-          <ReviewSession initial={session} settings={data.settings} onCardUpdated={noop} onFinish={finish} />
+          <ReviewSession initial={session} settings={data.settings} onCardUpdated={onCardUpdated} onFinish={finish} />
         </div>
         <DeckPanel cards={cards} due={due} now={now} newLimit={data.settings?.newCardsPerDay ?? 15} streak={streak} className="hidden lg:flex" />
       </div>
@@ -78,7 +84,10 @@ export function ReviewPage() {
 
   return (
     <div className="page">
-      <PageHeader title="Повторение" subtitle="Интервальное повторение: карточки возвращаются, когда пора вспомнить." />
+      <div className="space-y-4">
+        <ReviewTabs active="review" wordCount={wordCount} />
+        <PageHeader title="Повторение" subtitle="Интервальное повторение: карточки возвращаются, когда пора вспомнить." />
+      </div>
 
       <div className="page-grid">
       <div className="min-w-0 space-y-4">
@@ -101,7 +110,15 @@ export function ReviewPage() {
       )}
 
       <TabPanel idBase="review" value="all" active={tab === 'all'}>
-        {tab === 'all' && <CardList cards={cards} onChanged={() => void reload()} />}
+        {tab === 'all' && (
+          <CardList
+            cards={cards}
+            onChanged={() => {
+              void reload()
+              void reloadWords() // a deleted / paused lex:* card changes the dictionary's statuses
+            }}
+          />
+        )}
       </TabPanel>
 
       <TabPanel idBase="review" value="session" active={tab === 'session'}>
@@ -111,7 +128,7 @@ export function ReviewPage() {
               icon={<Layers className="size-7" />}
               tone="azulejo"
               title="Карточек пока нет"
-              text="Они появляются, когда вы нажимаете «Добавить в повторение» в уроке или ситуации. Ошибки из упражнений попадают в журнал ошибок."
+              text="Они появляются, когда вы сохраняете слова в «Мой словарь» или нажимаете «в повторение» у фраз и примеров. Ошибки из упражнений попадают в журнал ошибок."
               action={
                 <>
                   {pendingErrorCards.length > 0 && (
@@ -173,8 +190,6 @@ export function ReviewPage() {
     </div>
   )
 }
-
-const noop = () => {}
 
 /** Level of a card's source (topic, situation, vocab theme or reading text); undefined for free cards. */
 function cardLevel(c: SrsCard): Level | undefined {

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import type { Exercise } from '@/content'
 import { haptic } from '@/components/cx'
 import { exerciseExpected, exerciseHeading } from './describe'
@@ -7,6 +7,7 @@ import { ExerciseView } from './ExerciseRunner'
 import { feedbackSummary } from './feedbackText'
 import type { AnswerRecord, Submission } from './types'
 import { useSettings } from './useSettings'
+import { focusPrimary, hasFinePointer } from './keyboard'
 
 interface Props {
   exercise: Exercise
@@ -14,25 +15,32 @@ interface Props {
   onAnswered(rec: AnswerRecord): void
   /** Optional line above the task (e.g. «Задание, в котором была ошибка»). */
   note?: string
+  /**
+   * Mounted right after the learner's own action (a rating for the previous card): focus the task's primary control
+   * even on touch (opens the keyboard for typing kinds). Otherwise only with a fine pointer; on touch — the heading.
+   */
+  focusControl?: boolean
 }
 
 /**
  * One exercise in single-item mode (used by SRS review of 'error' cards): the same per-type UI and grading
  * as in lessons, then the feedback (correct answer + explanation). No «Дальше», no persistence, no error log —
  * the caller decides what happens next. Give it a `key` to start over.
- * Focus: on mount, a text field (when the kind autofocuses it) or else the task heading.
+ * Focus: on mount, the task's primary control (text field, options…) — see `focusControl` — or else its heading.
  */
-export function ReviewExercise({ exercise: ex, onAnswered, note }: Props) {
+export function ReviewExercise({ exercise: ex, onAnswered, note, focusControl }: Props) {
   const { lenientAccents } = useSettings()
   const [current, setCurrent] = useState<AnswerRecord | null>(null)
   const [live, setLive] = useState('')
   const rootRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
 
-  // Child effects (TextAnswer autofocus on fine pointers) run first; only take focus if it isn't already inside.
-  useEffect(() => {
-    if (!rootRef.current?.contains(document.activeElement)) headingRef.current?.focus({ preventScroll: true })
-  }, [])
+  const focusOnMount = useEffectEvent(() => {
+    if (rootRef.current?.contains(document.activeElement)) return
+    if ((focusControl || hasFinePointer()) && focusPrimary(rootRef.current)) return
+    headingRef.current?.focus({ preventScroll: true })
+  })
+  useEffect(() => focusOnMount(), [])
 
   function submit(s: Submission) {
     if (current) return

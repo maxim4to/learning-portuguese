@@ -17,11 +17,12 @@ export interface NavItem {
  * «Практика с агентом» (/tutor) has no slot of its own (the bottom bar stays at 5): it is reached from the
  * dashboard card and the «С агентом» tab / section of every topic, situation, text and vocab theme, and
  * highlights «Главная».
+ * «Мой словарь» (/words, /words/:id) lives under «Повторение» as its second sub-tab (ReviewTabs).
  */
 export const NAV_ITEMS: NavItem[] = [
   { to: '/', label: 'Главная', match: ['/tutor'] },
   { to: '/syllabus', label: 'Курс', match: ['/topic', '/diagnostic'] },
-  { to: '/review', label: 'Повторение', short: 'Карточки' },
+  { to: '/review', label: 'Повторение', short: 'Карточки', match: ['/words'] },
   { to: '/situations', label: 'Практика', match: ['/situation', '/library'] },
   { to: '/settings', label: 'Настройки' },
 ]

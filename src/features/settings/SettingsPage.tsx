@@ -10,10 +10,11 @@ import { SegmentedControl } from '@/components/SegmentedControl'
 import { Switch } from '@/components/Switch'
 import { setThemePref, useThemePref, type ThemePref } from '@/app/theme'
 import { isFirebaseConfigured, useAuth, useRepository } from '@/data'
-import type { Settings } from '@/data/types.ts'
+import { WORD_CARD_MODES, type Settings, type WordCardMode } from '@/data/types.ts'
 import { getPtPtVoices, pickPtPtVoice, speak } from '@/engine/audio'
 import { activityDays, computeStreak } from '@/features/dashboard/stats'
 import { plural } from '@/features/library/format'
+import { MODE_UNLOCK_HINT, WORD_MODE_LABEL } from '@/features/words/status'
 import { WordsContext } from '@/features/words/useWords'
 
 const SAMPLE = 'Bom dia! Hoje vamos praticar o português europeu.'
@@ -248,6 +249,15 @@ export function SettingsPage() {
               </p>
             )}
           </Section>
+
+          <Section
+            title="Словарь"
+            description="Как сохраняются и повторяются слова из «Моего словаря». Карточки слова открываются по очереди."
+          >
+            {/* lookupOnTap / highlightSavedWords / typeWordAnswers stay in Settings; their switches return
+                when word capture (phase 2) and typed word cards (phase 3) use them. */}
+            <WordModesField value={settings.wordModes} onChange={(wordModes) => update({ wordModes })} />
+          </Section>
         </>
       )}
 
@@ -366,6 +376,7 @@ export function SettingsPage() {
       </Section>
 
       <Section title="Опасная зона" description="Необратимые действия с данными. Перед ними стоит сохранить резервную копию.">
+        <LegacyWordCards />
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0 space-y-1">
             <p className="font-semibold">Сбросить весь прогресс</p>
@@ -384,6 +395,141 @@ export function SettingsPage() {
 
       {/* Mounted only while open: every opening starts from a blank confirmation. */}
       {resetOpen && <ResetDialog onClose={() => setResetOpen(false)} onExport={handleExport} onReset={handleReset} />}
+    </div>
+  )
+}
+
+/** Card modes enabled for every dictionary word (at least one stays on). */
+function WordModesField({ value, onChange }: { value: readonly WordCardMode[]; onChange(v: WordCardMode[]): void }) {
+  const hintId = useId()
+  return (
+    <fieldset className="space-y-1" aria-describedby={hintId}>
+      <legend className="mb-1 font-semibold">Виды карточек слова</legend>
+      <p id={hintId} className="pb-1 text-sm text-ink-muted">
+        До четырёх карточек на слово. Выключенные не создаются; уже созданные не удаляются.
+      </p>
+      {WORD_CARD_MODES.map((m) => {
+        const on = value.includes(m)
+        const last = on && value.length === 1
+        return (
+          <label key={m} className={`flex min-h-11 items-start gap-3 rounded-control px-2 py-2 ${last ? '' : 'cursor-pointer hover:bg-surface-2'}`}>
+            <input
+              type="checkbox"
+              className="mt-0.5 size-5 shrink-0 accent-[var(--brand)]"
+              checked={on}
+              disabled={last}
+              onChange={(e) => onChange(WORD_CARD_MODES.filter((x) => (x === m ? e.target.checked : value.includes(x))))}
+            />
+            <span className="min-w-0">
+              <span className="block font-semibold">{WORD_MODE_LABEL[m]}</span>
+              <span className="block text-sm text-ink-muted">
+                {last ? 'хотя бы один вид остаётся включённым' : MODE_UNLOCK_HINT[m].replace(/^./, (c) => c.toLocaleUpperCase('ru-RU'))}
+              </span>
+            </span>
+          </label>
+        )
+      })}
+    </fieldset>
+  )
+}
+
+/**
+ * One-time cleanup (decision 2): word cards made by the old «в повторение» buttons of themes,
+ * situations and reading glossaries (`w:*`, `g:*`). Phrases and grammar stay. Hidden when there are none.
+ */
+function LegacyWordCards() {
+  const words = useContext(WordsContext)
+  const toast = useToast()
+  const [count, setCount] = useState<number | null>(null)
+  const [open, setOpen] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const cancelRef = useRef<HTMLButtonElement>(null)
+  const doneRef = useRef<HTMLParagraphElement>(null)
+  const [done, setDone] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (done !== null) doneRef.current?.focus() // the dialog and its opener are gone: land on the result
+  }, [done])
+
+  useEffect(() => {
+    let alive = true
+    words?.actions
+      .countLegacyWordCards()
+      .then((n) => alive && setCount(n))
+      .catch(() => alive && setCount(0))
+    return () => {
+      alive = false
+    }
+  }, [words])
+
+  if (done !== null) {
+    return (
+      <p ref={doneRef} tabIndex={-1} className="border-b border-line pb-5 text-sm text-ink-muted outline-none">
+        Старые карточки слов удалены: {done}. Слова добавляются в «Мой словарь» кнопкой «в словарь».
+      </p>
+    )
+  }
+  if (!words || !count) return null
+
+  async function run() {
+    setBusy(true)
+    setError(null)
+    try {
+      const n = await words!.actions.deleteLegacyWordCards()
+      setOpen(false)
+      setDone(n)
+      toast({ text: `Удалено старых карточек слов: ${n}`, tone: 'success' })
+    } catch (e) {
+      setError(`Не удалось удалить: ${e instanceof Error ? e.message : String(e)}`)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-4 border-b border-line pb-5 sm:flex-row sm:items-start sm:justify-between">
+      <div className="min-w-0 space-y-1">
+        <p className="font-semibold">Удалить старые карточки слов</p>
+        <p className="measure text-sm text-ink-muted">
+          {plural(count, 'карточка', 'карточки', 'карточек')} слов из тем, ситуаций и текстов, добавленных кнопкой «в
+          повторение» до появления словаря. Фразы, грамматика и слова из «Моего словаря» останутся.
+        </p>
+      </div>
+      <Button variant="danger" icon={<Trash2 />} className="shrink-0 self-start" onClick={() => setOpen(true)}>
+        Удалить…
+      </Button>
+      {open && (
+        <Dialog
+          open
+          role="alertdialog"
+          onClose={() => !busy && setOpen(false)}
+          initialFocusRef={cancelRef}
+          title="Удалить старые карточки слов?"
+          description={
+            <>
+              Будет удалено {plural(count, 'карточка', 'карточки', 'карточек')} вместе с прогрессом повторения. Отменить
+              это нельзя. Нужные слова можно снова добавить кнопкой «в словарь» — в темах и ситуациях.
+            </>
+          }
+          actions={
+            <>
+              <Button ref={cancelRef} variant="secondary" onClick={() => setOpen(false)} disabled={busy}>
+                Отмена
+              </Button>
+              <Button variant="danger" icon={<Trash2 />} onClick={() => void run()} disabled={busy}>
+                {busy ? 'Удаляю…' : `Удалить ${count}`}
+              </Button>
+            </>
+          }
+        >
+          {error && (
+            <p role="alert" className="text-sm text-danger">
+              {error}
+            </p>
+          )}
+        </Dialog>
+      )}
     </div>
   )
 }

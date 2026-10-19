@@ -1,5 +1,6 @@
 import { useEffect, useRef, type KeyboardEvent, type ReactNode } from 'react'
 import { cx, scrollBehavior } from './cx'
+import { useScrollEdges } from './useScrollEdges'
 
 export interface TabItem<T extends string> {
   value: T
@@ -13,7 +14,7 @@ const panelId = (idBase: string, value: string) => `${idBase}-panel-${value}`
 
 /**
  * WAI-ARIA tabs: roving tabindex, ←/→/Home/End (automatic activation), ids wired to panels,
- * active tab kept in view in the horizontally scrolling bar, faded edges.
+ * active tab kept in view in the horizontally scrolling bar, edges faded only where tabs are hidden.
  * `sticky` pins the bar under the status bar (mobile) / top bar (desktop) via --sticky-top.
  * Render panels with <TabPanel idBase value active>.
  */
@@ -35,13 +36,14 @@ export function Tabs<T extends string>({
   className?: string
 }) {
   const barRef = useRef<HTMLDivElement>(null)
+  useScrollEdges(barRef)
 
   useEffect(() => {
     const bar = barRef.current
     const el = bar?.querySelector<HTMLElement>('[aria-selected="true"]')
     if (!bar || !el) return
     const l = el.offsetLeft - bar.offsetLeft
-    if (l < bar.scrollLeft + 8 || l + el.offsetWidth > bar.scrollLeft + bar.clientWidth - 8)
+    if (l < bar.scrollLeft + 24 || l + el.offsetWidth > bar.scrollLeft + bar.clientWidth - 24)
       bar.scrollTo({ left: l - 24, behavior: scrollBehavior() })
   }, [value])
 

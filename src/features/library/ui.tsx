@@ -26,7 +26,7 @@ export function GenderBadge({ gender }: { gender?: VocabWord['gender'] }) {
 }
 
 /**
- * «+» action that turns into «✓» once the card exists.
+ * «+» action that turns into «✓» once the card (or dictionary word) exists.
  * `round` (default): 44px outlined circle. `text`: a quiet text action for dense lists — the hit area stays 44px.
  */
 export function AddCardButton({
@@ -35,6 +35,7 @@ export function AddCardButton({
   onClick,
   variant = 'round',
   name,
+  target = 'review',
 }: {
   /** What is added (goes into the accessible name, so a list of «+» buttons stays distinguishable). */
   name?: string
@@ -42,14 +43,18 @@ export function AddCardButton({
   disabled?: boolean
   onClick(): void
   variant?: 'round' | 'text'
+  /** review = SRS cards (phrases), words = the personal dictionary. */
+  target?: 'review' | 'words'
 }) {
+  const where = target === 'words' ? 'словарь' : 'повторение'
+  const inWhere = target === 'words' ? 'в словаре' : 'в повторении'
   const label = name
     ? added
-      ? `«${name}» уже в повторении`
-      : `Добавить «${name}» в повторение`
+      ? `«${name}» уже ${inWhere}`
+      : `Добавить «${name}» в ${where}`
     : added
-      ? 'Уже в повторении'
-      : 'Добавить в повторение'
+      ? `Уже ${inWhere}`
+      : `Добавить в ${where}`
   const icon = added ? <Check aria-hidden className={variant === 'text' ? 'size-4' : 'size-5'} strokeWidth={2.5} /> : <Plus aria-hidden className={variant === 'text' ? 'size-4' : 'size-5'} />
   if (variant === 'text') {
     return (

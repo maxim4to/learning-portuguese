@@ -7,7 +7,7 @@ import { exerciseExpected, exerciseHeading } from './describe'
 import { ExerciseFeedback } from './ExerciseFeedback'
 import { feedbackSummary } from './feedbackText'
 import { clearRun, loadRun, saveRunSnapshot } from './runPersist'
-import { isInHiddenPanel } from './keyboard'
+import { focusPrimary, hasFinePointer, isInHiddenPanel, noMods } from './keyboard'
 import { ChoiceExercise, ListenChoiceExercise } from './kinds/Choice'
 import { FillGapExercise } from './kinds/FillGap'
 import { ListenTypeExercise } from './kinds/ListenType'
@@ -37,6 +37,30 @@ export interface ExerciseRunnerProps {
   /** Desktop side panel (progress through the items, what is trained, keys). Off where the runner sits in a narrow column. */
   panel?: boolean
 }
+
+/** Keyboard hint for the side panel: what the keys do in this kind of task (then Enter → next everywhere). */
+const KIND_KEYS: Record<Exercise['type'], [string, string][]> = {
+  'fill-gap': [['Enter', 'проверить'], ['Shift+Enter', '«Не знаю»']],
+  transform: [['Enter', 'проверить'], ['Shift+Enter', '«Не знаю»']],
+  'translate-ru-pt': [['Enter', 'проверить'], ['Shift+Enter', '«Не знаю»']],
+  'listen-type': [['Enter', 'проверить'], ['Shift+Enter', '«Не знаю»'], ['Shift+Tab', 'к «Слушать»']],
+  choice: [['↑ ↓', 'выбрать вариант'], ['Enter, 1–9', 'ответить']],
+  'listen-choice': [['Enter', 'слушать'], ['1–9', 'ответить'], ['Tab, ↑ ↓', 'к вариантам']],
+  'order-words': [
+    ['← → ↑ ↓', 'по словам'],
+    ['Enter', 'переставить слово'],
+    ['Backspace', 'убрать последнее'],
+    ['Ctrl+Enter', 'проверить'],
+    ['Shift+Enter', '«Не знаю»'],
+  ],
+  match: [['← → ↑ ↓', 'по карточкам'], ['Enter', 'выбрать']],
+  'speak-shadow': [['Enter', 'слушать'], ['Tab', 'к оценке']],
+}
+
+const kbd = 'rounded-md bg-surface-2 px-1.5 py-0.5 font-sans text-xs font-bold text-ink whitespace-nowrap'
+
+/** Keyboard-activated «Дальше» clicks this soon after answering are ignored (held / bounced Enter). */
+const NEXT_GUARD_MS = 250
 
 /** Generic name of each exercise kind (the side panel groups the run by it). */
 const KIND_LABEL: Record<Exercise['type'], string> = {
@@ -84,8 +108,9 @@ export function ExerciseView(props: {
 /**
  * Runs a list of exercises one by one: progress bar, per-type UI, grading (honours
  * settings.lenientAccents), feedback with the correct answer + explanation, «Дальше».
- * Keyboard: Enter checks typed answers / order-words, 1–9 pick options, Enter → next.
- * Focus: after «Дальше» it moves to the new task heading; after answering — to «Дальше».
+ * Keyboard (see KIND_KEYS): Enter checks typed answers, Shift+Enter = «Не знаю», arrows / 1–9 pick options,
+ * then Enter → next. Focus: after answering — «Дальше» (the verdict is announced by the live region); after «Дальше» —
+ * the new task's primary control (text field, option group, word bank…), so the whole run works without a mouse.
  * Give it a `key` to restart with a new list.
  */
 export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOnMount, panel = true }: ExerciseRunnerProps) {
@@ -99,7 +124,9 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
   const nextRef = useRef<HTMLButtonElement>(null)
   const topRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
   const moved = useRef(false)
+  const answeredAt = useRef(0)
 
   const ex = exercises[index]
   const total = exercises.length
@@ -123,6 +150,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
       ok,
       ...(s.skipped ? { skipped: true } : {}),
     }
+    answeredAt.current = Date.now()
     setCurrent(rec)
     setResumeNote(false)
     setLive(feedbackSummary(ex, rec, lenientAccents))
@@ -147,6 +175,12 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     if (top && top.getBoundingClientRect().top < 0) top.scrollIntoView({ block: 'start', behavior: scrollBehavior() })
   }
 
+  /** Primary control of the task (text field, options…), or the heading when the kind has none. */
+  function focusTask(control: boolean) {
+    if (control && focusPrimary(sectionRef.current)) return
+    headingRef.current?.focus({ preventScroll: true })
+  }
+
   function restart() {
     clearRun(persistKey)
     setIndex(0)
@@ -156,18 +190,43 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     setResumeNote(false)
   }
 
+  // Started by a button that unmounts: focus the task. Typing kinds get the field only with a fine pointer —
+  // on a phone the first task shouldn't pop the keyboard up by itself. Plain page loads never take focus.
   const focusOnStart = useEffectEvent(() => {
     const a = document.activeElement
-    if (focusOnMount && (!a || a === document.body)) headingRef.current?.focus({ preventScroll: true })
+    if (focusOnMount && (!a || a === document.body)) focusTask(hasFinePointer())
   })
   useEffect(() => focusOnStart(), [])
 
-  // New task: move focus to its heading (the previous «Дальше» unmounts; focus must not fall to <body>).
+  // New task after «Дальше» (which unmounts): straight to its primary control, so the next answer can be typed /
+  // picked at once. On touch this opens the keyboard for typing kinds — wanted, the learner just asked for the next task.
+  const focusNewTask = useEffectEvent(() => focusTask(true))
   useEffect(() => {
     if (!moved.current) return
     moved.current = false
-    headingRef.current?.focus({ preventScroll: true })
+    focusNewTask()
   }, [index])
+
+  // Nothing focused yet (plain page load — the runner doesn't take focus then): the first key aimed at the task
+  // brings focus to it. A typed letter lands in the text field; Enter just focuses the primary control.
+  // (Arrows / Space are left alone: they scroll the page.)
+  useEffect(() => {
+    if (current) return
+    const onKey = (e: KeyboardEvent) => {
+      const a = document.activeElement
+      if (a && a !== document.body && a !== headingRef.current) return
+      if (!noMods(e) || e.isComposing || isInHiddenPanel(topRef.current)) return
+      const typing = e.key.length === 1 && e.key !== ' '
+      if (!typing && e.key !== 'Enter') return
+      const field = sectionRef.current?.querySelector('input[data-exercise-focus], textarea[data-exercise-focus]')
+      // Letters only matter for text fields (digits pick choice options on their own).
+      if (typing && !field) return
+      if (!focusPrimary(sectionRef.current)) return
+      if (!typing) e.preventDefault()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [current, index])
 
   // After answering: focus «Дальше» and let Enter (anywhere but buttons/links) advance.
   // The listener is attached on the next tick so the Enter that submitted the answer doesn't also advance.
@@ -177,7 +236,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     nextRef.current?.focus({ preventScroll: true })
     nextRef.current?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() })
     const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Enter' || e.repeat) return
+      if (e.key !== 'Enter' || e.repeat || e.isComposing || !noMods(e)) return
       if (isInHiddenPanel(topRef.current)) return
       const t = e.target as HTMLElement | null
       if (t && (t.tagName === 'BUTTON' || t.tagName === 'A')) return
@@ -236,7 +295,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
         </div>
       )}
 
-      <section className="card space-y-6" aria-labelledby={`${ex.id}-h`}>
+      <section ref={sectionRef} className="card space-y-6" aria-labelledby={`${ex.id}-h`}>
         <h3
           id={`${ex.id}-h`}
           ref={headingRef}
@@ -261,7 +320,11 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
                 ref={nextRef}
                 type="button"
                 className={cx('btn-primary w-full sm:w-auto sm:min-w-40')}
-                onClick={next}
+                onClick={(e) => {
+                  // detail 0 = keyboard activation: ignore an Enter bounce right after the one that answered.
+                  if (e.detail === 0 && Date.now() - answeredAt.current < NEXT_GUARD_MS) return
+                  next()
+                }}
               >
                 {isLast ? 'Завершить' : 'Дальше'}
                 <ArrowRight aria-hidden />
@@ -335,10 +398,19 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
             </ul>
           </div>
 
-          <p className="text-sm text-ink-muted">
-            <kbd className="rounded-md bg-surface-2 px-1.5 py-0.5 font-sans text-xs font-bold text-ink">Enter</kbd> — проверить и дальше,{' '}
-            <kbd className="rounded-md bg-surface-2 px-1.5 py-0.5 font-sans text-xs font-bold text-ink">1–9</kbd> — выбрать вариант.
-          </p>
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold text-ink-muted">Клавиши</h3>
+            <dl className="grid grid-cols-[auto_1fr] items-baseline gap-x-3 gap-y-1.5 text-sm text-ink-muted">
+              {[...KIND_KEYS[ex.type], ['Enter', 'после ответа — дальше'] as [string, string]].map(([k, what]) => (
+                <div key={k + what} className="contents">
+                  <dt>
+                    <kbd className={kbd}>{k}</kbd>
+                  </dt>
+                  <dd>{what}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </aside>
       )}
       {/* Always mounted, so screen readers announce each verdict. */}

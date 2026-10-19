@@ -1,27 +1,32 @@
-import { useMemo, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { getVocabTheme } from '@/content'
 import { Check, GraduationCap, Plus, Sparkles, X } from 'lucide-react'
 import { PageHeader } from '@/components/PageHeader'
 import { SpeakButton } from '@/components/SpeakButton'
 import { LevelBadge } from '@/components/StatusBadge'
 import { VocabTutor } from '@/features/tutor/panels'
-import { useLibraryCards, vocabCardSpecs } from './cards'
+import { useContentWords } from '@/features/words/useContentWords'
 import { VocabQuiz } from './VocabQuiz'
 import { AddCardButton, GenderBadge, NotFound } from './ui'
 import { plural } from './format'
 
+const NO_WORDS: never[] = []
+
 export function VocabThemePage() {
   const { id = '' } = useParams()
   const theme = getVocabTheme(id)
-  const specs = useMemo(() => (theme ? vocabCardSpecs(theme) : []), [theme])
-  const cards = useLibraryCards(theme?.id ?? '', specs)
+  // Theme words go to «Мой словарь» (source vocab:<themeId>); cards are created by the dictionary.
+  const dict = useContentWords(theme?.words ?? NO_WORDS, {
+    themeKey: `vocab:${theme?.id ?? ''}`,
+    src: `vocab:${theme?.id ?? ''}`,
+    level: theme?.level,
+  })
   const [quiz, setQuiz] = useState(false)
 
   if (!theme) return <NotFound what="Словарь" />
 
-  const missing = cards.have ? specs.filter((s) => !cards.have!.has(s.id)) : specs
-  const allAdded = cards.have !== null && missing.length === 0
+  const allAdded = dict.ready && dict.missing.length === 0
 
   return (
     <article className="page">
@@ -51,26 +56,28 @@ export function VocabThemePage() {
         <button
           type="button"
           className="btn-secondary"
-          disabled={cards.busy || cards.have === null || allAdded}
-          onClick={() => void cards.add(missing)}
+          disabled={dict.busy || !dict.ready || allAdded}
+          onClick={() => void dict.add(dict.missing)}
         >
           {allAdded ? <Check aria-hidden className="size-5 text-brand" /> : <Plus aria-hidden className="size-5" />}
-          {allAdded ? 'Все слова в повторении' : `Добавить все в повторение${cards.have && missing.length < specs.length ? ` (${missing.length})` : ''}`}
+          {allAdded
+            ? 'Все слова в словаре'
+            : `Добавить все в словарь${dict.ready && dict.missing.length < theme.words.length ? ` (${dict.missing.length})` : ''}`}
         </button>
         <a href="#tutor" className="inline-flex min-h-11 items-center justify-center gap-1.5 text-sm font-semibold sm:ml-1">
           <Sparkles aria-hidden className="size-4 text-terracotta" /> Практика с агентом
         </a>
-        {cards.msg && (
-          <span className="text-sm text-ink-muted" role="status">
-            {cards.msg}
-          </span>
+        {allAdded && (
+          <Link to="/words" className="inline-flex min-h-11 items-center text-sm font-semibold sm:ml-1">
+            Открыть «Мой словарь»
+          </Link>
         )}
       </div>
 
       {quiz && (
         <VocabQuiz
           theme={theme}
-          onUnknown={(i) => void cards.add([specs[i]], { quiet: true })}
+          onUnknown={(i) => void dict.add([i], { quiet: true })}
           onClose={() => setQuiz(false)}
         />
       )}
@@ -90,7 +97,6 @@ export function VocabThemePage() {
         </div>
         <ul>
           {theme.words.map((w, i) => {
-            const spec = specs[i]
             return (
               <li
                 key={i}
@@ -124,9 +130,11 @@ export function VocabThemePage() {
                 </div>
                 <AddCardButton
                   variant="text"
-                  added={!!cards.have?.has(spec.id)}
-                  disabled={cards.busy || cards.have === null}
-                  onClick={() => void cards.add([spec])}
+                  target="words"
+                  name={w.pt}
+                  added={!!dict.saved?.[i]}
+                  disabled={dict.busy || !dict.ready}
+                  onClick={() => void dict.add([i])}
                 />
               </li>
             )

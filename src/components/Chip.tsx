@@ -1,5 +1,6 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import { useRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
 import { cx } from './cx'
+import { useScrollEdges } from './useScrollEdges'
 
 /** Toggle chip (filters): `aria-pressed`, 36px visual height with a 44px hit area. */
 export function Chip({
@@ -33,9 +34,12 @@ export function Chip({
 }
 
 /** Labelled group of toggle chips (not a tablist: there are no panels). */
+/** Wraps by default; with `flex-nowrap overflow-x-auto scroll-fade-x` it scrolls and fades only the hidden edge. */
 export function ChipGroup({ label, className, children }: { label: string; className?: string; children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  useScrollEdges(ref)
   return (
-    <div role="group" aria-label={label} className={cx('flex flex-wrap gap-2', className)}>
+    <div ref={ref} role="group" aria-label={label} className={cx('flex flex-wrap gap-2', className)}>
       {children}
     </div>
   )

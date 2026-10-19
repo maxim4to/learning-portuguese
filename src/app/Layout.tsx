@@ -18,6 +18,7 @@ import { OfflineBanner, UpdatePrompt } from '@/components/AppStatus'
 import { cx } from '@/components/cx'
 import { AzulejoMark } from '@/components/Logo'
 import { ToastProvider } from '@/components/Toast'
+import { useFitText } from '@/components/useFitText'
 import { newSeenToday } from '@/features/srs/newCardCounter'
 import { isNavActive, NAV_ITEMS } from './nav'
 
@@ -119,6 +120,9 @@ export function Layout() {
   const repo = useRepository()
   const due = useDueCount(pathname)
   const barHidden = useTabBarHidden()
+  // Tab-bar labels shrink together (12 → 11 → 10px, then icons only) when any of them would not fit its cell.
+  const tabBarRef = useRef<HTMLUListElement>(null)
+  useFitText(tabBarRef, [NAV_ITEMS.map((item) => item.short ?? item.label).join('|')])
 
   // BrowserRouter has no <ScrollRestoration>: start new pages at the top (back/forward keeps the browser's position).
   useEffect(() => {
@@ -191,7 +195,7 @@ export function Layout() {
             barHidden && 'translate-y-full',
           )}
         >
-          <ul className="mx-auto grid h-(--tabbar-h) max-w-[30rem] grid-cols-5 px-3">
+          <ul ref={tabBarRef} className="mx-auto grid h-(--tabbar-h) max-w-[30rem] grid-cols-5 px-3">
             {NAV_ITEMS.map((item) => {
               const active = isNavActive(item, pathname)
               const Icon = iconFor(item.to)
@@ -214,7 +218,15 @@ export function Layout() {
                       <Icon aria-hidden className="size-5.5" strokeWidth={active ? 2.25 : 1.9} />
                       {item.to === '/review' && <DueBadge n={due} className="absolute -top-1.5 -right-1" />}
                     </span>
-                    <span className={cx('leading-4 whitespace-nowrap', active && 'font-bold')}>{item.short ?? item.label}</span>
+                    <span
+                      data-fit-label=""
+                      className={cx(
+                        'max-w-full overflow-hidden text-(length:--fit-label-fs) leading-4 whitespace-nowrap in-data-fit-measuring:font-bold in-data-[fit=hidden]:sr-only',
+                        active && 'font-bold',
+                      )}
+                    >
+                      {item.short ?? item.label}
+                    </span>
                   </Link>
                 </li>
               )

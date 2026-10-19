@@ -2,6 +2,7 @@ import { useMemo, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
+  Check,
   ChevronRight,
   ClipboardCheck,
   Flame,
@@ -54,7 +55,8 @@ export function DashboardPage() {
       suggestions: suggestTopics(progress, 2),
       streak: computeStreak(activityDays(progress.values(), cards, errors), now),
       week,
-      doneToday: today ? today.results + today.reviews : 0,
+      reviewedToday: today?.reviews ?? 0,
+      exercisesToday: today?.results ?? 0,
       levels: levelStats(progress),
       daily: pickDaily(progress, now),
     }
@@ -71,7 +73,9 @@ export function DashboardPage() {
   const todayLine = firstRun
     ? 'Начните с диагностики: около 20 минут, и курс подскажет, с чего начать.'
     : view.due > 0
-      ? `К повторению ${plural(view.due, 'карточка', 'карточки', 'карточек')} — это около ${dueMin} мин.`
+      ? first
+        ? `Сначала повторение — около ${dueMin} мин, затем тема «${first.topic.title}».`
+        : `Сначала повторение — около ${dueMin} мин.`
       : first
         ? `Повторение готово. Дальше по курсу: ${first.topic.title}.`
         : 'На сегодня всё сделано.'
@@ -119,7 +123,8 @@ export function DashboardPage() {
           <TodayHero
             due={view.due}
             dueNew={view.dueNew}
-            doneToday={view.doneToday}
+            reviewedToday={view.reviewedToday}
+            exercisesToday={view.exercisesToday}
             hasCards={cards.length > 0}
             suggestions={view.suggestions}
           />
@@ -234,22 +239,22 @@ function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string }
   )
 }
 
-/** «Сегодня»: the day's one primary action, then the next topics; the poster beside it carries the day's goal ring. */
+/** «Сегодня»: the day's one primary action, then the next topics; the poster beside it carries the day's card target. */
 function TodayHero({
   due,
   dueNew,
-  doneToday,
+  reviewedToday,
+  exercisesToday,
   hasCards,
   suggestions,
 }: {
   due: number
   dueNew: number
-  doneToday: number
+  reviewedToday: number
+  exercisesToday: number
   hasCards: boolean
   suggestions: ReturnType<typeof suggestTopics>
 }) {
-  const goal = doneToday + due
-  const ratio = goal ? doneToday / goal : doneToday > 0 ? 1 : 0
   const primaryTopic = due === 0 ? suggestions[0] : undefined
   const rows = due === 0 ? suggestions.slice(1) : suggestions
 
@@ -321,22 +326,59 @@ function TodayHero({
         )}
       </div>
 
-      {/* Signature poster (Lisbon at dusk, halftone) with the day's goal ring. */}
+      {/* Signature poster (Lisbon at dusk, halftone) with the day's card target. */}
       <div className="relative isolate flex min-h-64 items-end overflow-hidden rounded-card bg-terracotta-fill p-4 lg:p-6">
         <Illustration name="hero" cover eager sizes="(min-width: 1024px) 400px, 100vw" className="-z-10 object-[68%_50%]" />
-        <div className="flex items-center gap-4 rounded-pill bg-surface py-2 pr-6 pl-2">
-          <ProgressRing value={ratio} size={64} stroke={7} tone="brand">
-            <span className="font-display text-h2 leading-none font-black tabular-nums">{doneToday}</span>
-          </ProgressRing>
-          <span className="leading-tight">
-            <span className="block font-semibold">Сделано сегодня</span>
-            <span className="block text-sm text-ink-muted">
-              {goal ? `${Math.round(ratio * 100)}% дневной цели` : 'цель появится с карточками'}
-            </span>
-          </span>
-        </div>
+        <DayGoal reviewed={reviewedToday} due={due} exercises={exercisesToday} hasCards={hasCards} />
       </div>
     </section>
+  )
+}
+
+/**
+ * The day's card target on the poster: cards reviewed today out of today's set (reviewed + still due,
+ * new cards capped by the daily limit). Exercises and tests are counted in words, not mixed into the ring.
+ */
+function DayGoal({ reviewed, due, exercises, hasCards }: { reviewed: number; due: number; exercises: number; hasCards: boolean }) {
+  const total = reviewed + due
+  const ratio = total ? reviewed / total : exercises > 0 ? 1 : 0
+  const ex = exercises > 0 ? plural(exercises, 'упражнение', 'упражнения', 'упражнений') : ''
+  let title: string
+  let detail: string
+  let extra = ''
+  let label: string
+  if (total > 0) {
+    title = `${reviewed} из ${plural(total, 'карточки', 'карточек', 'карточек')}`
+    detail = due > 0 ? `повторено, осталось ${due}` : 'всё на сегодня повторено'
+    extra = ex && `и сделано ${ex}`
+    label = `Повторено ${title}${ex ? `, сделано ${ex}` : ''}`
+  } else if (exercises > 0) {
+    title = `Сделано ${ex}`
+    detail = 'карточек на сегодня нет'
+    label = `Сегодня сделано ${ex}`
+  } else {
+    title = 'Сегодня карточек нет'
+    detail = hasCards ? 'откройте тему, чтобы позаниматься' : 'откройте тему — карточки появятся'
+    label = title
+  }
+  const done = total > 0 ? due === 0 : exercises > 0
+  return (
+    <div className="flex max-w-full items-center gap-4 rounded-pill bg-surface py-2 pr-6 pl-2">
+      <ProgressRing value={ratio} size={64} stroke={7} tone="brand" label={label}>
+        {done ? (
+          <Check aria-hidden className="size-6 text-brand" strokeWidth={3} />
+        ) : total > 0 ? (
+          <span aria-hidden className="text-sm font-semibold tabular-nums">{Math.round(ratio * 100)}%</span>
+        ) : (
+          <Layers aria-hidden className="size-5 text-ink-muted" />
+        )}
+      </ProgressRing>
+      <span className="min-w-0 leading-tight">
+        <span className="block font-semibold tabular-nums">{title}</span>
+        <span className="block text-sm text-ink-muted">{detail}</span>
+        {extra && <span className="block text-sm text-ink-muted">{extra}</span>}
+      </span>
+    </div>
   )
 }
 

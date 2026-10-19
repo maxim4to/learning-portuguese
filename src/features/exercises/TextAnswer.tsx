@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useRef, useState, type FormEvent, type KeyboardEvent } from 'react'
 import { cx } from '@/components/cx'
+import { focusMark, isImeEnter, noMods } from './keyboard'
 import type { AnswerRecord } from './types'
 
 const ACCENTS = ['á', 'à', 'â', 'ã', 'ç', 'é', 'ê', 'í', 'ó', 'ô', 'õ', 'ú']
@@ -20,7 +21,11 @@ interface TextAnswerProps {
   onSkip?(): void
 }
 
-/** Typed answer: labelled input(s) + accent keys + «Проверить» / «Не знаю». Enter submits. */
+/**
+ * Typed answer: labelled input(s) + accent keys + «Проверить» / «Не знаю».
+ * Keys: Enter checks (never during IME composition), Shift+Enter = «Не знаю». The accent keys insert at the caret
+ * and never take focus from the field. Focus is moved here by the runner (`data-exercise-focus` on the first field).
+ */
 export function TextAnswer({
   fields = 1,
   locked,
@@ -36,17 +41,27 @@ export function TextAnswer({
   const [focused, setFocused] = useState(0)
   const refs = useRef<(HTMLInputElement | HTMLTextAreaElement | null)[]>([])
 
-  useEffect(() => {
-    // Autofocus only on devices with a fine pointer (avoid popping the keyboard on phones).
-    if (!locked && window.matchMedia?.('(pointer: fine)').matches) refs.current[0]?.focus()
-  }, [locked])
-
   const filled = values.some((v) => v.trim())
 
   function submit(e?: FormEvent) {
     e?.preventDefault()
     if (locked || !filled) return
     onSubmit(values.map((v) => v.trim()).join(' / '))
+  }
+
+  function onKeyDown(e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, i: number) {
+    if (e.key !== 'Enter' || !noMods(e)) return
+    if (isImeEnter(e)) {
+      // Safari fires this Enter right after the IME committed: don't let it submit the form implicitly.
+      if (!e.nativeEvent.isComposing) e.preventDefault()
+      return
+    }
+    e.preventDefault()
+    if (e.repeat) return
+    if (e.shiftKey) onSkip?.()
+    // Several gaps: Enter in a gap moves to the next empty one before checking.
+    else if (i < fields - 1 && !values[i + 1]?.trim()) refs.current[i + 1]?.focus()
+    else submit()
   }
 
   function insert(ch: string) {
@@ -96,18 +111,14 @@ export function TextAnswer({
                 refs.current[i] = el
               }}
               {...common}
+              {...(i === 0 ? focusMark : {})}
               aria-label={fieldLabel(i)}
               rows={2}
               value={v}
               placeholder={placeholder}
               onFocus={() => setFocused(i)}
               onChange={(e) => setValues((vs) => vs.map((x, j) => (j === i ? e.target.value : x)))}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                  e.preventDefault()
-                  submit()
-                }
-              }}
+              onKeyDown={(e) => onKeyDown(e, i)}
               className={cx('input resize-none text-base disabled:text-ink', tone)}
             />
           ) : (
@@ -117,12 +128,14 @@ export function TextAnswer({
                 refs.current[i] = el
               }}
               {...common}
+              {...(i === 0 ? focusMark : {})}
               aria-label={fieldLabel(i)}
               type="text"
               value={v}
               placeholder={fields > 1 ? `пропуск ${i + 1}` : placeholder}
               onFocus={() => setFocused(i)}
               onChange={(e) => setValues((vs) => vs.map((x, j) => (j === i ? e.target.value : x)))}
+              onKeyDown={(e) => onKeyDown(e, i)}
               className={cx('input text-base disabled:text-ink', tone)}
             />
           ),
@@ -152,7 +165,7 @@ export function TextAnswer({
               Проверить
             </button>
             {onSkip && (
-              <button type="button" className="btn-secondary" onClick={onSkip}>
+              <button type="button" className="btn-secondary" onClick={onSkip} aria-keyshortcuts="Shift+Enter">
                 Не знаю
               </button>
             )}

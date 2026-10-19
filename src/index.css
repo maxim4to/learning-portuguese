@@ -78,6 +78,13 @@
   /* Layout metrics: fixed bar heights (sticky offsets derive from them, no magic numbers). */
   --header-h: 4.5rem;
   --tabbar-h: 4rem;
+  /*
+   * Phone tab-bar labels only — the one documented exception to the five-size type scale (not @theme, so no
+   * text-* utility exists). Labels start at xs (12px) and useFitText steps them to 11px, then 10px (the floor),
+   * only when some label would not fit its cell; below the floor the bar goes icons-only.
+   */
+  --text-tabbar-mid: 0.6875rem;
+  --text-tabbar-min: 0.625rem;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
@@ -522,12 +529,21 @@ textarea.input {
   scroll-margin-bottom: calc(var(--bottom-chrome) + 1rem);
 }
 
-/* Edge fade for horizontally scrolling bars (tabs, chips). */
+/* Edge fade for horizontally scrolling bars (tabs, chips): only on an edge with hidden content.
+   The edges are marked by useScrollEdges (data-fade-start / data-fade-end); unmarked = no mask. */
 @utility scroll-fade-x {
   scrollbar-width: none;
-  mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 20px), transparent 100%); /* taste-skill-ignore: alpha mask for the scroll edge, nothing painted */
   &::-webkit-scrollbar {
     display: none;
+  }
+  &[data-fade-start] {
+    --fade-start: 24px;
+  }
+  &[data-fade-end] {
+    --fade-end: 24px;
+  }
+  &:is([data-fade-start], [data-fade-end]) {
+    mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-start, 0px), #000 calc(100% - var(--fade-end, 0px)), transparent 100%); /* taste-skill-ignore: alpha mask for the scroll edge, nothing painted */
   }
 }
 

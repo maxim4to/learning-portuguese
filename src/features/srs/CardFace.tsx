@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import { getTopic } from '@/content'
 import type { CardKind, Settings, SrsCard } from '@/data/types.ts'
 import { errorTopicLink } from './cardContent'
-import { KIND_CHIP, KIND_LABEL, LISTEN_MARK } from './kinds'
+import { KIND_CHIP, KIND_LABEL, LISTEN_MARK, WORD_TASK } from './kinds'
 import { SpeakButton } from './SpeakButton'
 
 function hashIndex(s: string, n: number) {
@@ -64,6 +64,11 @@ export function CardFace({ card, revealed, settings }: Props) {
   const example = otherExamples.length ? otherExamples[hashIndex(card.id, otherExamples.length)] : undefined
   // Older error cards stored «🎧 <text>» for dictations: the text is the answer, don't show it on the front.
   const errorFront = isError && !card.front.startsWith(LISTEN_MARK) ? card.front : undefined
+  // Dictionary cards know their direction; legacy word/phrase/grammar cards are always ru → pt.
+  const word = card.wordId && card.mode ? WORD_TASK[card.mode] : undefined
+  const frontPt = word?.frontPt ?? false
+  const backPt = word?.backPt ?? true
+  const listenOnly = card.mode === 'listen'
 
   return (
     <div className="flex flex-col">
@@ -90,8 +95,17 @@ export function CardFace({ card, revealed, settings }: Props) {
           </>
         ) : (
           <>
-            <p className="text-sm text-ink-muted">{FRONT_TASK[kind]}</p>
-            <p className="font-display text-h1 text-balance">{card.front}</p>
+            <p className="text-sm text-ink-muted">{word?.task ?? FRONT_TASK[kind]}</p>
+            {listenOnly ? (
+              <SpeakButton text={card.front} voice={voice} rate={rate} label="Прослушать слово" />
+            ) : (
+              <div className="flex items-center justify-center gap-3">
+                <p lang={frontPt ? 'pt-PT' : undefined} className="font-display text-h1 text-balance">
+                  {card.front}
+                </p>
+                {card.mode === 'recognize' && <SpeakButton text={card.front} voice={voice} rate={rate} />}
+              </div>
+            )}
           </>
         )}
       </div>
@@ -100,10 +114,10 @@ export function CardFace({ card, revealed, settings }: Props) {
       {revealed && (
         <div className="reveal-rows"><div className="space-y-3 rule-dotted pt-6 text-center">
           <div className="flex items-center justify-center gap-3">
-            <p lang="pt-PT" className="font-display text-h1 text-balance text-brand-ink">
+            <p lang={backPt ? 'pt-PT' : undefined} className="font-display text-h1 text-balance text-brand-ink">
               {card.back}
             </p>
-            <SpeakButton text={card.back} voice={voice} rate={rate} />
+            {backPt && <SpeakButton text={card.back} voice={voice} rate={rate} />}
           </div>
           {example && (
             <div className="card-sunken mx-auto max-w-md text-left text-sm">

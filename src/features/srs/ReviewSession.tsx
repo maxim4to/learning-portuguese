@@ -260,6 +260,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
               exercise={loc.exercise}
               note="Задание, в котором была ошибка"
               onAnswered={onAnswered}
+              focusControl={reviewedIds.size > 0}
             />
             {revealed && <TopicRepeatLink topicId={card.topicId} />}
           </div>
@@ -318,7 +319,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         {exerciseMode
           ? revealed
             ? 'Клавиши: 1–4 — оценка, пробел / Enter — предложенная оценка'
-            : 'Клавиши: 1–9 — вариант ответа, Enter — проверить; затем 1–4 — оценка'
+            : 'Клавиши: Enter — проверить, Shift+Enter — «Не знаю», ↑↓ / 1–9 — вариант ответа; затем 1–4 — оценка'
           : 'Клавиши: пробел — показать ответ, 1–4 — оценка (пробел / Enter после ответа = «Хорошо»)'}
       </p>
     </section>
