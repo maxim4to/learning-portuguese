@@ -99,7 +99,7 @@ export function sourceTitle(src: string): string | undefined {
 /** «Тема «Здоровье»», «Ситуация «В кафе» · лексика», «Добавлено вручную». */
 export function sourceLabel(src: string): string {
   const s = decodeSource(src)
-  if (s.kind === 'manual') return s.id === 'tutor' ? 'Из беседы с агентом' : 'Добавлено вручную'
+  if (s.kind === 'manual') return s.id === 'tutor' ? 'Из беседы с агентом' : s.id === 'import' ? 'Импорт списка' : 'Добавлено вручную'
   const title = sourceTitle(src) ?? s.id
   const kind = { vocab: 'Тема', situation: 'Ситуация', reading: 'Текст', topic: 'Урок', exercise: 'Упражнение', cheatsheet: 'Шпаргалка', review: 'Повторение', writing: 'Письмо' }[s.kind]
   const part = s.part && PART_LABEL[s.part] ? ` · ${PART_LABEL[s.part]}${NUMBERED.has(s.part) && s.index !== undefined ? ` ${s.index + 1}` : ''}` : ''

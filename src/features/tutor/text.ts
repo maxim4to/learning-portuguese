@@ -2,7 +2,7 @@
  * Pure text helpers for tutor prompts: markdown → compact plain text, smart truncation,
  * exercise → one-line task. No React / Vite APIs (also used by Node scripts).
  */
-import type { Exercise } from '@/content/schema.ts'
+import type { Exercise } from '../../content/schema.ts'
 
 /** Cuts `s` to at most `max` chars on a word boundary, adding «…». */
 export function clip(s: string, max: number): string {

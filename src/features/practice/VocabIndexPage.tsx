@@ -1,7 +1,11 @@
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { listVocabThemes } from '@/content'
+import { listVocabThemes, type VocabTheme } from '@/content'
+import { getLoadedLexicon, loadLexicon } from '@/engine/lexicon/lookup'
 import { plural } from '@/features/library/format'
+import { contentWordInput } from '@/features/words/lexicon'
 import { useWords } from '@/features/words/useWords'
+import { wordIdFor } from '@/features/words/wordOps'
 import { groupByLevel, useLevelFilter } from './levels'
 import { PracticeHeader } from './PracticeHeader'
 import { vocabHref } from './paths'
@@ -9,10 +13,11 @@ import { EmptyFrame, GroupTitle, LevelChips } from './ui'
 
 /** /practice/vocab — themed word lists (each with a quiz and «в словарь»), grouped by level. */
 export function VocabIndexPage() {
-  const themes = listVocabThemes().sort((a, b) => a.title.localeCompare(b.title, 'ru'))
+  const themes = useMemo(() => listVocabThemes().sort((a, b) => a.title.localeCompare(b.title, 'ru')), [])
   const [filter, setFilter] = useLevelFilter()
   const groups = groupByLevel(themes, filter)
   const words = themes.reduce((n, t) => n + t.words.length, 0)
+  const saved = useSavedPerTheme(themes)
 
   return (
     <div className="page">
@@ -53,9 +58,16 @@ export function VocabIndexPage() {
                       </span>
                     )}
                   </span>
-                  <span className="mt-auto text-sm text-ink-muted">
-                    <span className="font-display text-h2 leading-none text-ink tabular-nums">{t.words.length}</span>{' '}
-                    {plural(t.words.length, 'слово', 'слова', 'слов').replace(/^\d+\s/, '')}
+                  <span className="mt-auto flex flex-wrap items-baseline justify-between gap-x-2 text-sm text-ink-muted">
+                    <span>
+                      <span className="font-display text-h2 leading-none text-ink tabular-nums">{t.words.length}</span>{' '}
+                      {plural(t.words.length, 'слово', 'слова', 'слов').replace(/^\d+\s/, '')}
+                    </span>
+                    {saved && (
+                      <span className={(saved.get(t.id) ?? 0) > 0 ? 'font-semibold text-ink tabular-nums' : 'tabular-nums'}>
+                        в словаре {saved.get(t.id) ?? 0}
+                      </span>
+                    )}
                   </span>
                 </Link>
               </li>
@@ -66,6 +78,38 @@ export function VocabIndexPage() {
       <WordsHint />
     </div>
   )
+}
+
+/**
+ * Theme id → how many of its words are in «Мой словарь» (same matching as the theme page's «в словарь»). Null until
+ * the dictionary is ready and the lexicon chunk is loaded — it is loaded only when the dictionary has words.
+ */
+function useSavedPerTheme(themes: readonly VocabTheme[]): Map<string, number> | null {
+  const dict = useWords()
+  const [lex, setLex] = useState(getLoadedLexicon)
+  const any = dict.counts.total > 0
+  useEffect(() => {
+    if (lex || !any) return
+    let alive = true
+    loadLexicon().then(
+      (l) => alive && setLex(l),
+      () => {},
+    )
+    return () => {
+      alive = false
+    }
+  }, [lex, any])
+  return useMemo(() => {
+    if (!lex || dict.status !== 'ready' || !any) return null
+    const out = new Map<string, number>()
+    for (const t of themes) {
+      const key = `vocab:${t.id}`
+      let n = 0
+      for (const w of t.words) if (dict.index.byId.has(wordIdFor(contentWordInput(lex, w, { themeKey: key, src: key })))) n++
+      out.set(t.id, n)
+    }
+    return out
+  }, [lex, dict.status, dict.index, any, themes])
 }
 
 /** Quiet pointer to the personal dictionary, where saved words live. */

@@ -62,6 +62,13 @@
 
   --focus: #070607;
   --scrim: rgb(7 6 7 / 0.45);
+  --scrim-soft: rgb(7 6 7 / 0.18);
+  /* Tapped word while the lookup card is open (::highlight(lookup-active)): Ember, near-black text 5.9:1 (5.4:1 under
+     the sheet's soft scrim). */
+  --lookup-bg: var(--brand);
+  /* Saved-word marker (::highlight(lex-learning)): ink on it 17:1. */
+  --saved-bg: var(--sun-soft);
+  --lookup-ink: var(--on-brand);
   /* Accent text on inverted (ink) surfaces: toasts, update prompt. */
   --on-ink-accent: #ee8453; /* 7.76 on ink */
 
@@ -173,6 +180,11 @@
 
   --focus: #f5f28e; /* sulfur ring, 16.1 on bg */
   --scrim: rgb(0 0 0 / 0.6);
+  --scrim-soft: rgb(0 0 0 / 0.22);
+  /* Deep Ember with light ink: 5.3:1, still ≥ 4.5:1 under the soft scrim (dark text on Ember would sink there). */
+  --lookup-bg: #a8441c;
+  --saved-bg: #4a4720; /* ink on it 9:1; one step above sun-soft so it shows on dark surfaces */
+  --lookup-ink: var(--ink);
   --on-ink-accent: #8c3a17; /* 6.80 on the light «ink» toast */
 
   --legacy-400: #a29e94;
@@ -676,7 +688,15 @@ input[type='range'].range::-moz-range-thumb {
 /* Word capture (features/words/capture): the looked-up word is marked without touching the DOM (CSS Custom
    Highlight API; unsupported browsers simply show no mark). The phone lookup card is a bottom sheet on <dialog>. */
 ::highlight(lookup-active) {
-  background-color: var(--brand-soft);
+  /* Solid Ember fill (tokens per theme, see --lookup-bg): reads at a glance in both themes and under the sheet's
+     scrim, and is distinct from the translucent ::selection tint and the Sulfur saved-word stroke. */
+  background-color: var(--lookup-bg);
+  color: var(--lookup-ink);
+}
+/* Saved words still being learned (capture/highlights.ts; Settings → «Подсвечивать мои слова»): a Sulfur marker
+   tint — the «learning» role colour, quieter than the tapped word's solid Ember. Known words stay unmarked. */
+::highlight(lex-learning) {
+  background-color: var(--saved-bg);
   color: var(--ink);
 }
 /* Source anchor (a saved word's «where it was met» link): the line / paragraph flashes once on arrival. */
@@ -705,8 +725,9 @@ dialog.lookup-sheet {
   color: var(--ink);
   overflow: visible;
 }
+/* Lighter than the modal scrim: the tapped word above the sheet stays readable while the card is open. */
 dialog.lookup-sheet::backdrop {
-  background: var(--scrim);
+  background: var(--scrim-soft);
 }
 .lookup-sheet-panel {
   max-height: inherit;

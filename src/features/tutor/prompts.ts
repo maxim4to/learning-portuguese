@@ -5,7 +5,8 @@
  * The learner copies it into a new chat; the assistant then runs the session in Russian
  * with European Portuguese as the object of study. Target size: ≤ ~8k characters.
  */
-import type { Level, ReadingText, Situation, Topic, TutorNotes, VocabTheme } from '@/content/schema.ts'
+import type { Level, ReadingText, Situation, Topic, TutorNotes, VocabTheme } from '../../content/schema.ts'
+import type { SrsCard, WordEntry, WordPos, WordStatus } from '../../data/types.ts'
 import type { SituationMode, TopicMode } from './modes.ts'
 import { bulleted, clip, compressMarkdown, numbered, pickExerciseLines, stripInline } from './text.ts'
 
@@ -348,5 +349,110 @@ ${situation ? `2. Сценка: ты — роль A в ситуации ниже
       topics.length ? '\n   Отдельно по каждой теме — одна строка: «тема — уверенно / нужно повторить».' : '',
     ),
     'Начинай сразу: поприветствуй меня по-португальски и задай первый вопрос разминки.',
+  )
+}
+
+// ---------------------------------------------------------------------------
+// «Мои слова» (personal dictionary)
+// ---------------------------------------------------------------------------
+
+/** Words sent to the agent at most. */
+export const TUTOR_WORDS_MAX = 30
+
+const POS_HINT: Partial<Record<WordPos, string>> = {
+  noun: 'сущ.',
+  verb: 'глаг.',
+  adj: 'прил.',
+  adv: 'нареч.',
+  prep: 'предл.',
+  pron: 'мест.',
+  conj: 'союз',
+  num: 'числ.',
+  interj: 'межд.',
+  phrase: 'выражение',
+}
+const GENDER_HINT: Record<'m' | 'f' | 'mf', string> = { m: 'м. р.', f: 'ж. р.', mf: 'м./ж. р.' }
+const ARTICLE: Record<'m' | 'f', string> = { m: 'o', f: 'a' }
+
+/** One dictionary word as the prompt shows it. */
+export interface TutorWord {
+  lemma: string
+  pos?: WordPos
+  gender?: 'm' | 'f' | 'mf'
+  ru: string
+  /** Sentence where the word was met (newest source with one). */
+  example?: string
+  exampleRu?: string
+}
+
+/** What `pickTutorWords` reads from a word and its cards. */
+export interface TutorWordState {
+  entry: Pick<WordEntry, 'id' | 'lemma' | 'pos' | 'gender' | 'ru' | 'sources' | 'createdAt' | 'mark'>
+  status: WordStatus
+  /** Word cards (dictionary cards of this word). */
+  cards: readonly Pick<SrsCard, 'suspended' | 'fsrs'>[]
+}
+
+/**
+ * Up to `max` words for «Мои слова», by priority: words with a card due now, then the rest of «учу» (more lapses
+ * first, then the weakest), then recently added new words. Known and paused words are skipped.
+ */
+export function pickTutorWords(items: readonly TutorWordState[], now: number, max = TUTOR_WORDS_MAX): TutorWord[] {
+  const active = (x: TutorWordState) => x.cards.filter((c) => !c.suspended)
+  const due = (x: TutorWordState) => active(x).some((c) => c.fsrs.state !== 0 && c.fsrs.due <= now)
+  const lapses = (x: TutorWordState) => active(x).reduce((n, c) => n + c.fsrs.lapses, 0)
+  const stability = (x: TutorWordState) => Math.min(Infinity, ...active(x).filter((c) => c.fsrs.state !== 0).map((c) => c.fsrs.stability))
+  const rank = (x: TutorWordState) => (due(x) ? 0 : x.status === 'learning' ? 1 : 2)
+  return items
+    .filter((x) => (x.status === 'new' || x.status === 'learning') && x.entry.mark !== 'known')
+    .map((x) => ({ x, r: rank(x), l: lapses(x), s: stability(x) }))
+    .sort((a, b) => a.r - b.r || (a.r < 2 ? b.l - a.l || a.s - b.s : 0) || b.x.entry.createdAt - a.x.entry.createdAt)
+    .slice(0, max)
+    .map(({ x }) => {
+      const src = [...x.entry.sources].reverse().find((s) => s.sentence?.trim())
+      return {
+        lemma: x.entry.lemma,
+        pos: x.entry.pos,
+        gender: x.entry.gender,
+        ru: x.entry.ru,
+        example: src?.sentence?.trim(),
+        exampleRu: src?.sentenceRu?.trim(),
+      }
+    })
+}
+
+/** «o pão (сущ., м. р.) — хлеб; пример: «…» (…)» */
+export function tutorWordLine(w: TutorWord): string {
+  const pt = w.pos === 'noun' && (w.gender === 'm' || w.gender === 'f') ? `${ARTICLE[w.gender]} ${w.lemma}` : w.lemma
+  const tags = [w.pos && POS_HINT[w.pos], w.pos === 'noun' && w.gender ? GENDER_HINT[w.gender] : ''].filter(Boolean).join(', ')
+  const ex = w.example ? `«${clip(w.example, 160)}»${w.exampleRu ? ` (${clip(w.exampleRu, 120)})` : ''}` : 'нет — придумай сам'
+  return `${pt}${tags ? ` (${tags})` : ''} — ${w.ru}; пример: ${ex}`
+}
+
+/** «Мои слова»: practise the learner's own dictionary words in a pt-PT conversation. */
+export function buildWordsPrompt(words: readonly TutorWord[], opts: { level?: Level } = {}): string {
+  const list = words.slice(0, TUTOR_WORDS_MAX)
+  const level = opts.level ?? 'A2'
+  return join(
+    intro(
+      `отработать слова из моего личного словаря — в разговоре на pt-PT, где они нужны естественно.\nСлов: ${list.length}. Это слова, которые я сейчас учу (сначала — те, что пора повторить и в которых я ошибаюсь).`,
+      level,
+    ),
+    LANGUAGES,
+    PT_PT_NORM,
+    `ПЛАН СЕССИИ
+1. Быстрый прогон: называй слова по одному, вперемешку pt → ru и ru → pt (существительные — с артиклем). Отмечай, какие я не вспомнил: с ними работаем дальше в первую очередь. Не дольше 10 слов, если я отвечаю уверенно.
+2. Разговор (главная часть, 10–14 реплик): бытовая тема из жизни в Португалии, которая подходит к словам списка. Задавай вопросы так, чтобы мне пришлось использовать слова списка — по 1–2 за реплику, слабые чаще. Сам тоже используй их в своих репликах. После каждой моей реплики — короткие исправления по-русски (до 2 пунктов) и отметка, какие слова списка я уже употребил верно.
+3. Возврат ошибок: слово, которое я не вспомнил или употребил неверно, верни ещё раз через 3–5 реплик.
+4. Перевод: 5 предложений с русского на pt-PT, в каждом 1–2 слова списка, которые я ещё не употребил в разговоре. По одному, с разбором.
+Веди счёт по переводам и прогону: «Счёт: 8/12».`,
+    CORRECTIONS,
+    `МОИ СЛОВА (pt-PT — ru; пример — где я встретил слово)\n${list.map((w, i) => `${i + 1}. ${tutorWordLine(w)}`).join('\n')}`,
+    COMMANDS,
+    finale(
+      'число верных ответов в прогоне и переводах',
+      `\n   Затем блок «СЛОВА:» — новые слова из нашей беседы, которых нет в списке и которые мне стоит выучить (до 10), по одному на строке в формате «palavra — перевод» (существительные с артиклем). Я вставлю его в «Импорт списка» в своём словаре.`,
+    ),
+    'Начинай сразу с первого слова быстрого прогона.',
   )
 }

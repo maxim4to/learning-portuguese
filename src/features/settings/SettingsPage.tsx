@@ -303,7 +303,12 @@ export function SettingsPage() {
                 </>
               }
             />
-            {/* highlightSavedWords stays in Settings; its switch returns with saved-word highlighting (phase 5). */}
+            <Switch
+              checked={settings.highlightSavedWords}
+              onChange={(v) => update({ highlightSavedWords: v })}
+              label="Подсвечивать мои слова в текстах"
+              description="Слова из словаря, которые вы ещё учите, отмечены жёлтым штрихом в диалогах, текстах, примерах и теории. Выученные не отмечаются; в упражнениях подсветка появляется только после ответа."
+            />
             <WordModesField value={settings.wordModes} onChange={changeWordModes} />
           </Section>
         </>

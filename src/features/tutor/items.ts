@@ -23,8 +23,12 @@ export interface TutorItemRef {
   to: string
 }
 
-/** Resolves any progress id (topic / situation / reading / vocab) to a title + link. */
+/** Progress id of «Мои слова» sessions (the personal dictionary as a tutor item). */
+export const MY_WORDS_ID = 'my-words'
+
+/** Resolves any progress id (topic / situation / reading / vocab / «Мой словарь») to a title + link. */
 export function resolveTutorItem(id: string): TutorItemRef | undefined {
+  if (id === MY_WORDS_ID) return { id, kind: 'words', title: 'Мой словарь', to: '/words#tutor' }
   const t = getTopic(id)
   if (t) return { id, kind: 'topic', title: t.title, to: `/topic/${id}?tab=tutor` }
   const s = getSituation(id)

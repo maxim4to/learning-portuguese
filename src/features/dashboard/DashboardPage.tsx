@@ -11,7 +11,7 @@ import {
   Map as MapIcon,
   Sparkles,
 } from 'lucide-react'
-import type { ErrorEntry } from '@/data/types.ts'
+import { DEFAULT_SETTINGS, type ErrorEntry } from '@/data/types.ts'
 import { listSituations } from '@/content'
 import { dueCards, isNewCard } from '@/engine/fsrs'
 import { ButtonLink } from '@/components/Button'
@@ -28,6 +28,7 @@ import { plural } from '@/features/library/format'
 import { pickDaily } from '@/features/tutor/items'
 import { activityDays, computeStreak, levelStats, suggestTopics, weeklyActivity, type LevelStats } from './stats'
 import { useProgressData } from './useProgressData'
+import { WordsWidget } from '@/features/words/WordsWidget'
 import { practicePath, TUTOR_HREF } from '@/features/practice/paths'
 
 const DAY = 86_400_000
@@ -129,6 +130,8 @@ export function DashboardPage() {
             hasCards={cards.length > 0}
             suggestions={view.suggestions}
           />
+
+          <WordsWidget now={now} newPerDay={settings?.newCardsPerDay ?? DEFAULT_SETTINGS.newCardsPerDay} />
 
           {/* Progress: one card, two measures side by side (levels · the week). */}
           <section className="card grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-12" aria-labelledby="dash-levels">

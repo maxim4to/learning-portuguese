@@ -11,6 +11,7 @@ import { DAILY_MODES, modeTitle } from './modes'
 import { buildDailyPrompt, type DailyPick } from './prompts'
 import { tutorHistory } from './persist'
 import { TutorPanel } from './TutorPanel'
+import { WordsTutor } from './panels'
 
 const linkCard = 'card card-link group flex h-full items-start gap-3'
 const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
@@ -97,6 +98,16 @@ export function TutorHubPage() {
         ) : (
           <Skeleton className="h-64 rounded-card" />
         )}
+      </section>
+
+      <section className="space-y-3">
+        <div className="space-y-1">
+          <SectionTitle>Мои слова</SectionTitle>
+          <p className="text-sm text-ink-muted">
+            Слова из <Link to="/words">моего словаря</Link>, которые вы сейчас учите: сначала те, что пора повторить, затем новые.
+          </p>
+        </div>
+        <WordsTutor hideHubLink />
       </section>
 
       <section className="space-y-3">

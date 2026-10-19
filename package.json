@@ -15,7 +15,7 @@
     "emulators": "firebase emulators:start --only firestore,auth",
     "test:lint": "tsx --test scripts/brazilianisms.test.ts",
     "lexicon": "tsx scripts/lexicon.ts",
-    "test:unit": "tsx --test scripts/words.test.ts scripts/lexicon.test.ts scripts/brazilianisms.test.ts scripts/store.test.ts"
+    "test:unit": "tsx --test scripts/words.test.ts scripts/lexicon.test.ts scripts/brazilianisms.test.ts scripts/store.test.ts scripts/integrations.test.ts"
   },
   "dependencies": {
     "@fontsource-variable/onest": "^5.3.1",

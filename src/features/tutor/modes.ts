@@ -1,14 +1,16 @@
 /** «Практика с агентом»: prompt modes per content kind (pure data). */
-import { Drama, Dumbbell, GraduationCap, Layers, MessagesSquare, Newspaper, ScanSearch, Sun, type LucideIcon } from 'lucide-react'
+import { BookA, Drama, Dumbbell, GraduationCap, Layers, MessagesSquare, Newspaper, ScanSearch, Sun, type LucideIcon } from 'lucide-react'
 
-export type TutorKind = 'topic' | 'situation' | 'reading' | 'vocab' | 'daily'
+export type TutorKind = 'topic' | 'situation' | 'reading' | 'vocab' | 'words' | 'daily'
 
 export type TopicMode = 'explain' | 'drill' | 'conversation'
 export type SituationMode = 'roleplay' | 'dialogue'
 export type ReadingMode = 'discuss'
 export type VocabMode = 'words'
 export type DailyMode = 'daily'
-export type TutorModeId = TopicMode | SituationMode | ReadingMode | VocabMode | DailyMode
+/** «Мои слова»: the personal dictionary. */
+export type WordsMode = 'mywords'
+export type TutorModeId = TopicMode | SituationMode | ReadingMode | VocabMode | DailyMode | WordsMode
 
 export interface TutorModeDef<M extends TutorModeId = TutorModeId> {
   id: M
@@ -82,6 +84,16 @@ export const VOCAB_MODES: TutorModeDef<VocabMode>[] = [
   },
 ]
 
+export const WORDS_MODES: TutorModeDef<WordsMode>[] = [
+  {
+    id: 'mywords',
+    title: 'Мои слова',
+    description: 'До 30 слов из вашего словаря (сначала те, что пора повторить): прогон, разговор на pt-PT, где они нужны, и перевод.',
+    minutes: '20–25 мин',
+    icon: BookA,
+  },
+]
+
 export const DAILY_MODES: TutorModeDef<DailyMode>[] = [
   {
     id: 'daily',
@@ -92,7 +104,7 @@ export const DAILY_MODES: TutorModeDef<DailyMode>[] = [
   },
 ]
 
-const ALL: TutorModeDef[] = [...TOPIC_MODES, ...SITUATION_MODES, ...READING_MODES, ...VOCAB_MODES, ...DAILY_MODES]
+const ALL: TutorModeDef[] = [...TOPIC_MODES, ...SITUATION_MODES, ...READING_MODES, ...VOCAB_MODES, ...WORDS_MODES, ...DAILY_MODES]
 
 export function modeTitle(id: string | undefined): string {
   return ALL.find((m) => m.id === id)?.title ?? 'Сессия с агентом'

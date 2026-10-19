@@ -1,6 +1,7 @@
 import { useMemo, useState, type ReactNode } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { BookCheck, Pencil, RotateCcw, SearchX, Trash2 } from 'lucide-react'
+import { ArrowRight, BookCheck, Pencil, RotateCcw, SearchX, Trash2 } from 'lucide-react'
+import { getVocabTheme, type VocabTheme } from '@/content'
 import { Button, ButtonLink } from '@/components/Button'
 import { cx } from '@/components/cx'
 import { EmptyState, ErrorState, PageSkeleton } from '@/components/EmptyState'
@@ -11,6 +12,10 @@ import { useToast } from '@/components/toastContext'
 import { WORD_CARD_MODES, type SrsCard, type WordCardMode, type WordEntry, type WordSource } from '@/data'
 import { formatInterval, isNewCard } from '@/engine/fsrs'
 import { useSettings } from '@/features/exercises/useSettings'
+import { plural } from '@/features/library/format'
+import { AddCardButton, GenderBadge } from '@/features/library/ui'
+import { vocabHref } from '@/features/practice/paths'
+import { useContentWords } from './useContentWords.ts'
 import { useCanSpeak } from './audio.ts'
 import { GENDER_LABEL, POS_LABEL, useLexicon } from './lexicon.ts'
 import { Pt } from './Pt.tsx'
@@ -38,6 +43,7 @@ export function WordPage() {
   const [busy, setBusy] = useState(false)
   const pt = word ? wordPt(word) : ''
   const canSpeak = useCanSpeak(pt || undefined)
+  const themes = useWordThemes(word?.lexId)
 
   if (dict.status === 'loading') return <PageSkeleton cards={3} />
   if (dict.status === 'error') return <ErrorState text="Не удалось загрузить словарь" detail={dict.error ?? undefined} onRetry={() => void actions.reload()} />
@@ -113,12 +119,13 @@ export function WordPage() {
           <Meanings word={w} />
           <Sources sources={w.sources} />
           <Cards word={w} cards={cards} />
+          <ThemeWords theme={themes[0]} self={w.id} />
         </div>
 
         <aside aria-labelledby="word-panel-title" className="card flex flex-col gap-4">
           <h2 id="word-panel-title">О слове</h2>
           <WordFacts word={w} cards={cards} statusLabel={<WordStatusBadge status={status} />} />
-          <Themes lexId={w.lexId} />
+          <Themes lexId={w.lexId} themes={themes} />
           <div className="flex flex-wrap gap-2 border-t border-line pt-4">
             <Button variant="secondary" size="sm" icon={known ? <RotateCcw /> : <BookCheck />} onClick={toggleKnown} disabled={busy}>
               {known ? 'Учить снова' : 'Знаю — не учить'}
@@ -337,24 +344,125 @@ function WordFacts({ word, cards, statusLabel }: { word: WordEntry; cards: reado
   )
 }
 
-/** «Есть в материалах»: themes, situations and texts where the lexicon has this lemma. */
-function Themes({ lexId }: { lexId?: string }) {
+/** Vocab themes of a lemma (from the lexicon), in course order of level. */
+function useWordThemes(lexId?: string): VocabTheme[] {
   const { lex } = useLexicon()
-  const keys = lexId && lex ? lex.themesOf(lexId) : []
-  const links = keys.map((k) => ({ k, href: sourceHref(k), label: sourceLabel(k) })).filter((x) => x.href)
-  if (!links.length) return null
+  return useMemo(() => {
+    if (!lexId || !lex) return []
+    return lex
+      .themesOf(lexId)
+      .filter((k) => k.startsWith('vocab:'))
+      .map((k) => getVocabTheme(k.slice('vocab:'.length)))
+      .filter((t): t is VocabTheme => !!t)
+  }, [lex, lexId])
+}
+
+/** «Есть в темах» (vocab themes) and «Ещё встречается» (situations, texts) — where the lexicon has this lemma. */
+function Themes({ lexId, themes }: { lexId?: string; themes: readonly VocabTheme[] }) {
+  const { lex } = useLexicon()
+  const keys = lexId && lex ? lex.themesOf(lexId).filter((k) => !k.startsWith('vocab:')) : []
+  const other = keys.map((k) => ({ k, href: sourceHref(k), label: sourceLabel(k) })).filter((x) => x.href)
+  if (!themes.length && !other.length) return null
   return (
-    <div className="space-y-1">
-      <h3 className="text-sm font-semibold text-ink-muted">Есть в материалах</h3>
-      <ul className="space-y-2 text-sm">
-        {links.slice(0, 6).map((x) => (
-          <li key={x.k}>
-            <Link to={x.href!} className="leading-6">
-              {x.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      {themes.length > 0 && (
+        <div className="space-y-1">
+          <h3 className="text-sm font-semibold text-ink-muted">Есть в темах</h3>
+          <ul className="space-y-2 text-sm">
+            {themes.map((t) => (
+              <li key={t.id} className="flex items-baseline justify-between gap-3">
+                <Link to={vocabHref(t.id)} className="leading-6">
+                  {t.title}
+                </Link>
+                {t.level && <LevelBadge level={t.level} />}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {other.length > 0 && (
+        <div className="space-y-1">
+          <h3 className="text-sm font-semibold text-ink-muted">Ещё встречается</h3>
+          <ul className="space-y-2 text-sm">
+            {other.slice(0, 6).map((x) => (
+              <li key={x.k}>
+                <Link to={x.href!} className="leading-6">
+                  {x.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
+  )
+}
+
+const THEME_WORDS = 5
+const NO_WORDS: never[] = []
+
+/**
+ * «Другие слова темы»: up to 5 words of the word's first vocab theme that are not in the dictionary yet, each with
+ * «+ в словарь». The list is fixed when it first appears, so a saved word turns into ✓ instead of vanishing.
+ */
+function ThemeWords({ theme, self }: { theme: VocabTheme | undefined; self: string }) {
+  const dict = useContentWords(theme?.words ?? NO_WORDS, {
+    themeKey: `vocab:${theme?.id ?? ''}`,
+    src: `vocab:${theme?.id ?? ''}`,
+    level: theme?.level,
+  })
+  const [picked, setPicked] = useState<{ theme: string; idx: number[] } | null>(null)
+  if (theme && dict.ready && dict.ids && picked?.theme !== theme.id) {
+    const idx = dict.missing.filter((i) => dict.ids![i] !== self).slice(0, THEME_WORDS)
+    setPicked({ theme: theme.id, idx })
+  }
+  if (!theme || !picked || picked.theme !== theme.id) return null
+  const total = theme.words.length
+  const inDict = total - dict.missing.length
+  return (
+    <section aria-labelledby="word-theme-words" className="card space-y-4">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <h2 id="word-theme-words">Другие слова темы</h2>
+        <Link to={vocabHref(theme.id)} className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold">
+          {theme.title} <ArrowRight aria-hidden className="size-4" />
+        </Link>
+      </div>
+      {picked.idx.length === 0 ? (
+        <p className="text-sm text-ink-muted">Все слова темы уже в словаре ({inDict} из {total}).</p>
+      ) : (
+        <>
+          <ul className="divide-y divide-line">
+            {picked.idx.map((i) => {
+              const w = theme.words[i]
+              return (
+                <li key={i} className="flex items-start gap-3 py-2 first:pt-0 last:pb-0">
+                  <p className="min-w-0 flex-1 pt-2.5">
+                    <Pt src={{ kind: 'vocab', id: theme.id, part: 'examples', index: i }} ru={w.ru} className="font-semibold">
+                      {w.pt}
+                    </Pt>{' '}
+                    <GenderBadge gender={w.gender} />
+                    <span aria-hidden className="text-ink-subtle">
+                      {' — '}
+                    </span>
+                    <span lang="ru">{w.ru}</span>
+                  </p>
+                  <AddCardButton
+                    variant="text"
+                    target="words"
+                    name={w.pt}
+                    added={!!dict.saved?.[i]}
+                    disabled={dict.busy || !dict.ready}
+                    onClick={() => void dict.add([i])}
+                  />
+                </li>
+              )
+            })}
+          </ul>
+          <p className="text-sm text-ink-muted">
+            В словаре {inDict} из {plural(total, 'слова', 'слов', 'слов')} темы.
+          </p>
+        </>
+      )}
+    </section>
   )
 }

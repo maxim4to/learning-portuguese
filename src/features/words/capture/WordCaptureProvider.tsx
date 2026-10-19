@@ -8,6 +8,7 @@ import type { WordActionResult } from '../useWords.ts'
 import { wordPt } from '../wordOps.ts'
 import { isInteractive, isPtArea, targetAtPoint, targetForElement, targetFromSelection, targetIn, type CaptureTarget } from './hitTest.ts'
 import { useSourceAnchor } from './anchor.ts'
+import { highlightApi, useSavedWordHighlights } from './highlights.ts'
 import { CaptureContext, type OpenLookupOptions, type WordCapture } from './context.ts'
 import { LookupPopover } from './LookupPopover.tsx'
 import { LookupSheet } from './LookupSheet.tsx'
@@ -37,11 +38,6 @@ const wantsSheet = (pointerType?: string) =>
 const isEditable = (el: Element | null) =>
   !!el && (el.matches('input, textarea, select, [contenteditable]:not([contenteditable="false"])') || !!el.closest('[contenteditable]:not([contenteditable="false"])'))
 
-type HighlightRegistry = { set(name: string, h: unknown): void; delete(name: string): void }
-const highlights = (): HighlightRegistry | null => {
-  const css = (globalThis as { CSS?: { highlights?: HighlightRegistry } }).CSS
-  return css?.highlights && typeof (globalThis as { Highlight?: unknown }).Highlight === 'function' ? css.highlights : null
-}
 
 /**
  * Global word capture (mounted once in Layout): listens on the document for taps / clicks, double-clicks,
@@ -53,6 +49,7 @@ export function WordCaptureProvider({ children }: { children: ReactNode }) {
   const toast = useToast()
   const { pathname } = useLocation()
   useSourceAnchor()
+  useSavedWordHighlights()
   const [open, setOpen] = useState<Open | null>(null)
   const [chip, setChip] = useState<{ target: CaptureTarget; bar: boolean } | null>(null)
   const [search, setSearch] = useState(false)
@@ -124,12 +121,13 @@ export function WordCaptureProvider({ children }: { children: ReactNode }) {
 
   // Highlight the looked-up word (CSS Custom Highlight API; no DOM change; silently absent without support).
   useEffect(() => {
-    const reg = highlights()
+    const api = highlightApi()
     const range = open?.target.range
-    if (!reg || !range) return
-    const H = (globalThis as unknown as { Highlight: new (...r: Range[]) => unknown }).Highlight
-    reg.set('lookup-active', new H(range))
-    return () => reg.delete('lookup-active')
+    if (!api || !range) return
+    const h = new api.Highlight(range)
+    h.priority = 1 // above the saved-word marks
+    api.registry.set('lookup-active', h)
+    return () => api.registry.delete('lookup-active')
   }, [open])
 
   // Warm the lexicon chunk: on idle a few seconds after start when the page has pt text.

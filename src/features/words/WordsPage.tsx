@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { BookA, GraduationCap, Layers, ListChecks, Plus, Search, SearchX } from 'lucide-react'
+import { BookA, GraduationCap, Layers, ListChecks, ListPlus, Plus, Search, SearchX, Sparkles } from 'lucide-react'
 import { LEVELS, type Level } from '@/content'
 import { Button, ButtonLink } from '@/components/Button'
 import { Chip, ChipGroup } from '@/components/Chip'
-import { cx } from '@/components/cx'
+import { cx, scrollBehavior } from '@/components/cx'
 import { EmptyState, ErrorState, Skeleton } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
 import { useToast } from '@/components/toastContext'
@@ -16,6 +16,7 @@ import { VocabQuiz, type QuizItem } from '@/features/library/VocabQuiz'
 import { useSettings } from '@/features/exercises/useSettings'
 import { newSeenToday } from '@/features/srs/newCardCounter'
 import { learnCandidates, learnCount } from './learn.ts'
+import { ImportListDialog } from './ImportListDialog.tsx'
 import { LearnNewSession } from './LearnNewSession.tsx'
 import { ReviewTabs } from './ReviewTabs.tsx'
 import { SOURCE_GROUP_LABEL, sourceGroup, type SourceGroup } from './source.ts'
@@ -26,6 +27,7 @@ import { WordList } from './WordList.tsx'
 import { WordSearchDialog } from './WordSearchDialog.tsx'
 import { exampleSource, wordCardId, wordPt } from './wordOps.ts'
 import { practicePath } from '@/features/practice/paths'
+import { TutorSection, WordsTutor } from '@/features/tutor/panels'
 
 const STATUSES: WordStatus[] = ['new', 'learning', 'known', 'paused']
 const STATUS_CHIP: Record<WordStatus, string> = { new: 'Новые', learning: 'Учу', known: 'Знаю', paused: 'На паузе' }
@@ -55,6 +57,7 @@ export function WordsPage() {
   const [q, setQ] = useState('')
   const [adding, setAdding] = useState(() => params.get('add') === '1')
   const [editing, setEditing] = useState<WordEntry | null>(null)
+  const [importing, setImporting] = useState(false)
   const [busyId, setBusyId] = useState<string | null>(null)
   const [now] = useState(() => Date.now())
   const searchRef = useRef<HTMLInputElement>(null)
@@ -135,6 +138,15 @@ export function WordsPage() {
   function toggleKnown(w: WordEntry) {
     if (w.mark === 'known') void run(w, () => actions.unmarkKnown(w.id), `Снова учу: ${wordPt(w)}`)
     else void run(w, () => actions.markKnown(w.id), `Отмечено как известное: ${wordPt(w)}`)
+  }
+
+  function onImported(r: WordActionResult, count: number) {
+    setImporting(false)
+    toast({
+      text: `Добавлено в словарь: ${plural(count, 'слово', 'слова', 'слов')}`,
+      tone: 'success',
+      action: { label: 'Отменить', onClick: () => void r.undo() },
+    })
   }
 
   function closeAdd() {
@@ -227,7 +239,7 @@ export function WordsPage() {
                   icon={<BookA className="size-7" />}
                   tone="azulejo"
                   title={<span id="words-empty">Словарь пока пуст</span>}
-                  text="Сохраняйте слова кнопкой «в словарь» в тематических словарях и в лексике ситуаций — или найдите слово здесь. Если его нет в приложении, добавьте со своим переводом."
+                  text="Нажмите на любое португальское слово в диалоге, тексте или примере и выберите «Добавить в словарь». Ещё можно найти слово здесь, сохранить из тематических словарей или вставить готовый список."
                   action={
                     <>
                       <Button ref={addRef} icon={<Plus />} onClick={() => setAdding(true)}>
@@ -236,6 +248,9 @@ export function WordsPage() {
                       <ButtonLink to={practicePath('vocab')} variant="secondary">
                         Тематические словари
                       </ButtonLink>
+                      <Button variant="ghost" icon={<ListPlus />} onClick={() => setImporting(true)}>
+                        Импорт списка
+                      </Button>
                     </>
                   }
                 />
@@ -263,6 +278,16 @@ export function WordsPage() {
                     onClick={() => setQuiz(shown.slice(0, 20))}
                   >
                     Проверить себя
+                  </Button>
+                  <Button variant="ghost" icon={<ListPlus />} onClick={() => setImporting(true)}>
+                    Импорт списка
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    icon={<Sparkles />}
+                    onClick={() => document.getElementById('tutor')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })}
+                  >
+                    С агентом
                   </Button>
                 </div>
                 {learnable > 0 && toLearn === 0 && (
@@ -380,6 +405,9 @@ export function WordsPage() {
                     onDelete={remove}
                   />
                 )}
+                <TutorSection>
+                  <WordsTutor />
+                </TutorSection>
               </>
             )}
           </div>
@@ -389,6 +417,7 @@ export function WordsPage() {
       )}
 
       {adding && <WordSearchDialog onClose={closeAdd} onAdded={onAdded} />}
+      {importing && <ImportListDialog onClose={() => setImporting(false)} onAdded={onImported} />}
       {editing && <WordEditor word={editing} onClose={() => setEditing(null)} />}
     </div>
   )
