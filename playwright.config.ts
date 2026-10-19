@@ -8,6 +8,7 @@
 import { defineConfig, devices } from '@playwright/test'
 
 const PORT = Number(process.env.E2E_PORT ?? 4317)
+const OUT_DIR = process.env.E2E_OUT_DIR ?? `.e2e/local-dist`
 export const BASE_PATH = '/learning-portuguese/'
 const LOCAL_ENV = 'VITE_FIREBASE_API_KEY= VITE_FIREBASE_AUTH_DOMAIN= VITE_FIREBASE_PROJECT_ID= VITE_FIREBASE_APP_ID= VITE_FIREBASE_EMULATOR_HOST= VITE_BASE_PATH=/learning-portuguese/'
 
@@ -36,7 +37,7 @@ export default defineConfig({
     { name: 'mobile-chromium', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: `env ${LOCAL_ENV} npx vite build --outDir .e2e/local-dist --emptyOutDir --logLevel error && env ${LOCAL_ENV} npx vite preview --outDir .e2e/local-dist --port ${PORT} --strictPort`,
+    command: `env ${LOCAL_ENV} npx vite build --outDir ${OUT_DIR} --emptyOutDir --logLevel error && env ${LOCAL_ENV} npx vite preview --outDir ${OUT_DIR} --port ${PORT} --strictPort`,
     url: `http://localhost:${PORT}${BASE_PATH}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
