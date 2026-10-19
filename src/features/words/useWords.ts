@@ -12,6 +12,10 @@
  */
 import { createContext, useContext, useSyncExternalStore } from 'react'
 import type { ProgressRepository, SrsCard, WordCardMode, WordEntry, WordSource, WordStatus } from '@/data'
+import { WORD_CARD_MODES } from '@/data/types.ts'
+import { isNewCard, schedule, type ReviewRating } from '@/engine/fsrs'
+import { bumpNewSeenToday } from '@/features/srs/newCardCounter'
+import { listenText } from './audio.ts'
 import { countByStatus, groupCardsByWord, wordStatus } from './status.ts'
 import {
   applyWrite,
@@ -22,6 +26,8 @@ import {
   legacyWordCards,
   normalizeLemma,
   planAddSource,
+  planApplyEnabledModes,
+  planCardReviewed,
   planDeleteWords,
   planMarkKnown,
   planSaveWords,
@@ -74,6 +80,18 @@ export interface WordActions {
   unmarkKnown(id: string): Promise<WordActionResult>
   /** Sync the cache after cards were written elsewhere (e.g. ReviewSession → repo.upsertCards). No write. */
   onCardsUpdated(cards: readonly SrsCard[]): void
+  /**
+   * A dictionary card was rated and persisted elsewhere (ReviewSession): syncs the cache and creates the cards it
+   * unlocks (staged unlock, `planCardReviewed`). Non-dictionary cards are ignored.
+   */
+  onCardReviewed(card: SrsCard, rating: ReviewRating): Promise<void>
+  /**
+   * Rates a dictionary card outside a review session («Учить новые», «Проверить себя»): schedules it, counts a new
+   * card against today's limit, persists, unlocks next modes. Returns the updated card.
+   */
+  rateCard(card: SrsCard, rating: ReviewRating): Promise<SrsCard>
+  /** Settings → card modes changed: suspend cards of switched-off modes, resume / unlock switched-on ones. */
+  applyEnabledModes(enabled: readonly WordCardMode[], changed: readonly WordCardMode[]): Promise<WordActionResult>
   /** Re-read words and cards from the repository. */
   reload(): Promise<void>
   /** Legacy `w:*` / `g:*` word cards (reads all cards). */
@@ -128,7 +146,8 @@ export class WordsStore {
     this.actions = {
       saveWords: async (inputs) => this.run(planSaveWords(this.state(), inputs, { enabledModes: await this.enabledModes() })),
       saveWord: (input) => this.actions.saveWords([input]),
-      updateWord: async (id, patch) => this.run(planUpdateWord(this.state(), id, patch)),
+      updateWord: async (id, patch) =>
+        this.run(planUpdateWord(this.state(), id, patch, Date.now(), (await this.enabledModes()) ?? WORD_CARD_MODES)),
       addSource: async (id, source) => this.run(planAddSource(this.state(), id, source)),
       deleteWords: async (ids) => this.run(planDeleteWords(this.state(), ids)),
       markKnown: async (id) => this.run(planMarkKnown(this.state(), id)),
@@ -136,6 +155,23 @@ export class WordsStore {
       onCardsUpdated: (cards) => {
         const mine = cards.filter((c) => c.wordId)
         if (mine.length) this.set(applyWrite(this.state(), { cards: mine }))
+      },
+      onCardReviewed: async (card, rating) => {
+        if (!card.wordId) return
+        this.set(applyWrite(this.state(), { cards: [card] }))
+        await this.unlockAfter(card, rating)
+      },
+      rateCard: async (card, rating) => {
+        const now = Date.now()
+        const updated = schedule(card, rating, now)
+        if (isNewCard(card)) bumpNewSeenToday(now)
+        await this.run({ words: [], write: { cards: [updated] } })
+        await this.unlockAfter(updated, rating)
+        return updated
+      },
+      applyEnabledModes: async (enabled, changed) => {
+        const canListen = await this.listenMap(this.snap.words)
+        return this.run(planApplyEnabledModes(this.state(), enabled, changed, { canListen: (w) => canListen.get(w.id) ?? false }))
       },
       reload: () => this.load(),
       countLegacyWordCards: async () => legacyWordCards(await this.repo.getCards()).length,
@@ -165,6 +201,25 @@ export class WordsStore {
     } catch {
       return undefined
     }
+  }
+
+  /** Creates the cards unlocked by rating `card` (recognize only). Errors are swallowed: unlock retries next review. */
+  private async unlockAfter(card: SrsCard, rating: ReviewRating): Promise<void> {
+    if (!card.wordId || card.mode !== 'recognize') return
+    const entry = this.snap.index.byId.get(card.wordId)
+    if (!entry) return
+    try {
+      const [enabledModes, canListen] = await Promise.all([this.enabledModes(), listenText(entry).then((t) => t !== null, () => false)])
+      await this.run(planCardReviewed(this.state(), card, rating, { enabledModes, canListen }))
+    } catch {
+      // not fatal: the condition is re-checked after the next review
+    }
+  }
+
+  /** Whether each word can be played (pt-PT voice or an mp3). */
+  private async listenMap(words: readonly WordEntry[]): Promise<Map<string, boolean>> {
+    const res = await Promise.all(words.map(async (w) => [w.id, (await listenText(w).catch(() => null)) !== null] as const))
+    return new Map(res)
   }
 
   async load(): Promise<void> {

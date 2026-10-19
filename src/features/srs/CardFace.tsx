@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { getTopic } from '@/content'
-import type { CardKind, Settings, SrsCard } from '@/data/types.ts'
+import type { CardKind, SrsCard } from '@/data/types.ts'
 import { cardSource, errorTopicLink } from './cardContent'
 import { KIND_CHIP, KIND_LABEL, LISTEN_MARK, WORD_TASK } from './kinds'
 import { lookupAttrs } from '@/features/words/source'
 import { SpeakButton } from './SpeakButton'
+import type { AnswerRecord } from '@/features/exercises/types'
+import { WordCardFace, type FaceSettings } from '@/features/words/WordCardFace'
 
 function hashIndex(s: string, n: number) {
   let h = 0
@@ -23,7 +25,12 @@ const FRONT_TASK: Record<Exclude<CardKind, 'error'>, string> = {
 interface Props {
   card: SrsCard
   revealed: boolean
-  settings: Pick<Settings, 'voice' | 'rate'> | null
+  settings: FaceSettings
+  /** Dictionary cards: answered by typing (see `isTypedWordCard`), the answer and its callback. */
+  typed?: boolean
+  answer?: AnswerRecord | null
+  onAnswered?(rec: AnswerRecord): void
+  focusControl?: boolean
 }
 
 /** Card header: kind chip + topic title. */
@@ -54,7 +61,25 @@ export function TopicRepeatLink({ topicId }: { topicId: string | undefined }) {
  * Flashcard front (+ back when revealed) for word / phrase / grammar cards, and for 'error' cards whose
  * original exercise no longer exists in the content (those are otherwise reviewed as the exercise itself).
  */
-export function CardFace({ card, revealed, settings }: Props) {
+export function CardFace({ card, revealed, settings, typed = false, answer, onAnswered, focusControl }: Props) {
+  if (card.wordId && card.mode) {
+    return (
+      <WordCardFace
+        card={card}
+        revealed={revealed}
+        settings={settings}
+        typed={typed}
+        answer={answer}
+        onAnswered={onAnswered}
+        focusControl={focusControl}
+      />
+    )
+  }
+  return <ClassicFace card={card} revealed={revealed} settings={settings} />
+}
+
+/** Flip card of theme / example / legacy cards (front ru, back pt) and orphaned error cards. */
+function ClassicFace({ card, revealed, settings }: Pick<Props, 'card' | 'revealed' | 'settings'>) {
   const voice = settings?.voice
   const rate = settings?.rate
   const topic = card.topicId ? getTopic(card.topicId) : undefined

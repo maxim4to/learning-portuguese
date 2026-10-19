@@ -6,6 +6,8 @@
  * entry and its cards, so devices can't disagree.
  */
 import { WORD_CARD_MODES, type SrsCard, type WordCardMode, type WordEntry, type WordStatus } from '../../data/types.ts'
+import type { ReviewRating } from '../../engine/fsrs.ts'
+import { clozeSource } from './cloze.ts'
 
 /** A word counts as known automatically at this recognize/produce stability (days). */
 export const KNOWN_STABILITY_DAYS = 21
@@ -78,12 +80,12 @@ export function countByStatus(statuses: Iterable<WordStatus>): Record<WordStatus
   return out
 }
 
-// ─── Staged modes (rules only; card creation on review = Phase 3 `unlockNext`) ────────────────
+// ─── Staged modes (rules; card creation: wordOps `planUnlockNext` / `planCardReviewed`) ─────────
 
 /**
  * Per-mode state of a word:
  * - active: the card exists;
- * - ready: unlock condition met, card not created yet (Phase 3 creates it after a review);
+ * - ready: unlock condition met, card not created yet (created after the next review / by `planUnlockNext`);
  * - locked: condition not met yet;
  * - unavailable: needs data the word lacks (cloze without a source sentence, listen without audio/voice);
  * - disabled: switched off in `Settings.wordModes` or `entry.modes`, or the word is marked known.
@@ -95,6 +97,8 @@ export interface ModeContext {
   enabledModes?: readonly WordCardMode[]
   /** Lemma audio available (pre-generated mp3 or a pt-PT voice). Default true. */
   canListen?: boolean
+  /** Rating just given to the word's recognize card (Good / Easy unlocks produce at once). */
+  rating?: ReviewRating
 }
 
 /** Short Russian description of each unlock condition (for UI hints). */
@@ -105,19 +109,22 @@ export const MODE_UNLOCK_HINT: Record<WordCardMode, string> = {
   listen: `когда PT → RU держится ≥ ${LATE_UNLOCK_STABILITY_DAYS} дней`,
 }
 
-const hasSentence = (entry: Pick<WordEntry, 'sources'>) => entry.sources.some((s) => !!s.sentence?.trim())
-
-/** Whether `mode`'s unlock condition is met (ignores settings / existing cards). */
-export function unlockConditionMet(mode: WordCardMode, recognize: SrsCard | undefined): boolean {
+/**
+ * Whether `mode`'s unlock condition is met (ignores settings / existing cards):
+ * - produce: the first successful (Good / Easy) review of recognize. Without the rating at hand it is derived from
+ *   the FSRS state: in Review / Relearning, or a learning step passed (New + Good → Learning, step 1);
+ * - cloze, listen: recognize in Review (or Relearning) with stability ≥ 4 days.
+ */
+export function unlockConditionMet(mode: WordCardMode, recognize: SrsCard | undefined, rating?: ReviewRating): boolean {
   if (mode === 'recognize') return true
   if (!recognize) return false
-  // Reached Review at least once (Relearning implies it was in Review before).
-  if (mode === 'produce') return recognize.fsrs.state >= 2
-  return recognize.fsrs.state >= 2 && recognize.fsrs.stability >= LATE_UNLOCK_STABILITY_DAYS
+  const f = recognize.fsrs
+  if (mode === 'produce') return rating === 'good' || rating === 'easy' || f.state >= 2 || (f.state === 1 && f.learning_steps >= 1)
+  return f.state >= 2 && f.stability >= LATE_UNLOCK_STABILITY_DAYS
 }
 
 export function modeStates(
-  entry: Pick<WordEntry, 'modes' | 'mark' | 'sources'>,
+  entry: Pick<WordEntry, 'modes' | 'mark' | 'sources' | 'lemma'>,
   cards: readonly SrsCard[],
   ctx: ModeContext = {},
 ): Record<WordCardMode, ModeState> {
@@ -129,15 +136,15 @@ export function modeStates(
   for (const mode of WORD_CARD_MODES) {
     if (byMode.has(mode)) out[mode] = 'active'
     else if (entry.mark === 'known' || !enabled.has(mode) || !allowed.has(mode)) out[mode] = 'disabled'
-    else if ((mode === 'cloze' && !hasSentence(entry)) || (mode === 'listen' && ctx.canListen === false)) out[mode] = 'unavailable'
-    else out[mode] = unlockConditionMet(mode, recognize) ? 'ready' : 'locked'
+    else if ((mode === 'cloze' && !clozeSource(entry)) || (mode === 'listen' && ctx.canListen === false)) out[mode] = 'unavailable'
+    else out[mode] = unlockConditionMet(mode, recognize, ctx.rating) ? 'ready' : 'locked'
   }
   return out
 }
 
 /** Modes whose card should be created now (state 'ready'), in unlock order. */
 export function readyModes(
-  entry: Pick<WordEntry, 'modes' | 'mark' | 'sources'>,
+  entry: Pick<WordEntry, 'modes' | 'mark' | 'sources' | 'lemma'>,
   cards: readonly SrsCard[],
   ctx: ModeContext = {},
 ): WordCardMode[] {

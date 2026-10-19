@@ -7,7 +7,10 @@ import { Headphones, Pause, Play, Search, SearchX, Trash2 } from 'lucide-react'
 import { Chip, ChipGroup } from '@/components/Chip'
 import { EmptyState } from '@/components/EmptyState'
 import { useToast } from '@/components/toastContext'
-import { KIND_CHIP, KIND_LABEL, KIND_SHORT, LISTEN_MARK } from './kinds'
+import { Link } from 'react-router-dom'
+import { KIND_CHIP, KIND_LABEL, KIND_SHORT, LISTEN_MARK, WORD_TASK } from './kinds'
+import { WORD_MODE_LABEL } from '@/features/words/status'
+import { wordHref } from '@/features/words/source'
 import { deleteCards } from './cardOps'
 
 const KINDS: CardKind[] = ['word', 'phrase', 'grammar', 'error']
@@ -46,7 +49,9 @@ export function CardList({ cards, onChanged }: Props) {
     const needle = q.trim().toLowerCase()
     return cards
       .filter((c) => kind === 'all' || c.kind === kind)
-      .filter((c) => topicId === 'all' || (topicId === 'none' ? !c.topicId : c.topicId === topicId))
+      .filter((c) =>
+        topicId === 'all' ? true : topicId === 'words' ? !!c.wordId : topicId === 'none' ? !c.topicId && !c.wordId : c.topicId === topicId,
+      )
       .filter((c) => !needle || c.front.toLowerCase().includes(needle) || c.back.toLowerCase().includes(needle))
       .sort((a, b) => b.createdAt - a.createdAt)
   }, [cards, kind, topicId, q])
@@ -103,6 +108,7 @@ export function CardList({ cards, onChanged }: Props) {
         </label>
         <select id="cards-topic" className="input" value={topicId} onChange={(e) => setTopicId(e.target.value)}>
           <option value="all">Все темы</option>
+          <option value="words">Мой словарь</option>
           <option value="none">Без темы</option>
           {topicOptions.map((t) => (
             <option key={t.id} value={t.id}>
@@ -130,14 +136,22 @@ export function CardList({ cards, onChanged }: Props) {
                   {c.front.startsWith(LISTEN_MARK) && <Headphones aria-label="Диктант" className="size-4 shrink-0 text-ink-muted" />}
                   <span className="truncate">{c.front.startsWith(LISTEN_MARK) ? c.front.slice(LISTEN_MARK.length).trim() : c.front}</span>
                 </p>
-                <p lang="pt-PT" className="truncate text-sm text-brand-ink">
+                <p lang={c.mode && !WORD_TASK[c.mode].backPt ? undefined : 'pt-PT'} className="truncate text-sm text-brand-ink">
                   {c.back}
                 </p>
                 <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
-                  <span className={`rounded-full px-1.5 py-px font-semibold ${KIND_CHIP[c.kind]}`}>{KIND_LABEL[c.kind]}</span>
+                  <span className={`rounded-full px-1.5 py-px font-semibold ${KIND_CHIP[c.kind]}`}>
+                    {KIND_LABEL[c.kind]}
+                    {c.wordId && c.mode && ` · ${WORD_MODE_LABEL[c.mode]}`}
+                  </span>
                   <span>{dueLabel(c, now)}</span>
                   {c.fsrs.lapses > 0 && <span>· ошибок {c.fsrs.lapses}</span>}
                   {c.topicId && <span className="truncate">· {getTopic(c.topicId)?.title ?? c.topicId}</span>}
+                  {c.wordId && (
+                    <Link to={wordHref(c.wordId)} className="font-semibold">
+                      · Открыть слово
+                    </Link>
+                  )}
                 </p>
               </div>
               <div className="flex shrink-0">

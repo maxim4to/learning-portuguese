@@ -1,21 +1,24 @@
 import { useCallback, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Layers, Plus } from 'lucide-react'
+import { GraduationCap, Layers, Plus } from 'lucide-react'
 import { LEVELS, getReadingText, getSituation, getTopic, getVocabTheme, type Level } from '@/content'
 import { ButtonLink } from '@/components/Button'
 import { EmptyState, ErrorState, PageSkeleton } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
 import { AzulejoCorner } from '@/components/Card'
 import { cx } from '@/components/cx'
+import { SegmentedControl } from '@/components/SegmentedControl'
 import { TabPanel, Tabs } from '@/components/Tabs'
 import { useRepository } from '@/data'
-import type { SrsCard } from '@/data/types.ts'
-import { dueCards, formatInterval, isNewCard } from '@/engine/fsrs'
+import type { SrsCard, WordStatus } from '@/data/types.ts'
+import { dueCards, formatInterval, isNewCard, type ReviewRating } from '@/engine/fsrs'
 import { useProgressData } from '@/features/dashboard/useProgressData'
 import { activityDays, computeStreak } from '@/features/dashboard/stats'
 import { plural } from '@/features/library/format'
 import { ReviewTabs } from '@/features/words/ReviewTabs'
-import { useWordActions, useWords } from '@/features/words/useWords'
+import { learnCandidates, learnCount } from '@/features/words/learn'
+import { WORD_STATUS_LABEL } from '@/features/words/status'
+import { useWordActions, useWords, type WordsSnapshot } from '@/features/words/useWords'
 import { CardList } from './CardList'
 import { cardsFromErrors, isDeleted } from './cardOps'
 import { newSeenToday } from './newCardCounter'
@@ -24,21 +27,27 @@ import { ReviewSession } from './ReviewSession'
 export function ReviewPage() {
   const repo = useRepository()
   const data = useProgressData()
-  const wordCount = useWords().counts.total
-  const { onCardsUpdated, reload: reloadWords } = useWordActions()
-  // Keep the dictionary cache (statuses, next review) in step with cards rated in the session.
-  const onCardUpdated = useCallback((c: SrsCard) => onCardsUpdated([c]), [onCardsUpdated])
+  const dict = useWords()
+  const wordCount = dict.counts.total
+  const { onCardReviewed, reload: reloadWords } = useWordActions()
+  // Keep the dictionary cache (statuses, next review) in step with cards rated in the session, and open the
+  // word's next card modes (staged unlock).
+  const onCardUpdated = useCallback((c: SrsCard, r: ReviewRating) => void onCardReviewed(c, r).catch(() => {}), [onCardReviewed])
   const [params, setParams] = useSearchParams()
   const tab = params.get('tab') === 'all' ? 'all' : 'session'
+  const wordsOnly = params.get('deck') === 'words'
   const [session, setSession] = useState<SrsCard[] | null>(null)
   const [msg, setMsg] = useState<string | null>(null)
 
   const cards = useMemo(() => data.cards.filter((c) => !isDeleted(c)), [data.cards])
   const [now, setNow] = useState(() => Date.now())
-  const due = useMemo(
-    () => dueCards(cards, now, { newPerDay: data.settings?.newCardsPerDay, newSeenToday: newSeenToday(now) }),
-    [cards, data.settings, now],
+  const dueOpts = useCallback(
+    (t: number) => ({ newPerDay: data.settings?.newCardsPerDay, newSeenToday: newSeenToday(t) }),
+    [data.settings],
   )
+  const dueAll = useMemo(() => dueCards(cards, now, dueOpts(now)), [cards, now, dueOpts])
+  const due = useMemo(() => (wordsOnly ? dueCards(cards, now, { ...dueOpts(now), filter: isWordCard }) : dueAll), [wordsOnly, dueAll, cards, now, dueOpts])
+  const wordCardCount = useMemo(() => cards.filter(isWordCard).length, [cards])
   const pendingErrorCards = useMemo(() => cardsFromErrors(data.errors, data.cards), [data.errors, data.cards])
 
   const { reload } = data
@@ -46,7 +55,7 @@ export function ReviewPage() {
   const finish = useCallback(() => {
     setSession(null)
     setNow(Date.now())
-    setParams({ tab: 'all' }, { replace: true })
+    setParams((p) => withParam(withParam(p, 'tab', 'all'), 'deck', p.get('deck')), { replace: true })
     void reload()
   }, [reload, setParams])
 
@@ -69,7 +78,7 @@ export function ReviewPage() {
           <h1 className="sr-only">Повторение</h1>
           <ReviewSession initial={session} settings={data.settings} onCardUpdated={onCardUpdated} onFinish={finish} />
         </div>
-        <DeckPanel cards={cards} due={due} now={now} newLimit={data.settings?.newCardsPerDay ?? 15} streak={streak} className="hidden lg:flex" />
+        <DeckPanel cards={cards} due={dueAll} now={now} newLimit={data.settings?.newCardsPerDay ?? 15} streak={streak} dict={dict} actions={false} className="hidden lg:flex" />
       </div>
     )
   }
@@ -78,9 +87,12 @@ export function ReviewPage() {
     .filter((c) => !c.suspended && !isNewCard(c) && c.fsrs.due > now)
     .reduce<number | null>((m, c) => (m === null || c.fsrs.due < m ? c.fsrs.due : m), null)
   const newCount = due.filter(isNewCard).length
-  const start = () =>
-    setSession(dueCards(cards, Date.now(), { newPerDay: data.settings?.newCardsPerDay, newSeenToday: newSeenToday() }))
-  const setTab = (t: 'session' | 'all') => setParams(t === 'all' ? { tab: 'all' } : {}, { replace: true })
+  const start = () => {
+    const t = Date.now()
+    setSession(dueCards(cards, t, { ...dueOpts(t), filter: wordsOnly ? isWordCard : undefined }))
+  }
+  const setTab = (t: 'session' | 'all') => setParams((p) => withParam(p, 'tab', t === 'all' ? 'all' : null), { replace: true })
+  const setDeck = (d: 'all' | 'words') => setParams((p) => withParam(p, 'deck', d === 'words' ? 'words' : null), { replace: true })
 
   return (
     <div className="page">
@@ -144,13 +156,26 @@ export function ReviewPage() {
             />
           </section>
         ) : (
+          <div className="space-y-4">
+          {wordCardCount > 0 && (
+            <SegmentedControl<'all' | 'words'>
+              label="Какие карточки повторять"
+              size="sm"
+              value={wordsOnly ? 'words' : 'all'}
+              onChange={setDeck}
+              options={[
+                { value: 'all', label: `Все карточки · ${dueAll.length}` },
+                { value: 'words', label: `Только слова · ${dueCards(cards, now, { ...dueOpts(now), filter: isWordCard }).length}` },
+              ]}
+            />
+          )}
           <section data-halftone-surface="" className="card-raised relative isolate overflow-hidden text-center">
             {due.length > 0 ? (
               <div className="flex flex-col items-center gap-4">
                 <AzulejoCorner />
                 <p className="flex items-baseline gap-2.5">
                   <span className="font-display text-h1 leading-none font-black tabular-nums">{due.length}</span>
-                  <span className="font-display text-h2">к повторению</span>
+                  <span className="font-display text-h2">{wordsOnly ? plural(due.length, 'слово', 'слова', 'слов').replace(/^\d+\s/, '') : 'к повторению'}</span>
                 </p>
                 <p className="text-ink-muted">
                   {newCount ? (newCount === due.length ? 'Все карточки новые' : `Из них новых: ${newCount}`) : 'Только повторение'}
@@ -163,11 +188,12 @@ export function ReviewPage() {
             ) : (
               <EmptyState
                 art="empty-review"
-                title="На сегодня всё"
+                title={wordsOnly ? 'Слов к повторению нет' : 'На сегодня всё'}
                 text={
                   <>
                     {nextDue ? `Следующая карточка через ${formatInterval(nextDue - now)}.` : 'Нет запланированных карточек.'}
                     {newSeenToday(now) >= (data.settings?.newCardsPerDay ?? 15) && ' Лимит новых карточек на сегодня исчерпан.'}
+                    {wordsOnly && ' Новые слова из «Моего словаря» можно выучить в «Учить новые».'}
                   </>
                 }
               />
@@ -181,18 +207,31 @@ export function ReviewPage() {
               </p>
             )}
           </section>
+          </div>
         )}
       </TabPanel>
       </div>
 
-      <DeckPanel cards={cards} due={due} now={now} newLimit={data.settings?.newCardsPerDay ?? 15} streak={streak} />
+      <DeckPanel cards={cards} due={dueAll} now={now} newLimit={data.settings?.newCardsPerDay ?? 15} streak={streak} dict={dict} />
       </div>
     </div>
   )
 }
 
-/** Level of a card's source (topic, situation, vocab theme or reading text); undefined for free cards. */
-function cardLevel(c: SrsCard): Level | undefined {
+const isWordCard = (c: SrsCard) => !!c.wordId
+const WORD_STATUSES: WordStatus[] = ['new', 'learning', 'known', 'paused']
+
+/** Copy of search params with `key` set (or removed for null). */
+function withParam(p: URLSearchParams, key: string, value: string | null): URLSearchParams {
+  const n = new URLSearchParams(p)
+  if (value === null) n.delete(key)
+  else n.set(key, value)
+  return n
+}
+
+/** Level of a card's source (topic, situation, vocab theme or reading text; the word's level for dictionary cards). */
+function cardLevel(c: SrsCard, dict: WordsSnapshot): Level | undefined {
+  if (c.wordId) return dict.index.byId.get(c.wordId)?.level
   const id = c.topicId
   if (!id) return undefined
   return getTopic(id)?.level ?? getSituation(id)?.level ?? getVocabTheme(id)?.level ?? getReadingText(id)?.level
@@ -205,6 +244,8 @@ function DeckPanel({
   now,
   newLimit,
   streak,
+  dict,
+  actions = true,
   className,
 }: {
   cards: SrsCard[]
@@ -212,6 +253,9 @@ function DeckPanel({
   now: number
   newLimit: number
   streak: number
+  dict: WordsSnapshot
+  /** «Учить новые» / «Повторить слова» (hidden beside a running session). */
+  actions?: boolean
   className?: string
 }) {
   const active = cards.filter((c) => !c.suspended)
@@ -223,7 +267,7 @@ function DeckPanel({
   const seen = newSeenToday(now)
   const byLevel = new Map<Level | 'none', { total: number; due: number }>()
   for (const c of active) {
-    const k = cardLevel(c) ?? 'none'
+    const k = cardLevel(c, dict) ?? 'none'
     const row = byLevel.get(k) ?? { total: 0, due: 0 }
     row.total++
     if (dueIds.has(c.id)) row.due++
@@ -235,6 +279,13 @@ function DeckPanel({
   ]
   const row = 'flex items-baseline justify-between gap-3 py-1.5'
   const num = 'font-semibold text-ink tabular-nums'
+  const wordsReady = dict.status === 'ready'
+  const wordDue = due.filter((c) => c.wordId)
+  const wordDueReviews = wordDue.filter((c) => !isNewCard(c)).length
+  const learnable = learnCandidates(dict.words, dict.cardsByWord, dict.statuses).length
+  const toLearn = learnCount(learnable, newLimit, seen)
+  const wv = (n: number) => (wordsReady ? n : '—')
+  const wnum = (n: number) => cx(num, wordsReady && n === 0 && 'font-normal text-ink-muted')
 
   return (
     <aside aria-labelledby="deck-title" className={cx('card flex-col gap-4', className ?? 'flex')}>
@@ -286,6 +337,42 @@ function DeckPanel({
           </tbody>
         </table>
       </div>
+
+      {(dict.counts.total > 0 || !wordsReady) && (
+        <div className="space-y-1">
+          <h3 className="text-sm font-semibold text-ink-muted">Мой словарь</h3>
+          <dl className="text-sm text-ink-muted">
+            {WORD_STATUSES.map((st) => (
+              <div key={st} className={row}>
+                <dt>{WORD_STATUS_LABEL[st]}</dt>
+                <dd className={wnum(dict.counts[st])}>{wv(dict.counts[st])}</dd>
+              </div>
+            ))}
+            <div className={row}>
+              <dt>Слов к повторению сейчас</dt>
+              <dd className={wnum(wordDueReviews)}>{wv(wordDueReviews)}</dd>
+            </div>
+            <div className={row}>
+              <dt>Новых слов ждут</dt>
+              <dd className={wnum(learnable)}>{wv(learnable)}</dd>
+            </div>
+          </dl>
+          {wordsReady && actions && (
+            <div className="flex flex-wrap gap-2 pt-2">
+              {toLearn > 0 && (
+                <ButtonLink to="/words?learn=1" size="sm" icon={<GraduationCap />}>
+                  Учить новые ({toLearn})
+                </ButtonLink>
+              )}
+              {wordDue.length > 0 && (
+                <ButtonLink to="/review?deck=words" size="sm" variant="secondary">
+                  Повторить слова
+                </ButtonLink>
+              )}
+            </div>
+          )}
+        </div>
+      )}
 
       <p className="rounded-control bg-surface-2 p-4 text-sm text-ink-muted">
         Всего {plural(cards.length, 'карточка', 'карточки', 'карточек')}

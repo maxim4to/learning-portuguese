@@ -11,8 +11,8 @@
  * these planners. Pure module (relative imports, no React) so scripts/words.test.ts can import it.
  *
  * Card ids are deterministic: `lex:<wordId>:<mode>`; word ids are `lexId` or `u:<normalized lemma>`.
- * Phase 1 creates only the `recognize` (PT→RU) card; produce/cloze/listen are unlocked later
- * (rules in status.ts → `readyModes`, card creation in Phase 3 `unlockNext`).
+ * Saving creates only the `recognize` (PT→RU) card; produce/cloze/listen are unlocked after reviews
+ * (rules in status.ts → `readyModes`, card creation in `planUnlockNext` / `planCardReviewed`).
  */
 import { createSrsCard } from '../../engine/fsrs.ts'
 import {
@@ -27,6 +27,9 @@ import {
   type WordSource,
 } from '../../data/types.ts'
 import type { Level } from '../../content/schema.ts'
+import { GAP, clozeSource } from './cloze.ts'
+import { readyModes, type ModeContext } from './status.ts'
+import type { ReviewRating } from '../../engine/fsrs.ts'
 
 // ─── Ids ──────────────────────────────────────────────────────────────────────
 
@@ -93,14 +96,7 @@ export function wordHint(entry: Pick<WordEntry, 'pos' | 'gender'>): string {
   return [entry.pos ? POS_SHORT[entry.pos] : '', entry.gender ? GENDER_SHORT[entry.gender] : ''].filter(Boolean).join(', ')
 }
 
-const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-
-/** Replaces whole-word occurrences of `form` (case-insensitive) with `___`. Unchanged if not found. */
-export function maskForm(sentence: string, form: string): string {
-  if (!form.trim()) return sentence
-  const re = new RegExp(`(?<![\\p{L}\\p{N}])${escapeRe(form.trim())}(?![\\p{L}\\p{N}])`, 'giu')
-  return sentence.replace(re, '___')
-}
+export { maskForm } from './cloze.ts'
 
 /** Newest source that has a sentence (for cloze / examples). */
 export function exampleSource(entry: Pick<WordEntry, 'sources'>): WordSource | undefined {
@@ -121,16 +117,16 @@ export function cardFaces(entry: WordEntry, mode: WordCardMode): { front: string
     case 'listen':
       return { front: pt, back: `${pt} — ${entry.ru}` }
     case 'cloze': {
-      const src = exampleSource(entry)
-      if (!src?.sentence) return { front: '___', back: pt }
-      return { front: maskForm(src.sentence, src.form || entry.lemma), back: src.sentence }
+      const cz = clozeSource(entry)
+      if (!cz) return { front: GAP, back: pt }
+      return { front: cz.masked, back: cz.source.sentence ?? pt }
     }
   }
 }
 
 /**
  * New cards for `modes` (default: the initial `recognize`) that don't exist yet in `existing`.
- * cloze is skipped without a source sentence. Does not check unlock rules — see status.ts.
+ * cloze is skipped without a source sentence containing the form. Does not check unlock rules — see status.ts.
  */
 export function buildCards(
   entry: WordEntry,
@@ -143,7 +139,7 @@ export function buildCards(
   for (const mode of modes) {
     const id = wordCardId(entry.id, mode)
     if (have.has(id)) continue
-    if (mode === 'cloze' && !exampleSource(entry)) continue
+    if (mode === 'cloze' && !clozeSource(entry)) continue
     have.add(id)
     out.push(createSrsCard({ id, kind: 'word', ...cardFaces(entry, mode), wordId: entry.id, mode }, now))
   }
@@ -332,7 +328,13 @@ export type WordPatch = Partial<Pick<WordEntry, 'lemma' | 'pos' | 'gender' | 'ru
  * (progress kept); adding it back unsuspends it (unless the word is marked known).
  * The id does not change when the lemma is edited.
  */
-export function planUpdateWord(state: WordsState, id: string, patch: WordPatch, now = Date.now()): WordPlan {
+export function planUpdateWord(
+  state: WordsState,
+  id: string,
+  patch: WordPatch,
+  now = Date.now(),
+  enabledModes: readonly WordCardMode[] = WORD_CARD_MODES,
+): WordPlan {
   const prev = state.words.find((w) => w.id === id)
   if (!prev) return { words: [], write: {} }
   const merged: WordEntry = { ...prev, ...patch, id: prev.id, updatedAt: now }
@@ -350,8 +352,7 @@ export function planUpdateWord(state: WordsState, id: string, patch: WordPatch, 
     for (const c of own) {
       if (!c.mode) continue
       const base = changed.get(c.id) ?? c
-      const off = !next.modes.includes(c.mode)
-      const want = off || next.mark === 'known'
+      const want = shouldSuspend(next, c.mode, enabledModes)
       if (!!base.suspended !== want) changed.set(c.id, clean({ ...base, suspended: want || undefined, updatedAt: now }))
     }
   }
@@ -396,7 +397,7 @@ export function planUnmarkKnown(state: WordsState, id: string, opts: PlanOptions
   delete next.mark
   const own = state.cards.filter((c) => c.wordId === id)
   const cards: SrsCard[] = own
-    .filter((c) => c.suspended && c.mode && next.modes.includes(c.mode))
+    .filter((c) => c.suspended && c.mode && !shouldSuspend(next, c.mode, opts.enabledModes ?? WORD_CARD_MODES))
     .map((c) => {
       const u = { ...c, updatedAt: now }
       delete u.suspended
@@ -404,6 +405,84 @@ export function planUnmarkKnown(state: WordsState, id: string, opts: PlanOptions
     })
   if (own.length === 0) cards.push(...buildCards(next, initialModes(next, opts.enabledModes), [], now))
   return { words: [next], write: { words: [next], cards } }
+}
+
+// ─── Staged unlock (Phase 3) ─────────────────────────────────────────────────
+
+/** Unlock context: settings + whether the word can be played (listen). */
+export interface UnlockContext {
+  now?: number
+  /** `Settings.wordModes` (default: all). */
+  enabledModes?: readonly WordCardMode[]
+  /** Lemma audio (mp3 or a pt-PT voice) — per word, or one answer for all. Default: available. */
+  canListen?: boolean | ((entry: WordEntry) => boolean)
+}
+
+const listenOk = (ctx: UnlockContext, entry: WordEntry) =>
+  typeof ctx.canListen === 'function' ? ctx.canListen(entry) : ctx.canListen !== false
+
+/**
+ * `unlockNext`: creates the cards whose unlock condition is met now and that are allowed
+ * (settings.wordModes, entry.modes, not marked known; cloze needs a sentence with the form, listen needs audio).
+ * Rules (status.ts `unlockConditionMet`): produce after the first Good / Easy of recognize; cloze and listen once
+ * recognize is in Review with stability ≥ 4 days. `rating` = the rating just given to recognize, if any.
+ */
+export function planUnlockNext(state: WordsState, wordId: string, ctx: UnlockContext & { rating?: ReviewRating } = {}): WordPlan {
+  const entry = state.words.find((w) => w.id === wordId)
+  if (!entry) return { words: [], write: {} }
+  const own = state.cards.filter((c) => c.wordId === wordId)
+  const modeCtx: ModeContext = { enabledModes: ctx.enabledModes, canListen: listenOk(ctx, entry), rating: ctx.rating }
+  const cards = buildCards(entry, readyModes(entry, own, modeCtx), own, ctx.now ?? Date.now())
+  return { words: [], write: cards.length ? { cards } : {} }
+}
+
+/**
+ * `onCardReviewed`: after a dictionary card was rated (and persisted by the session), the cards it unlocks.
+ * Only recognize ratings unlock anything; other cards and non-dictionary cards give an empty write.
+ * `card` is the updated card (it is applied to the state before the rules run).
+ */
+export function planCardReviewed(state: WordsState, card: SrsCard, rating: ReviewRating, ctx: UnlockContext = {}): WordPlan {
+  if (!card.wordId || card.mode !== 'recognize') return { words: [], write: {} }
+  return planUnlockNext(applyWrite(state, { cards: [card] }), card.wordId, { ...ctx, rating })
+}
+
+/** A dictionary card should be suspended: word marked known, mode switched off for the word or in settings. */
+export function shouldSuspend(entry: WordEntry | undefined, mode: WordCardMode, enabled: readonly WordCardMode[]): boolean {
+  if (!entry) return false
+  return entry.mark === 'known' || !entry.modes.includes(mode) || !enabled.includes(mode)
+}
+
+/**
+ * Settings → «Виды карточек слова» changed: cards of switched-off modes are suspended (FSRS progress kept);
+ * switching a mode back on resumes them (unless the word is marked known or the mode is off for that word) and
+ * creates the cards that became ready meanwhile. Only cards of `changed` modes are touched (default: all modes),
+ * so a card paused by hand in another mode stays paused.
+ */
+export function planApplyEnabledModes(
+  state: WordsState,
+  enabled: readonly WordCardMode[],
+  changed: readonly WordCardMode[] = WORD_CARD_MODES,
+  ctx: Omit<UnlockContext, 'enabledModes'> = {},
+): WordPlan {
+  const now = ctx.now ?? Date.now()
+  const byId = new Map(state.words.map((w) => [w.id, w]))
+  const touched = new Set(changed)
+  const cards: SrsCard[] = []
+  for (const c of state.cards) {
+    if (!c.wordId || !c.mode || !touched.has(c.mode)) continue
+    const want = shouldSuspend(byId.get(c.wordId), c.mode, enabled)
+    if (!!c.suspended === want) continue
+    const next: SrsCard = { ...c, updatedAt: now }
+    if (want) next.suspended = true
+    else delete next.suspended
+    cards.push(next)
+  }
+  const after = applyWrite(state, { cards })
+  const created = state.words
+    .flatMap((w) => planUnlockNext(after, w.id, { ...ctx, now, enabledModes: enabled }).write.cards ?? [])
+    .filter((c) => c.mode && touched.has(c.mode))
+  const all = [...cards, ...created]
+  return { words: [], write: all.length ? { cards: all } : {} }
 }
 
 // ─── Legacy cleanup (decision 2: no migration) ───────────────────────────────

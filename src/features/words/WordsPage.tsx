@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { BookA, Plus, Search, SearchX } from 'lucide-react'
+import { BookA, GraduationCap, Layers, ListChecks, Plus, Search, SearchX } from 'lucide-react'
 import { LEVELS, type Level } from '@/content'
 import { Button, ButtonLink } from '@/components/Button'
 import { Chip, ChipGroup } from '@/components/Chip'
@@ -9,9 +9,14 @@ import { EmptyState, ErrorState, Skeleton } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
 import { useToast } from '@/components/toastContext'
 import type { WordEntry, WordStatus } from '@/data'
-import { isNewCard } from '@/engine/fsrs'
+import { dueCards, isNewCard } from '@/engine/fsrs'
 import { normalize, stripAccents } from '@/engine/grading'
 import { plural } from '@/features/library/format'
+import { VocabQuiz, type QuizItem } from '@/features/library/VocabQuiz'
+import { useSettings } from '@/features/exercises/useSettings'
+import { newSeenToday } from '@/features/srs/newCardCounter'
+import { learnCandidates, learnCount } from './learn.ts'
+import { LearnNewSession } from './LearnNewSession.tsx'
 import { ReviewTabs } from './ReviewTabs.tsx'
 import { SOURCE_GROUP_LABEL, sourceGroup, type SourceGroup } from './source.ts'
 import { WORD_STATUS_LABEL } from './status.ts'
@@ -19,7 +24,7 @@ import { useWordActions, useWords, type WordActionResult, type WordsSnapshot } f
 import { WordEditor } from './WordEditor.tsx'
 import { WordList } from './WordList.tsx'
 import { WordSearchDialog } from './WordSearchDialog.tsx'
-import { wordPt } from './wordOps.ts'
+import { exampleSource, wordCardId, wordPt } from './wordOps.ts'
 
 const STATUSES: WordStatus[] = ['new', 'learning', 'known', 'paused']
 const STATUS_CHIP: Record<WordStatus, string> = { new: 'Новые', learning: 'Учу', known: 'Знаю', paused: 'На паузе' }
@@ -62,7 +67,10 @@ export function WordsPage() {
   const level: LevelFilter = rawLevel === 'none' || (LEVELS as readonly string[]).includes(rawLevel ?? '') ? (rawLevel as LevelFilter) : 'all'
   const rawSource = params.get('source') as SourceFilter | null
   const source: SourceFilter = rawSource && (SOURCE_FILTERS as string[]).includes(rawSource) ? rawSource : 'all'
-  const setFilter = (key: 'status' | 'level' | 'source' | 'add', value: string) =>
+  const learning = params.get('learn') === '1'
+  const settings = useSettings()
+  const [quiz, setQuiz] = useState<WordEntry[] | null>(null)
+  const setFilter = (key: 'status' | 'level' | 'source' | 'add' | 'learn', value: string) =>
     setParams(
       (p) => {
         const n = new URLSearchParams(p)
@@ -143,7 +151,45 @@ export function WordsPage() {
     })
   }
 
+  const seen = newSeenToday(now)
+  const learnable = useMemo(() => learnCandidates(dict.words, dict.cardsByWord, dict.statuses).length, [dict.words, dict.cardsByWord, dict.statuses])
+  const toLearn = learnCount(learnable, settings.newCardsPerDay, seen)
+  const wordsDue = useMemo(
+    () => dueCards([...dict.cards], now, { newPerDay: settings.newCardsPerDay, newSeenToday: seen }).length,
+    [dict.cards, now, settings.newCardsPerDay, seen],
+  )
+  const quizItems = useMemo<QuizItem[]>(
+    () =>
+      (quiz ?? []).map((w) => ({
+        key: w.id,
+        pt: wordPt(w),
+        ru: w.ru,
+        gender: w.pos === 'noun' && w.gender !== 'mf' ? w.gender : undefined,
+        example: exampleSource(w)?.sentence,
+      })),
+    [quiz],
+  )
+
+  /** «Проверить себя» → «Не знаю»: Снова for the word's PT → RU card when it has already been reviewed. */
+  function quizUnknown(i: number) {
+    const w = quiz?.[i]
+    const c = w && dict.cardsByWord.get(w.id)?.find((x) => x.id === wordCardId(w.id, 'recognize'))
+    if (c && !isNewCard(c) && !c.suspended) void actions.rateCard(c, 'again').catch(() => {})
+  }
+
   const empty = dict.status === 'ready' && dict.counts.total === 0
+
+  if (learning) {
+    return (
+      <div className="page">
+        <div className="space-y-4">
+          <ReviewTabs active="words" wordCount={dict.counts.total} />
+          <PageHeader title="Учить новые" subtitle="Знакомство с новыми словами словаря и быстрая проверка — затем они уходят в повторение." />
+        </div>
+        <LearnNewSession onClose={() => setFilter('learn', 'all')} />
+      </div>
+    )
+  }
   const filtered = status !== 'all' || level !== 'all' || source !== 'all' || needle !== ''
 
   return (
@@ -155,7 +201,7 @@ export function WordsPage() {
           subtitle="Слова из тем, ситуаций и поиска. Каждое слово — карточка в повторении."
           actions={
             dict.status === 'ready' && !empty ? (
-              <Button ref={addRef} icon={<Plus />} className="max-lg:hidden" onClick={() => setAdding(true)}>
+              <Button ref={addRef} icon={<Plus />} variant={toLearn > 0 ? 'secondary' : 'primary'} className="max-lg:hidden" onClick={() => setAdding(true)}>
                 Добавить слово
               </Button>
             ) : undefined
@@ -195,6 +241,44 @@ export function WordsPage() {
               </section>
             ) : (
               <>
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Учить слова">
+                  {toLearn > 0 && (
+                    <Button icon={<GraduationCap />} className="max-sm:flex-1" onClick={() => setFilter('learn', '1')}>
+                      Учить новые ({toLearn})
+                    </Button>
+                  )}
+                  <ButtonLink
+                    to="/review?deck=words"
+                    variant="secondary"
+                    icon={<Layers />}
+                    className="max-sm:flex-1"
+                  >
+                    {wordsDue ? `Повторить слова (${wordsDue})` : 'Повторить слова'}
+                  </ButtonLink>
+                  <Button
+                    variant="ghost"
+                    icon={<ListChecks />}
+                    disabled={shown.length === 0}
+                    onClick={() => setQuiz(shown.slice(0, 20))}
+                  >
+                    Проверить себя
+                  </Button>
+                </div>
+                {learnable > 0 && toLearn === 0 && (
+                  <p className="text-sm text-ink-muted">
+                    Новых слов ждут: {learnable}. Лимит новых карточек на сегодня исчерпан ({settings.newCardsPerDay}) — продолжим завтра.
+                  </p>
+                )}
+                {quiz && quizItems.length > 0 && (
+                  <VocabQuiz
+                    key={quiz.map((w) => w.id).join('|')}
+                    items={quizItems}
+                    onUnknown={quizUnknown}
+                    onClose={() => setQuiz(null)}
+                    footnote="Самопроверка по словам из списка (до 20). «Не знаю» у слова, которое уже повторялось, ставит его PT → RU на «Снова»."
+                    unknownNote="уже изученные вернутся в повторении раньше."
+                  />
+                )}
                 <div className="grid grid-cols-2 gap-2 lg:grid-cols-[minmax(0,1fr)_10rem_13rem]">
                   <div className="col-span-2 flex gap-2 lg:contents">
                   <div className="relative min-w-0 flex-1">

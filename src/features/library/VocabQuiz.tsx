@@ -1,12 +1,12 @@
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
-import type { VocabTheme } from '@/content'
+import type { VocabWord } from '@/content'
 import { Check, RotateCcw, X } from 'lucide-react'
 import { ProgressBar } from '@/components/ProgressBar'
 import { SegmentedControl } from '@/components/SegmentedControl'
 import { SpeakButton } from '@/components/SpeakButton'
 import { isLookupOpen } from '@/features/words/capture/store'
 import { Pt } from '@/features/words/Pt'
-import { lookupAttrs } from '@/features/words/source'
+import { lookupAttrs, type PtSource } from '@/features/words/source'
 import { GenderBadge } from './ui'
 
 type Direction = 'pt-ru' | 'ru-pt'
@@ -36,21 +36,37 @@ const newRound = (indices: number[]): Round => ({
   unknown: [],
 })
 
+/** One word of a self-test (a theme word, or a «Мой словарь» entry). */
+export interface QuizItem {
+  key: string
+  pt: string
+  ru: string
+  gender?: VocabWord['gender']
+  example?: string
+}
+
 /**
- * Flash-card self-test over a vocab theme. Not graded into progress;
- * «Не знаю» calls `onUnknown(wordIndex)` (the page adds the word to SRS).
+ * Flash-card self-test over a list of words (a vocab theme or the personal dictionary). Not graded into progress
+ * unless the page does it in `onUnknown(index)` (themes: add to the dictionary; dictionary: «Снова» for PT → RU).
+ * `source` is the lookup source (for words saved from the card); `unknownNote` / `footnote` describe what «Не знаю» does.
  * Keys: Space/Enter — flip, 1 — не знаю, 2 — знаю.
  */
 export function VocabQuiz({
-  theme,
+  items,
+  source,
   onUnknown,
   onClose,
+  footnote = 'Самопроверка не влияет на прогресс. «Не знаю» добавляет слово в повторение.',
+  unknownNote = 'они добавлены в повторение.',
 }: {
-  theme: VocabTheme
+  items: readonly QuizItem[]
+  source?: PtSource
   onUnknown(index: number): void
   onClose(): void
+  footnote?: string
+  unknownNote?: string
 }) {
-  const all = theme.words.map((_, i) => i)
+  const all = items.map((_, i) => i)
   const [dir, setDir] = useState<Direction>('pt-ru')
   const [round, setRound] = useState<Round>(() => newRound(all))
   const cardRef = useRef<HTMLButtonElement>(null)
@@ -63,7 +79,7 @@ export function VocabQuiz({
   const total = round.order.length
   const done = round.pos >= total
   const idx = round.order[round.pos]
-  const word = done ? undefined : theme.words[idx]
+  const word = done ? undefined : items[idx]
 
   function answer(knows: boolean) {
     if (done || !round.flipped) return
@@ -106,7 +122,7 @@ export function VocabQuiz({
     <section
       className="card-raised space-y-4 p-4"
       aria-label="Самопроверка"
-      {...lookupAttrs({ src: { kind: 'vocab', id: theme.id }, locked: !!word && !round.flipped })}
+      {...lookupAttrs({ src: source, locked: !!word && !round.flipped })}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <SegmentedControl<Direction>
@@ -170,7 +186,7 @@ export function VocabQuiz({
           {round.flipped && word.example && (
             <Pt
               as="p"
-              src={{ kind: 'vocab', id: theme.id, part: 'examples', index: idx }}
+              src={source && source.kind === 'vocab' ? { ...source, part: 'examples', index: idx } : source}
               className="-mt-1 animate-enter text-center font-pt text-sm text-ink-muted"
             >
               {word.example}
@@ -201,7 +217,7 @@ export function VocabQuiz({
             )}
           </div>
           <p className="text-center text-sm text-ink-muted">
-            Самопроверка не влияет на прогресс. «Не знаю» добавляет слово в повторение.
+            {footnote}
           </p>
         </>
       ) : (
@@ -212,16 +228,16 @@ export function VocabQuiz({
           <p className="text-ink-muted">
             {round.unknown.length === 0
               ? 'Все слова знакомы!'
-              : `Незнакомых слов: ${round.unknown.length} — они добавлены в повторение.`}
+              : `Незнакомых слов: ${round.unknown.length} — ${unknownNote}`}
           </p>
           {round.unknown.length > 0 && (
             <ul className="card-sunken mx-auto max-w-md divide-y divide-line p-0 text-left">
               {round.unknown.map((i) => (
                 <li key={i} className="flex justify-between gap-3 px-3 py-2">
-                  <Pt as="b" src={{ kind: 'vocab', id: theme.id, part: 'examples', index: i }} ru={theme.words[i].ru}>
-                    {theme.words[i].pt}
+                  <Pt as="b" src={source && source.kind === 'vocab' ? { ...source, part: 'examples', index: i } : source} ru={items[i].ru}>
+                    {items[i].pt}
                   </Pt>
-                  <span className="text-ink-muted">{theme.words[i].ru}</span>
+                  <span className="text-ink-muted">{items[i].ru}</span>
                 </li>
               ))}
             </ul>

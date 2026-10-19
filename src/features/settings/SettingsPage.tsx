@@ -82,6 +82,26 @@ export function SettingsPage() {
   const navigate = useNavigate()
   const toast = useToast()
   const words = useContext(WordsContext) // optional: reload the dictionary cache after a reset
+
+  /** Card modes switched: save, then suspend the switched-off modes' cards / resume the switched-on ones. */
+  function changeWordModes(next: WordCardMode[]) {
+    const prev = settings?.wordModes ?? []
+    const changed = WORD_CARD_MODES.filter((m) => prev.includes(m) !== next.includes(m))
+    update({ wordModes: next })
+    if (!words || !changed.length) return
+    const on = changed.filter((m) => next.includes(m))
+    const names = (ms: WordCardMode[]) => ms.map((m) => `«${WORD_MODE_LABEL[m]}»`).join(', ')
+    words.actions
+      .applyEnabledModes(next, changed)
+      .then(() =>
+        toast({
+          text: on.length
+            ? `Карточки ${names(on)} снова в повторении`
+            : `Карточки ${names(changed)} приостановлены, прогресс сохранён`,
+        }),
+      )
+      .catch((e: unknown) => toast({ text: `Не удалось обновить карточки: ${e instanceof Error ? e.message : String(e)}`, tone: 'danger' }))
+  }
   const [resetOpen, setResetOpen] = useState(false)
 
   async function handleReset(resetSettings: boolean) {
@@ -267,9 +287,19 @@ export function SettingsPage() {
               label="Перевод по нажатию на слово"
               description="Нажатие на слово в португальском тексте открывает перевод и «в словарь». Двойной клик, выделение и поиск «/» работают всегда."
             />
-            {/* highlightSavedWords / typeWordAnswers stay in Settings; their switches return when saved-word
-                highlighting (phase 5) and typed word cards (phase 3) use them. */}
-            <WordModesField value={settings.wordModes} onChange={(wordModes) => update({ wordModes })} />
+            <Switch
+              checked={settings.typeWordAnswers}
+              onChange={(v) => update({ typeWordAnswers: v })}
+              label="Вводить ответ в карточках слов"
+              description={
+                <>
+                  RU → PT, «На слух» и «Пропуск в предложении»: слово печатается и проверяется (с учётом настройки акцентов),
+                  оценка предлагается по ответу. Выключено — карточка просто переворачивается.
+                </>
+              }
+            />
+            {/* highlightSavedWords stays in Settings; its switch returns with saved-word highlighting (phase 5). */}
+            <WordModesField value={settings.wordModes} onChange={changeWordModes} />
           </Section>
         </>
       )}
@@ -419,7 +449,8 @@ function WordModesField({ value, onChange }: { value: readonly WordCardMode[]; o
     <fieldset className="space-y-1" aria-describedby={hintId}>
       <legend className="mb-1 font-semibold">Виды карточек слова</legend>
       <p id={hintId} className="pb-1 text-sm text-ink-muted">
-        До четырёх карточек на слово. Выключенные не создаются; уже созданные не удаляются.
+        До четырёх карточек на слово. Выключенный вид не создаётся, а уже созданные карточки приостанавливаются — прогресс
+        сохраняется и вернётся при включении.
       </p>
       {WORD_CARD_MODES.map((m) => {
         const on = value.includes(m)

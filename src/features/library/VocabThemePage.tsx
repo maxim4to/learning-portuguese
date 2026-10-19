@@ -77,7 +77,8 @@ export function VocabThemePage() {
 
       {quiz && (
         <VocabQuiz
-          theme={theme}
+          items={theme.words.map((w, i) => ({ key: String(i), pt: w.pt, ru: w.ru, gender: w.gender, example: w.example }))}
+          source={{ kind: 'vocab', id: theme.id }}
           onUnknown={(i) => void dict.add([i], { quiet: true })}
           onClose={() => setQuiz(false)}
         />

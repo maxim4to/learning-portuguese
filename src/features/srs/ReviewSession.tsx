@@ -14,6 +14,7 @@ import { ReviewExercise, type AnswerRecord } from '@/features/exercises'
 import { CardFace, CardHeader, TopicRepeatLink } from './CardFace'
 import { bumpNewSeenToday } from './newCardCounter'
 import { isLookupOpen } from '@/features/words/capture/store'
+import { isTypedWordCard, suggestWordRating } from '@/features/words/wordReview'
 
 /** Cards due again within this window are re-shown in the same session (learning steps). */
 const REQUEUE_MS = 20 * 60_000
@@ -37,8 +38,8 @@ const KEY_GUARD_MS = 350
 interface Props {
   initial: SrsCard[]
   settings: Settings | null
-  /** Called with every updated card (after it was persisted). */
-  onCardUpdated(card: SrsCard): void
+  /** Called with every updated card and its rating (after it was persisted). */
+  onCardUpdated(card: SrsCard, rating: ReviewRating): void
   onFinish(): void
 }
 
@@ -67,7 +68,10 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
   // 'error' cards are reviewed as their original exercise when it still exists in the content.
   const loc = card?.kind === 'error' && card.exerciseId ? findExercise(card.exerciseId) : undefined
   const exerciseMode = !!loc
-  const suggested: ReviewRating = exerciseMode && answer ? suggestRating(answer) : 'good'
+  // Dictionary cards answered by typing (RU → PT, listening, cloze) work like an exercise: task first, then ratings.
+  const typedWord = !exerciseMode && isTypedWordCard(card, settings)
+  const answerMode = exerciseMode || typedWord
+  const suggested: ReviewRating = answer ? (exerciseMode ? suggestRating(answer) : typedWord ? suggestWordRating(answer) : 'good') : 'good'
 
   const reveal = useCallback(() => {
     revealedAt.current = Date.now()
@@ -98,7 +102,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
       if (!next.length) setFinishedAt(now)
       repo
         .upsertCards([updated])
-        .then(() => onCardUpdated(updated))
+        .then(() => onCardUpdated(updated, rating))
         .catch((e: unknown) => setSaveError(e instanceof Error ? e.message : String(e)))
     },
     [card, revealed, queue, repo, reviewedIds, onCardUpdated],
@@ -112,8 +116,8 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
       if (e.metaKey || e.ctrlKey || e.altKey) return
       // Space / Enter on a focused button or link («Завершить», «Отмена», audio…) activates that control.
       if ((e.key === ' ' || e.key === 'Enter') && el?.closest('button, a')) return
-      // Before answering, the exercise owns the keyboard (1–9 options, Enter checks…).
-      if (exerciseMode && !revealed) return
+      // Before answering, the exercise / typed word owns the keyboard (1–9 options, Enter checks…).
+      if (answerMode && !revealed) return
       const confirm = e.key === ' ' || e.key === 'Enter'
       if (confirm && e.repeat) return
       if (!revealed && confirm) {
@@ -134,7 +138,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [revealed, rate, reveal, exerciseMode, suggested])
+  }, [revealed, rate, reveal, answerMode, suggested])
 
   useEffect(() => () => stopSpeaking(), [])
 
@@ -151,16 +155,16 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         const rowBox = actionsRef.current?.getBoundingClientRect()
         if (!cardBox || !rowBox) return
         const overlap = cardBox.bottom - rowBox.top + 12
-        const top = exerciseMode ? overlap : Math.min(overlap, Math.max(0, cardBox.top - 16))
+        const top = answerMode ? overlap : Math.min(overlap, Math.max(0, cardBox.top - 16))
         if (top > 0) window.scrollBy({ top, behavior: scrollBehavior() })
-      }, exerciseMode ? 60 : 260)
+      }, answerMode ? 60 : 260)
       return () => clearTimeout(timer)
     }
-    else if (card && !exerciseMode) revealRef.current?.focus({ preventScroll: true })
+    else if (card && !answerMode) revealRef.current?.focus({ preventScroll: true })
     else if (!card) summaryRef.current?.focus({ preventScroll: true })
     // `suggested` is fixed once revealed; re-running on it would only re-focus the same button.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [revealed, card, exerciseMode])
+  }, [revealed, card, answerMode])
 
   // «Завершить?» swaps the button for a confirm group: focus «Отмена» there, and return to «Завершить» on cancel.
   useEffect(() => {
@@ -250,7 +254,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         className={cx(
           'card-raised relative isolate select-text',
           // overflow-clip (not hidden) keeps the exercise's own sticky «Проверить» bar working on phones.
-          exerciseMode ? 'overflow-clip' : 'overflow-hidden',
+          answerMode ? 'overflow-clip' : 'overflow-hidden',
         )}
       >
         <AzulejoCorner size="sm" opacity={0.5} />
@@ -267,14 +271,23 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
             {revealed && <TopicRepeatLink topicId={card.topicId} />}
           </div>
         ) : (
-          <CardFace key={card.id + card.fsrs.reps} card={card} revealed={revealed} settings={settings} />
+          <CardFace
+            key={card.id + card.fsrs.reps}
+            card={card}
+            revealed={revealed}
+            settings={settings}
+            typed={typedWord}
+            answer={answer}
+            onAnswered={onAnswered}
+            focusControl={reviewedIds.size > 0}
+          />
         )}
       </div>
 
       {saveError && <p className="text-sm text-danger">Ошибка сохранения: {saveError}</p>}
 
       <div ref={actionsRef} className="sticky-actions">
-        {exerciseMode && !revealed ? null : !revealed ? (
+        {answerMode && !revealed ? null : !revealed ? (
           <button ref={revealRef} className="btn-primary w-full" onClick={reveal}>
             Показать ответ
             <kbd className="hidden rounded-md bg-on-brand/20 px-1.5 py-0.5 font-sans text-xs md:inline">пробел</kbd>
@@ -282,7 +295,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         ) : (
           <div
             role="group"
-            aria-label={exerciseMode ? 'Оцените, как далось задание' : 'Насколько легко вы вспомнили?'}
+            aria-label={answerMode ? 'Оцените, как далось задание' : 'Насколько легко вы вспомнили?'}
             className="grid grid-cols-4 gap-2 rounded-control outline-none"
           >
             {RATING_UI.map((r) => (
@@ -299,11 +312,11 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
                 className={cx(
                   'flex min-h-16 animate-enter flex-col items-center justify-center rounded-card border-[1.5px] px-1 py-2 transition-[background-color,border-color,transform] active:scale-[0.97]',
                   r.cls,
-                  exerciseMode && r.rating === suggested && 'ring-2 ring-ink ring-offset-2 ring-offset-bg',
+                  answerMode && r.rating === suggested && 'ring-2 ring-ink ring-offset-2 ring-offset-bg',
                 )}
               >
                 <span className="text-base font-bold">{r.label}</span>
-                {exerciseMode && r.rating === suggested && <span className="sr-only"> (предложено по ответу)</span>}
+                {answerMode && r.rating === suggested && <span className="sr-only"> (предложено по ответу)</span>}
                 <span className="text-xs tabular-nums">
                   <span className="sr-only">следующий показ через </span>
                   {intervals?.[r.rating] ?? formatInterval(0)}
@@ -314,14 +327,16 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
           </div>
         )}
       </div>
-      {exerciseMode && revealed && (
+      {answerMode && revealed && (
         <p className="text-center text-sm text-ink-muted">Оценка предложена по ответу — можно выбрать другую.</p>
       )}
       <p className="hidden text-center text-sm text-ink-muted md:block">
-        {exerciseMode
+        {answerMode
           ? revealed
             ? 'Клавиши: 1–4 — оценка, пробел / Enter — предложенная оценка'
-            : 'Клавиши: Enter — проверить, Shift+Enter — «Не знаю», ↑↓ / 1–9 — вариант ответа; затем 1–4 — оценка'
+            : typedWord
+              ? 'Клавиши: Enter — проверить, Shift+Enter — «Не знаю»; затем 1–4 — оценка'
+              : 'Клавиши: Enter — проверить, Shift+Enter — «Не знаю», ↑↓ / 1–9 — вариант ответа; затем 1–4 — оценка'
           : 'Клавиши: пробел — показать ответ, 1–4 — оценка (пробел / Enter после ответа = «Хорошо»)'}
       </p>
     </section>

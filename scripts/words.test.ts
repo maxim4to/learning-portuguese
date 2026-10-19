@@ -5,7 +5,9 @@
 import { describe, test } from 'node:test'
 import assert from 'node:assert/strict'
 import { parseExportBundle, type ExportBundle, type SrsCard, type WordEntry } from '../src/data/types.ts'
-import { schedule } from '../src/engine/fsrs.ts'
+import { createSrsCard, dueCards, schedule } from '../src/engine/fsrs.ts'
+import { clozeAnswers, clozeSource, splitByMask, wordAnswers } from '../src/features/words/cloze.ts'
+import { gradeAnswer } from '../src/engine/grading.ts'
 import { lookupOptions } from '../src/features/words/capture/options.ts'
 import {
   hasCyrillic,
@@ -31,8 +33,11 @@ import {
   parseWordCardId,
   planDeleteWords,
   planLegacyCleanup,
+  planApplyEnabledModes,
+  planCardReviewed,
   planMarkKnown,
   planSaveWords,
+  planUnlockNext,
   planUnmarkKnown,
   planUpdateWord,
   wordCardId,
@@ -481,5 +486,235 @@ describe('capture: tokenIndexAt + lookupOptions (expressions first)', () => {
     // multi-word selections resolve as a whole, without expression lookup around
     const sel = lookupOptions(lex, { form: 'se faz favor', multi: true })
     assert.equal(sel[0]?.entry.lemma, 'se faz favor')
+  })
+})
+
+// ─── Phase 3: learning mechanism ─────────────────────────────────────────────
+
+describe('dueCards: siblings, personal first, filter, daily limit', () => {
+  const NOW = new Date(2026, 0, 11, 12).getTime() // local noon: «today» is the same day in any time zone
+  /** Theme / example card (no wordId). */
+  const plain = (id: string, over: Partial<SrsCard['fsrs']> = {}, createdAt = T0): SrsCard => {
+    const c = createSrsCard({ id, kind: 'phrase', front: id, back: id }, createdAt)
+    return { ...c, fsrs: { ...c.fsrs, ...over } }
+  }
+  const w = (id: string) => entry({ id, lexId: id, lemma: id })
+  const at = (c: SrsCard, createdAt: number) => ({ ...c, createdAt })
+  const due = (over: Partial<SrsCard['fsrs']> = {}) => ({ state: 2 as const, stability: 5, reps: 3, due: NOW - DAY, last_review: NOW - 6 * DAY, ...over })
+  const ids = (cs: SrsCard[]) => cs.map((c) => c.id)
+
+  test('one card per word: the most overdue review; new sibling buried', () => {
+    const a = w('a')
+    const rec = card(a, 'recognize', due({ due: NOW - 2 * DAY }))
+    const prod = card(a, 'produce', due({ due: NOW - 3 * DAY }))
+    const cloze = card(a, 'listen')
+    const out = dueCards([rec, prod, cloze], NOW)
+    assert.deepEqual(ids(out), [prod.id])
+    // without burying: everything due
+    assert.equal(dueCards([rec, prod, cloze], NOW, { burySiblings: false }).length, 3)
+  })
+
+  test('a sibling reviewed today buries the word\'s other review and new cards; learning cards always come', () => {
+    const a = w('a')
+    const recLearning = card(a, 'recognize', { state: 1, learning_steps: 1, reps: 1, due: NOW - 60_000, last_review: NOW - 11 * 60_000 })
+    const prod = card(a, 'produce', due())
+    const listen = card(a, 'listen')
+    assert.deepEqual(ids(dueCards([recLearning, prod, listen], NOW)), [recLearning.id])
+    // recognize reviewed earlier today and not due again: produce (review) and listen (new) still wait for tomorrow
+    const recDone = card(a, 'recognize', due({ due: NOW + 3 * DAY, last_review: NOW - 60 * 60_000 }))
+    assert.deepEqual(ids(dueCards([recDone, prod, listen], NOW)), [])
+    // the next day they are back (one of them)
+    assert.deepEqual(ids(dueCards([recDone, prod, listen], NOW + DAY)), [prod.id])
+  })
+
+  test('new cards: personal first within the daily limit; buried siblings don\'t use the allowance', () => {
+    const themeOld = plain('ph:x:0', {}, T0 - 5 * DAY)
+    const themeOld2 = plain('ph:x:1', {}, T0 - 4 * DAY)
+    const a = w('a')
+    const b = w('b')
+    const aRec = at(card(a, 'recognize'), T0)
+    const aProd = at(card(a, 'produce'), T0 + 1)
+    const bRec = at(card(b, 'recognize'), T0 + 2)
+    const all = [themeOld, themeOld2, aRec, aProd, bRec]
+    // limit 3: a (one card) + b, then the oldest theme card
+    assert.deepEqual(ids(dueCards(all, NOW, { newPerDay: 3 })), [aRec.id, bRec.id, themeOld.id])
+    // 2 already seen today → 1 left: the oldest personal card
+    assert.deepEqual(ids(dueCards(all, NOW, { newPerDay: 3, newSeenToday: 2 })), [aRec.id])
+    // preferPersonal off: oldest first (theme cards were created earlier)
+    assert.deepEqual(ids(dueCards(all, NOW, { newPerDay: 3, preferPersonal: false })), [themeOld.id, themeOld2.id, aRec.id])
+    // limit reached
+    assert.deepEqual(ids(dueCards(all, NOW, { newPerDay: 3, newSeenToday: 3 })), [])
+  })
+
+  test('reviews keep priority; new cards interleave every 4th; a word with a due review gives no new card', () => {
+    const reviews = [0, 1, 2, 3, 4].map((i) => plain(`r${i}`, due({ due: NOW - (10 - i) * 60_000 })))
+    const a = w('a')
+    const aRec = card(a, 'recognize', due())
+    const aProd = card(a, 'produce')
+    const b = w('b')
+    const bRec = card(b, 'recognize')
+    const out = dueCards([...reviews, aRec, aProd, bRec], NOW, { newPerDay: 10 })
+    assert.equal(out.length, 7)
+    assert.equal(out[3].id, bRec.id, 'new card at the 4th position')
+    assert.ok(!out.some((c) => c.id === aProd.id), 'produce buried behind the due recognize')
+  })
+
+  test('filter: word-only review (siblings still buried)', () => {
+    const a = w('a')
+    const theme = plain('ph:x:0', due())
+    const rec = card(a, 'recognize', due())
+    const prod = card(a, 'produce', due({ due: NOW - 5 * DAY }))
+    const out = dueCards([theme, rec, prod], NOW, { filter: (c) => !!c.wordId })
+    assert.deepEqual(ids(out), [prod.id])
+  })
+
+  test('suspended cards never come', () => {
+    const a = w('a')
+    assert.deepEqual(dueCards([card(a, 'recognize', due(), { suspended: true })], NOW), [])
+  })
+})
+
+describe('staged unlock: unlockNext / onCardReviewed', () => {
+  const withSentence = entry({ sources: [{ src: 'vocab:saude', form: 'saúde', sentence: 'A saúde é o mais importante.', at: T0 }] })
+  const state = (cards: SrsCard[], e = withSentence): WordsState => ({ words: [e], cards })
+  const modes = (p: { write: { cards?: SrsCard[] } }) => (p.write.cards ?? []).map((c) => c.mode)
+
+  test('first Good / Easy of recognize unlocks produce; Again / Hard do not', () => {
+    const fresh = card(withSentence, 'recognize')
+    const good = schedule(fresh, 'good', T0 + 1000)
+    assert.deepEqual(modes(planCardReviewed(state([fresh]), good, 'good')), ['produce'])
+    const again = schedule(fresh, 'again', T0 + 1000)
+    assert.deepEqual(modes(planCardReviewed(state([fresh]), again, 'again')), [])
+    const hard = schedule(fresh, 'hard', T0 + 1000)
+    assert.deepEqual(modes(planCardReviewed(state([fresh]), hard, 'hard')), [])
+    // Easy on a new card goes straight to Review with stability > 4 d: everything at once
+    const easy = schedule(fresh, 'easy', T0 + 1000)
+    assert.deepEqual(modes(planCardReviewed(state([fresh]), easy, 'easy')), ['produce', 'cloze', 'listen'])
+  })
+
+  test('cloze and listen once recognize stability ≥ 4 days; existing cards are not recreated', () => {
+    const prod = card(withSentence, 'produce')
+    const r3 = card(withSentence, 'recognize', { state: 2, stability: 3.9, reps: 3 })
+    assert.deepEqual(modes(planUnlockNext(state([r3, prod]), withSentence.id)), [])
+    const r4 = card(withSentence, 'recognize', { state: 2, stability: 4, reps: 4 })
+    assert.deepEqual(modes(planCardReviewed(state([r3, prod]), r4, 'good')), ['cloze', 'listen'])
+    const cloze = card(withSentence, 'cloze')
+    assert.deepEqual(modes(planUnlockNext(state([r4, prod, cloze]), withSentence.id)), ['listen'])
+  })
+
+  test('respects settings, entry.modes, known mark, audio and the sentence', () => {
+    const r = card(withSentence, 'recognize', { state: 2, stability: 10, reps: 4 })
+    assert.deepEqual(modes(planUnlockNext(state([r]), withSentence.id, { enabledModes: ['recognize', 'cloze'] })), ['cloze'])
+    assert.deepEqual(modes(planUnlockNext(state([r], { ...withSentence, modes: ['recognize', 'produce'] }), withSentence.id)), ['produce'])
+    assert.deepEqual(modes(planUnlockNext(state([r], { ...withSentence, mark: 'known' }), withSentence.id)), [])
+    assert.deepEqual(modes(planUnlockNext(state([r]), withSentence.id, { canListen: false })), ['produce', 'cloze'])
+    assert.deepEqual(modes(planUnlockNext(state([r]), withSentence.id, { canListen: () => false })), ['produce', 'cloze'])
+    // no sentence containing the form → no cloze
+    const noSentence = entry({ sources: [{ src: 'manual', form: 'saúde', sentence: 'Outra frase qualquer.', at: T0 }] })
+    assert.deepEqual(modes(planUnlockNext(state([r], noSentence), noSentence.id)), ['produce', 'listen'])
+  })
+
+  test('non-recognize or non-dictionary cards unlock nothing', () => {
+    const p = schedule(card(withSentence, 'produce'), 'easy', T0)
+    assert.deepEqual(planCardReviewed(state([p]), p, 'easy').write, {})
+    const other = schedule(createSrsCard({ id: 'ph:x:0', kind: 'phrase', front: 'a', back: 'b' }, T0), 'easy', T0)
+    assert.deepEqual(planCardReviewed(state([]), other, 'easy').write, {})
+  })
+})
+
+describe('settings: switching modes off suspends, on resumes', () => {
+  const e = entry({ sources: [{ src: 'vocab:saude', form: 'saúde', sentence: 'A saúde é tudo.', at: T0 }] })
+  const r = card(e, 'recognize', { state: 2, stability: 10, reps: 5 })
+  const l = card(e, 'listen', { state: 2, stability: 6, reps: 2 })
+  const st: WordsState = { words: [e], cards: [r, l] }
+
+  test('off: listen suspended with FSRS kept; other modes untouched', () => {
+    const p = planApplyEnabledModes(st, ['recognize', 'produce', 'cloze'], ['listen'])
+    assert.deepEqual(p.write.cards?.map((c) => [c.mode, c.suspended]), [['listen', true]])
+    assert.deepEqual(p.write.cards?.[0].fsrs, l.fsrs)
+  })
+
+  test('on: resumed, and ready cards of that mode created', () => {
+    const off = applyWrite(st, planApplyEnabledModes(st, ['recognize', 'produce'], ['listen', 'cloze']).write)
+    assert.ok(off.cards.find((c) => c.mode === 'listen')?.suspended)
+    const on = planApplyEnabledModes(off, ['recognize', 'produce', 'listen', 'cloze'], ['listen', 'cloze'])
+    const byMode = new Map(on.write.cards?.map((c) => [c.mode, c]))
+    assert.equal(byMode.get('listen')?.suspended, undefined)
+    assert.equal(byMode.get('listen')?.fsrs.stability, 6)
+    assert.equal(byMode.get('cloze')?.fsrs.state, 0, 'cloze became ready while off → created now')
+    assert.ok(!byMode.has('produce'), 'modes that were not toggled are not created here')
+  })
+
+  test('known words stay suspended when a mode is switched back on', () => {
+    const known = { words: [{ ...e, mark: 'known' as const }], cards: [{ ...l, suspended: true }] }
+    assert.deepEqual(planApplyEnabledModes(known, ['recognize', 'produce', 'listen', 'cloze'], ['listen']).write, {})
+  })
+})
+
+describe('status transitions through reviews', () => {
+  const e = entry()
+  test('new → learning → known → (lapse) learning', () => {
+    let r = card(e, 'recognize')
+    let p = card(e, 'produce')
+    assert.equal(wordStatus(e, [r]), 'new')
+    r = schedule(r, 'good', T0 + 1000)
+    assert.equal(wordStatus(e, [r, p]), 'learning', 'one reviewed card is enough for learning')
+    r = card(e, 'recognize', { state: 2, stability: 40, reps: 8 })
+    p = card(e, 'produce', { state: 2, stability: 25, difficulty: 5, reps: 6, due: T0 + 30 * DAY, last_review: T0 })
+    assert.equal(wordStatus(e, [r, p]), 'known')
+    const lapsed = schedule(p, 'again', T0 + 30 * DAY)
+    assert.equal(lapsed.fsrs.state, 3)
+    assert.equal(wordStatus(e, [r, lapsed]), 'learning')
+    // relearned and stable again → known
+    assert.equal(wordStatus(e, [r, { ...lapsed, fsrs: { ...lapsed.fsrs, state: 2, stability: 22 } }]), 'known')
+  })
+})
+
+describe('cloze mask and answers', () => {
+  test('clitics, case, typographic hyphens, several occurrences', () => {
+    assert.equal(maskForm('Levanto‑me às sete. Depois levanto-me outra vez.', 'levanto-me'), '___ às sete. Depois ___ outra vez.')
+    assert.equal(maskForm('Levanto-me cedo.', 'levanto'), '___-me cedo.')
+    assert.equal(maskForm('É a SAÚDE que importa, a saúde!', 'saúde'), 'É a ___ que importa, a ___!')
+    assert.equal(maskForm('Um copo d’água.', "d'água"), 'Um copo ___.')
+    assert.equal(maskForm('O casaco da casa', 'casa'), 'O casaco da ___')
+    assert.equal(maskForm('Nada aqui', 'casa'), 'Nada aqui')
+  })
+
+  test('splitByMask marks the masked forms in the original sentence', () => {
+    const s = 'Levanto‑me cedo e levanto-me bem.'
+    assert.deepEqual(splitByMask(s, maskForm(s, 'levanto-me')), [
+      { text: 'Levanto‑me', form: true },
+      { text: ' cedo e ' },
+      { text: 'levanto-me', form: true },
+      { text: ' bem.' },
+    ])
+    assert.deepEqual(splitByMask('Nada', 'Nada'), [{ text: 'Nada' }])
+  })
+
+  test('clozeSource: newest sentence that contains the form, lemma as a fallback', () => {
+    const e = entry({
+      lemma: 'levantar-se',
+      pos: 'verb',
+      gender: undefined,
+      sources: [
+        { src: 'a', form: 'levanto-me', sentence: 'Levanto-me cedo.', at: T0 },
+        { src: 'b', form: 'levantas-te', sentence: 'Frase sem a forma.', at: T0 + 1 },
+      ],
+    })
+    assert.deepEqual(clozeSource(e)?.masked, '___ cedo.')
+    assert.equal(clozeSource({ ...e, sources: [{ src: 'c', form: 'x', sentence: 'Quero levantar-se.', at: T0 }] })?.form, 'levantar-se')
+    assert.equal(clozeSource({ ...e, sources: [] }), undefined)
+  })
+
+  test('accepted answers: form (+ article for a singular noun); typed word with optional article', () => {
+    assert.deepEqual(clozeAnswers(entry(), 'saúde'), ['saúde', 'a saúde'])
+    assert.deepEqual(clozeAnswers(entry({ lemma: 'pão', gender: 'm' }), 'pães'), ['pães'])
+    assert.deepEqual(clozeAnswers({ lemma: 'levantar-se', pos: 'verb' }, 'Levanto-me'), ['Levanto-me'])
+    assert.deepEqual(wordAnswers(entry()), ['saúde', 'a saúde'])
+    assert.deepEqual(wordAnswers({ lemma: 'utente', pos: 'noun', gender: 'mf' }), ['utente', 'o utente', 'a utente'])
+    // graded by the existing engine: case-insensitive, accents reported separately
+    assert.equal(gradeAnswer('A Saúde', wordAnswers(entry())).verdict, 'correct')
+    assert.equal(gradeAnswer('saude', wordAnswers(entry())).verdict, 'accents')
+    assert.equal(gradeAnswer('levanto-me', clozeAnswers({ lemma: 'levantar-se', pos: 'verb' }, 'Levanto-me')).verdict, 'correct')
   })
 })
