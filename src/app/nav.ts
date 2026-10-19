@@ -6,6 +6,8 @@ export interface NavItem {
    * their own routes. `to` itself always counts.
    */
   match?: string[]
+  /** Shorter label for the phone tab bar (each cell is ~72px wide at 360). */
+  short?: string
 }
 
 /**
@@ -19,7 +21,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { to: '/', label: 'Главная', match: ['/tutor'] },
   { to: '/syllabus', label: 'Курс', match: ['/topic', '/diagnostic'] },
-  { to: '/review', label: 'Повторение' },
+  { to: '/review', label: 'Повторение', short: 'Карточки' },
   { to: '/situations', label: 'Практика', match: ['/situation', '/library'] },
   { to: '/settings', label: 'Настройки' },
 ]

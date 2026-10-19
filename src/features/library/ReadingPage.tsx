@@ -93,7 +93,7 @@ function ReadingView({ text }: { text: ReadingText }) {
         </button>
         {text.glossary.length > 0 && (
           <span className="text-sm text-ink-muted">
-            <span className="border-b-2 border-dotted border-azulejo">Подчёркнутые</span> слова — нажмите для перевода
+            Нажмите на <span className="border-b-2 border-dotted border-azulejo">подчёркнутое</span> слово — перевод
           </span>
         )}
         <a href="#tutor" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold sm:ml-auto">

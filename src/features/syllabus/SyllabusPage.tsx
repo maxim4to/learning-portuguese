@@ -63,7 +63,7 @@ export function SyllabusPage() {
         >
           <span
             aria-hidden
-            className={`grid size-14 shrink-0 place-items-center rounded-full ${next.reason === 'next' ? 'bg-brand text-on-brand' : 'bg-terracotta-fill text-white'}`}
+            className={`grid size-14 shrink-0 place-items-center rounded-full ${next.reason === 'next' ? 'bg-brand text-on-brand' : 'bg-terracotta-fill text-on-terracotta'}`}
           >
             {next.reason === 'next' ? <BookOpen className="size-6" /> : <Target className="size-6" />}
           </span>
@@ -112,7 +112,7 @@ function LevelHeader({ level, modules, progress }: { level: Level; modules: Syll
   const ids = modules.flatMap((m) => m.topics)
   const c = countStatuses(ids, progress)
   return (
-    <div className="sticky top-(--sticky-top) z-10 -mx-4 flex items-center gap-4 bg-bg px-4 pt-2 pb-3 md:-mx-2 md:px-2">
+    <div className="z-10 flex items-center gap-4 bg-bg pt-2 pb-3 md:sticky md:top-(--sticky-top) md:-mx-2 md:px-2">
       <Illustration name={levelArt(level)} sizes="56px" className="size-12 shrink-0 rounded-2xl md:size-14" />
       <h2 className="shrink-0 font-black">{level}</h2>
       {ids.length > 0 && (
@@ -146,7 +146,7 @@ function ModuleCard({ mod, progress }: { mod: SyllabusModule; progress: Map<stri
         </span>
       </div>
       {/* Two columns from lg (course order runs down the first, then the second), so rows use the container width. */}
-      <ul className="mx-3 pb-2 sm:mx-4 lg:columns-2 lg:gap-x-8 [&>li]:break-inside-avoid [&>li]:border-b-[1.5px] [&>li]:border-dotted [&>li]:border-line-strong [&>li:last-child]:border-b-0">
+      <ul className="mx-3 pb-2 sm:mx-4 lg:columns-2 lg:gap-x-8 [&>li]:break-inside-avoid">
         {mod.topics.map((tid) => (
           <TopicRow key={tid} id={tid} progress={progress} />
         ))}
@@ -178,7 +178,7 @@ function TopicRow({ id, progress }: { id: string; progress: Map<string, TopicPro
 
   return (
     <li>
-      <Link to={`/topic/${t.id}`} className="group flex min-h-16 items-center gap-3 rounded-control px-2 py-3 text-ink no-underline transition-colors hover:bg-surface-2">
+      <Link to={`/topic/${t.id}`} className="group flex min-h-16 items-center gap-3 rounded-control px-2 py-3 text-ink no-underline transition-[background-color,transform] duration-150 hover:bg-surface-2 active:scale-[0.99] motion-reduce:active:scale-100">
         <i className={`size-3 shrink-0 rounded-full ${meta.dot}`} />
         <span className="min-w-0 flex-1">
           <span className="block leading-snug font-semibold">{t.title}</span>

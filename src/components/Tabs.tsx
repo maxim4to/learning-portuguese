@@ -65,7 +65,8 @@ export function Tabs<T extends string>({
         role="tablist"
         aria-label={label}
         onKeyDown={onKey}
-        className="scroll-fade-x flex gap-1 overflow-x-auto rounded-pill bg-surface p-1"
+        // Phones: the tabs wrap onto a second row (nothing hidden behind a fade); from md one pill that hugs its tabs.
+        className="flex flex-wrap gap-1 rounded-[1.375rem] bg-surface p-1 md:scroll-fade-x md:w-fit md:max-w-full md:flex-nowrap md:overflow-x-auto md:rounded-pill"
       >
         {items.map((t) => {
           const on = t.value === value
@@ -80,7 +81,7 @@ export function Tabs<T extends string>({
               tabIndex={on ? 0 : -1}
               onClick={() => onChange(t.value)}
               className={cx(
-                'inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-pill px-4 text-sm font-semibold whitespace-nowrap transition-[background-color,color] duration-150 lg:px-5',
+                'inline-flex min-h-11 flex-auto items-center justify-center gap-1.5 rounded-pill px-4 active:scale-[0.97] motion-reduce:active:scale-100 md:flex-none md:shrink-0 text-sm font-semibold whitespace-nowrap transition-[background-color,color,transform] duration-150 lg:px-5',
                 on ? 'bg-ink text-surface' : 'text-ink-muted hover:bg-surface-2 hover:text-ink',
               )}
             >

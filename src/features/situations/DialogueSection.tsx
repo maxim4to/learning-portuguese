@@ -212,7 +212,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
                 aria-label={isB ? 'Собеседник B' : 'Собеседник A'}
                 className={cx(
                   'mb-1 inline-flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-bold',
-                  isB ? 'bg-terracotta-soft text-terracotta' : 'bg-azulejo-soft text-azulejo-ink',
+                  isB ? 'bg-brand-soft text-brand-ink' : 'bg-azulejo-soft text-azulejo-ink',
                 )}
               >
                 {line.speaker}

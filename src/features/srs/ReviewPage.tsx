@@ -218,13 +218,13 @@ function DeckPanel({
     ...LEVELS.map((l) => ({ key: l, label: l })),
     ...(byLevel.has('none') ? [{ key: 'none' as const, label: 'Без уровня' }] : []),
   ]
-  const row = 'flex items-baseline justify-between gap-3 py-2'
+  const row = 'flex items-baseline justify-between gap-3 py-1.5'
   const num = 'font-semibold text-ink tabular-nums'
 
   return (
     <aside aria-labelledby="deck-title" className={cx('card flex-col gap-4', className ?? 'flex')}>
       <h2 id="deck-title">Колода</h2>
-      <dl className="divide-y divide-line text-sm text-ink-muted">
+      <dl className="text-sm text-ink-muted">
         <div className={row}>
           <dt>К повторению сейчас</dt>
           <dd className={num}>{due.length}</dd>
@@ -246,7 +246,7 @@ function DeckPanel({
       </dl>
 
       <div className="space-y-1">
-        <h3 className="text-sm text-ink-muted">По уровням</h3>
+        <h3 className="text-sm font-semibold text-ink-muted">По уровням</h3>
         <table className="w-full text-sm">
           <thead className="sr-only">
             <tr>
@@ -255,14 +255,14 @@ function DeckPanel({
               <th>К повторению</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-line">
+          <tbody>
             {levelRows.map(({ key, label }) => {
               const r = byLevel.get(key) ?? { total: 0, due: 0 }
               return (
                 <tr key={key}>
-                  <td className="py-2 font-semibold">{label}</td>
-                  <td className="py-2 text-right text-ink-muted tabular-nums">{plural(r.total, 'карточка', 'карточки', 'карточек')}</td>
-                  <td className={cx('w-24 py-2 text-right tabular-nums', r.due ? 'font-semibold text-ink' : 'text-ink-muted')}>
+                  <td className="py-1.5 font-semibold">{label}</td>
+                  <td className="py-1.5 text-right text-ink-muted tabular-nums">{plural(r.total, 'карточка', 'карточки', 'карточек')}</td>
+                  <td className={cx('w-24 py-1.5 text-right tabular-nums', r.due ? 'font-semibold text-ink' : 'text-ink-muted')}>
                     {r.due ? `${r.due} сейчас` : '—'}
                   </td>
                 </tr>
@@ -272,7 +272,7 @@ function DeckPanel({
         </table>
       </div>
 
-      <p className="rule-dotted pt-3 text-sm text-ink-muted">
+      <p className="rounded-control bg-surface-2 p-4 text-sm text-ink-muted">
         Всего {plural(cards.length, 'карточка', 'карточки', 'карточек')}
         {suspended > 0 && `, приостановлено ${suspended}`}. Новых в день — не больше {newLimit}, лимит меняется в настройках.
       </p>

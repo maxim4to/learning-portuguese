@@ -1,20 +1,19 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
-  BookOpen,
   ChevronRight,
   ClipboardCheck,
   Flame,
   Layers,
+  MessagesSquare,
+  Map as MapIcon,
   Sparkles,
-  Target,
 } from 'lucide-react'
 import type { ErrorEntry } from '@/data/types.ts'
+import { listSituations } from '@/content'
 import { dueCards, isNewCard } from '@/engine/fsrs'
 import { ButtonLink } from '@/components/Button'
-import { AzulejoCorner } from '@/components/Card'
-import { DotGrid } from '@/components/DotGrid'
 import { Illustration } from '@/components/Illustration'
 import { cx } from '@/components/cx'
 import { EmptyState, ErrorState, PageSkeleton } from '@/components/EmptyState'
@@ -77,6 +76,21 @@ export function DashboardPage() {
         ? `Повторение готово. Дальше по курсу: ${first.topic.title}.`
         : 'На сегодня всё сделано.'
 
+  const diagCard = (lastDiag === undefined || diagStale) && (
+    <EntryCard
+      to="/diagnostic"
+      icon={<ClipboardCheck />}
+      title={lastDiag === undefined ? 'Пройдите диагностику' : 'Пора сверить уровень'}
+      text={
+        lastDiag === undefined
+          ? '≈20 минут — и курс подскажет, с чего начать.'
+          : `Последняя диагностика ${relativeDay(lastDiag, now)}. Пройдите заново и сравните.`
+      }
+    />
+  )
+  const topicsTotal = view.levels.reduce((n, l) => n + l.total, 0)
+  const situationsTotal = listSituations().length
+
   return (
     <div className="page">
       <header className="flex flex-wrap items-end justify-between gap-3">
@@ -88,82 +102,81 @@ export function DashboardPage() {
       </header>
 
       {firstRun ? (
-        <Onboarding firstTopic={first?.topic} />
-      ) : (
-        <TodayHero
-          due={view.due}
-          dueNew={view.dueNew}
-          doneToday={view.doneToday}
-          hasCards={cards.length > 0}
-          suggestions={view.suggestions}
-        />
-      )}
-
-      <TutorCard daily={view.daily} />
-
-      {!firstRun && (
         <>
-          {(lastDiag === undefined || diagStale) && (
-            <Link to="/diagnostic" className="card card-link group flex items-center gap-3">
-              <span aria-hidden className="grid size-11 shrink-0 place-items-center rounded-full bg-sun-soft text-sun">
-                <ClipboardCheck className="size-5" />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block font-display text-h2">
-                  {lastDiag === undefined ? 'Пройдите диагностику' : 'Пора сверить уровень'}
-                </span>
-                <span className="block text-sm text-ink-muted">
-                  {lastDiag === undefined
-                    ? '≈20 минут — и курс подскажет, с чего начать.'
-                    : `Последняя диагностика ${relativeDay(lastDiag, now)}. Пройдите заново и сравните.`}
-                </span>
-              </span>
-              <ChevronRight aria-hidden className="size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          )}
+          <Onboarding firstTopic={first?.topic} />
+          <section aria-label="Ещё в приложении" className="grid gap-(--gutter) md:grid-cols-2">
+            <TutorCard daily={view.daily} />
+            <EntryCard
+              to="/syllabus"
+              icon={<MapIcon />}
+              title="Карта курса"
+              text={`${plural(topicsTotal, 'тема', 'темы', 'тем')} от A1 до B2: правила, примеры, упражнения и мини-тесты.`}
+            />
+          </section>
+        </>
+      ) : (
+        <>
+          <TodayHero
+            due={view.due}
+            dueNew={view.dueNew}
+            doneToday={view.doneToday}
+            hasCards={cards.length > 0}
+            suggestions={view.suggestions}
+          />
 
-          <div className="grid grid-cols-1 gap-(--gutter) md:grid-cols-2">
-            <section className="card space-y-4" aria-labelledby="dash-week">
-              <h2 id="dash-week">
+          {/* Progress: one card, two measures side by side (levels · the week). */}
+          <section className="card grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-12" aria-labelledby="dash-levels">
+            <div className="space-y-4">
+              <div className="flex min-h-11 items-center justify-between gap-3">
+                <h2 id="dash-levels">Прогресс по уровням</h2>
+                <Link to="/syllabus" className="inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-semibold whitespace-nowrap">
+                  Карта курса <ArrowRight aria-hidden className="size-4" />
+                </Link>
+              </div>
+              <div className="space-y-3">
+                {view.levels.map((l) => (
+                  <LevelBar key={l.level} stats={l} />
+                ))}
+              </div>
+              <Legend />
+            </div>
+            <div className="space-y-4" aria-labelledby="dash-week">
+              <h2 id="dash-week" className="flex min-h-11 items-center">
                 Активность за неделю
               </h2>
               <WeekBars week={view.week} />
-            </section>
-
-            <section className="card space-y-4" aria-labelledby="dash-errors">
-              <h2 id="dash-errors">
-                Последние ошибки
-              </h2>
-              {errors.length === 0 ? (
-                <EmptyState
-                  compact
-                  art="empty-errors"
-                  title="Ошибок пока нет"
-                  text="Сюда попадут ошибки из упражнений — их удобно повторять карточками."
-                />
-              ) : (
-                <ul className="divide-y-[1.5px] divide-dotted divide-line-strong">
-                  {errors.slice(0, 4).map((e) => (
-                    <ErrorRow key={e.id} e={e} now={now} />
-                  ))}
-                </ul>
-              )}
-            </section>
-          </div>
-
-          <section className="card space-y-4" aria-labelledby="dash-levels">
-            <div className="flex items-center justify-between gap-3">
-              <h2 id="dash-levels">
-                Прогресс по уровням
-              </h2>
-              <Link to="/syllabus" className="inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-semibold whitespace-nowrap">
-                Карта курса <ArrowRight aria-hidden className="size-4" />
-              </Link>
             </div>
-            {view.levels.map((l) => (
-              <LevelBar key={l.level} stats={l} />
-            ))}
-            <Legend />
+          </section>
+
+          <section className="card space-y-4" aria-labelledby="dash-errors">
+            <h2 id="dash-errors">Последние ошибки</h2>
+            {errors.length === 0 ? (
+              <EmptyState
+                compact
+                art="empty-errors"
+                title="Ошибок пока нет"
+                text="Сюда попадут ошибки из упражнений — их удобно повторять карточками."
+              />
+            ) : (
+              <ul className="grid gap-2 md:grid-cols-[repeat(auto-fit,minmax(16rem,1fr))]">
+                {errors.slice(0, 3).map((e) => (
+                  <ErrorRow key={e.id} e={e} now={now} />
+                ))}
+              </ul>
+            )}
+          </section>
+
+          {/* Secondary entries: the agent, then the diagnostic when it is due (otherwise the situations). */}
+          <section aria-label="Ещё на сегодня" className="grid gap-(--gutter) md:grid-cols-2">
+            <TutorCard daily={view.daily} />
+            {diagCard || (
+              <EntryCard
+                to="/situations"
+                icon={<MessagesSquare />}
+                title="Ситуации"
+                text={`${plural(situationsTotal, 'бытовая сцена', 'бытовые сцены', 'бытовых сцен')}: диалоги, фразы и письма для жизни в Португалии.`}
+              />
+            )}
           </section>
         </>
       )}
@@ -171,16 +184,31 @@ export function DashboardPage() {
   )
 }
 
+/** A quiet secondary entry: neutral icon disc, title, one line, chevron. */
+function EntryCard({ to, icon, title, text, children }: { to: string; icon: ReactNode; title: string; text: string; children?: ReactNode }) {
+  return (
+    <Link to={to} className="card card-link group flex items-center gap-4">
+      <span aria-hidden className="grid size-11 shrink-0 place-items-center self-start rounded-full bg-surface-2 text-ink [&_svg]:size-5">
+        {icon}
+      </span>
+      <span className="min-w-0 flex-1 space-y-1">
+        <span className="block font-display text-h2">{title}</span>
+        {children}
+        <span className="block text-sm text-ink-muted">{text}</span>
+      </span>
+      <ChevronRight aria-hidden className="size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" />
+    </Link>
+  )
+}
+
 /** First visit: one clear recommendation instead of empty widgets (audit §3.2). */
 function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string } }) {
   return (
     <section className="card-raised relative isolate grid gap-6 overflow-hidden md:grid-cols-[1fr_minmax(0,0.9fr)] md:items-center">
-      <Illustration
-        name="hero"
-        eager
-        sizes="(min-width: 1280px) 520px, (min-width: 768px) 45vw, 100vw"
-        className="w-full rounded-card md:order-last"
-      />
+      {/* Phones get a wide street crop (the tram and the roofs), so the actions stay on the first screen. */}
+      <div className="relative aspect-[2/1] overflow-hidden rounded-card md:order-last md:aspect-[1264/848]">
+        <Illustration name="hero" eager cover sizes="(min-width: 1280px) 520px, (min-width: 768px) 45vw, 100vw" className="object-[70%_62%]" />
+      </div>
       <div className="space-y-6">
       <div className="max-w-[46ch] space-y-3">
         <h2>
@@ -206,7 +234,7 @@ function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string }
   )
 }
 
-/** «Сегодня»: ring of the day's goal + one primary action; other suggestions as secondary rows. */
+/** «Сегодня»: the day's one primary action, then the next topics; the poster beside it carries the day's goal ring. */
 function TodayHero({
   due,
   dueNew,
@@ -226,90 +254,76 @@ function TodayHero({
   const rows = due === 0 ? suggestions.slice(1) : suggestions
 
   return (
-    <section className="grid gap-(--gutter) md:grid-cols-[1.35fr_1fr]" aria-labelledby="dash-today">
-      <div data-halftone-surface="" className="card-raised relative isolate overflow-hidden">
-        <AzulejoCorner opacity={0.8} />
+    <section className="grid gap-(--gutter) lg:grid-cols-3" aria-labelledby="dash-today">
+      <div className="card-raised flex flex-col gap-6 lg:col-span-2">
         <h2 id="dash-today" className="sr-only">
           План на сегодня
         </h2>
-        {due > 0 ? (
-          <>
-            <p className="flex items-baseline gap-2.5">
-              <span className="font-display text-h1 leading-none font-black tabular-nums">{due}</span>
-              <span className="font-display text-h2">
-                {plural(due, 'карточка', 'карточки', 'карточек').replace(/^\d+\s/, '')} к повторению
-              </span>
-            </p>
-            <p className="mt-4 text-sm text-ink-muted">
-              {dueNew ? (dueNew === due ? 'Все новые' : `Из них новых: ${dueNew}`) : 'Только повторение'} · ≈
-              {Math.max(1, Math.round(due * 0.25))} мин
-            </p>
-          </>
-        ) : primaryTopic ? (
-          <>
-            <p className="font-display text-h2">
-              {hasCards ? 'Повторение на сегодня готово' : 'Продолжим курс'}
-            </p>
-            <p className="mt-3 text-sm text-ink-muted">
-              {primaryTopic.reason === 'next' ? 'Следующая тема' : 'Подтянуть'}: {primaryTopic.topic.title}
-            </p>
-          </>
-        ) : (
-          <p className="font-display text-h2">На сегодня всё — parabéns!</p>
-        )}
-
-        <div className="mt-6">
+        <div className="space-y-2">
           {due > 0 ? (
-            <ButtonLink to="/review" block className="sm:w-auto" icon={<Layers />}>
-              Начать повторение
-            </ButtonLink>
+            <>
+              <p className="flex items-baseline gap-2.5">
+                <span className="font-display text-h1 leading-none font-black tabular-nums">{due}</span>
+                <span className="font-display text-h2">
+                  {plural(due, 'карточка', 'карточки', 'карточек').replace(/^\d+\s/, '')} к повторению
+                </span>
+              </p>
+              <p className="text-sm text-ink-muted">
+                {dueNew ? (dueNew === due ? 'Все новые' : `Из них новых: ${dueNew}`) : 'Только повторение'} · ≈
+                {Math.max(1, Math.round(due * 0.25))} мин
+              </p>
+            </>
           ) : primaryTopic ? (
-            <ButtonLink to={`/topic/${primaryTopic.topic.id}`} block className="sm:w-auto" iconEnd={<ArrowRight />}>
-              {primaryTopic.reason === 'next' ? 'Открыть тему' : 'Повторить тему'}
-            </ButtonLink>
-          ) : null}
+            <>
+              <p className="font-display text-h2">{hasCards ? 'Повторение на сегодня готово' : 'Продолжим курс'}</p>
+              <p className="text-sm text-ink-muted">
+                {primaryTopic.reason === 'next' ? 'Следующая тема' : 'Подтянуть'}: {primaryTopic.topic.title}
+              </p>
+            </>
+          ) : (
+            <p className="font-display text-h2">На сегодня всё — parabéns!</p>
+          )}
         </div>
-      {rows.length > 0 && (
-        <ul className="rule-dotted mt-8 space-y-1 pt-4">
-          {rows.map(({ topic, reason, progress: p }) => (
-            <li key={topic.id}>
-              <Link
-                to={`/topic/${topic.id}`}
-                className="group -mx-2 flex min-h-14 items-center gap-3 rounded-control px-2 py-2 text-ink no-underline transition-colors hover:bg-surface-2"
-              >
-                <span
-                  aria-hidden
-                  className={cx(
-                    'grid size-11 shrink-0 place-items-center rounded-full',
-                    reason === 'next' ? 'bg-brand text-on-brand' : 'bg-terracotta-soft text-terracotta',
-                  )}
-                >
-                  {reason === 'next' ? <BookOpen className="size-5" /> : <Target className="size-5" />}
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="line-clamp-2 leading-snug font-semibold">{topic.title}</span>
-                  <span className="flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
-                    <LevelBadge level={topic.level} />
-                    {reason === 'next' ? 'Следующая тема' : `Подтянуть: последний результат ${pct(p!.lastPct)}`}
-                  </span>
-                </span>
-                <ChevronRight aria-hidden className="size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+
+        {due > 0 ? (
+          <ButtonLink to="/review" block className="sm:w-auto sm:self-start" icon={<Layers />}>
+            Начать повторение
+          </ButtonLink>
+        ) : primaryTopic ? (
+          <ButtonLink to={`/topic/${primaryTopic.topic.id}`} block className="sm:w-auto sm:self-start" iconEnd={<ArrowRight />}>
+            {primaryTopic.reason === 'next' ? 'Открыть тему' : 'Повторить тему'}
+          </ButtonLink>
+        ) : null}
+
+        {rows.length > 0 && (
+          <div className="mt-auto space-y-2">
+            <h3 className="text-sm font-semibold text-ink-muted">Дальше по курсу</h3>
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {rows.map(({ topic, reason, progress: p }) => (
+                <li key={topic.id} className="flex">
+                  <Link
+                    to={`/topic/${topic.id}`}
+                    className="group flex min-h-16 flex-1 items-center gap-3 rounded-control bg-surface-2 px-4 py-3 text-ink no-underline transition-[background-color,transform] duration-150 hover:bg-sunken/60 active:scale-[0.99] motion-reduce:transition-none"
+                  >
+                    <span className="min-w-0 flex-1">
+                      <span className="line-clamp-2 leading-snug font-semibold">{topic.title}</span>
+                      <span className="mt-1 flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
+                        <LevelBadge level={topic.level} />
+                        {reason === 'next' ? 'Следующая тема' : `Подтянуть · было ${pct(p!.lastPct)}`}
+                      </span>
+                    </span>
+                    <ChevronRight aria-hidden className="size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
-      {/* Signature poster panel (Lisbon halftone hero) with the day's goal ring. */}
-      <div className="relative isolate flex aspect-[3/2] items-end overflow-hidden rounded-card bg-terracotta-fill lg:p-6 md:aspect-auto md:min-h-72">
-        <Illustration
-          name="hero"
-          cover
-          eager
-          sizes="(min-width: 768px) 680px, 100vw"
-          className="-z-10 object-[72%_50%]"
-        />
+      {/* Signature poster (Lisbon at dusk, halftone) with the day's goal ring. */}
+      <div className="relative isolate flex min-h-64 items-end overflow-hidden rounded-card bg-terracotta-fill p-4 lg:p-6">
+        <Illustration name="hero" cover eager sizes="(min-width: 1024px) 400px, 100vw" className="-z-10 object-[68%_50%]" />
         <div className="flex items-center gap-4 rounded-pill bg-surface py-2 pr-6 pl-2">
           <ProgressRing value={ratio} size={64} stroke={7} tone="brand">
             <span className="font-display text-h2 leading-none font-black tabular-nums">{doneToday}</span>
@@ -326,31 +340,13 @@ function TodayHero({
   )
 }
 
-/** «Практика с агентом» — first-class entry (terracotta accent, like the «С агентом» tabs). */
+/** «Практика с агентом» — a quiet entry card (the day's suggested topics as its content). */
 function TutorCard({ daily }: { daily: ReturnType<typeof pickDaily> }) {
   const items = [...daily.topics.map((t) => t.title), ...(daily.situation ? [daily.situation.title] : [])]
   return (
-    <Link
-      to="/tutor"
-      data-halftone-surface=""
-      className="group relative isolate flex items-center gap-4 overflow-hidden rounded-card bg-terracotta-fill text-white no-underline transition-transform duration-150 active:scale-[0.99] lg:p-6"
-    >
-      <span aria-hidden className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-2/3 opacity-90">
-        <DotGrid mask="fade-left" dotSize={3.5} gap={3.5} activeColor="#fff" shockRadius={160} />
-      </span>
-      <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-full bg-white text-[#070607]">
-        <Sparkles className="size-6" />
-      </span>
-      <span className="min-w-0 flex-1">
-        <span className="block text-sm font-semibold">Практика с агентом</span>
-        <span className="mt-1 block font-display text-h2">Беседа дня</span>
-        <span className="mt-1 line-clamp-2 block font-semibold">{items.join(' · ') || 'разговор на свободную тему'}</span>
-        <span className="mt-1 block text-sm">Готовый промпт для Claude или ChatGPT — в одно касание</span>
-      </span>
-      <span aria-hidden className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-[#070607] transition-transform group-hover:translate-x-0.5">
-        <ChevronRight className="size-5" />
-      </span>
-    </Link>
+    <EntryCard to="/tutor" icon={<Sparkles />} title="Беседа дня с агентом" text="Готовый промпт для Claude или ChatGPT — в одно касание.">
+      <span className="line-clamp-2 block font-semibold">{items.join(' · ') || 'Разговор на свободную тему'}</span>
+    </EntryCard>
   )
 }
 
@@ -377,7 +373,7 @@ function WeekBars({ week }: { week: ReturnType<typeof weeklyActivity> }) {
   const total = week.reduce((s, d) => s + d.results + d.reviews, 0)
   return (
     <div>
-      <div className="flex h-32 items-end gap-2" role="img" aria-label={`Всего за неделю: ${total}`}>
+      <div className="flex h-48 items-end gap-2" role="img" aria-label={`Всего за неделю: ${total}`}>
         {week.map((d) => {
           const n = d.results + d.reviews
           return (
@@ -392,13 +388,14 @@ function WeekBars({ week }: { week: ReturnType<typeof weeklyActivity> }) {
           )
         })}
       </div>
-      <div className="mt-3 flex gap-4 text-sm text-ink-muted">
+      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-ink-muted">
         <span className="flex items-center gap-1.5">
           <i className="inline-block size-2.5 rounded-sm bg-brand" /> уроки и тесты
         </span>
         <span className="flex items-center gap-1.5">
           <i className="inline-block size-2.5 rounded-sm bg-azulejo" /> карточки
         </span>
+        <span className="ml-auto font-semibold text-ink tabular-nums">Всего: {total}</span>
       </div>
     </div>
   )
@@ -437,7 +434,7 @@ function LevelBar({ stats }: { stats: LevelStats }) {
 
 function Legend() {
   return (
-    <div className="rule-dotted flex flex-wrap gap-x-4 gap-y-2 pt-4 text-sm text-ink-muted">
+    <div className="flex flex-wrap gap-x-4 gap-y-2 pt-2 text-sm text-ink-muted">
       {STATUS_ORDER.map((s) => (
         <span key={s} className="flex items-center gap-1.5">
           <i className={`inline-block size-2.5 rounded-full ${STATUS_META[s].dot}`} />
@@ -452,7 +449,7 @@ function ErrorRow({ e, now }: { e: ErrorEntry; now: number }) {
   const link = errorTopicLink(e.topicId)
   const prompt = exercisePromptText(e.exerciseId)
   return (
-    <li className="space-y-1 py-2.5 text-sm">
+    <li className="space-y-1 rounded-control bg-surface-2 px-4 py-3 text-sm">
       {prompt && <p className="truncate text-ink-muted">{prompt}</p>}
       <dl className="grid grid-cols-[auto_1fr] gap-x-2">
         <dt className="text-ink-muted">Вы:</dt>

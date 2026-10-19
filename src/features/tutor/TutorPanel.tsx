@@ -104,7 +104,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
                 onClick={() => setModeId(m.id as M)}
                 className={cx(
                   'flex h-full flex-col gap-1.5 rounded-card border-[1.5px] p-4 text-left transition-[border-color,background-color]',
-                  on ? 'border-terracotta-fill bg-terracotta-soft' : 'border-line-strong bg-surface hover:border-ink',
+                  on ? 'border-ink bg-surface-2' : 'border-line-strong bg-surface hover:border-ink',
                 )}
               >
                 <span className="flex items-center gap-2.5 font-semibold">
@@ -112,7 +112,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
                     aria-hidden
                     className={cx(
                       'grid size-9 shrink-0 place-items-center rounded-full',
-                      on ? 'bg-terracotta-fill text-white' : 'bg-surface-2 text-ink',
+                      on ? 'bg-ink text-surface' : 'bg-surface-2 text-ink',
                     )}
                   >
                     <m.icon className="size-4.5" />
@@ -209,7 +209,7 @@ function CompleteForm({
       const res = await saveTutorSession(repo, { targetIds, mode: mode.id, assessment, note })
       const { correct, total } = sessionScore(assessment, note)
       const status = res.length === 1 ? ` · статус: ${STATUS_LABEL[res[0].status]}` : ''
-      setMsg(`✓ Занятие засчитано: ${correct}/${total}${status}`)
+      setMsg(`Занятие засчитано: ${correct}/${total}${status}`)
       setAssessment(null)
       setNote('')
       await reload()

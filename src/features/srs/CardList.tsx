@@ -3,11 +3,11 @@ import { getTopic } from '@/content'
 import { useRepository } from '@/data'
 import type { CardKind, SrsCard } from '@/data/types.ts'
 import { formatInterval, isNewCard } from '@/engine/fsrs'
-import { Pause, Play, Search, SearchX, Trash2 } from 'lucide-react'
+import { Headphones, Pause, Play, Search, SearchX, Trash2 } from 'lucide-react'
 import { Chip, ChipGroup } from '@/components/Chip'
 import { EmptyState } from '@/components/EmptyState'
 import { useToast } from '@/components/toastContext'
-import { KIND_CHIP, KIND_LABEL, KIND_SHORT } from './kinds'
+import { KIND_CHIP, KIND_LABEL, KIND_SHORT, LISTEN_MARK } from './kinds'
 import { deleteCards } from './cardOps'
 
 const KINDS: CardKind[] = ['word', 'phrase', 'grammar', 'error']
@@ -126,7 +126,10 @@ export function CardList({ cards, onChanged }: Props) {
           {shown.map((c) => (
             <li key={c.id} className={`flex items-start gap-2 py-2.5 pr-1.5 pl-4 ${c.suspended ? 'opacity-60' : ''}`}>
               <div className="min-w-0 flex-1 py-0.5">
-                <p className="truncate font-semibold">{c.front}</p>
+                <p className="flex items-center gap-1.5 truncate font-semibold">
+                  {c.front.startsWith(LISTEN_MARK) && <Headphones aria-label="Диктант" className="size-4 shrink-0 text-ink-muted" />}
+                  <span className="truncate">{c.front.startsWith(LISTEN_MARK) ? c.front.slice(LISTEN_MARK.length).trim() : c.front}</span>
+                </p>
                 <p lang="pt-PT" className="truncate text-sm text-brand-ink">
                   {c.back}
                 </p>

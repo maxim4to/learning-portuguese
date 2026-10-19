@@ -14,11 +14,11 @@ export function StatusBadge({ status, className = '' }: { status: TopicStatus; c
   )
 }
 
-/** CEFR level: stone → sulfur → violet → obsidian as the level deepens (A1 → B2). */
+/** CEFR level: stone → sulfur → ember wash → obsidian as the level heats up (A1 → B2). */
 const LEVEL_TONE: Record<string, string> = {
   A1: 'bg-azulejo-soft text-ink',
   A2: 'bg-sun-soft text-sun',
-  B1: 'bg-terracotta-soft text-terracotta',
+  B1: 'bg-brand-soft text-brand-ink',
   B2: 'bg-ink text-surface',
 }
 

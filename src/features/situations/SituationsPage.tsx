@@ -2,7 +2,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { MessagesSquare } from 'lucide-react'
 import { Chip, ChipGroup } from '@/components/Chip'
 import { Illustration } from '@/components/Illustration'
-import { situationArt } from '@/components/illustrations'
+import { situationArt, situationCrops } from '@/components/illustrations'
 import { EmptyState } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
 import { plural } from '@/features/library/format'
@@ -16,6 +16,7 @@ type Filter = Level | 'all'
 
 export function SituationsPage() {
   const situations = listSituations()
+  const crops = situationCrops(situations.map((s) => s.id))
   const { map: progress } = useProgressMap()
   const [params, setParams] = useSearchParams()
   const raw = params.get('level')
@@ -80,7 +81,7 @@ export function SituationsPage() {
               <ul className="card overflow-hidden p-0 lg:columns-2 lg:gap-0 lg:[column-rule:1px_solid_var(--border)]">
                 {g.items.map((s) => (
                   <li key={s.id} className="break-inside-avoid border-b border-line last:border-b-0">
-                    <SituationCard situation={s} progress={progress.get(s.id)} />
+                    <SituationCard situation={s} progress={progress.get(s.id)} crop={crops.get(s.id)} />
                   </li>
                 ))}
               </ul>
@@ -93,13 +94,27 @@ export function SituationsPage() {
 }
 
 /** Compact list row: 56px cover, title + Portuguese title, muted counts, status on the right. */
-function SituationCard({ situation: s, progress }: { situation: Situation; progress?: TopicProgress }) {
+function SituationCard({
+  situation: s,
+  progress,
+  crop,
+}: {
+  situation: Situation
+  progress?: TopicProgress
+  crop?: { transform: string; transformOrigin: string }
+}) {
   return (
     <Link
       to={`/situation/${s.id}`}
-      className="group flex min-h-[4.5rem] items-center gap-3 px-3 py-2.5 no-underline transition-colors hover:bg-surface-2 sm:gap-4 sm:px-4"
+      className="group flex min-h-[4.5rem] items-center gap-3 px-3 py-2.5 no-underline transition-colors duration-150 hover:bg-surface-2 active:bg-sunken/50 sm:gap-4 sm:px-4"
     >
-      <Illustration name={situationArt(s.id)} sizes="56px" className="size-14 shrink-0 rounded-2xl object-cover" />
+      <span aria-hidden className="relative size-14 shrink-0 overflow-hidden rounded-2xl bg-surface-2">
+        <span className="absolute inset-0 transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none">
+          <span className="absolute inset-0" style={crop}>
+            <Illustration name={situationArt(s.id)} cover sizes={crop && crop.transform !== 'scale(1)' ? '128px' : '56px'} />
+          </span>
+        </span>
+      </span>
       <span className="min-w-0 flex-1">
         <span className="block leading-tight font-semibold text-ink">{s.title}</span>
         <span className="mt-0.5 block truncate text-sm text-ink-muted">

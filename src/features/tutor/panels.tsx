@@ -21,7 +21,7 @@ function TutorSection({ children }: { children: ReactNode }) {
   return (
     <section id="tutor" className="scroll-mt-20 space-y-3 md:scroll-mt-24">
       <h2 className="flex items-center gap-2.5">
-        <span aria-hidden className="grid size-11 place-items-center rounded-full bg-terracotta-fill text-white">
+        <span aria-hidden className="grid size-11 place-items-center rounded-full bg-terracotta-fill text-on-terracotta">
           <Sparkles className="size-5" />
         </span>
         Практика с агентом

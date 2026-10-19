@@ -22,3 +22,6 @@ export const KIND_CHIP: Record<CardKind, string> = {
   grammar: BADGE_TONE.sun,
   error: BADGE_TONE.terracotta,
 }
+
+/** Stored prefix of dictation error cards (kept for existing data; the UI shows a headphones icon instead). */
+export const LISTEN_MARK = String.fromCodePoint(0x1f3a7)

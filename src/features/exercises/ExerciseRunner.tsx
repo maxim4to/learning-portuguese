@@ -34,6 +34,21 @@ export interface ExerciseRunnerProps {
    * heading on mount if focus fell to <body>. Leave off for runs that are simply on the page at load.
    */
   focusOnMount?: boolean
+  /** Desktop side panel (progress through the items, what is trained, keys). Off where the runner sits in a narrow column. */
+  panel?: boolean
+}
+
+/** Generic name of each exercise kind (the side panel groups the run by it). */
+const KIND_LABEL: Record<Exercise['type'], string> = {
+  'fill-gap': 'Вставить пропущенное',
+  choice: 'Выбрать вариант',
+  transform: 'Преобразовать фразу',
+  'order-words': 'Составить предложение',
+  'translate-ru-pt': 'Перевести на португальский',
+  'listen-type': 'Записать на слух',
+  'listen-choice': 'Выбрать на слух',
+  match: 'Соединить пары',
+  'speak-shadow': 'Повторить вслух',
 }
 
 export function ExerciseView(props: {
@@ -73,7 +88,7 @@ export function ExerciseView(props: {
  * Focus: after «Дальше» it moves to the new task heading; after answering — to «Дальше».
  * Give it a `key` to restart with a new list.
  */
-export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOnMount }: ExerciseRunnerProps) {
+export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOnMount, panel = true }: ExerciseRunnerProps) {
   const { lenientAccents } = useSettings()
   const [restored] = useState(() => loadRun(persistKey, exercises.map((e) => e.id)))
   const [index, setIndex] = useState(restored?.index ?? 0)
@@ -181,10 +196,13 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
   const done = answers.length + (current ? 1 : 0)
   const correctSoFar = answers.filter((a) => a.ok).length + (current?.ok ? 1 : 0)
 
+  const wrongSoFar = done - correctSoFar
+  const kinds = [...new Set(exercises.map((e) => e.type))].map((t) => ({ t, n: exercises.filter((e) => e.type === t).length }))
+
   return (
-    <div ref={topRef} className="scroll-mt-24 space-y-4">
-      <div className="space-y-2">
-        <div className="flex items-baseline justify-between gap-3 text-sm">
+    <div ref={topRef} className={cx('scroll-mt-24', panel ? 'page-grid' : 'space-y-4')}>
+      <div className="min-w-0 space-y-4">
+      <div className={cx('space-y-2', panel && 'lg:hidden')}>        <div className="flex items-baseline justify-between gap-3 text-sm">
           <span className="min-w-0 truncate font-display text-h2 leading-none text-ink">{title}</span>
           <span className="flex shrink-0 items-center gap-2 text-ink-muted tabular-nums">
             <span className="font-display text-h2 leading-none text-ink">
@@ -252,6 +270,77 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
           </>
         )}
       </section>
+      </div>
+
+      {panel && (
+        <aside aria-label="Ход упражнений" className="card sticky top-[calc(var(--sticky-top)+1rem)] hidden space-y-6 lg:block">
+          <div className="space-y-3">
+            <div className="flex items-baseline justify-between gap-3">
+              <h2 className="min-w-0 truncate">{title ?? 'Упражнения'}</h2>
+              <span className="shrink-0 font-display text-h2 leading-none tabular-nums">
+                <span className="sr-only">Задание </span>
+                {index + 1} / {total}
+              </span>
+            </div>
+            <ol aria-label={`Пройдено ${done} из ${total}`} className="grid grid-cols-7 gap-1.5">
+              {exercises.map((e, i) => {
+                const rec = i < answers.length ? answers[i] : i === index ? current : null
+                const state = rec ? (rec.ok ? 'ok' : 'miss') : i === index ? 'now' : 'next'
+                return (
+                  <li
+                    key={`${e.id}:${i}`}
+                    title={`${i + 1}. ${KIND_LABEL[e.type]}`}
+                    aria-current={i === index ? 'step' : undefined}
+                    className={cx(
+                      'h-5 rounded-pill transition-colors duration-200',
+                      state === 'ok' && 'bg-brand',
+                      state === 'miss' && 'bg-terracotta-fill',
+                      state === 'now' && 'bg-surface ring-2 ring-inset ring-ink',
+                      state === 'next' && 'bg-surface-2',
+                    )}
+                  >
+                    <span className="sr-only">
+                      {i + 1}: {state === 'ok' ? 'верно' : state === 'miss' ? 'ошибка' : state === 'now' ? 'сейчас' : 'впереди'}
+                    </span>
+                  </li>
+                )
+              })}
+            </ol>
+            <dl className="grid grid-cols-3 gap-2 text-sm">
+              {[
+                ['Верно', correctSoFar, 'bg-brand'],
+                ['Ошибок', wrongSoFar, 'bg-terracotta-fill'],
+                ['Осталось', total - done, 'bg-surface'],
+              ].map(([label, n, dot]) => (
+                <div key={label as string} className="rounded-control bg-surface-2 px-3 py-2">
+                  <dt className="flex items-center gap-1.5 text-ink-muted">
+                    <i aria-hidden className={cx('inline-block size-2.5 rounded-full', dot as string, dot === 'bg-surface' && 'ring-[1.5px] ring-inset ring-line-strong')} />
+                    {label}
+                  </dt>
+                  <dd className="font-display text-h2 leading-tight tabular-nums">{n}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold text-ink-muted">Что тренируем</h3>
+            <ul className="space-y-1">
+              {kinds.map(({ t, n }) => (
+                <li key={t} className={cx('flex items-baseline justify-between gap-3 text-sm', t === ex.type ? 'font-semibold text-ink' : 'text-ink-muted')}>
+                  <span>{KIND_LABEL[t]}</span>
+                  <span className="tabular-nums">{n}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="text-sm text-ink-muted">
+            <kbd className="rounded-md bg-surface-2 px-1.5 py-0.5 font-sans text-xs font-bold text-ink">Enter</kbd> — проверить и дальше,{' '}
+            <kbd className="rounded-md bg-surface-2 px-1.5 py-0.5 font-sans text-xs font-bold text-ink">1–9</kbd> — выбрать вариант.
+          </p>
+        </aside>
+      )}
       {/* Always mounted, so screen readers announce each verdict. */}
       <div aria-live="polite" className="sr-only">
         {live}

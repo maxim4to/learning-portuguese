@@ -105,7 +105,7 @@ export function SettingsPage() {
     <div className="page">
       <PageHeader title="Настройки" />
 
-      <div className="space-y-(--gutter)">
+      <div className="space-y-(--gutter) md:space-y-(--space-section) lg:space-y-(--gutter)">
 
       <Section title="Оформление" description="Светлая, тёмная или как в системе. Выбор хранится на этом устройстве.">
         <Row label="Тема">
@@ -140,14 +140,27 @@ export function SettingsPage() {
                   onChange={(voice) => update({ voice })}
                 />
                 <button
-                  className="btn-secondary btn-sm"
+                  className="btn-secondary btn-sm max-sm:btn-icon"
                   onClick={() => void speak(SAMPLE, { voice: settings.voice, rate: settings.rate })}
                 >
-                  <Volume2 aria-hidden /> Прослушать
+                  <Volume2 aria-hidden /> <span className="max-sm:sr-only">Прослушать</span>
                 </button>
               </div>
             </Row>
-            <Row label={`Скорость: ${fmtRate(settings.rate)}`} htmlFor={rateId}>
+            {/* Speed: label and the quick picks share a line, the slider runs under them. */}
+            <div className="space-y-1">
+              <div className="flex max-w-md flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <label htmlFor={rateId} className="text-sm font-semibold text-ink-muted">
+                  Скорость: {fmtRate(settings.rate)}
+                </label>
+                <SegmentedControl
+                  label="Быстрый выбор скорости"
+                  size="sm"
+                  value={[0.75, 1, 1.25].includes(settings.rate) ? String(settings.rate) : ''}
+                  onChange={(v) => update({ rate: Number(v) })}
+                  options={[0.75, 1, 1.25].map((r) => ({ value: String(r), label: fmtRate(r) }))}
+                />
+              </div>
               <input
                 id={rateId}
                 type="range"
@@ -166,14 +179,7 @@ export function SettingsPage() {
                   <option key={r} value={r} />
                 ))}
               </datalist>
-              <SegmentedControl
-                label="Быстрый выбор скорости"
-                size="sm"
-                value={[0.75, 1, 1.25].includes(settings.rate) ? String(settings.rate) : ''}
-                onChange={(v) => update({ rate: Number(v) })}
-                options={[0.75, 1, 1.25].map((r) => ({ value: String(r), label: fmtRate(r) }))}
-              />
-            </Row>
+            </div>
             {voiceInfo && <p className="text-sm text-ink-muted">{voiceInfo}</p>}
           </Section>
 
@@ -349,8 +355,8 @@ export function SettingsPage() {
 function Section({ title, description, children }: { title: string; description: string; children: ReactNode }) {
   const id = useId()
   return (
-    <section aria-labelledby={id} className="grid gap-3 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start lg:gap-(--gutter)">
-      <div className="space-y-1 lg:pt-6">
+    <section aria-labelledby={id} className="grid gap-3 md:grid-cols-[14rem_minmax(0,1fr)] md:items-start md:gap-(--gutter) lg:grid-cols-[18rem_minmax(0,1fr)]">
+      <div className="space-y-1 md:pt-6">
         <h2 id={id}>{title}</h2>
         <p className="measure text-sm text-ink-muted">{description}</p>
       </div>

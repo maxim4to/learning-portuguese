@@ -64,12 +64,33 @@ function useDueCount(pathname: string) {
   return due
 }
 
+/**
+ * Phone tab bar hides while the page scrolls down (reading room for the content under it) and comes back on
+ * any scroll up, at the top and at the very end of the page. Transform only; reduced motion drops the slide.
+ */
+function useTabBarHidden() {
+  const [hidden, setHidden] = useState(false)
+  useEffect(() => {
+    let last = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      const atEnd = y + window.innerHeight >= document.documentElement.scrollHeight - 4
+      if (y < 64 || atEnd || y < last - 6) setHidden(false)
+      else if (y > last + 6) setHidden(true)
+      last = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  return hidden
+}
+
 function DueBadge({ n, className }: { n: number; className?: string }) {
   if (!n) return null
   return (
     <span
       className={cx(
-        'inline-grid h-5 min-w-5 place-items-center rounded-full bg-terracotta-fill px-1.5 text-xs leading-none font-bold text-white tabular-nums',
+        'inline-grid h-5 min-w-5 place-items-center rounded-full bg-brand px-1.5 text-xs leading-none font-bold text-on-brand tabular-nums',
         className,
       )}
     >
@@ -95,6 +116,7 @@ export function Layout() {
   const navType = useNavigationType()
   const repo = useRepository()
   const due = useDueCount(pathname)
+  const barHidden = useTabBarHidden()
 
   // BrowserRouter has no <ScrollRestoration>: start new pages at the top (back/forward keeps the browser's position).
   useEffect(() => {
@@ -155,35 +177,42 @@ export function Layout() {
           <Outlet />
         </main>
 
-        {/* Mobile bottom tab bar (height --tabbar-h + home-indicator inset). */}
+        {/*
+          Phone / tablet tab bar: docked full width (no floating pill), one tone step above the canvas with a whisper
+          line on top; five equal cells, 22px outline icons over a 12px label; the active cell is ink with a quiet
+          neutral pill behind its icon (same box in every cell, so nothing shifts). Height --tabbar-h + home indicator.
+        */}
         <nav
           aria-label="Основные разделы"
-          className="fixed inset-x-0 bottom-0 z-20 pr-[max(0.75rem,var(--safe-right))] pb-[calc(var(--safe-bottom)+0.5rem)] pl-[max(0.75rem,var(--safe-left))] lg:hidden"
+          className={cx(
+            'fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface pr-(--safe-right) pb-(--safe-bottom) pl-(--safe-left) transition-transform duration-200 ease-out focus-within:translate-y-0 motion-reduce:transition-none lg:hidden',
+            barHidden && 'translate-y-full',
+          )}
         >
-          <ul className="grid h-(--tabbar-h) rounded-pill bg-ink px-1 text-surface" style={{ gridTemplateColumns: `repeat(${NAV_ITEMS.length}, minmax(0, 1fr))` }}>
+          <ul className="mx-auto grid h-(--tabbar-h) max-w-[30rem] grid-cols-5 px-3">
             {NAV_ITEMS.map((item) => {
               const active = isNavActive(item, pathname)
               const Icon = iconFor(item.to)
               return (
-                <li key={item.to}>
+                <li key={item.to} className="min-w-0">
                   <Link
                     to={item.to}
                     aria-current={active ? 'page' : undefined}
                     className={cx(
-                      'flex h-full flex-col items-center justify-center gap-1 rounded-pill text-xs leading-none font-semibold no-underline focus-visible:outline-on-ink-accent focus-visible:-outline-offset-4',
-                      active ? 'text-surface' : 'text-surface/75',
+                      'group flex h-full flex-col items-center justify-center gap-1 rounded-control text-xs font-semibold no-underline transition-colors duration-150 focus-visible:-outline-offset-4',
+                      active ? 'text-ink' : 'text-ink-muted hover:text-ink',
                     )}
                   >
                     <span
                       className={cx(
-                        'relative grid h-8 w-14 place-items-center rounded-full transition-colors duration-200',
-                        active && 'bg-brand text-on-brand',
+                        'relative grid h-7 w-12 place-items-center rounded-pill transition-[background-color,transform] duration-150 group-active:scale-90 motion-reduce:group-active:scale-100',
+                        active ? 'bg-surface-2' : 'group-hover:bg-surface-2/60',
                       )}
                     >
-                      <Icon aria-hidden className="size-5" strokeWidth={active ? 2.3 : 1.8} />
-                      {item.to === '/review' && <DueBadge n={due} className="absolute -top-1 right-1.5" />}
+                      <Icon aria-hidden className="size-5.5" strokeWidth={active ? 2.25 : 1.9} />
+                      {item.to === '/review' && <DueBadge n={due} className="absolute -top-1.5 -right-1" />}
                     </span>
-                    <span className="max-w-full truncate">{item.label}</span>
+                    <span className={cx('leading-4 whitespace-nowrap', active && 'font-bold')}>{item.short ?? item.label}</span>
                   </Link>
                 </li>
               )

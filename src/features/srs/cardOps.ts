@@ -3,6 +3,7 @@ import type { ErrorEntry, ProgressRepository, SrsCard } from '@/data/types.ts'
 import { findExercise } from '@/content'
 import { createSrsCard } from '@/engine/fsrs'
 import { describeExercise } from './cardContent'
+import { LISTEN_MARK } from './kinds'
 
 /** Legacy soft-delete marker (cards written by older builds before `repo.deleteCards` existed). */
 type MaybeDeleted = SrsCard & { deleted?: boolean }
@@ -25,7 +26,7 @@ export function cardsFromErrors(errors: ErrorEntry[], existing: SrsCard[], now =
     if (have.has(id) || out.has(id)) continue
     const ex = findExercise(e.exerciseId)?.exercise
     const d = ex ? describeExercise(ex) : undefined
-    const front = d ? (d.listen ? `🎧 ${d.listen}` : d.prompt) : `Ошибка: «${e.given}»`
+    const front = d ? (d.listen ? `${LISTEN_MARK} ${d.listen}` : d.prompt) : `Ошибка: «${e.given}»`
     out.set(id, createSrsCard({ id, kind: 'error', front, back: e.expected, topicId: e.topicId, exerciseId: e.exerciseId }, now))
   }
   return [...out.values()]

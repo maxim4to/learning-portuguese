@@ -4,7 +4,7 @@ import type { BadgeTone } from './tones'
 /**
  * THE topic status system (one vocabulary, one colour mapping) — used by StatusBadge, the syllabus,
  * the dashboard, result screens and the library. Caldera «temperature»: confident = Ember (hot), learning = Sulfur (warm),
- * weak = Plasma violet (cooled down — reheat it), not started = cold stone.
+ * weak = Basalt (cooled lava — reheat it), not started = cold stone.
  */
 export const STATUS: Record<TopicStatus, { label: string; tone: BadgeTone; dot: string; bar: string }> = {
   'not-started': { label: 'Не начато', tone: 'neutral', dot: 'bg-surface ring-[1.5px] ring-inset ring-line-strong', bar: 'bg-line-strong' },

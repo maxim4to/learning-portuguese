@@ -8,17 +8,14 @@ import { NAV_ITEMS } from './nav'
 export function NotFoundPage() {
   return (
     <div className="page">
-      <header className="space-y-2">
-        <p className="font-pt text-base text-ink-muted" lang="pt-PT">
-          Perdido?
-        </p>
+      <header>
         <h1>Такой страницы нет</h1>
       </header>
       <div className="page-grid">
         <section className="card-raised grid items-center gap-6 md:grid-cols-[15rem_minmax(0,1fr)]">
           <Illustration name="not-found" eager sizes="240px" className="w-60 max-w-full rounded-card" />
           <div className="space-y-4">
-            <p className="measure text-ink-muted">Возможно, ссылка устарела или в адресе опечатка. Вернитесь на главную или к курсу.</p>
+            <p className="measure text-ink-muted"><span lang="pt-PT" className="font-pt">Perdido?</span> Возможно, ссылка устарела или в адресе опечатка. Вернитесь на главную или к курсу.</p>
             <div className="flex flex-col gap-2 sm:flex-row">
               <ButtonLink to="/" icon={<House />}>
                 На главную

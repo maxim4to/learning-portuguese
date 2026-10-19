@@ -76,11 +76,11 @@ function maskWeight(mask: DotMask, [a, b]: [number, number], u: number, v: numbe
   switch (mask) {
     case 'radial': // ellipse fading out from the centre
       return 1 - smooth(a, b, Math.hypot(u - 0.5, v - 0.5) / Math.SQRT1_2)
-    case 'corner': // = radial-gradient(ellipse at top right, #000 a, transparent b)
+    case 'corner': // taste-skill-ignore (canvas mask maths, nothing painted): = radial-gradient(ellipse at top right, #000 a, transparent b)
       return 1 - smooth(a, b, Math.hypot(1 - u, v) / Math.SQRT2)
     case 'edge': // vignette: fades out on all four edges
       return smooth(a, b, 2 * Math.min(u, 1 - u)) * smooth(a, b, 2 * Math.min(v, 1 - v))
-    case 'fade-left': // = linear-gradient(to left, #000, transparent)
+    case 'fade-left': // taste-skill-ignore (canvas mask maths): = linear-gradient(to left, #000, transparent)
       return smooth(a, b, u)
     case 'fade-right':
       return smooth(a, b, 1 - u)

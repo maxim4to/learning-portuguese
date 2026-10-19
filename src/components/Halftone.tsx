@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { cx } from './cx'
 
 /**
- * Caldera's signature motif: a halftone dot screen (Ember dots of varying size on Plasma violet).
+ * Caldera's signature motif: a halftone dot screen (Ember dots of varying size on Basalt).
  * Deterministic «noise» from a few sine waves (same seed → same picture), rendered as ONE <path>
  * so a hero-sized screen costs a single DOM node. Purely decorative (aria-hidden).
  * Colours come from tokens, so both themes follow automatically.

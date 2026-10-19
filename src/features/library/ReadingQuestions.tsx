@@ -99,6 +99,7 @@ export function ReadingQuestions({ text }: { text: ReadingText }) {
 
   return (
     <ExerciseRunner
+      panel={false}
       key={run.key}
       exercises={run.list}
       title={run.retry ? 'Работа над ошибками' : text.title}

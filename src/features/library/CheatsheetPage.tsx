@@ -64,16 +64,16 @@ export function CheatsheetPage() {
             <summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold text-ink-muted select-none">
               Содержание
             </summary>
-            <ol className="mt-1 columns-1 gap-6 text-sm sm:columns-2">
+            <ol className="mt-1 flex flex-wrap gap-2 text-sm sm:block sm:columns-2 sm:gap-6 md:columns-3">
               {sheet.toc.map((t, i) => (
-                <li key={i} className={`break-inside-avoid ${t.level === 3 ? 'pl-4 text-sm' : 'font-medium'}`}>
+                <li key={i} className={`break-inside-avoid ${t.level === 3 ? 'sm:pl-4' : 'font-medium'}`}>
                   <a
                     href={`#${headingId(i)}`}
                     onClick={(e) => {
                       e.preventDefault()
                       jump(i)
                     }}
-                    className="block py-1.5 no-underline hover:underline"
+                    className="flex min-h-9 items-center rounded-pill bg-surface-2 px-3 no-underline transition-colors hover:bg-sunken/60 sm:block sm:min-h-0 sm:rounded-none sm:bg-transparent sm:px-0 sm:py-1.5 sm:hover:bg-transparent sm:hover:underline"
                   >
                     {t.text}
                   </a>

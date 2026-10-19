@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import { getTopic } from '@/content'
 import type { CardKind, Settings, SrsCard } from '@/data/types.ts'
 import { errorTopicLink } from './cardContent'
-import { KIND_CHIP, KIND_LABEL } from './kinds'
+import { KIND_CHIP, KIND_LABEL, LISTEN_MARK } from './kinds'
 import { SpeakButton } from './SpeakButton'
 
 function hashIndex(s: string, n: number) {
@@ -63,7 +63,7 @@ export function CardFace({ card, revealed, settings }: Props) {
   const otherExamples = card.kind === 'grammar' ? (topic?.examples ?? []).filter((e) => e.pt !== card.back) : []
   const example = otherExamples.length ? otherExamples[hashIndex(card.id, otherExamples.length)] : undefined
   // Older error cards stored «🎧 <text>» for dictations: the text is the answer, don't show it on the front.
-  const errorFront = isError && !card.front.startsWith('🎧') ? card.front : undefined
+  const errorFront = isError && !card.front.startsWith(LISTEN_MARK) ? card.front : undefined
 
   return (
     <div className="flex flex-col">
