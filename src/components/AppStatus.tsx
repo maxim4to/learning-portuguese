@@ -28,23 +28,29 @@ export function OfflineBanner({ synced }: { synced: boolean }) {
   )
 }
 
+const BASE = import.meta.env.BASE_URL
 const RELOAD_GUARD_KEY = 'pwa-update-reload-at'
 const RELOAD_GUARD_MS = 30_000
 const UPDATE_CHECK_MS = 60 * 60 * 1000
 const DISMISS_KEY = 'pwa-update-dismissed'
+/** How long «Обновить» waits for a still-downloading version (precache is a few MB) before giving up on it. */
+const INSTALL_WAIT_MS = 30_000
+/** After SKIP_WAITING: reload on controllerchange/activation, or hard-reload after this long regardless. */
+const ACTIVATE_FALLBACK_MS = 4_000
+
+const hasSW = typeof navigator !== 'undefined' && 'serviceWorker' in navigator
 
 /**
  * Was a new service worker already waiting when this page loaded? Then the update was downloaded during an earlier
  * visit and the user has just opened or reloaded the page — nothing is in progress yet, so it can be applied silently.
  * Measured before useRegisterSW registers (its «waiting» event fires for both cases and can't tell them apart).
  */
-const waitingAtStartup: Promise<boolean> =
-  typeof navigator !== 'undefined' && 'serviceWorker' in navigator && navigator.serviceWorker.controller
-    ? navigator.serviceWorker
-        .getRegistration(import.meta.env.BASE_URL)
-        .then((r) => Boolean(r?.waiting))
-        .catch(() => false)
-    : Promise.resolve(false)
+const waitingAtStartup: Promise<boolean> = hasSW
+  ? navigator.serviceWorker
+      .getRegistration(BASE)
+      .then((r) => Boolean(r?.waiting && r.active))
+      .catch(() => false)
+  : Promise.resolve(false)
 
 /**
  * A reload also makes the browser check sw.js, so a fresh update often finishes installing a moment *after* the page
@@ -70,9 +76,10 @@ function readSession(key: string): string | null {
     return null
   }
 }
-function writeSession(key: string, value: string) {
+function writeSession(key: string, value: string | null) {
   try {
-    sessionStorage.setItem(key, value)
+    if (value === null) sessionStorage.removeItem(key)
+    else sessionStorage.setItem(key, value)
   } catch {
     /* storage unavailable — the guard just doesn't persist */
   }
@@ -85,17 +92,51 @@ function mayAutoReload(): boolean {
 }
 
 let reloading = false
-/** Reload once the new service worker takes control (workbox-window also does this; whichever comes first wins). */
-function reloadOnControllerChange() {
-  navigator.serviceWorker.addEventListener(
-    'controllerchange',
-    () => {
-      if (reloading) return
-      reloading = true
-      window.location.reload()
-    },
-    { once: true },
-  )
+/** This tab asked for the switch (so a controllerchange here is ours to reload on). */
+let switching = false
+function reloadOnce() {
+  if (reloading) return
+  reloading = true
+  window.location.reload()
+}
+
+/** Resolves when `sw` reaches one of `states` (true), turns redundant or `ms` passes (false). */
+function waitForState(sw: ServiceWorker, states: ServiceWorkerState[], ms: number): Promise<boolean> {
+  return new Promise((resolve) => {
+    if (states.includes(sw.state)) return resolve(true)
+    const finish = (ok: boolean) => {
+      window.clearTimeout(timer)
+      sw.removeEventListener('statechange', onChange)
+      resolve(ok)
+    }
+    const onChange = () => {
+      if (states.includes(sw.state)) finish(true)
+      else if (sw.state === 'redundant') finish(false)
+    }
+    const timer = window.setTimeout(finish, ms, false)
+    sw.addEventListener('statechange', onChange)
+  })
+}
+
+/**
+ * Switches to the newest downloaded version and reloads — always ends in a reload, so the button is never dead.
+ * Reads the registration afresh (several deploys may have landed since the banner appeared): on a click, if a newer
+ * version is still downloading, waits for it; then tells the waiting worker to skip waiting and reloads once it controls the page
+ * or is activated (an uncontrolled page — e.g. after Shift+Cmd+R — never gets controllerchange), with a hard reload
+ * as the fallback. Not via workbox-window's messageSkipWaiting: it targets the worker from when the page loaded and
+ * silently does nothing when none is waiting.
+ */
+async function activateNewestAndReload(waitForDownload: boolean) {
+  switching = true
+  const reg = await navigator.serviceWorker.getRegistration(BASE).catch(() => undefined)
+  if (!reg) return reloadOnce()
+  if (waitForDownload && reg.installing) await waitForState(reg.installing, ['installed', 'activating', 'activated'], INSTALL_WAIT_MS)
+  const next = reg.waiting
+  // Nothing waiting: it was activated meanwhile (another tab) or the download failed — a reload picks up what's there.
+  if (!next) return reloadOnce()
+  navigator.serviceWorker.addEventListener('controllerchange', reloadOnce, { once: true })
+  void waitForState(next, ['activated'], ACTIVATE_FALLBACK_MS).then(reloadOnce)
+  next.postMessage({ type: 'SKIP_WAITING' })
 }
 
 /**
@@ -104,6 +145,7 @@ function reloadOnControllerChange() {
  * - an update found while the app is open shows the banner; «Позже» hides it for this session, and it is applied on the
  *   next page change (the new page starts fresh anyway) or the next reload;
  * - updates are checked hourly and whenever the tab becomes visible again.
+ * The banner appears only once the new version is fully downloaded (workbox «waiting» = state `installed`).
  */
 export function UpdatePrompt() {
   const [dismissed, setDismissed] = useState(() => readSession(DISMISS_KEY) === '1')
@@ -113,10 +155,16 @@ export function UpdatePrompt() {
   const { pathname } = useLocation()
   const startPath = useRef(pathname)
 
-  const { updateServiceWorker } = useRegisterSW({
+  useRegisterSW({
+    // The new version took over — from this tab, or from another tab that updated. workbox would reload here; another
+    // tab's update must not reload this one mid-lesson, so it gets the banner instead («Обновить» then just reloads).
+    onNeedReload() {
+      if (switching) reloadOnce()
+      else setPrompt(true)
+    },
     onNeedRefresh() {
       void waitingAtStartup.then((wasWaiting) => {
-        if (isStartup(wasWaiting) && mayAutoReload()) apply()
+        if (isStartup(wasWaiting) && mayAutoReload()) apply(true)
         else setPrompt(true)
       })
     },
@@ -135,27 +183,25 @@ export function UpdatePrompt() {
     },
   })
 
-  function apply() {
+  /** `auto`: not a click — counts towards the reload-loop guard. */
+  function apply(auto: boolean) {
+    if (applying) return
     setApplying(true)
-    writeSession(RELOAD_GUARD_KEY, String(Date.now()))
-    try {
-      sessionStorage.removeItem(DISMISS_KEY)
-    } catch {
-      /* ignore */
-    }
-    reloadOnControllerChange()
-    void updateServiceWorker(true)
+    if (auto) writeSession(RELOAD_GUARD_KEY, String(Date.now()))
+    writeSession(DISMISS_KEY, null)
+    // Automatic paths don't wait for a newer download: the page must reload right away, before the user starts.
+    void activateNewestAndReload(!auto)
   }
 
   // A pending update is applied on the next page change: the page being left is done with, the new one starts fresh.
   useEffect(() => {
     if (pathname === startPath.current) return
     startPath.current = pathname
-    if (prompt && !applying && mayAutoReload()) apply()
+    if (prompt && !applying && mayAutoReload()) apply(true)
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only page changes should trigger this
   }, [pathname])
 
-  if (!prompt || dismissed || applying) return null
+  if (!prompt || (dismissed && !applying)) return null
   return (
     <div
       className="fixed inset-x-0 z-40 flex justify-center px-4"
@@ -165,27 +211,31 @@ export function UpdatePrompt() {
         role="status"
         className="flex w-full max-w-md animate-toast items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-5 text-sm text-bg"
       >
-        <RefreshCw aria-hidden className="size-5 shrink-0 opacity-80" />
-        <span className="min-w-0 flex-1">Доступна новая версия приложения</span>
+        <RefreshCw aria-hidden className={`size-5 shrink-0 opacity-80 ${applying ? 'motion-safe:animate-spin' : ''}`} />
+        <span className="min-w-0 flex-1">{applying ? 'Обновляем приложение…' : 'Доступна новая версия приложения'}</span>
         <button
           type="button"
-          className="btn-primary btn-sm shrink-0 focus-visible:outline-on-ink-accent"
-          onClick={apply}
+          className="btn-primary btn-sm shrink-0 focus-visible:outline-on-ink-accent disabled:opacity-70"
+          disabled={applying}
+          aria-busy={applying}
+          onClick={() => apply(false)}
         >
-          Обновить
+          {applying ? 'Обновляем…' : 'Обновить'}
         </button>
-        <button
-          type="button"
-          aria-label="Позже"
-          title="Позже"
-          className="btn btn-icon shrink-0 opacity-70 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-on-ink-accent"
-          onClick={() => {
-            setDismissed(true)
-            writeSession(DISMISS_KEY, '1')
-          }}
-        >
-          <X aria-hidden className="size-4" />
-        </button>
+        {!applying && (
+          <button
+            type="button"
+            aria-label="Позже"
+            title="Позже"
+            className="btn btn-icon shrink-0 opacity-70 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-on-ink-accent"
+            onClick={() => {
+              setDismissed(true)
+              writeSession(DISMISS_KEY, '1')
+            }}
+          >
+            <X aria-hidden className="size-4" />
+          </button>
+        )}
       </div>
     </div>
   )
