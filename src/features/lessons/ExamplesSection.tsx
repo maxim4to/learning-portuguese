@@ -29,8 +29,14 @@ export function ExamplesSection({ topic }: { topic: Topic }) {
                 {ex.pt}
               </Pt>
               <p className="mt-0.5 text-sm text-ink-muted">{ex.ru}</p>
+              {/* Phones: the button sits under the translation, so it never squeezes the text. */}
+              <div className="mt-1.5 sm:hidden">
+                <ReviewToggle picker={picker} id={specs[i].id} name={ex.pt} />
+              </div>
             </div>
-            <ReviewToggle picker={picker} id={specs[i].id} name={ex.pt} />
+            <div className="max-sm:hidden">
+              <ReviewToggle picker={picker} id={specs[i].id} name={ex.pt} />
+            </div>
           </li>
         ))}
       </ul>

@@ -36,8 +36,14 @@ export function PhrasesSection({ situation }: { situation: Situation }) {
                 {p.pt}
               </Pt>
               <p className="mt-0.5 text-sm text-ink-muted">{p.ru}</p>
+              {/* Phones: the button sits under the translation, so it never squeezes the text. */}
+              <div className="mt-1.5 sm:hidden">
+                <ReviewToggle picker={picker} id={specs[i].id} name={p.pt} />
+              </div>
             </div>
-            <ReviewToggle picker={picker} id={specs[i].id} name={p.pt} />
+            <div className="max-sm:hidden">
+              <ReviewToggle picker={picker} id={specs[i].id} name={p.pt} />
+            </div>
           </li>
         ))}
       </ul>

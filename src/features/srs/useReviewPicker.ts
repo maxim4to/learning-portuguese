@@ -16,7 +16,7 @@ export interface PickSpec {
 export type ReviewPicker = ReturnType<typeof useReviewPicker>
 
 /**
- * Pick content items for review one by one (toggle per row) or several at once (selection mode).
+ * Pick content items for review one by one («Добавить» / «Убрать» per row).
  * `cards` maps the specs that already are cards (null while loading). Removing deletes the card with its progress.
  */
 export function useReviewPicker(specs: readonly PickSpec[]) {
@@ -24,8 +24,6 @@ export function useReviewPicker(specs: readonly PickSpec[]) {
   const [cards, setCards] = useState<Map<string, SrsCard> | null>(null)
   const [busy, setBusy] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
-  const [selecting, setSelecting] = useState(false)
-  const [selected, setSelected] = useState<ReadonlySet<string>>(new Set())
   const [confirm, setConfirm] = useState<SrsCard | null>(null)
 
   useEffect(() => {
@@ -43,20 +41,21 @@ export function useReviewPicker(specs: readonly PickSpec[]) {
   const missing = useMemo(() => (cards ? specs.filter((s) => !cards.has(s.id)) : []), [cards, specs])
 
   const add = useCallback(
-    async (ids: readonly string[]) => {
-      if (!cards) return
+    /** Returns how many cards were created (0 when nothing was added or saving failed). */
+    async (ids: readonly string[]): Promise<number> => {
+      if (!cards) return 0
       const now = Date.now()
       const fresh = specs.filter((s) => ids.includes(s.id) && !cards.has(s.id)).map((s) => createSrsCard(s, now))
-      if (!fresh.length) return
+      if (!fresh.length) return 0
       setBusy(true)
       try {
         await repo.upsertCards(fresh)
         setCards((m) => new Map([...(m ?? []), ...fresh.map((c) => [c.id, c] as const)]))
-        setMsg(fresh.length > 1 ? `Добавлено в повторение: ${fresh.length}` : 'Добавлено в повторение')
-        setSelected(new Set())
-        setSelecting(false)
+        setMsg(null)
+        return fresh.length
       } catch (e) {
         setMsg(`Не удалось сохранить: ${e instanceof Error ? e.message : String(e)}`)
+        return 0
       } finally {
         setBusy(false)
       }
@@ -74,7 +73,7 @@ export function useReviewPicker(specs: readonly PickSpec[]) {
           n.delete(id)
           return n
         })
-        setMsg('Убрано из повторения')
+        setMsg(null)
       } catch (e) {
         setMsg(`Не удалось удалить: ${e instanceof Error ? e.message : String(e)}`)
       } finally {
@@ -95,37 +94,17 @@ export function useReviewPicker(specs: readonly PickSpec[]) {
     [cards, removeNow],
   )
 
-  const toggleSelected = useCallback((id: string) => {
-    setSelected((s) => {
-      const n = new Set(s)
-      if (n.has(id)) n.delete(id)
-      else n.add(id)
-      return n
-    })
-  }, [])
-
   return {
     specs,
     cards,
     missing,
     busy,
     msg,
-    selecting,
-    selected,
     confirm,
     add,
     remove,
     removeNow,
-    toggleSelected,
     setConfirm,
-    startSelecting: () => {
-      setSelected(new Set())
-      setSelecting(true)
-    },
-    stopSelecting: () => {
-      setSelected(new Set())
-      setSelecting(false)
-    },
   }
 }
 
