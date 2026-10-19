@@ -45,10 +45,10 @@ export function CheatsheetPage() {
   }
 
   return (
-    <article className="cheatsheet space-y-5">
+    <article className="cheatsheet page">
       <div className="no-print flex items-center justify-between gap-3">
         <BackLink />
-        <button type="button" className="btn-ghost hidden px-3 text-sm md:inline-flex" onClick={() => window.print()}>
+        <button type="button" className="btn-ghost btn-sm hidden md:inline-flex" onClick={() => window.print()}>
           <Printer aria-hidden className="size-4.5" /> Печать
         </button>
       </div>
@@ -64,7 +64,7 @@ export function CheatsheetPage() {
             <summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold text-ink-muted select-none">
               Содержание
             </summary>
-            <ol className="mt-1 columns-1 gap-6 text-[0.9375rem] sm:columns-2">
+            <ol className="mt-1 columns-1 gap-6 text-sm sm:columns-2">
               {sheet.toc.map((t, i) => (
                 <li key={i} className={`break-inside-avoid ${t.level === 3 ? 'pl-4 text-sm' : 'font-medium'}`}>
                   <a
@@ -84,7 +84,7 @@ export function CheatsheetPage() {
         </nav>
       )}
 
-      <div ref={bodyRef} className="card sm:p-7 print:border-0 print:p-0">
+      <div ref={bodyRef} className="card print:border-0 print:p-0">
         <Markdown>{sheet.body}</Markdown>
       </div>
 

@@ -80,7 +80,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
 
   return (
     <div className="space-y-4">
-      <section className="card-raised relative space-y-5 overflow-hidden rounded-hero p-5 sm:p-8">
+      <section className="card-raised relative space-y-5 overflow-hidden">
         <p className="text-sm text-ink-muted">
           Скопируйте промпт и вставьте его в новый чат Claude, ChatGPT или другого ассистента: он проведёт занятие по-русски на
           материале с сайта, строго в европейском варианте. После занятия отметьте его ниже — оно засчитается в прогресс.
@@ -103,7 +103,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
                 tabIndex={on ? 0 : -1}
                 onClick={() => setModeId(m.id as M)}
                 className={cx(
-                  'flex h-full flex-col gap-1.5 rounded-[1.75rem] border-[1.5px] p-4 text-left transition-[border-color,background-color]',
+                  'flex h-full flex-col gap-1.5 rounded-card border-[1.5px] p-4 text-left transition-[border-color,background-color]',
                   on ? 'border-terracotta-fill bg-terracotta-soft' : 'border-line-strong bg-surface hover:border-ink',
                 )}
               >
@@ -120,7 +120,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
                   {m.title}
                 </span>
                 <span className="text-sm text-ink-muted">{m.description}</span>
-                <span className="mt-auto inline-flex items-center gap-1 pt-1 text-xs font-semibold text-ink-muted">
+                <span className="mt-auto inline-flex items-center gap-1 pt-1 text-sm font-semibold text-ink-muted">
                   <Clock aria-hidden className="size-3.5" /> {m.minutes}
                 </span>
               </button>
@@ -152,7 +152,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
             >
               {prompt}
             </pre>
-            <p className="text-xs text-ink-muted">≈ {prompt.length.toLocaleString('ru-RU')} символов</p>
+            <p className="text-sm text-ink-muted">≈ {prompt.length.toLocaleString('ru-RU')} символов</p>
           </div>
         )}
       </section>
@@ -222,7 +222,7 @@ function CompleteForm({
   }
 
   return (
-    <section className="card space-y-4 sm:p-6" aria-labelledby={`tutor-done-${mode.id}`}>
+    <section className="card space-y-4" aria-labelledby={`tutor-done-${mode.id}`}>
       <div className="space-y-0.5">
         <h3 id={`tutor-done-${mode.id}`} className="text-base font-semibold">
           Отметить пройденным
@@ -272,7 +272,7 @@ function CompleteForm({
         />
       </label>
       {parsed && (
-        <p className="text-xs text-ink-muted">
+        <p className="text-sm text-ink-muted">
           Найден итог агента: {parsed.correct}/{parsed.total}
           {assessment && sessionScore(assessment, note).fromNote ? ' — он и будет засчитан.' : ' — не совпадает с выбранной оценкой, засчитается самооценка.'}
         </p>

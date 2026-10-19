@@ -64,7 +64,7 @@ export function LibraryPage() {
   const { map: progress } = useProgressMap()
 
   return (
-    <div className="space-y-8">
+    <div className="page">
       <div className="space-y-4">
         <MaterialsTabs active="library" />
         <PageHeader title="Библиотека" subtitle="Шпаргалки для быстрой справки, тематические словари и тексты для чтения." />
@@ -97,10 +97,10 @@ export function LibraryPage() {
         {themes.length === 0 ? (
           <Empty>Тематических словарей пока нет — они появятся здесь, как только будут добавлены.</Empty>
         ) : (
-          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-(--gutter) sm:grid-cols-3 lg:grid-cols-4">
             {themes.map((t) => (
               <li key={t.id}>
-                <Link to={`/library/vocab/${t.id}`} className="card card-link flex h-full flex-col gap-3 p-4 no-underline sm:p-4">
+                <Link to={`/library/vocab/${t.id}`} className="card card-link flex h-full flex-col gap-3 p-4 no-underline lg:p-4">
                   <span className="min-w-0">
                     <span className="block leading-tight font-semibold text-ink hyphens-auto" lang="ru">
                       {t.title}
@@ -113,7 +113,7 @@ export function LibraryPage() {
                   </span>
                   <span className="mt-auto flex items-baseline justify-between gap-2 text-sm text-ink-muted">
                     <span>
-                      <span className="font-display text-[1.75rem] leading-none text-ink tabular-nums">{t.words.length}</span>{' '}
+                      <span className="font-display text-h2 leading-none text-ink tabular-nums">{t.words.length}</span>{' '}
                       {plural(t.words.length, 'слово', 'слова', 'слов').replace(/^\d+\s/, '')}
                     </span>
                     {t.level && <span className="text-xs font-semibold tracking-wide">{t.level}</span>}
@@ -140,7 +140,7 @@ export function LibraryPage() {
                   >
                     <span className="w-8 shrink-0 text-sm font-bold tracking-wide text-ink-muted tabular-nums">{r.level}</span>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-display text-[1.5rem] leading-[1.05] text-ink" lang="pt-PT">
+                      <span className="block font-display text-h2 text-ink" lang="pt-PT">
                         {r.title}
                       </span>
                       <span className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">

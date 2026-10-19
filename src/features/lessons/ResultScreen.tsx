@@ -58,7 +58,7 @@ function PendingCards({ outcome }: { outcome: SaveOutcome }) {
       ) : (
         <button
           type="button"
-          className="btn-secondary min-h-10 px-3 text-sm"
+          className="btn-secondary btn-sm"
           disabled={state === 'busy'}
           onClick={() => {
             setState('busy')
@@ -86,17 +86,17 @@ export function ResultScreen(p: ResultScreenProps) {
 
   return (
     <div className="animate-enter space-y-4">
-      <section data-halftone-surface="" className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
+      <section data-halftone-surface="" className="card-raised relative isolate overflow-hidden text-center">
         {pct >= 60 && <AzulejoCorner />}
         <p className="text-sm font-semibold text-ink-muted">{p.retry ? 'Работа над ошибками' : 'Результат'}</p>
         <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6 sm:text-left">
           <ProgressRing value={pct / 100} size={152} stroke={14} tone={toneForPct(pct)}>
-            <span className="font-display text-[2.75rem] leading-none font-black tabular-nums" aria-hidden>
+            <span className="font-display text-h1 leading-none font-black tabular-nums" aria-hidden>
               {pct}%
             </span>
           </ProgressRing>
           <div className="space-y-1">
-            <p className="font-display text-[1.75rem] leading-[1] sm:text-2xl">{headline(pct)}</p>
+            <p className="font-display text-h2">{headline(pct)}</p>
             <p className="text-ink-muted">
               <span className="sr-only">Результат: {pct} процентов, </span>Верно {summary.correct} из {summary.total}
             </p>
@@ -161,7 +161,7 @@ export function ResultScreen(p: ResultScreenProps) {
               return (
                 <li key={a.exerciseId} className="space-y-1.5 px-4 py-3">
                   {ex && <p className="text-sm whitespace-pre-line text-ink-muted">{exerciseFront(ex)}</p>}
-                  <dl className="grid grid-cols-[5.5rem_1fr] gap-x-3 gap-y-0.5 text-[0.9375rem]">
+                  <dl className="grid grid-cols-[5.5rem_1fr] gap-x-3 gap-y-0.5 text-sm">
                     {typed && (
                       <>
                         <dt className="text-ink-muted">Ваш ответ</dt>

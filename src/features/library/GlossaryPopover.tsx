@@ -93,10 +93,10 @@ export function GlossaryPopover({ anchor, word, ru, added, busy, onAdd, onClose,
           <SpeakButton text={word} />
         </span>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="font-display text-lg leading-tight" lang="pt-PT">
+          <p className="font-display text-h2" lang="pt-PT">
             {word}
           </p>
-          <p className="text-[0.9375rem] leading-snug text-ink-muted">{ru}</p>
+          <p className="text-sm leading-snug text-ink-muted">{ru}</p>
         </div>
         <AddCardButton added={added} disabled={busy} onClick={onAdd} />
       </div>

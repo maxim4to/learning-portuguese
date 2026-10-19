@@ -73,7 +73,7 @@ function ReadingView({ text }: { text: ReadingText }) {
     setAnchor((a) => (a?.el === el ? null : { gi, rect: el.getBoundingClientRect(), el, viaKey }))
 
   return (
-    <article className="space-y-6">
+    <article className="page">
       <PageHeader
         back={{ to: '/library', label: 'Библиотека' }}
         meta={
@@ -101,7 +101,9 @@ function ReadingView({ text }: { text: ReadingText }) {
         </a>
       </div>
 
-      <section className="card space-y-1 sm:p-7" lang="pt-PT">
+      {/* Desktop: the text at a readable measure beside its glossary; stacked on phones. */}
+      <div className={text.glossary.length > 0 ? 'page-grid' : undefined}>
+      <section className="card min-w-0 space-y-1" lang="pt-PT">
         {paragraphs.map((segs, pi) => (
           <div
             key={pi}
@@ -113,7 +115,7 @@ function ReadingView({ text }: { text: ReadingText }) {
             <span onClickCapture={reader.cancel} className="pt-0.5">
               <SpeakButton text={text.paragraphs[pi]} size="sm" ariaLabel={`Прослушать абзац ${pi + 1}`} />
             </span>
-            <p className="min-w-0 flex-1 text-[1.1875rem] leading-[1.75]">
+            <p className="measure min-w-0 flex-1 text-base leading-7">
               {segs.map((s, si) =>
                 s.gi === undefined ? (
                   <span key={si}>{s.text}</span>
@@ -160,12 +162,12 @@ function ReadingView({ text }: { text: ReadingText }) {
       )}
 
       {text.glossary.length > 0 && (
-        <section className="space-y-3">
+        <section aria-labelledby="reading-gloss" className="space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2>Словарик</h2>
+            <h2 id="reading-gloss">Словарик</h2>
             <button
               type="button"
-              className="btn-secondary px-3 text-sm"
+              className="btn-secondary"
               disabled={cards.busy || cards.have === null || allAdded}
               onClick={() => void cards.add(missing)}
             >
@@ -201,6 +203,7 @@ function ReadingView({ text }: { text: ReadingText }) {
           </ul>
         </section>
       )}
+      </div>
 
       {text.questions.length > 0 && (
         <section className="space-y-3">

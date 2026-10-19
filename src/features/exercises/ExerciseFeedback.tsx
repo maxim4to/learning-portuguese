@@ -98,7 +98,7 @@ export function ExerciseFeedback({ ex, rec, lenient }: { ex: Exercise; rec: Answ
 
   return (
     <div className={cx('animate-enter space-y-3 rounded-card border p-4', box)}>
-      <p className="flex items-center gap-3 font-display text-[1.75rem] leading-none">
+      <p className="flex items-center gap-3 font-display text-h2 leading-none">
         {icon}
         {head}
       </p>
@@ -126,7 +126,7 @@ export function ExerciseFeedback({ ex, rec, lenient }: { ex: Exercise; rec: Answ
           </ul>
         </div>
       )}
-      {ex.explanation && <Markdown className="text-[0.9375rem] text-ink-muted">{ex.explanation}</Markdown>}
+      {ex.explanation && <Markdown className="text-sm text-ink-muted">{ex.explanation}</Markdown>}
     </div>
   )
 }

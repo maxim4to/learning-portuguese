@@ -70,7 +70,7 @@
 
   --radius-sm: 1.25rem; /* blocks that are controls but multi-line: banners, textareas, tables */
   --radius-md: 1.75rem; /* cards */
-  --radius-lg: 2.5rem; /* hero / feature surfaces (40px) */
+  --radius-lg: 1.75rem; /* former hero radius: now the card radius (one card radius app-wide) */
   --radius-pill: 800px;
 
   /* Layout metrics: fixed bar heights (sticky offsets derive from them, no magic numbers). */
@@ -87,6 +87,16 @@
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
 
+  /* h1 step of the type scale: 28px on phones, 32px from md. */
+  --fs-h1: 1.75rem;
+  /* Page container (header, logo and every route share it): 1200px incl. gutters → 1152px content at 1440. */
+  --page-max: 75rem;
+  --page-gutter: 1rem;
+  /* Rhythm: page sections 32px apart, blocks inside a section 16px, one grid gutter. */
+  --space-section: 2rem;
+  --space-block: 1rem;
+  --gutter: 1rem;
+
   /* Legacy neutral ramp used by pages not yet migrated (text shades adapt to the theme, see .dark). */
   --legacy-400: #5e5c56;
   --legacy-500: #4a4843;
@@ -99,6 +109,13 @@
   :root {
     --sticky-top: var(--header-h);
     --bottom-chrome: 0px;
+    --gutter: 1.5rem;
+  }
+}
+@media (min-width: 48rem) {
+  :root {
+    --fs-h1: 2rem;
+    --page-gutter: 1.5rem;
   }
 }
 
@@ -160,27 +177,26 @@
   --font-display: "Sofia Sans Extra Condensed Variable", "Sofia Sans Extra Condensed", "Arial Narrow", "Roboto Condensed",
     Impact, sans-serif;
 
-  /* Type scale (rem so the browser font-size setting applies everywhere). Body steps ≈1.2, display steps architectural. */
-  --text-xs: 0.8125rem;
-  --text-xs--line-height: 1.4;
-  --text-sm: 0.9375rem;
-  --text-sm--line-height: 1.45;
-  --text-base: 1.0625rem;
-  --text-base--line-height: 1.55;
-  --text-lg: 1.25rem;
-  --text-lg--line-height: 1.4;
-  --text-xl: 1.5rem;
-  --text-xl--line-height: 1.25;
-  --text-2xl: 1.875rem;
-  --text-2xl--line-height: 1.1;
-  --text-3xl: 2.5rem;
-  --text-3xl--line-height: 1;
-  --text-4xl: 3rem;
-  --text-4xl--line-height: 1;
-  --text-display: 4rem;
-  --text-display--line-height: 0.94;
-  --text-mega: 7.5rem;
-  --text-mega--line-height: 0.86;
+  /*
+   * ONE type scale for the app (.taste-skill/system/SYSTEM.md). Five sizes, rem so the browser setting applies.
+   * Every other Tailwind size is switched off (`--text-*: initial`), so an ad-hoc size cannot creep back in.
+   *   h1    32/1.05 (28 on phones) — display face: page title; text face: the task / flashcard / lead figure
+   *   h2    24/1.1                 — display face: section title, stat figures
+   *   base  16/24                  — body, card titles (600), md buttons, inputs
+   *   sm    14/20                  — meta, labels, sm buttons, chips, tabs, nav
+   *   xs    12/16                  — captions only: count badges, tab-bar labels, level tags, keyboard hints
+   */
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-h2: 1.5rem;
+  --text-h2--line-height: 1.1;
+  --text-h1: var(--fs-h1);
+  --text-h1--line-height: 1.05;
 
   --animate-pop: pop 260ms var(--ease-out);
   --animate-shake: shake 320ms ease-in-out;
@@ -269,7 +285,7 @@
   body {
     @apply bg-bg font-sans text-ink antialiased;
     font-size: var(--text-base);
-    line-height: 1.55;
+    line-height: var(--text-base--line-height);
     /* DM Sans-style Medium as the base weight: Regular reads anaemic next to the ultrabold display. */
     font-weight: 500;
     text-rendering: optimizeLegibility;
@@ -280,31 +296,24 @@
     font-family: var(--font-display);
     font-weight: 850;
     letter-spacing: 0.02em;
-    line-height: 1.02;
-    font-size: 1.5rem; /* 24px on phones */
+    line-height: var(--text-h1--line-height);
+    font-size: var(--text-h1); /* 28px on phones, 32px from md (app title, never a poster) */
     color: var(--ink);
     text-wrap: balance;
   }
-  /* App screens, not a poster: page titles stay at 32px so the task / content is the loudest thing. */
-  @media (min-width: 48rem) {
-    h1 {
-      font-size: 2rem;
-    }
-  }
+  /* Section title: display face, 24px at every width. */
   h2 {
     font-family: var(--font-display);
     font-weight: 800;
     letter-spacing: 0.02em;
-    line-height: 1.05;
-    font-size: 1.375rem; /* 22px */
+    line-height: var(--text-h2--line-height);
+    font-size: var(--text-h2);
   }
-  @media (min-width: 48rem) {
-    h2 {
-      font-size: 1.5rem;
-    }
-  }
+  /* Card title: the text face at body size, semibold (weight, not size, sets it apart). */
   h3 {
-    @apply text-[1.125rem] leading-snug font-semibold;
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    font-weight: 650;
   }
   b,
   strong {
@@ -354,22 +363,41 @@
 }
 
 /* Flat surfaces: tone, not shadow or border, separates them from the canvas. */
+/* One card: radius 28px, padding 20px (24px from lg). Nested wells: radius 20px, padding 16px. */
 @utility card {
-  @apply rounded-card bg-surface p-4 sm:p-5;
+  @apply rounded-card bg-surface p-5 lg:p-6;
 }
 @utility card-raised {
-  @apply rounded-card bg-surface p-4 sm:p-5;
+  @apply rounded-card bg-surface p-5 lg:p-6;
 }
 @utility card-sunken {
-  @apply rounded-card bg-surface-2 p-4;
+  @apply rounded-control bg-surface-2 p-4;
 }
 /* Interactive card (links): tonal hover + press, no lift. */
 @utility card-link {
   @apply block text-ink no-underline transition-[background-color,transform,outline-color] duration-150 hover:bg-[color-mix(in_oklab,var(--surface)_80%,var(--brand-soft))] active:scale-[0.99];
 }
 
+/*
+ * ONE button system (src/components/Button.tsx). Pill radius, weight 600, explicit disabled look.
+ *   md (default) 44px tall · 16px label · 20px side padding · 18px icons  — page and step actions
+ *   sm           36px tall (44px hit area) · 14px label · 16px padding · 16px icons — inline / row / toolbar actions
+ * Same role → same size on every screen. Icon-only buttons: btn-icon (44) / btn-icon btn-sm (36).
+ */
 @utility btn {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-pill px-5 py-2 text-base leading-tight font-semibold no-underline transition-[background-color,border-color,color,transform] duration-150 select-none active:scale-[0.97] disabled:cursor-not-allowed disabled:active:scale-100;
+  @apply inline-flex items-center justify-center rounded-pill leading-tight font-semibold whitespace-nowrap no-underline transition-[background-color,border-color,color,transform] duration-150 select-none active:scale-[0.97] disabled:cursor-not-allowed disabled:active:scale-100;
+  /* Size comes from variables, so btn-sm / btn-icon win whatever order the utilities are emitted in. */
+  position: relative;
+  height: var(--btn-h, 2.75rem);
+  min-width: var(--btn-w, auto);
+  padding-inline: var(--btn-px, 1.25rem);
+  gap: var(--btn-gap, 0.5rem);
+  font-size: var(--btn-fs, var(--text-base));
+  & svg {
+    width: var(--btn-icon, 1.125rem);
+    height: var(--btn-icon, 1.125rem);
+    flex-shrink: 0;
+  }
   /* Explicit disabled look (not opacity): neutral fill + muted ink, 7:1+ in both themes. Wins over variant colours. */
   &:disabled {
     background-color: var(--surface-2) !important;
@@ -377,6 +405,33 @@
     color: var(--ink-muted) !important;
     filter: none !important;
   }
+}
+@utility btn-sm {
+  --btn-h: 2.25rem;
+  --btn-px: 1rem;
+  --btn-gap: 0.375rem;
+  --btn-fs: var(--text-sm);
+  --btn-icon: 1rem;
+  /* 44px touch target without growing the row. */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -4px 0;
+  }
+}
+/* Square icon-only button (combine with a variant; add btn-sm for 36px). */
+@utility btn-icon {
+  --btn-px: 0;
+  --btn-w: var(--btn-h, 2.75rem);
+  width: var(--btn-h, 2.75rem);
+}
+/* A long label may wrap instead of overflowing (rare). */
+@utility btn-wrap {
+  height: auto;
+  min-height: var(--btn-h, 2.75rem);
+  padding-block: 0.5rem;
+  white-space: normal;
+  text-align: center;
 }
 @utility btn-primary {
   @apply btn bg-brand text-on-brand hover:bg-brand-hover;
@@ -395,7 +450,7 @@
 }
 
 @utility input {
-  @apply min-h-12 w-full rounded-pill border-[1.5px] border-line-strong bg-surface px-5 py-2.5 text-base font-medium text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-ink-muted/80 focus:border-ink;
+  @apply min-h-11 w-full rounded-pill border-[1.5px] border-line-strong bg-surface px-5 py-2.5 text-base font-medium text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-ink-muted/80 focus:border-ink;
 }
 textarea.input {
   border-radius: var(--radius-sm);
@@ -423,11 +478,37 @@ textarea.input {
 /* Primary actions of a step (Проверить / Дальше / оценки) stay reachable above the mobile tab bar (audit P1-5). */
 /* The task itself (exercise sentence / prompt): the largest text on an exercise screen, above h1 in a lesson. */
 @utility text-prompt {
-  font-size: 1.75rem;
+  font-size: var(--text-h1);
   line-height: 1.3;
-  @media (min-width: 40rem) {
-    font-size: 2rem;
+}
+
+/* The shared page container: same max width and left edge for the logo, the nav and every route. */
+@utility page-container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-left: max(var(--page-gutter), var(--safe-left));
+  padding-right: max(var(--page-gutter), var(--safe-right));
+}
+/* Page rhythm: header and sections 32px apart. */
+@utility page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-section);
+  min-width: 0;
+}
+/* Desktop composition: main column + 352px side panel from lg (stacks below). */
+@utility page-grid {
+  display: grid;
+  gap: var(--gutter);
+  align-items: start;
+  @media (min-width: 64rem) {
+    grid-template-columns: minmax(0, 1fr) 22rem;
   }
+}
+/* Readable measure for running text inside wide grids. */
+@utility measure {
+  max-width: 72ch;
 }
 
 @utility sticky-actions {

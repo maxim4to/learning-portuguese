@@ -44,7 +44,7 @@ export function TutorHubPage() {
   const buildDaily = useCallback(() => buildDailyPrompt(daily), [daily])
 
   return (
-    <div className="space-y-8">
+    <div className="page">
       <PageHeader
         back={{ to: '/', label: 'Главная' }}
         title="Практика с агентом"
@@ -95,14 +95,14 @@ export function TutorHubPage() {
             }}
           />
         ) : (
-          <Skeleton className="h-64 rounded-hero" />
+          <Skeleton className="h-64 rounded-card" />
         )}
       </section>
 
       <section className="space-y-3">
         <SectionTitle>Темы для занятия</SectionTitle>
         <p className="text-sm text-ink-muted">Сначала слабые темы, затем следующие по курсу.</p>
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <ul className="grid gap-(--gutter) sm:grid-cols-2">
           {view.shaky.map(({ topic, progress: p }) => (
             <li key={topic.id}>
               <Link to={`/topic/${topic.id}?tab=tutor`} className={linkCard}>
@@ -134,7 +134,7 @@ export function TutorHubPage() {
 
       <section className="space-y-3">
         <SectionTitle>Ситуации для сценок</SectionTitle>
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <ul className="grid gap-(--gutter) sm:grid-cols-2">
           {view.situations.map((s) => {
             const p = progress.get(s.id)
             return (

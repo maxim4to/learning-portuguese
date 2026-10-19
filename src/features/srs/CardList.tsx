@@ -86,7 +86,7 @@ export function CardList({ cards, onChanged }: Props) {
   }, [shown])
 
   const iconBtn =
-    'grid size-11 place-items-center rounded-control text-ink-muted transition-colors hover:bg-surface-2 hover:text-ink disabled:opacity-40'
+    'btn-ghost btn-icon'
 
   return (
     <section className="space-y-3">
@@ -130,7 +130,7 @@ export function CardList({ cards, onChanged }: Props) {
                 <p lang="pt-PT" className="truncate text-sm text-brand-ink">
                   {c.back}
                 </p>
-                <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-muted">
+                <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
                   <span className={`rounded-full px-1.5 py-px font-semibold ${KIND_CHIP[c.kind]}`}>{KIND_LABEL[c.kind]}</span>
                   <span>{dueLabel(c, now)}</span>
                   {c.fsrs.lapses > 0 && <span>· ошибок {c.fsrs.lapses}</span>}
@@ -145,7 +145,7 @@ export function CardList({ cards, onChanged }: Props) {
                   aria-label={c.suspended ? `Вернуть «${c.front}» в повторение` : `Приостановить «${c.front}»`}
                   onClick={() => void run(c.id, () => repo.upsertCards([{ ...c, suspended: !c.suspended, updatedAt: Date.now() }]))}
                 >
-                  {c.suspended ? <Play aria-hidden className="size-4.5" /> : <Pause aria-hidden className="size-4.5" />}
+                  {c.suspended ? <Play aria-hidden /> : <Pause aria-hidden />}
                 </button>
                 <button
                   className={`${iconBtn} hover:bg-danger-soft hover:text-danger`}
@@ -155,7 +155,7 @@ export function CardList({ cards, onChanged }: Props) {
                   aria-label={`Удалить «${c.front}»`}
                   onClick={() => remove(c)}
                 >
-                  <Trash2 aria-hidden className="size-4.5" />
+                  <Trash2 aria-hidden />
                 </button>
               </div>
             </li>

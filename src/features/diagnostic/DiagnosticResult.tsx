@@ -30,7 +30,7 @@ export function GradeCounts({ topics }: { topics: Map<string, TopicOutcome> }) {
     <div className="grid grid-cols-3 gap-2 text-center">
       {(['green', 'yellow', 'red'] as const).map((g) => (
         <div key={g} className={`rounded-control border px-2 py-3 ${GRADE_META[g].chip}`}>
-          <p className="font-display text-3xl tabular-nums">{c[g]}</p>
+          <p className="font-display text-h2 tabular-nums">{c[g]}</p>
           <p className="text-xs font-semibold">{GRADE_META[g].label}</p>
         </div>
       ))}
@@ -80,8 +80,8 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
   const probed = new Set(getDiagnostic().questions.map((q) => q.level))
 
   return (
-    <div className="space-y-5">
-      <section className="card-raised relative space-y-4 overflow-hidden rounded-hero p-5 sm:p-7">
+    <div className="page">
+      <section className="card-raised relative space-y-4 overflow-hidden">
         <div className="space-y-1">
           <h1>{heading}</h1>
           <p className="text-sm text-ink-muted">
@@ -99,7 +99,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
         {note && !saving && <p className="text-sm text-ink-muted">{note}</p>}
       </section>
 
-      <section className="card space-y-3 sm:p-6">
+      <section className="card space-y-3">
         <h2>Рекомендуемый маршрут</h2>
         {route.length === 0 ? (
           <p className="text-ink-muted">
@@ -120,7 +120,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
                   >
                     <span className="w-6 shrink-0 text-right text-sm text-ink-muted tabular-nums">{i + 1}.</span>
                     <i className={`size-2.5 shrink-0 rounded-full ${GRADE_META[r.grade].dot}`} title={GRADE_META[r.grade].label} />
-                    <span className="min-w-0 flex-1 text-[0.9375rem] leading-snug font-medium sm:text-base">{topicTitle(r.id)}</span>
+                    <span className="min-w-0 flex-1 text-sm leading-snug font-medium">{topicTitle(r.id)}</span>
                     <span className="shrink-0 text-xs font-semibold text-ink-muted">{getTopic(r.id)?.level ?? r.id.slice(0, 2).toUpperCase()}</span>
                     <ChevronRight aria-hidden className="size-4 shrink-0 text-ink-muted" />
                   </Link>
@@ -130,7 +130,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
             {route.length > ROUTE_PREVIEW && (
               <button
                 type="button"
-                className="min-h-11 text-sm font-semibold text-azulejo"
+                className="btn-ghost btn-sm -ml-4 text-ink"
                 aria-expanded={showAll}
                 onClick={() => setShowAll((v) => !v)}
               >
@@ -143,7 +143,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
 
       <section className="space-y-4">
         <h2>Карта тем</h2>
-        <div className="flex flex-wrap gap-3 text-xs text-ink-muted">
+        <div className="flex flex-wrap gap-3 text-sm text-ink-muted">
           {LEGEND.map((g) => (
             <span key={g} className="flex items-center gap-1.5">
               <i className={`inline-block size-2.5 rounded-full ${GRADE_META[g].dot}`} />
@@ -156,7 +156,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
           .map((lvl) => (
             <div key={lvl.level} className="card space-y-4">
               <div className="flex flex-wrap items-center gap-3">
-                <Illustration name={levelArt(lvl.level)} sizes="56px" className="size-14 rounded-[1.25rem]" />
+                <Illustration name={levelArt(lvl.level)} sizes="56px" className="size-14 rounded-2xl" />
                 <LevelBadge level={lvl.level} />
                 {skipped.has(lvl.level) && <span className="text-sm text-ink-muted">не оценивался</span>}
               </div>

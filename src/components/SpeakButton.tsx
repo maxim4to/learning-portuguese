@@ -13,7 +13,8 @@ export interface SpeakButtonProps {
   rateFactor?: number
   /** Overrides the settings voice (speech-synthesis fallback only). */
   voice?: VoiceGender
-  size?: 'sm' | 'md' | 'lg'
+  /** Same heights as Button: sm 36px (44px hit), md 44px. */
+  size?: 'sm' | 'md'
   /** solid = brand fill (primary audio action), soft = tinted (default), ghost = outline only. */
   variant?: 'solid' | 'soft' | 'ghost'
   /** Show «нет голоса pt-PT» under the button when no audio source exists. Default true for labelled buttons. */
@@ -22,9 +23,8 @@ export interface SpeakButtonProps {
 }
 
 const DIM = {
-  sm: { icon: 'size-10 hit', label: 'min-h-10 hit px-3 text-sm', glyph: 'size-[18px]' },
-  md: { icon: 'size-11', label: 'min-h-11 px-4 text-sm', glyph: 'size-5' },
-  lg: { icon: 'size-13', label: 'min-h-13 px-5 text-base', glyph: 'size-6' },
+  sm: { icon: 'size-9 hit', label: 'h-9 hit px-4 text-sm', glyph: 'size-4' },
+  md: { icon: 'size-11', label: 'h-11 px-5 text-base', glyph: 'size-[1.125rem]' },
 } as const
 
 const VARIANT = {

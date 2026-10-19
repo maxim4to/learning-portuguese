@@ -29,7 +29,7 @@ interface Props {
 export function CardHeader({ card }: { card: SrsCard }) {
   const topic = card.topicId ? getTopic(card.topicId) : undefined
   return (
-    <div className="flex items-center justify-between gap-2 text-xs">
+    <div className="flex items-center justify-between gap-2 text-sm">
       <span className={`shrink-0 rounded-pill px-2.5 py-0.5 font-semibold whitespace-nowrap ${KIND_CHIP[card.kind]}`}>{KIND_LABEL[card.kind]}</span>
       {topic && <span className="truncate text-ink-muted">{topic.title}</span>}
     </div>
@@ -82,7 +82,7 @@ export function CardFace({ card, revealed, settings }: Props) {
               </p>
             ) : (
               errorFront && (
-                <p lang="pt-PT" className="font-display text-[1.75rem] leading-[1.05] text-balance whitespace-pre-line">
+                <p lang="pt-PT" className="font-display text-h1 text-balance whitespace-pre-line">
                   {errorFront}
                 </p>
               )
@@ -91,7 +91,7 @@ export function CardFace({ card, revealed, settings }: Props) {
         ) : (
           <>
             <p className="text-sm text-ink-muted">{FRONT_TASK[kind]}</p>
-            <p className="font-display text-[2.5rem] leading-[0.98] text-balance sm:text-display">{card.front}</p>
+            <p className="font-display text-h1 text-balance">{card.front}</p>
           </>
         )}
       </div>
@@ -100,14 +100,14 @@ export function CardFace({ card, revealed, settings }: Props) {
       {revealed && (
         <div className="reveal-rows"><div className="space-y-3 rule-dotted pt-6 text-center">
           <div className="flex items-center justify-center gap-3">
-            <p lang="pt-PT" className="font-display text-[2.25rem] leading-none text-balance text-brand-ink sm:text-4xl">
+            <p lang="pt-PT" className="font-display text-h1 text-balance text-brand-ink">
               {card.back}
             </p>
             <SpeakButton text={card.back} voice={voice} rate={rate} />
           </div>
           {example && (
-            <div className="card-sunken mx-auto max-w-md p-3 text-left text-sm">
-              <p className="text-xs font-semibold text-ink-muted">Пример</p>
+            <div className="card-sunken mx-auto max-w-md text-left text-sm">
+              <p className="text-sm font-semibold text-ink-muted">Пример</p>
               <div className="flex items-center gap-2">
                 <p lang="pt-PT" className="flex-1 font-medium">
                   {example.pt}

@@ -13,9 +13,9 @@ const components: Components = {
   h2: ({ children }) => <h2 className="mt-7 mb-2 font-display first:mt-0">{children}</h2>,
   h3: ({ children }) => <h3 className="mt-5 mb-2 first:mt-0">{children}</h3>,
   h4: ({ children }) => <h4 className="mt-4 mb-1 font-semibold first:mt-0">{children}</h4>,
-  p: ({ children }) => <p className="my-3 max-w-[68ch] first:mt-0 last:mb-0">{children}</p>,
-  ul: ({ children }) => <ul className="my-3 max-w-[68ch] list-disc space-y-1.5 pl-6 marker:text-ink-subtle">{children}</ul>,
-  ol: ({ children }) => <ol className="my-3 max-w-[68ch] list-decimal space-y-1.5 pl-6 marker:text-ink-subtle">{children}</ol>,
+  p: ({ children }) => <p className="my-3 measure first:mt-0 last:mb-0">{children}</p>,
+  ul: ({ children }) => <ul className="my-3 measure list-disc space-y-1.5 pl-6 marker:text-ink-subtle">{children}</ul>,
+  ol: ({ children }) => <ol className="my-3 measure list-decimal space-y-1.5 pl-6 marker:text-ink-subtle">{children}</ol>,
   li: ({ children }) => <li className="pl-1 [&>ol]:my-1.5 [&>ul]:my-1.5">{children}</li>,
   strong: ({ children }) => <strong className="font-bold text-ink">{children}</strong>,
   em: ({ children }) => <em className="text-brand-ink italic">{children}</em>,
@@ -50,7 +50,7 @@ const components: Components = {
   table: ({ children, node }) => (
     <HeadersContext.Provider value={headerTexts(node)}>
       <div className="my-4 min-w-0 sm:overflow-x-auto sm:overscroll-x-contain">
-        <table className="w-full border-collapse text-left text-[0.9375rem] leading-snug max-sm:block">{children}</table>
+        <table className="w-full border-collapse text-left text-sm leading-snug max-sm:block">{children}</table>
       </div>
     </HeadersContext.Provider>
   ),
@@ -67,7 +67,7 @@ const components: Components = {
   th: ({ children, style }) => (
     <th
       style={style}
-      className="border-b border-line-strong px-3 pt-1 pb-2 align-bottom text-[0.8125rem] font-semibold whitespace-nowrap text-ink-muted first:pl-0"
+      className="border-b border-line-strong px-3 pt-1 pb-2 align-bottom text-sm font-semibold whitespace-nowrap text-ink-muted first:pl-0"
     >
       {children}
     </th>

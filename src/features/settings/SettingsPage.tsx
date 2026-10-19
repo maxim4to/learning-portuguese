@@ -102,10 +102,12 @@ export function SettingsPage() {
   const fill = (v: number, min: number, max: number) => ({ ['--fill' as string]: `${((v - min) / (max - min)) * 100}%` })
 
   return (
-    <div className="max-w-2xl space-y-6">
+    <div className="page">
       <PageHeader title="Настройки" />
 
-      <Section title="Оформление">
+      <div className="space-y-(--gutter)">
+
+      <Section title="Оформление" description="Светлая, тёмная или как в системе. Выбор хранится на этом устройстве.">
         <Row label="Тема">
           <SegmentedControl<ThemePref>
             label="Тема оформления"
@@ -125,7 +127,7 @@ export function SettingsPage() {
         <PageSkeleton cards={2} />
       ) : (
         <>
-          <Section title="Аудио">
+          <Section title="Аудио" description="Голос и скорость для всех кнопок «Прослушать»: в уроках, диалогах, карточках и тексте для чтения.">
             <Row label="Голос">
               <div className="flex flex-wrap items-center gap-2">
                 <SegmentedControl
@@ -138,10 +140,10 @@ export function SettingsPage() {
                   onChange={(voice) => update({ voice })}
                 />
                 <button
-                  className="btn-secondary px-3 text-sm"
+                  className="btn-secondary btn-sm"
                   onClick={() => void speak(SAMPLE, { voice: settings.voice, rate: settings.rate })}
                 >
-                  <Volume2 aria-hidden className="size-4.5 text-azulejo" /> Прослушать
+                  <Volume2 aria-hidden /> Прослушать
                 </button>
               </div>
             </Row>
@@ -154,7 +156,7 @@ export function SettingsPage() {
                 step={0.05}
                 value={settings.rate}
                 onChange={(e) => update({ rate: Number(e.target.value) })}
-                className="range w-full"
+                className="range block w-full max-w-md"
                 style={fill(settings.rate, 0.5, 1.5)}
                 list="rate-marks"
                 aria-valuetext={fmtRate(settings.rate)}
@@ -175,7 +177,7 @@ export function SettingsPage() {
             {voiceInfo && <p className="text-sm text-ink-muted">{voiceInfo}</p>}
           </Section>
 
-          <Section title="Обучение">
+          <Section title="Обучение" description="Как проверяются ответы в упражнениях и сколько новых карточек приходит в повторение за день.">
             <Switch
               checked={settings.lenientAccents}
               onChange={(v) => update({ lenientAccents: v })}
@@ -187,7 +189,7 @@ export function SettingsPage() {
               }
             />
             <Row label="Новых карточек в день" htmlFor={newId}>
-              <div className="flex items-center gap-3">
+              <div className="flex max-w-md items-center gap-3">
                 <input
                   id={newId}
                   type="range"
@@ -222,7 +224,7 @@ export function SettingsPage() {
         </>
       )}
 
-      <Section title="Синхронизация">
+      <Section title="Синхронизация" description="Где хранится прогресс и как его не потерять.">
         <div className="flex items-start gap-3">
           <span aria-hidden className="grid size-10 shrink-0 place-items-center rounded-control bg-surface-2 text-ink-muted">
             {repo.kind === 'firestore' ? <Cloud className="size-5" /> : <HardDrive className="size-5" />}
@@ -261,7 +263,7 @@ export function SettingsPage() {
               <>
                 <div className="flex items-center gap-2">
                   <code className="min-w-0 flex-1 truncate rounded-lg bg-surface-2 px-3 py-2 font-mono text-ink">{auth.user.uid}</code>
-                  <button className="btn-secondary shrink-0 px-3 text-sm" onClick={() => void copyUid(auth.user!.uid)}>
+                  <button className="btn-secondary btn-sm shrink-0" onClick={() => void copyUid(auth.user!.uid)}>
                     {copied ? 'Скопировано' : 'Скопировать UID'}
                   </button>
                 </div>
@@ -274,14 +276,13 @@ export function SettingsPage() {
         </details>
       </Section>
 
-      <Section title="Резервная копия">
-        <p className="text-sm text-ink-muted">Прогресс, карточки, журнал ошибок и настройки — в одном файле.</p>
+      <Section title="Резервная копия" description="Прогресс, карточки, журнал ошибок и настройки — в одном JSON-файле. Им же можно перенести данные в другой браузер.">
         <div className="flex flex-wrap gap-2">
           <button className="btn-primary" onClick={() => void handleExport()}>
-            <Download aria-hidden className="size-5" /> Сохранить копию
+            <Download aria-hidden /> Сохранить копию
           </button>
           <button ref={importBtnRef} className="btn-secondary" onClick={() => fileRef.current?.click()}>
-            <Upload aria-hidden className="size-5" /> Восстановить из файла
+            <Upload aria-hidden /> Восстановить из файла
           </button>
           <input
             ref={fileRef}
@@ -336,15 +337,24 @@ export function SettingsPage() {
           </p>
         )}
       </Section>
+      </div>
     </div>
   )
 }
 
-function Section({ title, children }: { title: string; children: ReactNode }) {
+/**
+ * Settings row (app-screens §8.2): from lg the section's name and what it controls sit in a left column,
+ * its controls in a panel on the right — the page uses the full container width without stretching inputs.
+ */
+function Section({ title, description, children }: { title: string; description: string; children: ReactNode }) {
+  const id = useId()
   return (
-    <section className="card space-y-5 sm:p-6">
-      <h2 className="text-lg">{title}</h2>
-      {children}
+    <section aria-labelledby={id} className="grid gap-3 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start lg:gap-(--gutter)">
+      <div className="space-y-1 lg:pt-6">
+        <h2 id={id}>{title}</h2>
+        <p className="measure text-sm text-ink-muted">{description}</p>
+      </div>
+      <div className="card space-y-5">{children}</div>
     </section>
   )
 }

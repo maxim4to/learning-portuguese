@@ -20,7 +20,7 @@ const code = 'rounded-md bg-surface-2 px-1.5 py-0.5 text-sm'
 export function MissingTopicPage({ id }: { id: string }) {
   const where = findInSyllabus(id)
   return (
-    <div className="card mx-auto max-w-xl">
+    <div className="card">
       {where ? (
         <EmptyState
           icon={<Construction className="size-7" />}

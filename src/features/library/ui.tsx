@@ -34,13 +34,22 @@ export function AddCardButton({
   disabled,
   onClick,
   variant = 'round',
+  name,
 }: {
+  /** What is added (goes into the accessible name, so a list of «+» buttons stays distinguishable). */
+  name?: string
   added: boolean
   disabled?: boolean
   onClick(): void
   variant?: 'round' | 'text'
 }) {
-  const label = added ? 'Уже в повторении' : 'Добавить в повторение'
+  const label = name
+    ? added
+      ? `«${name}» уже в повторении`
+      : `Добавить «${name}» в повторение`
+    : added
+      ? 'Уже в повторении'
+      : 'Добавить в повторение'
   const icon = added ? <Check aria-hidden className={variant === 'text' ? 'size-4' : 'size-5'} strokeWidth={2.5} /> : <Plus aria-hidden className={variant === 'text' ? 'size-4' : 'size-5'} />
   if (variant === 'text') {
     return (

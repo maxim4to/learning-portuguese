@@ -3,7 +3,8 @@ import { Link, type LinkProps } from 'react-router-dom'
 import { cx } from './cx'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'accent'
-export type ButtonSize = 'sm' | 'md' | 'lg'
+/** md (44px, 16px label) = page and step actions; sm (36px visual, 44px hit, 14px label) = inline / row actions. */
+export type ButtonSize = 'sm' | 'md'
 
 const VARIANT: Record<ButtonVariant, string> = {
   primary: 'btn-primary',
@@ -12,11 +13,11 @@ const VARIANT: Record<ButtonVariant, string> = {
   danger: 'btn-danger',
   accent: 'btn-accent',
 }
-// Every size keeps a ≥44px touch target (sm is visually lighter, not shorter).
+// Sizes live in index.css (btn / btn-sm) so raw `className="btn-primary btn-sm"` and <Button size="sm"> match.
+// Every size keeps a ≥44px touch target.
 const SIZE: Record<ButtonSize, string> = {
-  sm: 'px-4 text-sm',
+  sm: 'btn-sm',
   md: '',
-  lg: 'min-h-14 px-7 text-lg',
 }
 
 function buttonClass(variant: ButtonVariant = 'primary', size: ButtonSize = 'md', className?: string) {

@@ -41,7 +41,7 @@ export function EmptyState({
           {icon}
         </span>
       )}
-      <p className={cx('text-ink', compact ? 'text-base font-semibold' : 'font-display text-2xl')}>{title}</p>
+      <p className={cx('text-ink', compact ? 'text-base font-semibold' : 'font-display text-h2')}>{title}</p>
       {text && <p className="max-w-[44ch] text-sm text-ink-muted">{text}</p>}
       {action && <div className="mt-1 flex flex-wrap justify-center gap-2">{action}</div>}
     </div>
@@ -55,7 +55,7 @@ export function ErrorState({ text, detail, onRetry }: { text?: string; detail?: 
       <span aria-hidden className="grid size-16 place-items-center rounded-full bg-danger-soft text-danger">
         <TriangleAlert className="size-6" />
       </span>
-      <p className="font-display text-2xl">{text ?? 'Не удалось загрузить данные'}</p>
+      <p className="font-display text-h2">{text ?? 'Не удалось загрузить данные'}</p>
       {detail && <p className="max-w-[48ch] text-sm break-words text-ink-muted">{detail}</p>}
       {onRetry && (
         <button type="button" className="btn-secondary" onClick={onRetry}>

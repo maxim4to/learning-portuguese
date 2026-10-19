@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowRight, ClipboardCheck, History, LogOut } from 'lucide-react'
+import { ArrowRight, History, LogOut } from 'lucide-react'
+import { plural } from '@/features/library/format'
 import { LEVELS, getDiagnostic, type DiagnosticQuestion, type Level } from '@/content'
 import { ButtonLink } from '@/components/Button'
 import { PageHeader } from '@/components/PageHeader'
@@ -165,17 +166,17 @@ export function DiagnosticPage() {
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-3">
-          <h1 className="font-sans text-xl font-bold">Диагностика</h1>
+          <h1 className="font-sans text-base font-bold">Диагностика</h1>
           <div className="flex items-center gap-2">
             <StageDots stages={stages} current={phase.stage} />
             <button
               type="button"
-              className="inline-flex min-h-11 items-center gap-1.5 rounded-control px-2.5 text-sm font-semibold text-ink-muted hover:bg-surface-2 hover:text-ink"
+              className="btn-ghost btn-sm"
               ref={exitRef}
               aria-expanded={confirmExit}
               onClick={() => setConfirmExit((v) => !v)}
             >
-              <LogOut aria-hidden className="size-4" /> Выйти
+              <LogOut aria-hidden /> Выйти
             </button>
           </div>
         </div>
@@ -255,7 +256,7 @@ export function DiagnosticPage() {
       <div className="space-y-4">
         <button
           type="button"
-          className="-ml-2 inline-flex min-h-11 items-center gap-1 rounded-control px-2 text-sm font-semibold text-ink-muted hover:bg-surface-2 hover:text-ink"
+          className="btn-ghost btn-sm -ml-3 text-ink"
           onClick={() => setPhase({ kind: 'intro' })}
         >
           ← Назад
@@ -266,14 +267,19 @@ export function DiagnosticPage() {
   }
 
   // --- Intro -------------------------------------------------------------------
-  const stat = 'card-sunken px-3 py-3'
+  // Desktop: how the test runs (main) beside what it covers / takes / gives (side panel); stacked on phones.
+  const levelSpan = `${perLevel[0]?.level}–${perLevel[perLevel.length - 1]?.level}`
   return (
-    <div className="max-w-2xl space-y-5">
-      <PageHeader back={{ to: '/syllabus', label: 'Курс' }} title="Диагностика уровня" />
+    <div className="page">
+      <PageHeader
+        back={{ to: '/syllabus', label: 'Курс' }}
+        title="Диагностика уровня"
+        subtitle="Короткий тест по грамматике европейского португальского: по 1–2 вопроса на каждую тему курса."
+      />
 
       {saved && (
-        <section className="card animate-enter flex flex-col gap-3 border-azulejo/30 bg-azulejo-soft sm:flex-row sm:items-center">
-          <History aria-hidden className="size-6 shrink-0 text-azulejo" />
+        <section className="card animate-enter flex flex-col gap-3 bg-azulejo-soft sm:flex-row sm:items-center">
+          <History aria-hidden className="size-5 shrink-0 text-azulejo" />
           <p className="flex-1 text-sm">
             <b>Незаконченная диагностика.</b> Этап {saved.stage + 1} из {saved.stages.length} — можно продолжить с того же места.
           </p>
@@ -283,70 +289,82 @@ export function DiagnosticPage() {
         </section>
       )}
 
-      <section className="card-raised relative space-y-5 overflow-hidden rounded-hero p-5 sm:p-7">
-        <div className="flex items-start gap-4">
-          <span aria-hidden className="hidden size-12 shrink-0 place-items-center rounded-2xl bg-azulejo-soft text-azulejo sm:grid">
-            <ClipboardCheck className="size-6" />
-          </span>
-          <p className="text-ink">
-            Короткий тест по грамматике европейского португальского: по 1–2 вопроса на каждую тему курса. По результату
-            каждая тема получает статус «уверенно», «изучаю» или «слабо», и вы получаете персональный маршрут — сначала то, что
-            проседает.
+      <div className="page-grid">
+        <section aria-labelledby="diag-how" className="card space-y-5">
+          <h2 id="diag-how">Как проходит тест</h2>
+          <ol className="divide-y divide-line">
+            {perLevel.map((l, i) => (
+              <li key={l.level} className="flex items-baseline gap-4 py-3">
+                <span className="w-16 shrink-0 text-sm text-ink-muted tabular-nums">Этап {i + 1}</span>
+                <span className="flex-1 font-semibold">Уровень {l.level}</span>
+                <span className="text-sm text-ink-muted tabular-nums">{plural(l.n, 'вопрос', 'вопроса', 'вопросов')}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="measure text-sm text-ink-muted">
+            Если уровень даётся тяжело (меньше {Math.round(STOP_THRESHOLD * 100)}% верных), можно остановиться — следующие
+            уровни останутся неоценёнными. Прогресс сохраняется, пока открыта вкладка.
+            <span className="hidden sm:inline"> Клавиатура: 1–9 — выбор варианта, Enter — проверить / дальше.</span>
           </p>
-        </div>
-        <ul className="grid grid-cols-3 gap-2 text-sm leading-tight text-ink-muted">
-          <li className={stat}>
-            <span className="block font-display text-2xl text-ink tabular-nums">{questions.length}</span>
-            вопросов
-          </li>
-          <li className={stat}>
-            <span className="block font-display text-2xl whitespace-nowrap text-ink tabular-nums">
-              ~{minutesFor(questions.length)} мин
-            </span>
-            в своём темпе
-          </li>
-          <li className={stat}>
-            <span className="block font-display text-2xl text-ink">
-              {perLevel[0]?.level}–{perLevel[perLevel.length - 1]?.level}
-            </span>
-            {perLevel.length} этапа
-          </li>
-        </ul>
-        <p className="text-sm text-ink-muted">
-          Этапы по уровням: {perLevel.map((l) => `${l.level} (${l.n})`).join(' → ')}. Если уровень даётся тяжело (меньше{' '}
-          {Math.round(STOP_THRESHOLD * 100)}% верных), можно остановиться — следующие уровни останутся неоценёнными.
-          Прогресс сохраняется, пока открыта вкладка.
-          <span className="hidden sm:inline"> Клавиатура: 1–9 — выбор варианта, Enter — проверить / дальше.</span>
-        </p>
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <button type="button" className={saved ? 'btn-secondary' : 'btn-primary'} onClick={start} autoFocus={!saved}>
-            {saved ? 'Начать заново' : last ? 'Пройти заново' : 'Начать'}
-            {!saved && <ArrowRight aria-hidden className="size-5" />}
-          </button>
-          <ButtonLink to="/syllabus" variant="ghost">
-            К курсу
-          </ButtonLink>
-        </div>
-      </section>
-
-      {last && (
-        <section className="card space-y-3 sm:p-6">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h2>Последний результат</h2>
-            <span className="text-sm text-ink-muted">{formatDate(last.at)}</span>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <button type="button" className={saved ? 'btn-secondary' : 'btn-primary'} onClick={start} autoFocus={!saved}>
+              {saved ? 'Начать заново' : last ? 'Пройти заново' : 'Начать'}
+              {!saved && <ArrowRight aria-hidden />}
+            </button>
+            <ButtonLink to="/syllabus" variant="ghost">
+              К курсу
+            </ButtonLink>
           </div>
-          <GradeCounts topics={last.topics} />
-          {last.skippedLevels.length > 0 && (
-            <p className="text-sm text-ink-muted">Не оценивались: {last.skippedLevels.join(', ')}</p>
-          )}
-          <button type="button" className="btn-secondary w-full sm:w-auto" onClick={() => setPhase({ kind: 'last' })}>
-            Карта тем и маршрут
-          </button>
         </section>
-      )}
-      {!last && settings?.lastDiagnosticAt && (
-        <p className="text-center text-sm text-ink-muted">Последняя диагностика: {formatDate(settings.lastDiagnosticAt)}</p>
-      )}
+
+        <aside className="space-y-(--gutter)">
+          <section aria-labelledby="diag-what" className="card space-y-4">
+            <h2 id="diag-what">Что внутри</h2>
+            <dl className="grid grid-cols-3 gap-3">
+              <div className="flex flex-col-reverse justify-end">
+                <dt className="text-sm text-ink-muted">вопросов</dt>
+                <dd className="font-display text-h2 tabular-nums">{questions.length}</dd>
+              </div>
+              <div className="flex flex-col-reverse justify-end">
+                <dt className="text-sm text-ink-muted">в своём темпе</dt>
+                <dd className="font-display text-h2 whitespace-nowrap tabular-nums">~{minutesFor(questions.length)} мин</dd>
+              </div>
+              <div className="flex flex-col-reverse justify-end">
+                <dt className="text-sm text-ink-muted">{plural(perLevel.length, 'этап', 'этапа', 'этапов')}</dt>
+                <dd className="font-display text-h2">{levelSpan}</dd>
+              </div>
+            </dl>
+            <h3 className="rule-dotted pt-4">Что вы получите</h3>
+            <ul className="space-y-2 text-sm text-ink-muted">
+              <li>Каждая тема курса получает статус «уверенно», «изучаю» или «слабо».</li>
+              <li>Персональный маршрут: сначала темы, которые проседают.</li>
+              <li>Ошибки попадают в журнал — их можно повторить карточками.</li>
+            </ul>
+          </section>
+
+          {last ? (
+            <section aria-labelledby="diag-last" className="card space-y-3">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h2 id="diag-last">Последний результат</h2>
+                <span className="text-sm text-ink-muted">{formatDate(last.at)}</span>
+              </div>
+              <GradeCounts topics={last.topics} />
+              {last.skippedLevels.length > 0 && (
+                <p className="text-sm text-ink-muted">Не оценивались: {last.skippedLevels.join(', ')}</p>
+              ) }
+              <button type="button" className="btn-secondary w-full" onClick={() => setPhase({ kind: 'last' })}>
+                Карта тем и маршрут
+              </button>
+            </section>
+          ) : (
+            <p className="px-1 text-sm text-ink-muted">
+              {settings?.lastDiagnosticAt
+                ? `Последняя диагностика: ${formatDate(settings.lastDiagnosticAt)}.`
+                : 'Вы ещё не проходили диагностику — результат появится здесь.'}
+            </p>
+          )}
+        </aside>
+      </div>
     </div>
   )
 }
@@ -387,17 +405,18 @@ function Interstitial(p: {
   const remaining = p.stages.slice(p.current + 1).map((s) => s.level)
 
   return (
-    <div className="mx-auto max-w-xl space-y-4">
+    <div className="page-grid">
+    <div className="min-w-0 space-y-4">
       <div className="flex justify-end">
         <StageDots stages={p.stages} current={p.current + 1} />
       </div>
-      <section className="card-raised animate-enter space-y-4 rounded-hero p-5 text-center sm:p-7">
+      <section className="card-raised animate-enter space-y-4 text-center">
         <p className="text-sm text-ink-muted">
           Этап {p.current + 1} из {p.stages.length} завершён · уровень {p.level}
         </p>
         <div className="flex justify-center">
           <ProgressRing value={pct / 100} size={120} stroke={10} tone={toneForPct(pct)}>
-            <span className="font-display text-3xl tabular-nums">{pct}%</span>
+            <span className="font-display text-h2 tabular-nums">{pct}%</span>
           </ProgressRing>
         </div>
         <p className="text-ink-muted">
@@ -428,11 +447,34 @@ function Interstitial(p: {
           )}
         </div>
         {!p.low && (
-          <button type="button" className="min-h-11 text-sm text-ink-muted underline-offset-2 hover:underline" onClick={p.onStop}>
+          <button type="button" className="btn-ghost btn-sm" onClick={p.onStop}>
             Завершить сейчас ({remaining.join(', ')} не будут оценены)
           </button>
         )}
       </section>
     </div>
+    <StageList stages={p.stages} done={p.current + 1} />
+    </div>
+  )
+}
+
+/** Side panel between stages: which levels are done and which are left. */
+function StageList({ stages, done }: { stages: Stage[]; done: number }) {
+  return (
+    <aside aria-labelledby="diag-stages" className="card space-y-3">
+      <h2 id="diag-stages">Этапы</h2>
+      <ol className="divide-y divide-line text-sm">
+        {stages.map((s, i) => (
+          <li key={s.level} className="flex items-baseline justify-between gap-3 py-2">
+            <span className="font-semibold">
+              Этап {i + 1} · {s.level}
+            </span>
+            <span className="text-ink-muted">
+              {i < done ? 'пройден' : `${plural(s.questions.length, 'вопрос', 'вопроса', 'вопросов')}`}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </aside>
   )
 }

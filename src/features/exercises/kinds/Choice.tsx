@@ -56,7 +56,7 @@ function Options({
               disabled={locked}
               onClick={() => onPick(i)}
               className={cx(
-                'flex min-h-13 w-full items-center gap-3 rounded-control border-[1.5px] px-4 py-3 text-left text-[1.0625rem] transition-[background-color,border-color,transform] duration-150 disabled:cursor-default',
+                'flex min-h-13 w-full items-center gap-3 rounded-control border-[1.5px] px-4 py-3 text-left text-base transition-[background-color,border-color,transform] duration-150 disabled:cursor-default',
                 tone,
               )}
               lang="pt-PT"
@@ -119,7 +119,7 @@ export function ListenChoiceExercise({ exercise: ex, locked, result, onSubmit }:
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
-        <SpeakButton text={ex.text} size="lg" variant="solid" label="Слушать" />
+        <SpeakButton text={ex.text} variant="solid" label="Слушать" />
         <SpeakButton text={ex.text} rateFactor={0.75} label="Медленно" />
       </div>
       {ex.prompt && <p className="text-prompt text-pretty">{ex.prompt}</p>}

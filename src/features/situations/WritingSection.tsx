@@ -48,9 +48,9 @@ export function WritingSection({ situation }: { situation: Situation }) {
             setText(e.target.value)
           }}
           placeholder="Escreva aqui…"
-          className="input min-h-48 w-full resize-y text-[1.0625rem] leading-relaxed"
+          className="input min-h-48 w-full resize-y text-base leading-relaxed"
         />
-        <p className="flex justify-between text-xs text-ink-muted" aria-live="polite">
+        <p className="flex justify-between text-sm text-ink-muted" aria-live="polite">
           <span>{text ? (saved ? 'Черновик сохранён на этом устройстве' : 'Сохраняю…') : 'Черновик сохраняется автоматически'}</span>
           <span className="tabular-nums">слов: {words}</span>
         </p>

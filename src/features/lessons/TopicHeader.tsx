@@ -58,7 +58,7 @@ export function TopicHeader({
         </>
       }
       subtitle={
-        <p className="font-pt text-lg" lang="pt-PT">
+        <p className="font-pt text-base" lang="pt-PT">
           {topic.titlePt}
         </p>
       }
@@ -73,7 +73,7 @@ export function TopicHeader({
               <Link
                 key={id}
                 to={`/topic/${id}`}
-                className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-surface py-1.5 pr-1.5 pl-4 text-ink no-underline transition-colors hover:bg-surface-2"
+                className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-surface py-1.5 pr-1.5 pl-4 text-sm font-semibold text-ink no-underline transition-colors hover:bg-surface-2"
               >
                 <span>{t?.title ?? id}</span>
                 <StatusBadge status={st} />

@@ -175,14 +175,14 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
     const minutes = Math.max(1, Math.round(((finishedAt ?? startedAt) - startedAt) / 60_000))
     const recalled = total ? (total - counts.again) / total : 0
     return (
-      <section data-halftone-surface="" className="card-raised animate-enter relative isolate space-y-5 overflow-hidden rounded-hero p-6 pt-0 text-center sm:p-10 sm:pt-0">
-        <div aria-hidden className="relative -mx-6 mb-2 h-36 bg-terracotta-fill sm:-mx-10 sm:h-44">
+      <section data-halftone-surface="" className="card-raised animate-enter relative isolate space-y-5 overflow-hidden pt-0 text-center lg:pt-0">
+        <div aria-hidden className="relative -mx-5 mb-2 h-36 bg-terracotta-fill sm:h-44 lg:-mx-6">
           <DotGrid mask="fade-bottom" maskStops={[0, 0.9]} dotSize={6} gap={4} rotate={18} activeColor="--sun" shockRadius={220} />
           <span className="absolute bottom-0 left-1/2 grid size-20 -translate-x-1/2 translate-y-1/3 place-items-center rounded-full bg-surface text-ink">
             <PartyPopper className="size-9" />
           </span>
         </div>
-        <h2 ref={summaryRef} tabIndex={-1} className="pt-6 text-[1.75rem] outline-none">
+        <h2 ref={summaryRef} tabIndex={-1} className="pt-6 outline-none">
           Сессия завершена
         </h2>
         <p className="text-ink-muted">
@@ -190,8 +190,8 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         </p>
         <div className="mx-auto grid max-w-md grid-cols-4 gap-2 text-sm">
           {RATING_UI.map((r) => (
-            <div key={r.rating} className={`rounded-[1.25rem] border-[1.5px] p-2 font-semibold ${r.cls}`}>
-              <div className="font-display text-3xl tabular-nums">{counts[r.rating]}</div>
+            <div key={r.rating} className={`rounded-control border-[1.5px] p-2 font-semibold ${r.cls}`}>
+              <div className="font-display text-h2 tabular-nums">{counts[r.rating]}</div>
               {r.label}
             </div>
           ))}
@@ -219,7 +219,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         {confirmEnd ? (
           <span className="flex items-center gap-1" role="group" aria-label="Завершить сессию?">
             <button
-              className="btn-secondary min-h-9 px-3 text-sm"
+              className="btn-secondary btn-sm"
               onClick={() => {
                 setFinishedAt(Date.now())
                 setQueue([])
@@ -227,17 +227,17 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
             >
               Завершить
             </button>
-            <button className="btn-ghost min-h-9 px-3 text-sm" autoFocus onClick={() => setConfirmEnd(false)}>
+            <button className="btn-ghost btn-sm" autoFocus onClick={() => setConfirmEnd(false)}>
               Отмена
             </button>
           </span>
         ) : (
           <button
             ref={endRef}
-            className="hit -mr-2 inline-flex min-h-9 items-center gap-1 rounded-pill px-3 font-semibold hover:bg-surface-2 hover:text-ink"
+            className="btn-ghost btn-sm -mr-2"
             onClick={() => setConfirmEnd(true)}
           >
-            <X aria-hidden className="size-4" /> Завершить
+            <X aria-hidden /> Завершить
           </button>
         )}
       </div>
@@ -246,7 +246,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         ref={cardRef}
         data-halftone-surface=""
         className={cx(
-          'card-raised relative isolate rounded-hero p-5 select-text sm:p-10',
+          'card-raised relative isolate select-text',
           // overflow-clip (not hidden) keeps the exercise's own sticky «Проверить» bar working on phones.
           exerciseMode ? 'overflow-clip' : 'overflow-hidden',
         )}
@@ -272,7 +272,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
 
       <div ref={actionsRef} className="sticky-actions">
         {exerciseMode && !revealed ? null : !revealed ? (
-          <button ref={revealRef} className="btn-primary min-h-14 w-full text-lg" onClick={reveal}>
+          <button ref={revealRef} className="btn-primary w-full" onClick={reveal}>
             Показать ответ
             <kbd className="hidden rounded-md bg-on-brand/20 px-1.5 py-0.5 font-sans text-xs md:inline">пробел</kbd>
           </button>
@@ -294,27 +294,27 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
                   rate(r.rating)
                 }}
                 className={cx(
-                  'flex min-h-16 animate-enter flex-col items-center justify-center rounded-[1.75rem] border-[1.5px] px-1 py-2 transition-[background-color,border-color,transform] active:scale-[0.97]',
+                  'flex min-h-16 animate-enter flex-col items-center justify-center rounded-card border-[1.5px] px-1 py-2 transition-[background-color,border-color,transform] active:scale-[0.97]',
                   r.cls,
                   exerciseMode && r.rating === suggested && 'ring-2 ring-ink ring-offset-2 ring-offset-bg',
                 )}
               >
-                <span className="text-sm font-bold md:text-base">{r.label}</span>
+                <span className="text-base font-bold">{r.label}</span>
                 {exerciseMode && r.rating === suggested && <span className="sr-only"> (предложено по ответу)</span>}
                 <span className="text-xs tabular-nums">
                   <span className="sr-only">следующий показ через </span>
                   {intervals?.[r.rating] ?? formatInterval(0)}
                 </span>
-                <kbd className="mt-0.5 hidden font-sans text-[11px] font-semibold md:block">{r.key}</kbd>
+                <kbd className="mt-0.5 hidden font-sans text-xs font-semibold md:block">{r.key}</kbd>
               </button>
             ))}
           </div>
         )}
       </div>
       {exerciseMode && revealed && (
-        <p className="text-center text-xs text-ink-muted">Оценка предложена по ответу — можно выбрать другую.</p>
+        <p className="text-center text-sm text-ink-muted">Оценка предложена по ответу — можно выбрать другую.</p>
       )}
-      <p className="hidden text-center text-xs text-ink-muted md:block">
+      <p className="hidden text-center text-sm text-ink-muted md:block">
         {exerciseMode
           ? revealed
             ? 'Клавиши: 1–4 — оценка, пробел / Enter — предложенная оценка'

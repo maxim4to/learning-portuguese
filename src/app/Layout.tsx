@@ -69,7 +69,7 @@ function DueBadge({ n, className }: { n: number; className?: string }) {
   return (
     <span
       className={cx(
-        'inline-grid h-5 min-w-5 place-items-center rounded-full bg-terracotta-fill px-1.5 text-[0.6875rem] leading-none font-bold text-white tabular-nums',
+        'inline-grid h-5 min-w-5 place-items-center rounded-full bg-terracotta-fill px-1.5 text-xs leading-none font-bold text-white tabular-nums',
         className,
       )}
     >
@@ -84,8 +84,8 @@ function HomeLogo({ size }: { size: number }) {
   return (
     <NavLink to="/" data-halftone-surface="" aria-label="Português PT — главная" className="flex items-center gap-2.5 text-ink no-underline">
       <AzulejoMark size={size} />
-      <span className={cx('font-display leading-none font-black', size < 32 ? 'text-[1.375rem]' : 'text-[1.75rem]')}>Português</span>
-      <span className="rounded-pill bg-sun-soft px-2 py-0.5 text-[0.6875rem] font-bold whitespace-nowrap text-sun">PT-PT</span>
+      <span className="font-display text-h2 leading-none font-black">Português</span>
+      <span className="rounded-pill bg-sun-soft px-2 py-0.5 text-xs font-bold whitespace-nowrap text-sun">PT-PT</span>
     </NavLink>
   )
 }
@@ -112,15 +112,15 @@ export function Layout() {
         </a>
 
         {/* Phone / tablet: slim product row (not sticky); navigation lives in the bottom tab bar until lg. */}
-        <header className="pt-(--safe-top) pr-[max(1rem,var(--safe-right))] pl-[max(1rem,var(--safe-left))] md:px-6 lg:hidden">
-          <div className="mx-auto flex h-12 max-w-5xl items-center">
+        <header className="page-container pt-(--safe-top) lg:hidden">
+          <div className="flex h-12 items-center">
             <HomeLogo size={24} />
           </div>
         </header>
 
         {/* Desktop top bar from lg (fixed height = --header-h; in-page sticky bars stick right under it). */}
         <header className="sticky top-[0px] z-20 hidden h-(--header-h) bg-bg lg:block">
-          <div className="mx-auto flex h-full max-w-5xl items-center gap-6 px-6">
+          <div className="page-container flex h-full items-center gap-6">
             <HomeLogo size={32} />
             <nav aria-label="Основные разделы" className="ml-auto flex items-center gap-1 rounded-pill bg-surface p-1">
               {NAV_ITEMS.map((item) => {
@@ -149,7 +149,7 @@ export function Layout() {
         <main
           id="main"
           tabIndex={-1}
-          className="mx-auto max-w-5xl pt-2 pr-[max(1rem,var(--safe-right))] pb-[calc(var(--bottom-chrome)+2.5rem)] pl-[max(1rem,var(--safe-left))] outline-none md:px-6 lg:pt-6 lg:pb-20"
+          className="page-container pt-2 pb-[calc(var(--bottom-chrome)+2.5rem)] outline-none lg:pt-6 lg:pb-20"
         >
           <OfflineBanner synced={repo.kind === 'firestore'} />
           <Outlet />
@@ -170,7 +170,7 @@ export function Layout() {
                     to={item.to}
                     aria-current={active ? 'page' : undefined}
                     className={cx(
-                      'flex h-full flex-col items-center justify-center gap-1 rounded-pill text-[0.71875rem] leading-none font-semibold no-underline focus-visible:outline-on-ink-accent focus-visible:-outline-offset-4',
+                      'flex h-full flex-col items-center justify-center gap-1 rounded-pill text-xs leading-none font-semibold no-underline focus-visible:outline-on-ink-accent focus-visible:-outline-offset-4',
                       active ? 'text-surface' : 'text-surface/75',
                     )}
                   >
@@ -180,7 +180,7 @@ export function Layout() {
                         active && 'bg-brand text-on-brand',
                       )}
                     >
-                      <Icon aria-hidden className="size-[22px]" strokeWidth={active ? 2.3 : 1.8} />
+                      <Icon aria-hidden className="size-5" strokeWidth={active ? 2.3 : 1.8} />
                       {item.to === '/review' && <DueBadge n={due} className="absolute -top-1 right-1.5" />}
                     </span>
                     <span className="max-w-full truncate">{item.label}</span>

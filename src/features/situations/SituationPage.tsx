@@ -78,7 +78,7 @@ function SituationModule({ situation }: { situation: Situation }) {
     if (!n) return null
     return (
       <button type="button" className="btn-primary" onClick={() => goTab(n)}>
-        {TAB_LABEL[n]} <ArrowRight aria-hidden className="size-5" />
+        {TAB_LABEL[n]} <ArrowRight aria-hidden />
       </button>
     )
   }
@@ -86,7 +86,7 @@ function SituationModule({ situation }: { situation: Situation }) {
   const id = 'sit'
 
   return (
-    <article className="space-y-5">
+    <article className="page">
       <PageHeader
         back={{ to: '/situations', label: 'Ситуации' }}
         meta={
@@ -109,12 +109,13 @@ function SituationModule({ situation }: { situation: Situation }) {
           </span>
         }
         subtitle={
-          <p className="font-pt text-lg" lang="pt-PT">
+          <p className="font-pt text-base" lang="pt-PT">
             {situation.titlePt}
           </p>
         }
       />
 
+      <div className="space-y-4">
       <Tabs
         idBase={id}
         label="Разделы ситуации"
@@ -172,6 +173,7 @@ function SituationModule({ situation }: { situation: Situation }) {
         <h2 className="sr-only">Практика с агентом</h2>
         <SituationTutor situation={situation} onSaved={() => void reload()} />
       </TabPanel>
+      </div>
     </article>
   )
 }

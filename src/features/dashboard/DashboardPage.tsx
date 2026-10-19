@@ -78,8 +78,8 @@ export function DashboardPage() {
         : 'На сегодня всё сделано.'
 
   return (
-    <div className="space-y-4 md:space-y-5">
-      <header className="flex flex-wrap items-end justify-between gap-3 pt-2">
+    <div className="page">
+      <header className="flex flex-wrap items-end justify-between gap-3">
         <div className="space-y-2">
           <h1>Сегодня</h1>
           <p className="text-ink-muted">{todayLine}</p>
@@ -109,7 +109,7 @@ export function DashboardPage() {
                 <ClipboardCheck className="size-5" />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block font-display text-[1.375rem] leading-tight">
+                <span className="block font-display text-h2">
                   {lastDiag === undefined ? 'Пройдите диагностику' : 'Пора сверить уровень'}
                 </span>
                 <span className="block text-sm text-ink-muted">
@@ -122,15 +122,15 @@ export function DashboardPage() {
             </Link>
           )}
 
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-            <section className="card space-y-4 sm:p-7" aria-labelledby="dash-week">
+          <div className="grid grid-cols-1 gap-(--gutter) md:grid-cols-2">
+            <section className="card space-y-4" aria-labelledby="dash-week">
               <h2 id="dash-week">
                 Активность за неделю
               </h2>
               <WeekBars week={view.week} />
             </section>
 
-            <section className="card space-y-4 sm:p-7" aria-labelledby="dash-errors">
+            <section className="card space-y-4" aria-labelledby="dash-errors">
               <h2 id="dash-errors">
                 Последние ошибки
               </h2>
@@ -151,7 +151,7 @@ export function DashboardPage() {
             </section>
           </div>
 
-          <section className="card space-y-5 sm:p-7" aria-labelledby="dash-levels">
+          <section className="card space-y-4" aria-labelledby="dash-levels">
             <div className="flex items-center justify-between gap-3">
               <h2 id="dash-levels">
                 Прогресс по уровням
@@ -174,7 +174,7 @@ export function DashboardPage() {
 /** First visit: one clear recommendation instead of empty widgets (audit §3.2). */
 function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string } }) {
   return (
-    <section className="card-raised relative isolate grid gap-6 overflow-hidden rounded-hero p-6 sm:p-10 md:grid-cols-[1fr_minmax(0,0.9fr)] md:items-center">
+    <section className="card-raised relative isolate grid gap-6 overflow-hidden md:grid-cols-[1fr_minmax(0,0.9fr)] md:items-center">
       <Illustration
         name="hero"
         eager
@@ -192,11 +192,11 @@ function Onboarding({ firstTopic }: { firstTopic?: { id: string; title: string }
         </p>
       </div>
       <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-start">
-        <ButtonLink to="/diagnostic" size="lg" className="shrink-0" icon={<ClipboardCheck className="size-5" />}>
+        <ButtonLink to="/diagnostic" className="shrink-0" icon={<ClipboardCheck />}>
           Пройти диагностику
         </ButtonLink>
         {firstTopic && (
-          <ButtonLink to={`/topic/${firstTopic.id}`} variant="secondary" size="lg" title={firstTopic.title}>
+          <ButtonLink to={`/topic/${firstTopic.id}`} variant="secondary" title={firstTopic.title}>
             Открыть первую тему
           </ButtonLink>
         )}
@@ -226,8 +226,8 @@ function TodayHero({
   const rows = due === 0 ? suggestions.slice(1) : suggestions
 
   return (
-    <section className="grid gap-3 md:grid-cols-[1.35fr_1fr]" aria-labelledby="dash-today">
-      <div data-halftone-surface="" className="card-raised relative isolate overflow-hidden rounded-hero p-6 sm:p-10">
+    <section className="grid gap-(--gutter) md:grid-cols-[1.35fr_1fr]" aria-labelledby="dash-today">
+      <div data-halftone-surface="" className="card-raised relative isolate overflow-hidden">
         <AzulejoCorner opacity={0.8} />
         <h2 id="dash-today" className="sr-only">
           План на сегодня
@@ -235,8 +235,8 @@ function TodayHero({
         {due > 0 ? (
           <>
             <p className="flex items-baseline gap-2.5">
-              <span className="font-display text-[2.5rem] leading-none font-black tabular-nums">{due}</span>
-              <span className="font-display text-xl leading-tight">
+              <span className="font-display text-h1 leading-none font-black tabular-nums">{due}</span>
+              <span className="font-display text-h2">
                 {plural(due, 'карточка', 'карточки', 'карточек').replace(/^\d+\s/, '')} к повторению
               </span>
             </p>
@@ -247,7 +247,7 @@ function TodayHero({
           </>
         ) : primaryTopic ? (
           <>
-            <p className="font-display text-[1.75rem] leading-[1.05]">
+            <p className="font-display text-h2">
               {hasCards ? 'Повторение на сегодня готово' : 'Продолжим курс'}
             </p>
             <p className="mt-3 text-sm text-ink-muted">
@@ -255,16 +255,16 @@ function TodayHero({
             </p>
           </>
         ) : (
-          <p className="font-display text-[1.75rem] leading-[1.05]">На сегодня всё — parabéns!</p>
+          <p className="font-display text-h2">На сегодня всё — parabéns!</p>
         )}
 
         <div className="mt-6">
           {due > 0 ? (
-            <ButtonLink to="/review" size="lg" block className="sm:w-auto" icon={<Layers className="size-5" />}>
+            <ButtonLink to="/review" block className="sm:w-auto" icon={<Layers />}>
               Начать повторение
             </ButtonLink>
           ) : primaryTopic ? (
-            <ButtonLink to={`/topic/${primaryTopic.topic.id}`} size="lg" block className="sm:w-auto" iconEnd={<ArrowRight className="size-5" />}>
+            <ButtonLink to={`/topic/${primaryTopic.topic.id}`} block className="sm:w-auto" iconEnd={<ArrowRight />}>
               {primaryTopic.reason === 'next' ? 'Открыть тему' : 'Повторить тему'}
             </ButtonLink>
           ) : null}
@@ -275,7 +275,7 @@ function TodayHero({
             <li key={topic.id}>
               <Link
                 to={`/topic/${topic.id}`}
-                className="group -mx-2 flex min-h-14 items-center gap-3 rounded-[1.25rem] px-2 py-2 text-ink no-underline transition-colors hover:bg-surface-2"
+                className="group -mx-2 flex min-h-14 items-center gap-3 rounded-control px-2 py-2 text-ink no-underline transition-colors hover:bg-surface-2"
               >
                 <span
                   aria-hidden
@@ -302,7 +302,7 @@ function TodayHero({
       </div>
 
       {/* Signature poster panel (Lisbon halftone hero) with the day's goal ring. */}
-      <div className="relative isolate flex aspect-[3/2] items-end overflow-hidden rounded-hero bg-terracotta-fill p-4 sm:p-6 md:aspect-auto md:min-h-72">
+      <div className="relative isolate flex aspect-[3/2] items-end overflow-hidden rounded-card bg-terracotta-fill lg:p-6 md:aspect-auto md:min-h-72">
         <Illustration
           name="hero"
           cover
@@ -312,7 +312,7 @@ function TodayHero({
         />
         <div className="flex items-center gap-4 rounded-pill bg-surface py-2 pr-6 pl-2">
           <ProgressRing value={ratio} size={64} stroke={7} tone="brand">
-            <span className="font-display text-2xl leading-none font-black tabular-nums">{doneToday}</span>
+            <span className="font-display text-h2 leading-none font-black tabular-nums">{doneToday}</span>
           </ProgressRing>
           <span className="leading-tight">
             <span className="block font-semibold">Сделано сегодня</span>
@@ -333,7 +333,7 @@ function TutorCard({ daily }: { daily: ReturnType<typeof pickDaily> }) {
     <Link
       to="/tutor"
       data-halftone-surface=""
-      className="group relative isolate flex items-center gap-4 overflow-hidden rounded-card bg-terracotta-fill p-5 text-white no-underline transition-transform duration-150 active:scale-[0.99] sm:p-6"
+      className="group relative isolate flex items-center gap-4 overflow-hidden rounded-card bg-terracotta-fill text-white no-underline transition-transform duration-150 active:scale-[0.99] lg:p-6"
     >
       <span aria-hidden className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-2/3 opacity-90">
         <DotGrid mask="fade-left" dotSize={3.5} gap={3.5} activeColor="#fff" shockRadius={160} />
@@ -343,9 +343,8 @@ function TutorCard({ daily }: { daily: ReturnType<typeof pickDaily> }) {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-sm font-semibold">Практика с агентом</span>
-        <span className="mt-1 block font-display text-[1.25rem] leading-[1.1] sm:text-[1.5rem]">
-          Беседа дня: <span className="line-clamp-2 inline">{items.join(' · ') || 'разговор на свободную тему'}</span>
-        </span>
+        <span className="mt-1 block font-display text-h2">Беседа дня</span>
+        <span className="mt-1 line-clamp-2 block font-semibold">{items.join(' · ') || 'разговор на свободную тему'}</span>
         <span className="mt-1 block text-sm">Готовый промпт для Claude или ChatGPT — в одно касание</span>
       </span>
       <span aria-hidden className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-[#070607] transition-transform group-hover:translate-x-0.5">
@@ -393,7 +392,7 @@ function WeekBars({ week }: { week: ReturnType<typeof weeklyActivity> }) {
           )
         })}
       </div>
-      <div className="mt-3 flex gap-4 text-xs text-ink-muted">
+      <div className="mt-3 flex gap-4 text-sm text-ink-muted">
         <span className="flex items-center gap-1.5">
           <i className="inline-block size-2.5 rounded-sm bg-brand" /> уроки и тесты
         </span>
@@ -438,7 +437,7 @@ function LevelBar({ stats }: { stats: LevelStats }) {
 
 function Legend() {
   return (
-    <div className="rule-dotted flex flex-wrap gap-x-4 gap-y-2 pt-4 text-xs text-ink-muted">
+    <div className="rule-dotted flex flex-wrap gap-x-4 gap-y-2 pt-4 text-sm text-ink-muted">
       {STATUS_ORDER.map((s) => (
         <span key={s} className="flex items-center gap-1.5">
           <i className={`inline-block size-2.5 rounded-full ${STATUS_META[s].dot}`} />
@@ -465,7 +464,7 @@ function ErrorRow({ e, now }: { e: ErrorEntry; now: number }) {
           {e.expected}
         </dd>
       </dl>
-      <p className="text-xs text-ink-muted">
+      <p className="text-sm text-ink-muted">
         {relativeDay(e.at, now)}
         {link && (
           <>

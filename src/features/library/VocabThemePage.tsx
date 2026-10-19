@@ -24,7 +24,7 @@ export function VocabThemePage() {
   const allAdded = cards.have !== null && missing.length === 0
 
   return (
-    <article className="space-y-5">
+    <article className="page">
       <PageHeader
         back={{ to: '/library', label: 'Библиотека' }}
         meta={
@@ -36,7 +36,7 @@ export function VocabThemePage() {
         title={theme.title}
         subtitle={
           theme.titlePt && (
-            <p className="font-pt text-lg" lang="pt-PT">
+            <p className="font-pt text-base" lang="pt-PT">
               {theme.titlePt}
             </p>
           )
@@ -80,7 +80,7 @@ export function VocabThemePage() {
       <section aria-label="Слова темы" className="card p-0">
         <div
           aria-hidden
-          className="hidden grid-cols-[2.5rem_minmax(0,13fr)_minmax(0,11fr)_minmax(0,16fr)_auto] gap-x-4 border-b border-line-strong px-4 pt-3 pb-2 text-[0.8125rem] font-semibold text-ink-muted md:grid"
+          className="hidden grid-cols-[2.25rem_minmax(0,13fr)_minmax(0,11fr)_minmax(0,16fr)_auto] gap-x-4 border-b border-line-strong px-4 pt-3 pb-2 text-sm font-semibold text-ink-muted md:grid"
         >
           <span />
           <span>Português</span>

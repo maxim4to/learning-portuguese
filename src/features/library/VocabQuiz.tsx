@@ -98,7 +98,7 @@ export function VocabQuiz({
   const flip = () => setRound((r) => ({ ...r, flipped: !r.flipped }))
 
   return (
-    <section className="card-raised space-y-4 rounded-hero p-4 sm:p-6" aria-label="Самопроверка">
+    <section className="card-raised space-y-4 p-4" aria-label="Самопроверка">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <SegmentedControl<Direction>
           label="Направление"
@@ -141,16 +141,16 @@ export function VocabQuiz({
             onClick={flip}
             aria-expanded={round.flipped}
             aria-describedby="vq-hint"
-            className="flex min-h-48 w-full flex-col items-center justify-center gap-3 rounded-card border border-line bg-sunken p-5 text-center transition-[border-color,box-shadow] hover:border-azulejo/40"
+            className="flex min-h-48 w-full flex-col items-center justify-center gap-3 rounded-card border border-line bg-sunken text-center transition-[border-color,box-shadow] hover:border-azulejo/40"
           >
-            <span key={`${idx}:${dir}`} className="animate-enter font-display text-[1.75rem] leading-tight" lang={dir === 'pt-ru' ? 'pt-PT' : 'ru'}>
+            <span key={`${idx}:${dir}`} className="animate-enter font-display text-h2 leading-tight" lang={dir === 'pt-ru' ? 'pt-PT' : 'ru'}>
               {front}
             </span>
             {dir === 'pt-ru' && <GenderBadge gender={word.gender} />}
             {round.flipped && (
               <span className="flex animate-enter flex-col items-center gap-2">
                 <span className="h-px w-16 bg-line-strong" aria-hidden />
-                <span className="text-xl font-semibold text-brand-ink" lang={dir === 'pt-ru' ? 'ru' : 'pt-PT'}>
+                <span className="font-display text-h2 text-brand-ink" lang={dir === 'pt-ru' ? 'ru' : 'pt-PT'}>
                   {back}
                 </span>
                 {dir === 'ru-pt' && <GenderBadge gender={word.gender} />}
@@ -173,26 +173,26 @@ export function VocabQuiz({
           <div className="sticky-actions">
             {round.flipped ? (
               <div className="grid grid-cols-2 gap-2">
-                <button type="button" className="btn-secondary min-h-13 border-terracotta/40 text-terracotta" onClick={() => answer(false)}>
+                <button type="button" className="btn-secondary" onClick={() => answer(false)}>
                   Не знаю <kbd className="hidden font-sans text-xs opacity-70 sm:inline">1</kbd>
                 </button>
-                <button type="button" className="btn-primary min-h-13" onClick={() => answer(true)}>
+                <button type="button" className="btn-primary" onClick={() => answer(true)}>
                   Знаю <kbd className="hidden font-sans text-xs opacity-70 sm:inline">2</kbd>
                 </button>
               </div>
             ) : (
-              <button type="button" className="btn-primary min-h-13 w-full" onClick={() => setRound((r) => ({ ...r, flipped: true }))}>
+              <button type="button" className="btn-primary w-full" onClick={() => setRound((r) => ({ ...r, flipped: true }))}>
                 Показать ответ
               </button>
             )}
           </div>
-          <p className="text-center text-xs text-ink-muted">
+          <p className="text-center text-sm text-ink-muted">
             Самопроверка не влияет на прогресс. «Не знаю» добавляет слово в повторение.
           </p>
         </>
       ) : (
         <div className="animate-enter space-y-4 text-center">
-          <p className="font-display text-3xl text-brand-ink tabular-nums">
+          <p className="font-display text-h2 text-brand-ink tabular-nums">
             {round.known.length} / {total}
           </p>
           <p className="text-ink-muted">

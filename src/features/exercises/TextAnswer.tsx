@@ -87,7 +87,7 @@ export function TextAnswer({
 
   return (
     <form onSubmit={submit} className="space-y-3">
-      <div className={fields > 1 ? 'grid gap-2 sm:grid-cols-2' : ''}>
+      <div className={fields > 1 ? 'grid max-w-3xl gap-2 sm:grid-cols-2' : 'max-w-3xl'}>
         {values.map((v, i) =>
           multiline ? (
             <textarea
@@ -108,7 +108,7 @@ export function TextAnswer({
                   submit()
                 }
               }}
-              className={cx('input resize-none text-[1.0625rem] disabled:text-ink', tone)}
+              className={cx('input resize-none text-base disabled:text-ink', tone)}
             />
           ) : (
             <input
@@ -123,7 +123,7 @@ export function TextAnswer({
               placeholder={fields > 1 ? `пропуск ${i + 1}` : placeholder}
               onFocus={() => setFocused(i)}
               onChange={(e) => setValues((vs) => vs.map((x, j) => (j === i ? e.target.value : x)))}
-              className={cx('input text-[1.0625rem] disabled:text-ink', tone)}
+              className={cx('input text-base disabled:text-ink', tone)}
             />
           ),
         )}
@@ -139,7 +139,7 @@ export function TextAnswer({
                 aria-label={`Вставить ${ch}`}
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => insert(ch)}
-                className="grid h-11 min-w-11 place-items-center rounded-full bg-surface-2 px-2 text-lg font-medium text-ink transition-colors hover:border-line-strong hover:bg-surface active:scale-95"
+                className="btn btn-icon bg-surface-2 font-medium text-ink hover:bg-sunken"
                 lang="pt-PT"
               >
                 {ch}

@@ -19,7 +19,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex min-h-dvh items-center justify-center p-4">
-      <div data-halftone-surface="" className="card-raised relative isolate w-full max-w-sm space-y-4 overflow-hidden rounded-hero p-6 text-center">
+      <div data-halftone-surface="" className="card-raised relative isolate w-full max-w-sm space-y-4 overflow-hidden text-center">
         <AzulejoCorner opacity={0.7} />
         <AzulejoMark size={48} className="mx-auto" />
         <h1>Português</h1>

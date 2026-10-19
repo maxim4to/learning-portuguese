@@ -59,7 +59,7 @@ export function ExamplesSection({ topic }: { topic: Topic }) {
           <li key={i} className="flex items-start gap-3 px-3 py-3 sm:px-4">
             <SpeakButton text={ex.pt} />
             <div className="min-w-0 flex-1 pt-1">
-              <p className="text-[1.0625rem] leading-snug font-semibold" lang="pt-PT">
+              <p className="text-base leading-snug font-semibold" lang="pt-PT">
                 {ex.pt}
               </p>
               <p className="mt-0.5 text-sm text-ink-muted">{ex.ru}</p>

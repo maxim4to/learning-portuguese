@@ -27,7 +27,7 @@ export function SituationsPage() {
   })).filter((g) => g.items.length > 0 && (filter === 'all' || g.level === filter))
 
   return (
-    <div className="space-y-6">
+    <div className="page">
       <div className="space-y-4">
         <MaterialsTabs active="situations" />
         <PageHeader
@@ -72,13 +72,14 @@ export function SituationsPage() {
 
           {groups.map((g) => (
             <section key={g.level} className="space-y-3">
-              <div className="flex items-baseline gap-3 pt-4">
+              <div className="flex items-baseline gap-3">
                 <h2>{g.level}</h2>
                 <span className="text-sm font-semibold text-ink-muted">{plural(g.items.length, 'ситуация', 'ситуации', 'ситуаций')}</span>
               </div>
-              <ul className="card divide-y divide-line p-0">
+              {/* Two balanced columns from lg, so the rows use the container width instead of a 1150px strip. */}
+              <ul className="card overflow-hidden p-0 lg:columns-2 lg:gap-0 lg:[column-rule:1px_solid_var(--border)]">
                 {g.items.map((s) => (
-                  <li key={s.id} className="first:[&>a]:rounded-t-card last:[&>a]:rounded-b-card">
+                  <li key={s.id} className="break-inside-avoid border-b border-line last:border-b-0">
                     <SituationCard situation={s} progress={progress.get(s.id)} />
                   </li>
                 ))}
@@ -98,7 +99,7 @@ function SituationCard({ situation: s, progress }: { situation: Situation; progr
       to={`/situation/${s.id}`}
       className="group flex min-h-[4.5rem] items-center gap-3 px-3 py-2.5 no-underline transition-colors hover:bg-surface-2 sm:gap-4 sm:px-4"
     >
-      <Illustration name={situationArt(s.id)} sizes="56px" className="size-14 shrink-0 rounded-[0.875rem] object-cover" />
+      <Illustration name={situationArt(s.id)} sizes="56px" className="size-14 shrink-0 rounded-2xl object-cover" />
       <span className="min-w-0 flex-1">
         <span className="block leading-tight font-semibold text-ink">{s.title}</span>
         <span className="mt-0.5 block truncate text-sm text-ink-muted">
@@ -110,7 +111,7 @@ function SituationCard({ situation: s, progress }: { situation: Situation; progr
             {plural(s.dialogue.length, 'реплика', 'реплики', 'реплик')} · {plural(s.vocab.length, 'слово', 'слова', 'слов')}
           </span>
         </span>
-        <span className="mt-0.5 block text-xs text-ink-muted sm:hidden">
+        <span className="mt-0.5 block text-sm text-ink-muted sm:hidden">
           {plural(s.dialogue.length, 'реплика', 'реплики', 'реплик')} · {plural(s.vocab.length, 'слово', 'слова', 'слов')}
         </span>
       </span>

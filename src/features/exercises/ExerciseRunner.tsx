@@ -185,9 +185,9 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     <div ref={topRef} className="scroll-mt-24 space-y-4">
       <div className="space-y-2">
         <div className="flex items-baseline justify-between gap-3 text-sm">
-          <span className="min-w-0 truncate font-display text-xl leading-none text-ink">{title}</span>
+          <span className="min-w-0 truncate font-display text-h2 leading-none text-ink">{title}</span>
           <span className="flex shrink-0 items-center gap-2 text-ink-muted tabular-nums">
-            <span className="font-display text-xl leading-none text-ink">
+            <span className="font-display text-h2 leading-none text-ink">
               <span className="sr-only">Задание </span>
               {index + 1} / {total}
             </span>
@@ -212,13 +212,13 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
           <span className="flex-1">
             Продолжаем с задания {index + 1} из {total}.
           </span>
-          <button type="button" className="min-h-11 font-semibold underline-offset-2 hover:underline" onClick={restart}>
+          <button type="button" className="btn-ghost btn-sm text-azulejo-ink" onClick={restart}>
             Начать заново
           </button>
         </div>
       )}
 
-      <section className="card space-y-6 rounded-hero p-5 sm:p-10" aria-labelledby={`${ex.id}-h`}>
+      <section className="card space-y-6" aria-labelledby={`${ex.id}-h`}>
         <h3
           id={`${ex.id}-h`}
           ref={headingRef}
@@ -246,7 +246,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
                 onClick={next}
               >
                 {isLast ? 'Завершить' : 'Дальше'}
-                <ArrowRight aria-hidden className="size-5" />
+                <ArrowRight aria-hidden />
               </button>
             </div>
           </>

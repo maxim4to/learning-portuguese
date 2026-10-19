@@ -5,7 +5,7 @@ import { isInHiddenPanel } from '../keyboard'
 import type { ExerciseProps } from '../types'
 
 const chip =
-  'inline-flex min-h-11 items-center rounded-pill border-[1.5px] px-4 text-[1.0625rem] leading-none transition-[background-color,border-color,transform,opacity] duration-150 active:scale-95 disabled:cursor-default'
+  'inline-flex min-h-11 items-center rounded-pill border-[1.5px] px-4 text-base leading-none transition-[background-color,border-color,transform,opacity] duration-150 active:scale-95 disabled:cursor-default'
 
 /** Tap-to-build sentence from shuffled word chips (may contain distractors). */
 export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onSkip }: ExerciseProps<'order-words'>) {
@@ -95,7 +95,7 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
         ))}
       </div>
       {!locked && (
-        <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-[1.875rem] bg-surface p-2 sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+        <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-card bg-surface p-2 sm:static sm:mx-0 sm:bg-transparent sm:p-0">
           <button type="button" className="btn-primary flex-[1_0_auto] sm:min-w-36 sm:flex-none" disabled={!built.length} onClick={check}>
             Проверить
           </button>

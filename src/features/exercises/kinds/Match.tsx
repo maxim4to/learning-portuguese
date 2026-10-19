@@ -56,7 +56,7 @@ export function MatchExercise({ exercise: ex, locked, onSubmit }: ExerciseProps<
   }
 
   const base =
-    'flex min-h-12 w-full items-center gap-2 rounded-control border-[1.5px] px-3 py-2.5 text-left text-[1.0625rem] leading-snug transition-[background-color,border-color,transform,opacity] duration-150 active:scale-[0.98] disabled:cursor-default'
+    'flex min-h-13 w-full items-center gap-2 rounded-control border-[1.5px] px-3 py-2.5 text-left text-base leading-snug transition-[background-color,border-color,transform,opacity] duration-150 active:scale-[0.98] disabled:cursor-default'
   const style = (done: boolean, selected: boolean, bad: boolean) =>
     done
       ? 'border-success-line bg-success-soft text-success opacity-75'

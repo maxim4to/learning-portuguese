@@ -133,8 +133,9 @@ export function DialogueSection({ situation }: { situation: Situation }) {
 
   const toggle = (on: boolean) =>
     cx(
-      'inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-control border px-3 text-sm font-semibold transition-colors',
-      on ? 'border-transparent bg-ink text-bg' : 'border-line-strong bg-surface text-ink hover:bg-surface-2',
+      // Toggle buttons share the toolbar row with the primary, so they take the same md height (44px).
+      'btn border-[1.5px] max-[419px]:btn-icon',
+      on ? 'border-ink bg-ink text-bg' : 'border-line-strong bg-surface text-ink hover:border-ink',
     )
 
   return (
@@ -178,7 +179,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
           {hiddenCount > 0 && (
             <button
               type="button"
-              className="mt-1 block min-h-11 font-semibold text-terracotta underline underline-offset-2"
+              className="btn-ghost btn-sm mt-2 -ml-4 text-terracotta"
               onClick={() => {
                 const first = lines.findIndex((l, i) => l.speaker === 'B' && !revealed.has(i))
                 setRevealed(new Set(lines.map((_, i) => i)))
@@ -192,7 +193,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
         </div>
       )}
 
-      {!roleplay && <p className="text-xs text-ink-muted">Нажмите на реплику, чтобы показать или скрыть перевод.</p>}
+      {!roleplay && <p className="text-sm text-ink-muted">Нажмите на реплику, чтобы показать или скрыть перевод.</p>}
 
       <ol className="space-y-3">
         {lines.map((line, i) => {
@@ -232,7 +233,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
                     <p className="font-semibold">{line.ru}</p>
                     <button
                       type="button"
-                      className="btn-secondary min-h-10 px-3 text-sm"
+                      className="btn-secondary btn-sm"
                       id={`dlg-reveal-${i}`}
                       onClick={() => reveal(i)}
                     >
@@ -248,7 +249,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
                       aria-expanded={ruShown(i)}
                       onClick={() => setRuOverride((m) => new Map(m).set(i, !ruShown(i)))}
                     >
-                      <span className="block text-[1.0625rem] leading-snug font-semibold" lang="pt-PT">
+                      <span className="block text-base leading-snug font-semibold" lang="pt-PT">
                         {line.pt}
                       </span>
                       {ruShown(i) ? (

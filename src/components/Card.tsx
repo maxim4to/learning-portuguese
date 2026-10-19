@@ -9,7 +9,7 @@ const CARD_TONE: Record<CardTone, string> = {
   raised: 'card-raised',
   sunken: 'card-sunken',
   accent: 'card bg-brand-soft',
-  hero: 'card-raised relative isolate overflow-hidden rounded-hero p-6 sm:p-10',
+  hero: 'card-raised relative isolate overflow-hidden',
 }
 
 /**

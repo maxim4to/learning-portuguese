@@ -7,11 +7,11 @@ export function ListenTypeExercise({ exercise: ex, locked, result, onSubmit, onS
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
-        <SpeakButton text={ex.text} size="lg" variant="solid" label="Слушать" />
+        <SpeakButton text={ex.text} variant="solid" label="Слушать" />
         <SpeakButton text={ex.text} rateFactor={0.75} label="Медленно" />
       </div>
       {locked && (
-        <p className="animate-enter text-lg" lang="pt-PT">
+        <p className="animate-enter text-base" lang="pt-PT">
           {ex.text}
         </p>
       )}

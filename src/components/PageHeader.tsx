@@ -9,7 +9,7 @@ export function BackLink({ to, label, className }: { to: string; label: string; 
     <Link
       to={to}
       className={cx(
-        '-ml-1 inline-flex min-h-11 items-center gap-1 rounded-pill pr-4 pl-2.5 text-sm font-semibold text-ink no-underline transition-colors hover:bg-surface print:hidden',
+        '-ml-2.5 inline-flex min-h-11 items-center gap-1 rounded-pill pr-4 pl-2.5 text-sm font-semibold text-ink no-underline transition-colors hover:bg-surface print:hidden',
         className,
       )}
     >
@@ -53,7 +53,7 @@ export function PageHeader({
             {title}
           </h1>
           {meta && <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">{meta}</div>}
-          {subtitle && <div className="max-w-[60ch] text-ink-muted md:text-lg">{subtitle}</div>}
+          {subtitle && <div className="measure text-ink-muted">{subtitle}</div>}
         </div>
         {actions && <div className="flex shrink-0 flex-wrap items-center gap-2">{actions}</div>}
       </div>

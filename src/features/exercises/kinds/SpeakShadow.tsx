@@ -83,7 +83,7 @@ export function SpeakShadowExercise({ exercise: ex, locked, onSubmit }: Exercise
         {ex.ru && <p className="text-sm text-ink-muted">{ex.ru}</p>}
       </div>
       <div className="flex flex-wrap items-center gap-3">
-        <SpeakButton text={ex.text} size="lg" variant="solid" label="Слушать" />
+        <SpeakButton text={ex.text} variant="solid" label="Слушать" />
         <SpeakButton text={ex.text} rateFactor={0.75} label="Медленно" />
       </div>
       <SelfRecorder />

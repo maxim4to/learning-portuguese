@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import type { Situation } from '@/content'
 import { Check, Plus } from 'lucide-react'
 import { SpeakButton } from '@/components/SpeakButton'
+import { AddCardButton } from '@/features/library/ui'
 import { phraseCards, wordCards } from './persist'
 import { useSituationCards } from './useSituationCards'
 
@@ -22,21 +23,12 @@ export function PhrasesSection({ situation }: { situation: Situation }) {
             <li key={i} className="flex items-start gap-3 px-3 py-3 sm:px-4">
               <SpeakButton text={p.pt} />
               <div className="min-w-0 flex-1 pt-1">
-                <p className="text-[1.0625rem] leading-snug font-semibold" lang="pt-PT">
+                <p className="text-base leading-snug font-semibold" lang="pt-PT">
                   {p.pt}
                 </p>
                 <p className="mt-0.5 text-sm text-ink-muted">{p.ru}</p>
               </div>
-              <button
-                type="button"
-                disabled={busy || inSrs || have === null}
-                onClick={() => void add([specs[i]])}
-                aria-label={inSrs ? `«${p.pt}» уже в повторении` : `Добавить «${p.pt}» в повторение`}
-                className={`inline-flex h-11 min-w-11 shrink-0 items-center justify-center gap-1 rounded-full border px-3 text-sm font-semibold transition-colors disabled:cursor-default ${inSrs ? 'border-transparent bg-brand-soft text-brand-ink' : 'border-line-strong text-ink-muted hover:border-brand hover:bg-brand-soft hover:text-brand-ink'}`}
-              >
-                {inSrs ? <Check aria-hidden className="size-4.5" /> : <Plus aria-hidden className="size-4.5" />}
-                <span className="hidden sm:inline">{inSrs ? 'в повторении' : 'в повторение'}</span>
-              </button>
+              <AddCardButton name={p.pt} added={inSrs} disabled={busy || have === null} onClick={() => void add([specs[i]])} />
             </li>
           )
         })}
@@ -120,7 +112,7 @@ export function VocabSection({ situation }: { situation: Situation }) {
 
       {/* Desktop: table. */}
       <div className="card hidden overflow-x-auto p-0 md:block">
-        <table className="w-full border-collapse text-left text-[0.9375rem] leading-snug">
+        <table className="w-full border-collapse text-left text-sm leading-snug">
           <thead className="bg-surface-2 text-sm text-ink-muted">
             <tr>
               <th className="w-14 px-3 py-2"><span className="sr-only">Прослушать</span></th>
