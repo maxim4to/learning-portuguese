@@ -68,9 +68,11 @@ export const SIMPLE_LABEL: Readonly<Record<string, string>> = {
   SUP: 'превосходная степень',
   ADV: 'наречие',
   BR: 'бразильский вариант',
+  COL: 'разг. форма',
 }
 
 const SIMPLE_RU: Readonly<Record<string, string>> = {
+  COL: 'разговорная усечённая форма (tá = está)',
   GER: 'деепричастие (в pt-PT обычно estar a + инфинитив)',
   PP: 'причастие прошедшего времени',
   PPF: 'причастие, женский род',

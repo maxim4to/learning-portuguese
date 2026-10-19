@@ -81,11 +81,12 @@ for (const [file, data] of Object.entries(files)) lintValue(data, file, false)
 // ---------------------------------------------------------------------------
 
 /**
- * Share of unique corpus forms the lexicon must resolve.
- * TODO(phase 4 end): when content/lexicon/_todo.json is empty, make this an error (target 1.0 = 100 % of unique forms;
- * at the end of the tooling step it was 45.2 % of unique forms / 75.6 % of tokens).
+ * Lexicon coverage gate (phase 4 done, 2026-10): every corpus form resolved by the lexicon or listed in
+ * content/lexicon/_ignore.json — 5281/5281 unique forms, 60512/60512 tokens (100 %) of exercises, dialogues and texts.
+ * Error below LEXICON_TOKEN_COVERAGE_MIN (achieved − 0.5 %: room for a few new words in fresh content until the
+ * next `npm run lexicon` pass); any unresolved form is still a warning (target 100 %).
  */
-const LEXICON_COVERAGE_TARGET = 1.0
+const LEXICON_TOKEN_COVERAGE_MIN = 0.995
 try {
   const lexicon = readLexicon().flatMap((f) => f.entries)
   const bundle = JSON.parse(readFileSync(join(root, 'src', 'generated', 'lexicon.json'), 'utf8'))
@@ -94,12 +95,14 @@ try {
   }
   const cov = coverage(bundle, collectCorpus(files).freq, new Set(readIgnore().keys()))
   const pct = (a: number, b: number) => `${((100 * a) / Math.max(1, b)).toFixed(1)}%`
-  if (cov.uniqueCovered < cov.uniqueForms * LEXICON_COVERAGE_TARGET) {
-    warnings.push(
-      `lexicon coverage ${pct(cov.uniqueCovered, cov.uniqueForms)} of unique forms, ${pct(cov.tokensCovered, cov.tokens)} of tokens ` +
-        `(target ${LEXICON_COVERAGE_TARGET * 100}%) — fill content/lexicon from _todo.json (npm run lexicon); e.g. ` +
-        cov.topMissing.slice(0, 8).map(([f]) => f).join(', '),
-    )
+  const summary =
+    `lexicon coverage ${pct(cov.uniqueCovered, cov.uniqueForms)} of unique forms, ${pct(cov.tokensCovered, cov.tokens)} of tokens; ` +
+    `unresolved (add to content/lexicon or _ignore.json, see npm run lexicon): ` +
+    cov.topMissing.slice(0, 8).map(([f]) => f).join(', ')
+  if (cov.tokensCovered < cov.tokens * LEXICON_TOKEN_COVERAGE_MIN) {
+    errors.push(`${summary} — below the gate of ${(LEXICON_TOKEN_COVERAGE_MIN * 100).toFixed(1)}% of tokens`)
+  } else if (cov.uniqueCovered < cov.uniqueForms) {
+    warnings.push(summary)
   }
 } catch (e) {
   errors.push(`lexicon: ${(e as Error).message}`)

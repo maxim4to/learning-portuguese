@@ -12,7 +12,7 @@
  *
  * Verb families are conjugated as prefix + base (manter = man + ter: mantenho, mantém, mantive …).
  */
-import type { VerbClass } from '../../src/engine/lexicon/endings.ts'
+import type { VerbClass } from './endings.ts'
 
 export type Slot = string | readonly string[]
 export type Row = readonly (Slot | undefined)[]

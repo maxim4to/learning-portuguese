@@ -194,7 +194,7 @@ export const LexEntrySchema = z.strictObject({
   gender: z.enum(['m','f','mf']).optional(),
   plural: nonEmpty.optional(),           // только нерегулярное
   fem: nonEmpty.optional(),              // adj/noun: ж. р., если нерегулярный
-  /** Глагол: парадигма. 'reg' (по окончанию) или имя таблицы из scripts/lexicon/irregular.ts */
+  /** Глагол: парадигма. 'reg' (по окончанию) или имя таблицы из src/engine/lexicon/irregular.ts */
   conj: nonEmpty.optional(),
   reflexive: z.boolean().optional(),
   /** Явные доп. формы (формы, которые не генерируются правилами). */
@@ -262,10 +262,10 @@ interface LexiconBundle {
   - Местоимения: `me, te, se, nos, vos, lhe, lhes, o, a, os, as, lo, la, no, na, mo, ma, to, lho, lha…`.
   - Если отделено `-se/-me/-te/-nos/-vos`, сначала ищется лемма с `-se` (`levantar-se`), затем без него.
 - **Генерация форм (только в скрипте):**
-  - `scripts/lexicon/conjugate.ts`: правильные `-ar`, `-er`, `-ir` по всем временам, включая pt-PT-специфичное: pretérito perfeito 1-го л. мн. ч. `-ámos`, futuro do conjuntivo, infinitivo pessoal, imperativo, gerúndio, particípio. Орфографические чередования: `-car` → `-qu-`, `-gar` → `-gu-`, `-çar` → `-c-`, `-cer` → `-ç-`, `-ger/-gir` → `-j-`, `-guir` → `-g-`.
-  - `scripts/lexicon/irregular.ts`: таблицы для около 60 глаголов (`ser, estar, ter, haver, ir, vir, fazer, dizer, poder, querer, saber, dar, ver, pôr, trazer, ler, crer, ouvir, pedir, medir, dormir, sair, cair, valer, perder, caber, rir, sorrir, seguir, servir, sentir, preferir, subir, fugir, construir, destruir, odiar, passear, recear, frear…`) и производных (`propor`, `compor`; `manter`, `conter`; `convir`; `desfazer`; `prever`).
+  - `src/engine/lexicon/conjugate.ts`: правильные `-ar`, `-er`, `-ir` по всем временам, включая pt-PT-специфичное: pretérito perfeito 1-го л. мн. ч. `-ámos`, futuro do conjuntivo, infinitivo pessoal, imperativo, gerúndio, particípio. Орфографические чередования: `-car` → `-qu-`, `-gar` → `-gu-`, `-çar` → `-c-`, `-cer` → `-ç-`, `-ger/-gir` → `-j-`, `-guir` → `-g-`.
+  - `src/engine/lexicon/irregular.ts`: таблицы для около 60 глаголов (`ser, estar, ter, haver, ir, vir, fazer, dizer, poder, querer, saber, dar, ver, pôr, trazer, ler, crer, ouvir, pedir, medir, dormir, sair, cair, valer, perder, caber, rir, sorrir, seguir, servir, sentir, preferir, subir, fugir, construir, destruir, odiar, passear, recear, frear…`) и производных (`propor`, `compor`; `manter`, `conter`; `convir`; `desfazer`; `prever`).
   - Существительные и прилагательные: правила множественного числа (`-ão` → `-ões/-ães/-ãos`: по умолчанию `-ões`, остальное через `plural`; `-l` → `-is`, `-m` → `-ns`, `-r/-z/-s` → `-es`) и женского рода (`-o` → `-a`, `-or` → `-ora`, `-ês` → `-esa`, `-ão` → `-ã/-ona`). Диминутивы `-inho/-zinho` указываются в `forms`.
-  - В индекс попадают только формы, **встреченные в корпусе**, плюс сами леммы. Генерация полной парадигмы нужна для поиска, но в бандл не идёт.
+  - В индекс попадают только формы, **встреченные в корпусе**, плюс сами леммы. Полная парадигма глаголов в бандл не идёт: приложение спрягает леммы при поиске (`src/engine/lexicon/conjugate.ts`, ленивый чанк) — так находятся клитические формы вне корпуса (`sentou-se`, `contar-te-ia`) и ручной поиск.
 - **Подбор леммы в рантайме** для теории и ручного поиска: `src/engine/lexicon/guess.ts`. Обратные правила по окончаниям (`-aram` → `-ar`, `-ámos` → `-ar`, `-ões` → `-ão`, `-as` → `-a`, `-ou` → `-ar`…) порождают кандидатов, которые проверяются по множеству лемм. Результат помечается «предположительно».
 - **Неоднозначность.** У формы есть массив кандидатов. Ранжирование:
   1. Контекстные правила по соседним токенам: после артикля, предлога или притяжательного — существительное; после `eu`, `não`, `se` — глагол.
@@ -563,7 +563,7 @@ match /users/{uid}/words/{wordId} {
 | `src/engine/lexicon/types.ts` | `LexiconBundle`, `LexCandidate` |
 | `src/generated/lexicon.json` | Артефакт сборки (коммитится) |
 | `content/lexicon/*.json` | Источник лексикона для авторов |
-| `scripts/lexicon.ts`, `scripts/lexicon/conjugate.ts`, `scripts/lexicon/irregular.ts`, `scripts/lexicon/inflect.ts` | Офлайн-пайплайн |
+| `scripts/lexicon.ts`, `src/engine/lexicon/conjugate.ts`, `src/engine/lexicon/irregular.ts`, `scripts/lexicon/inflect.ts` | Офлайн-пайплайн |
 | `scripts/lexicon.test.ts`, `scripts/words.test.ts` | Юнит-тесты (`node:test`) |
 | `src/features/words/Pt.tsx`, `source.ts` | Общий pt-компонент и источники |
 | `src/features/words/WordsProvider.tsx`, `useWords.ts` | Хранилище |

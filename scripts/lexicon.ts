@@ -2,7 +2,7 @@
  * npm run lexicon [-- <cmd>]        (no command = build + extract + report)
  *
  *   build    content/lexicon/*.json → src/generated/lexicon.json (runtime bundle, committed). Every lemma is
- *            expanded through the morphology (scripts/lexicon/{conjugate,irregular,inflect}.ts); forms that occur
+ *            expanded through the morphology (src/engine/lexicon/{conjugate,irregular}.ts, scripts/lexicon/inflect.ts); forms that occur
  *            in the course corpus are indexed with morph tags. Checks: schema, duplicates, `conj`, placement,
  *            Brazilianisms, size (> 1 MB raw = error).
  *   extract  Tokenise the whole course (dialogues, phrases, readings, examples, exercises + pt fragments of theory
@@ -35,7 +35,7 @@ import { createLexicon, type Lexicon } from '../src/engine/lexicon/lookup.ts'
 import { normalizeForm, splitClitics, tokenize } from '../src/engine/lexicon/normalize.ts'
 import { LEX_FLAG, type LexEntryTuple, type LexiconBundle } from '../src/engine/lexicon/types.ts'
 import { lintText } from './brazilianisms.ts'
-import { conjugate, isValidConj, paradigmForms } from './lexicon/conjugate.ts'
+import { conjugate, isValidConj, paradigmForms, verbForms } from '../src/engine/lexicon/conjugate.ts'
 import { FEM_IRREGULAR, feminine, plurals } from './lexicon/inflect.ts'
 import { SLICES, allFiles, fileFor, isPlacedOk, sliceOf } from './lexicon/layout.ts'
 import { GLOSSARY, POS, SLASH, type SeedSpec } from './lexicon/seed-data.ts'
@@ -507,8 +507,8 @@ export function corpusFrequencies(files: Record<string, unknown>): Map<string, n
 
 /** Inputs of the bundle: content, cheat-sheets, the lexicon and the morphology code. */
 const MORPH_SOURCES = [
-  'scripts/lexicon/conjugate.ts',
-  'scripts/lexicon/irregular.ts',
+  'src/engine/lexicon/conjugate.ts',
+  'src/engine/lexicon/irregular.ts',
   'scripts/lexicon/inflect.ts',
   'src/engine/lexicon/endings.ts',
   'src/engine/lexicon/normalize.ts',
@@ -562,6 +562,13 @@ export function expandEntry(e: LexEntrySource, present: (form: string) => boolea
   return [...out]
 }
 
+/** Colloquial clipped verb forms written in dialogues (explicit `forms` of the verb) → the full form they stand for. */
+export const COLLOQUIAL_VERB_FORMS: Readonly<Record<string, string>> = {
+  tá: 'está',
+  tás: 'estás',
+  tou: 'estou',
+}
+
 /**
  * Pure bundle builder: lexicon entries + corpus (form → frequency, plus n-grams for multi-word lemmas) + theme refs
  * → runtime bundle. Generated forms are indexed only if they occur in the corpus.
@@ -576,6 +583,7 @@ export function buildBundle(
   const ids = new Set<string>()
   const entries: LexEntryTuple[] = []
   const forms: Record<string, [number, string][]> = {}
+  const conj: Record<string, string> = {}
   const addForm = (form: string, i: number, tag: string) => {
     const key = normalizeForm(form)
     if (!key) return
@@ -597,16 +605,25 @@ export function buildBundle(
     const multi = normalizeForm(e.lemma).includes(' ')
     const flags = (e.reflexive || (e.pos === 'verb' && /-se$/.test(normalizeForm(e.lemma))) ? LEX_FLAG.reflexive : 0) | (multi ? LEX_FLAG.multiword : 0)
     entries.push([id, e.lemma, e.pos, e.ru.join('; '), e.gender ?? '', e.level ?? '', flags])
+    if (e.pos === 'verb' && e.conj) conj[i] = e.conj
 
     addForm(e.lemma, i, '')
     for (const [f, tag] of expandEntry(e, present)) addForm(f, i, tag)
+    const paradigm = e.pos === 'verb' ? verbForms(normalizeForm(e.lemma).split(' ')[0], e.conj) : null
     for (const f of e.forms ?? []) {
-      addForm(f, i, 'X')
+      // colloquial clipped form (tá = está): tagged as such, with the slots of the full form
+      const full = COLLOQUIAL_VERB_FORMS[normalizeForm(f)]
+      const fullTags = full && paradigm?.get(full)
+      addForm(f, i, fullTags ? ['COL', ...fullTags].join(',') : 'X')
       // explicit «levanto-me» → also index the bare host «levanto»
       const cl = splitClitics(f)
       if (cl && cl.hosts[0] && corpus.has(cl.hosts[0])) addForm(cl.hosts[0], i, 'X')
     }
-    if (e.br) addForm(e.br, i, 'BR')
+    if (e.br) {
+      addForm(e.br, i, 'BR')
+      // pt-BR plural of a noun (celulares, ônibus): only if it occurs in the corpus
+      if (e.pos === 'noun' && !e.br.includes(' ')) for (const p of plurals(e.br)) if (corpus.has(normalizeForm(p))) addForm(p, i, 'BR')
+    }
   }
 
   const themes: Record<string, number[]> = {}
@@ -618,7 +635,7 @@ export function buildBundle(
   }
   for (const list of Object.values(themes)) list.sort((a, b) => a - b)
 
-  return { v: 1, hash, entries, forms, themes }
+  return { v: 1, hash, entries, forms, themes, ...(Object.keys(conj).length ? { conj } : {}) }
 }
 
 /** Plural candidates (kept for tests / seed). */
@@ -645,7 +662,7 @@ export interface Coverage {
 export const isResolved = (lex: Lexicon, form: string) => lex.resolve(form).some((c) => !c.approximate)
 
 export function coverage(bundle: LexiconBundle, corpus: ReadonlyMap<string, number>, ignore: ReadonlySet<string> = new Set()): Coverage {
-  const lex = createLexicon(bundle)
+  const lex = createLexicon(bundle, { verbForms })
   let uniqueCovered = 0
   let tokens = 0
   let tokensCovered = 0
@@ -703,7 +720,7 @@ export function buildAll(): Built & { problems: string[]; warnings: string[] } {
       for (const s of [e.lemma, ...(e.forms ?? []), ...(e.plural ? [e.plural] : []), ...(e.fem ? [e.fem] : [])]) {
         for (const p of lintText(s)) problems.push(`brazilianism content/lexicon/${f.file} «${e.lemma}»: ${p} — "${s}"`)
       }
-      if (e.conj && !isValidConj(e.conj)) problems.push(`content/lexicon/${f.file} «${e.lemma}»: unknown conj "${e.conj}" (see scripts/lexicon/irregular.ts)`)
+      if (e.conj && !isValidConj(e.conj)) problems.push(`content/lexicon/${f.file} «${e.lemma}»: unknown conj "${e.conj}" (see src/engine/lexicon/irregular.ts)`)
       const vw = normalizeForm(e.lemma).split(' ')
       if (e.pos === 'verb' && !conjugate(vw[0] === 'não' && vw[1] ? vw[1] : vw[0], e.conj)) {
         warnings.push(`content/lexicon/${f.file} «${e.lemma}»: verb lemma does not start with an infinitive — no forms generated`)
@@ -852,7 +869,7 @@ function suggest(form: string, corpus: Corpus, lemmaPos: ReadonlyMap<string, Set
 const POS_FILE: Record<string, LexPosValue> = { verb: 'verb', noun: 'noun', name: 'noun', adj: 'adj', adv: 'adv' }
 
 export function extractTodo(b: Built): { items: TodoItem[]; unresolved: number } {
-  const lex = createLexicon(b.bundle)
+  const lex = createLexicon(b.bundle, { verbForms })
   const lemmaPos = new Map<string, Set<string>>()
   for (const [, lemma, pos] of b.bundle.entries) {
     const k = normalizeForm(lemma)

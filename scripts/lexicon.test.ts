@@ -31,7 +31,7 @@ import {
   parseVocabItem,
   readLexicon,
 } from './lexicon.ts'
-import { conjugate, isValidConj, paradigmForms, type Paradigm } from './lexicon/conjugate.ts'
+import { conjugate, isValidConj, paradigmForms, verbForms, type Paradigm } from '../src/engine/lexicon/conjugate.ts'
 import { feminine, plurals } from './lexicon/inflect.ts'
 import { fileFor, isPlacedOk, sliceOf } from './lexicon/layout.ts'
 import type { Tense } from '../src/engine/lexicon/endings.ts'
@@ -297,7 +297,7 @@ test('real lexicon: no Brazilianisms in lemmas and forms', () => {
 })
 
 // ---------------------------------------------------------------------------
-// Morphology: conjugation (scripts/lexicon/conjugate.ts + irregular.ts)
+// Morphology: conjugation (src/engine/lexicon/conjugate.ts + irregular.ts)
 // ---------------------------------------------------------------------------
 
 /** One tense as «eu tu ele nós vós eles» (variants joined with «/», missing slot «-»). */
@@ -675,6 +675,23 @@ test('resolve with morphology: fixture verbs expanded through the conjugator', (
   assert.deepEqual(lex.resolve('fazê-lo'), []) // fazer is not in this fixture
 })
 
+test('runtime verb generator: forms outside the corpus resolve exactly (with tags)', () => {
+  const fixture: LexEntrySource[] = [
+    { lemma: 'falar', pos: 'verb', ru: ['говорить'], level: 'A1' },
+    { lemma: 'sentar-se', pos: 'verb', ru: ['садиться'], reflexive: true, level: 'A1' },
+    { lemma: 'fazer', pos: 'verb', ru: ['делать'], level: 'A1' },
+    { lemma: 'casa', pos: 'noun', ru: ['дом'], gender: 'f', level: 'A1' },
+  ]
+  const lex = createLexicon(buildBundle(fixture, new Map([['casa', 1]]), new Map()), { verbForms })
+  const [f] = lex.resolve('falaremos')
+  assert.deepEqual([f.entry.lemma, f.tag, f.approximate, f.via], ['falar', 'FI1p', false, 'exact'])
+  const [s] = lex.resolve('sentou-se')
+  assert.deepEqual([s.entry.lemma, s.tag, s.via, s.clitics], ['sentar-se', 'PPS3s', 'clitic', ['se']])
+  assert.equal(lex.resolve('fá-lo-ia')[0]?.entry.lemma, 'fazer')
+  assert.equal(lex.resolve('casa')[0].entry.lemma, 'casa') // indexed forms are not shadowed by the generator
+  assert.deepEqual(lex.resolve('xpto-me'), [])
+})
+
 test('mdSegments: pt fragments of Russian markdown', () => {
   const md = [
     'Глагол **ser** — это *estar* ✗, а **Sou o Maxim.** — пример; **fize**sse — фрагмент.',
@@ -742,4 +759,102 @@ test('bundle size: raw JSON ≤ 1 MB, gzip ≤ 250 KB (and the built lazy chunk,
   const cgz = gzipSync(code).length
   t.diagnostic(`dist/assets/${chunk}: ${(code.length / 1024).toFixed(1)} KB, ${(cgz / 1024).toFixed(1)} KB gzip`)
   assert.ok(cgz <= BUNDLE_MAX_GZIP, `lazy chunk ${chunk} gzip is ${cgz} B (> 250 KB)`)
+})
+
+test('real lexicon + runtime generator: enclitic / mesoclitic forms whose bare host is not in the corpus', () => {
+  const lex = createLexicon(real, { verbForms })
+  const cases: [string, string][] = [
+    ['sentou-se', 'sentar-se'],
+    ['telefona-me', 'telefonar'],
+    ['zangou-se', 'zangar-se'],
+    ['avisa-me', 'avisar'],
+    ['contar-te-ia', 'contar'],
+    ['aluga-se', 'alugar'],
+    ['compraram-nos', 'comprar'],
+    ['manteve-se', 'manter'],
+    ['mediram-me', 'medir'],
+    ['ligamos-lhe', 'ligar'],
+    ['magoei-me', 'magoar-se'],
+    ['dói-me', 'doer'],
+    ['dir-lhe-ei', 'dizer'],
+    // -r / -s / -z dropped before -lo / -la (and the accent added): fazê-lo, comprá-la, di-lo, fi-lo, pô-lo
+    ['fazê-lo', 'fazer'],
+    ['comprá-la', 'comprar'],
+    ['di-lo', 'dizer'],
+    ['fi-lo', 'fazer'],
+    ['pô-lo', 'pôr'],
+    ['fazemo-lo', 'fazer'],
+    // -m / -ão + o → -no: dão-no, põem-nos
+    ['dão-no', 'dar'],
+    ['põem-nos', 'pôr'],
+    ['levanto-me', 'levantar-se'],
+  ]
+  for (const [form, lemma] of cases) {
+    const r = lex.resolve(form).filter((c) => !c.approximate)
+    assert.ok(
+      r.some((c) => normalizeForm(c.entry.lemma) === lemma),
+      `${form} → ${lemma}; got ${r.map((c) => c.entry.lemma).join(', ') || 'nothing'}`,
+    )
+  }
+  assert.equal(lex.resolve('sentou-se')[0].entry.lemma, 'sentar-se')
+  assert.equal(lex.resolve('dir-lhe-ei')[0].tag, 'FI1s')
+  assert.equal(lex.resolve('di-lo')[0].tag.split(',').includes('PI3s'), true)
+})
+
+test('real lexicon: clitic forms are not listed in `forms` of single-word verbs (resolved by lookup)', () => {
+  const offenders = readLexicon().flatMap((f) =>
+    f.entries
+      .filter((e) => e.pos === 'verb' && !normalizeForm(e.lemma).includes(' '))
+      .flatMap((e) => (e.forms ?? []).filter((x) => splitClitics(x)).map((x) => `${f.file} ${e.lemma}: ${x}`)),
+  )
+  assert.deepEqual(offenders, [])
+})
+
+test('real lexicon: capitalised homographs prefer the proper noun only mid-sentence', () => {
+  const lex = createLexicon(real, { verbForms })
+  for (const [proper, common] of [['Porto', 'porto'], ['Madeira', 'madeira'], ['Oeste', 'oeste']]) {
+    assert.equal(lex.resolve(proper, { prev: 'no' })[0].entry.lemma, proper, `«no ${proper}»`)
+    assert.equal(lex.resolve(common, { prev: 'de' })[0].entry.lemma, common, `«de ${common}»`)
+    assert.equal(lex.resolve(proper)[0].entry.lemma, common, `«${proper}» at the start of a sentence`)
+    assert.ok(lex.resolve(common).some((c) => c.entry.lemma === proper), `${proper} stays among the readings`)
+  }
+  assert.equal(lex.resolve('porta')[0].entry.lemma, 'porta')
+  // manual search: a capitalised query asks for the proper noun
+  assert.equal(lex.search('Porto')[0].lemma, 'Porto')
+  assert.equal(lex.search('porto')[0].lemma, 'porto')
+  assert.equal(lex.resolve('Lisboa', { prev: 'em' })[0].entry.lemma, 'Lisboa')
+  assert.equal(lex.resolve('CTT', { prev: 'dos' })[0].entry.lemma, 'CTT')
+})
+
+test('real lexicon: expressions, colloquial forms and pt-BR variants', () => {
+  const lex = createLexicon(real, { verbForms })
+  const top = (w: string) => lex.resolve(w)[0]
+  assert.equal(top('entanto').entry.lemma, 'no entanto')
+  assert.equal(lex.matchMwe(['no', 'entanto', ',', 'chove'], 1)?.entries[0].lemma, 'no entanto')
+  assert.equal(top('repente').entry.lemma, 'de repente')
+  assert.equal(top('cuja').entry.lemma, 'cujo')
+  assert.equal(top('quantas').entry.lemma, 'quanto')
+  assert.equal(top('senão').entry.lemma, 'senão')
+  const ta = top('tá')
+  assert.equal(ta.entry.lemma, 'estar')
+  assert.match(morphLabel(ta.tag), /разг\. форма/)
+  assert.ok(parseTags(top('tás').tag).some((x) => x.code === 'PI2s'))
+  for (const [br, pt] of [['trem', 'comboio'], ['açougue', 'talho'], ['bacana', 'fixe'], ['cardápio', 'ementa'], ['celular', 'telemóvel'], ['celulares', 'telemóvel'], ['chope', 'imperial'], ['cupom', 'talão'], ['ônibus', 'autocarro'], ['oi', 'olá']]) {
+    const c = top(br)
+    assert.deepEqual([c.entry.lemma, c.tag], [pt, 'BR'], br)
+  }
+})
+
+test('real lexicon: personal names are ignored, places and institutions are nouns', () => {
+  const ignore = new Set(
+    (JSON.parse(readFileSync(new URL('../content/lexicon/_ignore.json', import.meta.url), 'utf8')) as { ignore: { form: string }[] }).ignore.map(
+      (x) => x.form,
+    ),
+  )
+  const lemmas = new Set(readLexicon().flatMap((f) => f.entries.map((e) => e.lemma)))
+  for (const name of ['rui', 'rita', 'inês', 'pedro', 'joana', 'maxim', 'volkov']) assert.ok(ignore.has(name), name)
+  for (const name of ['Pedro', 'Joana', 'João', 'Maria']) assert.ok(!lemmas.has(name), `${name} is a personal name: _ignore.json`)
+  for (const place of ['Lisboa', 'Porto', 'Coimbra', 'Braga', 'Algarve', 'Açores', 'CTT', 'IMT', 'EMEL', 'Benfica', 'Sporting', 'Alfa', 'MB Way']) {
+    assert.ok(lemmas.has(place), place)
+  }
 })

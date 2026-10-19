@@ -1,6 +1,6 @@
 /**
  * Regular pt-PT verb endings and morphological tag codes, shared by the offline conjugator
- * (scripts/lexicon/conjugate.ts) and the runtime guesser (./guess.ts). Pure data, no imports.
+ * (./conjugate.ts) and the runtime guesser (./guess.ts). Pure data, no imports.
  *
  * Tag grammar (bundle `forms[key] = [[entryIndex, tag], …]`, several tags comma-joined):
  *   ''            lemma itself (infinitive for verbs)
@@ -10,6 +10,7 @@
  *   DIM / SUP     diminutive / superlative (-inho, -íssimo; guesser only)
  *   ADV           adverb in -mente from an adjective (guesser only)
  *   BR            pt-BR spelling or word (entry.br) — «в Бразилии»
+ *   COL           colloquial clipped form (tá = está), combined with the full form's slots: 'COL,PI3s,IMP2s'
  *   X             explicit extra form from the entry's `forms` (no analysis)
  */
 
@@ -23,7 +24,7 @@ export const TENSES = ['PI', 'PPS', 'II', 'MQP', 'FI', 'CD', 'PC', 'IC', 'FC', '
 export type Tense = (typeof TENSES)[number]
 
 /** Non-finite and nominal tags. */
-export const SIMPLE_TAGS = ['GER', 'PP', 'PPF', 'PPPL', 'PPFPL', 'PL', 'F', 'FPL', 'DIM', 'SUP', 'ADV', 'BR', 'X'] as const
+export const SIMPLE_TAGS = ['GER', 'PP', 'PPF', 'PPPL', 'PPFPL', 'PL', 'F', 'FPL', 'DIM', 'SUP', 'ADV', 'BR', 'COL', 'X'] as const
 
 type Row = readonly [string, string, string, string, string, string]
 

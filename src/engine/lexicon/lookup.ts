@@ -5,7 +5,12 @@
  *   lex.resolve('levanto-me')               // → [{ entry: levantar-se, via: 'clitic', clitics: ['me'] …}]
  *   lex.search('pequeno')                   // manual search (pt prefix, accent-insensitive, or ru)
  *
- * `createLexicon(bundle)` builds the same object synchronously (Node scripts and tests).
+ * `createLexicon(bundle, { conjugate })` builds the same object synchronously (Node scripts and tests).
+ *
+ * The bundle's `forms` index holds only forms that occur in the course corpus. Verb forms outside it — clitic
+ * hosts like «sentou» in «sentou-se», «direi» in «dir-lhe-ei», or anything typed into search — are found by
+ * conjugating the lexicon's verb lemmas at runtime (the conjugator is a separate lazy chunk; the full paradigm
+ * index is built once, on the first form the bundle does not hold).
  */
 import type { Level } from '../../content/schema.ts'
 import { guessLemmas } from './guess.ts'
@@ -36,6 +41,14 @@ const NOMINAL_CONTEXT = new Set(
 /** After these words a verb is expected. */
 const VERBAL_CONTEXT = new Set('eu tu ele ela nós vós eles elas você vocês não se me te lhe já também nunca'.split(' '))
 
+/** Verb lemma (+ entry `conj`) → every form of its paradigm with tags; null if not an infinitive. See ./conjugate.ts. */
+export type VerbFormsFn = (lemma: string, conj?: string) => ReadonlyMap<string, readonly string[]> | null
+
+export interface LexiconOptions {
+  /** Runtime verb generator (clitic hosts and forms outside the corpus). Without it only `bundle.forms` is used. */
+  verbForms?: VerbFormsFn
+}
+
 export interface Lexicon {
   readonly size: { entries: number; forms: number }
   /** Content hash of the build inputs. */
@@ -54,7 +67,7 @@ export interface Lexicon {
   entriesOfTheme(themeKey: string): LexEntry[]
 }
 
-export function createLexicon(bundle: LexiconBundle): Lexicon {
+export function createLexicon(bundle: LexiconBundle, opts: LexiconOptions = {}): Lexicon {
   if (bundle.v !== 1) throw new Error(`Unsupported lexicon bundle version ${String(bundle.v)}`)
 
   const themesByEntry = new Map<number, string[]>()
@@ -93,6 +106,47 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
     if (key.includes(' ')) mweMaxLen = Math.max(mweMaxLen, key.split(' ').length)
   }
 
+  /**
+   * Full verb paradigms (form → [[entryIndex, tags]]), built on first use from every single-word verb lemma
+   * («não adiantar» conjugates its second word; other expressions are matched through `forms` only).
+   */
+  let verbIndex: Map<string, [number, string][]> | null = null
+  function generatedVerbHits(key: string): [number, string][] {
+    if (!opts.verbForms) return []
+    if (!verbIndex) {
+      verbIndex = new Map()
+      for (const e of entries) {
+        if (e.pos !== 'verb') continue
+        const words = normalizeForm(e.lemma).split(' ')
+        if (words.length > 1 && !(words.length === 2 && words[0] === 'não')) continue
+        const pf = opts.verbForms(words[words.length - 1], bundle.conj?.[e.index])
+        if (!pf) continue
+        for (const [f, tags] of pf) {
+          const k = words.length === 2 ? `não ${f}` : f
+          const list = verbIndex.get(k)
+          const hit: [number, string] = [e.index, tags.join(',')]
+          if (list) list.push(hit)
+          else verbIndex.set(k, [hit])
+        }
+      }
+    }
+    return verbIndex.get(key) ?? []
+  }
+
+  /**
+   * Index hits of a key plus generated verb readings: for clitic hosts always (the host must be a verb and the
+   * bare form may be absent from the corpus), otherwise only for keys the corpus-bound index does not hold.
+   */
+  function hitsOf(key: string, via: FormAnalysis['via']): [number, string][] {
+    const hits = forms.get(key)
+    if (hits && via !== 'clitic') return hits
+    const gen = generatedVerbHits(key)
+    if (!gen.length) return hits ?? []
+    const out = [...(hits ?? [])]
+    for (const g of gen) if (!out.some(([i]) => i === g[0])) out.push(g)
+    return out
+  }
+
   /** Lemma-tagged hits only: normalised lemma → entries */
   const lemmaHits = (key: string): LexEntry[] =>
     (forms.get(key) ?? []).filter(([, tag]) => tag === '').map(([i]) => entries[i])
@@ -107,9 +161,11 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
       mesoclitic: a.mesoclitic,
       approximate,
     }
-    const hits = forms.get(key) ?? []
+    const hits = approximate ? (forms.get(key) ?? []) : hitsOf(key, a.via)
     for (const [i, tag] of hits) {
       const entry = entries[i]
+      // only verbs host clitics: pô-lo → pôr, not the preposition «por»
+      if (a.via === 'clitic' && entry.pos !== 'verb') continue
       // levanto-me: offer «levantar-se» before «levantar»
       if (a.reflexive && entry.pos === 'verb' && !entry.reflexive) {
         const r = reflexiveLemma(entry.lemma)
@@ -138,8 +194,18 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
     }
   }
 
-  function score(c: LexCandidate, ctx: LookupContext | undefined, singleWord: boolean): number {
-    let s = VIA_RANK[c.via]
+  /**
+   * Proper-noun homographs (Porto / porto, Madeira / madeira, Oeste / oeste): the capitalised lemma wins only for a
+   * capitalised token in the middle of a sentence (`ctx.prev` given); at the start of a sentence or in lower case
+   * the common noun comes first. A proper noun without a lower-case rival is unaffected (it is the only candidate).
+   */
+  function properBias(c: LexCandidate, capitalisedMid: boolean): number {
+    if (!/^\p{Lu}/u.test(c.entry.lemma) || c.entry.multiword) return 0
+    return capitalisedMid ? -0.8 : 0.8
+  }
+
+  function score(c: LexCandidate, ctx: LookupContext | undefined, singleWord: boolean, capitalisedMid: boolean): number {
+    let s = VIA_RANK[c.via] + properBias(c, capitalisedMid)
     if (c.via === 'clitic' && c.entry.reflexive) s -= 0.5
     if (c.approximate) s += 4
     if (c.tag !== '') s += 0.2 // the lemma itself before an inflected form of another lemma
@@ -154,7 +220,8 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
     return s
   }
 
-  function resolve(raw: string, ctx?: LookupContext): LexCandidate[] {
+  /** `typedProper`: a capitalised manual search query («Porto») is a proper-noun request, like a mid-sentence token. */
+  function resolve(raw: string, ctx?: LookupContext, typedProper = false): LexCandidate[] {
     const form = normalizeForm(raw)
     if (!form) return []
     const analyses = analyzeForm(form)
@@ -173,7 +240,8 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
       found = guessed.slice(0, MAX_GUESSES * 4)
     }
     const single = !form.includes(' ')
-    const scored = found.map((c, order) => ({ c, s: score(c, ctx, single), order }))
+    const capitalisedMid = single && /^\p{Lu}/u.test(raw.trim()) && (!!ctx?.prev || typedProper)
+    const scored = found.map((c, order) => ({ c, s: score(c, ctx, single, capitalisedMid), order }))
     scored.sort((x, y) => x.s - y.s || x.order - y.order)
     const seen = new Set<number>()
     found = []
@@ -234,7 +302,7 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
         .forEach(({ x }) => push(x.e))
       return out.slice(0, limit)
     }
-    for (const c of resolve(q)) push(c.entry)
+    for (const c of resolve(q, undefined, true)) push(c.entry)
     const fq = foldDiacritics(normalizeForm(q))
     if (!fq) return out.slice(0, limit)
     const prefix: LexEntry[] = []
@@ -252,7 +320,7 @@ export function createLexicon(bundle: LexiconBundle): Lexicon {
   return {
     size: { entries: entries.length, forms: forms.size },
     hash: bundle.hash,
-    resolve,
+    resolve: (raw, ctx) => resolve(raw, ctx),
     matchMwe,
     search,
     entryById: (id) => byId.get(id),
@@ -280,9 +348,9 @@ let loaded: Lexicon | null = null
 
 /** Loads the lexicon chunk once (dynamic import) and memoises it. Retries after a failed load. */
 export function loadLexicon(): Promise<Lexicon> {
-  loading ??= import('../../generated/lexicon.json')
-    .then((m) => {
-      loaded = createLexicon(m.default as unknown as LexiconBundle)
+  loading ??= Promise.all([import('../../generated/lexicon.json'), import('./conjugate.ts')])
+    .then(([m, conj]) => {
+      loaded = createLexicon(m.default as unknown as LexiconBundle, { verbForms: conj.verbForms })
       return loaded
     })
     .catch((err: unknown) => {

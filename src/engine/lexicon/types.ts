@@ -33,6 +33,12 @@ export interface LexiconBundle {
   forms: Record<string, [number, string][]>
   /** 'vocab:<themeId>' | 'situation:<id>' | 'reading:<id>' → entry indices. */
   themes: Record<string, number[]>
+  /**
+   * Verb entry index → `conj` of the source entry (only entries that set it). The app conjugates verb lemmas at
+   * lookup time (./conjugate.ts) for forms the corpus-bound `forms` index does not hold — clitic hosts
+   * (sentou-se → sentou, dir-lhe-ei → direi) and manual search.
+   */
+  conj?: Record<string, string>
   /** Entry indices with pre-generated lemma audio (filled by a later phase). */
   audio?: number[]
 }

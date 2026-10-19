@@ -1,5 +1,7 @@
 /**
- * pt-PT verb conjugator (offline: `npm run lexicon -- build` expands every verb lemma into its forms).
+ * pt-PT verb conjugator. Offline, `npm run lexicon -- build` indexes the corpus forms of every verb lemma; in the
+ * app, ./lookup.ts loads this module lazily (`verbForms`) to resolve forms outside the corpus (clitic hosts:
+ * sentou-se, dir-lhe-ei; manual search). Pure: no DOM, relative imports only.
  *
  *   conjugate('falar')        → full paradigm (all finite tenses, imperativo, infinitivo pessoal, gerúndio, particípio)
  *   conjugate('manter')       → family of «ter» (mantenho, mantém, mantive …)
@@ -17,7 +19,7 @@ import {
   TENSES,
   type Tense,
   type VerbClass,
-} from '../../src/engine/lexicon/endings.ts'
+} from './endings.ts'
 import {
   AGREDIR,
   FAMILIES,
@@ -380,4 +382,10 @@ export function paradigmForms(p: Paradigm): Map<string, string[]> {
 /** One slot as a display string (variants joined with « / »), for tests and debugging. */
 export function slot(p: Paradigm, t: Tense, person: number): string {
   return p.tenses[t][person].join(' / ')
+}
+
+/** Every form of a verb lemma → tags (null if the lemma is not an infinitive). Runtime generator of ./lookup.ts. */
+export function verbForms(lemma: string, conj?: string): Map<string, string[]> | null {
+  const p = conjugate(lemma, conj)
+  return p ? paradigmForms(p) : null
 }
