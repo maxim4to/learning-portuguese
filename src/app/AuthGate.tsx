@@ -22,7 +22,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
       <div data-halftone-surface="" className="card-raised relative isolate w-full max-w-sm space-y-4 overflow-hidden text-center">
         <AzulejoCorner opacity={0.7} />
         <AzulejoMark size={48} className="mx-auto" />
-        <h1>Português</h1>
+        <h1>Learning Portuguese</h1>
         <p className="text-ink-muted">Войдите, чтобы синхронизировать прогресс между устройствами.</p>
         <button className="btn-primary w-full" onClick={() => void signIn()}>
           Войти через Google

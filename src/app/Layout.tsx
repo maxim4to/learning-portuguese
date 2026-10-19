@@ -102,10 +102,9 @@ function DueBadge({ n, className }: { n: number; className?: string }) {
 /** Logo mark + product name, links home (same in the phone row and the desktop bar). */
 function HomeLogo({ size }: { size: number }) {
   return (
-    <NavLink to="/" data-halftone-surface="" aria-label="Português PT — главная" className="flex items-center gap-2.5 text-ink no-underline">
+    <NavLink to="/" data-halftone-surface="" aria-label="Learning Portuguese — главная" className="flex items-center gap-2.5 text-ink no-underline">
       <AzulejoMark size={size} />
-      <span className="font-display text-h2 leading-none font-black">Português</span>
-      <span className="rounded-pill bg-sun-soft px-2 py-0.5 text-xs font-bold whitespace-nowrap text-sun">PT-PT</span>
+      <span className="font-display text-h2 leading-none font-black whitespace-nowrap">Learning Portuguese</span>
     </NavLink>
   )
 }

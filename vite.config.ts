@@ -89,8 +89,8 @@ export default defineConfig(({ mode }) => {
         registerType: 'prompt',
         includeAssets: ['favicon.svg', 'icons/icon.svg', 'icons/*.png'],
         manifest: {
-          name: 'Português PT',
-          short_name: 'Português',
+          name: 'Learning Portuguese',
+          short_name: 'Portuguese',
           description: 'Личный тренажёр европейского португальского (pt-PT)',
           lang: 'ru',
           id: base,

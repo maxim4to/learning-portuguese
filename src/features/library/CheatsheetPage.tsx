@@ -29,9 +29,9 @@ export function CheatsheetPage() {
   }, [sheet])
 
   useEffect(() => {
-    if (sheet) document.title = `${sheet.title} — Português PT`
+    if (sheet) document.title = `${sheet.title} — Learning Portuguese`
     return () => {
-      document.title = 'Português PT'
+      document.title = 'Learning Portuguese'
     }
   }, [sheet])
 

@@ -34,9 +34,9 @@ export function PracticeHeader({
   children?: ReactNode
 }) {
   useEffect(() => {
-    document.title = `${LABEL[section]} · Практика — Português PT`
+    document.title = `${LABEL[section]} · Практика — Learning Portuguese`
     return () => {
-      document.title = 'Português PT'
+      document.title = 'Learning Portuguese'
     }
   }, [section])
   const n = counts()
