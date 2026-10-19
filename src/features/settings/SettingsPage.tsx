@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useContext, useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Check, Cloud, Download, HardDrive, Monitor, Moon, Sun, Trash2, Upload, Volume2 } from 'lucide-react'
 import { Button } from '@/components/Button'
@@ -9,7 +9,7 @@ import { PageSkeleton } from '@/components/EmptyState'
 import { SegmentedControl } from '@/components/SegmentedControl'
 import { Switch } from '@/components/Switch'
 import { setThemePref, useThemePref, type ThemePref } from '@/app/theme'
-import { isFirebaseConfigured, useAuth, useRepository } from '@/data'
+import { isFirebaseConfigured, useAuth, useCards, useDataReady, useErrors, useProgress, useRepository, useStoredSettings, useStoredWords } from '@/data'
 import { WORD_CARD_MODES, type Settings, type WordCardMode } from '@/data/types.ts'
 import { getPtPtVoices, pickPtPtVoice, speak } from '@/engine/audio'
 import { activityDays, computeStreak } from '@/features/dashboard/stats'
@@ -17,6 +17,7 @@ import { plural } from '@/features/library/format'
 import { setLookupOnTapPref } from '@/features/words/capture/store'
 import { MODE_UNLOCK_HINT, WORD_MODE_LABEL } from '@/features/words/status'
 import { WordsContext } from '@/features/words/useWords'
+import { SyncStatusLine } from '@/features/sync/SyncStatusLine'
 
 const SAMPLE = 'Bom dia! Hoje vamos praticar o português europeu.'
 const RATES = [0.75, 0.85, 1, 1.15, 1.25]
@@ -27,17 +28,17 @@ export function SettingsPage() {
   const fileRef = useRef<HTMLInputElement>(null)
   const importBtnRef = useRef<HTMLButtonElement>(null)
   const [message, setMessage] = useState<string | null>(null)
-  const [settings, setSettings] = useState<Settings | null>(null)
+  // Settings come from the local-first store; `draft` holds edits not yet written (debounced below).
+  const stored = useStoredSettings()
+  const ready = useDataReady()
+  const [draft, setDraft] = useState<Partial<Settings>>({})
+  const settings = useMemo<Settings | null>(() => (ready ? { ...stored, ...draft } : null), [ready, stored, draft])
   const [voiceInfo, setVoiceInfo] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
   const [pendingImport, setPendingImport] = useState<File | null>(null)
   const theme = useThemePref()
   const rateId = useId()
   const newId = useId()
-
-  useEffect(() => {
-    void repo.getSettings().then(setSettings)
-  }, [repo])
 
   // Word capture reads the tap setting live (no reload needed after toggling / importing).
   const lookupOnTap = settings?.lookupOnTap
@@ -68,12 +69,16 @@ export function SettingsPage() {
     clearTimeout(timer.current)
     const patch = pending.current
     pending.current = {}
-    if (Object.keys(patch).length) void repo.saveSettings(patch)
+    if (!Object.keys(patch).length) return
+    void repo.saveSettings(patch).then(() => {
+      // Written to the store: drop the draft unless newer edits are waiting.
+      if (!Object.keys(pending.current).length) setDraft({})
+    })
   }, [repo])
   useEffect(() => flush, [flush])
 
   function update(patch: Partial<Settings>) {
-    setSettings((s) => (s ? { ...s, ...patch } : s))
+    setDraft((d) => ({ ...d, ...patch }))
     pending.current = { ...pending.current, ...patch }
     clearTimeout(timer.current)
     timer.current = setTimeout(flush, 400)
@@ -130,7 +135,7 @@ export function SettingsPage() {
     importBtnRef.current?.focus() // the confirm (and its focused button) unmounts
     try {
       await repo.importAll(await file.text())
-      setSettings(await repo.getSettings())
+      setDraft({})
       setMessage('Импорт выполнен')
     } catch (e) {
       setMessage(`Ошибка импорта: ${e instanceof Error ? e.message : String(e)}`)
@@ -314,6 +319,7 @@ export function SettingsPage() {
               <>
                 <p className="font-semibold">Прогресс синхронизируется с аккаунтом</p>
                 <p className="text-sm text-ink-muted">{auth.user.email ?? auth.user.displayName}</p>
+                <SyncStatusLine />
               </>
             ) : isFirebaseConfigured ? (
               <p className="font-semibold">Синхронизация доступна, вход не выполнен</p>
@@ -601,8 +607,6 @@ function ResetDialog({
   onExport(): Promise<void>
   onReset(resetSettings: boolean): Promise<void>
 }) {
-  const repo = useRepository()
-  const [counts, setCounts] = useState<ResetCounts | null>(null)
   const [typed, setTyped] = useState('')
   const [alsoSettings, setAlsoSettings] = useState(false)
   const [exported, setExported] = useState(false)
@@ -612,33 +616,31 @@ function ResetDialog({
   const inputId = useId()
   const hintId = useId()
 
-  useEffect(() => {
-    let alive = true
-    void Promise.all([repo.getAllProgress(), repo.getCards(), repo.getErrors(), repo.getWords(), repo.getSettings()])
-      .then(([progress, cards, errors, words, settings]) => {
-        if (!alive) return
-        let results = 0
-        let diagnostics = 0
-        for (const p of progress) for (const r of p.history) {
-          if (r.source === 'diagnostic') diagnostics++
-          else results++
-        }
-        setCounts({
-          topics: progress.length,
-          results,
-          cards: cards.length,
-          words: words.length,
-          errors: errors.length,
-          diagnostics,
-          lastDiagnosticAt: settings.lastDiagnosticAt,
-          streak: computeStreak(activityDays(progress, cards, errors)).streak,
-        })
-      })
-      .catch(() => {})
-    return () => {
-      alive = false
+  const repo = useRepository()
+  const progressMap = useProgress()
+  const cards = useCards()
+  const errors = useErrors()
+  const words = useStoredWords()
+  const settings = useStoredSettings()
+  const counts = useMemo<ResetCounts>(() => {
+    const progress = [...progressMap.values()]
+    let results = 0
+    let diagnostics = 0
+    for (const p of progress) for (const r of p.history) {
+      if (r.source === 'diagnostic') diagnostics++
+      else results++
     }
-  }, [repo])
+    return {
+      topics: progress.length,
+      results,
+      cards: cards.length,
+      words: words.length,
+      errors: errors.length,
+      diagnostics,
+      lastDiagnosticAt: settings.lastDiagnosticAt,
+      streak: computeStreak(activityDays(progress, cards, errors)).streak,
+    }
+  }, [progressMap, cards, errors, words, settings])
 
   const confirmed = typed.trim().toLocaleUpperCase('ru-RU') === CONFIRM_WORD
 

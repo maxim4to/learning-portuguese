@@ -2,7 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useId, useLayoutEffect, useMemo
 import { useLocation } from 'react-router-dom'
 import { Skeleton } from '@/components/EmptyState'
 import { useToast } from '@/components/toastContext'
-import { useRepository } from '@/data'
+import { useStoredSettings } from '@/data'
 import { preloadLexicon } from '@/engine/lexicon/lookup'
 import type { WordActionResult } from '../useWords.ts'
 import { wordPt } from '../wordOps.ts'
@@ -50,7 +50,6 @@ const highlights = (): HighlightRegistry | null => {
  * never hijacked. «/» or Ctrl/⌘+K opens the word search. No per-word spans, no re-render of the text.
  */
 export function WordCaptureProvider({ children }: { children: ReactNode }) {
-  const repo = useRepository()
   const toast = useToast()
   const { pathname } = useLocation()
   useSourceAnchor()
@@ -65,17 +64,9 @@ export function WordCaptureProvider({ children }: { children: ReactNode }) {
     openRef.current = open
   }, [open])
 
-  // Settings.lookupOnTap (SettingsPage updates the module state live).
-  useEffect(() => {
-    let alive = true
-    repo
-      .getSettings()
-      .then((s) => alive && setLookupOnTapPref(s.lookupOnTap))
-      .catch(() => {})
-    return () => {
-      alive = false
-    }
-  }, [repo])
+  // Settings.lookupOnTap (live from the store; SettingsPage also updates the module state while editing).
+  const { lookupOnTap } = useStoredSettings()
+  useEffect(() => setLookupOnTapPref(lookupOnTap), [lookupOnTap])
 
   const openLookup = useCallback((target: CaptureTarget, opts: OpenLookupOptions = {}) => {
     setLookupOpen(true) // synchronous: page key handlers in the same event already see it

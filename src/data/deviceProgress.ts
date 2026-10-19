@@ -6,14 +6,17 @@
  *   sessionStorage ptpt:v1:run:<key>       in-progress exercise runs
  *                  ptpt:v1:diagnostic      in-progress diagnostic
  *                  ptpt:v1:logged-errors   errors already logged this tab session
- * Everything under the `ptpt:v1:` prefix goes, except preferences: the theme always stays,
+ * Everything under the `ptpt:v1:` prefix goes, except preferences and sync bookkeeping: the theme, the per-uid
+ * device snapshots `ptpt:v1:snap:<uid>` (the store re-saves the current user's empty state itself) and the
+ * cached sign-in `ptpt:v1:auth-user` always stay,
  * `ptpt:v1:settings` (LocalRepository settings) stays unless `resetSettings`.
  *
  * Also a tiny «progress was reset» signal for caches that live outside pages (e.g. the due badge in Layout).
  */
 const PREFIX = 'ptpt:v1:'
 /** Preference keys that survive a progress reset. */
-const KEEP = new Set([PREFIX + 'theme'])
+const KEEP = new Set([PREFIX + 'theme', PREFIX + 'auth-user'])
+const keepAlways = (k: string) => KEEP.has(k) || k.startsWith(PREFIX + 'snap:')
 export const LOCAL_SETTINGS_KEY = PREFIX + 'settings'
 
 function sweep(store: Storage | undefined, keep: (key: string) => boolean): void {
@@ -39,8 +42,8 @@ function storage(name: 'localStorage' | 'sessionStorage'): Storage | undefined {
 }
 
 export function clearDeviceProgress(opts: { resetSettings?: boolean } = {}): void {
-  sweep(storage('localStorage'), (k) => KEEP.has(k) || (!opts.resetSettings && k === LOCAL_SETTINGS_KEY))
-  sweep(storage('sessionStorage'), (k) => KEEP.has(k))
+  sweep(storage('localStorage'), (k) => keepAlways(k) || (!opts.resetSettings && k === LOCAL_SETTINGS_KEY))
+  sweep(storage('sessionStorage'), (k) => keepAlways(k))
 }
 
 const resetListeners = new Set<() => void>()

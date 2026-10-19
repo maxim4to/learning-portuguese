@@ -1,9 +1,9 @@
 /**
  * Personal dictionary store + hooks. Mount <WordsProvider> (WordsProvider.tsx) inside <RepositoryProvider>.
  *
- * One `repo.getWords()` + one `repo.getCards()` per session (cards filtered to `wordId` ones are kept);
- * all mutations are optimistic: the in-memory state updates immediately, then `repo.saveWordBundle`
- * commits (on failure the state is reverted and the promise rejects).
+ * A view over the app DataStore (src/data/store.ts): words + dictionary cards (`wordId` set) are derived from it
+ * synchronously — no fetch of its own. Mutations go through `repo.saveWordBundle`, which the DataStore applies
+ * optimistically (and rolls back on a failed commit).
  *
  *   const { status, words, counts } = useWords()
  *   const word = useWordByLexId('levantar-se#verb')
@@ -11,14 +11,13 @@
  *   const { undo } = await saveWord({ lexId, lemma, ru, pos, gender, source })
  */
 import { createContext, useContext, useSyncExternalStore } from 'react'
-import type { ProgressRepository, SrsCard, WordCardMode, WordEntry, WordSource, WordStatus } from '@/data'
+import type { DataStore, SrsCard, WordCardMode, WordEntry, WordSource, WordStatus } from '@/data'
 import { WORD_CARD_MODES } from '@/data/types.ts'
 import { isNewCard, schedule, type ReviewRating } from '@/engine/fsrs'
 import { bumpNewSeenToday } from '@/features/srs/newCardCounter'
 import { listenText } from './audio.ts'
 import { countByStatus, groupCardsByWord, wordStatus } from './status.ts'
 import {
-  applyWrite,
   commitWrite,
   deleteLegacyWordCards as deleteLegacy,
   invertWrite,
@@ -131,34 +130,27 @@ function snapshotOf(state: WordsState, status: WordsSnapshot['status'], error: s
   }
 }
 
-const errMsg = (e: unknown) => (e instanceof Error ? e.message : String(e))
-
-/** In-memory store for one repository. Created by WordsProvider; components use the hooks below. */
+/** Dictionary view over one DataStore. Created by WordsProvider; components use the hooks below. */
 export class WordsStore {
   private snap: WordsSnapshot = snapshotOf({ words: [], cards: [] }, 'loading', null)
-  private readonly listeners = new Set<() => void>()
-  private loadSeq = 0
+  private src: { words: unknown; cards: unknown; ready: boolean } | null = null
   readonly actions: WordActions
-  private readonly repo: ProgressRepository
+  private readonly repo: DataStore
 
-  constructor(repo: ProgressRepository) {
+  constructor(repo: DataStore) {
     this.repo = repo
     this.actions = {
-      saveWords: async (inputs) => this.run(planSaveWords(this.state(), inputs, { enabledModes: await this.enabledModes() })),
+      saveWords: async (inputs) => this.run(planSaveWords(this.state(), inputs, { enabledModes: this.enabledModes() })),
       saveWord: (input) => this.actions.saveWords([input]),
-      updateWord: async (id, patch) =>
-        this.run(planUpdateWord(this.state(), id, patch, Date.now(), (await this.enabledModes()) ?? WORD_CARD_MODES)),
+      updateWord: async (id, patch) => this.run(planUpdateWord(this.state(), id, patch, Date.now(), this.enabledModes() ?? WORD_CARD_MODES)),
       addSource: async (id, source) => this.run(planAddSource(this.state(), id, source)),
       deleteWords: async (ids) => this.run(planDeleteWords(this.state(), ids)),
       markKnown: async (id) => this.run(planMarkKnown(this.state(), id)),
-      unmarkKnown: async (id) => this.run(planUnmarkKnown(this.state(), id, { enabledModes: await this.enabledModes() })),
-      onCardsUpdated: (cards) => {
-        const mine = cards.filter((c) => c.wordId)
-        if (mine.length) this.set(applyWrite(this.state(), { cards: mine }))
-      },
+      unmarkKnown: async (id) => this.run(planUnmarkKnown(this.state(), id, { enabledModes: this.enabledModes() })),
+      // The DataStore already has the cards (written through it): nothing to sync.
+      onCardsUpdated: () => {},
       onCardReviewed: async (card, rating) => {
         if (!card.wordId) return
-        this.set(applyWrite(this.state(), { cards: [card] }))
         await this.unlockAfter(card, rating)
       },
       rateCard: async (card, rating) => {
@@ -170,47 +162,45 @@ export class WordsStore {
         return updated
       },
       applyEnabledModes: async (enabled, changed) => {
-        const canListen = await this.listenMap(this.snap.words)
+        const canListen = await this.listenMap(this.getSnapshot().words)
         return this.run(planApplyEnabledModes(this.state(), enabled, changed, { canListen: (w) => canListen.get(w.id) ?? false }))
       },
-      reload: () => this.load(),
-      countLegacyWordCards: async () => legacyWordCards(await this.repo.getCards()).length,
+      reload: async () => {},
+      countLegacyWordCards: async () => legacyWordCards(this.repo.cardList()).length,
       deleteLegacyWordCards: () => deleteLegacy(this.repo),
     }
   }
 
-  subscribe = (cb: () => void) => {
-    this.listeners.add(cb)
-    return () => {
-      this.listeners.delete(cb)
+  subscribe = (cb: () => void) => this.repo.subscribe(cb)
+
+  getSnapshot = (): WordsSnapshot => {
+    const docs = this.repo.getDocs()
+    const ready = this.repo.isReady()
+    const src = this.src
+    if (!src || src.words !== docs.words || src.cards !== docs.cards || src.ready !== ready) {
+      this.src = { words: docs.words, cards: docs.cards, ready }
+      this.snap = snapshotOf({ words: this.repo.wordList(), cards: this.repo.cardList().filter((c) => c.wordId) }, ready ? 'ready' : 'loading', null)
     }
+    return this.snap
   }
-  getSnapshot = () => this.snap
 
   private state(): WordsState {
-    return { words: this.snap.words, cards: this.snap.cards }
-  }
-  private set(state: WordsState, status = this.snap.status, error = this.snap.error) {
-    this.snap = snapshotOf(state, status, error)
-    for (const l of this.listeners) l()
+    const s = this.getSnapshot()
+    return { words: s.words, cards: s.cards }
   }
 
-  private async enabledModes(): Promise<WordCardMode[] | undefined> {
-    try {
-      return (await this.repo.getSettings()).wordModes
-    } catch {
-      return undefined
-    }
+  private enabledModes(): WordCardMode[] | undefined {
+    return this.repo.settings().wordModes
   }
 
   /** Creates the cards unlocked by rating `card` (recognize only). Errors are swallowed: unlock retries next review. */
   private async unlockAfter(card: SrsCard, rating: ReviewRating): Promise<void> {
     if (!card.wordId || card.mode !== 'recognize') return
-    const entry = this.snap.index.byId.get(card.wordId)
+    const entry = this.getSnapshot().index.byId.get(card.wordId)
     if (!entry) return
     try {
-      const [enabledModes, canListen] = await Promise.all([this.enabledModes(), listenText(entry).then((t) => t !== null, () => false)])
-      await this.run(planCardReviewed(this.state(), card, rating, { enabledModes, canListen }))
+      const canListen = await listenText(entry).then((t) => t !== null, () => false)
+      await this.run(planCardReviewed(this.state(), card, rating, { enabledModes: this.enabledModes(), canListen }))
     } catch {
       // not fatal: the condition is re-checked after the next review
     }
@@ -222,35 +212,16 @@ export class WordsStore {
     return new Map(res)
   }
 
-  async load(): Promise<void> {
-    const seq = ++this.loadSeq
-    try {
-      const [words, cards] = await Promise.all([this.repo.getWords(), this.repo.getCards()])
-      if (seq !== this.loadSeq) return
-      this.set({ words, cards: cards.filter((c) => c.wordId) }, 'ready', null)
-    } catch (e) {
-      if (seq !== this.loadSeq) return
-      this.set(this.state(), 'error', errMsg(e))
-    }
-  }
-
-  /** Optimistic apply + commit; returns entries and an undo. */
+  /** Commit through the DataStore (optimistic there; it rolls back on failure); returns entries and an undo. */
   private async run(plan: WordPlan): Promise<WordActionResult> {
     const before = this.state()
     const write = plan.write
     if (isEmptyWrite(write)) return { words: plan.words, undo: async () => {} }
     const inverse = invertWrite(before, write)
-    this.set(applyWrite(before, write))
-    try {
-      await commitWrite(this.repo, write)
-    } catch (e) {
-      this.set(applyWrite(this.state(), inverse))
-      throw e
-    }
+    await commitWrite(this.repo, write)
     return {
       words: plan.words,
       undo: async () => {
-        this.set(applyWrite(this.state(), inverse))
         await commitWrite(this.repo, inverse)
       },
     }

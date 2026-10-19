@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import type { Exercise, ReadingText } from '@/content'
-import { useRepository, type TopicStatus } from '@/data'
+import { useProgress, useRepository, type TopicStatus } from '@/data'
 import { ExerciseRunner, type RunSummary } from '@/features/exercises'
 import { saveRun, type SaveOutcome } from '@/features/lessons/persist'
 import { ResultScreen } from '@/features/lessons/ResultScreen'
@@ -29,20 +29,9 @@ interface Result {
  */
 export function ReadingQuestions({ text }: { text: ReadingText }) {
   const repo = useRepository()
-  const [status, setStatus] = useState<TopicStatus>('not-started')
+  const status: TopicStatus = useProgress().get(text.id)?.status ?? 'not-started'
   const [run, setRun] = useState<Run | null>(null)
   const [result, setResult] = useState<Result | null>(null)
-
-  useEffect(() => {
-    let alive = true
-    repo
-      .getTopicProgress(text.id)
-      .then((p) => alive && setStatus(p?.status ?? 'not-started'))
-      .catch(() => {})
-    return () => {
-      alive = false
-    }
-  }, [repo, text.id])
 
   const start = (list: readonly Exercise[], retry: boolean) => {
     setResult(null)
@@ -56,7 +45,6 @@ export function ReadingQuestions({ text }: { text: ReadingText }) {
     saveRun(repo, { id: text.id }, summary, list, { source: 'lesson', countProgress: !retry })
       .then((outcome) => {
         setResult((r) => (r && r.summary === summary ? { ...r, saving: false, outcome } : r))
-        if (outcome.progress) setStatus(outcome.progress.status)
       })
       .catch((e: unknown) =>
         setResult((r) =>

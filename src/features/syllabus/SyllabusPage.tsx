@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { ArrowRight, BookOpen, ChevronRight, ClipboardCheck, Target } from 'lucide-react'
 import { Chip, ChipGroup } from '@/components/Chip'
+import { PageSkeleton } from '@/components/EmptyState'
 import { Illustration } from '@/components/Illustration'
 import { levelArt } from '@/components/illustrations'
 import { PageHeader } from '@/components/PageHeader'
@@ -80,15 +81,20 @@ export function SyllabusPage() {
         </Link>
       )}
 
-      {levels.map((lvl) => (
-        <section key={lvl.level} className="space-y-4" aria-label={`Уровень ${lvl.level}`}>
-          <LevelHeader level={lvl.level} modules={lvl.modules} progress={progress} />
-          {lvl.modules.length === 0 && <p className="card text-sm text-ink-muted">Скоро</p>}
-          {lvl.modules.map((mod) => (
-            <ModuleCard key={mod.id} mod={mod} progress={progress} />
-          ))}
-        </section>
-      ))}
+      {/* Skeleton only on the very first open (no device snapshot yet): never a list without progress. */}
+      {loading ? (
+        <PageSkeleton cards={3} />
+      ) : (
+        levels.map((lvl) => (
+          <section key={lvl.level} className="space-y-4" aria-label={`Уровень ${lvl.level}`}>
+            <LevelHeader level={lvl.level} modules={lvl.modules} progress={progress} />
+            {lvl.modules.length === 0 && <p className="card text-sm text-ink-muted">Скоро</p>}
+            {lvl.modules.map((mod) => (
+              <ModuleCard key={mod.id} mod={mod} progress={progress} />
+            ))}
+          </section>
+        ))
+      )}
 
       <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-ink-muted">
         {STATUS_ORDER.map((s) => (

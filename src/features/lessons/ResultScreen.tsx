@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode }
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronRight, Plus, RotateCcw } from 'lucide-react'
 import type { Exercise } from '@/content'
-import { useRepository, type SrsCard, type TopicStatus } from '@/data'
+import { useCards, useDataReady, useRepository, type SrsCard, type TopicStatus } from '@/data'
 import { ProgressRing } from '@/components/ProgressRing'
 import { toneForPct } from '@/components/tones'
 import { LevelBadge, StatusBadge } from '@/components/StatusBadge'
@@ -271,23 +271,13 @@ function Mistakes({
 }) {
   const repo = useRepository()
   const byId = useMemo(() => new Map(exercises.map((e) => [e.id, e])), [exercises])
-  const [have, setHave] = useState<Set<string> | null>(null)
+  const allCards = useCards()
+  const ready = useDataReady()
+  const have = useMemo(() => (ready && !saving ? new Set(allCards.map((c) => c.id)) : null), [allCards, ready, saving])
   const [busy, setBusy] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
   const [all, setAll] = useState(wrong.length <= SHOWN)
   const shown = all ? wrong : wrong.slice(0, SHOWN)
-
-  useEffect(() => {
-    if (saving) return
-    let alive = true
-    repo
-      .getCards()
-      .then((cs) => alive && setHave(new Set(cs.map((c) => c.id))))
-      .catch(() => alive && setHave(new Set()))
-    return () => {
-      alive = false
-    }
-  }, [repo, saving, outcome])
 
   const pending = useMemo(() => new Map((outcome?.pendingCards ?? []).map((c) => [c.exerciseId, c])), [outcome])
   const reviewable = (a: RunSummary['answers'][number]) => byId.get(a.exerciseId)?.type !== 'speak-shadow'
@@ -302,7 +292,6 @@ function Mistakes({
     setBusy(true)
     try {
       await repo.upsertCards(cards)
-      setHave((h) => new Set([...(h ?? []), ...cards.map((c) => c.id)]))
       setMsg(cards.length > 1 ? `Добавлено в повторение: ${cards.length}` : 'Добавлено в повторение')
     } catch (e) {
       setMsg(`Не удалось сохранить: ${e instanceof Error ? e.message : String(e)}`)

@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useRepository } from '@/data'
-import type { ErrorEntry, ProgressRepository, Settings, SrsCard, TopicProgress } from '@/data/types.ts'
+import { useMemo } from 'react'
+import { useCards, useDataReady, useErrors, useProgress, useStoredSettings } from '@/data'
+import type { ErrorEntry, Settings, SrsCard, TopicProgress } from '@/data/types.ts'
 
 export interface ProgressData {
+  /** Only on the very first open without a device snapshot (until the first sync). */
   loading: boolean
   error: string | null
   /** topicId → progress */
@@ -11,46 +12,21 @@ export interface ProgressData {
   /** Newest first. */
   errors: ErrorEntry[]
   settings: Settings | null
-  /** Re-reads everything from the repository. */
+  /** No-op kept for callers: the store is live (local-first + listeners). */
   reload(): Promise<void>
 }
 
-type Snapshot = Omit<ProgressData, 'reload'>
+const noop = async () => {}
 
-const EMPTY: Snapshot = { loading: true, error: null, progress: new Map(), cards: [], errors: [], settings: null }
-
-async function fetchAll(repo: ProgressRepository): Promise<Snapshot> {
-  try {
-    const [progress, cards, errors, settings] = await Promise.all([
-      repo.getAllProgress(),
-      repo.getCards(),
-      repo.getErrors(),
-      repo.getSettings(),
-    ])
-    return { loading: false, error: null, progress: new Map(progress.map((p) => [p.topicId, p])), cards, errors, settings }
-  } catch (e) {
-    return { ...EMPTY, loading: false, error: e instanceof Error ? e.message : String(e) }
-  }
-}
-
-/** Loads progress, cards, errors and settings once (in parallel) from the active repository. */
+/** Progress, cards, errors and settings from the local-first DataStore (synchronous, no fetch on mount). */
 export function useProgressData(): ProgressData {
-  const repo = useRepository()
-  const [state, setState] = useState<Snapshot>(EMPTY)
-
-  useEffect(() => {
-    let cancelled = false
-    void fetchAll(repo).then((s) => {
-      if (!cancelled) setState(s)
-    })
-    return () => {
-      cancelled = true
-    }
-  }, [repo])
-
-  const reload = useCallback(async () => {
-    setState(await fetchAll(repo))
-  }, [repo])
-
-  return { ...state, reload }
+  const ready = useDataReady()
+  const progress = useProgress()
+  const cards = useCards()
+  const errors = useErrors()
+  const settings = useStoredSettings()
+  return useMemo(
+    () => ({ loading: !ready, error: null, progress, cards, errors, settings, reload: noop }),
+    [ready, progress, cards, errors, settings],
+  )
 }

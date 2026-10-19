@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useRepository, type CardKind, type SrsCard } from '@/data'
+import { useCallback, useMemo, useState } from 'react'
+import { useCards, useDataReady, useRepository, type CardKind, type SrsCard } from '@/data'
 import { createSrsCard } from '@/engine/fsrs'
 
 /** A content item that can become an SRS card (topic example, situation phrase). The id scheme belongs to the caller. */
@@ -17,26 +17,20 @@ export type ReviewPicker = ReturnType<typeof useReviewPicker>
 
 /**
  * Pick content items for review one by one («Добавить» / «Убрать» per row).
- * `cards` maps the specs that already are cards (null while loading). Removing deletes the card with its progress.
+ * `cards` maps the specs that already are cards (null only before the first sync). Removing deletes the card with its progress.
  */
 export function useReviewPicker(specs: readonly PickSpec[]) {
   const repo = useRepository()
-  const [cards, setCards] = useState<Map<string, SrsCard> | null>(null)
+  const all = useCards()
+  const ready = useDataReady()
+  const cards = useMemo(() => {
+    if (!ready) return null
+    const want = new Set(specs.map((s) => s.id))
+    return new Map(all.filter((c) => want.has(c.id)).map((c) => [c.id, c]))
+  }, [all, ready, specs])
   const [busy, setBusy] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
   const [confirm, setConfirm] = useState<SrsCard | null>(null)
-
-  useEffect(() => {
-    let alive = true
-    const want = new Set(specs.map((s) => s.id))
-    repo
-      .getCards()
-      .then((all) => alive && setCards(new Map(all.filter((c) => want.has(c.id)).map((c) => [c.id, c]))))
-      .catch(() => alive && setCards(new Map()))
-    return () => {
-      alive = false
-    }
-  }, [repo, specs])
 
   const missing = useMemo(() => (cards ? specs.filter((s) => !cards.has(s.id)) : []), [cards, specs])
 
@@ -50,7 +44,6 @@ export function useReviewPicker(specs: readonly PickSpec[]) {
       setBusy(true)
       try {
         await repo.upsertCards(fresh)
-        setCards((m) => new Map([...(m ?? []), ...fresh.map((c) => [c.id, c] as const)]))
         setMsg(null)
         return fresh.length
       } catch (e) {
@@ -68,11 +61,6 @@ export function useReviewPicker(specs: readonly PickSpec[]) {
       setBusy(true)
       try {
         await repo.deleteCards([id])
-        setCards((m) => {
-          const n = new Map(m ?? [])
-          n.delete(id)
-          return n
-        })
         setMsg(null)
       } catch (e) {
         setMsg(`Не удалось удалить: ${e instanceof Error ? e.message : String(e)}`)

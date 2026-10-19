@@ -16,6 +16,12 @@ export const isFirebaseConfigured: boolean = Boolean(
   firebaseConfig.apiKey && firebaseConfig.authDomain && firebaseConfig.projectId && firebaseConfig.appId,
 )
 
+/**
+ * Dev/e2e only: `VITE_FIREBASE_EMULATOR_HOST=127.0.0.1` points Firestore (:8080) and Auth (:9099) at the local
+ * emulators (`npm run emulators`). Never set in production builds.
+ */
+export const emulatorHost = (import.meta.env.VITE_FIREBASE_EMULATOR_HOST as string | undefined) || undefined
+
 let appPromise: Promise<FirebaseApp> | null = null
 
 export function getFirebaseApp(): Promise<FirebaseApp> {

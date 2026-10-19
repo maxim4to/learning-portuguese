@@ -1,5 +1,7 @@
 export * from './types.ts'
-export { useAuth, useRepository, type AuthState, type AuthStatus } from './contexts.ts'
+export { useAuth, useDataStore, useRepository, type AuthState, type AuthStatus } from './contexts.ts'
+export { useCards, useDataReady, useErrors, useProgress, useStoredSettings, useStoredWords, useSyncState } from './hooks.ts'
+export type { DataStore, SyncState, SyncStatus } from './store.ts'
 export type { AuthUser } from './auth.ts'
 export { AuthProvider } from './AuthProvider.tsx'
 export { RepositoryProvider } from './RepositoryProvider.tsx'

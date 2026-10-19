@@ -8,16 +8,18 @@ import {
   GoogleAuthProvider,
   browserLocalPersistence,
   browserPopupRedirectResolver,
+  connectAuthEmulator,
   getRedirectResult,
   indexedDBLocalPersistence,
   initializeAuth,
   onAuthStateChanged,
+  signInWithCredential,
   signInWithPopup,
   signInWithRedirect,
   signOut,
   type Auth,
 } from 'firebase/auth'
-import { getFirebaseApp } from './firebase.ts'
+import { emulatorHost, getFirebaseApp } from './firebase.ts'
 
 export interface AuthUser {
   uid: string
@@ -29,12 +31,21 @@ export interface AuthUser {
 let authPromise: Promise<Auth> | null = null
 
 function getAuthInstance(): Promise<Auth> {
-  authPromise ??= getFirebaseApp().then((app) =>
-    initializeAuth(app, {
+  authPromise ??= getFirebaseApp().then((app) => {
+    const auth = initializeAuth(app, {
       persistence: [indexedDBLocalPersistence, browserLocalPersistence],
       popupRedirectResolver: browserPopupRedirectResolver,
-    }),
-  )
+    })
+    if (emulatorHost) {
+      connectAuthEmulator(auth, `http://${emulatorHost}:9099`, { disableWarnings: true })
+      // e2e hook (emulator only): sign in without the popup — the Auth emulator accepts an unsigned Google id token.
+      ;(globalThis as { __emuSignIn?: (email: string) => Promise<string> }).__emuSignIn = async (email) => {
+        const token = JSON.stringify({ sub: `e2e-${email}`, email, email_verified: true })
+        return (await signInWithCredential(auth, GoogleAuthProvider.credential(token))).user.uid
+      }
+    }
+    return auth
+  })
   return authPromise
 }
 

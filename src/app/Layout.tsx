@@ -9,14 +9,14 @@ import {
   Settings2,
   type LucideIcon,
 } from 'lucide-react'
-import { onProgressReset, useRepository } from '@/data'
-import { dueCards } from '@/engine/fsrs'
+import { useRepository } from '@/data'
 import { OfflineBanner, UpdatePrompt } from '@/components/AppStatus'
 import { cx } from '@/components/cx'
 import { AzulejoMark } from '@/components/Logo'
 import { ToastProvider } from '@/components/Toast'
 import { useFitText } from '@/components/useFitText'
-import { newSeenToday } from '@/features/srs/newCardCounter'
+import { useDueCount } from '@/features/srs/useDueCount'
+import { SyncToasts } from '@/features/sync/SyncToasts'
 import { WordCaptureProvider } from '@/features/words/capture/WordCaptureProvider'
 import { WordSearchButton } from '@/features/words/capture/WordSearchButton'
 import { isNavActive, NAV_ITEMS } from './nav'
@@ -30,38 +30,6 @@ const ICONS: Record<string, LucideIcon> = {
   '/settings': Settings2,
 }
 const iconFor = (to: string) => ICONS[to] ?? Circle
-
-/**
- * Cards due now (for the badge on «Повторение»). Read on start and again after leaving /review —
- * not on every navigation (Firestore reads are billed).
- */
-function useDueCount(pathname: string) {
-  const repo = useRepository()
-  const [due, setDue] = useState(0)
-  const prev = useRef<string | null>(null)
-  const onReview = pathname.startsWith('/review')
-  const [tick, setTick] = useState(0)
-  useEffect(() => {
-    if (prev.current?.startsWith('/review') && !onReview) setTick((t) => t + 1)
-    prev.current = pathname
-  }, [pathname, onReview])
-  // «Сбросить весь прогресс» in Settings: recount right away.
-  useEffect(() => onProgressReset(() => setTick((t) => t + 1)), [])
-  useEffect(() => {
-    let alive = true
-    Promise.all([repo.getCards(), repo.getSettings()])
-      .then(([cards, settings]) => {
-        if (!alive) return
-        const live = cards.filter((c) => !(c as { deleted?: boolean }).deleted)
-        setDue(dueCards(live, Date.now(), { newPerDay: settings.newCardsPerDay, newSeenToday: newSeenToday() }).length)
-      })
-      .catch(() => {})
-    return () => {
-      alive = false
-    }
-  }, [repo, tick])
-  return due
-}
 
 /**
  * Phone tab bar hides while the page scrolls down (reading room for the content under it) and comes back on
@@ -128,6 +96,7 @@ export function Layout() {
     <ToastProvider>
       {/* Word capture: tap / select a pt word anywhere → lookup card; «/» → word search. */}
       <WordCaptureProvider>
+      <SyncToasts />
       <div className="min-h-dvh">
         <a
           href="#main"
