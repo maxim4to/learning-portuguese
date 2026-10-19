@@ -1,12 +1,10 @@
 import { GraduationCap, House } from 'lucide-react'
 import { ButtonLink } from '@/components/Button'
-import { AzulejoCorner } from '@/components/Card'
 import { Illustration } from '@/components/Illustration'
 
 export function NotFoundPage() {
   return (
     <section className="card-raised relative isolate mx-auto max-w-lg overflow-hidden rounded-hero px-6 py-10 text-center">
-      <AzulejoCorner />
       <Illustration name="not-found" eager sizes="240px" className="mx-auto w-60 rounded-card" />
       <p className="mt-4 font-pt text-lg text-ink-muted" lang="pt-PT">
         Perdido?

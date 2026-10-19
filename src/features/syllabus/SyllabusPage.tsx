@@ -115,7 +115,7 @@ function LevelHeader({ level, modules, progress }: { level: Level; modules: Syll
   const c = countStatuses(ids, progress)
   return (
     <div className="sticky top-(--sticky-top) z-10 -mx-4 flex items-center gap-4 bg-bg/90 px-4 pt-6 pb-3 backdrop-blur-md md:-mx-2 md:px-2">
-      <Illustration name={levelArt(level)} sizes="80px" className="size-14 shrink-0 rounded-[1.25rem] md:size-20 md:rounded-[1.5rem]" />
+      <Illustration name={levelArt(level)} sizes="(min-width: 768px) 80px, 56px" className="size-14 shrink-0 rounded-[1.25rem] md:size-20 md:rounded-[1.5rem]" />
       <h2 className="shrink-0 font-display text-[3.5rem] leading-[0.85] font-black md:text-display">{level}</h2>
       {ids.length > 0 && (
         <>

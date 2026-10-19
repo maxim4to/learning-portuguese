@@ -1,13 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { PartyPopper, X } from 'lucide-react'
 import { ButtonLink } from '@/components/Button'
-import { Halftone } from '@/components/Halftone'
+import { AzulejoCorner } from '@/components/Card'
+import { DotGrid } from '@/components/DotGrid'
 import { ProgressBar } from '@/components/ProgressBar'
 import { useRepository } from '@/data'
 import type { Settings, SrsCard } from '@/data/types.ts'
 import { formatInterval, isNewCard, previewIntervals, schedule, type ReviewRating } from '@/engine/fsrs'
 import { stopSpeaking } from '@/engine/audio'
-import { CardFace } from './CardFace'
+import { findExercise } from '@/content'
+import { cx, scrollBehavior } from '@/components/cx'
+import { ReviewExercise, type AnswerRecord } from '@/features/exercises'
+import { CardFace, CardHeader, TopicRepeatLink } from './CardFace'
 import { bumpNewSeenToday } from './newCardCounter'
 
 /** Cards due again within this window are re-shown in the same session (learning steps). */
@@ -19,6 +23,15 @@ const RATING_UI: { rating: ReviewRating; label: string; key: string; cls: string
   { rating: 'good', label: 'Хорошо', key: '3', cls: 'border-brand bg-brand text-on-brand hover:bg-brand-hover' },
   { rating: 'easy', label: 'Легко', key: '4', cls: 'border-ink bg-surface text-ink hover:bg-surface-2' },
 ]
+
+/** Rating suggested by an answer to the original exercise of an 'error' card. */
+function suggestRating(rec: AnswerRecord): ReviewRating {
+  if (rec.skipped || rec.verdict === 'wrong') return 'again'
+  return rec.verdict === 'accents' ? 'hard' : 'good'
+}
+
+/** Keyboard-activated clicks this soon after the rating row appears are ignored (held / repeated Enter). */
+const KEY_GUARD_MS = 350
 
 interface Props {
   initial: SrsCard[]
@@ -38,7 +51,11 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
   const [saveError, setSaveError] = useState<string | null>(null)
   const [finishedAt, setFinishedAt] = useState<number | null>(null)
   const [confirmEnd, setConfirmEnd] = useState(false)
-  const ratingsRef = useRef<HTMLDivElement>(null)
+  const [answer, setAnswer] = useState<AnswerRecord | null>(null)
+  const revealedAt = useRef(0)
+  const cardRef = useRef<HTMLDivElement>(null)
+  const actionsRef = useRef<HTMLDivElement>(null)
+  const ratingBtns = useRef<Partial<Record<ReviewRating, HTMLButtonElement | null>>>({})
   const revealRef = useRef<HTMLButtonElement>(null)
   const endRef = useRef<HTMLButtonElement>(null)
   const summaryRef = useRef<HTMLHeadingElement>(null)
@@ -46,6 +63,22 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
 
   const card = queue[0]
   const intervals = useMemo(() => (card && revealed ? previewIntervals(card) : null), [card, revealed])
+  // 'error' cards are reviewed as their original exercise when it still exists in the content.
+  const loc = card?.kind === 'error' && card.exerciseId ? findExercise(card.exerciseId) : undefined
+  const exerciseMode = !!loc
+  const suggested: ReviewRating = exerciseMode && answer ? suggestRating(answer) : 'good'
+
+  const reveal = useCallback(() => {
+    revealedAt.current = Date.now()
+    setRevealed(true)
+  }, [])
+  const onAnswered = useCallback(
+    (rec: AnswerRecord) => {
+      setAnswer(rec)
+      reveal()
+    },
+    [reveal],
+  )
 
   const rate = useCallback(
     (rating: ReviewRating) => {
@@ -59,6 +92,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
       const next = updated.fsrs.due - now <= REQUEUE_MS ? [...rest, updated] : rest
       setQueue(next)
       setRevealed(false)
+      setAnswer(null)
       stopSpeaking()
       if (!next.length) setFinishedAt(now)
       repo
@@ -76,9 +110,13 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
       if (e.metaKey || e.ctrlKey || e.altKey) return
       // Space / Enter on a focused button or link («Завершить», «Отмена», audio…) activates that control.
       if ((e.key === ' ' || e.key === 'Enter') && el?.closest('button, a')) return
-      if (!revealed && (e.key === ' ' || e.key === 'Enter')) {
+      // Before answering, the exercise owns the keyboard (1–9 options, Enter checks…).
+      if (exerciseMode && !revealed) return
+      const confirm = e.key === ' ' || e.key === 'Enter'
+      if (confirm && e.repeat) return
+      if (!revealed && confirm) {
         e.preventDefault()
-        setRevealed(true)
+        reveal()
         return
       }
       if (revealed) {
@@ -86,25 +124,41 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         if (r) {
           e.preventDefault()
           rate(r.rating)
-        } else if (e.key === ' ') {
+        } else if (confirm && Date.now() - revealedAt.current > KEY_GUARD_MS) {
           e.preventDefault()
-          rate('good')
+          rate(suggested)
         }
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [revealed, rate])
+  }, [revealed, rate, reveal, exerciseMode, suggested])
 
   useEffect(() => () => stopSpeaking(), [])
 
-  // Focus management: after «Показать ответ» the button unmounts — move focus to the rating group;
-  // after a rating — back to «Показать ответ» for the next card; on start too («Начать» unmounts).
+  // Focus management: after «Показать ответ» / answering the exercise — the suggested rating (Space/Enter confirms it);
+  // after a rating — «Показать ответ» for the next flashcard (exercise cards focus their own field / heading on mount);
+  // on start too («Начать» unmounts).
   useEffect(() => {
-    if (revealed) ratingsRef.current?.focus({ preventScroll: true })
-    else if (card) revealRef.current?.focus({ preventScroll: true })
-    else summaryRef.current?.focus({ preventScroll: true })
-  }, [revealed, card])
+    if (revealed) {
+      ratingBtns.current[suggested]?.focus({ preventScroll: true })
+      // Phones: keep the answer / feedback visible above the sticky rating row.
+      // Measured after the flashcard back's 240 ms reveal animation; exercise feedback wins over the task's top.
+      const timer = setTimeout(() => {
+        const cardBox = cardRef.current?.getBoundingClientRect()
+        const rowBox = actionsRef.current?.getBoundingClientRect()
+        if (!cardBox || !rowBox) return
+        const overlap = cardBox.bottom - rowBox.top + 12
+        const top = exerciseMode ? overlap : Math.min(overlap, Math.max(0, cardBox.top - 16))
+        if (top > 0) window.scrollBy({ top, behavior: scrollBehavior() })
+      }, exerciseMode ? 60 : 260)
+      return () => clearTimeout(timer)
+    }
+    else if (card && !exerciseMode) revealRef.current?.focus({ preventScroll: true })
+    else if (!card) summaryRef.current?.focus({ preventScroll: true })
+    // `suggested` is fixed once revealed; re-running on it would only re-focus the same button.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [revealed, card, exerciseMode])
 
   // «Завершить?» swaps the button for a confirm group: focus «Отмена» there, and return to «Завершить» on cancel.
   useEffect(() => {
@@ -121,9 +175,9 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
     const minutes = Math.max(1, Math.round(((finishedAt ?? startedAt) - startedAt) / 60_000))
     const recalled = total ? (total - counts.again) / total : 0
     return (
-      <section className="card-raised animate-enter relative isolate space-y-5 overflow-hidden rounded-hero p-6 pt-0 text-center sm:p-10 sm:pt-0">
-        <div aria-hidden className="relative -mx-6 mb-2 h-36 sm:-mx-10 sm:h-44">
-          <Halftone seed={reviewedIds.size + 2} width={640} height={176} step={10} heat={0.55} className="absolute inset-0 size-full" />
+      <section data-halftone-surface="" className="card-raised animate-enter relative isolate space-y-5 overflow-hidden rounded-hero p-6 pt-0 text-center sm:p-10 sm:pt-0">
+        <div aria-hidden className="relative -mx-6 mb-2 h-36 bg-terracotta-fill sm:-mx-10 sm:h-44">
+          <DotGrid mask="fade-bottom" maskStops={[0, 0.9]} dotSize={6} gap={4} rotate={18} activeColor="--sun" shockRadius={220} />
           <span className="absolute bottom-0 left-1/2 grid size-20 -translate-x-1/2 translate-y-1/3 place-items-center rounded-full bg-surface text-ink">
             <PartyPopper className="size-9" />
           </span>
@@ -188,33 +242,65 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         )}
       </div>
 
-      <div className="card-raised rounded-hero p-5 select-text sm:p-10">
-        <CardFace key={card.id + card.fsrs.reps} card={card} revealed={revealed} settings={settings} />
+      <div
+        ref={cardRef}
+        data-halftone-surface=""
+        className={cx(
+          'card-raised relative isolate rounded-hero p-5 select-text sm:p-10',
+          // overflow-clip (not hidden) keeps the exercise's own sticky «Проверить» bar working on phones.
+          exerciseMode ? 'overflow-clip' : 'overflow-hidden',
+        )}
+      >
+        <AzulejoCorner size="sm" opacity={0.5} />
+        {loc ? (
+          <div className="space-y-5">
+            <CardHeader card={card} />
+            <ReviewExercise
+              key={card.id + card.fsrs.reps}
+              exercise={loc.exercise}
+              note="Задание, в котором была ошибка"
+              onAnswered={onAnswered}
+            />
+            {revealed && <TopicRepeatLink topicId={card.topicId} />}
+          </div>
+        ) : (
+          <CardFace key={card.id + card.fsrs.reps} card={card} revealed={revealed} settings={settings} />
+        )}
       </div>
 
       {saveError && <p className="text-sm text-danger">Ошибка сохранения: {saveError}</p>}
 
-      <div className="sticky-actions">
-        {!revealed ? (
-          <button ref={revealRef} className="btn-primary min-h-14 w-full text-lg" onClick={() => setRevealed(true)}>
+      <div ref={actionsRef} className="sticky-actions">
+        {exerciseMode && !revealed ? null : !revealed ? (
+          <button ref={revealRef} className="btn-primary min-h-14 w-full text-lg" onClick={reveal}>
             Показать ответ
             <kbd className="hidden rounded-md bg-on-brand/20 px-1.5 py-0.5 font-sans text-xs md:inline">пробел</kbd>
           </button>
         ) : (
           <div
-            ref={ratingsRef}
-            tabIndex={-1}
             role="group"
-            aria-label="Насколько легко вы вспомнили?"
+            aria-label={exerciseMode ? 'Оцените, как далось задание' : 'Насколько легко вы вспомнили?'}
             className="grid grid-cols-4 gap-2 rounded-control outline-none"
           >
             {RATING_UI.map((r) => (
               <button
                 key={r.rating}
-                onClick={() => rate(r.rating)}
-                className={`flex min-h-16 animate-enter flex-col items-center justify-center rounded-[1.75rem] border-[1.5px] px-1 py-2 transition-[background-color,border-color,transform] active:scale-[0.97] ${r.cls}`}
+                ref={(el) => {
+                  ratingBtns.current[r.rating] = el
+                }}
+                onClick={(e) => {
+                  // detail 0 = keyboard activation: ignore the Enter that answered the task, if held.
+                  if (e.detail === 0 && Date.now() - revealedAt.current < KEY_GUARD_MS) return
+                  rate(r.rating)
+                }}
+                className={cx(
+                  'flex min-h-16 animate-enter flex-col items-center justify-center rounded-[1.75rem] border-[1.5px] px-1 py-2 transition-[background-color,border-color,transform] active:scale-[0.97]',
+                  r.cls,
+                  exerciseMode && r.rating === suggested && 'ring-2 ring-ink ring-offset-2 ring-offset-bg',
+                )}
               >
                 <span className="text-sm font-bold md:text-base">{r.label}</span>
+                {exerciseMode && r.rating === suggested && <span className="sr-only"> (предложено по ответу)</span>}
                 <span className="text-xs tabular-nums">
                   <span className="sr-only">следующий показ через </span>
                   {intervals?.[r.rating] ?? formatInterval(0)}
@@ -225,8 +311,15 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
           </div>
         )}
       </div>
+      {exerciseMode && revealed && (
+        <p className="text-center text-xs text-ink-muted">Оценка предложена по ответу — можно выбрать другую.</p>
+      )}
       <p className="hidden text-center text-xs text-ink-muted md:block">
-        Клавиши: пробел — показать ответ, 1–4 — оценка (пробел после ответа = «Хорошо»)
+        {exerciseMode
+          ? revealed
+            ? 'Клавиши: 1–4 — оценка, пробел / Enter — предложенная оценка'
+            : 'Клавиши: 1–9 — вариант ответа, Enter — проверить; затем 1–4 — оценка'
+          : 'Клавиши: пробел — показать ответ, 1–4 — оценка (пробел / Enter после ответа = «Хорошо»)'}
       </p>
     </section>
   )

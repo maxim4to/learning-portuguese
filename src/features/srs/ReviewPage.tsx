@@ -115,10 +115,10 @@ export function ReviewPage() {
             />
           </section>
         ) : (
-          <section className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
+          <section data-halftone-surface="" className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
             {due.length > 0 ? (
               <div className="flex flex-col items-center gap-4">
-                <AzulejoCorner seed={due.length} />
+                <AzulejoCorner />
                 <p className="leading-none">
                   <span className="block font-display text-[7rem] leading-[0.8] font-black tabular-nums sm:text-[9rem]">{due.length}</span>
                   <span className="mt-2 block font-display text-2xl">к повторению</span>

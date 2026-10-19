@@ -36,7 +36,7 @@ export interface ExerciseRunnerProps {
   focusOnMount?: boolean
 }
 
-function ExerciseView(props: {
+export function ExerciseView(props: {
   exercise: Exercise
   locked: boolean
   result?: AnswerRecord

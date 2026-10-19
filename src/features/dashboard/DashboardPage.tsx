@@ -13,6 +13,8 @@ import {
 import type { ErrorEntry } from '@/data/types.ts'
 import { dueCards, isNewCard } from '@/engine/fsrs'
 import { ButtonLink } from '@/components/Button'
+import { AzulejoCorner } from '@/components/Card'
+import { DotGrid } from '@/components/DotGrid'
 import { Illustration } from '@/components/Illustration'
 import { cx } from '@/components/cx'
 import { EmptyState, ErrorState, PageSkeleton } from '@/components/EmptyState'
@@ -222,7 +224,8 @@ function TodayHero({
 
   return (
     <section className="grid gap-3 md:grid-cols-[1.35fr_1fr]" aria-labelledby="dash-today">
-      <div className="card-raised rounded-hero p-6 sm:p-10">
+      <div data-halftone-surface="" className="card-raised relative isolate overflow-hidden rounded-hero p-6 sm:p-10">
+        <AzulejoCorner opacity={0.8} />
         <h2 id="dash-today" className="font-sans text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
           Сегодня
         </h2>
@@ -327,9 +330,12 @@ function TutorCard({ daily }: { daily: ReturnType<typeof pickDaily> }) {
   return (
     <Link
       to="/tutor"
+      data-halftone-surface=""
       className="group relative isolate flex items-center gap-4 overflow-hidden rounded-card bg-terracotta-fill p-5 text-white no-underline transition-transform duration-150 active:scale-[0.99] sm:p-6"
     >
-      <span aria-hidden className="halftone-dots pointer-events-none absolute inset-y-0 right-0 -z-10 w-2/3 text-brand opacity-80 [mask-image:linear-gradient(to_left,#000,transparent)]" />
+      <span aria-hidden className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-2/3 opacity-90">
+        <DotGrid mask="fade-left" dotSize={3.5} gap={3.5} activeColor="#fff" shockRadius={160} />
+      </span>
       <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-full bg-white text-[#070607]">
         <Sparkles className="size-6" />
       </span>

@@ -3,23 +3,28 @@ import type { Level } from '@/content'
 /**
  * Caldera poster illustrations (generated in Figma, see public/illustrations/).
  * Each one is a self-contained flat tile with its own background, so it reads as a card in both themes;
- * in dark mode `.illus` dims it slightly (index.css). Square art ships at 320/640 px, the hero at 640/1264 px.
+ * in dark mode `.illus` dims it slightly (index.css).
+ * Files are `<name>-<width>.webp`: squares come from the 1024 px originals (1024/512/256), the hero from its
+ * 1264 px original (800/1264 plus Lanczos-upscaled 1600/2560 for wide Hi-DPI covers). `src` is the fallback width.
+ * Encoded with `cwebp -q 88 -m 6 -sharp_yuv` (sharp_yuv keeps the ember/violet halftone edges clean).
  */
+const SQUARE = { w: 1024, h: 1024, widths: [256, 512, 1024], src: 512 } as const
+
 export const ART = {
-  hero: { w: 1264, h: 848, small: 640 },
-  'level-a1': { w: 640, h: 640, small: 320 },
-  'level-a2': { w: 640, h: 640, small: 320 },
-  'level-b1': { w: 640, h: 640, small: 320 },
-  'level-b2': { w: 640, h: 640, small: 320 },
-  'sit-home': { w: 640, h: 640, small: 320 },
-  'sit-documents': { w: 640, h: 640, small: 320 },
-  'sit-health': { w: 640, h: 640, small: 320 },
-  'sit-food': { w: 640, h: 640, small: 320 },
-  'sit-transport': { w: 640, h: 640, small: 320 },
-  'sit-work': { w: 640, h: 640, small: 320 },
-  'empty-review': { w: 640, h: 640, small: 320 },
-  'empty-errors': { w: 640, h: 640, small: 320 },
-  'not-found': { w: 640, h: 640, small: 320 },
+  hero: { w: 1264, h: 848, widths: [800, 1264, 1600, 2560], src: 1264 },
+  'level-a1': SQUARE,
+  'level-a2': SQUARE,
+  'level-b1': SQUARE,
+  'level-b2': SQUARE,
+  'sit-home': SQUARE,
+  'sit-documents': SQUARE,
+  'sit-health': SQUARE,
+  'sit-food': SQUARE,
+  'sit-transport': SQUARE,
+  'sit-work': SQUARE,
+  'empty-review': SQUARE,
+  'empty-errors': SQUARE,
+  'not-found': SQUARE,
 } as const
 
 export type IllustrationName = keyof typeof ART

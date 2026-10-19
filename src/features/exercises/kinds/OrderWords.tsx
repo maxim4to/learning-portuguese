@@ -95,15 +95,15 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
         ))}
       </div>
       {!locked && (
-        <div className="sticky-actions -mx-2 flex gap-2 rounded-pill bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
-          <button type="button" className="btn-primary flex-1 sm:min-w-36 sm:flex-none" disabled={!built.length} onClick={check}>
+        <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-[1.875rem] bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+          <button type="button" className="btn-primary flex-[1_0_auto] sm:min-w-36 sm:flex-none" disabled={!built.length} onClick={check}>
             Проверить
           </button>
-          <button type="button" className="btn-secondary" disabled={!built.length} onClick={() => setBuilt([])}>
+          <button type="button" className="btn-secondary shrink-0" disabled={!built.length} onClick={() => setBuilt([])}>
             Сбросить
           </button>
           {onSkip && (
-            <button type="button" className="btn-ghost" onClick={onSkip}>
+            <button type="button" className="btn-ghost shrink-0 grow sm:grow-0" onClick={onSkip}>
               Не знаю
             </button>
           )}

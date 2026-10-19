@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { BookA, BookOpenText, ChevronRight, FileText, Library, MessagesSquare, type LucideIcon } from 'lucide-react'
 import { LEVELS, listReadingTexts, listVocabThemes } from '@/content'
+import { AzulejoCorner } from '@/components/Card'
 import { cx } from '@/components/cx'
 import { EmptyState } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
@@ -54,7 +55,17 @@ function Empty({ children }: { children: ReactNode }) {
   )
 }
 
-const cardLink = 'card card-link group flex h-full items-start gap-3 sm:p-6'
+const cardLink = 'card card-link group relative isolate flex h-full items-start gap-3 overflow-hidden sm:p-6'
+
+/** Library card (text only): a link with a small interactive dot-grid corner. */
+function CardLink({ to, children }: { to: string; children: ReactNode }) {
+  return (
+    <Link to={to} data-halftone-surface="" className={cardLink}>
+      <AzulejoCorner size="sm" />
+      {children}
+    </Link>
+  )
+}
 const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
 
 export function LibraryPage() {
@@ -81,13 +92,13 @@ export function LibraryPage() {
           <ul className="grid gap-3 sm:grid-cols-2">
             {sheets.map((s) => (
               <li key={s.id}>
-                <Link to={`/library/cheatsheet/${s.id}`} className={cardLink}>
+                <CardLink to={`/library/cheatsheet/${s.id}`}>
                   <span className="min-w-0 flex-1">
                     <span className="block font-display text-[1.625rem] leading-[1.05]">{s.title}</span>
                     {s.intro && <span className="mt-1 line-clamp-2 text-sm text-ink-muted">{s.intro}</span>}
                   </span>
                   {chevron}
-                </Link>
+                </CardLink>
               </li>
             ))}
           </ul>
@@ -101,7 +112,7 @@ export function LibraryPage() {
           <ul className="grid gap-3 sm:grid-cols-2">
             {themes.map((t) => (
               <li key={t.id}>
-                <Link to={`/library/vocab/${t.id}`} className={cardLink}>
+                <CardLink to={`/library/vocab/${t.id}`}>
                   <span className="min-w-0 flex-1">
                     <span className="flex items-center gap-2 font-display text-[1.625rem] leading-[1.05]">
                       {t.level && <LevelBadge level={t.level} className="font-sans tracking-normal" />}
@@ -118,7 +129,7 @@ export function LibraryPage() {
                     </span>
                   </span>
                   {chevron}
-                </Link>
+                </CardLink>
               </li>
             ))}
           </ul>
@@ -134,7 +145,7 @@ export function LibraryPage() {
               const p = progress.get(r.id)
               return (
                 <li key={r.id}>
-                  <Link to={`/library/reading/${r.id}`} className={cardLink}>
+                  <CardLink to={`/library/reading/${r.id}`}>
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center gap-2">
                         <LevelBadge level={r.level} />
@@ -149,7 +160,7 @@ export function LibraryPage() {
                       </span>
                     </span>
                     {chevron}
-                  </Link>
+                  </CardLink>
                 </li>
               )
             })}

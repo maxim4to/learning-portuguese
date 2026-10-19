@@ -1,8 +1,11 @@
-/** Poster illustration <img>: lazy, srcset 1x/2x, intrinsic aspect ratio (no layout shift). Data in ./illustrations.ts. */
+/**
+ * Poster illustration <img>: lazy, width-descriptor srcset (the browser picks a file from `sizes` × DPR),
+ * intrinsic aspect ratio (no layout shift). Data in ./illustrations.ts.
+ */
 import { cx } from './cx'
 import { ART, type IllustrationName } from './illustrations'
 
-const url = (file: string) => `${import.meta.env.BASE_URL}illustrations/${file}.webp`
+const url = (name: IllustrationName, w: number) => `${import.meta.env.BASE_URL}illustrations/${name}-${w}.webp`
 
 export function Illustration({
   name,
@@ -15,7 +18,7 @@ export function Illustration({
   name: IllustrationName
   /** Empty for decorative art (default). */
   alt?: string
-  /** Rendered CSS width hint for picking the 1x/2x file. */
+  /** Rendered CSS width of the image (for `cover`, the width of the cropped-in image box); the browser multiplies it by DPR to pick a file. */
   sizes?: string
   /** Fill the parent (absolute, object-cover) instead of keeping the intrinsic aspect ratio. */
   cover?: boolean
@@ -26,8 +29,8 @@ export function Illustration({
   const a = ART[name]
   return (
     <img
-      src={url(name)}
-      srcSet={`${url(`${name}-${a.small}`)} ${a.small}w, ${url(name)} ${a.w}w`}
+      src={url(name, a.src)}
+      srcSet={a.widths.map((w) => `${url(name, w)} ${w}w`).join(', ')}
       sizes={sizes}
       width={a.w}
       height={a.h}

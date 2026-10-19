@@ -86,8 +86,8 @@ export function ResultScreen(p: ResultScreenProps) {
 
   return (
     <div className="animate-enter space-y-4">
-      <section className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
-        {pct >= 60 && <AzulejoCorner seed={pct} />}
+      <section data-halftone-surface="" className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
+        {pct >= 60 && <AzulejoCorner />}
         <p className="text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
           {p.retry ? 'Работа над ошибками' : 'Результат'}
         </p>

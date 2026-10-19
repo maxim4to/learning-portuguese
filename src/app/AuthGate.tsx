@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { AzulejoCorner } from '@/components/Card'
 import { AzulejoMark } from '@/components/Logo'
 import { useAuth } from '@/data'
 
@@ -11,15 +12,16 @@ export function AuthGate({ children }: { children: ReactNode }) {
   if (status === 'loading') {
     return (
       <div className="flex min-h-dvh items-center justify-center" role="status" aria-label="Загрузка">
-        <AzulejoMark className="size-10 animate-pulse" />
+        <AzulejoMark size={40} className="animate-pulse" />
       </div>
     )
   }
 
   return (
     <div className="flex min-h-dvh items-center justify-center p-4">
-      <div className="card-raised w-full max-w-sm space-y-4 rounded-hero p-6 text-center">
-        <AzulejoMark className="mx-auto size-12" />
+      <div data-halftone-surface="" className="card-raised relative isolate w-full max-w-sm space-y-4 overflow-hidden rounded-hero p-6 text-center">
+        <AzulejoCorner opacity={0.7} />
+        <AzulejoMark size={48} className="mx-auto" />
         <h1>Português</h1>
         <p className="text-ink-muted">Войдите, чтобы синхронизировать прогресс между устройствами.</p>
         <button className="btn-primary w-full" onClick={() => void signIn()}>

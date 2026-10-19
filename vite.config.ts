@@ -101,11 +101,22 @@ export default defineConfig(({ mode }) => {
         },
         workbox: {
           globPatterns: ['**/*.{js,css,html,svg,woff2,webp}'],
-          globIgnores: ['404.html'],
+          // Hi-DPI illustration variants (hero 2560/1600, squares 1024) are left to the runtime cache below:
+          // precaching them would add ~2.3 MB to every install; the 1264/800 hero and 512/256 squares cover offline use.
+          globIgnores: ['404.html', 'illustrations/hero-2560.webp', 'illustrations/hero-1600.webp', 'illustrations/*-1024.webp'],
           navigateFallback: `${base}index.html`,
           navigateFallbackDenylist: [new RegExp(`^${esc}audio/`), new RegExp(`^${esc}__/`)],
           maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
           runtimeCaching: [
+            {
+              urlPattern: new RegExp(`${esc}illustrations/[^/?#]+\\.webp$`),
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'illustrations',
+                expiration: { maxEntries: 60, maxAgeSeconds: 60 * 60 * 24 * 365 },
+                cacheableResponse: { statuses: [0, 200] },
+              },
+            },
             {
               // A RegExp, not a function: functions are serialized into sw.js without their closure (`base`).
               urlPattern: new RegExp(`${esc}audio/[^/?#]+\\.mp3$`),

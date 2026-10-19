@@ -103,8 +103,8 @@ export function Layout() {
         {/* Desktop top bar (fixed height = --header-h; in-page sticky bars stick right under it). */}
         <header className="sticky top-[0px] z-20 hidden h-(--header-h) bg-bg/90 backdrop-blur-md md:block">
           <div className="mx-auto flex h-full max-w-5xl items-center gap-6 px-6">
-            <NavLink to="/" aria-label="Português PT — главная" className="flex items-center gap-2.5 text-ink no-underline">
-              <AzulejoMark className="size-8" />
+            <NavLink to="/" data-halftone-surface="" aria-label="Português PT — главная" className="flex items-center gap-2.5 text-ink no-underline">
+              <AzulejoMark size={32} />
               <span className="font-display text-[1.75rem] leading-none font-black">Português</span>
               <span className="rounded-pill bg-sun-soft px-2 py-0.5 text-[0.6875rem] font-bold tracking-wider whitespace-nowrap text-sun">
                 PT-PT
