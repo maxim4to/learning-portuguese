@@ -50,14 +50,14 @@ describe('SettingsPage: preferences persist to the store', () => {
   test('theme segmented control writes ptpt:v1:theme and toggles html.dark', async () => {
     const { user } = renderSettings()
     const group = screen.getByRole('radiogroup', { name: 'Тема оформления' })
-    expect(within(group).getByRole('radio', { name: 'Как в системе' })).toBeChecked()
+    expect(within(group).getByRole('radio', { name: 'Авто — как в системе' })).toBeChecked()
     await user.click(within(group).getByRole('radio', { name: /Тёмная/ }))
     expect(localStorage.getItem('ptpt:v1:theme')).toBe('dark')
     expect(document.documentElement).toHaveClass('dark')
     await user.click(within(group).getByRole('radio', { name: /Светлая/ }))
     expect(localStorage.getItem('ptpt:v1:theme')).toBe('light')
     expect(document.documentElement).not.toHaveClass('dark')
-    await user.click(within(group).getByRole('radio', { name: 'Как в системе' }))
+    await user.click(within(group).getByRole('radio', { name: 'Авто — как в системе' }))
     expect(localStorage.getItem('ptpt:v1:theme')).toBeNull()
   })
 
@@ -136,7 +136,7 @@ describe('SettingsPage: preferences persist to the store', () => {
   })
 
   // WCAG 2.5.3 Label in Name (A): the visible text must be part of the accessible name (voice control: «нажми Авто»).
-  test.fails('theme «Авто» segment: accessible name contains its visible label [BUG B-61]', () => {
+  test('theme «Авто» segment: accessible name contains its visible label [B-61]', () => {
     renderSettings()
     const auto = within(screen.getByRole('radiogroup', { name: 'Тема оформления' })).getAllByRole('radio')[0]
     expect(auto).toHaveTextContent('Авто')

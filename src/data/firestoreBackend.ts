@@ -5,19 +5,21 @@
  *   users/{uid}/errors/{id}          ErrorEntry
  *   users/{uid}/words/{wordId}       WordEntry (wordId is encodeURIComponent'ed)
  *   users/{uid}/meta/settings        Settings
- * firestore.rules: the `users/{uid}/{document=**}` owner wildcard covers all of them.
+ * firestore.rules: owner-only; card updates must not carry an older `fsrs.last_review` than the stored card.
  *
  * Reads: one `onSnapshot` listener per collection (+ the settings doc) for the whole session — not per page.
  * With the persistent cache they emit the cached data first, then the server's; while attached, only changed
  * documents are billed, and a re-listen within ~30 min resumes from the cache's resume token (changes only).
  * Writes: `writeBatch` ≤ 450 ops, applied to the local cache at once and queued durably by the SDK while
- * offline (the promise resolves on server acknowledgement).
+ * offline (the promise resolves on server acknowledgement). Card updates with an older review than the
+ * server's are denied by firestore.rules and resolved in `commit` (the newer review wins).
  */
 import type { FirebaseApp } from 'firebase/app'
 import {
   collection,
   connectFirestoreEmulator,
   doc,
+  getDocFromServer,
   getDocs,
   getFirestore,
   initializeFirestore,
@@ -29,7 +31,8 @@ import {
   type Firestore,
 } from 'firebase/firestore'
 import { emulatorHost } from './firebase.ts'
-import { PROGRESS_COLS, SETTINGS_ID, isPermissionDenied, type Backend, type BackendSink, type Col, type WriteOp } from './store.ts'
+import { PROGRESS_COLS, SETTINGS_ID, isPermissionDenied, type Backend, type BackendSink, type Col, type RemoteChange, type WriteOp } from './store.ts'
+import type { SrsCard } from './types.ts'
 
 const BATCH = 450
 /** A failed listener (not permission-denied) re-listens after this long. */
@@ -162,7 +165,25 @@ export class FirestoreBackend implements Backend {
     this.listen()
   }
 
+  /**
+   * Commits ops in batches of ≤ 450. SRS cards are guarded by firestore.rules: an update with an older
+   * `fsrs.last_review` than the server's is denied (the newer review wins — e.g. an older review queued offline
+   * here arriving after a newer one from another device). On such a denial the server's cards are read
+   * (only then: reads cost), handed to the store as remote data (it keeps them over its pending write, see
+   * store.ts onAck) and the rest of the ops is committed again. Any other denial is rethrown.
+   */
   async commit(ops: WriteOp[]): Promise<void> {
+    try {
+      await this.commitBatches(ops)
+    } catch (e) {
+      if (!isPermissionDenied(e) || !ops.some((op) => op.col === 'cards' && op.data)) throw e
+      const rest = await this.dropOutdatedCards(ops).catch(() => null)
+      if (!rest || rest.length === ops.length) throw e // not a card conflict
+      if (rest.length) await this.commitBatches(rest)
+    }
+  }
+
+  private async commitBatches(ops: WriteOp[]): Promise<void> {
     const commits: Promise<void>[] = []
     for (let i = 0; i < ops.length; i += BATCH) {
       const batch = writeBatch(this.db)
@@ -174,6 +195,24 @@ export class FirestoreBackend implements Backend {
       commits.push(batch.commit())
     }
     await Promise.all(commits)
+  }
+
+  /** `ops` without the card writes the server has a later review for (those server cards go to the sink). */
+  private async dropOutdatedCards(ops: WriteOp[]): Promise<WriteOp[]> {
+    const cardOps = ops.filter((op) => op.col === 'cards' && op.data)
+    const snaps = await Promise.all(cardOps.map((op) => getDocFromServer(this.ref('cards', op.id))))
+    const reviewAt = (c: unknown) => (c as Partial<SrsCard> | undefined)?.fsrs?.last_review ?? 0
+    const drop = new Set<WriteOp>()
+    const newer: RemoteChange[] = []
+    cardOps.forEach((op, i) => {
+      const server = snaps[i].exists() ? snaps[i].data() : undefined
+      if (server && reviewAt(server) > reviewAt(op.data)) {
+        drop.add(op)
+        newer.push({ id: op.id, data: server })
+      }
+    })
+    if (newer.length) this.sink?.remote({ col: 'cards', changes: newer, fromServer: true })
+    return ops.filter((op) => !drop.has(op))
   }
 
   /** Server listing (cache when offline) — used by «reset» so documents unknown on this device go too. */

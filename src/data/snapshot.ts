@@ -41,7 +41,8 @@ export function snapshotStorage(uid: string): SnapshotStorage {
         const raw = ls()?.getItem(key)
         if (!raw) return null
         const p = JSON.parse(raw) as Persisted
-        return p && p.v === 1 && p.docs ? p : null
+        // Shapes inside `docs` are checked by the store (repairDocs): one broken collection must not crash boot.
+        return p && typeof p === 'object' && p.v === 1 && p.docs && typeof p.docs === 'object' ? p : null
       } catch {
         return null
       }

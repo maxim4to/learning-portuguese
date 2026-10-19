@@ -59,10 +59,27 @@ export function LookupPopover({
     return () => ro.disconnect()
   }, [rect])
 
+  // Opened from the keyboard: focus the first control. On the first lookup of a session the card is still a
+  // loading skeleton (only «Закрыть»), so wait for the content to arrive — unless the learner moved focus meanwhile.
   useEffect(() => {
-    if (!pos || !viaKey || focused.current) return
-    focused.current = true
-    ref.current?.querySelector<HTMLElement>('button:not([aria-label="Закрыть"]), a[href], input')?.focus()
+    const el = ref.current
+    if (!pos || !viaKey || focused.current || !el) return
+    const tryFocus = () => {
+      const t = el.querySelector<HTMLElement>('button:not([aria-label="Закрыть"]), a[href], input')
+      if (!t) return false
+      focused.current = true
+      t.focus()
+      return true
+    }
+    if (tryFocus()) return
+    const start = document.activeElement
+    const mo = new MutationObserver(() => {
+      const active = document.activeElement
+      if (active !== start && !el.contains(active)) focused.current = true
+      if (focused.current || tryFocus()) mo.disconnect()
+    })
+    mo.observe(el, { childList: true, subtree: true })
+    return () => mo.disconnect()
   }, [pos, viaKey])
 
   useEffect(() => {
@@ -77,9 +94,17 @@ export function LookupPopover({
       e.stopPropagation()
       onClose({ restoreFocus: true })
     }
+    // Close when a scroll moves the word away — not on every scroll event: one dispatched for a scroll that
+    // happened just before the card opened (events fire on the next frame), or one an animating container fires
+    // without its offset changing (the review card's reveal), leaves the word where it was (D-07).
+    const scrollers: Element[] = []
+    for (let el = anchorEl.parentElement; el; el = el.parentElement) scrollers.push(el)
+    if (document.scrollingElement && !scrollers.includes(document.scrollingElement)) scrollers.push(document.scrollingElement)
+    const offsets = scrollers.map((el) => [el.scrollTop, el.scrollLeft])
     const onScroll = (e: Event) => {
       if (ref.current?.contains(e.target as Node)) return
-      onClose()
+      const moved = scrollers.some((el, i) => Math.abs(el.scrollTop - offsets[i][0]) > 1 || Math.abs(el.scrollLeft - offsets[i][1]) > 1)
+      if (moved) onClose()
     }
     const onResize = () => onClose()
     document.addEventListener('pointerdown', onDown)

@@ -106,7 +106,10 @@ test.describe('lesson: every exercise kind', () => {
     await page.getByRole('tab', { name: 'Теория' }).click()
     await expect(page.getByText(`Последний результат ${pct}% · попыток 1`)).toBeVisible()
     await app.nav.open('Курс')
-    const row = app.main.getByRole('link', { name: new RegExp(T.title.replace(/[()]/g, '.')) })
+    // The topic's row in its level (the «Продолжить / Подтянуть» card above the list may link to the same topic).
+    const row = app.main
+      .getByRole('region', { name: `Уровень ${T.level}` })
+      .getByRole('link', { name: new RegExp(T.title.replace(/[()]/g, '.')) })
     await expect(row).toContainText(`${pct}%`)
     await expect(row).toContainText('Статус: Изучаю')
     const stored = await app.storageJson<Record<string, { status: string; attempts: number }>>('ptpt:v1:progress')

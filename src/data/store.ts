@@ -28,6 +28,7 @@ import {
   type ErrorEntry,
   type ErrorEntryInput,
   type ExportBundle,
+  type ImportResult,
   type ProgressRepository,
   type ResetOptions,
   type Settings,
@@ -37,6 +38,7 @@ import {
   type WordBundleWrite,
   type WordEntry,
 } from './types.ts'
+import { REPAIR, repairCollection, warnOnce } from './validate.ts'
 
 export const COLS = ['progress', 'cards', 'errors', 'words', 'meta'] as const
 export type Col = (typeof COLS)[number]
@@ -129,6 +131,19 @@ export interface DataStoreOptions {
 }
 
 const EMPTY_DOCS: Docs = { progress: {}, cards: {}, errors: {}, words: {}, meta: {} }
+
+/** Persisted documents with every collection and document shape-checked (broken ones dropped, logged once). */
+export function repairDocs(raw: unknown, where: string): Docs {
+  const d = (typeof raw === 'object' && raw !== null ? raw : {}) as Record<string, unknown>
+  return {
+    progress: repairCollection('progress', d.progress, where),
+    cards: repairCollection('cards', d.cards, where),
+    errors: repairCollection('errors', d.errors, where),
+    words: repairCollection('words', d.words, where),
+    meta: repairCollection('meta', d.meta, where),
+  }
+}
+
 const keyOf = (col: Col, id: string) => `${col}/${id}`
 
 /** Structural equality for JSON-like data (key order independent). */
@@ -178,6 +193,8 @@ export class DataStore implements ProgressRepository {
 
   private hydrated = false
   private forcedReady = false
+  /** Was ready once: re-listening (revalidate / re-attach) never brings the skeletons back. */
+  private wasReady = false
   /** Collections that delivered anything / were confirmed by the server since attach. */
   private readonly received = new Set<Col>()
   private readonly serverSynced = new Set<Col>()
@@ -194,8 +211,9 @@ export class DataStore implements ProgressRepository {
     this.saveDelayMs = opts.saveDelayMs ?? 300
     const snap = this.snapshot?.load()
     if (snap) {
-      this.docs = { ...EMPTY_DOCS, ...snap.docs }
-      this.lastSyncedAt = snap.lastSyncedAt
+      // The snapshot is device storage: a broken collection / document must not crash every read (white screen).
+      this.docs = repairDocs(snap.docs, 'snapshot')
+      this.lastSyncedAt = typeof snap.lastSyncedAt === 'number' ? snap.lastSyncedAt : null
       this.hydrated = true
     }
     this.sync = this.computeSync()
@@ -291,9 +309,10 @@ export class DataStore implements ProgressRepository {
    * (offline: delivered from the cache), or the boot timeout passed. Before that pages show skeletons.
    */
   isReady(): boolean {
-    if (this.hydrated || this.forcedReady) return true
-    if (COLS.every((c) => this.serverSynced.has(c))) return true
-    return !this.online && COLS.every((c) => this.received.has(c))
+    if (this.hydrated || this.forcedReady || this.wasReady) return true
+    const ready = COLS.every((c) => this.serverSynced.has(c)) || (!this.online && COLS.every((c) => this.received.has(c)))
+    if (ready) this.wasReady = true
+    return ready
   }
   /** Show whatever is known (boot timeout). */
   markReady(): void {
@@ -349,8 +368,14 @@ export class DataStore implements ProgressRepository {
       else next[id] = data
     }
     const seen = b.complete && b.fromServer ? new Set<string>() : null
-    for (const ch of b.changes) {
-      seen?.add(ch.id)
+    const repair = REPAIR[b.col] as (x: unknown, id?: string) => object | null
+    let broken = 0
+    for (const raw of b.changes) {
+      seen?.add(raw.id)
+      // A malformed remote document (older app version, manual edit) is treated as absent instead of crashing pages.
+      const fixed = raw.data === null ? null : repair(raw.data, raw.id)
+      if (raw.data !== null && !fixed) broken++
+      const ch = { id: raw.id, data: fixed }
       const key = keyOf(b.col, ch.id)
       if (this.pending.has(key)) {
         this.shadow.set(key, ch.data)
@@ -368,6 +393,7 @@ export class DataStore implements ProgressRepository {
         if (!seen.has(id) && !this.pending.has(keyOf(b.col, id))) put(id, null)
       }
     }
+    if (broken) warnOnce(this.kind, b.col, `${broken} document(s)`)
     this.received.add(b.col)
     if (b.fromServer) this.serverSynced.add(b.col)
     else if (!this.online) this.serverSynced.delete(b.col)
@@ -634,8 +660,8 @@ export class DataStore implements ProgressRepository {
     }
   }
 
-  /** Merges by id (incoming wins); settings are replaced. */
-  async importAll(data: ExportBundle | string) {
+  /** Merges by id (incoming wins; SRS cards: the newer review wins on the server); settings are replaced. */
+  async importAll(data: ExportBundle | string): Promise<ImportResult> {
     const b = parseExportBundle(data)
     await this.write([
       ...b.progress.map((p) => ({ col: 'progress' as const, id: p.topicId, data: p })),
@@ -644,6 +670,7 @@ export class DataStore implements ProgressRepository {
       ...b.words.map((w) => ({ col: 'words' as const, id: w.id, data: w })),
       { col: 'meta', id: SETTINGS_ID, data: b.settings },
     ])
+    return { skipped: b.skipped }
   }
 }
 

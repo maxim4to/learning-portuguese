@@ -6,6 +6,7 @@
  * JSON- and Firestore-friendly without conversion.
  */
 import type { Level } from '../content/schema.ts'
+import { fullSettings, repairCard, repairError, repairList, repairProgress, repairWord } from './validate.ts'
 
 /** red / yellow / green on the topic map. */
 export type TopicStatus = 'not-started' | 'weak' | 'learning' | 'confident'
@@ -100,6 +101,11 @@ export interface SrsCard {
   updatedAt: number
   /** Suspended cards are skipped in reviews. */
   suspended?: boolean
+  /**
+   * Paused by hand (card list «Приостановить»): automatic resumes (word / settings modes switched back on,
+   * «Учить снова») leave the card paused. Cleared when the learner resumes it by hand.
+   */
+  pausedByUser?: true
   /** Personal-dictionary card: id of its `WordEntry` (kind stays 'word'). */
   wordId?: string
   /** Personal-dictionary card mode (only together with `wordId`). */
@@ -225,7 +231,17 @@ export interface ExportBundle {
 }
 
 /** What `parseExportBundle` returns: `words` always present (`[]` for old files). */
-export type ParsedExportBundle = ExportBundle & { words: WordEntry[] }
+export type ParsedExportBundle = ExportBundle & {
+  words: WordEntry[]
+  /** Malformed documents dropped from the file (no id, wrong shape…). */
+  skipped: number
+}
+
+/** What `importAll` reports. */
+export interface ImportResult {
+  /** Malformed documents in the file that were not imported. */
+  skipped: number
+}
 
 export interface ResetOptions {
   /** Also reset Settings to DEFAULT_SETTINGS (default: keep them). */
@@ -274,46 +290,40 @@ export interface ProgressRepository {
   resetProgress(opts?: ResetOptions): Promise<void>
 
   exportAll(): Promise<ExportBundle>
-  /** Accepts a bundle or its JSON string. Merges by id (incoming wins). Throws on invalid input. */
-  importAll(data: ExportBundle | string): Promise<void>
+  /**
+   * Accepts a bundle or its JSON string. Merges by id (incoming wins). Throws on an invalid file; malformed
+   * documents inside a valid file are skipped and counted.
+   */
+  importAll(data: ExportBundle | string): Promise<ImportResult>
 }
 
 export function newId(): string {
   return globalThis.crypto?.randomUUID?.() ?? `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
 }
 
-/** Minimal shape check for imported dictionary entries. */
-function isWordEntryLike(w: unknown): w is WordEntry {
-  if (!w || typeof w !== 'object') return false
-  const o = w as Partial<WordEntry>
-  return typeof o.id === 'string' && o.id !== '' && typeof o.lemma === 'string' && typeof o.ru === 'string'
-}
-
-/** Fills defaults an imported entry may lack (older/partial data). */
-function normalizeWordEntry(w: WordEntry): WordEntry {
-  return {
-    ...w,
-    sources: Array.isArray(w.sources) ? w.sources.slice(-WORD_SOURCES_MAX) : [],
-    modes: Array.isArray(w.modes) && w.modes.length ? w.modes : ['recognize'],
-    createdAt: Number(w.createdAt) || Date.now(),
-    updatedAt: Number(w.updatedAt) || Number(w.createdAt) || Date.now(),
-  }
-}
-
-/** Parses + minimally validates an export bundle. `words` defaults to `[]` (old files import fine). */
+/**
+ * Parses + validates an export bundle. Every document is checked (src/data/validate.ts): malformed ones are
+ * dropped and counted in `skipped`; settings of the wrong type fall back to defaults. `words` defaults to `[]`
+ * (old files import fine).
+ */
 export function parseExportBundle(data: ExportBundle | string): ParsedExportBundle {
   const obj = typeof data === 'string' ? (JSON.parse(data) as unknown) : data
   if (!obj || typeof obj !== 'object') throw new Error('Неверный файл: ожидался JSON-объект')
   const b = obj as Partial<ExportBundle>
   if (b.app !== 'portugues-pt' || b.version !== 1) throw new Error('Неверный файл: это не экспорт Português PT (v1)')
+  const progress = repairList(b.progress, (x) => repairProgress(x))
+  const cards = repairList(b.cards, (x) => repairCard(x))
+  const errors = repairList(b.errors, (x) => repairError(x))
+  const words = repairList(b.words, (x) => repairWord(x))
   return {
     app: 'portugues-pt',
     version: 1,
     exportedAt: Number(b.exportedAt) || Date.now(),
-    progress: Array.isArray(b.progress) ? b.progress : [],
-    cards: Array.isArray(b.cards) ? b.cards : [],
-    errors: Array.isArray(b.errors) ? b.errors : [],
-    settings: { ...DEFAULT_SETTINGS, ...(b.settings ?? {}) },
-    words: Array.isArray(b.words) ? b.words.filter(isWordEntryLike).map(normalizeWordEntry) : [],
+    progress: progress.ok,
+    cards: cards.ok,
+    errors: errors.ok,
+    settings: fullSettings(b.settings),
+    words: words.ok,
+    skipped: progress.skipped + cards.skipped + errors.skipped + words.skipped,
   }
 }

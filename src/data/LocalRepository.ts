@@ -10,6 +10,7 @@ import {
   type ErrorEntry,
   type ErrorEntryInput,
   type ExportBundle,
+  type ImportResult,
   type ProgressRepository,
   type ResetOptions,
   type Settings,
@@ -20,6 +21,7 @@ import {
   type WordEntry,
 } from './types.ts'
 import { LOCAL_SETTINGS_KEY, clearDeviceProgress, emitProgressReset } from './deviceProgress.ts'
+import { repairCollection, repairError, repairList, repairSettings } from './validate.ts'
 
 const PREFIX = 'ptpt:v1:'
 const K = {
@@ -31,14 +33,21 @@ const K = {
   words: PREFIX + 'words',
 } as const
 
-function read<T>(key: string, fallback: T): T {
+function readRaw(key: string): unknown {
   try {
     const raw = localStorage.getItem(key)
-    return raw ? (JSON.parse(raw) as T) : fallback
+    return raw ? (JSON.parse(raw) as unknown) : undefined
   } catch {
-    return fallback
+    return undefined
   }
 }
+
+/** Shape-checked reads (src/data/validate.ts): wrong shapes count as empty, broken documents are dropped. */
+const readErrors = (): ErrorEntry[] => {
+  const raw = readRaw(K.errors)
+  return repairList(Array.isArray(raw) ? raw : [], (x) => repairError(x)).ok
+}
+const readSettings = (): Partial<Settings> => repairSettings(readRaw(K.settings))
 
 function write(key: string, value: unknown): void {
   localStorage.setItem(key, JSON.stringify(value))
@@ -48,13 +57,13 @@ export class LocalRepository implements ProgressRepository {
   readonly kind = 'local' as const
 
   private progressMap(): Record<string, TopicProgress> {
-    return read(K.progress, {})
+    return repairCollection('progress', readRaw(K.progress), 'local')
   }
   private cardMap(): Record<string, SrsCard> {
-    return read(K.cards, {})
+    return repairCollection('cards', readRaw(K.cards), 'local')
   }
   private wordMap(): Record<string, WordEntry> {
-    return read(K.words, {})
+    return repairCollection('words', readRaw(K.words), 'local')
   }
 
   async getTopicProgress(topicId: string) {
@@ -118,18 +127,18 @@ export class LocalRepository implements ProgressRepository {
 
   async logError(entry: ErrorEntryInput) {
     const e: ErrorEntry = { ...entry, id: newId() }
-    const all = read<ErrorEntry[]>(K.errors, [])
+    const all = readErrors()
     all.push(e)
     write(K.errors, all.slice(-2000))
     return e
   }
 
   async getErrors() {
-    return read<ErrorEntry[]>(K.errors, []).sort((a, b) => b.at - a.at)
+    return readErrors().sort((a, b) => b.at - a.at)
   }
 
   async getSettings(): Promise<Settings> {
-    return { ...DEFAULT_SETTINGS, ...read<Partial<Settings>>(K.settings, {}) }
+    return { ...DEFAULT_SETTINGS, ...readSettings() }
   }
 
   async saveSettings(patch: Partial<Settings>) {
@@ -143,7 +152,7 @@ export class LocalRepository implements ProgressRepository {
       localStorage.removeItem(K.settings)
     } else {
       // lastDiagnosticAt is progress, not a preference.
-      const { lastDiagnosticAt: _drop, ...keep } = read<Partial<Settings>>(K.settings, {})
+      const { lastDiagnosticAt: _drop, ...keep } = readSettings()
       if (_drop !== undefined) write(K.settings, keep)
     }
     for (const key of [K.progress, K.cards, K.errors, K.words]) localStorage.removeItem(key)
@@ -164,16 +173,17 @@ export class LocalRepository implements ProgressRepository {
     }
   }
 
-  async importAll(data: ExportBundle | string) {
+  async importAll(data: ExportBundle | string): Promise<ImportResult> {
     const b = parseExportBundle(data)
     const progress = this.progressMap()
     for (const p of b.progress) progress[p.topicId] = p
     write(K.progress, progress)
     await this.upsertCards(b.cards)
-    const errors = new Map(read<ErrorEntry[]>(K.errors, []).map((e) => [e.id, e]))
+    const errors = new Map(readErrors().map((e) => [e.id, e]))
     for (const e of b.errors) errors.set(e.id, e)
     write(K.errors, [...errors.values()])
     write(K.settings, b.settings)
     await this.upsertWords(b.words)
+    return { skipped: b.skipped }
   }
 }

@@ -123,7 +123,7 @@ test.describe('desktop pointer and keyboard', () => {
 
   test('keyboard: Enter on a focused line opens «Все слова фразы», picking a word, Esc returns focus to the line', async ({ app, page }) => {
     await app.goto(DIALOGUE)
-    // Warm the lexicon (first-use focus is BUG D-02, below).
+    // Warm the lexicon (the first-use focus — D-02 — has its own test below).
     await clickWord(page, line2(page), 'documento')
     await cardTitle(page)
     await page.keyboard.press('Escape')
@@ -144,7 +144,6 @@ test.describe('desktop pointer and keyboard', () => {
   })
 
   test('keyboard: the first lookup of the session moves focus into the card', async ({ app, page }) => {
-    test.fail(true, 'BUG D-02: opened from the keyboard before the lexicon chunk loaded, focus stays on the line')
     await app.goto(DIALOGUE)
     await line1(page).focus()
     await page.keyboard.press('Enter')
@@ -233,7 +232,6 @@ test.describe('phones: tap → bottom sheet', () => {
   })
 
   test('closing the sheet returns focus to the tapped line', async ({ app, page }) => {
-    test.fail(true, 'BUG D-01: the native <dialog> restores focus to <body> after the app moved it back to the line')
     await app.goto(DIALOGUE)
     await tapWord(page, line2(page), 'documento')
     await cardTitle(page)
@@ -277,8 +275,7 @@ test.describe('phones: tap → bottom sheet', () => {
     await expect(lookupSheet(page)).toHaveCount(0)
   })
 
-  test('lookupOnTap off: a tap does nothing; the selection bar still works', async ({ app, page, seed, browserName }) => {
-    test.fail(browserName === 'webkit', 'BUG D-03: a tap on the selection bar «Перевести «…»» fires no click in WebKit (pointerdown preventDefault)')
+  test('lookupOnTap off: a tap does nothing; the selection bar still works', async ({ app, page, seed }) => {
     await seed({ settings: { ...BASE_SETTINGS, lookupOnTap: false } })
     await app.goto(DIALOGUE)
     await tapWord(page, line1(page), 'ordem')

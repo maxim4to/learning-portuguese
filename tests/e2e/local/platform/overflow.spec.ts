@@ -11,9 +11,8 @@ import { expect, test } from '../../../helpers/test'
 
 const WIDTHS = [360, 390, 768, 1280, 1440]
 /** Known overflow (filed): path → bug id and the widths it shows at. Checked by its own expected-failure test. */
-const KNOWN_OVERFLOW: Record<string, { bug: string; widths: number[] }> = {
-  '/practice/tutor': { bug: 'E-07', widths: [360] },
-}
+// (E-07 /practice/tutor @360: fixed — it is in the matrix again.)
+const KNOWN_OVERFLOW: Record<string, { bug: string; widths: number[] }> = {}
 
 /** Elements sticking out of the viewport horizontally (first few), and the document's scroll width. */
 async function overflow(page: Page) {

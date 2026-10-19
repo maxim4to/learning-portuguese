@@ -187,7 +187,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
         >
           <Languages aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Переводы</span>
         </button>
-        <button type="button" className={toggle(roleplay)} aria-pressed={roleplay} aria-label="Ролевая игра: вы — B" onClick={toggleRoleplay}>
+        <button type="button" className={toggle(roleplay)} aria-pressed={roleplay} aria-label="Роль B: ролевая игра, вы — B" onClick={toggleRoleplay}>
           <Drama aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Роль B</span>
         </button>
       </div>

@@ -178,9 +178,8 @@ describe('LearnNewSession · full flow', () => {
     expect(store.cardList().find((c) => c.id === `lex:${beber.id}:recognize`)?.fsrs.reps).toBe(0)
   })
 
-  // markKnown() awaits the write and then calls the `next` captured before setKnownIds: on the last study word,
-  // startCheck() still sees the old `studied` list, so the word just marked known is quizzed (and its card rated).
-  test.fails('«Знаю уже» on the last study word keeps it out of the check [BUG B-21]', async () => {
+  // Regression B-21: the word marked known on the last study card must not be quizzed (stale closure after await).
+  test('«Знаю уже» on the last study word keeps it out of the check [B-21]', async () => {
     const { user, store } = setup(fresh([beber, dormir]))
     await user.click(screen.getByRole('button', { name: /^Дальше/ }))
     await user.click(screen.getByRole('button', { name: 'Знаю уже' }))
@@ -190,7 +189,7 @@ describe('LearnNewSession · full flow', () => {
     expect(store.wordList().find((w) => w.id === dormir.id)?.mark).toBe('known')
   })
 
-  test.fails('all words marked known → straight to «Готово» [BUG B-21]', async () => {
+  test('all words marked known → straight to «Готово» [B-21]', async () => {
     const { user } = setup(fresh([beber]))
     await user.click(screen.getByRole('button', { name: 'Знаю уже' }))
     await flush()

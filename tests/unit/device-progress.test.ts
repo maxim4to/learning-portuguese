@@ -80,7 +80,7 @@ describe('clearDeviceProgress', () => {
   // BUG A-12: see docs/testing-bugs/A.md — `ptpt:v1:dialogue-show-ru` («показывать перевод» in situation dialogues,
   // src/features/situations/DialogueSection.tsx:15) is a per-device preference, but the KEEP list only has theme
   // and auth-user, so a progress reset silently turns the translation back on.
-  it.fails('a progress reset keeps the dialogue «show translation» preference', () => {
+  it('a progress reset keeps the dialogue «show translation» preference', () => {
     ls.setItem('ptpt:v1:dialogue-show-ru', '0')
     clearDeviceProgress()
     expect(ls.getItem('ptpt:v1:dialogue-show-ru')).toBe('0')

@@ -146,10 +146,10 @@ describe('sourceLabel', () => {
     expect(sourceLabel('topic:t:nonsense:3')).toBe('Урок «t»')
   })
 
-  // BUG A-18: see docs/testing-bugs/A.md — a source with an unknown kind (older/newer build, corrupted data) is
-  // labelled «undefined «id»» in the word page.
-  test.fails('unknown kind never renders the word «undefined»', () => {
+  // A-18 (fixed): a source with an unknown kind (older/newer build, corrupted data) gets a neutral label.
+  test('unknown kind never renders the word «undefined»', () => {
     expect(sourceLabel('podcast:ep1')).not.toMatch(/undefined/)
+    expect(sourceLabel('podcast:ep1')).toBe('Источник «ep1»')
   })
 })
 

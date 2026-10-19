@@ -104,8 +104,13 @@ export async function fsList<T = Record<string, unknown>>(uid: string, col: stri
 /** Deletes every document of `uid` (all app collections). */
 export async function wipeUser(uid: string): Promise<void> {
   for (const col of COLLECTIONS) {
-    for (const d of await fsList(uid, col)) {
-      await fetch(`${DOCS}/${path(uid, col, d.__id)}`, { method: 'DELETE', headers: OWNER })
+    const r = await fetch(`${DOCS}/${path(uid, col)}?pageSize=1000`, { headers: OWNER })
+    if (!r.ok) throw new Error(`wipeUser ${col}: ${r.status}`)
+    const j = (await r.json()) as { documents?: { name: string }[] }
+    // The raw stored id: app ids are stored encodeURIComponent'ed («w%3Acasa»), and fsList's decoded `__id` would
+    // address another document («w:casa») — those cards used to survive the wipe and leak into the next test.
+    for (const d of j.documents ?? []) {
+      await fetch(`${DOCS}/${path(uid, col, d.name.split('/').pop() ?? '')}`, { method: 'DELETE', headers: OWNER })
     }
   }
 }

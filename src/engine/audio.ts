@@ -36,13 +36,19 @@ export function hasAudioFile(hash: string): Promise<boolean> {
   if (!p) {
     p = fetch(audioUrl(hash), { method: 'HEAD' })
       .then((r) => r.ok && !(r.headers.get('content-type') ?? '').includes('text/html'))
-      .catch(() => false)
+      .catch(() => {
+        // Network failure (offline): not a definite answer — don't cache it, retry next time.
+        existsCache.delete(hash)
+        return false
+      })
     existsCache.set(hash, p)
   }
   return p
 }
 
 let current: HTMLAudioElement | null = null
+/** Bumped by every speak(): a call whose async lookup is overtaken by a newer one never starts playing. */
+let generation = 0
 
 /** Stops any ongoing playback (file or speech synthesis). */
 export function stopSpeaking(): void {
@@ -55,10 +61,14 @@ export function stopSpeaking(): void {
 
 export async function speak(text: string, opts: SpeakOptions = {}): Promise<SpeakResult> {
   const rate = clampRate(opts.rate ?? 1)
+  const gen = ++generation
   stopSpeaking()
   const hash = await audioHash(text)
-  if (await hasAudioFile(hash)) {
+  const hasFile = await hasAudioFile(hash)
+  if (gen !== generation) return { source: 'none' }
+  if (hasFile) {
     try {
+      stopSpeaking()
       await playFile(audioUrl(hash), rate)
       return { source: 'file' }
     } catch {
@@ -66,7 +76,8 @@ export async function speak(text: string, opts: SpeakOptions = {}): Promise<Spea
     }
   }
   const voice = await pickPtPtVoice(opts.voice)
-  if (!voice) return { source: 'none' }
+  if (!voice || gen !== generation) return { source: 'none' }
+  stopSpeaking()
   await speakWithSynth(text, voice, rate)
   return { source: 'speech' }
 }

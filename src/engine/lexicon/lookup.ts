@@ -27,7 +27,8 @@ import {
 export type * from './types.ts'
 
 const LEVEL_RANK: Record<Level, number> = { A1: 0, A2: 1, B1: 2, B2: 3 }
-const VIA_RANK: Record<LexCandidate['via'], number> = { exact: 0, article: 0, clitic: 1, contraction: 2, guess: 3 }
+// article: a hair after exact, so a listed phrase («a pé» adv) beats «article + noun» («pé»)
+const VIA_RANK: Record<LexCandidate['via'], number> = { exact: 0, article: 0.1, clitic: 1, contraction: 2, guess: 3 }
 const NOMINAL_POS = new Set<string>(['noun', 'adj', 'det', 'pron', 'num'])
 /** Guessed candidates kept per lookup. */
 const MAX_GUESSES = 4
@@ -166,6 +167,9 @@ export function createLexicon(bundle: LexiconBundle, opts: LexiconOptions = {}):
       const entry = entries[i]
       // only verbs host clitics: pô-lo → pôr, not the preposition «por»
       if (a.via === 'clitic' && entry.pos !== 'verb') continue
+      // contraction halves: the preposition half is only the preposition («àquele»: a#prep, not the article «a» → o),
+      // the other half is never a preposition («à» = a + a: the article, not a#prep again)
+      if (a.half && (a.half === 'prep' ? entry.pos !== 'prep' : entry.pos === 'prep')) continue
       // levanto-me: offer «levantar-se» before «levantar»
       if (a.reflexive && entry.pos === 'verb' && !entry.reflexive) {
         const r = reflexiveLemma(entry.lemma)

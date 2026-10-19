@@ -58,7 +58,7 @@ test('diagnostic: lookup stays off even after an answer', async ({ app, page }) 
     await box.press('Enter')
   }
   await expect(app.main.getByRole('button', { name: /^(Дальше|Завершить)/ }).first()).toBeVisible()
-  test.fail(true, 'BUG D-08: the diagnostic runner unlocks lookup after an answer (doc 1.3: always data-lookup="off")')
+  // Regression D-08 (doc 1.3): the diagnostic measures the level — lookup stays off after the answer too.
   await expect(page.locator('main [data-lookup="on"]')).toHaveCount(0)
 })
 

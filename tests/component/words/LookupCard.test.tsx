@@ -262,7 +262,7 @@ describe('LookupCard · word not in the lexicon', () => {
     await waitFor(() => expect(store.wordList()).toHaveLength(0))
   })
 
-  test.fails('a failed save of an unknown word keeps the form and shows the error [BUG B-40]', async () => {
+  test('a failed save of an unknown word keeps the form and shows the error [B-40]', async () => {
     const { user, store } = card('O xyzzq chegou.', 'xyzzq')
     vi.spyOn(store, 'saveWordBundle').mockRejectedValue(new Error('offline'))
     await user.click(screen.getByRole('button', { name: /В словарь/ }))

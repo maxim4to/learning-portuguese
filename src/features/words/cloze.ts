@@ -93,14 +93,22 @@ export function splitByMask(sentence: string, masked: string): { text: string; f
   const full = sentence.normalize('NFC')
   if (parts.length < 2) return [{ text: full }]
   const out: { text: string; form?: true }[] = []
+  // Every gap is the same form (case-insensitive): match them all at once with a back-reference, so a form that
+  // contains the text between two gaps («bom dia bom dia» → «___ ___») is not cut at the first separator.
+  const re = new RegExp(`^${parts.map(escapeRe).reduce((acc, p, i) => acc + (i === 1 ? '(.+?)' : '\\1') + p)}$`, 'isu')
+  const m = re.exec(full)
   let pos = 0
   parts.forEach((p, i) => {
     if (p) out.push({ text: p })
     pos += p.length
     if (i < parts.length - 1) {
-      const next = parts[i + 1]
-      const end = next ? full.indexOf(next, pos) : full.length
-      const form = full.slice(pos, end < 0 ? full.length : end)
+      let form: string
+      if (m) form = full.slice(pos, pos + m[1].length)
+      else {
+        const next = parts[i + 1]
+        const end = next ? full.indexOf(next, pos) : full.length
+        form = full.slice(pos, end < 0 ? full.length : end)
+      }
       out.push({ text: form, form: true })
       pos += form.length
     }

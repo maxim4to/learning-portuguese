@@ -30,16 +30,17 @@ function normalizeToken(s: string): string {
   return s.normalize('NFC').toLocaleLowerCase('pt-PT')
 }
 
-function unify(s: string): string {
-  return s.normalize('NFC').replace(HYPHENS, '-').replace(APOSTROPHES, "'")
-}
-
-/** Splits pt text into word tokens (hyphenated clitic forms and compounds stay one token). */
+/**
+ * Splits pt text into word tokens (hyphenated clitic forms and compounds stay one token).
+ * `start`/`end` index the ORIGINAL string (also for decomposed NFD text: hyphen/apostrophe unification is
+ * length-preserving and NFC is applied per token only); `text` is the token in NFC with unified punctuation.
+ */
 export function tokenize(text: string): Token[] {
-  const s = unify(text)
+  const s = text.replace(HYPHENS, '-').replace(APOSTROPHES, "'")
   const out: Token[] = []
   for (const m of s.matchAll(WORD_RE)) {
-    out.push({ text: m[0], norm: normalizeToken(m[0]), start: m.index, end: m.index + m[0].length })
+    const t = m[0].normalize('NFC')
+    out.push({ text: t, norm: normalizeToken(t), start: m.index, end: m.index + m[0].length })
   }
   return out
 }
@@ -78,6 +79,28 @@ export function stripArticle(form: string): { article: string; rest: string } | 
   if (sp < 0) return null
   const first = n.slice(0, sp)
   return first in ARTICLES ? { article: first, rest: n.slice(sp + 1) } : null
+}
+
+/**
+ * Words after which a leading «a» is the preposition, not the feminine article: «a pé», «a cavalo», «a sério»,
+ * «a pouco e pouco», «a meio», «a propósito», «a não ser que»… (masculine nouns, adverbs, numerals, «não»).
+ */
+const PREP_A_HEADS = new Set(
+  'pé cavalo sério tempo pouco meio propósito bordo prazo pronto crédito menos não fim caminho nado sós medo gosto longo saber dois três quatro cinco seis sete oito nove dez cem mil horas título exemplo cargo'.split(
+    ' ',
+  ),
+)
+
+/**
+ * Does a content phrase start with the preposition «a» rather than the article «a»? «a pé» → true,
+ * «a partir de» → true (infinitive / masculine or adverbial head), «a saúde» → false.
+ */
+export function startsWithPrepositionA(pt: string): boolean {
+  const words = normalizeForm(pt).split(' ')
+  if (words.length < 2 || words[0] !== 'a') return false
+  const head = words[1]
+  // «a» + infinitive (a partir de, a começar por): a feminine noun in -ar/-ir is rare enough to ignore
+  return PREP_A_HEADS.has(head) || /^\p{L}+(?:ar|ir)$/u.test(head)
 }
 
 // ---------------------------------------------------------------------------
@@ -130,9 +153,20 @@ function buildContractions(): Map<string, Contraction> {
 
 const CONTRACTIONS = buildContractions()
 
-/** «do» → { prep: 'de', rest: 'o' }; «àquele» → { prep: 'a', rest: 'aquele' }; null if not a contraction. */
+/** Elided «de» before a vowel: copo d'água, caixa d'óculos, estrela d'alva. */
+const ELIDED_DE = /^d'([\p{L}\p{M}].*)$/u
+
+/** Contraction of an already normalised single word. */
+function contractionOf(n: string): Contraction | null {
+  const c = CONTRACTIONS.get(n)
+  if (c) return c
+  const m = ELIDED_DE.exec(n)
+  return m ? { prep: 'de', rest: m[1] } : null
+}
+
+/** «do» → { prep: 'de', rest: 'o' }; «àquele» → { prep: 'a', rest: 'aquele' }; «d'água» → de + água; else null. */
 export function splitContraction(form: string): Contraction | null {
-  return CONTRACTIONS.get(normalizeForm(form)) ?? null
+  return contractionOf(normalizeForm(form))
 }
 
 // ---------------------------------------------------------------------------
@@ -245,6 +279,8 @@ export interface FormAnalysis {
   article?: string
   /** Contraction this key came from (via 'contraction'): key is `prep` or `rest`. */
   contraction?: Contraction
+  /** Which half of the contraction this key is (via 'contraction'). */
+  half?: 'prep' | 'rest'
   /** Detached pronouns (via 'clitic'). */
   clitics?: string[]
   mesoclitic?: boolean
@@ -263,10 +299,10 @@ export function analyzeForm(form: string): FormAnalysis[] {
   const art = stripArticle(n)
   if (art) out.push({ key: art.rest, via: 'article', article: art.article })
   if (!n.includes(' ')) {
-    const c = CONTRACTIONS.get(n)
+    const c = contractionOf(n)
     if (c) {
-      out.push({ key: c.prep, via: 'contraction', contraction: c })
-      out.push({ key: c.rest, via: 'contraction', contraction: c })
+      out.push({ key: c.prep, via: 'contraction', contraction: c, half: 'prep' })
+      out.push({ key: c.rest, via: 'contraction', contraction: c, half: 'rest' })
     }
     const cl = splitClitics(n)
     if (cl) {

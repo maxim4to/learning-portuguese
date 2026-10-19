@@ -20,8 +20,30 @@ service cloud.firestore {
         && request.auth.token.email.lower() in allowedEmails();
     }
 
-    match /users/{uid}/{document=**} {
+    // SRS cards: the newer review wins (src/data/store.ts `newerCard`). An update may not replace a card that
+    // was reviewed later — e.g. an older review queued offline on one device arriving after a newer one from
+    // another device. The rejected write is resolved on the client (firestoreBackend.ts commit: server version kept).
+    function reviewAt(data) {
+      return data.get('fsrs', {}).get('last_review', 0);
+    }
+    function notOlderReview() {
+      return !(reviewAt(resource.data) is number)
+        || !(reviewAt(request.resource.data) is number)
+        || reviewAt(request.resource.data) >= reviewAt(resource.data);
+    }
+
+    match /users/{uid} {
       allow read, write: if isOwner(uid);
+
+      match /cards/{cardId} {
+        allow read, create, delete: if isOwner(uid);
+        allow update: if isOwner(uid) && notOlderReview();
+      }
+
+      // Everything else under the user (progress, errors, words, meta, …).
+      match /{col}/{rest=**} {
+        allow read, write: if isOwner(uid) && col != 'cards';
+      }
     }
 
     // Everything else is closed.

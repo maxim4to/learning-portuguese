@@ -4,7 +4,7 @@ import { ButtonLink } from '@/components/Button'
 import { AzulejoCorner } from '@/components/Card'
 import { DotGrid } from '@/components/DotGrid'
 import { ProgressBar } from '@/components/ProgressBar'
-import { useRepository } from '@/data'
+import { useCards, useRepository } from '@/data'
 import type { Settings, SrsCard } from '@/data/types.ts'
 import { formatInterval, isNewCard, previewIntervals, schedule, type ReviewRating } from '@/engine/fsrs'
 import { stopSpeaking } from '@/engine/audio'
@@ -45,6 +45,7 @@ interface Props {
 
 export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Props) {
   const repo = useRepository()
+  const stored = useCards()
   const [queue, setQueue] = useState<SrsCard[]>(initial)
   const [revealed, setRevealed] = useState(false)
   const [counts, setCounts] = useState<Record<ReviewRating, number>>({ again: 0, hard: 0, good: 0, easy: 0 })
@@ -100,12 +101,15 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
       setAnswer(null)
       stopSpeaking()
       if (!next.length) setFinishedAt(now)
+      // A dictionary card whose word was deleted meanwhile (another tab / device) is gone from the store:
+      // writing the rating back would resurrect it as an orphan without its word (D-06).
+      if (card.wordId && !stored.some((c) => c.id === card.id)) return
       repo
         .upsertCards([updated])
         .then(() => onCardUpdated(updated, rating))
         .catch((e: unknown) => setSaveError(e instanceof Error ? e.message : String(e)))
     },
-    [card, revealed, queue, repo, reviewedIds, onCardUpdated],
+    [card, revealed, queue, repo, reviewedIds, onCardUpdated, stored],
   )
 
   useEffect(() => {
@@ -151,6 +155,8 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
       // Phones: keep the answer / feedback visible above the sticky rating row.
       // Measured after the flashcard back's 240 ms reveal animation; exercise feedback wins over the task's top.
       const timer = setTimeout(() => {
+        // A word card opened meanwhile would be closed by the page scroll (D-07): leave the page where it is.
+        if (isLookupOpen()) return
         const cardBox = cardRef.current?.getBoundingClientRect()
         const rowBox = actionsRef.current?.getBoundingClientRect()
         if (!cardBox || !rowBox) return

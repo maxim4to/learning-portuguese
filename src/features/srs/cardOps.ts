@@ -15,6 +15,22 @@ export async function deleteCards(repo: ProgressRepository, cards: SrsCard[]): P
   await repo.deleteCards(cards.map((c) => c.id))
 }
 
+/**
+ * «Приостановить» / «Вернуть в повторение» in the card list. A hand pause is flagged (`pausedByUser`) so that
+ * automatic resumes (word / settings modes switched back on, «Учить снова») leave the card paused.
+ */
+export function togglePause(c: SrsCard, now = Date.now()): SrsCard {
+  const next: SrsCard = { ...c, updatedAt: now }
+  if (c.suspended) {
+    delete next.suspended
+    delete next.pausedByUser
+  } else {
+    next.suspended = true
+    next.pausedByUser = true
+  }
+  return next
+}
+
 export const errorCardId = (exerciseId: string) => `error:${exerciseId}`
 
 /** Builds 'error' cards for logged errors that have no card yet (one per exercise, newest error wins). */

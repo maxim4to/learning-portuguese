@@ -325,7 +325,8 @@ export type WordPatch = Partial<Pick<WordEntry, 'lemma' | 'pos' | 'gender' | 'ru
 
 /**
  * Edits an entry; refreshes stored faces of its cards. Removing a mode from `modes` suspends that card
- * (progress kept); adding it back unsuspends it (unless the word is marked known).
+ * (progress kept); adding it back unsuspends it (unless the word is marked known, the mode is off in settings
+ * or the card was paused by hand). Cards of modes the edit did not change keep their state.
  * The id does not change when the lemma is edited.
  */
 export function planUpdateWord(
@@ -349,10 +350,12 @@ export function planUpdateWord(
   const changed = new Map<string, SrsCard>()
   for (const c of refreshCardFaces(next, own, now)) changed.set(c.id, c)
   if (patch.modes !== undefined) {
+    // Only modes switched on/off by this edit: a card paused by hand in another mode stays paused.
+    const toggled = WORD_CARD_MODES.filter((m) => prev.modes.includes(m) !== next.modes.includes(m))
     for (const c of own) {
-      if (!c.mode) continue
+      if (!c.mode || !toggled.includes(c.mode)) continue
       const base = changed.get(c.id) ?? c
-      const want = shouldSuspend(next, c.mode, enabledModes)
+      const want = shouldSuspend(next, c.mode, enabledModes) || !!base.pausedByUser
       if (!!base.suspended !== want) changed.set(c.id, clean({ ...base, suspended: want || undefined, updatedAt: now }))
     }
   }
@@ -388,7 +391,7 @@ export function planMarkKnown(state: WordsState, id: string, now = Date.now()): 
   return { words: [next], write: { words: [next], cards } }
 }
 
-/** «Учить снова»: mark removed, cards of allowed modes unsuspended; recognize created if there are none. */
+/** «Учить снова»: mark removed, cards of allowed modes unsuspended (not those paused by hand); recognize created if there are none. */
 export function planUnmarkKnown(state: WordsState, id: string, opts: PlanOptions = {}): WordPlan {
   const now = opts.now ?? Date.now()
   const prev = state.words.find((w) => w.id === id)
@@ -397,7 +400,7 @@ export function planUnmarkKnown(state: WordsState, id: string, opts: PlanOptions
   delete next.mark
   const own = state.cards.filter((c) => c.wordId === id)
   const cards: SrsCard[] = own
-    .filter((c) => c.suspended && c.mode && !shouldSuspend(next, c.mode, opts.enabledModes ?? WORD_CARD_MODES))
+    .filter((c) => c.suspended && !c.pausedByUser && c.mode && !shouldSuspend(next, c.mode, opts.enabledModes ?? WORD_CARD_MODES))
     .map((c) => {
       const u = { ...c, updatedAt: now }
       delete u.suspended
@@ -456,7 +459,7 @@ export function shouldSuspend(entry: WordEntry | undefined, mode: WordCardMode, 
  * Settings → «Виды карточек слова» changed: cards of switched-off modes are suspended (FSRS progress kept);
  * switching a mode back on resumes them (unless the word is marked known or the mode is off for that word) and
  * creates the cards that became ready meanwhile. Only cards of `changed` modes are touched (default: all modes),
- * so a card paused by hand in another mode stays paused.
+ * so a card paused by hand in another mode stays paused; a card paused by hand (`pausedByUser`) is never resumed.
  */
 export function planApplyEnabledModes(
   state: WordsState,
@@ -470,7 +473,7 @@ export function planApplyEnabledModes(
   const cards: SrsCard[] = []
   for (const c of state.cards) {
     if (!c.wordId || !c.mode || !touched.has(c.mode)) continue
-    const want = shouldSuspend(byId.get(c.wordId), c.mode, enabled)
+    const want = shouldSuspend(byId.get(c.wordId), c.mode, enabled) || !!c.pausedByUser
     if (!!c.suspended === want) continue
     const next: SrsCard = { ...c, updatedAt: now }
     if (want) next.suspended = true

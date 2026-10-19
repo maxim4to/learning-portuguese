@@ -255,14 +255,20 @@ describe('VocabQuiz', () => {
     expect(onClose).toHaveBeenCalled()
   })
 
-  // The finished round replaces the card and the answer buttons: focus falls to <body> (elsewhere the app moves focus
-  // to the result when the focused control unmounts, e.g. LegacyWordCards, TutorPanel, DialogueSection).
-  test.fails('after the last answer, keyboard focus lands on the summary, not on <body> [BUG B-62]', async () => {
+  // Regression B-62: the finished round replaces the answer buttons — focus moves to the summary's first action.
+  test('after the last answer, keyboard focus lands on the summary, not on <body> [B-62]', async () => {
     const { user } = renderWithProviders(<VocabQuiz items={items.slice(0, 1)} onUnknown={() => {}} onClose={() => {}} />)
     await user.click(screen.getByRole('button', { name: 'Показать ответ' }))
     await user.click(screen.getByRole('button', { name: /^Знаю/ }))
     expect(screen.getByText('Все слова знакомы!')).toBeInTheDocument()
-    expect(document.activeElement).not.toBe(document.body)
+    expect(screen.getByRole('button', { name: 'Пройти заново' })).toHaveFocus()
+  })
+
+  test('after the last answer with unknown words, focus lands on «Повторить незнакомые» [B-62]', async () => {
+    const { user } = renderWithProviders(<VocabQuiz items={items.slice(0, 1)} onUnknown={() => {}} onClose={() => {}} />)
+    await user.click(screen.getByRole('button', { name: 'Показать ответ' }))
+    await user.click(screen.getByRole('button', { name: /^Не знаю/ }))
+    expect(screen.getByRole('button', { name: /Повторить незнакомые/ })).toHaveFocus()
   })
 
   test('RU → PT direction restarts the round and shows Russian on the front', async () => {

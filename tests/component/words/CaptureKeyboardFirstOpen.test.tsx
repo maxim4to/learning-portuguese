@@ -14,7 +14,7 @@ beforeAll(() => {
   stubAudioFetch()
 })
 
-test.fails('Enter on a pt line (first lookup, nothing loaded yet) moves focus into the popover card [BUG B-41]', async () => {
+test('Enter on a pt line (first lookup, nothing loaded yet) moves focus into the popover card [B-41]', async () => {
   expect(getLoadedLexicon()).toBeNull()
   setWideScreen(true)
   const { user } = renderWithProviders(

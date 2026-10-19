@@ -5,6 +5,14 @@ import { LookupPopover } from '@/features/words/capture/LookupPopover'
 import { LookupSheet } from '@/features/words/capture/LookupSheet'
 import { SelectionChip } from '@/features/words/capture/SelectionChip'
 
+/** A real page scroll: the root's offset changes, then the event fires (an event alone no longer closes the card). */
+function scrollPage(by = 120) {
+  Object.defineProperty(document.documentElement, 'scrollTop', { configurable: true, value: by })
+  fireEvent.scroll(document)
+  delete (document.documentElement as { scrollTop?: number }).scrollTop
+}
+
+
 afterEach(() => vi.restoreAllMocks())
 
 const rect = { left: 10, top: 10, right: 60, bottom: 30, width: 50, height: 20, x: 10, y: 10 } as DOMRect
@@ -65,7 +73,10 @@ describe('LookupPopover', () => {
     const { onClose, dialog } = popover()
     fireEvent.scroll(dialog)
     expect(onClose).not.toHaveBeenCalled()
+    // D-07: a scroll event that moved nothing (late event of an earlier scroll, an animating container) keeps it
     fireEvent.scroll(document)
+    expect(onClose).not.toHaveBeenCalled()
+    scrollPage()
     fireEvent(window, new Event('resize'))
     expect(onClose).toHaveBeenCalledTimes(2)
   })

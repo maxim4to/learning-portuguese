@@ -32,7 +32,7 @@ import {
 } from '../src/content/schema.ts'
 import { guessLemmas, type Guess } from '../src/engine/lexicon/guess.ts'
 import { createLexicon, type Lexicon } from '../src/engine/lexicon/lookup.ts'
-import { normalizeForm, splitClitics, tokenize } from '../src/engine/lexicon/normalize.ts'
+import { normalizeForm, splitClitics, startsWithPrepositionA, tokenize } from '../src/engine/lexicon/normalize.ts'
 import { LEX_FLAG, type LexEntryTuple, type LexiconBundle } from '../src/engine/lexicon/types.ts'
 import { lintText } from './brazilianisms.ts'
 import { conjugate, isValidConj, paradigmForms, verbForms } from '../src/engine/lexicon/conjugate.ts'
@@ -191,7 +191,8 @@ export function parseVocabItem(pt: string, ru: string, gender: 'm' | 'f' | 'mf' 
     return parts.flatMap((p) => parseVocabItem(p, ru, undefined, warn))
   }
 
-  const m = ARTICLE_RE.exec(text)
+  // «a pé», «a partir de»: the preposition «a», not «article + noun» (→ guessPos: adv / prep)
+  const m = startsWithPrepositionA(text) ? null : ARTICLE_RE.exec(text)
   if (m) {
     const art = m[1].toLowerCase()
     return [

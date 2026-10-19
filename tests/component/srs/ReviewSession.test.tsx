@@ -3,7 +3,7 @@
  * steps, persisted FSRS updates, end of session, «Завершить» confirm, error cards reviewed as their exercise,
  * typed dictionary cards (Settings.typeWordAnswers) and the suggested rating.
  */
-import { fireEvent, screen, within } from '@testing-library/react'
+import { act, fireEvent, screen, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 import { DEFAULT_SETTINGS, type Settings, type SrsCard } from '@/data/types.ts'
 import { ReviewSession } from '@/features/srs/ReviewSession'
@@ -339,6 +339,18 @@ describe('ReviewSession · typed dictionary cards', () => {
     await user.click(screen.getByRole('button', { name: /Показать ответ/ }))
     expect(screen.getByRole('group', { name: 'Насколько легко вы вспомнили?' })).toBeInTheDocument()
     expect(screen.queryByText(/предложено по ответу/)).not.toBeInTheDocument()
+  })
+
+  // Regression D-06: the word (and its cards) deleted elsewhere during the session must not come back on rating.
+  test('rating a dictionary card whose word was deleted meanwhile does not write it back [D-06]', async () => {
+    const c = wordCard(casa, 'recognize')
+    const { user, store, onCardUpdated } = setup([c], { words: [casa] })
+    await act(() => store.saveWordBundle({ deleteWordIds: [casa.id], deleteCardIds: [c.id] }))
+    await user.click(screen.getByRole('button', { name: /Показать ответ/ }))
+    await user.click(ratingBtn(/^Хорошо/))
+    await flush()
+    expect(store.cardList().some((x) => x.id === c.id)).toBe(false)
+    expect(onCardUpdated).not.toHaveBeenCalled()
   })
 
   test('recognize cards are never typed (flip card even with typeWordAnswers on)', () => {

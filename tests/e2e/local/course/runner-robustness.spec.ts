@@ -57,8 +57,7 @@ test.describe('exercise runner robustness', () => {
     await expect(counter(page, 9)).toBeVisible()
   })
 
-  test('double click on «Дальше» does not answer the next task [BUG C-01]', async ({ app, page }) => {
-    test.fail(true, 'BUG C-01: docs/testing-bugs/C.md#c-01 — the 2nd click of a double click lands on the next task')
+  test('double click on «Дальше» does not answer the next task [C-01]', async ({ app, page }) => {
     const run = new CRunner(page)
     await app.goto(URL)
     await toLastFillGap(run)

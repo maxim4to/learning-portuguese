@@ -264,6 +264,13 @@ test('seed: article stripped, gender from article / content, m/f pairs merged', 
   assert.deepEqual(parseVocabItem('o pão', 'хлеб; булочка', 'm', noWarn)[0].ru, ['хлеб', 'булочка'])
 })
 
+test('seed: a leading preposition «a» is not an article (A-19: «a pé» is not the feminine noun «pé»)', () => {
+  const noWarn = () => assert.fail('unexpected warning')
+  assert.deepEqual(parseVocabItem('a pé', 'пешком', undefined, noWarn).map((e) => [e.lemma, e.pos, e.gender]), [['a pé', 'adv', undefined]])
+  assert.deepEqual(parseVocabItem('a partir de', 'начиная с', undefined, noWarn).map((e) => [e.lemma, e.pos]), [['a partir de', 'prep']])
+  assert.deepEqual(parseVocabItem('a colher', 'ложка', undefined, noWarn).map((e) => [e.lemma, e.pos, e.gender]), [['colher', 'noun', 'f']])
+})
+
 // ---------------------------------------------------------------------------
 // The committed lexicon
 // ---------------------------------------------------------------------------

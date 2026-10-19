@@ -42,11 +42,16 @@ export function ReviewToggle({ picker, id, name }: { picker: ReviewPicker; id: s
   const addRef = useRef<HTMLButtonElement>(null)
   const removeRef = useRef<HTMLButtonElement>(null)
   const refocus = useRef(false)
+  const busy = picker.busy
+  // The replacing control is disabled while the write is in flight: focus it once it is enabled again
+  // (on a failed write that is the pressed control itself).
   useEffect(() => {
-    if (!refocus.current) return
+    if (!refocus.current || busy) return
+    const el = (added ? removeRef : addRef).current
+    if (!el || el.disabled) return
     refocus.current = false
-    ;(added ? removeRef : addRef).current?.focus({ preventScroll: true })
-  }, [added])
+    el.focus({ preventScroll: true })
+  }, [added, busy])
 
   if (added) {
     return (

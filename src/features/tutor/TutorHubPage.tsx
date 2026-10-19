@@ -26,7 +26,8 @@ export function TutorHubPage() {
   const { map: progress, loaded, reload } = useProgressMap()
   const [now] = useState(() => Date.now())
 
-  // Picks are frozen once a daily session is saved, so the panel (and its «засчитано») stays put after reload.
+  // Picks are frozen as soon as a daily session starts saving: the write changes progress, and new picks would
+  // remount the panel (key) and drop its «засчитано» line and focus.
   const [frozen, setFrozen] = useState<DailyPick | null>(null)
 
   const view = useMemo(() => {
@@ -90,10 +91,8 @@ export function TutorHubPage() {
             build={buildDaily}
             targetIds={dailyIds}
             hideHubLink
-            onSaved={() => {
-              setFrozen(daily)
-              void reload()
-            }}
+            onSaving={() => setFrozen(daily)}
+            onSaved={() => void reload()}
           />
         ) : (
           <Skeleton className="h-64 rounded-card" />
@@ -113,7 +112,7 @@ export function TutorHubPage() {
       <section className="space-y-3">
         <SectionTitle>Темы для занятия</SectionTitle>
         <p className="text-sm text-ink-muted">Сначала слабые темы, затем следующие по курсу.</p>
-        <ul className="grid gap-(--gutter) sm:grid-cols-2">
+        <ul className="grid grid-cols-[minmax(0,1fr)] gap-(--gutter) sm:grid-cols-2">
           {view.shaky.map(({ topic, progress: p }) => (
             <li key={topic.id}>
               <Link to={`/topic/${topic.id}?tab=tutor`} className={linkCard}>
@@ -145,7 +144,7 @@ export function TutorHubPage() {
 
       <section className="space-y-3">
         <SectionTitle>Ситуации для сценок</SectionTitle>
-        <ul className="grid gap-(--gutter) sm:grid-cols-2">
+        <ul className="grid grid-cols-[minmax(0,1fr)] gap-(--gutter) sm:grid-cols-2">
           {view.situations.map((s) => {
             const p = progress.get(s.id)
             return (

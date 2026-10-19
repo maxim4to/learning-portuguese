@@ -101,15 +101,19 @@ describe('contentWordInput without the lexicon (chunk failed to load)', () => {
     expect(r.level).toBe('A1')
   })
 
-  // BUG A-19: see docs/testing-bugs/A.md — a content phrase that starts with the preposition «a» («a pé», «a partir de»)
-  // is taken for «article + noun»: saved as the feminine noun «pé»/«partir de».
+  // A-19 (fixed): a content phrase that starts with the preposition «a» («a pé», «a partir de») is not taken for
+  // «article + noun».
   // Real content: «a pé» — «пешком» (vocab/transportes-e-cidade.json).
-  test.fails('prepositional «a …» phrases are not turned into feminine nouns', () => {
-    for (const pt of ['a pé', 'a partir de']) {
+  test('prepositional «a …» phrases are not turned into feminine nouns', () => {
+    for (const pt of ['a pé', 'a partir de', 'a cavalo', 'a sério']) {
       const r = contentWordInput(null, { pt, ru: 'x' }, opts)
       expect(r.lemma).toBe(pt)
       expect(r.pos).not.toBe('noun')
+      expect(r.gender).toBeUndefined()
     }
+    // a real feminine noun keeps its article handling
+    expect(contentWordInput(null, { pt: 'a saúde', ru: 'x' }, opts)).toMatchObject({ lemma: 'saúde', pos: 'noun', gender: 'f' })
+    expect(contentWordInput(null, { pt: 'a colher', ru: 'x' }, opts)).toMatchObject({ lemma: 'colher', pos: 'noun', gender: 'f' })
   })
 })
 
@@ -159,11 +163,12 @@ describe('contentWordInput / matchContentWord with the lexicon', () => {
     expect(input).toMatchObject({ lexId: undefined, lemma: 'xyzzyqwerty', pos: 'noun', gender: 'm' })
   })
 
-  // BUG A-19 (same defect via the lexicon): «a pé» is saved as pé#noun, feminine, «пешком» — and merges with «o pé» (нога).
-  test.fails('«a pé» from transportes-e-cidade is not saved as the feminine noun «pé»', () => {
+  // A-19 (fixed, via the lexicon): «a pé» is saved as the expression, not as pé#noun (which is «o pé», нога).
+  test('«a pé» from transportes-e-cidade is not saved as the feminine noun «pé»', () => {
     const w = listVocabThemes().find((t) => t.id === 'transportes-e-cidade')!.words.find((x) => x.pt === 'a pé')!
     const r = contentWordInput(lex, w, { themeKey: 'vocab:transportes-e-cidade', src: 'vocab:transportes-e-cidade' })
-    expect(r.pos === 'noun' && r.gender === 'f' && r.lemma === 'pé').toBe(false)
+    expect(r).toMatchObject({ lexId: 'a pé#adv', lemma: 'a pé', pos: 'adv' })
+    expect(r.gender).toBeUndefined()
   })
 
   test('lexEntryInput: all meanings unless a translation is given, manual source', () => {

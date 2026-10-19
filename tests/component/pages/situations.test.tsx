@@ -94,10 +94,10 @@ describe('Dialogue', () => {
     expect(screen.queryByText(first.ru)).not.toBeInTheDocument()
   })
 
-  // WCAG 2.5.3 Label in Name (A): visible «Роль B» is not part of the name «Ролевая игра: вы — B».
-  test.fails('role-play toggle: accessible name contains its visible label «Роль B» [BUG B-61]', () => {
+  // WCAG 2.5.3 Label in Name (A): the visible «Роль B» is part of the accessible name.
+  test('role-play toggle: accessible name contains its visible label «Роль B» [B-61]', () => {
     open()
-    const btn = screen.getByRole('button', { name: 'Ролевая игра: вы — B' })
+    const btn = screen.getByRole('button', { name: 'Роль B: ролевая игра, вы — B' })
     expect(btn).toHaveTextContent('Роль B')
     expect(btn).toHaveAccessibleName(expect.stringContaining('Роль B'))
   })
@@ -113,7 +113,7 @@ describe('Dialogue', () => {
   test('role-play: B lines hidden with the Russian prompt; «Показать» reveals one; «Показать все мои реплики»', async () => {
     const { user } = open()
     const bCount = S.dialogue.filter((l) => l.speaker === 'B').length
-    await user.click(screen.getByRole('button', { name: 'Ролевая игра: вы — B' }))
+    await user.click(screen.getByRole('button', { name: 'Роль B: ролевая игра, вы — B' }))
     expect(screen.getAllByRole('button', { name: 'Показать' })).toHaveLength(bCount)
     expect(screen.queryByText(S.dialogue[1].pt)).not.toBeInTheDocument()
     expect(screen.getAllByText('Ваша реплика:')).toHaveLength(bCount)
@@ -121,13 +121,13 @@ describe('Dialogue', () => {
     expect(screen.getByText(S.dialogue[1].pt)).toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: `Показать все мои реплики (${bCount - 1})` }))
     expect(screen.queryByRole('button', { name: 'Показать' })).not.toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: 'Ролевая игра: вы — B' }))
+    await user.click(screen.getByRole('button', { name: 'Роль B: ролевая игра, вы — B' }))
     expect(screen.getByText(/Нажмите на слово — перевод/)).toBeInTheDocument()
   })
 
   test('«Весь диалог» in role-play waits on the learner’s line, Enter reveals and continues', async () => {
     const { user } = open()
-    await user.click(screen.getByRole('button', { name: 'Ролевая игра: вы — B' }))
+    await user.click(screen.getByRole('button', { name: 'Роль B: ролевая игра, вы — B' }))
     await user.click(screen.getByRole('button', { name: 'Весь диалог' }))
     expect(screen.getByRole('button', { name: 'Стоп' })).toHaveAttribute('aria-pressed', 'true')
     expect(audio.calls.map((c) => c.text)).toEqual([S.dialogue[0].pt])

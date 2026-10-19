@@ -514,6 +514,7 @@
     {"lemma":"cubo","pos":"noun","ru":["кубик, куб (aos cubos — кубиками)"],"gender":"m","level":"B1"},
     {"lemma":"cuidado","pos":"noun","ru":["осторожность, забота","Cuidado! — Осторожно!"],"gender":"m","level":"A2"},
     {"lemma":"cumprimento","pos":"noun","ru":["приветствие","cumprimentos — с уважением (в письме)"],"gender":"m","level":"A2"},
+    {"lemma":"cura","pos":"noun","ru":["излечение, лечение"],"gender":"f","level":"B1"},
     {"lemma":"curiosidade","pos":"noun","ru":["любопытство","интересный факт"],"gender":"f","level":"B1"},
     {"lemma":"currículo","pos":"noun","ru":["резюме"],"gender":"m","forms":["CV"],"level":"B1"},
     {"lemma":"curso","pos":"noun","ru":["курс (обучения)","специальность, учёба в вузе"],"gender":"m","level":"A2"},

@@ -161,6 +161,7 @@
     {"lemma":"fluente","pos":"adj","ru":["свободный (о владении языком)"],"level":"B1"},
     {"lemma":"Fogo!","pos":"phrase","ru":["Блин! Чёрт! (мягкое восклицание)"],"level":"A2"},
     {"lemma":"Foi fora de jogo!","pos":"phrase","ru":["Это был офсайд!"],"level":"A2"},
+    {"lemma":"fora","pos":"adv","ru":["снаружи, вне","lá fora — на улице; fora de — за пределами"],"level":"A1"},
     {"lemma":"formal","pos":"adj","ru":["официальный, формальный"],"level":"A2"},
     {"lemma":"forreta","pos":"adj","ru":["скупой, жадина (разг.)"],"level":"A2"},
     {"lemma":"forte","pos":"adj","ru":["сильный"],"forms":["fortíssimo","fortíssima"],"level":"A2"},

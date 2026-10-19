@@ -128,10 +128,16 @@ describe('library/cheatsheets', () => {
     expect(d.intro).toBeUndefined()
     expect(parseCheatsheet({ id: 'z', markdown: '' })).toEqual({ id: 'z', title: 'z', intro: undefined, body: '', toc: [] })
   })
-  // BUG A-17: see docs/testing-bugs/A.md — a paragraph that starts with emphasis is taken for a list.
-  it.fails('intro may start with bold / italic text', () => {
+  // A-17 (fixed): a paragraph that starts with emphasis is not taken for a list.
+  it('intro may start with bold / italic text', () => {
     const c = parseCheatsheet({ id: 'b', markdown: '# T\n\n**Ser** e *estar*: resumo.\n\n## A' })
     expect(c.intro).toBe('Ser e estar: resumo.')
+    expect(parseCheatsheet({ id: 'i', markdown: '# T\n\n*Nota:* curto.' }).intro).toBe('Nota: curto.')
+  })
+  it('intro skips list items and rules, whatever the marker', () => {
+    for (const md of ['* a\n* b', '- a', '+ a', '1. a', '1) a', '---', '***', '> q', '| a |']) {
+      expect(parseCheatsheet({ id: 'l', markdown: `# T\n\n${md}\n\nTexto.` }).intro, md).toBe('Texto.')
+    }
   })
   it('hub list: preferred order, unknown ids after it; every real sheet parses with a title and toc', () => {
     const list = listParsedCheatsheets()
@@ -177,10 +183,11 @@ describe('library/highlight: makeSegmenter', () => {
     expect(seg('c++ x').some((s) => s.gi === 2)).toBe(true)
     expect(makeSegmenter([{ word: 'ano' }])('2ano ano2 ano').filter((s) => s.gi === 0)).toHaveLength(1)
   })
-  // BUG A-16: see docs/testing-bugs/A.md — internal whitespace of glossary words is not normalised in the lookup key.
-  it.fails('a glossary entry with a double space still highlights', () => {
+  // A-16 (fixed): internal whitespace of glossary words is normalised in the lookup key.
+  it('a glossary entry with a double space still highlights', () => {
     const seg = makeSegmenter([{ word: 'de  manhã' }])
     expect(seg('Saio de manhã.').some((s) => s.gi === 0)).toBe(true)
+    expect(makeSegmenter([{ word: 'de manhã' }])('Saio de\u00a0 manhã.').find((s) => s.gi === 0)?.text).toBe('de\u00a0 manhã')
   })
 })
 

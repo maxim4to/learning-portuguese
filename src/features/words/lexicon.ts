@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import type { Level } from '@/content'
 import type { WordPos } from '@/data'
 import { getLoadedLexicon, loadLexicon, type LexEntry, type Lexicon } from '@/engine/lexicon/lookup'
+import { startsWithPrepositionA } from '@/engine/lexicon/normalize'
 import { normalizeLemma, type NewWordInput } from './wordOps.ts'
 
 export interface LexiconState {
@@ -74,13 +75,18 @@ export const GENDER_LABEL: Record<'m' | 'f' | 'mf', string> = {
 
 const ARTICLE_RE = /^(?:o\/a|a\/o|os\/as|o|a|os|as|um|uma)\s+/i
 
-/** «a saúde» → «saúde», «o/a utente» → «utente», «o currículo (CV)» → «currículo». */
+/** Leading article of a content word; null for none or for the preposition «a» («a pé», «a partir de»). */
+function leadingArticle(pt: string): string | null {
+  const t = pt.trim()
+  if (startsWithPrepositionA(t)) return null
+  return ARTICLE_RE.exec(t)?.[0] ?? null
+}
+
+/** «a saúde» → «saúde», «o/a utente» → «utente», «o currículo (CV)» → «currículo»; «a pé» stays «a pé». */
 export function bareLemma(pt: string): string {
-  return pt
-    .replace(/\s*\([^)]*\)/g, '')
-    .trim()
-    .replace(ARTICLE_RE, '')
-    .trim()
+  const t = pt.replace(/\s*\([^)]*\)/g, '').trim()
+  const art = leadingArticle(t)
+  return (art ? t.slice(art.length) : t).trim()
 }
 
 /** A content word as shown in a theme / situation. */
@@ -118,7 +124,7 @@ export function contentWordInput(
   const entry = lex ? matchContentWord(lex, word, opts.themeKey) : undefined
   const lemma = entry?.lemma ?? bareLemma(word.pt)
   const gender = word.gender ?? entry?.gender
-  const pos: WordPos | undefined = entry?.pos ?? (gender || ARTICLE_RE.test(word.pt) ? 'noun' : undefined)
+  const pos: WordPos | undefined = entry?.pos ?? (gender || leadingArticle(word.pt) ? 'noun' : undefined)
   return {
     lexId: entry?.id,
     lemma,
@@ -131,9 +137,9 @@ export function contentWordInput(
 }
 
 function articleGender(pt: string): 'm' | 'f' | 'mf' | undefined {
-  const m = ARTICLE_RE.exec(pt.trim())
-  if (!m) return undefined
-  const a = m[0].trim().toLowerCase()
+  const art = leadingArticle(pt)
+  if (!art) return undefined
+  const a = art.trim().toLowerCase()
   if (a.includes('/')) return 'mf'
   return a === 'a' || a === 'as' || a === 'uma' ? 'f' : 'm'
 }

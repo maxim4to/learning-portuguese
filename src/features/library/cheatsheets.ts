@@ -55,7 +55,10 @@ export function parseCheatsheet(c: Cheatsheet): ParsedCheatsheet {
     if (m) toc.push({ level: m[1].length === 3 ? 3 : 2, text: plainText(m[2]) })
   }
 
-  const firstPara = body.split(/\n\s*\n/).find((p) => p.trim() && !/^\s*(#|\||>|-|\*|\d+\.)/.test(p))
+  // Not a heading, table, quote, list item («- », «* », «+ », «1. ») or rule («---»); «**Ser** e…» is a paragraph.
+  const firstPara = body
+    .split(/\n\s*\n/)
+    .find((p) => p.trim() && !/^\s*(#|\||>|[-*+]\s|\d+[.)]\s|([-*_])(\s*\2){2,}\s*$)/.test(p))
   return { id: c.id, title, intro: firstPara ? plainText(firstPara) : undefined, body, toc }
 }
 

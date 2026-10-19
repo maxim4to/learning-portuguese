@@ -72,8 +72,8 @@ describe('parseExportBundle', () => {
   const good: ExportBundle = { app: 'portugues-pt', version: 1, exportedAt: NOW, progress: [], cards: [], errors: [], settings: DEFAULT_SETTINGS }
 
   it('accepts an object or its JSON; words default to []', () => {
-    expect(parseExportBundle(good)).toEqual({ ...good, words: [] })
-    expect(parseExportBundle(JSON.stringify(good))).toEqual({ ...good, words: [] })
+    expect(parseExportBundle(good)).toEqual({ ...good, words: [], skipped: 0 })
+    expect(parseExportBundle(JSON.stringify(good))).toEqual({ ...good, words: [], skipped: 0 })
   })
   it.each([
     ['not JSON', '{oops', SyntaxError],
@@ -111,14 +111,14 @@ describe('parseExportBundle', () => {
     expect(b.words[1]).toMatchObject({ sources: [], createdAt: 5, updatedAt: 5 })
   })
   // BUG A-09: see docs/testing-bugs/A.md — progress / cards / errors items are not validated at all.
-  it.fails('progress / cards / errors entries that are not objects with an id are rejected or dropped', () => {
+  it('progress / cards / errors entries that are not objects with an id are rejected or dropped', () => {
     const b = parseExportBundle({ ...good, progress: [null, 42, {}], cards: [null, {}], errors: ['x'] } as never)
     expect(b.progress).toEqual([])
     expect(b.cards).toEqual([])
     expect(b.errors).toEqual([])
   })
   // BUG A-09 (same root cause): non-object settings are spread character by character.
-  it.fails('non-object settings fall back to defaults', () => {
+  it('non-object settings fall back to defaults', () => {
     expect(parseExportBundle({ ...good, settings: 'abc' } as never).settings).toEqual(DEFAULT_SETTINGS)
   })
 })

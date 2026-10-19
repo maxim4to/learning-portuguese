@@ -312,6 +312,9 @@
     /* DM Sans-style Medium as the base weight: Regular reads anaemic next to the ultrabold display. */
     font-weight: 500;
     text-rendering: optimizeLegibility;
+    /* A word longer than its line (pneumoultramicroscópico…) breaks instead of widening the page: on Android
+       Chrome page overflow widens the layout viewport, and fixed / top-layer UI (the lookup sheet) with it. */
+    overflow-wrap: break-word;
   }
   /* Display headings: compressed ultrabold, positive tracking (+0.02em, never negative). */
   h1,
@@ -566,7 +569,9 @@ textarea.input {
   animation: reveal-rows 240ms var(--ease-out);
   & > * {
     min-height: 0;
-    overflow: hidden;
+    /* clip, not hidden: no scroll container — scrollIntoView / focus can't scroll it mid-animation (and its
+       scroll events then don't close an open word card, D-07). */
+    overflow: clip;
   }
 }
 
@@ -731,6 +736,8 @@ dialog.lookup-sheet::backdrop {
 }
 .lookup-sheet-panel {
   max-height: inherit;
+  min-width: 0;
+  overflow-wrap: anywhere;
   overflow-y: auto;
   overscroll-behavior: contain;
   border-radius: var(--radius-md) var(--radius-md) 0 0;

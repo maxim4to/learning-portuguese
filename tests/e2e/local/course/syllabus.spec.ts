@@ -56,8 +56,8 @@ test.describe('syllabus', () => {
     if (withPrereq) await expect(row(page, withPrereq)).toContainText('Лучше сначала:')
   })
 
+  // C-02 (fixed): the course page and the dashboard share primarySuggestion().
   test('«Продолжить / Подтянуть» card suggests the weak topic like the dashboard does [BUG C-02]', async ({ app, page, seed }) => {
-    test.fail(true, 'BUG C-02: docs/testing-bugs/C.md#c-02 — suggestTopics(progress, 1) always drops the weak topic')
     await page.clock.setFixedTime(NOW)
     const weak = ids('A1')[2]
     await seed({ progress: [progress(weak, 3, 10)] })

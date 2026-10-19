@@ -96,11 +96,19 @@ describe('splitByMask', () => {
     expect(splitByMask('Diz olá', `Diz ${GAP}`)).toEqual([{ text: 'Diz ' }, { text: 'olá', form: true }])
   })
 
-  // BUG A-21: see docs/testing-bugs/A.md — a multi-word form repeated with only a space between the occurrences:
-  // the first highlighted segment stops at the first space inside the form.
-  test.fails('multi-word form repeated back to back is highlighted whole', () => {
+  // A-21 (fixed): a multi-word form repeated with only a space between the occurrences is highlighted whole.
+  test('multi-word form repeated back to back is highlighted whole', () => {
     const s = 'bom dia bom dia'
     expect(splitByMask(s, maskForm(s, 'bom dia'))).toEqual([{ text: 'bom dia', form: true }, { text: ' ' }, { text: 'bom dia', form: true }])
+    const t = 'Bom dia, bom dia a todos.'
+    expect(splitByMask(t, maskForm(t, 'bom dia'))).toEqual([
+      { text: 'Bom dia', form: true },
+      { text: ', ' },
+      { text: 'bom dia', form: true },
+      { text: ' a todos.' },
+    ])
+    const u = 'de vez em quando, de vez em quando'
+    expect(splitByMask(u, maskForm(u, 'de vez em quando')).filter((x) => x.form).map((x) => x.text)).toEqual(['de vez em quando', 'de vez em quando'])
   })
 })
 

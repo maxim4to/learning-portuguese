@@ -1,0 +1,149 @@
+name: CI
+
+# Runs on pull requests, and is called by deploy.yml (workflow_call) as the gate before every deploy.
+on:
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+# Supersede older runs of the same PR; never cancel runs on main (deploy.yml waits for them).
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  # Content validation, lint, type-check of tests, Vitest unit + component.
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run lint
+      - run: npm run test:types
+      - run: npm run test
+
+  # Playwright e2e, local mode (no Firebase), one job per browser project so they run in parallel.
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: desktop-chromium
+            browser: chromium
+          - project: mobile-chromium
+            browser: chromium
+          - project: mobile-webkit
+            browser: webkit
+    env:
+      CI: '1' # playwright.config.ts: retries 1, workers 2, forbidOnly, no server reuse
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - id: pw
+        run: echo "version=$(node -p "require('./package-lock.json').packages['node_modules/@playwright/test'].version")" >> "$GITHUB_OUTPUT"
+      - id: pw-cache
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw.outputs.version }}-${{ matrix.browser }}
+      - if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps ${{ matrix.browser }}
+      - run: npx playwright test --project ${{ matrix.project }}
+      - if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-${{ matrix.project }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
+
+  # Firestore security rules against the Firestore emulator (firebase-tools is a devDependency; needs Java).
+  rules:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: actions/cache@v6
+        with:
+          path: ~/.cache/firebase/emulators
+          key: firebase-emulators-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: firebase-emulators-${{ runner.os }}-
+      - run: npm ci
+      - run: npm run test:rules
+
+  # Playwright e2e against the Auth + Firestore emulators. INFORMATIONAL, does not gate deploy:
+  # this suite is known to be somewhat flaky (emulator start-up/timing, shared emulator state across workers),
+  # so a red run here must not block shipping. The test step is continue-on-error, so the job stays green
+  # (a job-level continue-on-error is not reliable through workflow_call); a failure shows up as a warning
+  # annotation plus an uploaded report.
+  e2e-emulator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CI: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: actions/cache@v6
+        with:
+          path: ~/.cache/firebase/emulators
+          key: firebase-emulators-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: firebase-emulators-${{ runner.os }}-
+      - run: npm ci
+      - id: pw
+        run: echo "version=$(node -p "require('./package-lock.json').packages['node_modules/@playwright/test'].version")" >> "$GITHUB_OUTPUT"
+      - id: pw-cache
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw.outputs.version }}-chromium
+      - if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      - if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+      - id: emu
+        continue-on-error: true
+        run: npm run test:e2e:emulator
+      - if: steps.emu.outcome == 'failure'
+        run: echo "::warning title=Emulator e2e failed::Non-blocking suite failed; see the e2e-emulator artifact."
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-emulator
+          path: |
+            playwright-report/emulator/
+            test-results/e2e-emulator/
+          if-no-files-found: ignore
+          retention-days: 14

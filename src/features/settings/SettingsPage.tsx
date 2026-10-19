@@ -16,6 +16,7 @@ import { activityDays, computeStreak } from '@/features/dashboard/stats'
 import { plural } from '@/features/library/format'
 import { setLookupOnTapPref } from '@/features/words/capture/store'
 import { MODE_UNLOCK_HINT, WORD_MODE_LABEL } from '@/features/words/status'
+import { legacyWordCards } from '@/features/words/wordOps'
 import { WordsContext } from '@/features/words/useWords'
 import { SyncStatusLine } from '@/features/sync/SyncStatusLine'
 
@@ -70,10 +71,21 @@ export function SettingsPage() {
     const patch = pending.current
     pending.current = {}
     if (!Object.keys(patch).length) return
-    void repo.saveSettings(patch).then(() => {
-      // Written to the store: drop the draft unless newer edits are waiting.
-      if (!Object.keys(pending.current).length) setDraft({})
-    })
+    repo.saveSettings(patch).then(
+      () => {
+        // Written to the store: drop the draft unless newer edits are waiting.
+        if (!Object.keys(pending.current).length) setDraft({})
+      },
+      () => {
+        // Not saved (local mode: storage full — SyncToasts reports it). Show what is actually stored: drop the
+        // failed keys from the draft, except those edited again meanwhile.
+        setDraft((d) => {
+          const next = { ...d }
+          for (const k of Object.keys(patch) as (keyof Settings)[]) if (!(k in pending.current)) delete next[k]
+          return next
+        })
+      },
+    )
   }, [repo])
   useEffect(() => flush, [flush])
 
@@ -134,9 +146,13 @@ export function SettingsPage() {
     setPendingImport(null)
     importBtnRef.current?.focus() // the confirm (and its focused button) unmounts
     try {
-      await repo.importAll(await file.text())
+      const { skipped } = await repo.importAll(await file.text())
       setDraft({})
-      setMessage('Импорт выполнен')
+      setMessage(
+        skipped
+          ? `Импорт выполнен. Пропущено повреждённых записей: ${skipped}`
+          : 'Импорт выполнен',
+      )
     } catch (e) {
       setMessage(`Ошибка импорта: ${e instanceof Error ? e.message : String(e)}`)
     }
@@ -169,7 +185,7 @@ export function SettingsPage() {
             onChange={setThemePref}
             className="w-full sm:w-auto"
             options={[
-              { value: 'system', label: <><Monitor aria-hidden className="size-4" /> Авто</>, ariaLabel: 'Как в системе' },
+              { value: 'system', label: <><Monitor aria-hidden className="size-4" /> Авто</>, ariaLabel: 'Авто — как в системе' },
               { value: 'light', label: <><Sun aria-hidden className="size-4" /> Светлая</> },
               { value: 'dark', label: <><Moon aria-hidden className="size-4" /> Тёмная</> },
             ]}
@@ -495,7 +511,9 @@ function WordModesField({ value, onChange }: { value: readonly WordCardMode[]; o
 function LegacyWordCards() {
   const words = useContext(WordsContext)
   const toast = useToast()
-  const [count, setCount] = useState<number | null>(null)
+  // Live from the store: cards that arrive after Settings opened (first sync on a new device) show the offer too.
+  const cards = useCards()
+  const count = useMemo(() => legacyWordCards(cards).length, [cards])
   const [open, setOpen] = useState(false)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -506,17 +524,6 @@ function LegacyWordCards() {
   useEffect(() => {
     if (done !== null) doneRef.current?.focus() // the dialog and its opener are gone: land on the result
   }, [done])
-
-  useEffect(() => {
-    let alive = true
-    words?.actions
-      .countLegacyWordCards()
-      .then((n) => alive && setCount(n))
-      .catch(() => alive && setCount(0))
-    return () => {
-      alive = false
-    }
-  }, [words])
 
   if (done !== null) {
     return (

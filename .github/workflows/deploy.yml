@@ -16,7 +16,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Deploy only when tests pass: ci.yml runs test (validate, lint, types, Vitest), e2e (3 Playwright projects
+  # in parallel) and rules as required jobs; its emulator e2e job is informational and never fails the gate.
+  ci:
+    uses: ./.github/workflows/ci.yml
+
   build:
+    needs: ci
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

@@ -74,9 +74,15 @@ describe('SyllabusPage', () => {
     expect(card()).toHaveTextContent(`${first.level}Продолжить курс${first.title}`)
     expect(card()).toHaveAttribute('href', `/topic/${first.id}`)
     unmount()
-    // suggestTopics(…, 1) keeps room for a new topic: the weak card shows once every topic is started.
     renderSyl('/syllabus', { progress: listTopics().map((t) => progress(t.id, t.id === a1Ids[3] ? 3 : 10, 10)) })
     expect(card()).toHaveTextContent(`A1Подтянуть слабую тему${getTopic(a1Ids[3])!.title}`)
+  })
+
+  test('C-02: a weak topic is suggested even while other topics are not started (same as the dashboard)', () => {
+    renderSyl('/syllabus', { progress: [progress(a1Ids[2], 3, 10)] })
+    const card = screen.getAllByRole('link').find((l) => l.textContent?.includes('Подтянуть слабую тему'))
+    expect(card).toHaveTextContent(`A1Подтянуть слабую тему${getTopic(a1Ids[2])!.title}`)
+    expect(card).toHaveAttribute('href', `/topic/${a1Ids[2]}`)
   })
 
   test('status legend lists all four statuses', () => {

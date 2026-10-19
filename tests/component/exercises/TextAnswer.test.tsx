@@ -60,9 +60,8 @@ describe('TextAnswer', () => {
     expect(onSubmit).not.toHaveBeenCalled()
   })
 
-  // Implicit form submission: TextAnswer returns early without preventDefault while the lookup card is open,
-  // so the browser (and user-event) still submits the <form> on Enter.
-  test.fails('Enter is ignored while the word lookup card is open [BUG B-01]', async () => {
+  // Regression B-01: while the lookup card is open, Enter must not submit the <form> implicitly.
+  test('Enter is ignored while the word lookup card is open [B-01]', async () => {
     const { user, onSubmit } = setup()
     const field = screen.getByRole('textbox')
     await user.type(field, 'sou')

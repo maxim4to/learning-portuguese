@@ -71,24 +71,11 @@ const CORRUPT: [key: string, value: string][] = [
   ['ptpt:v1:theme', 'purple'],
 ]
 
-/** Which corruptions currently crash, keyed `key=value` (see docs/testing-bugs/E.md#e-03). */
-const KNOWN_CRASH = new Set<string>([
-  'ptpt:v1:progress=[1,2,3]',
-  'ptpt:v1:progress="text"',
-  'ptpt:v1:progress={"a1-ser-estar":{"topicId":"a1-ser-estar"}}',
-  'ptpt:v1:cards={"c1":{"id":"c1"}}',
-  'ptpt:v1:words={"u:casa":{"id":"u:casa"}}',
-  'ptpt:v1:errors={"x":1}',
-  'ptpt:v1:errors=[null]',
-  'ptpt:v1:settings={"wordModes":"all","newCardsPerDay":"many","rate":null}',
-])
-
 test.describe('corrupted storage', () => {
   test.skip(({ browserName, isMobile }) => browserName !== 'chromium' || !!isMobile, 'storage parsing is browser-independent: desktop-chromium only')
 
   for (const [key, value] of CORRUPT) {
     test(`${key} = ${value} → the app still opens`, async ({ app, page, consoleErrors }) => {
-      if (KNOWN_CRASH.has(`${key}=${value}`)) test.fail(true, 'BUG E-03: docs/testing-bugs/E.md#e-03')
       await page.addInitScript(
         ([k, v]) => {
           if (!sessionStorage.getItem('__corrupted')) {
@@ -122,7 +109,6 @@ test.describe('storage quota', () => {
   }
 
   test('a settings write that hits the quota is rolled back and reported, the app keeps working', async ({ app, page }) => {
-    test.fail(true, 'BUG E-04: docs/testing-bugs/E.md#e-04 — unhandled QuotaExceededError, the switch keeps the unsaved value')
     await fillQuota(page)
     await app.goto('/settings')
     await page.evaluate(() => ((window as { __quota?: boolean }).__quota = true))

@@ -76,7 +76,7 @@ test('/practice/vocab: per-theme «в словаре N»; theme page «в сло
   await expect(app.main.getByRole('link', { name: /Здоровье и медицина/ })).toContainText('в словаре 2')
 })
 
-test('Settings: legacy word cards (w:*, g:*) are removed; phrases and dictionary cards stay', async ({ app, page, seed, browserName }) => {
+test('Settings: legacy word cards (w:*, g:*) are removed; phrases and dictionary cards stay', async ({ app, page, seed }) => {
   const lex = dictCard(saude, 'recognize', { fsrs: fsrsNewAt() })
   await seed({
     words: [saude],
@@ -97,7 +97,6 @@ test('Settings: legacy word cards (w:*, g:*) are removed; phrases and dictionary
   await expect(dlg).toBeHidden()
   const done = page.getByText('Старые карточки слов удалены: 2.', { exact: false })
   await expect(done).toBeVisible()
-  if (browserName === 'webkit') test.fail(true, 'BUG D-09: WebKit — focus is not moved to the result line after the cleanup dialog closes')
   await expect(done).toBeFocused()
   await expect(toastBox(page)).toContainText('Удалено старых карточек слов: 2')
   expect(Object.keys(await storedCards(page)).sort()).toEqual([lex.id, 'ph:banco-conta:0'].sort())

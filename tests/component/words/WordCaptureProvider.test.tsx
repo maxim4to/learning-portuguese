@@ -8,6 +8,14 @@ import { word, wordCard, fsrsNew, type Seed } from '../../fixtures/seed'
 import { renderWithProviders } from '../../helpers/render'
 import { installRangeGeometry, pointAt, selectText, setWideScreen, stubAudioFetch, textNode } from '../../helpers/B-words-dom'
 
+/** A real page scroll: the root's offset changes, then the event fires (an event alone no longer closes the card). */
+function scrollPage(by = 120) {
+  Object.defineProperty(document.documentElement, 'scrollTop', { configurable: true, value: by })
+  fireEvent.scroll(document)
+  delete (document.documentElement as { scrollTop?: number }).scrollTop
+}
+
+
 beforeAll(async () => {
   installRangeGeometry()
   await loadLexicon()
@@ -156,7 +164,7 @@ describe('WordCaptureProvider · tap', () => {
     page()
     tap(screen.getByText(SENTENCE), PAO)
     await screen.findByRole('dialog')
-    fireEvent.scroll(document)
+    scrollPage()
     await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument())
     tap(screen.getByText(SENTENCE), PAO)
     await screen.findByRole('dialog')

@@ -80,7 +80,7 @@ test('filters: status chips, level and source selects; kept in the URL', async (
   await statusChip(page, 'Все').click()
   await expect(page).not.toHaveURL(/status=/)
   await expect(rows(page)).toHaveCount(6)
-  // Fresh page: changing a select right after a chip sometimes brings the old status back (BUG D-05, fixme below).
+  // Fresh page: changing a select right after a chip sometimes brings the old status back (D-05, fixed; regression test below).
   await app.goto('/words')
   await page.getByLabel('Уровень').selectOption('A2')
   await expect(page).toHaveURL(/level=A2/)
@@ -208,7 +208,6 @@ test('own word: an existing lemma is offered to be extended, not duplicated', as
 })
 
 test('changing the level right after «Все» keeps the status filter cleared', async ({ app, page }) => {
-  test.fixme(true, 'BUG D-05: intermittently the previous ?status= comes back (stale search params in setFilter); flaky, so fixme')
   await app.goto('/words')
   for (let i = 0; i < 5; i++) {
     await statusChip(page, 'На паузе').click()

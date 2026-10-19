@@ -112,14 +112,26 @@ describe('resolve: clitics, mesoclisis, contractions, homographs', () => {
     expect(top('daquela')).toEqual(expect.arrayContaining(['de#prep', 'aquele#det']))
   })
 
-  // BUG A-03: the preposition half of «àquele»/«ao» also matches the feminine article «a» (→ «o»), which outranks «aquele».
-  test.fails('«àquele» = a + aquele: no spurious article «o» before «aquele» [BUG A-03]', () => {
-    expect(top('àquele').slice(0, 2)).toEqual(['a#prep', 'aquele#det'])
+  // A-03 (fixed): the preposition half of «àquele»/«ao» no longer matches the feminine article «a» (→ «o»).
+  test('«àquele» = a + aquele: no spurious article «o» before «aquele» [BUG A-03]', () => {
+    expect(top('àquele')).toEqual(['a#prep', 'aquele#det'])
   })
 
-  // BUG A-04: elided «d'» (copo d'água, caixa d'óculos) is not split as de + noun.
-  test.fails("«d'água» resolves to água (de + água) [BUG A-04]", () => {
-    expect(top('d’água')).toContain('água#noun')
+  test('contraction halves: the preposition half is only the preposition, the other half never is', () => {
+    expect(top('ao')).toEqual(['a#prep', 'o#det', 'o#pron'])
+    // «à» = a + a: the preposition once, then the article (not a#prep twice / not missing)
+    expect(top('à')[0]).toBe('a#prep')
+    expect(top('à')).toContain('o#det')
+    expect(top('da')).not.toContain('a#prep')
+    expect(top('pelo')).toEqual(['por#prep', 'o#det', 'o#pron'])
+  })
+
+  // A-04 (fixed): elided «d'» (copo d'água, caixa d'óculos) is split as de + noun.
+  test("«d'água» resolves to água (de + água) [BUG A-04]", () => {
+    expect(top('d’água')).toEqual(['de#prep', 'água#noun'])
+    expect(top("d'óculos")).toContain('óculos#noun')
+    expect(splitContraction("d'água")).toEqual({ prep: 'de', rest: 'água' })
+    expect(splitContraction('d')).toBeNull()
   })
 
   test('leading article stripped from a selection', () => {
@@ -149,10 +161,45 @@ describe('resolve: clitics, mesoclisis, contractions, homographs', () => {
     expect(top('Porto')[0]).toBe('porto#noun') // sentence start: no prev
   })
 
-  // BUG A-05: «sede» (thirst) is missing from the lexicon; in «Tenho muita sede» (a1-ter-haver) the card shows only
-  // «ser, imperativo vós».
-  test.fails('«tenho sede»: the noun «sede» (жажда) is offered [BUG A-05]', () => {
-    expect(top('sede', { prev: 'muita' })[0]).toBe('sede#noun')
+  // A-05 (fixed): «sede» (thirst) is in the lexicon; «ser, imperativo vós» comes second.
+  test('«tenho sede»: the noun «sede» (жажда) is offered [BUG A-05]', () => {
+    expect(top('sede', { prev: 'muita' }).slice(0, 2)).toEqual(['sede#noun', 'ser#verb'])
+    expect(top('sede')[0]).toBe('sede#noun')
+  })
+
+  // Homographs of a verb form with a common noun / adverb / adjective: both readings exist, context picks.
+  test.each([
+    // [form, nominal/other context, its reading, verbal context, verb reading]
+    ['era', 'uma', 'era#noun', 'ele', 'ser#verb'],
+    ['vinha', 'a', 'vinha#noun', 'eu', 'vir#verb'],
+    ['saia', 'uma', 'saia#noun', 'ele', 'sair#verb'],
+    ['gosto', 'o', 'gosto#noun', 'eu', 'gostar#verb'],
+    ['peso', 'o', 'peso#noun', 'eu', 'pesar#verb'],
+    ['venda', 'à', 'venda#noun', 'ele', 'vender#verb'],
+    ['casa', 'a', 'casa#noun', 'ela', 'casar#verb'],
+    ['conta', 'a', 'conta#noun', 'ele', 'contar#verb'],
+    ['leve', 'muito', 'leve#adj', 'ele', 'levar#verb'],
+  ])('homograph «%s»: after «%s» → %s, after «%s» → %s', (form, nominal, noun, verbal, verb) => {
+    expect(top(form, { prev: nominal })[0]).toBe(noun)
+    expect(top(form, { prev: verbal })[0]).toBe(verb)
+  })
+
+  test('homographs without context: the everyday reading first', () => {
+    expect(top('fora')[0]).toBe('fora#adv') // lá fora — not «ir/ser, mais-que-perfeito»
+    expect(top('fora')).toEqual(expect.arrayContaining(['ir#verb', 'ser#verb']))
+    expect(top('era')[0]).toBe('ser#verb') // «era» = was, far more frequent than «эпоха»
+    expect(top('gosto')[0]).toBe('gostar#verb') // «Gosto de…»
+    expect(top('par', { prev: 'um' })[0]).toBe('par#noun')
+    expect(top('sou')).toEqual(['ser#verb'])
+    expect(top('sobre')[0]).toBe('sobre#prep')
+    expect(top('como', { prev: 'eu' })[0]).toBe('comer#verb')
+  })
+
+  test('«pé» is masculine «нога»; «a pé» resolves to the adverbial expression first', () => {
+    const pe = lex.entryById('pé#noun')!
+    expect(pe.gender).toBe('m')
+    expect(pe.ru[0]).toMatch(/нога/)
+    expect(top('a pé')[0]).toBe('a pé#adv')
   })
 
   test('unknown inflection: guesser proposes only existing lemmas, marked approximate', () => {
@@ -326,11 +373,20 @@ describe('normalize: clitics, contractions, articles', () => {
     expect(tokenize('')).toEqual([])
   })
 
-  // BUG A-06: tokenize() NFC-normalises before matching, so offsets drift for decomposed (NFD) text.
-  test.fails('tokenize: offsets stay valid for NFD text (é = e + U+0301) [BUG A-06]', () => {
+  // A-06 (fixed): offsets index the original string, also for decomposed (NFD) text.
+  test('tokenize: offsets stay valid for NFD text (é = e + U+0301) [BUG A-06]', () => {
     const text = 'Está bem, café.'.normalize('NFD')
     const toks = tokenize(text)
     expect(toks.map((t) => text.slice(t.start, t.end).normalize('NFC'))).toEqual(['Está', 'bem', 'café'])
+    expect(toks.map((t) => t.text)).toEqual(['Está', 'bem', 'café']) // token text itself is NFC
+    expect(toks.map((t) => t.norm)).toEqual(['está', 'bem', 'café'])
+  })
+
+  test('tokenize: NFD offsets after an earlier composed character and with curly apostrophes', () => {
+    const text = 'Não há copo d’água à mão.'.normalize('NFD')
+    const toks = tokenize(text)
+    expect(toks.map((t) => text.slice(t.start, t.end).normalize('NFC'))).toEqual(['Não', 'há', 'copo', 'd’água', 'à', 'mão'])
+    expect(toks.find((t) => t.norm.startsWith('d'))?.text).toBe("d'água")
   })
 })
 

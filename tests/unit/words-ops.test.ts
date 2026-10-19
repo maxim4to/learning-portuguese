@@ -342,13 +342,40 @@ describe('planUpdateWord', () => {
 
   // BUG A-20: see docs/testing-bugs/A.md — editing the word's modes resumes a card the learner paused by hand
   // (CardList «Приостановить») in a mode that was not touched by the edit.
-  test.fails('changing one mode leaves a hand-paused card of another mode paused', () => {
+  test('changing one mode leaves a hand-paused card of another mode paused', () => {
     const { state, w } = base()
     const paused = applyWrite(state, { cards: [{ ...state.cards.find((c) => c.mode === 'produce')!, suspended: true }] })
     const p = planUpdateWord(paused, w.id, { modes: ['recognize', 'produce', 'cloze'] }, NOW) // listen switched off
     const after = applyWrite(paused, p.write)
     expect(after.cards.find((c) => c.mode === 'listen')!.suspended).toBe(true)
     expect(after.cards.find((c) => c.mode === 'produce')!.suspended).toBe(true)
+  })
+
+  test('a card paused by hand (pausedByUser) stays paused when its mode is switched off and on again', () => {
+    const { state, w } = base()
+    const produce = state.cards.find((c) => c.mode === 'produce')!
+    let s = applyWrite(state, { cards: [{ ...produce, suspended: true, pausedByUser: true }] })
+    s = applyWrite(s, planUpdateWord(s, w.id, { modes: ['recognize', 'cloze', 'listen'] }, NOW).write)
+    s = applyWrite(s, planUpdateWord(s, w.id, { modes: [...WORD_CARD_MODES] }, NOW).write)
+    expect(s.cards.find((c) => c.mode === 'produce')).toMatchObject({ suspended: true, pausedByUser: true })
+    // …while a card suspended only by the mode switch comes back
+    s = applyWrite(s, planUpdateWord(s, w.id, { modes: ['recognize', 'produce', 'cloze'] }, NOW).write)
+    expect(s.cards.find((c) => c.mode === 'listen')!.suspended).toBe(true)
+    s = applyWrite(s, planUpdateWord(s, w.id, { modes: [...WORD_CARD_MODES] }, NOW).write)
+    expect(s.cards.find((c) => c.mode === 'listen')!.suspended).toBeFalsy()
+  })
+
+  test('settings modes and «Учить снова» do not resume a card paused by hand', () => {
+    const { state, w } = base()
+    const produce = state.cards.find((c) => c.mode === 'produce')!
+    const s = applyWrite(state, { cards: [{ ...produce, suspended: true, pausedByUser: true }] })
+    const off = applyWrite(s, planApplyEnabledModes(s, ['recognize', 'cloze', 'listen'], ['produce'], { now: NOW }).write)
+    const on = applyWrite(off, planApplyEnabledModes(off, [...WORD_CARD_MODES], ['produce'], { now: NOW }).write)
+    expect(on.cards.find((c) => c.mode === 'produce')!.suspended).toBe(true)
+    const known = applyWrite(on, planMarkKnown(on, w.id, NOW).write)
+    const again = applyWrite(known, planUnmarkKnown(known, w.id, { now: NOW }).write)
+    expect(again.cards.find((c) => c.mode === 'produce')!.suspended).toBe(true)
+    expect(again.cards.find((c) => c.mode === 'recognize')!.suspended).toBeFalsy()
   })
 })
 

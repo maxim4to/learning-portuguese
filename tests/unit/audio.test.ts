@@ -145,8 +145,8 @@ describe('audioUrl / hasAudioFile', () => {
     expect(await hasAudioFile('notype')).toBe(true)
   })
 
-  // BUG A-01: a transient network failure is cached as «no file» for the whole session.
-  test.fails('a failed HEAD (offline) is retried later instead of being cached as «missing» [BUG A-01]', async () => {
+  // A-01 (fixed): a transient network failure is not cached as «no file» for the whole session.
+  test('a failed HEAD (offline) is retried later instead of being cached as «missing» [BUG A-01]', async () => {
     const { hasAudioFile } = await load()
     fetchMock.mockImplementationOnce(() => Promise.reject(new TypeError('offline')))
     expect(await hasAudioFile('h')).toBe(false)
@@ -230,14 +230,27 @@ describe('speak', () => {
     expect(await getPtPtVoices()).toEqual([])
   })
 
-  // BUG A-02: two quick taps on different «play» buttons both play at once (stop happens before the async hash/HEAD).
-  test.fails('a second speak() while the first is still resolving stops the first [BUG A-02]', async () => {
+  // A-02 (fixed): two quick taps on different «play» buttons — only the latest one plays.
+  test('a second speak() while the first is still resolving stops the first [BUG A-02]', async () => {
+    const { speak } = await load()
+    const first = speak('primeiro')
+    void speak('segundo')
+    await flush(1)
+    expect(await first).toEqual({ source: 'none' })
+    const playing = FakeAudio.instances.filter((a) => !a.paused)
+    expect(playing).toHaveLength(1)
+    expect(playing[0].src).toMatch(new RegExp(`audio/${sha1('segundo')}\\.mp3$`))
+    expect(FakeAudio.instances.some((a) => a.src.includes(sha1('primeiro')) && !a.paused)).toBe(false)
+  })
+
+  test('a new speak() after the first started playing pauses the first', async () => {
     const { speak } = await load()
     void speak('primeiro')
+    await flush(1)
     void speak('segundo')
     await flush(2)
-    expect(FakeAudio.instances).toHaveLength(2)
-    expect(FakeAudio.instances.filter((a) => !a.paused)).toHaveLength(1)
+    expect(FakeAudio.instances[0].paused).toBe(true)
+    expect(FakeAudio.instances[1].paused).toBe(false)
   })
 })
 

@@ -27,15 +27,25 @@ export function spreadShuffle(qs: readonly DiagnosticQuestion[], rnd: () => numb
   let best = shuffle(qs, rnd)
   for (let attempt = 0; attempt < 200 && hasAdjacentTopic(best); attempt++) best = shuffle(qs, rnd)
   if (!hasAdjacentTopic(best)) return best
-  // Greedy repair: move a clashing item to the first position where it doesn't touch its own topic.
-  const out = [...best]
-  for (let i = 1; i < out.length; i++) {
-    if (out[i - 1].topicId !== out[i].topicId) continue
-    const [q] = out.splice(i, 1)
-    const at = out.findIndex(
-      (_, k) => out[k - 1]?.topicId !== q.topicId && out[k]?.topicId !== q.topicId,
-    )
-    out.splice(at === -1 ? out.length : at, 0, q)
+  // Repair: rebuild the order picking, at each step, the topic with the most questions left that differs from the
+  // previous one (ties → whichever comes first in the shuffled order). This finds a spread whenever one exists
+  // (no topic holds more than ⌈n/2⌉ questions); otherwise the leftovers of the biggest topic end up adjacent.
+  const queues = new Map<string, DiagnosticQuestion[]>()
+  for (const q of best) {
+    const list = queues.get(q.topicId)
+    if (list) list.push(q)
+    else queues.set(q.topicId, [q])
+  }
+  const out: DiagnosticQuestion[] = []
+  while (out.length < best.length) {
+    const prev = out[out.length - 1]?.topicId
+    let pick: DiagnosticQuestion[] | undefined
+    for (const [topic, list] of queues) {
+      if (!list.length || topic === prev) continue
+      if (!pick || list.length > pick.length) pick = list
+    }
+    pick ??= queues.get(prev!)!
+    out.push(pick.shift()!)
   }
   return out
 }

@@ -152,5 +152,7 @@ export class FakeRepo implements ProgressRepository {
   async exportAll(): Promise<never> {
     throw new Error('not implemented')
   }
-  async importAll() {}
+  async importAll() {
+    return { skipped: 0 }
+  }
 }

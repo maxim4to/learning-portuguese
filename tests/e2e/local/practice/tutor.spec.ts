@@ -36,7 +36,6 @@ test.describe('tutor hub', () => {
     const done = page.getByRole('region', { name: 'Отметить пройденным' })
     await done.getByRole('radio', { name: /Легко/ }).click()
     await done.getByRole('button', { name: 'Отметить пройденным' }).click()
-    // (The confirmation line is lost on the hub — BUG C-03, see the next test.)
     await expect(page.getByText(/Свободная беседа дня · 10\/10/).first()).toBeVisible()
     await page.reload()
     await expect(page.getByRole('heading', { name: 'История занятий' })).toBeVisible()
@@ -54,13 +53,14 @@ test.describe('tutor hub', () => {
     await expect(app.heading).toHaveText(loadTopic(id).title)
   })
 
-  test('hub: «Отметить пройденным» keeps the confirmation and focus [BUG C-03]', async ({ app, page }) => {
-    test.fail(true, 'BUG C-03: docs/testing-bugs/C.md#c-03 — the daily panel remounts (key=dailyKey) and drops the message')
+  test('hub: «Отметить пройденным» keeps the confirmation and focus [C-03]', async ({ app, page }) => {
     await app.goto('/practice/tutor')
     const done = page.getByRole('region', { name: 'Отметить пройденным' })
     await done.getByRole('radio', { name: /Нормально/ }).click()
     await done.getByRole('button', { name: 'Отметить пройденным' }).click()
     await expect(page.getByText(/Свободная беседа дня · 7\/10/).first()).toBeVisible()
-    await expect(page.getByRole('status').filter({ hasText: /^Занятие засчитано: 7\/10/ })).toBeVisible({ timeout: 2000 })
+    const line = page.getByRole('status').filter({ hasText: /^Занятие засчитано: 7\/10/ })
+    await expect(line).toBeVisible({ timeout: 2000 })
+    await expect(line).toBeFocused()
   })
 })

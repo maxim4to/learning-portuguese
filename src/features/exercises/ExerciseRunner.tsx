@@ -38,6 +38,11 @@ export interface ExerciseRunnerProps {
   focusOnMount?: boolean
   /** Desktop side panel (progress through the items, what is trained, keys). Off where the runner sits in a narrow column. */
   panel?: boolean
+  /**
+   * Word lookup after the answer is checked (before it, lookup is always off). Off for the diagnostic: it measures
+   * the level, so no translations at any point.
+   */
+  lookup?: boolean
 }
 
 /** Keyboard hint for the side panel: what the keys do in this kind of task (then Enter → next everywhere). */
@@ -63,6 +68,13 @@ const kbd = 'rounded-md bg-surface-2 px-1.5 py-0.5 font-sans text-xs font-bold t
 
 /** Keyboard-activated «Дальше» clicks this soon after answering are ignored (held / bounced Enter). */
 const NEXT_GUARD_MS = 250
+/**
+ * After «Дальше» the next task takes its place under the pointer: the rest of a double click / double tap (and a
+ * held Enter) must not answer it. Clicks of a multi-click (detail > 1) are ignored this long after «Дальше»,
+ * touch taps — for TAP_GUARD_MS; a held Enter is dropped as key repeat.
+ */
+const DOUBLE_CLICK_GUARD_MS = 600
+const TAP_GUARD_MS = 350
 
 /** Generic name of each exercise kind (the side panel groups the run by it). */
 const KIND_LABEL: Record<Exercise['type'], string> = {
@@ -115,7 +127,7 @@ export function ExerciseView(props: {
  * the new task's primary control (text field, option group, word bank…), so the whole run works without a mouse.
  * Give it a `key` to restart with a new list.
  */
-export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOnMount, panel = true }: ExerciseRunnerProps) {
+export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOnMount, panel = true, lookup = true }: ExerciseRunnerProps) {
   const { lenientAccents } = useSettings()
   const [restored] = useState(() => loadRun(persistKey, exercises.map((e) => e.id)))
   const [index, setIndex] = useState(restored?.index ?? 0)
@@ -129,6 +141,8 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
   const sectionRef = useRef<HTMLElement>(null)
   const moved = useRef(false)
   const answeredAt = useRef(0)
+  const advancedAt = useRef(0)
+  const pointerType = useRef('')
 
   const ex = exercises[index]
   const total = exercises.length
@@ -172,6 +186,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     setLive('')
     setIndex((i) => i + 1)
     moved.current = true
+    advancedAt.current = Date.now()
     // Keep the exercise in view on mobile after a long feedback block.
     const top = topRef.current
     if (top && top.getBoundingClientRect().top < 0) top.scrollIntoView({ block: 'start', behavior: scrollBehavior() })
@@ -304,7 +319,27 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
         ref={sectionRef}
         className="card space-y-6"
         aria-labelledby={`${ex.id}-h`}
-        {...lookupAttrs({ src: { kind: 'exercise', id: ex.id }, locked: !current })}
+        {...lookupAttrs({ src: { kind: 'exercise', id: ex.id }, locked: !lookup || !current })}
+        onPointerDownCapture={(e) => {
+          pointerType.current = e.pointerType
+        }}
+        onClickCapture={(e) => {
+          // The tail of a double activation of «Дальше» lands on the new task: swallow it (C-01).
+          const since = Date.now() - advancedAt.current
+          const touch = pointerType.current === 'touch' || pointerType.current === 'pen'
+          // (Keyboard: a held Enter is stopped below as key repeat; a fresh Enter is deliberate.)
+          const stray = (e.detail > 1 && since < DOUBLE_CLICK_GUARD_MS) || (e.detail > 0 && touch && since < TAP_GUARD_MS)
+          if (!stray) return
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        onKeyDownCapture={(e) => {
+          // A held Enter / Space must not keep activating buttons («Дальше», then the next task's option).
+          if (!e.repeat || (e.key !== 'Enter' && e.key !== ' ')) return
+          const t = e.target as HTMLElement
+          if (t.closest('input, textarea, [contenteditable="true"]')) return
+          e.preventDefault()
+        }}
       >
         <h3
           id={`${ex.id}-h`}
@@ -331,8 +366,10 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
                 type="button"
                 className={cx('btn-primary w-full sm:w-auto sm:min-w-40')}
                 onClick={(e) => {
-                  // detail 0 = keyboard activation: ignore an Enter bounce right after the one that answered.
-                  if (e.detail === 0 && Date.now() - answeredAt.current < NEXT_GUARD_MS) return
+                  // detail 0 = keyboard activation: ignore an Enter bounce right after the one that answered;
+                  // detail > 1 = the rest of a double click on «Проверить» / an option that answered.
+                  const since = Date.now() - answeredAt.current
+                  if ((e.detail === 0 && since < NEXT_GUARD_MS) || (e.detail > 1 && since < DOUBLE_CLICK_GUARD_MS)) return
                   next()
                 }}
               >

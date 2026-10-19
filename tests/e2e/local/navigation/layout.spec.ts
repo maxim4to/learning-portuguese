@@ -48,7 +48,6 @@ for (const width of [360, 390, 768, 1280]) {
     test.setTimeout(90_000)
     await page.setViewportSize({ width, height: 900 })
     for (const route of ROUTES) {
-      if (route === '/practice/tutor' && width === 360) continue // BUG C-04 — its own test below
       await app.goto(route)
       await expect(app.main.locator('h1, [role="heading"]').first().or(app.main.getByText(/не найден/))).toBeVisible()
       await assertNoOverflow(page, route, width)
@@ -56,8 +55,8 @@ for (const width of [360, 390, 768, 1280]) {
   })
 }
 
-test('tutor hub: no horizontal page scroll @360px [BUG C-04]', async ({ app, page }) => {
-  test.fail(true, 'BUG C-04: docs/testing-bugs/C.md#c-04 — «Темы для занятия» cards widen the grid track past 360px')
+// Regression C-04: «Темы для занятия» cards used to widen the implicit grid track past 360px.
+test('tutor hub: no horizontal page scroll @360px [C-04]', async ({ app, page }) => {
   await page.setViewportSize({ width: 360, height: 900 })
   await app.goto('/practice/tutor')
   await expect(page.getByRole('heading', { name: 'Темы для занятия' })).toBeVisible()

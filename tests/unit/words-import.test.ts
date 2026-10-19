@@ -29,7 +29,7 @@ describe('splitImportLine', () => {
 
   // BUG A-23: see docs/testing-bugs/A.md — quotes are stripped before the trailing punctuation, so «"хлеб".»
   // keeps a stray closing quote: the translation is saved as «хлеб"».
-  test.fails('quoted translation followed by a period', () => {
+  test('quoted translation followed by a period', () => {
     expect(splitImportLine('"pão" — "хлеб".')).toEqual({ pt: 'pão', ru: 'хлеб' })
     expect(splitImportLine('«pão» — «хлеб».')).toEqual({ pt: 'pão', ru: 'хлеб' })
   })
@@ -54,7 +54,7 @@ describe('splitImportLine', () => {
 
   // BUG A-22: see docs/testing-bugs/A.md — «palavra = перевод; другой перевод»: «;» is tried before «=», so the
   // Portuguese side becomes «palavra = перевод» (has Cyrillic) and the whole line is skipped as «no-pt».
-  test.fails('«=» with several «;»-separated meanings keeps the word', () => {
+  test('«=» with several «;»-separated meanings keeps the word', () => {
     expect(splitImportLine('sumo = сок; нектар')).toEqual({ pt: 'sumo', ru: 'сок; нектар' })
   })
 })

@@ -176,7 +176,6 @@ test.describe('legacy word cards', () => {
   })
 
   test('the cleanup offer appears when the cards arrive after Settings was opened (first sign-in on a device)', async ({ page }, info) => {
-    test.fail(true, 'BUG E-02: docs/testing-bugs/E.md#e-02 — the legacy-card count is taken once on mount')
     const { a: email } = workerUsers(info)
     await page.goto('settings')
     const uid = await signInFresh(page, email)

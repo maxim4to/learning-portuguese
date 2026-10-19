@@ -198,7 +198,6 @@ test.describe('convergence', () => {
   })
 
   test('card conflict: the newer review wins over a later-acknowledged older one', async ({ page, context }, info) => {
-    test.fail(true, 'BUG E-01: docs/testing-bugs/E.md#e-01 — an older offline review overwrites a newer one from another device')
     const { a: email } = workerUsers(info)
     await page.clock.setFixedTime(NOW)
     const traffic = await FirestoreTraffic.attach(page)
@@ -206,6 +205,8 @@ test.describe('convergence', () => {
     const uid = await signInFresh(page, email)
     const due = card('err-1', { front: 'Pergunta um', back: 'Resposta um' })
     await seedServer(uid, { cards: [due] })
+    // The worker's user may still have another test's cards until the wipe reaches this device's listener.
+    await expectSnapshot(page, uid, (d) => Object.keys(d.cards ?? {}).join() === 'err-1', 'only the seeded card')
     await expect(page.getByRole('button', { name: 'Начать' })).toBeVisible()
 
     // This device reviews offline (older review: NOW)…

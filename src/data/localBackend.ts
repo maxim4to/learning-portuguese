@@ -2,11 +2,13 @@
  * Local-mode backend for the DataStore: the same localStorage layout as LocalRepository
  * (ptpt:v1:progress / cards / words as id maps, errors as an array, settings as an object), so existing
  * local data keeps working. Delivers everything synchronously on connect (first render has the data) and
- * follows other tabs through the `storage` event.
+ * follows other tabs through the `storage` event. Stored data is shape-checked on read (src/data/validate.ts):
+ * a value of the wrong shape counts as empty, a broken document is dropped — the app always starts.
  */
 import { LOCAL_SETTINGS_KEY } from './deviceProgress.ts'
 import { COLS, SETTINGS_ID, type Backend, type BackendSink, type Col, type RemoteChange, type WriteOp } from './store.ts'
 import type { ErrorEntry } from './types.ts'
+import { repairCollection, repairError, repairList, warnOnce } from './validate.ts'
 
 const PREFIX = 'ptpt:v1:'
 const KEYS: Record<Col, string> = {
@@ -19,39 +21,41 @@ const KEYS: Record<Col, string> = {
 /** LocalRepository kept the newest 2000 errors. */
 const MAX_ERRORS = 2000
 
-function read<T>(key: string, fallback: T): T {
+function read(key: string): unknown {
   try {
     const raw = globalThis.localStorage?.getItem(key)
-    return raw ? (JSON.parse(raw) as T) : fallback
+    return raw ? (JSON.parse(raw) as unknown) : undefined
   } catch {
-    return fallback
+    warnOnce('local', key, 'invalid JSON')
+    return undefined
   }
 }
 
-/** The collection as an id → document map. */
+/** The collection as an id → document map (shape-checked). */
 function readCol(col: Col): Record<string, object> {
-  if (col === 'errors') return Object.fromEntries(read<ErrorEntry[]>(KEYS.errors, []).map((e) => [e.id, e]))
-  if (col === 'meta') {
-    const s = read<object | null>(KEYS.meta, null)
-    return s ? { [SETTINGS_ID]: s } : {}
+  const raw = read(KEYS[col])
+  if (col === 'errors') {
+    // Stored as an array; anything else is treated as empty.
+    if (raw !== undefined && !Array.isArray(raw)) warnOnce('local', col, raw)
+    const { ok, skipped } = repairList(Array.isArray(raw) ? raw : [], (x) => repairError(x))
+    if (skipped) warnOnce('local', col, `${skipped} document(s)`)
+    return Object.fromEntries(ok.map((e) => [e.id, e]))
   }
-  return read<Record<string, object>>(KEYS[col], {})
+  if (col === 'meta') return raw === undefined || raw === null ? {} : repairCollection('meta', { [SETTINGS_ID]: raw }, 'local')
+  return repairCollection(col, raw ?? undefined, 'local')
 }
 
-function writeCol(col: Col, docs: Record<string, object>): void {
-  const ls = globalThis.localStorage
+/** The new raw value of a collection's key (null = remove the key). */
+function serialize(col: Col, docs: Record<string, object>): string | null {
   if (col === 'errors') {
     const list = (Object.values(docs) as ErrorEntry[]).sort((a, b) => a.at - b.at).slice(-MAX_ERRORS)
-    ls.setItem(KEYS.errors, JSON.stringify(list))
-  } else if (col === 'meta') {
-    const s = docs[SETTINGS_ID]
-    if (s) ls.setItem(KEYS.meta, JSON.stringify(s))
-    else ls.removeItem(KEYS.meta)
-  } else if (Object.keys(docs).length === 0) {
-    ls.removeItem(KEYS[col])
-  } else {
-    ls.setItem(KEYS[col], JSON.stringify(docs))
+    return JSON.stringify(list)
   }
+  if (col === 'meta') {
+    const s = docs[SETTINGS_ID]
+    return s ? JSON.stringify(s) : null
+  }
+  return Object.keys(docs).length === 0 ? null : JSON.stringify(docs)
 }
 
 export class LocalBackend implements Backend {
@@ -89,6 +93,30 @@ export class LocalBackend implements Backend {
       if (op.data === null) delete docs[op.id]
       else docs[op.id] = op.data
     }
-    for (const [col, docs] of touched) writeCol(col, docs)
+    // All or nothing: when a later key hits the quota, the keys already written get their old values back
+    // (the store rolls the whole commit back in memory, so storage must match).
+    const ls = globalThis.localStorage
+    const written: [key: string, old: string | null][] = []
+    try {
+      for (const [col, docs] of touched) {
+        const key = KEYS[col]
+        const old = ls.getItem(key)
+        const next = serialize(col, docs)
+        if (next === old) continue
+        written.push([key, old])
+        if (next === null) ls.removeItem(key)
+        else ls.setItem(key, next)
+      }
+    } catch (e) {
+      for (const [key, old] of written.reverse()) {
+        try {
+          if (old === null) ls.removeItem(key)
+          else ls.setItem(key, old)
+        } catch {
+          // restoring an old (already stored) value can hardly fail; nothing more to do
+        }
+      }
+      throw e
+    }
   }
 }

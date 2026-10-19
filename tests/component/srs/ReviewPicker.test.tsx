@@ -83,9 +83,8 @@ describe('ReviewPicker', () => {
     expect(addBtn(SPECS[2].back)).toBeEnabled()
   })
 
-  // The replacing control is still disabled (picker.busy) when the `added` effect calls focus(), and the effect
-  // does not run again once busy clears — keyboard focus falls to <body>.
-  test.fails('keyboard focus moves from «Добавить» to «Убрать» [BUG B-20]', async () => {
+  // Regression B-20: the replacing control is disabled while the write is in flight; focus must land on it after.
+  test('keyboard focus moves from «Добавить» to «Убрать» [B-20]', async () => {
     const { user } = setup()
     addBtn(SPECS[0].back).focus()
     await user.keyboard('{Enter}')
@@ -93,7 +92,7 @@ describe('ReviewPicker', () => {
     expect(removeBtn(SPECS[0].back)).toHaveFocus()
   })
 
-  test.fails('keyboard focus moves from «Убрать» back to «Добавить» [BUG B-20]', async () => {
+  test('keyboard focus moves from «Убрать» back to «Добавить» [B-20]', async () => {
     const { user } = setup([card(SPECS[2].id, { kind: 'grammar', fsrs: fsrsNew() })])
     removeBtn(SPECS[2].back).focus()
     await user.keyboard('{Enter}')

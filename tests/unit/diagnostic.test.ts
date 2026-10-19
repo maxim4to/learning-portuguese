@@ -67,12 +67,21 @@ describe('diagnostic: spreadShuffle / buildStages', () => {
     sameItems(out, qs)
     expect(out.map((x) => x.topicId)).toEqual(['a', 'b', 'a'])
   })
-  // BUG A-15: see docs/testing-bugs/A.md — the single greedy pass can leave a clash behind it.
-  it.fails('greedy repair finds the spread when one exists (a a a b b → a b a b a)', () => {
+  // A-15 (fixed): the repair finds a spread whenever one exists.
+  it('greedy repair finds the spread when one exists (a a a b b → a b a b a)', () => {
     const qs = [q('1', 'a'), q('2', 'a'), q('3', 'a'), q('4', 'b'), q('5', 'b')]
     const out = spreadShuffle(qs, () => 0.999)
     sameItems(out, qs)
     expect(adjacent(out)).toBe(false)
+    expect(out.map((x) => x.topicId)).toEqual(['a', 'b', 'a', 'b', 'a'])
+  })
+  it('repair spreads three topics with a dominant one (4 a, 2 b, 1 c) and keeps every question once', () => {
+    const qs = [q('1', 'a'), q('2', 'a'), q('3', 'a'), q('4', 'a'), q('5', 'b'), q('6', 'b'), q('7', 'c')]
+    for (const r of [() => 0.999, () => 0]) {
+      const out = spreadShuffle(qs, r)
+      sameItems(out, qs)
+      expect(adjacent(out)).toBe(false)
+    }
   })
   it('defaults to Math.random', () => {
     const qs = [q('1', 'a'), q('2', 'b'), q('3', 'c')]

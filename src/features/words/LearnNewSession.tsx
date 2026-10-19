@@ -8,7 +8,7 @@
  *    the word is in the normal review queue.
  * Keys: Enter / Space — «Дальше»; 1–4 — an option; ↑↓ — move between options.
  */
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from 'react'
+import { useCallback, useEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
 import { Check, CircleCheck, CircleX, GraduationCap, X } from 'lucide-react'
 import { Button, ButtonLink } from '@/components/Button'
 import { cx } from '@/components/cx'
@@ -127,29 +127,36 @@ export function LearnNewSession({ onClose }: { onClose(): void }) {
     }
   }, [])
 
-  const studied = useMemo(() => (items ?? []).filter((it) => !knownIds.has(it.entry.id)), [items, knownIds])
+  const studied = (items ?? []).filter((it) => !knownIds.has(it.entry.id))
 
-  const startCheck = useCallback(() => {
-    const list = shuffle(studied).map((item): Check => {
-      const right = firstMeaning(item.entry.ru)
-      const options = shuffle([right, ...distractors(item.entry, dict.words, lex)])
-      return { item, options, correct: options.indexOf(right) }
-    })
-    setChecks(list)
-    setActiveOpt(0)
-    setPhase(list.length ? { kind: 'check', i: 0, picked: null } : { kind: 'done' })
-  }, [studied, dict.words, lex])
-
-  const next = useCallback(() => {
-    if (!items) return
-    if (phase.kind === 'study') {
-      if (phase.i + 1 < items.length) setPhase({ kind: 'study', i: phase.i + 1 })
-      else startCheck()
-    } else if (phase.kind === 'check' && phase.picked !== null) {
+  /** `alsoKnown`: a word marked known just now (its state update is not visible to this closure yet). */
+  const startCheck = useCallback(
+    (alsoKnown?: string) => {
+      const list = shuffle((items ?? []).filter((it) => !knownIds.has(it.entry.id) && it.entry.id !== alsoKnown)).map((item): Check => {
+        const right = firstMeaning(item.entry.ru)
+        const options = shuffle([right, ...distractors(item.entry, dict.words, lex)])
+        return { item, options, correct: options.indexOf(right) }
+      })
+      setChecks(list)
       setActiveOpt(0)
-      setPhase(phase.i + 1 < checks.length ? { kind: 'check', i: phase.i + 1, picked: null } : { kind: 'done' })
-    }
-  }, [items, phase, checks.length, startCheck])
+      setPhase(list.length ? { kind: 'check', i: 0, picked: null } : { kind: 'done' })
+    },
+    [items, knownIds, dict.words, lex],
+  )
+
+  const next = useCallback(
+    (alsoKnown?: string) => {
+      if (!items) return
+      if (phase.kind === 'study') {
+        if (phase.i + 1 < items.length) setPhase({ kind: 'study', i: phase.i + 1 })
+        else startCheck(alsoKnown)
+      } else if (phase.kind === 'check' && phase.picked !== null) {
+        setActiveOpt(0)
+        setPhase(phase.i + 1 < checks.length ? { kind: 'check', i: phase.i + 1, picked: null } : { kind: 'done' })
+      }
+    },
+    [items, phase, checks.length, startCheck],
+  )
 
   async function markKnown(entry: WordEntry) {
     if (busy) return
@@ -158,7 +165,7 @@ export function LearnNewSession({ onClose }: { onClose(): void }) {
       const { undo } = await actions.markKnown(entry.id)
       setKnownIds((s) => new Set(s).add(entry.id))
       toast({ text: `Отмечено как известное: ${wordPt(entry)}`, action: { label: 'Отменить', onClick: () => void undo() } })
-      next()
+      next(entry.id)
     } catch (e) {
       toast({ text: `Не удалось сохранить: ${e instanceof Error ? e.message : String(e)}`, tone: 'danger' })
     } finally {
@@ -269,7 +276,7 @@ export function LearnNewSession({ onClose }: { onClose(): void }) {
               <Button variant="secondary" disabled={busy} onClick={() => void markKnown(items[phase.i].entry)}>
                 Знаю уже
               </Button>
-              <Button ref={primaryRef} className="sm:min-w-40" onClick={next}>
+              <Button ref={primaryRef} className="sm:min-w-40" onClick={() => next()}>
                 {phase.i + 1 < total ? 'Дальше' : 'К проверке'}
                 <kbd className="hidden rounded-md bg-on-brand/20 px-1.5 py-0.5 font-sans text-xs md:inline">Enter</kbd>
               </Button>
@@ -290,7 +297,7 @@ export function LearnNewSession({ onClose }: { onClose(): void }) {
           >
             {phase.picked !== null && (
               <div className="flex sm:justify-end">
-                <Button ref={primaryRef} block className="scroll-mb-[calc(var(--bottom-chrome)+1rem)] sm:w-auto sm:min-w-40" onClick={next}>
+                <Button ref={primaryRef} block className="scroll-mb-[calc(var(--bottom-chrome)+1rem)] sm:w-auto sm:min-w-40" onClick={() => next()}>
                   {phase.i + 1 < checks.length ? 'Дальше' : 'Готово'}
                   <kbd className="hidden rounded-md bg-on-brand/20 px-1.5 py-0.5 font-sans text-xs md:inline">Enter</kbd>
                 </Button>

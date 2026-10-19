@@ -51,7 +51,12 @@ export function TextAnswer({
   }
 
   function onKeyDown(e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, i: number) {
-    if (isLookupOpen() || e.key !== 'Enter' || !noMods(e)) return
+    if (e.key !== 'Enter' || !noMods(e)) return
+    if (isLookupOpen()) {
+      // Enter belongs to the word card: no implicit <form> submission behind it.
+      e.preventDefault()
+      return
+    }
     if (isImeEnter(e)) {
       // Safari fires this Enter right after the IME committed: don't let it submit the form implicitly.
       if (!e.nativeEvent.isComposing) e.preventDefault()

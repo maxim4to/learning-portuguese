@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 import { KIND_CHIP, KIND_LABEL, KIND_SHORT, LISTEN_MARK, WORD_TASK } from './kinds'
 import { WORD_MODE_LABEL } from '@/features/words/status'
 import { wordHref } from '@/features/words/source'
-import { deleteCards } from './cardOps'
+import { deleteCards, togglePause } from './cardOps'
 
 const KINDS: CardKind[] = ['word', 'phrase', 'grammar', 'error']
 
@@ -160,7 +160,7 @@ export function CardList({ cards, onChanged }: Props) {
                   disabled={busy === c.id}
                   title={c.suspended ? 'Вернуть в повторение' : 'Приостановить'}
                   aria-label={c.suspended ? `Вернуть «${c.front}» в повторение` : `Приостановить «${c.front}»`}
-                  onClick={() => void run(c.id, () => repo.upsertCards([{ ...c, suspended: !c.suspended, updatedAt: Date.now() }]))}
+                  onClick={() => void run(c.id, () => repo.upsertCards([togglePause(c)]))}
                 >
                   {c.suspended ? <Play aria-hidden /> : <Pause aria-hidden />}
                 </button>

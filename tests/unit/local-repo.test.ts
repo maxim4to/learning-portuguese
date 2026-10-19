@@ -189,11 +189,29 @@ describe('LocalBackend', () => {
 
   // BUG A-11: see docs/testing-bugs/A.md — read() only guards JSON.parse; a parseable value of the wrong shape
   // (errors stored as an object, a collection stored as `null`) throws in readCol → connect → attach (white screen).
-  it.fails('wrong shapes (errors as an object, progress as null) do not break connect', () => {
+  it('wrong shapes (errors as an object, progress as null) do not break connect', () => {
     ls.setItem('ptpt:v1:errors', '{"a":1}')
     ls.setItem('ptpt:v1:progress', 'null')
     const s = sink()
     expect(() => new LocalBackend().connect(s)).not.toThrow()
+  })
+
+  // E-03: parseable values of the wrong shape (inside a collection) are repaired or dropped, never crash readers.
+  it('wrong shapes inside collections: broken documents are dropped, the rest is delivered (and repaired)', () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {})
+    ls.setItem('ptpt:v1:progress', JSON.stringify({ a: progress('a', 9), b: { topicId: 'b', history: 'x', lastPct: 0.5 }, c: 42, d: { topicId: 'd' } }))
+    ls.setItem('ptpt:v1:cards', JSON.stringify({ c1: { id: 'c1' }, c2: card('c2'), c3: null }))
+    ls.setItem('ptpt:v1:words', JSON.stringify({ w: { id: 'w', lemma: 'casa' }, ok: word('pão', 'хлеб') }))
+    ls.setItem('ptpt:v1:errors', JSON.stringify([null, { id: 'x' }, errorEntry('e1')]))
+    ls.setItem('ptpt:v1:settings', JSON.stringify({ rate: null, voice: 'robot', lenientAccents: true, wordModes: 'all' }))
+    const store = new DataStore({ kind: 'local' })
+    store.attach(new LocalBackend())
+    expect(store.progressList().map((p) => p.topicId).sort()).toEqual(['a', 'b'])
+    expect(store.progressMap().get('b')!.history).toEqual([])
+    expect(store.cardList().map((c) => c.id)).toEqual(['c2'])
+    expect(store.wordList().map((w) => w.id)).toEqual(['u:pão'])
+    expect(store.errorList().map((e) => e.id)).toEqual(['e1'])
+    expect(store.settings()).toEqual({ ...DEFAULT_SETTINGS, lenientAccents: true })
   })
 
   it('commit: errors sorted by time and capped at 2000; empty collections / missing settings remove their keys', async () => {

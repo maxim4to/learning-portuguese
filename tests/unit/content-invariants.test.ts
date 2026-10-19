@@ -262,9 +262,8 @@ describe('content: prerequisites and links', () => {
     expect(bad).toEqual([])
   })
 
-  // BUG A-13: see docs/testing-bugs/A.md — b1-conjuntivo-conjuncoes requires b1-futuro-conjuntivo, which the
-  // syllabus lists two topics later: a learner following course order is told «Лучше сначала: …» a topic ahead.
-  it.fails('prerequisites come earlier in the syllabus order (course order never points forward)', () => {
+  // A-13 (fixed): b1-futuro-conjuntivo now comes before b1-conjuntivo-conjuncoes, which requires it.
+  it('prerequisites come earlier in the syllabus order (course order never points forward)', () => {
     const order = new Map(built.index.topicOrder.map((id, i) => [id, i]))
     const bad = prereqPairs()
       .filter(([t, r]) => order.get(r.id)! > order.get(t.id)!)

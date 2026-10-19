@@ -7,7 +7,7 @@
 import { expect, test } from '../../../helpers/test'
 import { comprar, saude, xaroposo } from '../../../fixtures/d-words'
 import { NOW, DAY, card, fsrs, type Seed } from '../../../fixtures/seed'
-import { cardTitle, clickWord, wordBox, dictCard, fakeSpeech, fsrsNewAt, fsrsReview, lookupCard, storedCards, toastBox } from '../../../helpers/d-dict'
+import { cardTitle, clickWord, dictCard, fakeSpeech, fsrsNewAt, fsrsReview, lookupCard, storedCards, toastBox } from '../../../helpers/d-dict'
 import type { Page } from '@playwright/test'
 
 const ratingGroup = (page: Page) => page.getByRole('group', { name: /Насколько легко вы вспомнили\?|Оцените, как далось задание/ })
@@ -122,14 +122,30 @@ test.describe('«Учить новые»', () => {
 test.describe('review of dictionary cards', () => {
   test('a lookup opened right after the reveal stays open', async ({ app, page, seed, isMobile }) => {
     test.skip(isMobile, 'pointer lookup on desktop')
-    test.fail(true, 'BUG D-07: the post-reveal auto-scroll (260 ms) closes a popover opened before it')
     await seed({ words: [comprar], cards: [dictCard(comprar, 'recognize', { fsrs: fsrsReview(3, -DAY) })] })
-    await page.setViewportSize({ width: 1280, height: 600 })
+    // The example line is visible, but the card's bottom is under the sticky rating row: the session wants to scroll.
+    await page.setViewportSize({ width: 1280, height: 660 })
+    // Deterministic timing: the page clock is paused from the reveal to the click, so the click lands before the
+    // 260 ms post-reveal auto-scroll timer however slow the run is; meanwhile (real time) the 240 ms reveal
+    // animation ends, so the word's box doesn't move between measuring and the click. Then the timer runs —
+    // D-07: it must leave the open card alone.
     await startReview(page, app, '/review?deck=words')
+    await page.clock.pauseAt((await page.evaluate(() => Date.now())) + 50)
     await page.getByRole('button', { name: /^Показать ответ/ }).click()
+    await page.waitForTimeout(400) // CSS animation (real time); the app's timers are paused
     const example = page.getByText('Ontem comprei pão na padaria.')
-    const b = await wordBox(example, 'padaria')
+    // Measured where it is (no scrollIntoView, unlike wordBox): the page must still need the auto-scroll.
+    const b = await example.evaluate((el) => {
+      const t = [...el.childNodes].find((n) => n.nodeType === Node.TEXT_NODE && n.nodeValue?.includes('padaria'))!
+      const at = t.nodeValue!.indexOf('padaria')
+      const r = document.createRange()
+      r.setStart(t, at)
+      r.setEnd(t, at + 7)
+      const box = r.getBoundingClientRect()
+      return { x: box.left + box.width / 2, y: box.top + box.height / 2 }
+    })
     await page.mouse.click(b.x, b.y)
+    await page.clock.resume() // the auto-scroll timer fires now, with the card open
     await cardTitle(page)
     await page.waitForTimeout(600)
     await expect(lookupCard(page)).toBeVisible({ timeout: 100 })
@@ -341,7 +357,6 @@ test.describe('deck and edge cases', () => {
     await page.getByRole('button', { name: /^Показать ответ/ }).click()
     await rating(page, 'Хорошо').click()
     await expect(page.getByRole('heading', { name: 'Сессия завершена' })).toBeVisible()
-    test.fail(true, 'BUG D-06: the session writes the rated card back — an orphan lex: card without its word')
     await expect.poll(async () => Object.keys(await storedCards(page)), { timeout: 3000 }).toEqual([])
   })
 })

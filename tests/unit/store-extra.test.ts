@@ -152,7 +152,7 @@ describe('readiness & boot', () => {
 
   // BUG A-08: see docs/testing-bugs/A.md — a store that was not hydrated from a snapshot at construction loses
   // readiness on revalidate()/re-attach (serverSynced is cleared, `hydrated` is only set in the constructor).
-  it.fails('revalidate() after the first full sync keeps a store (opened without a snapshot) ready', () => {
+  it('revalidate() after the first full sync keeps a store (opened without a snapshot) ready', () => {
     const { store, be } = syncedStore({ progress: { t: progress('t', 9) } })
     expect(store.isReady()).toBe(true)
     store.revalidate()
@@ -641,7 +641,7 @@ describe('export / import', () => {
 
   // BUG A-09: see docs/testing-bugs/A.md — parseExportBundle validates `words` only; malformed progress / cards /
   // errors entries are imported as documents keyed "undefined" (or crash with a TypeError on null).
-  it.fails('importAll skips (or rejects) malformed progress / cards / errors entries', async () => {
+  it('importAll skips (or rejects) malformed progress / cards / errors entries', async () => {
     const { store } = syncedStore()
     await store
       .importAll(bundle({ progress: [{}, progress('ok', 5)], cards: [{ front: 'no id' }], errors: [{ given: 'x' }] }) as unknown as ExportBundle)
@@ -689,7 +689,7 @@ describe('local mode with a full disk (LocalBackend + quota)', () => {
 
   // BUG A-10: see docs/testing-bugs/A.md — LocalBackend.commit writes collection by collection; when a later
   // collection hits the quota the earlier ones stay in localStorage while the store rolls all of them back.
-  it.fails('a word bundle that only partly fits leaves memory and localStorage consistent', async () => {
+  it('a word bundle that only partly fits leaves memory and localStorage consistent', async () => {
     const store = new DataStore({ kind: 'local' })
     store.attach(new LocalBackend())
     ls.failSetItem = (k) => k === 'ptpt:v1:cards'
@@ -733,6 +733,11 @@ const fs = vi.hoisted(() => {
     listeners: [] as Listener[],
     batches: [] as { ops: { op: 'set' | 'delete'; path: string; data?: unknown }[] }[],
     server: {} as Record<string, string[]>,
+    /** Errors thrown by the next batch commits (in order). */
+    commitErrors: [] as unknown[],
+    /** getDocFromServer: documents by path; `readError` makes it throw. */
+    serverDocs: {} as Record<string, object>,
+    readError: null as unknown,
   }
   const db = { fake: 'db' }
   const pathOf = (r: unknown) => (r as { path: string }).path
@@ -767,8 +772,16 @@ const fs = vi.hoisted(() => {
         return {
           set: (r: unknown, data: unknown) => b.ops.push({ op: 'set', path: pathOf(r), data }),
           delete: (r: unknown) => b.ops.push({ op: 'delete', path: pathOf(r) }),
-          commit: async () => {},
+          commit: async () => {
+            const e = state.commitErrors.shift()
+            if (e) throw e
+          },
         }
+      },
+      getDocFromServer: async (r: unknown) => {
+        if (state.readError) throw state.readError
+        const d = state.serverDocs[pathOf(r)]
+        return { exists: () => d !== undefined, data: () => d }
       },
       getDocs: async (r: unknown) => ({ docs: (state.server[pathOf(r)] ?? []).map((id) => ({ id })) }),
     },
@@ -893,6 +906,58 @@ describe('FirestoreBackend (fake SDK)', () => {
       { op: 'delete', path: 'users/u/meta/settings' },
       { op: 'delete', path: `users/u/words/${encodeURIComponent('u:são')}` },
     ])
+  })
+
+  // E-01: firestore.rules deny a card update carrying an older review than the server's; commit resolves it.
+  it('card conflict: a denied older review is dropped, the server card is kept and the rest re-committed', async () => {
+    const { FirestoreBackend } = await load()
+    fs.state.commitErrors = [{ code: 'permission-denied' }]
+    fs.state.readError = null
+    const older = card('err-1', { fsrs: fsrs({ last_review: NOW, reps: 4 }), updatedAt: NOW })
+    const newer = card('err-1', { fsrs: fsrs({ last_review: NOW + 3_600_000, reps: 9 }), updatedAt: NOW + 3_600_000 })
+    fs.state.serverDocs = { 'users/u/cards/err-1': newer }
+    const store = new DataStore({ kind: 'firestore', saveDelayMs: 0 })
+    const errors: WriteError[] = []
+    store.onWriteError((e) => errors.push(e))
+    store.attach(new FirestoreBackend(app, 'u'))
+    await store.write([
+      { col: 'cards', id: 'err-1', data: older },
+      { col: 'progress', id: 't', data: progress('t', 5) },
+    ])
+    await tick()
+    await tick()
+    expect(errors).toEqual([])
+    expect(store.getDocs().cards['err-1'].fsrs.reps).toBe(9) // the newer review won
+    expect(store.getDocs().progress.t).toBeDefined()
+    const paths = fs.state.batches.map((b) => b.ops.map((o) => o.path))
+    expect(paths[1]).toEqual(['users/u/progress/t']) // the rest re-committed without the outdated card
+    expect(store.getSync().pendingWrites).toBe(0)
+    store.dispose()
+  })
+
+  it('a denial that is not a card conflict is reported (rolled back) as before', async () => {
+    const { FirestoreBackend } = await load()
+    const store = new DataStore({ kind: 'firestore', saveDelayMs: 0 })
+    const errors: WriteError[] = []
+    store.onWriteError((e) => errors.push(e))
+    store.attach(new FirestoreBackend(app, 'u'))
+    // the server has no newer review: a genuine denial
+    fs.state.commitErrors = [{ code: 'permission-denied' }]
+    fs.state.serverDocs = {}
+    await store.upsertCards([card('a')])
+    await tick()
+    await tick()
+    expect(errors).toHaveLength(1)
+    expect(store.cardList()).toEqual([])
+    // reads denied as well (access revoked)
+    fs.state.commitErrors = [{ code: 'permission-denied' }]
+    fs.state.readError = { code: 'permission-denied' }
+    await store.upsertCards([card('b')])
+    await tick()
+    await tick()
+    expect(errors).toHaveLength(2)
+    fs.state.readError = null
+    store.dispose()
   })
 
   it('allIds: decoded ids of every progress collection (used by reset)', async () => {

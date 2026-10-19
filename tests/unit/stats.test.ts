@@ -6,7 +6,7 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { getSyllabus, listTopics } from '@/content'
 import type { SrsCard, TopicProgress, TopicResult } from '@/data/types.ts'
-import { activityDays, computeStreak, dayKey, levelStats, startOfDay, suggestTopics, weeklyActivity } from '@/features/dashboard/stats'
+import { activityDays, computeStreak, dayKey, levelStats, primarySuggestion, startOfDay, suggestTopics, weeklyActivity } from '@/features/dashboard/stats'
 import { card, errorEntry, fsrs, NOW, progress } from '../fixtures/seed'
 
 const ORIGINAL_TZ = process.env.TZ
@@ -177,6 +177,16 @@ describe('levelStats', () => {
   })
   it('empty progress → everything not started', () => {
     for (const r of levelStats(new Map())) expect(r.counts['not-started']).toBe(r.total)
+  })
+})
+
+describe('primarySuggestion (dashboard primary step and course card — C-02)', () => {
+  const topics = listTopics()
+  it('a weak topic wins over unstarted ones; with no shaky topic → the next topic in course order', () => {
+    expect(primarySuggestion(new Map())).toMatchObject({ topic: { id: topics[0].id }, reason: 'next' })
+    const m = pmap(progress(topics[0].id, 10), progress(topics[2].id, 3))
+    expect(primarySuggestion(m)).toMatchObject({ topic: { id: topics[2].id }, reason: 'weak' })
+    expect(primarySuggestion(m)).toEqual(suggestTopics(m, 2)[0])
   })
 })
 

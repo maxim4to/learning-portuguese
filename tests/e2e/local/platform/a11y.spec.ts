@@ -19,10 +19,8 @@ async function axe(page: Page, include?: string) {
 }
 
 /** Known, filed violations: route name → bug id, when it applies (viewport width). Everything else must be clean. */
-const KNOWN: Record<string, { bug: string; when: (width: number) => boolean }> = {
-  // «Роль B» is shown from 420px; the accessible name «Ролевая игра: вы — B» doesn't contain it (WCAG 2.5.3).
-  situation: { bug: 'E-06', when: (w) => w >= 420 },
-}
+// (E-06 «Роль B» label-in-name: fixed.)
+const KNOWN: Record<string, { bug: string; when: (width: number) => boolean }> = {}
 
 /** Waits until entrance animations / transitions have finished (axe reads mid-fade colours otherwise). */
 async function settle(page: Page) {

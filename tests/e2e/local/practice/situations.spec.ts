@@ -67,7 +67,7 @@ test.describe('situations', () => {
 
   test('dialogue: role B hides my lines; «Показать» one, then all', async ({ app, page }) => {
     await app.goto(`/practice/situations/${ID}`)
-    const role = page.getByRole('button', { name: 'Ролевая игра: вы — B' })
+    const role = page.getByRole('button', { name: 'Роль B: ролевая игра, вы — B' })
     await role.click()
     await expect(role).toHaveAttribute('aria-pressed', 'true')
     const reveal = page.getByRole('button', { name: 'Показать', exact: true })

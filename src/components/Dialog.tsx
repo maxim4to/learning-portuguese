@@ -50,9 +50,14 @@ export function Dialog({
       if (d.open) d.close()
       const el = opener.current
       // Return focus to the opener on close / unmount, unless the dialog was reopened meanwhile
-      // (StrictMode) or the opener is gone (e.g. navigated away).
+      // (StrictMode), the opener is gone (e.g. navigated away) or the owner already moved focus elsewhere
+      // (e.g. to a result line that replaced the opener). Safari doesn't focus clicked buttons, so the
+      // «opener» there may be an unrelated element (<main>) — it must not steal focus back.
       setTimeout(() => {
-        if (!d.open && el?.isConnected) el.focus()
+        if (d.open || !el?.isConnected) return
+        const a = document.activeElement
+        if (a && a !== document.body && a.isConnected && !d.contains(a)) return
+        el.focus()
       }, 0)
     }
   }, [open, initialFocusRef])

@@ -111,6 +111,15 @@ export interface SuggestedTopic {
   progress?: TopicProgress
 }
 
+/**
+ * The one topic to suggest right now — the dashboard's primary step («Подтянуть: …» / «Следующая тема: …») and the
+ * course page's card. A weak / shaky topic wins over a new one (`suggestTopics(progress, 1)` would always reserve the
+ * single slot for a new topic).
+ */
+export function primarySuggestion(progress: Map<string, TopicProgress>): SuggestedTopic | undefined {
+  return suggestTopics(progress, 2)[0]
+}
+
 /** Weakest started topics first (lowest last result), then the next unstarted topics in course order. */
 export function suggestTopics(progress: Map<string, TopicProgress>, count = 2): SuggestedTopic[] {
   const topics = listTopics()

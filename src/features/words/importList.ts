@@ -6,7 +6,7 @@
  *   const rows = resolveImportRows(lex, parsed.items, existing)   // lexicon lemma / pos / gender + conflicts
  *   saveWords(rows.filter(picked).map(importRowInput))
  *
- * Separators: « — », « – », « - » (a hyphen needs spaces around it: «levantar-se» stays one word), tab, «;», «=».
+ * Separators: « — », « – », « - » (a hyphen needs spaces around it: «levantar-se» stays one word), tab, «=», «;».
  * Ignored: empty lines, a header like «СЛОВА:», list markers («1.», «-», «•», «*»), code fences.
  */
 import type { LexEntry, Lexicon } from '../../engine/lexicon/lookup.ts'
@@ -42,11 +42,20 @@ const HEADER = /^\s*(?:слова|words|palavras)\s*:?\s*$/iu
 const FENCE = /^\s*```/
 const MARKER = /^\s*(?:\d{1,3}[.)]\s+|[-*•·–—]\s+)/u
 /** Separator candidates, strongest first. Each splits at the first occurrence. */
-const SEPARATORS: RegExp[] = [/\t+/, /\s+[—–]\s*|\s*[—–]\s+|[—–]/, /\s+-\s+/, /\s*;\s*/, /\s*=\s*/]
+/** «=» before «;»: «sumo = сок; нектар» is one word with two meanings. */
+const SEPARATORS: RegExp[] = [/\t+/, /\s+[—–]\s*|\s*[—–]\s+|[—–]/, /\s+-\s+/, /\s*=\s*/, /\s*;\s*/]
 const CYRILLIC = /\p{Script=Cyrillic}/u
 const LATIN = /\p{Script=Latin}/u
 
-const tidy = (s: string) => s.replace(/\s+/g, ' ').replace(/^[«"'“„]+|[»"'”]+$/gu, '').replace(/[.,;:]+$/u, '').trim()
+/** Collapses spaces, strips surrounding quotes and trailing punctuation in any order («"хлеб".» → «хлеб»). */
+function tidy(s: string): string {
+  let t = s.replace(/\s+/g, ' ').trim()
+  for (let prev = ''; prev !== t; ) {
+    prev = t
+    t = t.replace(/^[«"'“„]+|[»"'”]+$/gu, '').replace(/[.,;:]+$/u, '').trim()
+  }
+  return t
+}
 
 /** Splits one line into pt and ru (null when no separator is found). Swapped «перевод — palavra» is accepted. */
 export function splitImportLine(raw: string): { pt: string; ru: string } | null {

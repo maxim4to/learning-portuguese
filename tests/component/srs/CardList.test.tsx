@@ -106,13 +106,15 @@ describe('CardList · actions', () => {
     const { user, store } = setup()
     await user.click(screen.getByRole('button', { name: 'Приостановить «Добрый день»' }))
     await flush()
-    expect(store.cardList().find((c) => c.id === 'ph:1')).toMatchObject({ suspended: true, updatedAt: NOW })
+    // A hand pause is flagged so automatic resumes (word / settings modes) leave it paused (A-20).
+    expect(store.cardList().find((c) => c.id === 'ph:1')).toMatchObject({ suspended: true, pausedByUser: true, updatedAt: NOW })
     expect(onChanged).toHaveBeenCalledTimes(1)
     expect(rows().at(-1)).toHaveTextContent('приостановлена')
 
     await user.click(screen.getByRole('button', { name: 'Вернуть «Спасибо» в повторение' }))
     await flush()
-    expect(store.cardList().find((c) => c.id === 'ph:2')?.suspended).toBe(false)
+    expect(store.cardList().find((c) => c.id === 'ph:2')).not.toHaveProperty('suspended')
+    expect(store.cardList().find((c) => c.id === 'ph:2')).not.toHaveProperty('pausedByUser')
     expect(screen.getByRole('button', { name: 'Приостановить «Спасибо»' })).toBeInTheDocument()
   })
 

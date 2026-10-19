@@ -82,12 +82,29 @@ describe('snapshotStorage.load', () => {
 
   // BUG A-07: see docs/testing-bugs/A.md — load() only checks `v` and truthy `docs`; a collection stored as null
   // (or another non-object) passes and crashes every read of the store (progressMap / settings) on boot.
-  it.fails('wrong shapes: a snapshot with a null collection does not crash the store', () => {
+  it('wrong shapes: a snapshot with a null collection does not crash the store', () => {
     const u = uid()
     ls.setItem(SNAP_PREFIX + u, JSON.stringify({ v: 1, savedAt: 1, lastSyncedAt: null, docs: { progress: null, meta: null } }))
     const store = new DataStore({ kind: 'firestore', snapshot: snapshotStorage(u), saveDelayMs: 0 })
     expect(() => store.progressMap()).not.toThrow()
     expect(() => store.settings()).not.toThrow()
+  })
+})
+
+describe('snapshot: broken documents', () => {
+  it('documents of the wrong shape are dropped on load; the rest stays readable', () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const u = uid()
+    const docs = { progress: { t: progress('t', 7), bad: { topicId: 'bad', history: 5 } }, cards: { x: { id: 'x' }, c: card('c') }, errors: [1, 2], words: 'w', meta: { settings: { rate: 'fast' } } }
+    ls.setItem(SNAP_PREFIX + u, JSON.stringify({ v: 1, savedAt: 1, lastSyncedAt: 'x', docs }))
+    const store = new DataStore({ kind: 'firestore', snapshot: snapshotStorage(u), saveDelayMs: 0 })
+    expect(store.isReady()).toBe(true)
+    expect(store.cardList().map((c) => c.id)).toEqual(['c'])
+    expect([...store.progressMap().keys()]).toEqual(['t'])
+    expect(store.errorList()).toEqual([])
+    expect(store.wordList()).toEqual([])
+    expect(store.settings().rate).toBe(1)
+    expect(store.getSync().lastSyncedAt).toBeNull()
   })
 })
 

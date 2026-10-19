@@ -10,7 +10,7 @@ import { ProgressBar } from '@/components/ProgressBar'
 import { LevelBadge } from '@/components/StatusBadge'
 import { LEVELS, getSyllabus, getTopic, type Level, type SyllabusModule } from '@/content'
 import type { TopicProgress, TopicStatus } from '@/data/types.ts'
-import { suggestTopics } from '@/features/dashboard/stats'
+import { primarySuggestion } from '@/features/dashboard/stats'
 import { useProgressData } from '@/features/dashboard/useProgressData'
 import { STATUS_META, STATUS_ORDER, pct } from './status'
 
@@ -23,7 +23,7 @@ export function SyllabusPage() {
   const raw = params.get('level')
   const filter: Filter = raw && (LEVELS as readonly string[]).includes(raw) ? (raw as Level) : 'all'
 
-  const next = useMemo(() => (loading ? undefined : suggestTopics(progress, 1)[0]), [progress, loading])
+  const next = useMemo(() => (loading ? undefined : primarySuggestion(progress)), [progress, loading])
   const levels = syllabus.levels.filter((l) => filter === 'all' || l.level === filter)
 
   return (

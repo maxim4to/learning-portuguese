@@ -10,6 +10,15 @@ const APOSTROPHES = /[’‘‛`´ʼ′]/g
 const QUOTES = /[“”„‟«»"″]/g
 const DASHES = /[‐‑‒–—―]/g
 const PUNCT = /[.,!?;:…¿¡"()]/g
+/**
+ * What may follow a clitic hyphen typed with spaces («chama - se», «dir - lhe - ei»): pronouns and the
+ * futuro/condicional endings after a mesoclitic. Any other word after a spaced dash means the dash is a pause.
+ */
+const AFTER_HYPHEN = new Set(
+  'me te se nos vos lhe lhes o a os as lo la los las no na nas mo ma mos mas to ta tos tas lho lha lhos lhas ei ás á emos eis ão ia ias íamos íeis iam'.split(
+    ' ',
+  ),
+)
 
 export function normalize(s: string): string {
   return s
@@ -19,6 +28,9 @@ export function normalize(s: string): string {
     .replace(DASHES, '-')
     .toLocaleLowerCase('pt-PT')
     .replace(PUNCT, ' ')
+    // a dash with spaces on both sides is a pause («Olá — tudo bem?») unless a clitic follows («chama - se»)
+    .replace(/(\S)\s+-\s+(?=(\p{L}+))/gu, (_m, prev: string, next: string) => (AFTER_HYPHEN.has(next) ? `${prev}-` : `${prev} `))
+    .replace(/^\s*-+\s*|\s*-+\s*$/g, '') // dialogue dash at the start / a trailing dash
     .replace(/\s*-\s*/g, '-')
     .replace(/\s+/g, ' ')
     .trim()

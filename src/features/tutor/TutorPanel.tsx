@@ -36,11 +36,13 @@ interface Props<M extends string> {
   targetIds: string[]
   /** Hide the «Все сессии» link (on the hub itself). */
   hideHubLink?: boolean
+  /** Called right before the session is written (the write re-renders the caller with new progress). */
+  onSaving?: () => void
   onSaved?: () => void
 }
 
 /** Mode picker + copy / preview / «Открыть Claude» + «Отметить пройденным» with self-assessment. */
-export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubLink, onSaved }: Props<M>) {
+export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubLink, onSaving, onSaved }: Props<M>) {
   const [modeId, setModeId] = useState<M>(modes[0].id as M)
   const mode = modes.find((m) => m.id === modeId) ?? modes[0]
   const prompt = useMemo(() => build(modeId), [build, modeId])
@@ -159,7 +161,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
         )}
       </section>
 
-      <CompleteForm key={mode.id} mode={mode} targetIds={targetIds} hideHubLink={hideHubLink} onSaved={onSaved} />
+      <CompleteForm key={mode.id} mode={mode} targetIds={targetIds} hideHubLink={hideHubLink} onSaving={onSaving} onSaved={onSaved} />
 
     </div>
   )
@@ -169,11 +171,13 @@ function CompleteForm({
   mode,
   targetIds,
   hideHubLink,
+  onSaving,
   onSaved,
 }: {
   mode: TutorModeDef
   targetIds: string[]
   hideHubLink?: boolean
+  onSaving?: () => void
   onSaved?: () => void
 }) {
   const repo = useRepository()
@@ -207,6 +211,7 @@ function CompleteForm({
     if (!assessment || busy) return
     setBusy(true)
     setMsg(null)
+    onSaving?.()
     try {
       const res = await saveTutorSession(repo, { targetIds, mode: mode.id, assessment, note })
       const { correct, total } = sessionScore(assessment, note)

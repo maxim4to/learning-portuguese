@@ -206,15 +206,15 @@ describe('TutorHubPage', () => {
     expect(daily.textContent).toBe(before) // frozen picks
   })
 
-  // The picks are frozen in onSaved, but the store update re-renders the hub first (useSyncExternalStore is a sync
-  // lane, flushed in a microtask before saveTutorSession's continuation): view.daily moves on, the TutorPanel key
-  // changes and the panel remounts — then setFrozen remounts it again. The «засчитано» line and focus are lost.
-  test.fails('daily session: «Занятие засчитано» stays visible after saving [BUG B-60]', async () => {
+  // Regression B-60 / C-03: the picks are frozen before the write, so the panel is not remounted by the progress update.
+  test('daily session: «Занятие засчитано» stays visible after saving, focus on it [B-60]', async () => {
     const { user } = hub()
     const dailyPanel = screen.getAllByRole('radiogroup', { name: 'Самооценка' })[0].closest('section')!
     await user.click(within(dailyPanel).getByRole('radio', { name: /Легко/ }))
     await user.click(within(dailyPanel).getByRole('button', { name: 'Отметить пройденным' }))
-    expect(await screen.findByText(/^Занятие засчитано: 10\/10/, {}, { timeout: 1500 })).toBeInTheDocument()
+    const line = await screen.findByText(/^Занятие засчитано: 10\/10/, {}, { timeout: 1500 })
+    expect(line).toBeInTheDocument()
+    await waitFor(() => expect(line).toHaveFocus())
   })
 })
 

@@ -16,7 +16,7 @@ const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 export function makeSegmenter(glossary: readonly { word: string }[]): (text: string) => Segment[] {
   const byWord = new Map<string, number>()
   glossary.forEach((g, i) => {
-    const k = norm(g.word.trim())
+    const k = norm(g.word.trim()).replace(/\s+/g, ' ')
     if (k && !byWord.has(k)) byWord.set(k, i)
   })
   if (!byWord.size) return (text) => [{ text }]

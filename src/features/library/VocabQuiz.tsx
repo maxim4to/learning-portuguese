@@ -70,10 +70,12 @@ export function VocabQuiz({
   const [dir, setDir] = useState<Direction>('pt-ru')
   const [round, setRound] = useState<Round>(() => newRound(all))
   const cardRef = useRef<HTMLButtonElement>(null)
+  const summaryRef = useRef<HTMLButtonElement>(null)
 
-  // Focus the flash card on open and after each answer so Space/Enter flip it natively.
+  // Focus the flash card on open and after each answer so Space/Enter flip it natively; after the last answer
+  // (the answer buttons are gone) — the summary's first action.
   useEffect(() => {
-    cardRef.current?.focus({ preventScroll: true })
+    ;(cardRef.current ?? summaryRef.current)?.focus({ preventScroll: true })
   }, [round.order, round.pos])
 
   const total = round.order.length
@@ -244,11 +246,16 @@ export function VocabQuiz({
           )}
           <div className="flex flex-col justify-center gap-2 sm:flex-row">
             {round.unknown.length > 0 && (
-              <button type="button" className="btn-primary" onClick={() => setRound(newRound(round.unknown))}>
+              <button ref={summaryRef} type="button" className="btn-primary" onClick={() => setRound(newRound(round.unknown))}>
                 <RotateCcw aria-hidden className="size-5" /> Повторить незнакомые ({round.unknown.length})
               </button>
             )}
-            <button type="button" className="btn-secondary" onClick={() => setRound(newRound(all))}>
+            <button
+              ref={round.unknown.length > 0 ? undefined : summaryRef}
+              type="button"
+              className="btn-secondary"
+              onClick={() => setRound(newRound(all))}
+            >
               Пройти заново
             </button>
             <button type="button" className="btn-ghost" onClick={onClose}>

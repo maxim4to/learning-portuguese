@@ -18,7 +18,7 @@ const RUN_KEY = 'ptpt:v1:run:t'
 
 function run(
   exercises: Exercise[],
-  opts: { seed?: Seed; persistKey?: string; focusOnMount?: boolean; panel?: boolean; title?: string } = {},
+  opts: { seed?: Seed; persistKey?: string; focusOnMount?: boolean; panel?: boolean; title?: string; lookup?: boolean } = {},
 ) {
   const onFinish = vi.fn<(s: RunSummary) => void>()
   const r = renderWithProviders(
@@ -29,6 +29,7 @@ function run(
       persistKey={opts.persistKey}
       focusOnMount={opts.focusOnMount}
       panel={opts.panel}
+      lookup={opts.lookup}
     />,
     { seed: opts.seed },
   )
@@ -82,6 +83,13 @@ describe('ExerciseRunner: flow', () => {
     expect(s).toHaveAttribute('data-pt-src', 'exercise:bx-choice')
     await user.keyboard('2')
     expect(s).toHaveAttribute('data-lookup', 'on')
+  })
+
+  test('lookup={false} (diagnostic): lookup stays off after the answer too [D-08]', async () => {
+    const { user } = run([choice], { lookup: false })
+    await user.keyboard('2')
+    expect(screen.getByText('Верно!', { selector: 'p' })).toBeInTheDocument()
+    expect(section()).toHaveAttribute('data-lookup', 'off')
   })
 
   test('«Дальше» → next task; its primary control (text field) gets focus; live region cleared', async () => {
@@ -203,11 +211,46 @@ describe('ExerciseRunner: «Дальше» bounce guard (250 ms)', () => {
     expect(screen.getByRole('heading', { name: 'Вставьте пропущенное' })).toBeInTheDocument()
   })
 
-  test('a mouse click (detail ≥ 1) is never ignored', async () => {
+  test('a single mouse click (detail 1) is never ignored', async () => {
     const { user } = run([choice, fillGap])
     await user.keyboard('2')
     fireEvent.click(nextBtn(), { detail: 1 })
     expect(screen.getByRole('heading', { name: 'Вставьте пропущенное' })).toBeInTheDocument()
+  })
+
+  // C-01: the second click of a double click on «Дальше» lands on the next task's option.
+  test('the rest of a double click on «Дальше» does not answer the next task [C-01]', async () => {
+    const { user } = run([fillGap, choice])
+    await user.type(screen.getByRole('textbox'), 'sou{Enter}')
+    vi.setSystemTime(NOW + 1000)
+    fireEvent.click(nextBtn(), { detail: 1 })
+    const opt = screen.getAllByRole('radio')[0]
+    fireEvent.click(opt, { detail: 2 })
+    expect(screen.queryByText(/Верно!|Неверно/, { selector: 'p' })).not.toBeInTheDocument()
+    expect(opt).toBeEnabled()
+    // a deliberate click later answers
+    vi.setSystemTime(NOW + 1000 + 700)
+    fireEvent.click(opt, { detail: 1 })
+    expect(screen.getAllByRole('radio')[0]).toBeDisabled()
+  })
+
+  test('a double click on an answer does not also press «Дальше» [C-01]', async () => {
+    const { user } = run([fillGap, choice])
+    await user.type(screen.getByRole('textbox'), 'sou{Enter}')
+    vi.setSystemTime(NOW + 100)
+    fireEvent.click(nextBtn(), { detail: 2 })
+    expect(screen.getByRole('heading', { name: 'Вставьте пропущенное' })).toBeInTheDocument()
+  })
+
+  test('a held Enter (key repeat) does not activate buttons in the task [C-01]', async () => {
+    run([choice, fillGap])
+    const opt = screen.getAllByRole('radio')[0]
+    const ev = new KeyboardEvent('keydown', { key: 'Enter', repeat: true, bubbles: true, cancelable: true })
+    opt.dispatchEvent(ev)
+    expect(ev.defaultPrevented).toBe(true)
+    const first = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true })
+    opt.dispatchEvent(first)
+    expect(first.defaultPrevented).toBe(false)
   })
 })
 

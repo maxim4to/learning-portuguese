@@ -12,6 +12,7 @@
     {"lemma":"lentamente","pos":"adv","ru":["медленно"],"level":"A2"},
     {"lemma":"lento","pos":"adj","ru":["медленный"],"level":"A2"},
     {"lemma":"letivo","pos":"adj","ru":["учебный (ano letivo — учебный год)"],"level":"B1"},
+    {"lemma":"leve","pos":"adj","ru":["лёгкий"],"level":"A2"},
     {"lemma":"limpo","pos":"adj","ru":["чистый"],"level":"A1"},
     {"lemma":"lindo","pos":"adj","ru":["красивый, прекрасный"],"forms":["lindíssimo"],"level":"A1"},
     {"lemma":"líquido","pos":"adj","ru":["на руки, нетто (о зарплате)","жидкий"],"level":"B1"},

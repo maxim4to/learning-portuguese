@@ -214,6 +214,7 @@ export function DiagnosticPage() {
           persistKey={`diag:${phase.stage}`}
           onFinish={onStageFinish}
           focusOnMount
+          lookup={false}
         />
       </div>
     )

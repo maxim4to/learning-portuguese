@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from '@testing-library/react'
+import { act, fireEvent, screen, waitFor, within } from '@testing-library/react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { afterEach, beforeAll, beforeEach, describe, expect, test, vi } from 'vitest'
 import { loadLexicon } from '@/engine/lexicon/lookup'
@@ -128,6 +128,16 @@ describe('WordsPage · search and filters', () => {
     await user.click(chip(/^Все/))
     expect(url()).toBe('/words')
     expect(rowLinks()).toHaveLength(5)
+  })
+
+  // Regression D-05: two filter changes before a re-render must not bring the first one's old value back.
+  test('a chip and a select changed in one batch both apply (no stale ?status=) [D-05]', () => {
+    setup({ route: '/words?status=paused' })
+    act(() => {
+      fireEvent.click(chip(/^Все/))
+      fireEvent.change(screen.getByLabelText('Уровень'), { target: { value: 'A2' } })
+    })
+    expect(url()).toBe('/words?level=A2')
   })
 
   test('filters come from the URL; an unknown value is ignored', () => {

@@ -234,15 +234,18 @@ function useSaved() {
   const [last, setLast] = useState<WordActionResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
-  async function run(p: () => Promise<WordActionResult>, text: (w: WordEntry | undefined) => string) {
+  /** Resolves to whether the write succeeded. */
+  async function run(p: () => Promise<WordActionResult>, text: (w: WordEntry | undefined) => string): Promise<boolean> {
     setBusy(true)
     setError(null)
     try {
       const r = await p()
       setLast(r)
       toast({ text: text(r.words[0]), tone: 'success', action: { label: 'Отменить', onClick: () => void r.undo() } })
+      return true
     } catch (e) {
       setError(`Не удалось сохранить: ${e instanceof Error ? e.message : String(e)}`)
+      return false
     } finally {
       setBusy(false)
     }
@@ -445,11 +448,12 @@ function Unknown({ target, titleId, onClose }: { target: CaptureTarget; titleId:
     if (!lemma.trim()) return setErr('Введите слово на португальском')
     if (!ru.trim()) return setErr('Введите перевод')
     setErr(null)
-    await s.run(
+    const ok = await s.run(
       () => saveWord({ lemma: normalizeLemma(lemma), ru: ru.trim(), source: sourceOf(target) }),
       (w) => `Добавлено в словарь: ${w ? wordPt(w) : lemma}`,
     )
-    setForm(false)
+    // A failed write keeps the form (and what was typed) with the error inside it.
+    if (ok) setForm(false)
   }
 
   return (

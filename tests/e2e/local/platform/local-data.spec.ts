@@ -105,7 +105,6 @@ for (const [name, body] of [
 }
 
 test('a backup with malformed documents is rejected or sanitized: the app keeps working after the import', async ({ app, page }) => {
-  test.fail(true, 'BUG E-05: docs/testing-bugs/E.md#e-05 — import accepts documents without required fields, pages then crash')
   const bad = { app: 'portugues-pt', version: 1, exportedAt: NOW, progress: [{ topicId: 'a1-ser-estar' }], cards: [{ id: 'c1' }], errors: [{ id: 'e1' }], settings: {} }
   await app.goto('/settings')
   await page.locator('input[type="file"]').setInputFiles({ name: 'bad.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(bad)) })

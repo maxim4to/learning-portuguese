@@ -93,6 +93,9 @@ export function WordCaptureProvider({ children }: { children: ReactNode }) {
     const focusInCard = !!document.activeElement?.closest('[data-lookup-ui]')
     if (opts.restoreFocus && cur && (cur.viaKey || focusInCard)) {
       const el = cur.opener?.isConnected ? cur.opener : cur.target.anchorEl
+      // The phone sheet is a modal <dialog>: while it is open the page is inert (focus() is a no-op), and closing
+      // it later (on unmount) would send focus back to what was focused before showModal (<body>). Close it first.
+      document.querySelector<HTMLDialogElement>('dialog[data-lookup-ui][open]')?.close()
       if (el?.isConnected) {
         if (!el.hasAttribute('tabindex') && !el.matches('a[href], button, input, textarea, select')) el.setAttribute('tabindex', '-1')
         el.focus({ preventScroll: true })

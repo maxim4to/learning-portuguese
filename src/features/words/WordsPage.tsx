@@ -74,17 +74,20 @@ export function WordsPage() {
   const learning = params.get('learn') === '1'
   const settings = useSettings()
   const [quiz, setQuiz] = useState<WordEntry[] | null>(null)
-  const setFilter = (key: 'status' | 'level' | 'source' | 'add' | 'learn', value: string) =>
-    setParams(
-      (p) => {
-        const n = new URLSearchParams(p)
-        if (value === 'all') n.delete(key)
-        else n.set(key, value)
-        n.delete('add')
-        return n
-      },
-      { replace: true },
-    )
+  // The functional form of setParams gets the params of the last render: two changes before a re-render
+  // (chip, then the level select) would bring the first one back (D-05). Keep the latest written params here.
+  const latestParams = useRef(params)
+  useEffect(() => {
+    latestParams.current = params
+  }, [params])
+  const setFilter = (key: 'status' | 'level' | 'source' | 'add' | 'learn', value: string) => {
+    const n = new URLSearchParams(latestParams.current)
+    if (value === 'all') n.delete(key)
+    else n.set(key, value)
+    n.delete('add')
+    latestParams.current = n
+    setParams(n, { replace: true })
+  }
 
   const needle = fold(q.trim())
   // Search, level and source narrow the list first; the status chips count within that view.
@@ -384,6 +387,7 @@ export function WordsPage() {
                           size="sm"
                           onClick={() => {
                             setQ('')
+                            latestParams.current = new URLSearchParams()
                             setParams({}, { replace: true })
                             searchRef.current?.focus()
                           }}

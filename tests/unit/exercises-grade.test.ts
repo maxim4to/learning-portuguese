@@ -46,9 +46,18 @@ describe('gradeTyped: apostrophes and hyphens', () => {
     expect(v('Chama se Ana', ['Chama-se Ana.'])).toBe('wrong')
     expect(v('Chamase Ana', ['Chama-se Ana.'])).toBe('wrong')
   })
-  // BUG A-14: see docs/testing-bugs/A.md — a spaced dash used as punctuation glues the neighbouring words.
-  it.fails('a spaced dash used as a pause (instead of a comma) is sentence punctuation, not a hyphen', () => {
+  // A-14 (fixed): a spaced dash used as punctuation no longer glues the neighbouring words.
+  it('a spaced dash used as a pause (instead of a comma) is sentence punctuation, not a hyphen', () => {
     expect(v('Olá — tudo bem?', ['Olá, tudo bem?'])).toBe('correct')
+    expect(v('Olá - tudo bem?', ['Olá, tudo bem?'])).toBe('correct')
+    expect(v('Olá – tudo bem?', ['Olá, tudo bem?'])).toBe('correct')
+    expect(v('— Olá, tudo bem?', ['Olá, tudo bem?'])).toBe('correct') // dialogue dash
+  })
+  it('spaced hyphen before a clitic or a mesoclitic ending is still the hyphen', () => {
+    expect(v('Levanto - me cedo', ['Levanto-me cedo.'])).toBe('correct')
+    expect(v('Dir - lhe - ei amanhã', ['Dir-lhe-ei amanhã.'])).toBe('correct')
+    expect(v('Chama -se Ana', ['Chama-se Ana.'])).toBe('correct')
+    expect(v('Olá - tudo bem', ['Olá-tudo bem'])).toBe('wrong')
   })
 })
 

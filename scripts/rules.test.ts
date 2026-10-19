@@ -71,6 +71,28 @@ describe('firestore.rules with two allowed emails filled in', () => {
     await assertSucceeds(deleteDoc(ref))
   })
 
+  // SRS cards: the newer review wins — an update with an older fsrs.last_review than the stored one is denied.
+  test('cards: create / newer or same review / delete succeed; an older review cannot overwrite a newer one', async () => {
+    const db = env.authenticatedContext(OWNER, ownerToken).firestore()
+    const ref = doc(db, 'users', OWNER, 'cards', 'err-1')
+    const fsrs = { due: 10, stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1, learning_steps: 0, reps: 3, lapses: 0, state: 2 }
+    const card = { id: 'err-1', kind: 'error', front: 'f', back: 'b', createdAt: 1, updatedAt: 1, fsrs: { ...fsrs, last_review: 100 } }
+    await assertSucceeds(setDoc(ref, card))
+    await assertSucceeds(setDoc(ref, { ...card, fsrs: { ...card.fsrs, last_review: 200, reps: 4 }, updatedAt: 200 }))
+    await assertSucceeds(setDoc(ref, { ...card, fsrs: { ...card.fsrs, last_review: 200, reps: 4 }, suspended: true, updatedAt: 300 }))
+    await assertFails(setDoc(ref, { ...card, fsrs: { ...card.fsrs, last_review: 150, reps: 9 }, updatedAt: 400 }))
+    await assertFails(setDoc(ref, { ...card, fsrs, updatedAt: 400 })) // a never-reviewed state over a reviewed card
+    await assertSucceeds(getDoc(ref))
+    await assertSucceeds(deleteDoc(ref))
+    await assertSucceeds(setDoc(ref, { ...card, fsrs })) // re-created after the delete
+    // Other collections are not affected by the card rule.
+    await assertSucceeds(setDoc(doc(db, 'users', OWNER, 'errors', 'e1'), { fsrs: { last_review: 1 } }))
+    await assertSucceeds(setDoc(doc(db, 'users', OWNER, 'errors', 'e1'), { fsrs: { last_review: 0 } }))
+    const other = env.authenticatedContext(OTHER, { email: 'other@example.com', email_verified: true }).firestore()
+    await assertFails(getDoc(doc(other, 'users', OWNER, 'cards', 'err-1')))
+    await assertFails(setDoc(doc(other, 'users', OWNER, 'cards', 'x'), card))
+  })
+
   test('words are denied to other users and unauthenticated clients', async () => {
     await env.withSecurityRulesDisabled(async (ctx) => {
       await setDoc(doc(ctx.firestore(), 'users', OWNER, 'words', 'u%3Acasa'), { id: 'u:casa', lemma: 'casa', ru: 'дом' })
