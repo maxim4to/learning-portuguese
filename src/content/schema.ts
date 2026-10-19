@@ -305,3 +305,45 @@ export const DiagnosticSchema = z.strictObject({
   questions: z.array(DiagnosticQuestionSchema).min(1),
 })
 export type Diagnostic = z.infer<typeof DiagnosticSchema>
+
+// ---------------------------------------------------------------------------
+// Lexicon (content/lexicon/<letter>.json — NOT part of the runtime content glob;
+// compiled by `npm run lexicon -- build` into src/generated/lexicon.json)
+// ---------------------------------------------------------------------------
+
+export const LexPosSchema = z.enum(['noun', 'verb', 'adj', 'adv', 'prep', 'pron', 'det', 'conj', 'num', 'interj', 'phrase'])
+export type LexPosValue = z.infer<typeof LexPosSchema>
+
+export const LexEntrySchema = z.strictObject({
+  /** Dictionary form without article: 'autocarro', 'levantar-se', 'ter de', 'pequeno-almoço'. */
+  lemma: nonEmpty,
+  pos: LexPosSchema,
+  /** Homograph disambiguation: id = lemma#pos[#sense]. */
+  sense: z.number().int().min(2).optional(),
+  /** Meanings (ru), most frequent first. */
+  ru: z.array(nonEmpty).min(1),
+  gender: z.enum(['m', 'f', 'mf']).optional(),
+  /** Irregular plural only. */
+  plural: nonEmpty.optional(),
+  /** adj/noun: irregular feminine. */
+  fem: nonEmpty.optional(),
+  /** Verb paradigm: 'reg' (by ending) or an irregular table name (scripts/lexicon/irregular.ts). */
+  conj: nonEmpty.optional(),
+  reflexive: z.boolean().optional(),
+  /** Explicit extra forms not produced by the rules (inflected forms seen in content, abbreviations…). */
+  forms: z.array(nonEmpty).optional(),
+  level: LevelSchema.optional(),
+  /** pt-BR variant if different (hint «в Бразилии: ônibus»). Excluded from the Brazilianism linter. */
+  br: nonEmpty.optional(),
+  /** Short ru note: «только pt-PT», «разг.». */
+  note: nonEmpty.optional(),
+})
+export type LexEntrySource = z.infer<typeof LexEntrySchema>
+
+export const LexiconFileSchema = z.strictObject({ entries: z.array(LexEntrySchema) })
+export type LexiconFile = z.infer<typeof LexiconFileSchema>
+
+/** Stable lexicon id: `lemma#pos[#sense]` (used as WordEntry.lexId). */
+export function lexEntryId(e: Pick<LexEntrySource, 'lemma' | 'pos' | 'sense'>): string {
+  return `${e.lemma}#${e.pos}${e.sense ? `#${e.sense}` : ''}`
+}

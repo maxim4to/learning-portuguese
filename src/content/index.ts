@@ -18,7 +18,8 @@ import type {
 export * from './schema.ts'
 export type { ContentIndex, ExerciseLocation, ExerciseOwnerKind } from './build.ts'
 
-const jsonFiles = import.meta.glob('/content/**/*.json', { eager: true, import: 'default' })
+// content/lexicon/** is compiled separately (npm run lexicon -- build) and loaded lazily — keep it out of the main bundle.
+const jsonFiles = import.meta.glob(['/content/**/*.json', '!/content/lexicon/**'], { eager: true, import: 'default' })
 const cheatsheetFiles = import.meta.glob('/content/cheatsheets/*.md', {
   eager: true,
   query: '?raw',

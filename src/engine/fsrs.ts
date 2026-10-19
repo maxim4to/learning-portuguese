@@ -3,7 +3,8 @@
  * Default FSRS parameters, request_retention 0.9, short-term learning steps on (1m, 10m).
  */
 import { Rating, State, createEmptyCard, fsrs, type Card, type Grade } from 'ts-fsrs'
-import type { CardKind, FsrsState, SrsCard } from '@/data/types.ts'
+// Relative (not '@/') so scripts/*.test.ts can import this module under tsx / tsconfig.node.
+import type { CardKind, FsrsState, SrsCard, WordCardMode } from '../data/types.ts'
 
 export type ReviewRating = 'again' | 'hard' | 'good' | 'easy'
 export const REVIEW_RATINGS: readonly ReviewRating[] = ['again', 'hard', 'good', 'easy']
@@ -58,6 +59,10 @@ export interface NewCardInput {
   back: string
   topicId?: string
   exerciseId?: string
+  /** Personal-dictionary card: id of its WordEntry. */
+  wordId?: string
+  /** Personal-dictionary card mode (with `wordId`). */
+  mode?: WordCardMode
 }
 
 /** Builds a new SrsCard with an empty FSRS state. Optional fields are omitted when undefined (Firestore-safe). */
@@ -74,6 +79,8 @@ export function createSrsCard(input: NewCardInput, now: TimeInput = Date.now()):
   }
   if (input.topicId) card.topicId = input.topicId
   if (input.exerciseId) card.exerciseId = input.exerciseId
+  if (input.wordId) card.wordId = input.wordId
+  if (input.mode) card.mode = input.mode
   return card
 }
 

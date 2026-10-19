@@ -1,6 +1,10 @@
-import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from 'react'
-import { Cloud, Download, HardDrive, Monitor, Moon, Sun, Upload, Volume2 } from 'lucide-react'
+import { useCallback, useContext, useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Check, Cloud, Download, HardDrive, Monitor, Moon, Sun, Trash2, Upload, Volume2 } from 'lucide-react'
+import { Button } from '@/components/Button'
+import { Dialog } from '@/components/Dialog'
 import { PageHeader } from '@/components/PageHeader'
+import { useToast } from '@/components/toastContext'
 import { PageSkeleton } from '@/components/EmptyState'
 import { SegmentedControl } from '@/components/SegmentedControl'
 import { Switch } from '@/components/Switch'
@@ -8,6 +12,9 @@ import { setThemePref, useThemePref, type ThemePref } from '@/app/theme'
 import { isFirebaseConfigured, useAuth, useRepository } from '@/data'
 import type { Settings } from '@/data/types.ts'
 import { getPtPtVoices, pickPtPtVoice, speak } from '@/engine/audio'
+import { activityDays, computeStreak } from '@/features/dashboard/stats'
+import { plural } from '@/features/library/format'
+import { WordsContext } from '@/features/words/useWords'
 
 const SAMPLE = 'Bom dia! Hoje vamos praticar o português europeu.'
 const RATES = [0.75, 0.85, 1, 1.15, 1.25]
@@ -62,6 +69,20 @@ export function SettingsPage() {
     pending.current = { ...pending.current, ...patch }
     clearTimeout(timer.current)
     timer.current = setTimeout(flush, 400)
+  }
+
+  const navigate = useNavigate()
+  const toast = useToast()
+  const words = useContext(WordsContext) // optional: reload the dictionary cache after a reset
+  const [resetOpen, setResetOpen] = useState(false)
+
+  async function handleReset(resetSettings: boolean) {
+    flush() // a pending settings write must not resurrect anything after the reset
+    await repo.resetProgress({ resetSettings })
+    await words?.actions.reload()
+    setResetOpen(false)
+    toast({ text: resetSettings ? 'Прогресс и настройки сброшены' : 'Прогресс сброшен', tone: 'success' })
+    navigate('/', { replace: true })
   }
 
   async function handleExport() {
@@ -343,8 +364,215 @@ export function SettingsPage() {
           </p>
         )}
       </Section>
+
+      <Section title="Опасная зона" description="Необратимые действия с данными. Перед ними стоит сохранить резервную копию.">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="min-w-0 space-y-1">
+            <p className="font-semibold">Сбросить весь прогресс</p>
+            <p className="measure text-sm text-ink-muted">
+              Удалит уроки и тесты, карточки повторения, словарь, журнал ошибок, диагностику и серию
+              {repo.kind === 'firestore' ? ' — в аккаунте, на всех устройствах' : ' на этом устройстве'}. Настройки
+              останутся, если не выбрать иное.
+            </p>
+          </div>
+          <Button variant="danger" icon={<Trash2 />} className="shrink-0 self-start" onClick={() => setResetOpen(true)}>
+            Сбросить…
+          </Button>
+        </div>
+      </Section>
       </div>
+
+      {/* Mounted only while open: every opening starts from a blank confirmation. */}
+      {resetOpen && <ResetDialog onClose={() => setResetOpen(false)} onExport={handleExport} onReset={handleReset} />}
     </div>
+  )
+}
+
+const CONFIRM_WORD = 'СБРОСИТЬ'
+
+interface ResetCounts {
+  topics: number
+  results: number
+  cards: number
+  words: number
+  errors: number
+  diagnostics: number
+  lastDiagnosticAt?: number
+  streak: number
+}
+
+/** «Сбросить весь прогресс?»: what goes (with counts), backup first, optional settings reset, typed confirmation. */
+function ResetDialog({
+  onClose,
+  onExport,
+  onReset,
+}: {
+  onClose(): void
+  onExport(): Promise<void>
+  onReset(resetSettings: boolean): Promise<void>
+}) {
+  const repo = useRepository()
+  const [counts, setCounts] = useState<ResetCounts | null>(null)
+  const [typed, setTyped] = useState('')
+  const [alsoSettings, setAlsoSettings] = useState(false)
+  const [exported, setExported] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const inputId = useId()
+  const hintId = useId()
+
+  useEffect(() => {
+    let alive = true
+    void Promise.all([repo.getAllProgress(), repo.getCards(), repo.getErrors(), repo.getWords(), repo.getSettings()])
+      .then(([progress, cards, errors, words, settings]) => {
+        if (!alive) return
+        let results = 0
+        let diagnostics = 0
+        for (const p of progress) for (const r of p.history) {
+          if (r.source === 'diagnostic') diagnostics++
+          else results++
+        }
+        setCounts({
+          topics: progress.length,
+          results,
+          cards: cards.length,
+          words: words.length,
+          errors: errors.length,
+          diagnostics,
+          lastDiagnosticAt: settings.lastDiagnosticAt,
+          streak: computeStreak(activityDays(progress, cards, errors)).streak,
+        })
+      })
+      .catch(() => {})
+    return () => {
+      alive = false
+    }
+  }, [repo])
+
+  const confirmed = typed.trim().toLocaleUpperCase('ru-RU') === CONFIRM_WORD
+
+  async function submit() {
+    if (!confirmed || busy) return
+    setBusy(true)
+    setError(null)
+    try {
+      await onReset(alsoSettings)
+    } catch (e) {
+      setError(`Не удалось сбросить: ${e instanceof Error ? e.message : String(e)}`)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  const n = (v: number | undefined, one: string, few: string, many: string) => (counts ? plural(v ?? 0, one, few, many) : '…')
+  const diag = !counts
+    ? '…'
+    : counts.lastDiagnosticAt
+      ? `последняя ${new Date(counts.lastDiagnosticAt).toLocaleDateString('ru-RU')}`
+      : counts.diagnostics
+        ? plural(counts.diagnostics, 'результат', 'результата', 'результатов')
+        : 'нет'
+  const items: [string, string][] = [
+    ['Уроки и тесты', counts ? `${n(counts.topics, 'тема', 'темы', 'тем')}, ${n(counts.results, 'результат', 'результата', 'результатов')}` : '…'],
+    ['Карточки повторения', n(counts?.cards, 'карточка', 'карточки', 'карточек')],
+    ['Словарь', n(counts?.words, 'слово', 'слова', 'слов')],
+    ['Журнал ошибок', n(counts?.errors, 'запись', 'записи', 'записей')],
+    ['Диагностика', diag],
+    ['Серия', n(counts?.streak, 'день', 'дня', 'дней')],
+  ]
+
+  return (
+    <Dialog
+      open
+      onClose={() => {
+        if (!busy) onClose()
+      }}
+      role="alertdialog"
+      initialFocusRef={inputRef}
+      title="Сбросить весь прогресс?"
+      description={
+        <>
+          Будет удалено {repo.kind === 'firestore' ? 'в аккаунте — на всех устройствах' : 'на этом устройстве'}. Отменить
+          это нельзя.
+        </>
+      }
+      actions={
+        <>
+          <Button variant="secondary" onClick={onClose} disabled={busy}>
+            Отмена
+          </Button>
+          <Button variant="danger" icon={<Trash2 />} disabled={!confirmed || busy} onClick={() => void submit()}>
+            {busy ? 'Сбрасываю…' : 'Сбросить прогресс'}
+          </Button>
+        </>
+      }
+    >
+      <ul className="card-sunken divide-y divide-line py-1 text-sm" aria-label="Что будет удалено" aria-busy={!counts}>
+        {items.map(([label, value]) => (
+          <li key={label} className="flex items-baseline justify-between gap-4 py-2">
+            <span className="font-semibold">{label}</span>
+            <span className="text-right text-ink-muted tabular-nums">{value}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="text-sm text-ink-muted">
+        Также очистятся черновики письма и незавершённые упражнения на этом устройстве. Тема оформления останется.
+      </p>
+
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <Button
+          variant="secondary"
+          size="sm"
+          icon={exported ? <Check /> : <Download />}
+          onClick={() => void onExport().then(() => setExported(true))}
+        >
+          Сначала скачать резервную копию
+        </Button>
+        {exported && (
+          <span role="status" className="text-sm text-ink-muted">
+            Копия сохранена
+          </span>
+        )}
+      </div>
+
+      <Switch
+        checked={alsoSettings}
+        onChange={setAlsoSettings}
+        label="Также сбросить настройки"
+        description="Голос, скорость, проверка ответов, лимит новых карточек и настройки словаря вернутся к исходным."
+      />
+
+      <form
+        className="space-y-2"
+        onSubmit={(e) => {
+          e.preventDefault()
+          void submit()
+        }}
+      >
+        <label htmlFor={inputId} className="block text-sm font-semibold">
+          Чтобы подтвердить, введите «{CONFIRM_WORD}»
+        </label>
+        <input
+          ref={inputRef}
+          id={inputId}
+          className="input"
+          value={typed}
+          onChange={(e) => setTyped(e.target.value)}
+          autoComplete="off"
+          autoCapitalize="characters"
+          spellCheck={false}
+          aria-describedby={error ? hintId : undefined}
+          aria-invalid={error ? true : undefined}
+          disabled={busy}
+        />
+        {error && (
+          <p id={hintId} role="alert" className="text-sm text-danger">
+            {error}
+          </p>
+        )}
+      </form>
+    </Dialog>
   )
 }
 

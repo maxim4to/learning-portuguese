@@ -1,22 +1,23 @@
 rules_version = '2';
 
-// Single-user app: only the owner's Google account (matched by verified email) may read/write,
-// and only under users/{their own uid}.
+// Private app: only the listed Google accounts (matched by verified email) may read/write,
+// and each one only under users/{their own uid} — progress is never shared between accounts.
 //
-// The allowed Google account email is NOT committed: keep the REPLACE_WITH_YOUR_EMAIL placeholder here.
-// `npm run deploy` (scripts/deploy-rules.ts) substitutes ALLOWED_EMAIL from .env into the line marked
-// ALLOWED_EMAIL and deploys the generated copy; scripts/rules.test.ts rewrites the same line, so keep the marker comment.
+// The allowed emails are NOT committed: keep the REPLACE_WITH_YOUR_EMAIL placeholder here.
+// `npm run deploy` (scripts/deploy-rules.ts) substitutes ALLOWED_EMAILS from .env into the line marked
+// ALLOWED_EMAILS and deploys the generated copy; scripts/rules.test.ts rewrites the same line, so keep the marker comment.
 service cloud.firestore {
   match /databases/{database}/documents {
-    function allowedEmail() {
-      return 'REPLACE_WITH_YOUR_EMAIL'; // ALLOWED_EMAIL
+    function allowedEmails() {
+      return ['REPLACE_WITH_YOUR_EMAIL']; // ALLOWED_EMAILS
     }
 
     function isOwner(uid) {
       return request.auth != null
         && request.auth.uid == uid
-        && request.auth.token.email == allowedEmail()
-        && request.auth.token.email_verified == true;
+        && request.auth.token.email_verified == true
+        && request.auth.token.email is string
+        && request.auth.token.email.lower() in allowedEmails();
     }
 
     match /users/{uid}/{document=**} {

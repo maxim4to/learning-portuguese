@@ -1,0 +1,26 @@
+{
+  "entries": [
+    {"lemma":"Há alguma conta sem comissões?","pos":"phrase","ru":["Есть счёт без комиссий?"],"level":"B1"},
+    {"lemma":"Há alguma vaga para hoje?","pos":"phrase","ru":["Есть свободная запись на сегодня?"],"level":"B1"},
+    {"lemma":"Há consumo mínimo?","pos":"phrase","ru":["Есть минимальная сумма заказа?"],"level":"B1"},
+    {"lemma":"Há mesa para dois, se faz favor?","pos":"phrase","ru":["Найдётся столик на двоих, пожалуйста?"],"level":"A2"},
+    {"lemma":"Há período de fidelização?","pos":"phrase","ru":["Есть минимальный срок договора?"],"level":"A2"},
+    {"lemma":"Há possibilidade de teletrabalho?","pos":"phrase","ru":["Есть возможность удалённой работы?"],"level":"B1"},
+    {"lemma":"Há taxa de inscrição?","pos":"phrase","ru":["Есть вступительный взнос?"],"level":"A2"},
+    {"lemma":"Há três dias que estou com febre.","pos":"phrase","ru":["У меня температура уже три дня."],"level":"B1"},
+    {"lemma":"Há uma infiltração no teto da minha casa de banho.","pos":"phrase","ru":["У меня протекает потолок в ванной."],"level":"B1"},
+    {"lemma":"Há vagas na creche?","pos":"phrase","ru":["В яслях есть места?"],"level":"B1"},
+    {"lemma":"habilitações literárias","pos":"noun","ru":["образование (уровень)"],"gender":"f","level":"B1"},
+    {"lemma":"halteres","pos":"noun","ru":["гантели"],"gender":"m","level":"A2"},
+    {"lemma":"hesitar","pos":"verb","ru":["колебаться"],"forms":["hesitou"],"level":"B1"},
+    {"lemma":"Hoje não dá, fica para a próxima.","pos":"phrase","ru":["Сегодня не получится, давай в другой раз."],"level":"A2"},
+    {"lemma":"homebanking","pos":"noun","ru":["интернет-банк"],"gender":"m","level":"B1"},
+    {"lemma":"horário","pos":"noun","ru":["расписание"],"gender":"m","level":"A2"},
+    {"lemma":"horário de atendimento","pos":"noun","ru":["часы приёма"],"gender":"m","level":"B1"},
+    {"lemma":"horário de trabalho","pos":"noun","ru":["рабочий график"],"gender":"m","level":"B1"},
+    {"lemma":"horas extraordinárias","pos":"noun","ru":["сверхурочные"],"gender":"f","level":"B1"},
+    {"lemma":"hospital","pos":"noun","ru":["больница"],"gender":"m","level":"A2"},
+    {"lemma":"humidade","pos":"noun","ru":["сырость, влажность","влажность, сырость"],"gender":"f","level":"A2"},
+    {"lemma":"húmido","pos":"adj","ru":["влажный"],"level":"A2"}
+  ]
+}

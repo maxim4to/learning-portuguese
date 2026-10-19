@@ -73,15 +73,19 @@ npm run build && npx vite preview --base /learning-portuguese/   # http://localh
 
 Firebase используется только для входа (Google) и хранения прогресса (Firestore); Firebase Hosting не используется.
 Проект Firebase: `learning-portuguese-de2f0` (прописан в `.firebaserc`), `.env` заполнен.
-Доступ к данным в `firestore.rules` разрешён только одному Google-аккаунту — по подтверждённому email
-(строка `ALLOWED_EMAIL`), и только к своему `users/{uid}`. Всё остальное закрыто.
+Доступ к данным в `firestore.rules` разрешён только Google-аккаунтам из списка — по подтверждённому email
+(функция `allowedEmails()`, строка с меткой `ALLOWED_EMAILS`), и каждому только к своему `users/{uid}`:
+прогресс, карточки и словарь у каждого аккаунта отдельные. Всё остальное закрыто.
 Репозиторий публичный, поэтому в закоммиченном `firestore.rules` стоит плейсхолдер `REPLACE_WITH_YOUR_EMAIL`,
-а настоящий email задаётся переменной `ALLOWED_EMAIL` в `.env` (см. `.env.example`). `npm run deploy`
-(`scripts/deploy-rules.ts`) подставляет его в копию правил `.firebase/firestore.rules.generated` (не в git) и деплоит её.
+а настоящие адреса задаются переменной `ALLOWED_EMAILS` в `.env` через запятую (см. `.env.example`), например
+`ALLOWED_EMAILS=you@gmail.com,partner@gmail.com`. Старая переменная `ALLOWED_EMAIL` с одним адресом тоже работает,
+если `ALLOWED_EMAILS` не задана. `npm run deploy` (`scripts/deploy-rules.ts`) проверяет формат каждого адреса,
+приводит к нижнему регистру, убирает дубли (пустой список — ошибка), подставляет список в копию правил
+`.firebase/firestore.rules.generated` (не в git) и деплоит её.
 
 Уже сделано:
 
-- email владельца указан в `.env` (`ALLOWED_EMAIL`);
+- список разрешённых email указан в `.env` (`ALLOWED_EMAILS`);
 - база Firestore `(default)` создана (Native, регион `nam5`), правила и индексы задеплоены.
 
 Осталось вручную (через консоль, CLI для этого нет):
@@ -101,15 +105,19 @@ npx firebase login:list          # должен быть личный аккау
 npx firebase logout && npx firebase login   # если залогинен другой
 ```
 
-**Деплой правил и индексов** Firestore (например, после смены `ALLOWED_EMAIL` в `.env` или правок `firestore.rules`):
+**Деплой правил и индексов** Firestore (например, после смены `ALLOWED_EMAILS` в `.env` или правок `firestore.rules`):
 
 ```bash
-npm run deploy                   # подставляет ALLOWED_EMAIL из .env и делает firebase deploy --only firestore
+npm run deploy                   # подставляет ALLOWED_EMAILS из .env и делает firebase deploy --only firestore
 ```
 
 Если вместо приложения показан экран «Нет доступа к данным» — проверьте, что вход выполнен аккаунтом из
-`ALLOWED_EMAIL` в `.env` и правила задеплоены через `npm run deploy`. Не деплойте `npx firebase deploy` напрямую —
+`ALLOWED_EMAILS` в `.env` и правила задеплоены через `npm run deploy`. Не деплойте `npx firebase deploy` напрямую —
 тогда на сервер уйдёт плейсхолдер и доступ закроется для всех.
+
+**Добавить ещё один аккаунт**: допишите email через запятую в `ALLOWED_EMAILS` в `.env` и выполните `npm run deploy`.
+В консоли Firebase ничего менять не нужно — вход через Google уже включён, а Authorized domains касаются доменов
+сайта, а не аккаунтов. Новый пользователь при первом входе начинает с пустого прогресса в своём `users/{uid}`.
 
 Проверка правил локально (нужна Java 11+, логин не нужен):
 

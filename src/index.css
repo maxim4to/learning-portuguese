@@ -26,10 +26,10 @@
   --ink-muted: #4a4843; /* 7.04 on bg, 8.45 on surface */
   --ink-subtle: #5e5c56; /* 6.18 on surface, 5.15 on bg */
 
-  --brand: #fc5000; /* Ember — obsidian text on it 6.06 */
-  --brand-hover: #e54800; /* 5.07 */
-  --brand-soft: #ffdcc8;
-  --brand-ink: #9e3000; /* 5.67 on soft, 5.62 on bg */
+  --brand: #e5622a; /* Ember (hsl 18 78% 53%) — obsidian text on it 5.89; 3.18 on surface as an icon */
+  --brand-hover: #d55620; /* 4.99 */
+  --brand-soft: #f7dccf;
+  --brand-ink: #8c3a17; /* 5.89 on soft, 5.92 on bg */
   --on-brand: #070607;
 
   /* «azulejo» role (audio, links, active tab meta) = ink in Caldera: controls are monochrome. */
@@ -63,7 +63,7 @@
   --focus: #070607;
   --scrim: rgb(7 6 7 / 0.45);
   /* Accent text on inverted (ink) surfaces: toasts, update prompt. */
-  --on-ink-accent: #ff7a3d; /* 7.81 on ink */
+  --on-ink-accent: #ee8453; /* 7.76 on ink */
 
   /* Deliberately shadowless (DESIGN.md «Elevation»). Kept as tokens so the API stays. */
   --shadow-1: none;
@@ -134,10 +134,10 @@
   --ink-muted: #b5b1a7; /* 7.30 on surface */
   --ink-subtle: #a29e94; /* 5.85 on surface */
 
-  --brand: #ff5c17; /* 5.06 on surface as a shape; dark ink on it 6.40 */
-  --brand-hover: #ff7a40;
-  --brand-soft: #3a2116;
-  --brand-ink: #ff9a6a; /* 7.50 on surface */
+  --brand: #eb6d37; /* 4.92 on surface as a shape; dark ink on it 6.38 */
+  --brand-hover: #f08756;
+  --brand-soft: #362017;
+  --brand-ink: #f4a27c; /* 7.48 on surface, 7.49 on soft */
   --on-brand: #0b0a09;
 
   --azulejo: #f2f1ee;
@@ -166,7 +166,7 @@
 
   --focus: #f5f28e; /* sulfur ring, 16.1 on bg */
   --scrim: rgb(0 0 0 / 0.6);
-  --on-ink-accent: #9e3000; /* 6.52 on the light «ink» toast */
+  --on-ink-accent: #8c3a17; /* 6.80 on the light «ink» toast */
 
   --legacy-400: #a29e94;
   --legacy-500: #b5b1a7;
@@ -208,13 +208,13 @@
   --animate-toast: toast-in 240ms var(--ease-out);
 
   /* Legacy brand ramp (pages not yet migrated use brand-*). Retinted to Ember. */
-  --color-brand-50: #ffeee4;
-  --color-brand-100: #ffdcc8;
-  --color-brand-500: #ff7a3d;
-  --color-brand-600: #fc5000;
-  --color-brand-700: #c43e00;
-  --color-brand-800: #9e3000;
-  --color-brand-900: #6e2200;
+  --color-brand-50: #faece5;
+  --color-brand-100: #f7dccf;
+  --color-brand-500: #ee8453;
+  --color-brand-600: #e5622a;
+  --color-brand-700: #b1481b;
+  --color-brand-800: #8c3a17;
+  --color-brand-900: #62270f;
 
   /* Legacy neutral ramp retinted to the limestone/basalt palette. */
   --color-stone-50: #f7f6f2;

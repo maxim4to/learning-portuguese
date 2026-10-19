@@ -13,7 +13,9 @@
     "test:rules": "firebase emulators:exec --project demo-rules-test --only firestore \"tsx --test scripts/rules.test.ts\"",
     "deploy": "tsx scripts/deploy-rules.ts",
     "emulators": "firebase emulators:start --only firestore,auth",
-    "test:lint": "tsx --test scripts/brazilianisms.test.ts"
+    "test:lint": "tsx --test scripts/brazilianisms.test.ts",
+    "lexicon": "tsx scripts/lexicon.ts",
+    "test:unit": "tsx --test scripts/words.test.ts scripts/lexicon.test.ts scripts/brazilianisms.test.ts"
   },
   "dependencies": {
     "@fontsource-variable/onest": "^5.3.1",

@@ -12,7 +12,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from 'lucide-react'
-import { useRepository } from '@/data'
+import { onProgressReset, useRepository } from '@/data'
 import { dueCards } from '@/engine/fsrs'
 import { OfflineBanner, UpdatePrompt } from '@/components/AppStatus'
 import { cx } from '@/components/cx'
@@ -48,6 +48,8 @@ function useDueCount(pathname: string) {
     if (prev.current?.startsWith('/review') && !onReview) setTick((t) => t + 1)
     prev.current = pathname
   }, [pathname, onReview])
+  // «Сбросить весь прогресс» in Settings: recount right away.
+  useEffect(() => onProgressReset(() => setTick((t) => t + 1)), [])
   useEffect(() => {
     let alive = true
     Promise.all([repo.getCards(), repo.getSettings()])
