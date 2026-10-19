@@ -1,14 +1,22 @@
-import { useEffect, type KeyboardEvent } from 'react'
-import { Link, useParams, useSearchParams } from 'react-router-dom'
+import { createElement, useEffect } from 'react'
+import { useParams, useSearchParams } from 'react-router-dom'
+import { ArrowRight, SearchX, Sparkles } from 'lucide-react'
 import { getSituation, type Situation } from '@/content'
+import { ButtonLink } from '@/components/Button'
+import { cx, scrollBehavior } from '@/components/cx'
+import { EmptyState } from '@/components/EmptyState'
+import { PageHeader } from '@/components/PageHeader'
 import { LevelBadge, StatusBadge } from '@/components/StatusBadge'
+import { TabPanel, Tabs } from '@/components/Tabs'
+import { sceneIcon, sceneTint } from './sceneIcon'
 import { useProgressMap } from '@/features/lessons/useTopicProgress'
+import { SituationTutor } from '@/features/tutor/panels'
 import { DialogueSection } from './DialogueSection'
 import { SituationPractice } from './SituationPractice'
 import { PhrasesSection, VocabSection } from './StudySections'
 import { WritingSection } from './WritingSection'
 
-const TABS = ['dialogue', 'phrases', 'vocab', 'exercises', 'writing'] as const
+const TABS = ['dialogue', 'phrases', 'vocab', 'exercises', 'writing', 'tutor'] as const
 type Tab = (typeof TABS)[number]
 
 const TAB_LABEL: Record<Tab, string> = {
@@ -17,6 +25,7 @@ const TAB_LABEL: Record<Tab, string> = {
   vocab: 'Лексика',
   exercises: 'Упражнения',
   writing: 'Письмо',
+  tutor: 'С агентом',
 }
 
 export function SituationPage() {
@@ -24,12 +33,14 @@ export function SituationPage() {
   const situation = getSituation(id)
   if (!situation) {
     return (
-      <div className="space-y-3">
-        <h1>Ситуация не найдена</h1>
-        <p className="text-stone-500">
-          Ситуации «{id}» нет в курсе — возможно, ссылка устарела.
-        </p>
-        <Link to="/situations">← К ситуациям</Link>
+      <div className="card">
+        <EmptyState
+          icon={<SearchX className="size-7" />}
+          tone="neutral"
+          title="Ситуация не найдена"
+          text={`Ситуации «${id}» нет в курсе — возможно, ссылка устарела.`}
+          action={<ButtonLink to="/situations">К ситуациям</ButtonLink>}
+        />
       </div>
     )
   }
@@ -48,19 +59,10 @@ function SituationModule({ situation }: { situation: Situation }) {
     window.scrollTo({ top: 0 })
   }, [situation.id])
 
-  // Mobile: keep the active tab visible in the horizontally scrolling tab bar.
-  useEffect(() => {
-    const el = document.getElementById(`sit-tab-${tab}`)
-    const bar = el?.parentElement
-    if (!el || !bar) return
-    const l = el.offsetLeft // the sticky bar is the offsetParent
-    if (l < bar.scrollLeft || l + el.offsetWidth > bar.scrollLeft + bar.clientWidth) bar.scrollTo({ left: l - 16, behavior: 'smooth' })
-  }, [tab])
-
   const setTab = (t: Tab) => setParams(t === 'dialogue' ? {} : { tab: t }, { replace: true })
   const goTab = (t: Tab) => {
     setTab(t)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: scrollBehavior() })
   }
   const nextTab = (t: Tab): Tab | undefined => tabs[tabs.indexOf(t) + 1]
 
@@ -76,114 +78,100 @@ function SituationModule({ situation }: { situation: Situation }) {
     if (!n) return null
     return (
       <button type="button" className="btn-primary" onClick={() => goTab(n)}>
-        {TAB_LABEL[n]} →
+        {TAB_LABEL[n]} <ArrowRight aria-hidden className="size-5" />
       </button>
     )
   }
 
-  // Keyboard: ←/→ move between tabs when a tab has focus (WAI-ARIA tabs pattern).
-  function onTabKey(e: KeyboardEvent) {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return
-    const i = tabs.indexOf(tab)
-    const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]
-    setTab(n)
-    document.getElementById(`sit-tab-${n}`)?.focus()
-    e.preventDefault()
-  }
+  const id = 'sit'
 
   return (
     <article className="space-y-5">
-      <header className="space-y-3">
-        <nav aria-label="Навигация" className="text-sm text-stone-500">
-          <ol className="flex flex-wrap items-center gap-1.5">
-            <li>
-              <Link to="/library" className="no-underline hover:underline">
-                Материалы
-              </Link>
-            </li>
-            <li aria-hidden>›</li>
-            <li>
-              <Link to="/situations" className="no-underline hover:underline">
-                Ситуации
-              </Link>
-            </li>
-          </ol>
-        </nav>
-        <div className="space-y-1">
-          <div className="flex flex-wrap items-center gap-2">
+      <PageHeader
+        back={{ to: '/situations', label: 'Ситуации' }}
+        eyebrow={
+          <>
             <LevelBadge level={situation.level} />
-            <StatusBadge status={own?.status ?? 'not-started'} />
+            <StatusBadge status={own?.status ?? 'not-started'} className="normal-case" />
             {own && (
-              <span className="text-xs text-stone-500">
+              <span className="font-medium tracking-normal normal-case tabular-nums">
                 последний результат {Math.round(own.lastPct * 100)}% · попыток {own.attempts}
               </span>
             )}
-          </div>
-          <h1 className="text-[1.6rem] leading-tight sm:text-3xl">{situation.title}</h1>
-          <p className="text-lg text-stone-500 italic dark:text-stone-400" lang="pt-PT">
+          </>
+        }
+        title={
+          <span className="flex items-center gap-3">
+            <span aria-hidden className={cx('grid size-11 shrink-0 place-items-center rounded-2xl', sceneTint(situation.id))}>
+              {createElement(sceneIcon(situation.id), { className: 'size-6', strokeWidth: 1.8 })}
+            </span>
+            {situation.title}
+          </span>
+        }
+        subtitle={
+          <p className="font-serif text-lg italic" lang="pt-PT">
             {situation.titlePt}
           </p>
-        </div>
-      </header>
+        }
+      />
 
-      <div
-        role="tablist"
-        aria-label="Разделы ситуации"
-        onKeyDown={onTabKey}
-        className="sticky top-0 z-10 -mx-4 flex gap-1 overflow-x-auto border-b border-stone-200 bg-stone-50/95 px-4 py-2 backdrop-blur [scrollbar-width:none] md:top-[53px] md:mx-0 md:rounded-xl md:border md:px-1.5 md:py-1.5 dark:border-stone-800 dark:bg-stone-950/95"
-      >
-        {tabs.map((t) => (
-          <button
-            key={t}
-            id={`sit-tab-${t}`}
-            role="tab"
-            type="button"
-            aria-selected={tab === t}
-            aria-controls={`sit-panel-${t}`}
-            tabIndex={tab === t ? 0 : -1}
-            onClick={() => setTab(t)}
-            className={`shrink-0 rounded-lg px-2.5 py-1.5 text-sm font-medium whitespace-nowrap transition sm:px-3 ${
-              tab === t
-                ? 'bg-brand-700 text-white'
-                : 'text-stone-600 hover:bg-stone-200/70 dark:text-stone-300 dark:hover:bg-stone-800'
-            }`}
-          >
-            {TAB_LABEL[t]}
-            {count[t] !== undefined && <span className="hidden opacity-70 sm:inline"> · {count[t]}</span>}
-          </button>
-        ))}
-      </div>
+      <Tabs
+        idBase={id}
+        label="Разделы ситуации"
+        sticky
+        value={tab}
+        onChange={setTab}
+        items={tabs.map((t) => ({
+          value: t,
+          label:
+            t === 'tutor' ? (
+              <>
+                <Sparkles aria-hidden className="size-4 text-terracotta" />
+                {TAB_LABEL[t]}
+              </>
+            ) : (
+              TAB_LABEL[t]
+            ),
+          meta: count[t] !== undefined ? <span className="hidden sm:inline">{count[t]}</span> : undefined,
+        }))}
+      />
 
       {/* All panels stay mounted so dialogue state / an exercise run survive tab switches. */}
-      <section id="sit-panel-dialogue" role="tabpanel" aria-labelledby="sit-tab-dialogue" hidden={tab !== 'dialogue'} className="space-y-4">
+      <TabPanel idBase={id} value="dialogue" active={tab === 'dialogue'} className="space-y-4">
         <DialogueSection situation={situation} />
         {nextButton('dialogue')}
-      </section>
+      </TabPanel>
 
-      <section id="sit-panel-phrases" role="tabpanel" aria-labelledby="sit-tab-phrases" hidden={tab !== 'phrases'} className="space-y-4">
+      <TabPanel idBase={id} value="phrases" active={tab === 'phrases'} className="space-y-4">
         <PhrasesSection situation={situation} />
         {nextButton('phrases')}
-      </section>
+      </TabPanel>
 
-      <section id="sit-panel-vocab" role="tabpanel" aria-labelledby="sit-tab-vocab" hidden={tab !== 'vocab'} className="space-y-4">
+      <TabPanel idBase={id} value="vocab" active={tab === 'vocab'} className="space-y-4">
         <VocabSection situation={situation} />
         {nextButton('vocab')}
-      </section>
+      </TabPanel>
 
-      <section id="sit-panel-exercises" role="tabpanel" aria-labelledby="sit-tab-exercises" hidden={tab !== 'exercises'}>
+      <TabPanel idBase={id} value="exercises" active={tab === 'exercises'}>
+        <h2 className="sr-only">Упражнения</h2>
         <SituationPractice
           situation={situation}
           progress={own}
           onSaved={() => void reload()}
           next={nextTab('exercises') ? { label: `${TAB_LABEL[nextTab('exercises')!]} →`, onClick: () => goTab(nextTab('exercises')!) } : undefined}
         />
-      </section>
+      </TabPanel>
 
       {situation.writingTask && (
-        <section id="sit-panel-writing" role="tabpanel" aria-labelledby="sit-tab-writing" hidden={tab !== 'writing'}>
+        <TabPanel idBase={id} value="writing" active={tab === 'writing'}>
           <WritingSection situation={situation} />
-        </section>
+        </TabPanel>
       )}
+
+      <TabPanel idBase={id} value="tutor" active={tab === 'tutor'}>
+        <h2 className="sr-only">Практика с агентом</h2>
+        <SituationTutor situation={situation} onSaved={() => void reload()} />
+      </TabPanel>
     </article>
   )
 }

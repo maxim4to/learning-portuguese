@@ -10,6 +10,32 @@ import { VitePWA } from 'vite-plugin-pwa'
  * GitHub Pages has no SPA rewrites: it serves 404.html for unknown paths, so a copy of index.html
  * there makes deep links (e.g. /learning-portuguese/topic/x) boot the app with the right URL.
  */
+/**
+ * Preloads the critical UI font files (Manrope latin + cyrillic) so text doesn't flash in the fallback font.
+ * Fonts are self-hosted (src/fonts.css) — no third-party request, precached by the service worker for offline use.
+ */
+function preloadFonts(): Plugin {
+  let base = '/'
+  return {
+    name: 'preload-fonts',
+    apply: 'build',
+    configResolved(config) {
+      base = config.base
+    },
+    transformIndexHtml: {
+      order: 'post',
+      handler(_html, ctx) {
+        const files = Object.keys(ctx.bundle ?? {}).filter((f) => /manrope-(latin|cyrillic)-wght-normal-[\w-]+\.woff2$/.test(f))
+        return files.map((f) => ({
+          tag: 'link',
+          attrs: { rel: 'preload', as: 'font', type: 'font/woff2', href: `${base}${f}`, crossorigin: '' },
+          injectTo: 'head' as const,
+        }))
+      },
+    },
+  }
+}
+
 function spaFallback404(): Plugin {
   let outDir = 'dist'
   return {
@@ -48,7 +74,8 @@ export default defineConfig(({ mode }) => {
       react(),
       tailwindcss(),
       VitePWA({
-        registerType: 'autoUpdate',
+        // 'prompt': a new version waits for «Обновить» (UpdatePrompt) instead of reloading mid-lesson.
+        registerType: 'prompt',
         includeAssets: ['favicon.svg', 'icons/icon.svg', 'icons/*.png'],
         manifest: {
           name: 'Português PT',
@@ -59,8 +86,12 @@ export default defineConfig(({ mode }) => {
           start_url: base,
           scope: base,
           display: 'standalone',
-          background_color: '#ffffff',
-          theme_color: '#047857',
+          background_color: '#FBF7F0',
+          theme_color: '#FBF7F0',
+          shortcuts: [
+            { name: 'Повторение', short_name: 'Повторение', url: `${base}review` },
+            { name: 'Курс', short_name: 'Курс', url: `${base}syllabus` },
+          ],
           icons: [
             { src: `${base}icons/icon-192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },
             { src: `${base}icons/icon-512.png`, sizes: '512x512', type: 'image/png', purpose: 'any' },
@@ -89,6 +120,7 @@ export default defineConfig(({ mode }) => {
           ],
         },
       }),
+      preloadFonts(),
       spaFallback404(),
     ],
   }

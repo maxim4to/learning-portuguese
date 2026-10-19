@@ -1,6 +1,24 @@
-/** Thin horizontal progress bar; `value` in 0..1. */
-export function ProgressBar({ value, label, className = '' }: { value: number; label?: string; className?: string }) {
+import { cx } from './cx'
+
+/** Horizontal progress bar; `value` in 0..1. `segments` renders stacked parts (e.g. topic statuses). */
+export function ProgressBar({
+  value = 0,
+  label,
+  size = 'md',
+  tone = 'brand',
+  segments,
+  className = '',
+}: {
+  value?: number
+  label?: string
+  size?: 'sm' | 'md' | 'lg'
+  tone?: 'brand' | 'azulejo' | 'sun' | 'terracotta'
+  segments?: { value: number; className: string; title?: string }[]
+  className?: string
+}) {
   const pct = Math.round(Math.min(1, Math.max(0, value)) * 100)
+  const h = size === 'sm' ? 'h-1.5' : size === 'lg' ? 'h-3' : 'h-2'
+  const fill = { brand: 'bg-brand', azulejo: 'bg-azulejo', sun: 'bg-sun-fill', terracotta: 'bg-terracotta-fill' }[tone]
   return (
     <div
       role="progressbar"
@@ -8,9 +26,22 @@ export function ProgressBar({ value, label, className = '' }: { value: number; l
       aria-valuemax={100}
       aria-valuenow={pct}
       aria-label={label}
-      className={`h-2 overflow-hidden rounded-full bg-stone-200 dark:bg-stone-800 ${className}`}
+      className={cx('flex overflow-hidden rounded-full bg-sunken ring-1 ring-line ring-inset', h, className)}
     >
-      <div className="h-full rounded-full bg-brand-600 transition-[width] duration-300" style={{ width: `${pct}%` }} />
+      {segments ? (
+        segments.map((s, i) =>
+          s.value > 0 ? (
+            <div
+              key={i}
+              title={s.title}
+              className={cx('h-full transition-[width] duration-500 ease-out', s.className)}
+              style={{ width: `${Math.min(1, s.value) * 100}%` }}
+            />
+          ) : null,
+        )
+      ) : (
+        <div className={cx('h-full rounded-full transition-[width] duration-500 ease-out', fill)} style={{ width: `${pct}%` }} />
+      )}
     </div>
   )
 }

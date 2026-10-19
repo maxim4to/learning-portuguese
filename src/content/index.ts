@@ -11,6 +11,7 @@ import type {
   Syllabus,
   SyllabusModule,
   Topic,
+  TutorNotes,
   VocabTheme,
 } from './schema.ts'
 
@@ -98,6 +99,13 @@ export function getReadingText(id: string): ReadingText | undefined {
 
 export function listReadingTexts(): ReadingText[] {
   return [...index.reading.values()]
+}
+
+// --- Tutor prompt overrides -------------------------------------------------
+
+/** Optional additions for «Практика с агентом» prompts (content/tutor/<id>.json). */
+export function getTutorNotes(id: string): TutorNotes | undefined {
+  return index.tutor.get(id)
 }
 
 // --- Diagnostic -------------------------------------------------------------

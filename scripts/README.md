@@ -47,6 +47,10 @@ npm run tts -- --limit 5                 # пробный запуск на 5 ф
 TTS_CMD='edge-tts --voice {voice} --text {text} --write-media {out}' npm run tts
 ```
 
+VoiceStudio/OmniVoice was evaluated on 2026-10-19
+(pt-PT accent confirmed, but the user preferred edge-tts quality);
+edge-tts remains the pipeline.
+
 ## rules.test.ts — тест правил Firestore
 
 ```bash

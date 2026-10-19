@@ -1,5 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { PartyPopper, X } from 'lucide-react'
+import { ButtonLink } from '@/components/Button'
+import { ProgressBar } from '@/components/ProgressBar'
 import { useRepository } from '@/data'
 import type { Settings, SrsCard } from '@/data/types.ts'
 import { formatInterval, isNewCard, previewIntervals, schedule, type ReviewRating } from '@/engine/fsrs'
@@ -11,10 +13,10 @@ import { bumpNewSeenToday } from './newCardCounter'
 const REQUEUE_MS = 20 * 60_000
 
 const RATING_UI: { rating: ReviewRating; label: string; key: string; cls: string }[] = [
-  { rating: 'again', label: 'Снова', key: '1', cls: 'border-red-300 bg-red-50 text-red-800 hover:bg-red-100 dark:border-red-900 dark:bg-red-950/40 dark:text-red-200' },
-  { rating: 'hard', label: 'Трудно', key: '2', cls: 'border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200' },
-  { rating: 'good', label: 'Хорошо', key: '3', cls: 'border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200' },
-  { rating: 'easy', label: 'Легко', key: '4', cls: 'border-sky-300 bg-sky-50 text-sky-900 hover:bg-sky-100 dark:border-sky-900 dark:bg-sky-950/40 dark:text-sky-200' },
+  { rating: 'again', label: 'Снова', key: '1', cls: 'border-danger-line bg-danger-soft text-danger hover:border-danger' },
+  { rating: 'hard', label: 'Трудно', key: '2', cls: 'border-warning-line bg-sun-soft text-sun hover:border-sun' },
+  { rating: 'good', label: 'Хорошо', key: '3', cls: 'border-brand/35 bg-brand-soft text-brand-ink hover:border-brand' },
+  { rating: 'easy', label: 'Легко', key: '4', cls: 'border-azulejo/30 bg-azulejo-soft text-azulejo-ink hover:border-azulejo' },
 ]
 
 interface Props {
@@ -34,6 +36,12 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
   const [startedAt] = useState(() => Date.now())
   const [saveError, setSaveError] = useState<string | null>(null)
   const [finishedAt, setFinishedAt] = useState<number | null>(null)
+  const [confirmEnd, setConfirmEnd] = useState(false)
+  const ratingsRef = useRef<HTMLDivElement>(null)
+  const revealRef = useRef<HTMLButtonElement>(null)
+  const endRef = useRef<HTMLButtonElement>(null)
+  const summaryRef = useRef<HTMLHeadingElement>(null)
+  const askedEnd = useRef(false)
 
   const card = queue[0]
   const intervals = useMemo(() => (card && revealed ? previewIntervals(card) : null), [card, revealed])
@@ -65,6 +73,8 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
       const el = e.target as HTMLElement | null
       if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable)) return
       if (e.metaKey || e.ctrlKey || e.altKey) return
+      // Space / Enter on a focused button or link («Завершить», «Отмена», audio…) activates that control.
+      if ((e.key === ' ' || e.key === 'Enter') && el?.closest('button, a')) return
       if (!revealed && (e.key === ' ' || e.key === 'Enter')) {
         e.preventDefault()
         setRevealed(true)
@@ -87,33 +97,50 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
 
   useEffect(() => () => stopSpeaking(), [])
 
+  // Focus management: after «Показать ответ» the button unmounts — move focus to the rating group;
+  // after a rating — back to «Показать ответ» for the next card; on start too («Начать» unmounts).
+  useEffect(() => {
+    if (revealed) ratingsRef.current?.focus({ preventScroll: true })
+    else if (card) revealRef.current?.focus({ preventScroll: true })
+    else summaryRef.current?.focus({ preventScroll: true })
+  }, [revealed, card])
+
+  // «Завершить?» swaps the button for a confirm group: focus «Отмена» there, and return to «Завершить» on cancel.
+  useEffect(() => {
+    if (confirmEnd) askedEnd.current = true
+    else if (askedEnd.current) {
+      askedEnd.current = false
+      endRef.current?.focus()
+    }
+  }, [confirmEnd])
+
   const total = counts.again + counts.hard + counts.good + counts.easy
 
   if (!card) {
     const minutes = Math.max(1, Math.round(((finishedAt ?? startedAt) - startedAt) / 60_000))
     const recalled = total ? (total - counts.again) / total : 0
     return (
-      <section className="card space-y-4 text-center">
-        <p className="text-4xl" aria-hidden>
-          🎉
-        </p>
-        <h2>Сессия завершена</h2>
-        <p className="text-stone-600 dark:text-stone-400">
+      <section className="card-raised animate-enter space-y-5 rounded-hero p-6 text-center sm:p-8">
+        <span aria-hidden className="mx-auto grid size-16 place-items-center rounded-2xl bg-sun-soft text-sun">
+          <PartyPopper className="size-8" />
+        </span>
+        <h2 ref={summaryRef} tabIndex={-1} className="font-serif text-2xl font-semibold outline-none">
+          Сессия завершена
+        </h2>
+        <p className="text-ink-muted">
           Карточек: {reviewedIds.size} · ответов: {total} · вспомнили {Math.round(recalled * 100)}% · ~{minutes} мин
         </p>
         <div className="mx-auto grid max-w-md grid-cols-4 gap-2 text-sm">
           {RATING_UI.map((r) => (
-            <div key={r.rating} className={`rounded-xl border p-2 ${r.cls}`}>
-              <div className="text-lg font-semibold tabular-nums">{counts[r.rating]}</div>
+            <div key={r.rating} className={`rounded-control border p-2 font-semibold ${r.cls}`}>
+              <div className="text-xl font-bold tabular-nums">{counts[r.rating]}</div>
               {r.label}
             </div>
           ))}
         </div>
-        {saveError && <p className="text-sm text-red-600">Не всё сохранилось: {saveError}</p>}
-        <div className="flex flex-wrap justify-center gap-2">
-          <Link to="/" className="btn-primary no-underline">
-            На главную
-          </Link>
+        {saveError && <p className="text-sm text-danger">Не всё сохранилось: {saveError}</p>}
+        <div className="flex flex-col justify-center gap-2 sm:flex-row">
+          <ButtonLink to="/">На главную</ButtonLink>
           <button className="btn-secondary" onClick={onFinish}>
             К карточкам
           </button>
@@ -128,53 +155,73 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center gap-3 text-sm text-stone-500">
-        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-stone-200 dark:bg-stone-800">
-          <div className="h-full bg-brand-600 transition-all" style={{ width: `${progress * 100}%` }} />
-        </div>
+      <div className="flex items-center gap-3 text-sm text-ink-muted">
+        <ProgressBar value={progress} size="md" label={`Пройдено карточек: ${done}`} className="flex-1" />
         <span className="tabular-nums">осталось {remaining}</span>
-        <button
-          className="text-stone-500 underline-offset-2 hover:underline"
-          onClick={() => {
-            setFinishedAt(Date.now())
-            setQueue([])
-          }}
-        >
-          завершить
-        </button>
+        {confirmEnd ? (
+          <span className="flex items-center gap-1" role="group" aria-label="Завершить сессию?">
+            <button
+              className="btn-secondary min-h-9 px-3 text-sm"
+              onClick={() => {
+                setFinishedAt(Date.now())
+                setQueue([])
+              }}
+            >
+              Завершить
+            </button>
+            <button className="btn-ghost min-h-9 px-3 text-sm" autoFocus onClick={() => setConfirmEnd(false)}>
+              Отмена
+            </button>
+          </span>
+        ) : (
+          <button
+            ref={endRef}
+            className="hit -mr-2 inline-flex min-h-9 items-center gap-1 rounded-lg px-2 font-semibold hover:bg-surface-2 hover:text-ink"
+            onClick={() => setConfirmEnd(true)}
+          >
+            <X aria-hidden className="size-4" /> Завершить
+          </button>
+        )}
       </div>
 
-      <div
-        className="card cursor-default select-text"
-        onClick={() => !revealed && setRevealed(true)}
-        role={revealed ? undefined : 'button'}
-        aria-label={revealed ? undefined : 'Показать ответ'}
-      >
+      <div className="card-raised select-text sm:p-6">
         <CardFace key={card.id + card.fsrs.reps} card={card} revealed={revealed} settings={settings} />
       </div>
 
-      {saveError && <p className="text-sm text-red-600">Ошибка сохранения: {saveError}</p>}
+      {saveError && <p className="text-sm text-danger">Ошибка сохранения: {saveError}</p>}
 
-      {!revealed ? (
-        <button className="btn-primary w-full py-3.5" onClick={() => setRevealed(true)}>
-          Показать ответ <kbd className="hidden rounded bg-white/20 px-1.5 text-xs md:inline">пробел</kbd>
-        </button>
-      ) : (
-        <div className="grid grid-cols-4 gap-2">
-          {RATING_UI.map((r) => (
-            <button
-              key={r.rating}
-              onClick={() => rate(r.rating)}
-              className={`flex flex-col items-center rounded-xl border px-1 py-2.5 transition ${r.cls}`}
-            >
-              <span className="text-sm font-semibold md:text-base">{r.label}</span>
-              <span className="text-xs tabular-nums opacity-80">{intervals?.[r.rating] ?? formatInterval(0)}</span>
-              <kbd className="mt-0.5 hidden text-[10px] opacity-60 md:block">{r.key}</kbd>
-            </button>
-          ))}
-        </div>
-      )}
-      <p className="hidden text-center text-xs text-stone-500 md:block">
+      <div className="sticky-actions">
+        {!revealed ? (
+          <button ref={revealRef} className="btn-primary min-h-14 w-full text-lg shadow-raised" onClick={() => setRevealed(true)}>
+            Показать ответ
+            <kbd className="hidden rounded-md bg-on-brand/20 px-1.5 py-0.5 font-sans text-xs md:inline">пробел</kbd>
+          </button>
+        ) : (
+          <div
+            ref={ratingsRef}
+            tabIndex={-1}
+            role="group"
+            aria-label="Насколько легко вы вспомнили?"
+            className="grid grid-cols-4 gap-2 rounded-control outline-none"
+          >
+            {RATING_UI.map((r) => (
+              <button
+                key={r.rating}
+                onClick={() => rate(r.rating)}
+                className={`flex min-h-14 animate-enter flex-col items-center justify-center rounded-control border-[1.5px] px-1 py-2 shadow-card transition-[border-color,transform] active:scale-[0.97] ${r.cls}`}
+              >
+                <span className="text-sm font-bold md:text-base">{r.label}</span>
+                <span className="text-xs tabular-nums">
+                  <span className="sr-only">следующий показ через </span>
+                  {intervals?.[r.rating] ?? formatInterval(0)}
+                </span>
+                <kbd className="mt-0.5 hidden font-sans text-[11px] font-semibold md:block">{r.key}</kbd>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      <p className="hidden text-center text-xs text-ink-muted md:block">
         Клавиши: пробел — показать ответ, 1–4 — оценка (пробел после ответа = «Хорошо»)
       </p>
     </section>

@@ -1,34 +1,21 @@
+import { BADGE_TONE } from '@/components/tones'
+import { STATUS, STATUS_ORDER } from '@/components/status'
 import type { TopicStatus } from '@/data/types.ts'
 
-/** Visual tokens for topic status (gray / red / yellow / green). */
-export const STATUS_META: Record<TopicStatus, { label: string; dot: string; bar: string; chip: string }> = {
-  'not-started': {
-    label: 'Не начато',
-    dot: 'bg-stone-300 dark:bg-stone-600',
-    bar: 'bg-stone-200 dark:bg-stone-700',
-    chip: 'bg-stone-100 text-stone-600 dark:bg-stone-800 dark:text-stone-300',
-  },
-  weak: {
-    label: 'Слабо',
-    dot: 'bg-red-500',
-    bar: 'bg-red-500',
-    chip: 'bg-red-50 text-red-700 dark:bg-red-950/50 dark:text-red-300',
-  },
-  learning: {
-    label: 'Изучаю',
-    dot: 'bg-amber-400',
-    bar: 'bg-amber-400',
-    chip: 'bg-amber-50 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300',
-  },
-  confident: {
-    label: 'Уверенно',
-    dot: 'bg-emerald-500',
-    bar: 'bg-emerald-500',
-    chip: 'bg-emerald-50 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300',
-  },
+/**
+ * Compatibility view of the single status system in `@/components/status` (labels and colours are defined there).
+ * Kept for callers that still read `STATUS_META[s].chip/.dot/.bar`.
+ */
+type Meta = { label: string; dot: string; bar: string; chip: string }
+const meta = (s: TopicStatus): Meta => ({ label: STATUS[s].label, dot: STATUS[s].dot, bar: STATUS[s].bar, chip: BADGE_TONE[STATUS[s].tone] })
+
+export const STATUS_META: Record<TopicStatus, Meta> = {
+  'not-started': meta('not-started'),
+  weak: meta('weak'),
+  learning: meta('learning'),
+  confident: meta('confident'),
 }
 
-/** Display order for stacked bars / legends. */
-export const STATUS_ORDER: readonly TopicStatus[] = ['confident', 'learning', 'weak', 'not-started']
+export { STATUS_ORDER }
 
 export const pct = (x: number) => `${Math.round(x * 100)}%`

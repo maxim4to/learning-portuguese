@@ -10,7 +10,7 @@
 export type TopicStatus = 'not-started' | 'weak' | 'learning' | 'confident'
 
 /** Where a result came from. */
-export type ResultSource = 'lesson' | 'mini-test' | 'diagnostic' | 'review' | 'situation'
+export type ResultSource = 'lesson' | 'mini-test' | 'diagnostic' | 'review' | 'situation' | 'tutor'
 
 export interface TopicResult {
   topicId: string
@@ -19,6 +19,10 @@ export interface TopicResult {
   /** epoch ms */
   at: number
   source?: ResultSource
+  /** Tutor sessions (`source: 'tutor'`): prompt mode id, e.g. 'explain', 'roleplay', 'daily'. */
+  mode?: string
+  /** Tutor sessions: learner's note (what to repeat / the agent's summary line). */
+  note?: string
 }
 
 export interface TopicProgress {

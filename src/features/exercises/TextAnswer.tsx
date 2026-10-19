@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { cx } from '@/components/cx'
 import type { AnswerRecord } from './types'
 
 const ACCENTS = ['á', 'à', 'â', 'ã', 'ç', 'é', 'ê', 'í', 'ó', 'ô', 'õ', 'ú']
@@ -10,11 +11,27 @@ interface TextAnswerProps {
   result?: AnswerRecord
   placeholder?: string
   multiline?: boolean
+  /** Accessible name of a single field (default «Ваш ответ»). Multi-gap fields are «Пропуск N из M». */
+  label?: string
+  /** id(s) of the prompt / hint / translation the field answers (read by screen readers with the field). */
+  describedBy?: string
   onSubmit(value: string): void
+  /** «Не знаю» (shows the answer; no review card without consent). Hidden when omitted. */
+  onSkip?(): void
 }
 
-/** Typed answer: input(s) + accent keys + «Проверить» / «Не знаю». Enter submits. */
-export function TextAnswer({ fields = 1, locked, result, placeholder, multiline, onSubmit }: TextAnswerProps) {
+/** Typed answer: labelled input(s) + accent keys + «Проверить» / «Не знаю». Enter submits. */
+export function TextAnswer({
+  fields = 1,
+  locked,
+  result,
+  placeholder,
+  multiline,
+  label = 'Ваш ответ',
+  describedBy,
+  onSubmit,
+  onSkip,
+}: TextAnswerProps) {
   const [values, setValues] = useState<string[]>(() => Array.from({ length: fields }, () => ''))
   const [focused, setFocused] = useState(0)
   const refs = useRef<(HTMLInputElement | HTMLTextAreaElement | null)[]>([])
@@ -48,8 +65,12 @@ export function TextAnswer({ fields = 1, locked, result, placeholder, multiline,
   const tone = !result
     ? ''
     : result.ok
-      ? 'border-brand-500 bg-brand-50 dark:bg-brand-800/20'
-      : 'border-red-400 bg-red-50 dark:bg-red-900/20'
+      ? 'border-brand bg-brand-soft animate-pop'
+      : result.skipped
+        ? 'border-line-strong bg-surface-2'
+        : result.verdict === 'accents'
+          ? 'border-warning bg-warning-soft animate-shake'
+          : 'border-danger bg-danger-soft animate-shake'
 
   const common = {
     disabled: locked,
@@ -59,7 +80,10 @@ export function TextAnswer({ fields = 1, locked, result, placeholder, multiline,
     spellCheck: false,
     lang: 'pt-PT',
     enterKeyHint: 'done' as const,
+    'aria-describedby': describedBy,
+    'aria-invalid': result && !result.ok ? true : undefined,
   }
+  const fieldLabel = (i: number) => (fields > 1 ? `Пропуск ${i + 1} из ${fields}` : label)
 
   return (
     <form onSubmit={submit} className="space-y-3">
@@ -72,6 +96,7 @@ export function TextAnswer({ fields = 1, locked, result, placeholder, multiline,
                 refs.current[i] = el
               }}
               {...common}
+              aria-label={fieldLabel(i)}
               rows={2}
               value={v}
               placeholder={placeholder}
@@ -83,7 +108,7 @@ export function TextAnswer({ fields = 1, locked, result, placeholder, multiline,
                   submit()
                 }
               }}
-              className={`input resize-none text-[17px] ${tone}`}
+              className={cx('input resize-none text-[1.0625rem] disabled:text-ink', tone)}
             />
           ) : (
             <input
@@ -92,39 +117,44 @@ export function TextAnswer({ fields = 1, locked, result, placeholder, multiline,
                 refs.current[i] = el
               }}
               {...common}
+              aria-label={fieldLabel(i)}
               type="text"
               value={v}
               placeholder={fields > 1 ? `пропуск ${i + 1}` : placeholder}
               onFocus={() => setFocused(i)}
               onChange={(e) => setValues((vs) => vs.map((x, j) => (j === i ? e.target.value : x)))}
-              className={`input text-[17px] ${tone}`}
+              className={cx('input text-[1.0625rem] disabled:text-ink', tone)}
             />
           ),
         )}
       </div>
       {!locked && (
         <>
-          <div className="flex flex-wrap gap-1.5" aria-label="Буквы с диакритикой">
+          <div className="flex flex-wrap gap-1.5" role="group" aria-label="Буквы с диакритикой">
             {ACCENTS.map((ch) => (
               <button
                 key={ch}
                 type="button"
                 tabIndex={-1}
+                aria-label={`Вставить ${ch}`}
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => insert(ch)}
-                className="h-9 min-w-9 rounded-lg border border-stone-300 bg-white px-2 text-base hover:bg-stone-100 dark:border-stone-700 dark:bg-stone-900 dark:hover:bg-stone-800"
+                className="grid h-11 min-w-11 place-items-center rounded-[calc(var(--radius-sm)-2px)] border border-line bg-surface-2 px-2 text-lg font-medium text-ink transition-colors hover:border-line-strong hover:bg-surface active:scale-95"
+                lang="pt-PT"
               >
                 {ch}
               </button>
             ))}
           </div>
-          <div className="flex gap-2">
-            <button type="submit" className="btn-primary flex-1 sm:flex-none" disabled={!filled}>
+          <div className="sticky-actions -mx-2 flex gap-2 rounded-control bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+            <button type="submit" className="btn-primary flex-1 sm:flex-none sm:min-w-36" disabled={!filled}>
               Проверить
             </button>
-            <button type="button" className="btn-secondary" onClick={() => onSubmit(values.join(' ').trim())}>
-              Не знаю
-            </button>
+            {onSkip && (
+              <button type="button" className="btn-secondary" onClick={onSkip}>
+                Не знаю
+              </button>
+            )}
           </div>
         </>
       )}

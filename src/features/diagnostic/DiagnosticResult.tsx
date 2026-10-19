@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ChevronRight } from 'lucide-react'
+import { ButtonLink } from '@/components/Button'
 import { getDiagnostic, getSyllabus, getTopic } from '@/content'
 import { LevelBadge } from '@/components/StatusBadge'
 import {
@@ -25,9 +27,9 @@ export function GradeCounts({ topics }: { topics: Map<string, TopicOutcome> }) {
   return (
     <div className="grid grid-cols-3 gap-2 text-center">
       {(['green', 'yellow', 'red'] as const).map((g) => (
-        <div key={g} className={`rounded-xl border px-2 py-2 ${GRADE_META[g].chip}`}>
-          <p className="text-2xl font-bold tabular-nums">{c[g]}</p>
-          <p className="text-xs">{GRADE_META[g].label}</p>
+        <div key={g} className={`rounded-control border px-2 py-3 ${GRADE_META[g].chip}`}>
+          <p className="font-serif text-3xl font-semibold tabular-nums">{c[g]}</p>
+          <p className="text-xs font-semibold">{GRADE_META[g].label}</p>
         </div>
       ))}
     </div>
@@ -41,12 +43,12 @@ function TopicChip({ id, outcome }: { id: string; outcome?: TopicOutcome }) {
     <li>
       <Link
         to={`/topic/${id}`}
-        className={`flex min-h-10 items-center gap-2 rounded-xl border px-3 py-1.5 text-sm no-underline transition ${meta.chip}`}
+        className={`flex min-h-11 items-center gap-2 rounded-control border px-3 py-1.5 text-sm no-underline transition-colors ${meta.chip}`}
         title={meta.label}
       >
         <i className={`size-2.5 shrink-0 rounded-full ${meta.dot}`} aria-hidden />
         <span className="min-w-0 flex-1 leading-snug">{topicTitle(id)}</span>
-        <span className="shrink-0 text-xs tabular-nums opacity-80">
+        <span className="shrink-0 text-xs font-semibold tabular-nums">
           {outcome ? `${outcome.correct}/${outcome.total}` : '—'}
           <span className="sr-only"> · {meta.label}</span>
         </span>
@@ -77,34 +79,34 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
 
   return (
     <div className="space-y-5">
-      <section className="card space-y-4 sm:p-6">
+      <section className="card-raised relative space-y-4 overflow-hidden rounded-hero p-5 sm:p-7">
         <div className="space-y-1">
           <h1>{heading}</h1>
-          <p className="text-sm text-stone-500">
+          <p className="text-sm text-ink-muted">
             {formatDate(data.at)} · верно {correct} из {answered}
           </p>
         </div>
         <GradeCounts topics={data.topics} />
         {data.skippedLevels.length > 0 && (
-          <p className="text-sm text-stone-600 dark:text-stone-400">
+          <p className="text-sm text-ink-muted">
             Не оценивались: {data.skippedLevels.join(', ')} — диагностика остановлена раньше.
           </p>
         )}
-        {saving && <p className="text-sm text-stone-500">Сохраняю…</p>}
-        {error && <p className="text-sm text-red-600">Не удалось сохранить: {error}</p>}
-        {note && !saving && <p className="text-sm text-stone-500">{note}</p>}
+        {saving && <p className="text-sm text-ink-muted">Сохраняю…</p>}
+        {error && <p className="text-sm text-danger">Не удалось сохранить: {error}</p>}
+        {note && !saving && <p className="text-sm text-ink-muted">{note}</p>}
       </section>
 
       <section className="card space-y-3 sm:p-6">
         <h2>Рекомендуемый маршрут</h2>
         {route.length === 0 ? (
-          <p className="text-stone-600 dark:text-stone-400">
+          <p className="text-ink-muted">
             Проверенные темы вы знаете уверенно — они отмечены как пройденные и будут встречаться на повторении.
             {data.skippedLevels.length > 0 && ' Продолжайте курс со следующего уровня.'}
           </p>
         ) : (
           <>
-            <p className="text-sm text-stone-600 dark:text-stone-400">
+            <p className="text-sm text-ink-muted">
               Сначала темы, где ошибок больше всего, затем темы с пробелами. Зелёные темы — «пройдено, на повторении».
             </p>
             <ol className="space-y-0.5">
@@ -112,12 +114,13 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
                 <li key={r.id}>
                   <Link
                     to={`/topic/${r.id}`}
-                    className="flex items-center gap-3 rounded-xl px-1 py-1.5 no-underline sm:px-2 hover:bg-stone-100 dark:hover:bg-stone-800/60"
+                    className="group flex min-h-11 items-center gap-3 rounded-control px-1 py-1.5 text-ink no-underline hover:bg-surface-2 sm:px-2"
                   >
-                    <span className="w-6 shrink-0 text-right text-sm text-stone-400 tabular-nums">{i + 1}.</span>
+                    <span className="w-6 shrink-0 text-right text-sm text-ink-muted tabular-nums">{i + 1}.</span>
                     <i className={`size-2.5 shrink-0 rounded-full ${GRADE_META[r.grade].dot}`} title={GRADE_META[r.grade].label} />
-                    <span className="min-w-0 flex-1 text-[15px] leading-snug text-stone-900 sm:text-base dark:text-stone-100">{topicTitle(r.id)}</span>
-                    <span className="shrink-0 text-xs text-stone-500">{getTopic(r.id)?.level ?? r.id.slice(0, 2).toUpperCase()}</span>
+                    <span className="min-w-0 flex-1 text-[0.9375rem] leading-snug font-medium sm:text-base">{topicTitle(r.id)}</span>
+                    <span className="shrink-0 text-xs font-semibold text-ink-muted">{getTopic(r.id)?.level ?? r.id.slice(0, 2).toUpperCase()}</span>
+                    <ChevronRight aria-hidden className="size-4 shrink-0 text-ink-muted" />
                   </Link>
                 </li>
               ))}
@@ -125,7 +128,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
             {route.length > ROUTE_PREVIEW && (
               <button
                 type="button"
-                className="text-sm text-brand-700 dark:text-brand-500"
+                className="min-h-11 text-sm font-semibold text-azulejo"
                 aria-expanded={showAll}
                 onClick={() => setShowAll((v) => !v)}
               >
@@ -138,7 +141,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
 
       <section className="space-y-4">
         <h2>Карта тем</h2>
-        <div className="flex flex-wrap gap-3 text-xs text-stone-500">
+        <div className="flex flex-wrap gap-3 text-xs text-ink-muted">
           {LEGEND.map((g) => (
             <span key={g} className="flex items-center gap-1.5">
               <i className={`inline-block size-2.5 rounded-full ${GRADE_META[g].dot}`} />
@@ -152,11 +155,11 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
             <div key={lvl.level} className="card space-y-4">
               <div className="flex flex-wrap items-center gap-2">
                 <LevelBadge level={lvl.level} />
-                {skipped.has(lvl.level) && <span className="text-sm text-stone-500">не оценивался</span>}
+                {skipped.has(lvl.level) && <span className="text-sm text-ink-muted">не оценивался</span>}
               </div>
               {lvl.modules.map((mod) => (
                 <div key={mod.id} className="space-y-2">
-                  <h3 className="text-sm font-medium text-stone-600 dark:text-stone-400">{mod.title}</h3>
+                  <h3 className="text-sm font-semibold text-ink-muted">{mod.title}</h3>
                   <ul className="grid gap-1.5 sm:grid-cols-2">
                     {mod.topics.map((id) => (
                       <TopicChip key={id} id={id} outcome={data.topics.get(id)} />
@@ -169,9 +172,7 @@ export function DiagnosticResult({ data, heading, saving, error, note, onRestart
       </section>
 
       <div className="flex flex-col gap-2 sm:flex-row">
-        <Link to="/syllabus" className="btn-primary no-underline">
-          К курсу
-        </Link>
+        <ButtonLink to="/syllabus">К курсу</ButtonLink>
         <button type="button" className="btn-secondary" onClick={onRestart}>
           Пройти заново
         </button>

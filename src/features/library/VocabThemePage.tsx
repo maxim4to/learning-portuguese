@@ -1,11 +1,14 @@
 import { useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getVocabTheme } from '@/content'
+import { Check, GraduationCap, Plus, Sparkles, X } from 'lucide-react'
+import { PageHeader } from '@/components/PageHeader'
+import { SpeakButton } from '@/components/SpeakButton'
 import { LevelBadge } from '@/components/StatusBadge'
-import { SpeakButton } from '@/features/exercises'
+import { VocabTutor } from '@/features/tutor/panels'
 import { useLibraryCards, vocabCardSpecs } from './cards'
 import { VocabQuiz } from './VocabQuiz'
-import { AddCardButton, BackLink, GenderBadge, NotFound } from './ui'
+import { AddCardButton, GenderBadge, NotFound } from './ui'
 import { plural } from './format'
 
 export function VocabThemePage() {
@@ -22,22 +25,27 @@ export function VocabThemePage() {
 
   return (
     <article className="space-y-5">
-      <BackLink />
-      <header className="space-y-1">
-        <div className="flex flex-wrap items-center gap-2">
-          {theme.level && <LevelBadge level={theme.level} />}
-          <span className="text-sm text-stone-500">Словарь · {plural(theme.words.length, 'слово', 'слова', 'слов')}</span>
-        </div>
-        <h1>{theme.title}</h1>
-        {theme.titlePt && (
-          <p className="text-stone-500 italic" lang="pt-PT">
-            {theme.titlePt}
-          </p>
-        )}
-      </header>
+      <PageHeader
+        back={{ to: '/library', label: 'Библиотека' }}
+        eyebrow={
+          <>
+            {theme.level && <LevelBadge level={theme.level} />}
+            <span>Словарь · {plural(theme.words.length, 'слово', 'слова', 'слов')}</span>
+          </>
+        }
+        title={theme.title}
+        subtitle={
+          theme.titlePt && (
+            <p className="font-serif text-lg italic" lang="pt-PT">
+              {theme.titlePt}
+            </p>
+          )
+        }
+      />
 
       <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
         <button type="button" className={quiz ? 'btn-secondary' : 'btn-primary'} onClick={() => setQuiz((q) => !q)}>
+          {quiz ? <X aria-hidden className="size-5" /> : <GraduationCap aria-hidden className="size-5" />}
           {quiz ? 'Закрыть самопроверку' : 'Проверить себя'}
         </button>
         <button
@@ -46,10 +54,14 @@ export function VocabThemePage() {
           disabled={cards.busy || cards.have === null || allAdded}
           onClick={() => void cards.add(missing)}
         >
-          {allAdded ? '✓ Все слова в повторении' : `Добавить все в повторение${cards.have && missing.length < specs.length ? ` (${missing.length})` : ''}`}
+          {allAdded ? <Check aria-hidden className="size-5 text-brand" /> : <Plus aria-hidden className="size-5" />}
+          {allAdded ? 'Все слова в повторении' : `Добавить все в повторение${cards.have && missing.length < specs.length ? ` (${missing.length})` : ''}`}
         </button>
+        <a href="#tutor" className="inline-flex min-h-11 items-center justify-center gap-1.5 text-sm font-semibold sm:ml-1">
+          <Sparkles aria-hidden className="size-4 text-terracotta" /> Практика с агентом
+        </a>
         {cards.msg && (
-          <span className="text-sm text-stone-500" role="status">
+          <span className="text-sm text-ink-muted" role="status">
             {cards.msg}
           </span>
         )}
@@ -65,12 +77,12 @@ export function VocabThemePage() {
 
       <div className="card overflow-hidden p-0">
         <table className="w-full table-fixed border-collapse text-left break-words">
-          <thead className="bg-stone-100 text-sm text-stone-600 dark:bg-stone-800/70 dark:text-stone-300">
+          <thead className="bg-surface-2 text-sm text-ink-muted">
             <tr>
-              <th className="w-[48%] px-2 py-2 font-semibold sm:px-3 md:w-[30%]">Português</th>
-              <th className="px-2 py-2 font-semibold sm:px-3">Перевод</th>
-              <th className="hidden w-[36%] px-3 py-2 font-semibold md:table-cell">Пример</th>
-              <th className="w-12 px-1.5 py-2 sm:w-14 sm:px-2">
+              <th className="w-[50%] px-2 py-2.5 font-semibold sm:px-3 md:w-[32%]">Português</th>
+              <th className="px-2 py-2.5 font-semibold sm:px-3">Перевод</th>
+              <th className="hidden w-[34%] px-3 py-2.5 font-semibold md:table-cell">Пример</th>
+              <th className="w-14 px-1.5 py-2 sm:w-16 sm:px-2">
                 <span className="sr-only">В повторение</span>
               </th>
             </tr>
@@ -79,30 +91,30 @@ export function VocabThemePage() {
             {theme.words.map((w, i) => {
               const spec = specs[i]
               return (
-                <tr key={i} className="border-t border-stone-200 align-top dark:border-stone-800">
-                  <td className="px-2 py-2.5 sm:px-3">
+                <tr key={i} className="border-t border-line align-top">
+                  <td className="px-2 py-2 sm:px-3">
                     <div className="flex items-start gap-2">
-                      <SpeakButton text={w.pt} />
-                      <div className="min-w-0 pt-1.5">
-                        <span className="font-medium" lang="pt-PT">
+                      <SpeakButton text={w.pt} size="sm" />
+                      <div className="min-w-0 pt-2">
+                        <span className="font-semibold" lang="pt-PT">
                           {w.pt}
                         </span>{' '}
                         <GenderBadge gender={w.gender} />
                       </div>
                     </div>
                   </td>
-                  <td className="px-2 py-2.5 pt-4 sm:px-3">
+                  <td className="px-2 py-2 pt-4 sm:px-3">
                     {w.ru}
                     {w.example && (
-                      <p className="mt-1 text-sm text-stone-500 italic md:hidden" lang="pt-PT">
+                      <p className="mt-1 font-serif text-sm text-ink-muted italic md:hidden" lang="pt-PT">
                         {w.example}
                       </p>
                     )}
                   </td>
-                  <td className="hidden px-3 py-2.5 pt-4 text-sm text-stone-600 italic md:table-cell dark:text-stone-400" lang="pt-PT">
+                  <td className="hidden px-3 py-2 pt-4 font-serif text-sm text-ink-muted italic md:table-cell" lang="pt-PT">
                     {w.example}
                   </td>
-                  <td className="px-1.5 py-2.5 sm:px-2">
+                  <td className="px-1.5 py-2 sm:px-2">
                     <AddCardButton
                       added={!!cards.have?.has(spec.id)}
                       disabled={cards.busy || cards.have === null}
@@ -115,6 +127,8 @@ export function VocabThemePage() {
           </tbody>
         </table>
       </div>
+
+      <VocabTutor theme={theme} />
     </article>
   )
 }

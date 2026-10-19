@@ -1,0 +1,130 @@
+import { useEffect, useRef, type KeyboardEvent, type ReactNode } from 'react'
+import { cx, scrollBehavior } from './cx'
+
+export interface TabItem<T extends string> {
+  value: T
+  label: ReactNode
+  /** Small counter / status after the label (e.g. «14», «✓»). */
+  meta?: ReactNode
+}
+
+const tabId = (idBase: string, value: string) => `${idBase}-tab-${value}`
+const panelId = (idBase: string, value: string) => `${idBase}-panel-${value}`
+
+/**
+ * WAI-ARIA tabs: roving tabindex, ←/→/Home/End (automatic activation), ids wired to panels,
+ * active tab kept in view in the horizontally scrolling bar, faded edges.
+ * `sticky` pins the bar under the status bar (mobile) / top bar (desktop) via --sticky-top.
+ * Render panels with <TabPanel idBase value active>.
+ */
+export function Tabs<T extends string>({
+  items,
+  value,
+  onChange,
+  idBase,
+  label,
+  sticky,
+  className,
+}: {
+  items: readonly TabItem<T>[]
+  value: T
+  onChange(v: T): void
+  idBase: string
+  label: string
+  sticky?: boolean
+  className?: string
+}) {
+  const barRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const bar = barRef.current
+    const el = bar?.querySelector<HTMLElement>('[aria-selected="true"]')
+    if (!bar || !el) return
+    const l = el.offsetLeft - bar.offsetLeft
+    if (l < bar.scrollLeft + 8 || l + el.offsetWidth > bar.scrollLeft + bar.clientWidth - 8)
+      bar.scrollTo({ left: l - 24, behavior: scrollBehavior() })
+  }, [value])
+
+  function onKey(e: KeyboardEvent) {
+    const i = items.findIndex((t) => t.value === value)
+    let n = -1
+    if (e.key === 'ArrowRight') n = (i + 1) % items.length
+    else if (e.key === 'ArrowLeft') n = (i - 1 + items.length) % items.length
+    else if (e.key === 'Home') n = 0
+    else if (e.key === 'End') n = items.length - 1
+    if (n < 0) return
+    e.preventDefault()
+    onChange(items[n].value)
+    document.getElementById(tabId(idBase, items[n].value))?.focus()
+  }
+
+  return (
+    <div
+      className={cx(
+        sticky &&
+          'sticky top-(--sticky-top) z-10 -mx-4 border-b border-line bg-bg/90 px-4 py-2 backdrop-blur-md md:-mx-2 md:border-b-0 md:px-2',
+        className,
+      )}
+    >
+      <div
+        ref={barRef}
+        role="tablist"
+        aria-label={label}
+        onKeyDown={onKey}
+        className="scroll-fade-x flex gap-1 overflow-x-auto rounded-control bg-surface-2 p-1"
+      >
+        {items.map((t) => {
+          const on = t.value === value
+          return (
+            <button
+              key={t.value}
+              id={tabId(idBase, t.value)}
+              role="tab"
+              type="button"
+              aria-selected={on}
+              aria-controls={panelId(idBase, t.value)}
+              tabIndex={on ? 0 : -1}
+              onClick={() => onChange(t.value)}
+              className={cx(
+                'inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-[calc(var(--radius-sm)-4px)] px-3 text-sm font-semibold whitespace-nowrap transition-[background-color,color,box-shadow] duration-150 sm:px-4',
+                on ? 'bg-surface text-ink shadow-card ring-1 ring-line' : 'text-ink-muted hover:bg-surface/60 hover:text-ink',
+              )}
+            >
+              {t.label}
+              {t.meta !== undefined && (
+                <span className={cx('text-xs tabular-nums', on ? 'text-azulejo' : 'text-ink-muted')}>{t.meta}</span>
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+export function TabPanel({
+  idBase,
+  value,
+  active,
+  className,
+  children,
+}: {
+  idBase: string
+  value: string
+  active: boolean
+  className?: string
+  children: ReactNode
+}) {
+  return (
+    <section
+      id={panelId(idBase, value)}
+      role="tabpanel"
+      aria-labelledby={tabId(idBase, value)}
+      hidden={!active}
+      tabIndex={-1}
+      className={cx('outline-none', className)}
+    >
+      {children}
+    </section>
+  )
+}

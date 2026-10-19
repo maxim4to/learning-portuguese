@@ -10,6 +10,7 @@
  *   /content/situations/<id>.json  → Situation
  *   /content/vocab/<id>.json       → VocabTheme
  *   /content/reading/<id>.json     → ReadingText
+ *   /content/tutor/<id>.json       → TutorNotes (id = an existing topic/situation/reading/vocab id)
  * The file basename must equal the object's `id`.
  */
 import type { z } from 'zod'
@@ -19,6 +20,7 @@ import {
   SituationSchema,
   SyllabusSchema,
   TopicSchema,
+  TutorNotesSchema,
   VocabThemeSchema,
   type Diagnostic,
   type Exercise,
@@ -28,6 +30,7 @@ import {
   type Syllabus,
   type SyllabusModule,
   type Topic,
+  type TutorNotes,
   type VocabTheme,
 } from './schema.ts'
 
@@ -47,6 +50,8 @@ export interface ContentIndex {
   situations: Map<string, Situation>
   vocab: Map<string, VocabTheme>
   reading: Map<string, ReadingText>
+  /** Optional tutor-prompt additions, keyed by item id. */
+  tutor: Map<string, TutorNotes>
   /** moduleId → { level, module } */
   modules: Map<string, { level: Level; module: SyllabusModule }>
   /** Topic ids in syllabus order, followed by topics not referenced in the syllabus. */
@@ -84,6 +89,7 @@ export function buildContentIndex(files: Record<string, unknown>): BuildResult {
   const situations = new Map<string, Situation>()
   const vocab = new Map<string, VocabTheme>()
   const reading = new Map<string, ReadingText>()
+  const tutor = new Map<string, TutorNotes>()
 
   let sawSyllabus = false
   let sawDiagnostic = false
@@ -123,6 +129,7 @@ export function buildContentIndex(files: Record<string, unknown>): BuildResult {
     else if (/^situations\/[^/]+\.json$/.test(rel)) parseInto(file, data, SituationSchema, situations)
     else if (/^vocab\/[^/]+\.json$/.test(rel)) parseInto(file, data, VocabThemeSchema, vocab)
     else if (/^reading\/[^/]+\.json$/.test(rel)) parseInto(file, data, ReadingTextSchema, reading)
+    else if (/^tutor\/[^/]+\.json$/.test(rel)) parseInto(file, data, TutorNotesSchema, tutor)
     else warnings.push(`${file}: unknown content file location, ignored`)
   }
   if (!sawSyllabus) errors.push('/content/syllabus.json is missing')
@@ -155,6 +162,12 @@ export function buildContentIndex(files: Record<string, unknown>): BuildResult {
       warnings.push(`topic "${tid}" is not referenced in syllabus.json`)
       topicOrder.push(tid)
     }
+  }
+
+  // --- tutor overrides → existing items ------------------------------------------
+  for (const tid of tutor.keys()) {
+    if (!topics.has(tid) && !situations.has(tid) && !reading.has(tid) && !vocab.has(tid))
+      errors.push(`/content/tutor/${tid}.json: no topic / situation / reading / vocab theme with id "${tid}"`)
   }
 
   // --- requires ----------------------------------------------------------------
@@ -202,7 +215,7 @@ export function buildContentIndex(files: Record<string, unknown>): BuildResult {
   for (const q of diagnostic.questions) addExercise(q, 'diagnostic', 'diagnostic', new Set())
 
   return {
-    index: { syllabus, diagnostic, topics, situations, vocab, reading, modules, topicOrder, exercises },
+    index: { syllabus, diagnostic, topics, situations, vocab, reading, tutor, modules, topicOrder, exercises },
     errors,
     warnings,
     missing,

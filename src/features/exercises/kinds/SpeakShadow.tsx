@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Check, Mic, Square } from 'lucide-react'
 import { SpeakButton } from '../SpeakButton'
 import type { ExerciseProps } from '../types'
 
@@ -52,21 +53,22 @@ function SelfRecorder() {
     }
   }
 
-  if (!canRecord()) return <p className="text-sm text-stone-500">Запись в этом браузере недоступна — повторите вслух.</p>
+  if (!canRecord()) return <p className="text-sm text-ink-muted">Запись в этом браузере недоступна — повторите вслух.</p>
 
   return (
     <div className="space-y-2">
       {state === 'recording' ? (
-        <button type="button" className="btn bg-red-600 text-white hover:bg-red-700" onClick={() => rec.current?.stop()}>
-          <span className="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-white" aria-hidden /> Остановить запись
+        <button type="button" className="btn-danger" onClick={() => rec.current?.stop()}>
+          <span className="inline-block size-2.5 animate-pulse rounded-full bg-white" aria-hidden />
+          <Square aria-hidden className="size-4 fill-current" /> Остановить запись
         </button>
       ) : (
         <button type="button" className="btn-secondary" onClick={() => void start()}>
-          🎙 {state === 'recorded' ? 'Записать заново' : 'Записать себя'}
+          <Mic aria-hidden className="size-5" /> {state === 'recorded' ? 'Записать заново' : 'Записать себя'}
         </button>
       )}
       {url && state === 'recorded' && <audio controls src={url} className="w-full max-w-sm" />}
-      {error && <p className="text-sm text-red-700 dark:text-red-400">{error}</p>}
+      {error && <p className="text-sm text-danger">{error}</p>}
     </div>
   )
 }
@@ -78,19 +80,19 @@ export function SpeakShadowExercise({ exercise: ex, locked, onSubmit }: Exercise
         <p className="text-xl leading-relaxed" lang="pt-PT">
           {ex.text}
         </p>
-        {ex.ru && <p className="text-sm text-stone-500 dark:text-stone-400">{ex.ru}</p>}
+        {ex.ru && <p className="text-sm text-ink-muted">{ex.ru}</p>}
       </div>
       <div className="flex flex-wrap items-center gap-3">
-        <SpeakButton text={ex.text} size="lg" label="Слушать" />
+        <SpeakButton text={ex.text} size="lg" variant="solid" label="Слушать" />
         <SpeakButton text={ex.text} rateFactor={0.75} label="Медленно" />
       </div>
       <SelfRecorder />
       {!locked && (
-        <div className="space-y-2 border-t border-stone-200 pt-3 dark:border-stone-800">
-          <p className="text-sm text-stone-500">Сравните с оригиналом и оцените себя:</p>
-          <div className="flex flex-wrap gap-2">
+        <div className="space-y-2 border-t border-line pt-4">
+          <p className="text-sm text-ink-muted">Сравните с оригиналом и оцените себя:</p>
+          <div className="sticky-actions -mx-2 flex flex-wrap gap-2 rounded-control bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
             <button type="button" className="btn-primary" onClick={() => onSubmit({ given: 'получилось', verdict: 'correct' })}>
-              Получилось ✓
+              <Check aria-hidden className="size-5" /> Получилось
             </button>
             <button type="button" className="btn-secondary" onClick={() => onSubmit({ given: 'ещё раз', verdict: 'wrong' })}>
               Ещё потренироваться

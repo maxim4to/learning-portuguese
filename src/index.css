@@ -1,46 +1,503 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens — palette A «Azulejo & Terracota» (docs/design/audit.md §2.3, §7.0).
+ *
+ * Theme switching: `html.dark` is set before first paint by the inline script in index.html
+ * (system preference, or the user's choice from Settings → stored in localStorage `ptpt:v1:theme`).
+ * All `dark:` utilities follow that class, so the manual choice and the system setting behave the same.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #fbf7f0;
+  --surface: #ffffff;
+  --surface-2: #f4ede1;
+  --surface-sunken: #f1eadd;
+  --border: #e7ddcc;
+  --border-strong: #d6c8b1;
+
+  --ink: #1f2a2e;
+  --ink-muted: #5b6467; /* 5.68 on bg, 6.06 on surface, 5.21 on surface-2 */
+  --ink-subtle: #7a8285; /* ≥18px text or decoration only */
+
+  --brand: #0f6b4f; /* white on it 6.49 */
+  --brand-hover: #0b5540;
+  --brand-soft: #e3f1ea;
+  --brand-ink: #0b5540; /* on brand-soft 7.55 */
+  --on-brand: #ffffff;
+
+  --azulejo: #1f4e8c; /* links, tabs, audio — 7.78 on bg */
+  --azulejo-soft: #e6eef8;
+  --azulejo-ink: #1f4e8c;
+
+  --terracotta: #9c4421; /* text 6.03 on bg */
+  --terracotta-fill: #b5532e; /* white on it 4.95 */
+  --terracotta-soft: #f8e7de;
+
+  --sun: #8a5a00; /* on sun-soft 5.24 */
+  --sun-fill: #e0a526;
+  --sun-soft: #fbf0d9;
+
+  --success: var(--brand);
+  --success-soft: var(--brand-soft);
+  --danger: #b42318; /* on danger-soft 5.75 */
+  --danger-fill: #b42318;
+  --danger-soft: #fdecea;
+  --danger-border: #f4b4ac;
+  --warning: #8a5a00;
+  --warning-soft: #fbf0d9;
+  --warning-border: #ecc98a;
+
+  --focus: #1f4e8c;
+  --scrim: rgb(31 42 46 / 0.4);
+
+  --shadow-1: 0 1px 2px rgb(60 40 20 / 0.06), 0 1px 1px rgb(60 40 20 / 0.04);
+  --shadow-2: 0 10px 28px -10px rgb(60 40 20 / 0.22), 0 1px 2px rgb(60 40 20 / 0.05);
+  --shadow-bar: 0 -1px 0 var(--border), 0 -8px 24px -12px rgb(60 40 20 / 0.12);
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+
+  /* Layout metrics: fixed bar heights (sticky offsets derive from them, no magic numbers). */
+  --header-h: 3.5rem;
+  --tabbar-h: 4rem;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  /* Where sticky in-page bars stick: under the status bar on mobile, under the top bar on desktop. */
+  --sticky-top: var(--safe-top);
+  /* Space reserved at the bottom of the viewport (mobile tab bar + home indicator). */
+  --bottom-chrome: calc(var(--tabbar-h) + var(--safe-bottom));
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Legacy neutral ramp used by pages not yet migrated (text shades adapt to the theme, see .dark). */
+  --legacy-400: #5f676a; /* was stone-400 (2.52:1) → 4.97 on surface-2 */
+  --legacy-500: #5b6467;
+
+  color-scheme: light;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --sticky-top: var(--header-h);
+    --bottom-chrome: 0px;
+  }
+}
+
+.dark {
+  --bg: #0f1311;
+  --surface: #222a26; /* 1.31:1 against bg + border + inset highlight */
+  --surface-2: #2b3430;
+  --surface-sunken: #171c1a;
+  --border: #36413b;
+  --border-strong: #4a5650;
+
+  --ink: #eef0ea;
+  --ink-muted: #a3aca6; /* 6.15 on surface */
+  --ink-subtle: #87908a;
+
+  --brand: #4fbf8f; /* dark ink on it 8.15 */
+  --brand-hover: #6bd0a4;
+  --brand-soft: rgb(79 191 143 / 0.14);
+  --brand-ink: #7fd6b0;
+  --on-brand: #0e1411;
+
+  --azulejo: #8db4f0;
+  --azulejo-soft: rgb(141 180 240 / 0.13);
+  --azulejo-ink: #a9c6f4;
+
+  --terracotta: #f0a27e;
+  --terracotta-fill: #c8653d;
+  --terracotta-soft: rgb(240 162 126 / 0.13);
+
+  --sun: #f2c46b;
+  --sun-fill: #e0a526;
+  --sun-soft: rgb(242 196 107 / 0.13);
+
+  --danger: #ff9c8f;
+  --danger-fill: #c2412f;
+  --danger-soft: #2f1d1a;
+  --danger-border: #6b2e27;
+  --warning: #f2c46b;
+  --warning-soft: rgb(242 196 107 / 0.12);
+  --warning-border: #6b5424;
+
+  --focus: #8db4f0;
+  --scrim: rgb(0 0 0 / 0.55);
+
+  --shadow-1: inset 0 1px 0 rgb(255 255 255 / 0.04), 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-2: 0 14px 34px -12px rgb(0 0 0 / 0.65), inset 0 1px 0 rgb(255 255 255 / 0.06);
+  --shadow-bar: 0 -1px 0 var(--border), 0 -10px 30px -14px rgb(0 0 0 / 0.7);
+
+  --legacy-400: #a3aca6;
+  --legacy-500: #9da69f; /* 6.61 on surface */
+
+  color-scheme: dark;
+}
+
 @theme {
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --color-brand-50: #ecfdf5;
-  --color-brand-100: #d1fae5;
-  --color-brand-500: #10b981;
-  --color-brand-600: #059669;
-  --color-brand-700: #047857;
-  --color-brand-800: #065f46;
+  --font-sans: "Manrope Variable", "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --font-serif: "Lora Variable", "Lora", "PT Serif", Georgia, "Times New Roman", serif;
+
+  /* Type scale (≈1.2, rem so the browser font-size setting applies everywhere). */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.45;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 1.3;
+  --text-2xl: 1.875rem;
+  --text-2xl--line-height: 1.2;
+  --text-3xl: 2.25rem;
+  --text-3xl--line-height: 1.15;
+  --text-display: 3rem;
+  --text-display--line-height: 1.05;
+
+  --animate-pop: pop 260ms var(--ease-out);
+  --animate-shake: shake 320ms ease-in-out;
+  --animate-enter: enter 220ms var(--ease-out);
+  --animate-fade: fade 180ms ease-out;
+  --animate-toast: toast-in 240ms var(--ease-out);
+
+  /* Legacy brand ramp (pages not yet migrated use brand-*). Retinted to the new verde. */
+  --color-brand-50: #e3f1ea;
+  --color-brand-100: #cde7da;
+  --color-brand-500: #4fbf8f;
+  --color-brand-600: #13805f;
+  --color-brand-700: #0f6b4f;
+  --color-brand-800: #0b5540;
+  --color-brand-900: #08402f;
+
+  /* Legacy neutral ramp: Tailwind's stone retinted to the warm palette so un-migrated pages match.
+     Light shades = light-theme surfaces/borders, dark shades = dark-theme surfaces/borders. */
+  --color-stone-50: #fbf7f0;
+  --color-stone-100: #f4ede1;
+  --color-stone-200: #e7ddcc;
+  --color-stone-300: #d6c8b1;
+  --color-stone-600: #4a5356;
+  --color-stone-700: #3d4842;
+  --color-stone-800: #2b3430;
+  --color-stone-900: #222a26;
+  --color-stone-950: #0f1311;
+}
+
+/* Semantic colour utilities (bg-surface, text-ink-muted, border-line…) resolve per element → theme-aware. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-sunken: var(--surface-sunken);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
+  --color-on-brand: var(--on-brand);
+  --color-azulejo: var(--azulejo);
+  --color-azulejo-soft: var(--azulejo-soft);
+  --color-azulejo-ink: var(--azulejo-ink);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-fill: var(--terracotta-fill);
+  --color-terracotta-soft: var(--terracotta-soft);
+  --color-sun: var(--sun);
+  --color-sun-fill: var(--sun-fill);
+  --color-sun-soft: var(--sun-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-fill: var(--danger-fill);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-line: var(--danger-border);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-line: var(--warning-border);
+  --color-focus: var(--focus);
+  --color-scrim: var(--scrim);
+  /* Theme-adaptive legacy text shades (fix stone-400/500 without dark: variants failing AA in dark). */
+  --color-stone-400: var(--legacy-400);
+  --color-stone-500: var(--legacy-500);
+
+  --shadow-card: var(--shadow-1);
+  --shadow-raised: var(--shadow-2);
+  --shadow-bar: var(--shadow-bar);
+  --radius-control: var(--radius-sm);
+  --radius-card: var(--radius-md);
+  --radius-hero: var(--radius-lg);
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    color-scheme: light dark;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--bg);
   }
   body {
-    @apply bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
-    font-size: 17px;
+    @apply bg-bg font-sans text-ink antialiased;
+    font-size: var(--text-base);
     line-height: 1.6;
+    font-feature-settings: 'ss01' off;
+    text-rendering: optimizeLegibility;
   }
-  h1 { @apply text-2xl font-semibold tracking-tight; }
-  h2 { @apply text-xl font-semibold tracking-tight; }
-  h3 { @apply text-lg font-semibold; }
-  a { @apply text-brand-700 dark:text-brand-500; }
-  button { cursor: pointer; }
-  :focus-visible { @apply outline-2 outline-offset-2 outline-brand-600; }
+  h1 {
+    @apply font-serif text-[1.625rem] leading-tight font-semibold tracking-tight text-ink md:text-2xl;
+  }
+  h2 {
+    @apply text-[1.375rem] leading-snug font-bold tracking-tight;
+  }
+  h3 {
+    @apply text-[1.125rem] leading-snug font-semibold;
+  }
+  a {
+    @apply text-azulejo underline-offset-[3px];
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: default;
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--azulejo) 22%, transparent);
+  }
+  /* Tabular figures wherever numbers are compared (counters, percentages). */
+  .tabular-nums {
+    font-feature-settings: 'tnum' 1;
+  }
+  [hidden] {
+    display: none !important;
+  }
 }
 
-/* Reusable component classes (Tailwind v4 custom utilities, usable with variants and @apply) */
+/* ------------------------------------------------------------------------------------------------ */
+/* Component classes (Tailwind v4 custom utilities, usable with variants and @apply).                 */
+/* ------------------------------------------------------------------------------------------------ */
+
 @utility card {
-  @apply rounded-2xl border border-stone-200 bg-white p-4 shadow-sm dark:border-stone-800 dark:bg-stone-900;
+  @apply rounded-card border border-line bg-surface p-4 shadow-card;
 }
+@utility card-raised {
+  @apply rounded-card border border-line bg-surface p-4 shadow-raised;
+}
+@utility card-sunken {
+  @apply rounded-card bg-sunken p-4;
+}
+/* Interactive card (links): lift on hover, brand border on focus. */
+@utility card-link {
+  @apply block text-ink no-underline transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-px hover:border-line-strong hover:shadow-raised active:translate-y-0;
+}
+
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-base font-medium transition disabled:opacity-50;
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-control px-4 py-2 text-base leading-tight font-semibold no-underline transition-[background-color,border-color,color,box-shadow,transform] duration-150 select-none active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100;
 }
 @utility btn-primary {
-  @apply btn bg-brand-700 text-white hover:bg-brand-800;
+  @apply btn bg-brand text-on-brand shadow-card hover:bg-brand-hover;
 }
 @utility btn-secondary {
-  @apply btn border border-stone-300 bg-white text-stone-800 hover:bg-stone-100 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:hover:bg-stone-800;
+  @apply btn border border-line-strong bg-surface text-ink hover:border-ink-subtle hover:bg-surface-2;
 }
+@utility btn-ghost {
+  @apply btn text-ink-muted hover:bg-surface-2 hover:text-ink;
+}
+@utility btn-danger {
+  @apply btn bg-danger-fill text-white shadow-card hover:brightness-110;
+}
+@utility btn-accent {
+  @apply btn bg-terracotta-fill text-white shadow-card hover:brightness-110;
+}
+
 @utility input {
-  @apply w-full rounded-xl border border-stone-300 bg-white px-3 py-2.5 text-base dark:border-stone-700 dark:bg-stone-900;
+  @apply min-h-11 w-full rounded-control border border-line-strong bg-surface px-3 py-2.5 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-ink-muted/80 focus:border-focus;
+}
+
+/* Visual hit area ≥44×44 for small controls without growing the layout. */
+@utility hit {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Primary actions of a step (Проверить / Дальше / оценки) stay reachable above the mobile tab bar (audit P1-5). */
+@utility sticky-actions {
+  position: sticky;
+  z-index: 5;
+  bottom: calc(var(--bottom-chrome) + 0.75rem);
+  scroll-margin-bottom: calc(var(--bottom-chrome) + 1rem);
+}
+
+/* Edge fade for horizontally scrolling bars (tabs, chips). */
+@utility scroll-fade-x {
+  scrollbar-width: none;
+  mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 20px), transparent 100%);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Decorative azulejo pattern (hero cards, logo). 4–6 % ink, tinted by currentColor. */
+@utility azulejo-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%231f4e8c' stroke-width='1.2' opacity='.5'%3E%3Cpath d='M24 4 44 24 24 44 4 24Z'/%3E%3Ccircle cx='24' cy='24' r='7'/%3E%3Cpath d='M24 17v-6M24 31v6M17 24h-6M31 24h6'/%3E%3Ccircle cx='0' cy='0' r='7'/%3E%3Ccircle cx='48' cy='0' r='7'/%3E%3Ccircle cx='0' cy='48' r='7'/%3E%3Ccircle cx='48' cy='48' r='7'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 48px 48px;
+}
+
+/* Grid-rows reveal (height animation without measuring). */
+@utility reveal-rows {
+  display: grid;
+  grid-template-rows: 1fr;
+  animation: reveal-rows 240ms var(--ease-out);
+  & > * {
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.97);
+  }
+  55% {
+    transform: scale(1.015);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes reveal-rows {
+  from {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+  to {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--dash, 24);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.draw-check {
+  stroke-dasharray: var(--dash, 24);
+  animation: draw 280ms 60ms var(--ease-out) both;
+}
+
+/* Range input on tokens (the native track stayed near-white on dark — audit §2.8). */
+input[type='range'].range {
+  appearance: none;
+  height: 2.75rem;
+  background: transparent;
+  --fill: 50%;
+}
+input[type='range'].range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--brand) var(--fill), var(--border-strong) var(--fill));
+}
+input[type='range'].range::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border-strong);
+}
+input[type='range'].range::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+input[type='range'].range::-webkit-slider-thumb {
+  appearance: none;
+  margin-top: -9px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 2px solid var(--brand);
+  box-shadow: var(--shadow-2);
+}
+input[type='range'].range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 2px solid var(--brand);
+}
+
+/* Reduced motion: no animations, transitions or smooth scrolling (audit §4.7). JS uses scrollBehavior(). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

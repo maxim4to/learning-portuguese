@@ -53,7 +53,7 @@ export function RepositoryProvider({ children }: { children: ReactNode }) {
     return <RepositoryContext.Provider value={local}>{children}</RepositoryContext.Provider>
   }
   if (!uid || remote?.uid !== uid) {
-    return <div className="p-8 text-center text-stone-500">Загрузка данных…</div>
+    return <div className="p-8 text-center text-ink-muted" role="status">Загрузка данных…</div>
   }
   if (remote.state === 'denied') {
     return (
@@ -69,7 +69,7 @@ export function RepositoryProvider({ children }: { children: ReactNode }) {
   }
   if (remote.state === 'error') {
     return (
-      <div className="p-8 text-center text-red-600" role="alert">
+      <div className="p-8 text-center text-danger" role="alert">
         Не удалось подключиться к Firestore: {remote.message}
       </div>
     )

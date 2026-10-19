@@ -1,6 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import './fonts.css'
 import './index.css'
+import { initTheme } from './app/theme'
+
+initTheme()
 
 const root = createRoot(document.getElementById('root')!)
 
@@ -18,11 +22,11 @@ import('./app/App.tsx')
     console.error(e)
     root.render(
       <div className="mx-auto max-w-3xl space-y-3 p-4">
-        <h1 className="text-red-700">Ошибка загрузки контента</h1>
-        <pre className="overflow-x-auto rounded-xl bg-red-50 p-3 text-sm whitespace-pre-wrap text-red-900 dark:bg-red-950 dark:text-red-100">
+        <h1 className="text-danger">Ошибка загрузки контента</h1>
+        <pre className="overflow-x-auto rounded-control bg-danger-soft p-3 text-sm whitespace-pre-wrap text-danger">
           {e instanceof Error ? e.message : String(e)}
         </pre>
-        <p className="text-sm text-stone-500">Запустите `npm run validate` для подробностей.</p>
+        <p className="text-sm text-ink-muted">Запустите `npm run validate` для подробностей.</p>
       </div>,
     )
   })

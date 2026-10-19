@@ -1,6 +1,7 @@
 import { useEffect, useId, useState } from 'react'
 import type { Situation } from '@/content'
-import { SpeakButton } from '@/features/exercises'
+import { CircleCheck, Eye, EyeOff } from 'lucide-react'
+import { SpeakButton } from '@/components/SpeakButton'
 import { loadWriting, saveWriting } from './persist'
 
 /** «Письмо»: task, draft (localStorage `ptpt:v1:writing:<id>`), reference sample, self-check list. */
@@ -21,7 +22,7 @@ export function WritingSection({ situation }: { situation: Situation }) {
     return () => clearTimeout(t)
   }, [situation.id, text])
 
-  if (!task) return <p className="text-stone-500">Для этой ситуации нет задания на письмо.</p>
+  if (!task) return <p className="text-ink-muted">Для этой ситуации нет задания на письмо.</p>
 
   const words = text.trim() ? text.trim().split(/\s+/).length : 0
 
@@ -33,7 +34,7 @@ export function WritingSection({ situation }: { situation: Situation }) {
       </section>
 
       <section className="space-y-2">
-        <label htmlFor={fieldId} className="block text-sm font-medium text-stone-700 dark:text-stone-300">
+        <label htmlFor={fieldId} className="block text-sm font-semibold text-ink-muted">
           Ваш текст
         </label>
         <textarea
@@ -47,9 +48,9 @@ export function WritingSection({ situation }: { situation: Situation }) {
             setText(e.target.value)
           }}
           placeholder="Escreva aqui…"
-          className="input min-h-48 w-full resize-y leading-relaxed"
+          className="input min-h-48 w-full resize-y font-serif text-[1.0625rem] leading-relaxed"
         />
-        <p className="flex justify-between text-xs text-stone-500">
+        <p className="flex justify-between text-xs text-ink-muted" aria-live="polite">
           <span>{text ? (saved ? 'Черновик сохранён на этом устройстве' : 'Сохраняю…') : 'Черновик сохраняется автоматически'}</span>
           <span className="tabular-nums">слов: {words}</span>
         </p>
@@ -60,10 +61,10 @@ export function WritingSection({ situation }: { situation: Situation }) {
         <ul className="space-y-1">
           {task.checklist.map((item, i) => (
             <li key={i}>
-              <label className="flex cursor-pointer items-start gap-3 rounded-lg px-1 py-1.5 hover:bg-stone-100 dark:hover:bg-stone-800/60">
+              <label className="flex min-h-11 cursor-pointer items-start gap-3 rounded-lg px-2 py-2 hover:bg-surface-2">
                 <input
                   type="checkbox"
-                  className="mt-1 size-4 shrink-0 accent-brand-700"
+                  className="mt-0.5 size-5 shrink-0 accent-[var(--brand)]"
                   checked={checked.has(i)}
                   onChange={() =>
                     setChecked((s) => {
@@ -74,27 +75,30 @@ export function WritingSection({ situation }: { situation: Situation }) {
                     })
                   }
                 />
-                <span className={checked.has(i) ? 'text-stone-500 line-through decoration-stone-400' : ''}>{item}</span>
+                <span className={checked.has(i) ? 'text-ink-muted line-through decoration-ink-subtle' : ''}>{item}</span>
               </label>
             </li>
           ))}
         </ul>
         {checked.size === task.checklist.length && (
-          <p className="text-sm font-medium text-brand-700 dark:text-brand-500">✓ Все пункты проверены</p>
+          <p className="flex animate-enter items-center gap-1.5 text-sm font-semibold text-brand-ink">
+            <CircleCheck aria-hidden className="size-4.5" /> Все пункты проверены
+          </p>
         )}
       </section>
 
       <section className="space-y-3">
         <button type="button" className="btn-secondary" aria-expanded={showSample} onClick={() => setShowSample((v) => !v)}>
+          {showSample ? <EyeOff aria-hidden className="size-5" /> : <Eye aria-hidden className="size-5" />}
           {showSample ? 'Скрыть образец' : 'Показать образец'}
         </button>
         {showSample && (
-          <div className="card space-y-3">
+          <div className="card animate-enter space-y-3">
             <div className="flex items-center justify-between gap-3">
               <h3 className="text-base">Образец</h3>
               <SpeakButton text={task.sample} label="Прослушать" />
             </div>
-            <p className="leading-relaxed whitespace-pre-line" lang="pt-PT">
+            <p className="font-serif leading-relaxed whitespace-pre-line" lang="pt-PT">
               {task.sample}
             </p>
           </div>

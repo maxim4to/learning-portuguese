@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Check, Plus } from 'lucide-react'
 import type { Topic } from '@/content'
 import { useRepository } from '@/data'
-import { SpeakButton } from '@/features/exercises'
+import { SpeakButton } from '@/components/SpeakButton'
 import { addExampleCards, countExampleCards } from './persist'
 
 /** «Добавить примеры в повторение» — creates grammar SRS cards from the topic examples. */
@@ -38,9 +39,14 @@ export function AddExamplesButton({ topic }: { topic: Topic }) {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <button type="button" className="btn-secondary" disabled={busy || all || have === null} onClick={() => void add()}>
-        {all ? '✓ Примеры в повторении' : '＋ Добавить примеры в повторение'}
+        {all ? <Check aria-hidden className="size-5 text-brand" /> : <Plus aria-hidden className="size-5" />}
+        {all ? 'Примеры в повторении' : 'Добавить примеры в повторение'}
       </button>
-      {msg && <span className="text-sm text-stone-500">{msg}</span>}
+      {msg && (
+        <span role="status" className="text-sm text-ink-muted">
+          {msg}
+        </span>
+      )}
     </div>
   )
 }
@@ -48,15 +54,15 @@ export function AddExamplesButton({ topic }: { topic: Topic }) {
 export function ExamplesSection({ topic }: { topic: Topic }) {
   return (
     <div className="space-y-4">
-      <ul className="space-y-2">
+      <ul className="card divide-y divide-line p-0">
         {topic.examples.map((ex, i) => (
-          <li key={i} className="card flex items-start gap-3 py-3">
+          <li key={i} className="flex items-start gap-3 px-3 py-3 sm:px-4">
             <SpeakButton text={ex.pt} />
-            <div className="min-w-0 flex-1">
-              <p className="text-[17px] font-medium" lang="pt-PT">
+            <div className="min-w-0 flex-1 pt-1">
+              <p className="text-[1.0625rem] leading-snug font-semibold" lang="pt-PT">
                 {ex.pt}
               </p>
-              <p className="text-sm text-stone-500 dark:text-stone-400">{ex.ru}</p>
+              <p className="mt-0.5 text-sm text-ink-muted">{ex.ru}</p>
             </div>
           </li>
         ))}

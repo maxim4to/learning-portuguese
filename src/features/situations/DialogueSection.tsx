@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Drama, Eye, Languages, Mic, Play, Square } from 'lucide-react'
+import { cx, scrollBehavior } from '@/components/cx'
 import type { DialogueLine, Situation } from '@/content'
 import type { VoiceGender } from '@/engine/audio'
 import { useSpeak } from '@/features/exercises'
@@ -69,7 +71,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
     for (let i = from; i < lines.length; i++) {
       if (run.current !== my) return
       setActive(i)
-      lineRefs.current[i]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+      lineRefs.current[i]?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() })
       if (roleplay && lines[i].speaker === 'B' && !revealed.has(i)) {
         // Learner's turn: wait for «Показать», then play the line for comparison.
         setWaiting(i)
@@ -90,6 +92,8 @@ export function DialogueSection({ situation }: { situation: Situation }) {
   }
 
   function reveal(i: number) {
+    // «Показать» unmounts with the hidden line: keep focus on the revealed line instead of <body>.
+    requestAnimationFrame(() => document.getElementById(`dlg-line-${i}`)?.focus({ preventScroll: true }))
     if (waiting === i && resume.current) {
       const r = resume.current
       resume.current = null
@@ -127,49 +131,60 @@ export function DialogueSection({ situation }: { situation: Situation }) {
 
   const hiddenCount = roleplay ? lines.filter((l, i) => l.speaker === 'B' && !revealed.has(i)).length : 0
 
+  const toggle = (on: boolean) =>
+    cx(
+      'inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-control border px-3 text-sm font-semibold transition-colors',
+      on ? 'border-transparent bg-ink text-bg' : 'border-line-strong bg-surface text-ink hover:bg-surface-2',
+    )
+
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap gap-2">
+      {/* One compact toolbar: play all · translation · role-play (audit P1-11). */}
+      <div className="flex flex-wrap items-center gap-2" role="toolbar" aria-label="Диалог">
+        {/* Toggles are icon-only below 420px; their names stay in aria-label. */}
         <button
           type="button"
           className="btn-primary"
           onClick={() => (running ? stopAll() : void playAll())}
           aria-pressed={running}
         >
-          <span aria-hidden>{running ? '■' : '▶'}</span> {running ? 'Остановить' : 'Прослушать весь диалог'}
+          {running ? <Square aria-hidden className="size-4.5 fill-current" /> : <Play aria-hidden className="size-4.5 fill-current" />}
+          {running ? 'Стоп' : 'Весь диалог'}
         </button>
         <button
           type="button"
-          className="btn-secondary"
-          aria-pressed={!showRu}
+          className={toggle(showRu)}
+          aria-pressed={showRu}
+          aria-label="Перевод"
           onClick={() => {
             setShowRu((v) => !v)
             setRuOverride(new Map())
           }}
         >
-          {showRu ? 'Скрыть перевод' : 'Показать перевод'}
+          <Languages aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Перевод</span>
         </button>
-        <button type="button" className="btn-secondary" aria-pressed={roleplay} onClick={toggleRoleplay}>
-          {roleplay ? '✓ Ролевая игра' : '🎭 Режим ролевой игры'}
+        <button type="button" className={toggle(roleplay)} aria-pressed={roleplay} aria-label="Ролевая игра: вы — B" onClick={toggleRoleplay}>
+          <Drama aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Роль B</span>
         </button>
       </div>
 
-      {unavailable && (
-        <p className="text-sm text-amber-700 dark:text-amber-400">
-          На этом устройстве нет голоса pt-PT — аудио недоступно.
-        </p>
-      )}
+      {unavailable && <p className="text-sm text-warning">На этом устройстве нет голоса pt-PT — аудио недоступно.</p>}
 
       {roleplay && (
-        <div className="rounded-xl border border-brand-500/30 bg-brand-50/70 p-3 text-sm text-stone-700 dark:bg-brand-800/20 dark:text-stone-300">
+        <div className="animate-enter rounded-control border border-terracotta/30 bg-terracotta-soft p-3 text-sm text-ink">
           Вы — <b>B</b>. Ваши реплики скрыты: прочитайте подсказку, скажите фразу вслух по-португальски и нажмите
           «Показать», чтобы сверить. При прослушивании всего диалога воспроизведение остановится на вашей реплике
           (Enter или пробел — показать и продолжить).
           {hiddenCount > 0 && (
             <button
               type="button"
-              className="mt-2 block text-brand-700 underline dark:text-brand-500"
-              onClick={() => setRevealed(new Set(lines.map((_, i) => i)))}
+              className="mt-1 block min-h-11 font-semibold text-terracotta underline underline-offset-2"
+              onClick={() => {
+                const first = lines.findIndex((l, i) => l.speaker === 'B' && !revealed.has(i))
+                setRevealed(new Set(lines.map((_, i) => i)))
+                // This button disappears once nothing is hidden: focus the first revealed line.
+                requestAnimationFrame(() => document.getElementById(`dlg-line-${first}`)?.focus({ preventScroll: true }))
+              }}
             >
               Показать все мои реплики ({hiddenCount})
             </button>
@@ -177,7 +192,9 @@ export function DialogueSection({ situation }: { situation: Situation }) {
         </div>
       )}
 
-      <ol className="space-y-2">
+      {!roleplay && <p className="text-xs text-ink-muted">Нажмите на реплику, чтобы показать или скрыть перевод.</p>}
+
+      <ol className="space-y-3">
         {lines.map((line, i) => {
           const isB = line.speaker === 'B'
           const isHidden = hidden(i)
@@ -188,60 +205,66 @@ export function DialogueSection({ situation }: { situation: Situation }) {
               ref={(el) => {
                 lineRefs.current[i] = el
               }}
-              className={`flex scroll-mt-28 gap-2.5 sm:gap-3 ${isB ? 'flex-row-reverse text-right' : ''}`}
+              className={cx('flex scroll-mt-28 items-end gap-2 sm:gap-3', isB && 'flex-row-reverse')}
             >
               <span
                 aria-label={isB ? 'Собеседник B' : 'Собеседник A'}
-                className={`mt-1 inline-flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
-                  isB ? 'bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-200' : 'bg-brand-100 text-brand-800 dark:bg-brand-800/50 dark:text-brand-100'
-                }`}
+                className={cx(
+                  'mb-1 inline-flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-bold',
+                  isB ? 'bg-terracotta-soft text-terracotta' : 'bg-azulejo-soft text-azulejo-ink',
+                )}
               >
                 {line.speaker}
               </span>
               <div
-                className={`min-w-0 max-w-[85%] rounded-2xl border px-3.5 py-2.5 transition sm:max-w-[75%] ${
-                  isActive ? 'border-brand-500 ring-2 ring-brand-500/30' : 'border-stone-200 dark:border-stone-800'
-                } ${isB ? 'rounded-tr-sm bg-sky-50/70 dark:bg-sky-950/30' : 'rounded-tl-sm bg-white dark:bg-stone-900'}`}
+                className={cx(
+                  'flex min-w-0 max-w-[85%] items-start gap-1 rounded-card border py-2 pr-1.5 pl-3.5 shadow-card transition-[border-color,box-shadow] sm:max-w-[75%]',
+                  isActive ? 'border-azulejo ring-2 ring-azulejo/30' : 'border-line',
+                  isB ? 'rounded-br-sm bg-surface-2' : 'rounded-bl-sm bg-surface',
+                )}
               >
                 {isHidden ? (
-                  <div className="space-y-2">
-                    <p className="text-sm text-stone-500">
-                      {waiting === i ? '🎙 Ваша очередь — скажите вслух:' : 'Ваша реплика:'}
+                  <div className="space-y-2 py-0.5 pr-2">
+                    <p className="flex items-center gap-1.5 text-sm text-ink-muted">
+                      {waiting === i && <Mic aria-hidden className="size-4 text-terracotta" />}
+                      {waiting === i ? 'Ваша очередь — скажите вслух:' : 'Ваша реплика:'}
                     </p>
-                    <p className="font-medium text-stone-800 dark:text-stone-200">{line.ru}</p>
+                    <p className="font-semibold">{line.ru}</p>
                     <button
                       type="button"
-                      className="btn-secondary min-h-9 px-3 py-1 text-sm"
+                      className="btn-secondary min-h-10 px-3 text-sm"
                       id={`dlg-reveal-${i}`}
                       onClick={() => reveal(i)}
                     >
-                      Показать
+                      <Eye aria-hidden className="size-4" /> Показать
                     </button>
                   </div>
                 ) : (
                   <>
-                    <p className="text-[17px] leading-snug font-medium" lang="pt-PT">
-                      {line.pt}
-                    </p>
-                    {ruShown(i) && <p className="mt-0.5 text-sm text-stone-500 dark:text-stone-400">{line.ru}</p>}
-                    <div className={`mt-1.5 flex items-center gap-1.5 ${isB ? 'justify-end' : ''}`}>
-                      <button
-                        type="button"
-                        onClick={() => void playLine(i)}
-                        aria-label={isActive && !running ? 'Остановить' : `Прослушать реплику ${i + 1}`}
-                        className="inline-flex size-9 items-center justify-center rounded-full border border-brand-600/30 bg-brand-50 text-brand-800 hover:bg-brand-100 active:scale-95 dark:border-brand-500/30 dark:bg-brand-800/30 dark:text-brand-100 dark:hover:bg-brand-800/60"
-                      >
-                        <span aria-hidden>{isActive && !running ? '■' : '▶'}</span>
-                      </button>
-                      <button
-                        type="button"
-                        aria-pressed={ruShown(i)}
-                        onClick={() => setRuOverride((m) => new Map(m).set(i, !ruShown(i)))}
-                        className="inline-flex h-9 items-center rounded-full px-2.5 text-xs font-medium text-stone-500 hover:bg-stone-100 dark:hover:bg-stone-800"
-                      >
-                        {ruShown(i) ? 'скрыть RU' : 'RU'}
-                      </button>
-                    </div>
+                    <button
+                      type="button"
+                      id={`dlg-line-${i}`}
+                      className="min-w-0 flex-1 cursor-pointer py-0.5 text-left"
+                      aria-expanded={ruShown(i)}
+                      onClick={() => setRuOverride((m) => new Map(m).set(i, !ruShown(i)))}
+                    >
+                      <span className="block text-[1.0625rem] leading-snug font-semibold" lang="pt-PT">
+                        {line.pt}
+                      </span>
+                      {ruShown(i) ? (
+                        <span className="mt-0.5 block text-sm text-ink-muted">{line.ru}</span>
+                      ) : (
+                        <span className="sr-only">Показать перевод</span>
+                      )}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => void playLine(i)}
+                      aria-label={isActive && !running ? 'Остановить' : `Прослушать реплику ${i + 1}`}
+                      className="grid size-11 shrink-0 place-items-center rounded-full text-azulejo transition-colors hover:bg-azulejo-soft active:scale-95"
+                    >
+                      {isActive ? <Square aria-hidden className="size-4 fill-current" /> : <Play aria-hidden className="size-4.5 fill-current" />}
+                    </button>
                   </>
                 )}
               </div>

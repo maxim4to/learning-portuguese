@@ -1,7 +1,6 @@
 export interface NavItem {
   to: string
   label: string
-  icon: string
   /**
    * Extra path prefixes (segment-wise) that also mark this item active, e.g. sub-sections living on
    * their own routes. `to` itself always counts.
@@ -11,14 +10,18 @@ export interface NavItem {
 
 /**
  * Main navigation (top bar on desktop, bottom tab bar on mobile — 5 columns).
- * «Материалы» = library hub (/library) with a sub-tab to situations (/situations, /situation/:id).
+ * «Практика» = situations (/situations, /situation/:id — the second learning track, default sub-tab) and the
+ * reference library (/library and its pages) as the second sub-tab (audit P1-12).
+ * «Практика с агентом» (/tutor) has no slot of its own (the bottom bar stays at 5): it is reached from the
+ * dashboard card and the «С агентом» tab / section of every topic, situation, text and vocab theme, and
+ * highlights «Главная».
  */
 export const NAV_ITEMS: NavItem[] = [
-  { to: '/', label: 'Главная', icon: '🏠' },
-  { to: '/syllabus', label: 'Курс', icon: '📚', match: ['/topic', '/diagnostic'] },
-  { to: '/review', label: 'Повторение', icon: '🔁' },
-  { to: '/library', label: 'Материалы', icon: '📖', match: ['/situations', '/situation'] },
-  { to: '/settings', label: 'Настройки', icon: '⚙️' },
+  { to: '/', label: 'Главная', match: ['/tutor'] },
+  { to: '/syllabus', label: 'Курс', match: ['/topic', '/diagnostic'] },
+  { to: '/review', label: 'Повторение' },
+  { to: '/situations', label: 'Практика', match: ['/situation', '/library'] },
+  { to: '/settings', label: 'Настройки' },
 ]
 
 /** True if `pathname` equals `prefix` or is nested under it (segment boundary, so /situation ≠ /situations). */

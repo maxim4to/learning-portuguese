@@ -1,6 +1,10 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { BookA, BookOpenText, ChevronRight, FileText, Library, MessagesSquare, type LucideIcon } from 'lucide-react'
 import { LEVELS, listReadingTexts, listVocabThemes } from '@/content'
+import { cx } from '@/components/cx'
+import { EmptyState } from '@/components/EmptyState'
+import { PageHeader } from '@/components/PageHeader'
 import { StatusBadge, LevelBadge } from '@/components/StatusBadge'
 import { useProgressMap } from '@/features/lessons/useTopicProgress'
 import { listParsedCheatsheets } from './cheatsheets'
@@ -8,36 +12,34 @@ import { plural } from './format'
 
 const levelRank = (l?: string) => (l ? LEVELS.indexOf(l as (typeof LEVELS)[number]) : LEVELS.length)
 
-/** Sub-tabs of the «Материалы» nav entry (situations live on their own route). */
+/** Sub-sections of «Практика»: situations (default) and the reference library — separate routes. */
 export function MaterialsTabs({ active }: { active: 'library' | 'situations' }) {
   const tab = (on: boolean) =>
-    `flex-1 rounded-lg px-3 py-1.5 text-center text-sm font-medium no-underline transition sm:flex-none ${
-      on
-        ? 'bg-white text-stone-900 shadow-sm dark:bg-stone-800 dark:text-stone-100'
-        : 'text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100'
-    }`
+    cx(
+      'inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-[calc(var(--radius-sm)-4px)] px-4 text-sm font-semibold no-underline transition-[background-color,color,box-shadow] sm:flex-none',
+      on ? 'bg-surface text-ink shadow-card ring-1 ring-line' : 'text-ink-muted hover:text-ink',
+    )
   return (
-    <nav aria-label="Материалы" className="flex gap-1 rounded-xl bg-stone-200/70 p-1 sm:inline-flex dark:bg-stone-900">
-      <Link to="/library" className={tab(active === 'library')} aria-current={active === 'library' ? 'page' : undefined}>
-        Библиотека
+    <nav aria-label="Разделы практики" className="flex gap-1 rounded-control bg-surface-2 p-1 sm:inline-flex">
+      <Link to="/situations" className={tab(active === 'situations')} aria-current={active === 'situations' ? 'page' : undefined}>
+        <MessagesSquare aria-hidden className="size-4" /> Ситуации
       </Link>
-      <Link
-        to="/situations"
-        className={tab(active === 'situations')}
-        aria-current={active === 'situations' ? 'page' : undefined}
-      >
-        Ситуации
+      <Link to="/library" className={tab(active === 'library')} aria-current={active === 'library' ? 'page' : undefined}>
+        <Library aria-hidden className="size-4" /> Библиотека
       </Link>
     </nav>
   )
 }
 
-function Section({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
+function Section({ title, hint, icon: Icon, tone, children }: { title: string; hint?: string; icon: LucideIcon; tone: string; children: ReactNode }) {
   return (
     <section className="space-y-3">
-      <div className="flex items-baseline justify-between gap-3">
-        <h2>{title}</h2>
-        {hint && <span className="text-sm text-stone-500">{hint}</span>}
+      <div className="flex items-center gap-3">
+        <span aria-hidden className={cx('grid size-9 place-items-center rounded-xl', tone)}>
+          <Icon className="size-5" />
+        </span>
+        <h2 className="flex-1">{title}</h2>
+        {hint && <span className="text-sm text-ink-muted">{hint}</span>}
       </div>
       {children}
     </section>
@@ -46,11 +48,14 @@ function Section({ title, hint, children }: { title: string; hint?: string; chil
 
 function Empty({ children }: { children: ReactNode }) {
   return (
-    <p className="rounded-2xl border border-dashed border-stone-300 p-4 text-sm text-stone-500 dark:border-stone-700">
-      {children}
-    </p>
+    <div className="rounded-card border border-dashed border-line-strong">
+      <EmptyState compact tone="neutral" title={children} />
+    </div>
   )
 }
+
+const cardLink = 'card card-link group flex h-full items-start gap-3'
+const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
 
 export function LibraryPage() {
   const sheets = listParsedCheatsheets()
@@ -64,22 +69,24 @@ export function LibraryPage() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-3">
+      <div className="space-y-4">
         <MaterialsTabs active="library" />
-        <h1>Библиотека</h1>
-        <p className="text-stone-600 dark:text-stone-400">Шпаргалки для быстрой справки, тематические словари и тексты для чтения.</p>
+        <PageHeader title="Библиотека" subtitle="Шпаргалки для быстрой справки, тематические словари и тексты для чтения." />
       </div>
 
-      <Section title="Шпаргалки" hint={sheets.length ? plural(sheets.length, 'лист', 'листа', 'листов') : undefined}>
+      <Section title="Шпаргалки" icon={FileText} tone="bg-azulejo-soft text-azulejo" hint={sheets.length ? plural(sheets.length, 'лист', 'листа', 'листов') : undefined}>
         {sheets.length === 0 ? (
           <Empty>Шпаргалок пока нет.</Empty>
         ) : (
           <ul className="grid gap-3 sm:grid-cols-2">
             {sheets.map((s) => (
               <li key={s.id}>
-                <Link to={`/library/cheatsheet/${s.id}`} className="card block h-full no-underline hover:border-brand-500/50">
-                  <span className="font-semibold text-stone-900 dark:text-stone-100">{s.title}</span>
-                  {s.intro && <span className="mt-1 line-clamp-2 text-sm text-stone-500">{s.intro}</span>}
+                <Link to={`/library/cheatsheet/${s.id}`} className={cardLink}>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-semibold">{s.title}</span>
+                    {s.intro && <span className="mt-1 line-clamp-2 text-sm text-ink-muted">{s.intro}</span>}
+                  </span>
+                  {chevron}
                 </Link>
               </li>
             ))}
@@ -87,19 +94,22 @@ export function LibraryPage() {
         )}
       </Section>
 
-      <Section title="Словари" hint={themes.length ? plural(themes.length, 'тема', 'темы', 'тем') : undefined}>
+      <Section title="Словари" icon={BookA} tone="bg-sun-soft text-sun" hint={themes.length ? plural(themes.length, 'тема', 'темы', 'тем') : undefined}>
         {themes.length === 0 ? (
           <Empty>Тематических словарей пока нет — они появятся здесь, как только будут добавлены.</Empty>
         ) : (
           <ul className="grid gap-3 sm:grid-cols-2">
             {themes.map((t) => (
               <li key={t.id}>
-                <Link to={`/library/vocab/${t.id}`} className="card flex h-full items-start gap-3 no-underline hover:border-brand-500/50">
+                <Link to={`/library/vocab/${t.id}`} className={cardLink}>
                   <span className="min-w-0 flex-1">
-                    <span className="block font-semibold text-stone-900 dark:text-stone-100">{t.title}</span>
-                    <span className="block text-sm text-stone-500">
+                    <span className="flex items-center gap-2 font-semibold">
+                      {t.level && <LevelBadge level={t.level} />}
+                      {t.title}
+                    </span>
+                    <span className="mt-0.5 block text-sm text-ink-muted">
                       {t.titlePt && (
-                        <i lang="pt-PT">
+                        <i lang="pt-PT" className="font-serif">
                           {t.titlePt}
                           {' · '}
                         </i>
@@ -107,7 +117,7 @@ export function LibraryPage() {
                       {plural(t.words.length, 'слово', 'слова', 'слов')}
                     </span>
                   </span>
-                  {t.level && <LevelBadge level={t.level} />}
+                  {chevron}
                 </Link>
               </li>
             ))}
@@ -115,7 +125,7 @@ export function LibraryPage() {
         )}
       </Section>
 
-      <Section title="Чтение" hint={texts.length ? plural(texts.length, 'текст', 'текста', 'текстов') : undefined}>
+      <Section title="Чтение" icon={BookOpenText} tone="bg-terracotta-soft text-terracotta" hint={texts.length ? plural(texts.length, 'текст', 'текста', 'текстов') : undefined}>
         {texts.length === 0 ? (
           <Empty>Текстов для чтения пока нет — они появятся здесь, как только будут добавлены.</Empty>
         ) : (
@@ -124,18 +134,21 @@ export function LibraryPage() {
               const p = progress.get(r.id)
               return (
                 <li key={r.id}>
-                  <Link to={`/library/reading/${r.id}`} className="card flex h-full items-start gap-3 no-underline hover:border-brand-500/50">
-                    <LevelBadge level={r.level} className="mt-0.5" />
+                  <Link to={`/library/reading/${r.id}`} className={cardLink}>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-semibold text-stone-900 dark:text-stone-100" lang="pt-PT">
-                        {r.title}
+                      <span className="flex items-center gap-2">
+                        <LevelBadge level={r.level} />
+                        <span className="font-serif text-lg leading-snug font-semibold" lang="pt-PT">
+                          {r.title}
+                        </span>
                       </span>
-                      <span className="block text-sm text-stone-500">
+                      <span className="mt-1 flex flex-wrap items-center gap-2 text-sm text-ink-muted">
                         {plural(r.paragraphs.length, 'абзац', 'абзаца', 'абзацев')}
                         {r.questions.length > 0 && <> · {plural(r.questions.length, 'вопрос', 'вопроса', 'вопросов')}</>}
+                        {p && <StatusBadge status={p.status} />}
                       </span>
                     </span>
-                    {p && <StatusBadge status={p.status} />}
+                    {chevron}
                   </Link>
                 </li>
               )

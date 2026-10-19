@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { Check, X } from 'lucide-react'
+import { cx } from '@/components/cx'
 import { shuffle } from '../grade'
 import type { ExerciseProps } from '../types'
 
@@ -13,11 +15,12 @@ export function MatchExercise({ exercise: ex, locked, onSubmit }: ExerciseProps<
   const [sel, setSel] = useState<{ side: Side; i: number } | null>(null)
   const [flash, setFlash] = useState<{ l: number; r: number } | null>(null)
   const [wrong, setWrong] = useState<string[]>([])
+  const [live, setLive] = useState('')
   const usedRight = new Set(matched.values())
 
   useEffect(() => {
     if (!flash) return
-    const t = setTimeout(() => setFlash(null), 600)
+    const t = setTimeout(() => setFlash(null), 700)
     return () => clearTimeout(t)
   }, [flash])
 
@@ -27,10 +30,12 @@ export function MatchExercise({ exercise: ex, locked, onSubmit }: ExerciseProps<
     if (!ok) {
       setFlash({ l, r: rIdx })
       setWrong((w) => [...w, `${ex.pairs[l].left} — ${right[rIdx].text}`])
+      setLive(`Пара неверна: ${ex.pairs[l].left} — ${right[rIdx].text}`)
       return
     }
     const next = new Map(matched).set(l, rIdx)
     setMatched(next)
+    setLive(`Верно: ${ex.pairs[l].left} — ${right[rIdx].text}. Осталось пар: ${ex.pairs.length - next.size}`)
     if (next.size === ex.pairs.length) {
       const mistakes = wrong
       onSubmit({
@@ -51,59 +56,53 @@ export function MatchExercise({ exercise: ex, locked, onSubmit }: ExerciseProps<
   }
 
   const base =
-    'w-full rounded-xl border px-3 py-3 text-left text-[17px] leading-snug transition active:scale-[0.98] disabled:cursor-default'
+    'flex min-h-12 w-full items-center gap-2 rounded-control border-[1.5px] px-3 py-2.5 text-left text-[1.0625rem] leading-snug transition-[background-color,border-color,transform,opacity] duration-150 active:scale-[0.98] disabled:cursor-default'
   const style = (done: boolean, selected: boolean, bad: boolean) =>
     done
-      ? 'border-brand-500/50 bg-brand-50 text-brand-800 opacity-70 dark:bg-brand-800/20 dark:text-brand-100'
+      ? 'border-brand/40 bg-brand-soft text-brand-ink opacity-75'
       : bad
-        ? 'border-red-400 bg-red-50 text-red-800 dark:bg-red-900/30 dark:text-red-200'
+        ? 'animate-shake border-danger bg-danger-soft text-danger'
         : selected
-          ? 'border-brand-600 bg-brand-100 ring-2 ring-brand-500 dark:bg-brand-800/40'
-          : 'border-stone-300 bg-white hover:bg-stone-50 dark:border-stone-700 dark:bg-stone-900 dark:hover:bg-stone-800'
+          ? 'border-azulejo bg-azulejo-soft text-azulejo-ink ring-2 ring-azulejo/40'
+          : 'border-line-strong bg-surface hover:border-azulejo/60 hover:bg-surface-2'
+
+  const item = (side: Side, key: number, text: string, done: boolean, selected: boolean, bad: boolean) => (
+    <li key={key}>
+      <button
+        type="button"
+        disabled={locked || done}
+        aria-pressed={done ? undefined : selected}
+        onClick={() => tap(side, key)}
+        className={cx(base, style(done, selected, bad))}
+      >
+        <span className="flex-1">{text}</span>
+        {done && <Check aria-hidden className="size-4 shrink-0" strokeWidth={3} />}
+        {bad && <X aria-hidden className="size-4 shrink-0" strokeWidth={3} />}
+        {done && <span className="sr-only" lang="ru">— сопоставлено</span>}
+      </button>
+    </li>
+  )
 
   return (
     <div className="space-y-3">
       <div className="grid grid-cols-2 gap-2 sm:gap-3" lang="pt-PT">
-        <ul className="space-y-2">
-          {left.map(({ i, text }) => {
-            const done = matched.has(i)
-            return (
-              <li key={i}>
-                <button
-                  type="button"
-                  disabled={locked || done}
-                  onClick={() => tap('L', i)}
-                  className={`${base} ${style(done, sel?.side === 'L' && sel.i === i, flash?.l === i)}`}
-                >
-                  {text}
-                </button>
-              </li>
-            )
-          })}
+        <ul className="space-y-2" aria-label="Левый столбец">
+          {left.map(({ i, text }) => item('L', i, text, matched.has(i), sel?.side === 'L' && sel.i === i, flash?.l === i))}
         </ul>
-        <ul className="space-y-2">
-          {right.map(({ text }, rIdx) => {
-            const done = usedRight.has(rIdx)
-            return (
-              <li key={rIdx}>
-                <button
-                  type="button"
-                  disabled={locked || done}
-                  onClick={() => tap('R', rIdx)}
-                  className={`${base} ${style(done, sel?.side === 'R' && sel.i === rIdx, flash?.r === rIdx)}`}
-                >
-                  {text}
-                </button>
-              </li>
-            )
-          })}
+        <ul className="space-y-2" aria-label="Правый столбец">
+          {right.map(({ text }, rIdx) =>
+            item('R', rIdx, text, usedRight.has(rIdx), sel?.side === 'R' && sel.i === rIdx, flash?.r === rIdx),
+          )}
         </ul>
       </div>
       {!locked && (
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-ink-muted tabular-nums">
           Ошибок: {wrong.length} · осталось пар: {ex.pairs.length - matched.size}
         </p>
       )}
+      <div aria-live="polite" className="sr-only">
+        {live}
+      </div>
     </div>
   )
 }

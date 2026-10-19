@@ -17,7 +17,7 @@ export function AccessDenied({
         <p>
           Firestore отклонил запрос (permission-denied) для аккаунта <b>{user?.email ?? '—'}</b>.
         </p>
-        <p className="text-stone-600 dark:text-stone-400">
+        <p className="text-ink-muted">
           Проверьте, что ваш email указан в <code>firestore.rules</code> (строка <code>ALLOWED_EMAIL</code>) и правила
           задеплоены: <code>npm run deploy</code>. Если вошли не тем аккаунтом — выйдите и войдите нужным.
         </p>

@@ -32,7 +32,7 @@ export function SituationPractice({ situation, progress, onSaved, next }: Props)
   const [run, setRun] = useState({ key: 0, list: exercises, retry: false })
   const [result, setResult] = useState<Result | null>(null)
 
-  if (!exercises.length) return <p className="text-stone-500">В этой ситуации пока нет упражнений.</p>
+  if (!exercises.length) return <p className="text-ink-muted">В этой ситуации пока нет упражнений.</p>
 
   function start(list: Exercise[], retry: boolean) {
     setResult(null)
@@ -79,7 +79,9 @@ export function SituationPractice({ situation, progress, onSaved, next }: Props)
       key={run.key}
       exercises={run.list}
       title={run.retry ? 'Упражнения: работа над ошибками' : 'Упражнения'}
+      persistKey={`situation:${situation.id}${run.retry ? ':retry' : ''}`}
       onFinish={finish}
+      focusOnMount={run.key > 0}
     />
   )
 }

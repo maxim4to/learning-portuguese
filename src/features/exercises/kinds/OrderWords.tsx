@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
+import { cx } from '@/components/cx'
 import { gradeTyped, shuffle } from '../grade'
 import { isInHiddenPanel } from '../keyboard'
 import type { ExerciseProps } from '../types'
 
 const chip =
-  'rounded-xl border px-3 py-2 text-[17px] leading-none transition active:scale-95 disabled:cursor-default'
+  'inline-flex min-h-11 items-center rounded-control border-[1.5px] px-3.5 text-[1.0625rem] leading-none transition-[background-color,border-color,transform,opacity] duration-150 active:scale-95 disabled:cursor-default'
 
 /** Tap-to-build sentence from shuffled word chips (may contain distractors). */
-export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit }: ExerciseProps<'order-words'>) {
+export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onSkip }: ExerciseProps<'order-words'>) {
   const [pool] = useState(() => shuffle(ex.words.map((w, id) => ({ id, w }))))
   const [built, setBuilt] = useState<number[]>([])
   const rootRef = useRef<HTMLDivElement>(null)
@@ -43,53 +44,69 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit }: E
   })
 
   const tone = !result
-    ? 'border-stone-300 dark:border-stone-700'
+    ? 'border-line-strong bg-sunken'
     : result.ok
-      ? 'border-brand-500 bg-brand-50 dark:bg-brand-800/20'
-      : 'border-red-400 bg-red-50 dark:bg-red-900/20'
+      ? 'animate-pop border-brand bg-brand-soft'
+      : result.skipped
+        ? 'border-line-strong bg-surface-2'
+        : 'animate-shake border-danger bg-danger-soft'
 
   return (
     <div ref={rootRef} className="space-y-4">
-      {ex.ru && <p className="text-xl">{ex.ru}</p>}
+      {ex.ru && <p className="text-xl text-pretty">{ex.ru}</p>}
       <div
-        className={`flex min-h-16 flex-wrap content-start gap-2 rounded-xl border-2 border-dashed p-2.5 ${tone}`}
+        role="group"
         aria-label="Ваше предложение"
+        className={cx('flex min-h-[4.25rem] flex-wrap content-start gap-2 rounded-control border-2 border-dashed p-2.5', tone)}
         lang="pt-PT"
       >
-        {built.length === 0 && <span className="self-center px-1 text-stone-400">Нажимайте на слова ниже…</span>}
+        {built.length === 0 && (
+          <span className="self-center px-1 text-ink-muted" lang="ru">
+            Нажимайте на слова ниже…
+          </span>
+        )}
         {built.map((id, i) => (
           <button
             key={id}
             type="button"
             disabled={locked}
+            aria-label={`${ex.words[id]} — убрать`}
             onClick={() => setBuilt((b) => b.filter((_, j) => j !== i))}
-            className={`${chip} border-brand-600/40 bg-brand-50 text-brand-900 dark:bg-brand-800/30 dark:text-brand-100`}
+            className={cx(chip, 'animate-pop border-azulejo/40 bg-surface text-ink shadow-card')}
           >
             {ex.words[id]}
           </button>
         ))}
       </div>
-      <div className={`flex flex-wrap gap-2 ${locked ? 'hidden' : ''}`} lang="pt-PT">
+      <p aria-live="polite" className="sr-only">
+        {sentence ? `Собрано: ${sentence}` : ''}
+      </p>
+      <div role="group" aria-label="Слова" className={cx('flex flex-wrap gap-2', locked && 'hidden')} lang="pt-PT">
         {pool.map(({ id, w }) => (
           <button
             key={id}
             type="button"
             disabled={locked || used.has(id)}
             onClick={() => setBuilt((b) => [...b, id])}
-            className={`${chip} border-stone-300 bg-white hover:bg-stone-100 disabled:opacity-30 dark:border-stone-700 dark:bg-stone-900 dark:hover:bg-stone-800 ${used.has(id) ? 'invisible' : ''}`}
+            className={cx(chip, 'border-line-strong bg-surface hover:border-azulejo/60 hover:bg-azulejo-soft', used.has(id) && 'invisible')}
           >
             {w}
           </button>
         ))}
       </div>
       {!locked && (
-        <div className="flex gap-2">
-          <button type="button" className="btn-primary flex-1 sm:flex-none" disabled={!built.length} onClick={check}>
+        <div className="sticky-actions -mx-2 flex gap-2 rounded-control bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+          <button type="button" className="btn-primary flex-1 sm:min-w-36 sm:flex-none" disabled={!built.length} onClick={check}>
             Проверить
           </button>
           <button type="button" className="btn-secondary" disabled={!built.length} onClick={() => setBuilt([])}>
             Сбросить
           </button>
+          {onSkip && (
+            <button type="button" className="btn-ghost" onClick={onSkip}>
+              Не знаю
+            </button>
+          )}
         </div>
       )}
     </div>

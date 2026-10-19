@@ -12,6 +12,7 @@ import { SituationPage } from '@/features/situations/SituationPage'
 import { SituationsPage } from '@/features/situations/SituationsPage'
 import { ReviewPage } from '@/features/srs/ReviewPage'
 import { SyllabusPage } from '@/features/syllabus/SyllabusPage'
+import { TutorHubPage } from '@/features/tutor/TutorHubPage'
 import { AuthGate } from './AuthGate'
 import { Layout } from './Layout'
 import { NotFoundPage } from './NotFoundPage'
@@ -35,6 +36,7 @@ export function App() {
                 <Route path="library/cheatsheet/:id" element={<CheatsheetPage />} />
                 <Route path="library/vocab/:id" element={<VocabThemePage />} />
                 <Route path="library/reading/:id" element={<ReadingPage />} />
+                <Route path="tutor" element={<TutorHubPage />} />
                 <Route path="settings" element={<SettingsPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>

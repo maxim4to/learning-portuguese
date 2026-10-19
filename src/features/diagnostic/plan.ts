@@ -85,23 +85,23 @@ export function gradeOf(o: TopicOutcome | undefined): Grade {
 export const GRADE_META: Record<Grade, { label: string; chip: string; dot: string }> = {
   green: {
     label: 'Знаю',
-    chip: 'border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200 dark:hover:bg-emerald-900/50',
-    dot: 'bg-emerald-500',
+    chip: 'border-brand/30 bg-brand-soft text-brand-ink hover:border-brand',
+    dot: 'bg-brand',
   },
   yellow: {
     label: 'Есть пробелы',
-    chip: 'border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-200 dark:hover:bg-amber-900/50',
-    dot: 'bg-amber-400',
+    chip: 'border-warning-line bg-sun-soft text-sun hover:border-sun',
+    dot: 'bg-sun-fill',
   },
   red: {
     label: 'Нужно учить',
-    chip: 'border-red-300 bg-red-50 text-red-900 hover:bg-red-100 dark:border-red-800 dark:bg-red-950/50 dark:text-red-200 dark:hover:bg-red-900/50',
-    dot: 'bg-red-500',
+    chip: 'border-terracotta/30 bg-terracotta-soft text-terracotta hover:border-terracotta',
+    dot: 'bg-terracotta-fill',
   },
   none: {
     label: 'Не оценено',
-    chip: 'border-stone-200 bg-stone-50 text-stone-500 hover:bg-stone-100 dark:border-stone-800 dark:bg-stone-900 dark:text-stone-400 dark:hover:bg-stone-800',
-    dot: 'bg-stone-300 dark:bg-stone-600',
+    chip: 'border-line bg-surface-2 text-ink-muted hover:border-line-strong',
+    dot: 'bg-line-strong',
   },
 }
 

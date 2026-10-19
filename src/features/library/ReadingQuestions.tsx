@@ -86,7 +86,7 @@ export function ReadingQuestions({ text }: { text: ReadingText }) {
   if (!run) {
     return (
       <div className="card flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-stone-600 dark:text-stone-400">
+        <p className="text-ink-muted">
           {plural(text.questions.length, 'вопрос', 'вопроса', 'вопросов')} на понимание. Результат сохранится в прогрессе,
           ошибки попадут в повторение.
         </p>
@@ -102,7 +102,9 @@ export function ReadingQuestions({ text }: { text: ReadingText }) {
       key={run.key}
       exercises={run.list}
       title={run.retry ? 'Работа над ошибками' : text.title}
+      persistKey={`reading:${text.id}${run.retry ? ':retry' : ''}`}
       onFinish={finish}
+      focusOnMount
     />
   )
 }

@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { Cloud, Download, HardDrive, Monitor, Moon, Sun, Upload, Volume2 } from 'lucide-react'
+import { PageHeader } from '@/components/PageHeader'
+import { PageSkeleton } from '@/components/EmptyState'
+import { SegmentedControl } from '@/components/SegmentedControl'
+import { Switch } from '@/components/Switch'
+import { setThemePref, useThemePref, type ThemePref } from '@/app/theme'
 import { isFirebaseConfigured, useAuth, useRepository } from '@/data'
 import type { Settings } from '@/data/types.ts'
 import { getPtPtVoices, pickPtPtVoice, speak } from '@/engine/audio'
@@ -10,11 +16,15 @@ export function SettingsPage() {
   const repo = useRepository()
   const auth = useAuth()
   const fileRef = useRef<HTMLInputElement>(null)
+  const importBtnRef = useRef<HTMLButtonElement>(null)
   const [message, setMessage] = useState<string | null>(null)
   const [settings, setSettings] = useState<Settings | null>(null)
   const [voiceInfo, setVoiceInfo] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
   const [pendingImport, setPendingImport] = useState<File | null>(null)
+  const theme = useThemePref()
+  const rateId = useId()
+  const newId = useId()
 
   useEffect(() => {
     void repo.getSettings().then(setSettings)
@@ -27,7 +37,7 @@ export function SettingsPage() {
       if (cancelled) return
       setVoiceInfo(
         all.length
-          ? `Голос браузера: ${v?.name ?? '—'} (доступно pt-PT: ${all.length}). Заранее записанное аудио звучит одинаково на всех устройствах.`
+          ? `Голос браузера для запасного синтеза: ${v?.name ?? '—'}. Основное аудио записано заранее и звучит одинаково на всех устройствах.`
           : 'На этом устройстве нет голоса pt-PT для синтеза речи — будет играть только заранее записанное аудио.',
       )
     })
@@ -68,6 +78,7 @@ export function SettingsPage() {
 
   async function handleImport(file: File) {
     setPendingImport(null)
+    importBtnRef.current?.focus() // the confirm (and its focused button) unmounts
     try {
       await repo.importAll(await file.text())
       setSettings(await repo.getSettings())
@@ -87,19 +98,38 @@ export function SettingsPage() {
     }
   }
 
+  const fmtRate = (r: number) => `${r.toLocaleString('ru-RU', { maximumFractionDigits: 2 })}×`
+  const fill = (v: number, min: number, max: number) => ({ ['--fill' as string]: `${((v - min) / (max - min)) * 100}%` })
+
   return (
     <div className="mx-auto max-w-2xl space-y-6">
-      <h1>Настройки</h1>
+      <PageHeader title="Настройки" />
 
-      <section className="card space-y-4">
-        <h2>Аудио</h2>
-        {!settings ? (
-          <p className="text-stone-500">Загрузка…</p>
-        ) : (
-          <>
+      <Section title="Оформление">
+        <Row label="Тема">
+          <SegmentedControl<ThemePref>
+            label="Тема оформления"
+            value={theme}
+            onChange={setThemePref}
+            className="w-full sm:w-auto"
+            options={[
+              { value: 'system', label: <><Monitor aria-hidden className="size-4" /> Авто</>, ariaLabel: 'Как в системе' },
+              { value: 'light', label: <><Sun aria-hidden className="size-4" /> Светлая</> },
+              { value: 'dark', label: <><Moon aria-hidden className="size-4" /> Тёмная</> },
+            ]}
+          />
+        </Row>
+      </Section>
+
+      {!settings ? (
+        <PageSkeleton cards={2} />
+      ) : (
+        <>
+          <Section title="Аудио">
             <Row label="Голос">
               <div className="flex flex-wrap items-center gap-2">
-                <Segmented
+                <SegmentedControl
+                  label="Голос"
                   value={settings.voice}
                   options={[
                     { value: 'female', label: 'Женский' },
@@ -108,147 +138,150 @@ export function SettingsPage() {
                   onChange={(voice) => update({ voice })}
                 />
                 <button
-                  className="btn-secondary px-3 py-1.5 text-sm"
+                  className="btn-secondary px-3 text-sm"
                   onClick={() => void speak(SAMPLE, { voice: settings.voice, rate: settings.rate })}
                 >
-                  🔊 Прослушать
+                  <Volume2 aria-hidden className="size-4.5 text-azulejo" /> Прослушать
                 </button>
               </div>
             </Row>
-            <Row label={`Скорость: ${Number(settings.rate.toFixed(2))}×`}>
+            <Row label={`Скорость: ${fmtRate(settings.rate)}`} htmlFor={rateId}>
               <input
+                id={rateId}
                 type="range"
                 min={0.5}
                 max={1.5}
                 step={0.05}
                 value={settings.rate}
                 onChange={(e) => update({ rate: Number(e.target.value) })}
-                className="w-full accent-brand-700"
+                className="range w-full"
+                style={fill(settings.rate, 0.5, 1.5)}
                 list="rate-marks"
-                aria-label="Скорость воспроизведения"
+                aria-valuetext={fmtRate(settings.rate)}
               />
               <datalist id="rate-marks">
                 {RATES.map((r) => (
                   <option key={r} value={r} />
                 ))}
               </datalist>
-              <div className="mt-1 flex gap-1.5">
-                {[0.75, 1, 1.25].map((r) => (
-                  <button
-                    key={r}
-                    onClick={() => update({ rate: r })}
-                    className={`rounded-full border px-2.5 py-0.5 text-xs ${settings.rate === r ? 'border-brand-700 bg-brand-700 text-white' : 'border-stone-300 dark:border-stone-700'}`}
-                  >
-                    {r}×
-                  </button>
-                ))}
+              <SegmentedControl
+                label="Быстрый выбор скорости"
+                size="sm"
+                value={[0.75, 1, 1.25].includes(settings.rate) ? String(settings.rate) : ''}
+                onChange={(v) => update({ rate: Number(v) })}
+                options={[0.75, 1, 1.25].map((r) => ({ value: String(r), label: fmtRate(r) }))}
+              />
+            </Row>
+            {voiceInfo && <p className="text-sm text-ink-muted">{voiceInfo}</p>}
+          </Section>
+
+          <Section title="Обучение">
+            <Switch
+              checked={settings.lenientAccents}
+              onChange={(v) => update({ lenientAccents: v })}
+              label="Не учитывать ошибки в акцентах"
+              description={
+                <>
+                  «voce» вместо «<span lang="pt-PT">você</span>» засчитывается как верный ответ
+                </>
+              }
+            />
+            <Row label="Новых карточек в день" htmlFor={newId}>
+              <div className="flex items-center gap-3">
+                <input
+                  id={newId}
+                  type="range"
+                  min={0}
+                  max={50}
+                  step={5}
+                  value={Math.min(50, settings.newCardsPerDay)}
+                  onChange={(e) => update({ newCardsPerDay: Number(e.target.value) })}
+                  className="range flex-1"
+                  style={fill(Math.min(50, settings.newCardsPerDay), 0, 50)}
+                />
+                <input
+                  type="number"
+                  min={0}
+                  max={200}
+                  value={settings.newCardsPerDay}
+                  onChange={(e) => {
+                    const n = Math.max(0, Math.min(200, Math.round(Number(e.target.value) || 0)))
+                    update({ newCardsPerDay: n })
+                  }}
+                  className="input w-20 text-center tabular-nums"
+                  aria-label="Новых карточек в день, число"
+                />
               </div>
             </Row>
-            {voiceInfo && <p className="text-xs text-stone-500">{voiceInfo}</p>}
-          </>
-        )}
-      </section>
-
-      {settings && (
-        <section className="card space-y-4">
-          <h2>Обучение</h2>
-          <label className="flex cursor-pointer items-start justify-between gap-4">
-            <span>
-              <span className="block font-medium">Не учитывать ошибки в акцентах</span>
-              <span className="block text-sm text-stone-500">«voce» вместо «você» засчитывается как верный ответ</span>
-            </span>
-            <input
-              type="checkbox"
-              role="switch"
-              checked={settings.lenientAccents}
-              onChange={(e) => update({ lenientAccents: e.target.checked })}
-              className="mt-1 size-5 shrink-0 accent-brand-700"
-            />
-          </label>
-          <Row label="Новых карточек в день">
-            <div className="flex items-center gap-3">
-              <input
-                type="range"
-                min={0}
-                max={50}
-                step={5}
-                value={settings.newCardsPerDay}
-                onChange={(e) => update({ newCardsPerDay: Number(e.target.value) })}
-                className="flex-1 accent-brand-700"
-                aria-label="Новых карточек в день"
-              />
-              <input
-                type="number"
-                min={0}
-                max={200}
-                value={settings.newCardsPerDay}
-                onChange={(e) => {
-                  const n = Math.max(0, Math.min(200, Math.round(Number(e.target.value) || 0)))
-                  update({ newCardsPerDay: n })
-                }}
-                className="input w-20 py-1.5 text-center"
-                aria-label="Новых карточек в день (число)"
-              />
-            </div>
-          </Row>
-          {settings.lastDiagnosticAt && (
-            <p className="text-sm text-stone-500">
-              Последняя диагностика: {new Date(settings.lastDiagnosticAt).toLocaleDateString('ru-RU')}
-            </p>
-          )}
-        </section>
+            {settings.lastDiagnosticAt && (
+              <p className="text-sm text-ink-muted">
+                Последняя диагностика: {new Date(settings.lastDiagnosticAt).toLocaleDateString('ru-RU')}
+              </p>
+            )}
+          </Section>
+        </>
       )}
 
-      <section className="card space-y-3">
-        <h2>Синхронизация</h2>
-        <p className="text-sm text-stone-500">
-          Хранилище: <b className="font-mono text-stone-700 dark:text-stone-300">{repo.kind}</b>
-          {repo.kind === 'local' ? ' — только этот браузер' : ' — Firestore, синхронизируется между устройствами'}
-        </p>
-        {isFirebaseConfigured ? (
-          auth.user ? (
-            <>
-              <p>
-                Вы вошли как <b>{auth.user.email ?? auth.user.displayName}</b>.
-              </p>
-              <div className="space-y-1.5">
+      <Section title="Синхронизация">
+        <div className="flex items-start gap-3">
+          <span aria-hidden className="grid size-10 shrink-0 place-items-center rounded-control bg-surface-2 text-ink-muted">
+            {repo.kind === 'firestore' ? <Cloud className="size-5" /> : <HardDrive className="size-5" />}
+          </span>
+          <div className="space-y-1">
+            {isFirebaseConfigured && auth.user ? (
+              <>
+                <p className="font-semibold">Прогресс синхронизируется с аккаунтом</p>
+                <p className="text-sm text-ink-muted">{auth.user.email ?? auth.user.displayName}</p>
+              </>
+            ) : isFirebaseConfigured ? (
+              <p className="font-semibold">Синхронизация доступна, вход не выполнен</p>
+            ) : (
+              <>
+                <p className="font-semibold">Прогресс хранится на этом устройстве</p>
+                <p className="text-sm text-ink-muted">
+                  Чтобы не потерять его при смене браузера, время от времени сохраняйте резервную копию.
+                </p>
+              </>
+            )}
+          </div>
+        </div>
+        {isFirebaseConfigured && auth.user && (
+          <button className="btn-secondary" onClick={() => void auth.signOut()}>
+            Выйти
+          </button>
+        )}
+        <details className="group rounded-control border border-line px-3 py-1 text-sm">
+          <summary className="min-h-11 cursor-pointer py-2.5 font-semibold text-ink-muted select-none">Для разработчика</summary>
+          <div className="space-y-2 pb-3 text-ink-muted">
+            <p>
+              Хранилище: <code className="font-mono text-ink">{repo.kind}</code>
+              {!isFirebaseConfigured && <> · Firebase не настроен (VITE_FIREBASE_* в .env)</>}
+            </p>
+            {auth.user && (
+              <>
                 <div className="flex items-center gap-2">
-                  <code className="min-w-0 flex-1 truncate rounded-lg bg-stone-100 px-3 py-2 font-mono text-sm dark:bg-stone-800">
-                    {auth.user.uid}
-                  </code>
-                  <button className="btn-secondary shrink-0 px-3 py-1.5 text-sm" onClick={() => void copyUid(auth.user!.uid)}>
+                  <code className="min-w-0 flex-1 truncate rounded-lg bg-surface-2 px-3 py-2 font-mono text-ink">{auth.user.uid}</code>
+                  <button className="btn-secondary shrink-0 px-3 text-sm" onClick={() => void copyUid(auth.user!.uid)}>
                     {copied ? 'Скопировано' : 'Скопировать UID'}
                   </button>
                 </div>
-                <p className="text-xs text-stone-500">
-                  Email: <b>{auth.user.email ?? '—'}</b>. Доступ к данным разрешён для email, указанного в{' '}
-                  <code>firestore.rules</code> (<code>ALLOWED_EMAIL</code>)
+                <p>
+                  Доступ к данным разрешён для email, указанного в <code>firestore.rules</code> (<code>ALLOWED_EMAIL</code>).
                 </p>
-              </div>
-              <button className="btn-secondary" onClick={() => void auth.signOut()}>
-                Выйти
-              </button>
-            </>
-          ) : (
-            <p className="text-stone-600 dark:text-stone-400">Firebase подключён, вход не выполнен.</p>
-          )
-        ) : (
-          <p className="text-stone-600 dark:text-stone-400">
-            Firebase не настроен — прогресс хранится только в этом браузере. Заполните VITE_FIREBASE_* в .env, чтобы
-            включить синхронизацию.
-          </p>
-        )}
-      </section>
+              </>
+            )}
+          </div>
+        </details>
+      </Section>
 
-      <section className="card space-y-3">
-        <h2>Резервная копия</h2>
-        <p className="text-sm text-stone-500">Прогресс, карточки, журнал ошибок и настройки в одном JSON-файле.</p>
+      <Section title="Резервная копия">
+        <p className="text-sm text-ink-muted">Прогресс, карточки, журнал ошибок и настройки — в одном файле.</p>
         <div className="flex flex-wrap gap-2">
           <button className="btn-primary" onClick={() => void handleExport()}>
-            Экспорт JSON
+            <Download aria-hidden className="size-5" /> Сохранить копию
           </button>
-          <button className="btn-secondary" onClick={() => fileRef.current?.click()}>
-            Импорт JSON
+          <button ref={importBtnRef} className="btn-secondary" onClick={() => fileRef.current?.click()}>
+            <Upload aria-hidden className="size-5" /> Восстановить из файла
           </button>
           <input
             ref={fileRef}
@@ -269,64 +302,64 @@ export function SettingsPage() {
           <div
             role="alertdialog"
             aria-labelledby="import-confirm-title"
-            className="space-y-3 rounded-xl border border-amber-300 bg-amber-50 p-3 text-sm dark:border-amber-700/60 dark:bg-amber-900/20"
+            className="animate-enter space-y-3 rounded-control border border-warning-line bg-warning-soft p-4 text-sm"
           >
-            <p id="import-confirm-title" className="font-medium">
-              Импортировать «{pendingImport.name}»?
+            <p id="import-confirm-title" className="font-semibold">
+              Восстановить из «{pendingImport.name}»?
             </p>
-            <p className="text-stone-700 dark:text-stone-300">
+            <p>
               Данные из файла будут объединены с текущими: прогресс по темам, карточки и записи журнала ошибок с
               совпадающими идентификаторами будут перезаписаны версиями из файла, остальные текущие данные сохранятся.
-              Настройки будут полностью заменены настройками из файла. Отменить импорт нельзя — при необходимости
-              сначала сделайте экспорт.
+              Настройки будут полностью заменены настройками из файла. Отменить это нельзя — при необходимости сначала
+              сохраните копию.
             </p>
             <div className="flex flex-wrap gap-2">
               <button className="btn-primary" onClick={() => void handleImport(pendingImport)}>
-                Импортировать
+                Восстановить
               </button>
-              <button className="btn-secondary" onClick={() => setPendingImport(null)}>
+              <button
+                className="btn-secondary"
+                autoFocus
+                onClick={() => {
+                  setPendingImport(null)
+                  importBtnRef.current?.focus() // the confirm unmounts with this button
+                }}
+              >
                 Отмена
               </button>
             </div>
           </div>
         )}
-        {message && <p className="text-sm">{message}</p>}
-      </section>
+        {message && (
+          <p role="status" className="text-sm">
+            {message}
+          </p>
+        )}
+      </Section>
     </div>
   )
 }
 
-function Row({ label, children }: { label: string; children: ReactNode }) {
+function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="space-y-1.5">
-      <div className="text-sm font-medium text-stone-600 dark:text-stone-300">{label}</div>
+    <section className="card space-y-5 sm:p-6">
+      <h2 className="text-lg">{title}</h2>
       {children}
-    </div>
+    </section>
   )
 }
 
-function Segmented<T extends string>({
-  value,
-  options,
-  onChange,
-}: {
-  value: T
-  options: { value: T; label: string }[]
-  onChange(v: T): void
-}) {
+function Row({ label, htmlFor, children }: { label: string; htmlFor?: string; children: ReactNode }) {
   return (
-    <div className="inline-flex rounded-xl border border-stone-300 p-0.5 dark:border-stone-700" role="radiogroup">
-      {options.map((o) => (
-        <button
-          key={o.value}
-          role="radio"
-          aria-checked={value === o.value}
-          onClick={() => onChange(o.value)}
-          className={`rounded-lg px-3 py-1 text-sm ${value === o.value ? 'bg-brand-700 text-white' : 'text-stone-600 dark:text-stone-300'}`}
-        >
-          {o.label}
-        </button>
-      ))}
+    <div className="space-y-2">
+      {htmlFor ? (
+        <label htmlFor={htmlFor} className="block text-sm font-semibold text-ink-muted">
+          {label}
+        </label>
+      ) : (
+        <div className="text-sm font-semibold text-ink-muted">{label}</div>
+      )}
+      {children}
     </div>
   )
 }

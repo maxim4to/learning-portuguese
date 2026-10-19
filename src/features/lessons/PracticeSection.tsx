@@ -38,7 +38,7 @@ export function PracticeSection({ topic, exercises, source, title, progress, onS
   const [run, setRun] = useState<Run>({ key: 0, list: exercises, retry: false })
   const [result, setResult] = useState<Result | null>(null)
 
-  if (!exercises.length) return <p className="text-stone-500">В этой теме пока нет заданий этого типа.</p>
+  if (!exercises.length) return <p className="text-ink-muted">В этой теме пока нет заданий этого типа.</p>
 
   function start(list: Exercise[], retry: boolean) {
     setResult(null)
@@ -85,7 +85,9 @@ export function PracticeSection({ topic, exercises, source, title, progress, onS
       key={run.key}
       exercises={run.list}
       title={run.retry ? `${title}: работа над ошибками` : title}
+      persistKey={`topic:${topic.id}:${source}${run.retry ? ':retry' : ''}`}
       onFinish={finish}
+      focusOnMount={run.key > 0}
     />
   )
 }

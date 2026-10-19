@@ -1,13 +1,18 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getReadingText, type ReadingText } from '@/content'
+import { Check, Play, Plus, Sparkles, Square } from 'lucide-react'
+import { PageHeader } from '@/components/PageHeader'
+import { SpeakButton } from '@/components/SpeakButton'
 import { LevelBadge } from '@/components/StatusBadge'
-import { SpeakButton, useSpeak } from '@/features/exercises'
+import { cx } from '@/components/cx'
+import { useSpeak } from '@/features/exercises'
+import { ReadingTutor } from '@/features/tutor/panels'
 import { glossaryCardSpecs, useLibraryCards } from './cards'
 import { GlossaryPopover, type PopoverAnchor } from './GlossaryPopover'
 import { makeSegmenter } from './highlight'
 import { ReadingQuestions } from './ReadingQuestions'
-import { AddCardButton, BackLink, NotFound } from './ui'
+import { AddCardButton, NotFound } from './ui'
 import { plural } from './format'
 
 export function ReadingPage() {
@@ -64,60 +69,76 @@ function ReadingView({ text }: { text: ReadingText }) {
   const reading = reader.current !== null
   const openEntry = anchor ? text.glossary[anchor.gi] : undefined
 
+  const openWord = (el: HTMLElement, gi: number, viaKey = false) =>
+    setAnchor((a) => (a?.el === el ? null : { gi, rect: el.getBoundingClientRect(), el, viaKey }))
+
   return (
     <article className="space-y-6">
-      <BackLink />
-      <header className="space-y-2">
-        <div className="flex flex-wrap items-center gap-2">
-          <LevelBadge level={text.level} />
-          <span className="text-sm text-stone-500">
-            Чтение · {plural(text.paragraphs.length, 'абзац', 'абзаца', 'абзацев')}
-          </span>
-        </div>
-        <h1 lang="pt-PT">{text.title}</h1>
-      </header>
+      <PageHeader
+        back={{ to: '/library', label: 'Библиотека' }}
+        eyebrow={
+          <>
+            <LevelBadge level={text.level} />
+            <span>Чтение · {plural(text.paragraphs.length, 'абзац', 'абзаца', 'абзацев')}</span>
+          </>
+        }
+        title={text.title}
+        titleLang="pt-PT"
+      />
 
       <div className="flex flex-wrap items-center gap-3">
         <button type="button" className="btn-primary" onClick={() => (reading ? reader.stop() : void reader.start())}>
-          <span aria-hidden>{reading ? '■' : '▶'}</span> {reading ? 'Остановить' : 'Прочитать весь текст'}
+          {reading ? <Square aria-hidden className="size-4.5 fill-current" /> : <Play aria-hidden className="size-4.5 fill-current" />}
+          {reading ? 'Остановить' : 'Прочитать весь текст'}
         </button>
         {text.glossary.length > 0 && (
-          <span className="text-sm text-stone-500">
-            <span className="border-b-2 border-dotted border-brand-600">Подчёркнутые</span> слова — нажмите для перевода
+          <span className="text-sm text-ink-muted">
+            <span className="border-b-2 border-dotted border-azulejo">Подчёркнутые</span> слова — нажмите для перевода
           </span>
         )}
+        <a href="#tutor" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold sm:ml-auto">
+          <Sparkles aria-hidden className="size-4 text-terracotta" /> Практика с агентом
+        </a>
       </div>
 
-      <section className="card space-y-1 sm:p-6" lang="pt-PT">
+      <section className="card space-y-1 sm:p-7" lang="pt-PT">
         {paragraphs.map((segs, pi) => (
           <div
             key={pi}
-            className={`-mx-2 flex items-start gap-3 rounded-xl px-2 py-2 transition-colors ${
-              reader.current === pi ? 'bg-brand-50 dark:bg-brand-800/20' : ''
-            }`}
+            className={cx(
+              '-mx-2 flex items-start gap-3 rounded-control px-2 py-2 transition-colors',
+              reader.current === pi && 'bg-azulejo-soft',
+            )}
           >
             <span onClickCapture={reader.cancel} className="pt-0.5">
-              <SpeakButton text={text.paragraphs[pi]} />
+              <SpeakButton text={text.paragraphs[pi]} size="sm" ariaLabel={`Прослушать абзац ${pi + 1}`} />
             </span>
-            <p className="min-w-0 flex-1 text-[18px] leading-relaxed">
+            <p className="min-w-0 flex-1 font-serif text-[1.1875rem] leading-[1.75]">
               {segs.map((s, si) =>
                 s.gi === undefined ? (
                   <span key={si}>{s.text}</span>
                 ) : (
-                  <button
+                  // A real inline element (a <button> is always laid out as inline-block, which broke lines — audit P0-12).
+                  <span
                     key={si}
-                    type="button"
+                    role="button"
+                    tabIndex={0}
                     aria-haspopup="dialog"
-                    onClick={(e) => {
-                      const el = e.currentTarget
-                      setAnchor((a) => (a?.el === el ? null : { gi: s.gi!, rect: el.getBoundingClientRect(), el }))
+                    aria-expanded={anchor?.gi === s.gi}
+                    onClick={(e) => openWord(e.currentTarget, s.gi!)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        openWord(e.currentTarget, s.gi!, true)
+                      }
                     }}
-                    className={`inline cursor-pointer rounded-sm border-b-2 border-dotted border-brand-600 p-0 text-left align-baseline [font:inherit] transition hover:bg-brand-50 dark:border-brand-500 dark:hover:bg-brand-800/30 ${
-                      anchor?.gi === s.gi ? 'bg-brand-100 dark:bg-brand-800/40' : ''
-                    }`}
+                    className={cx(
+                      'cursor-pointer rounded-sm border-b-2 border-dotted border-azulejo/70 [box-decoration-break:clone] transition-colors hover:bg-azulejo-soft',
+                      anchor?.gi === s.gi && 'bg-azulejo-soft',
+                    )}
                   >
                     {s.text}
-                  </button>
+                  </span>
                 ),
               )}
             </p>
@@ -144,30 +165,31 @@ function ReadingView({ text }: { text: ReadingText }) {
             <h2>Словарик</h2>
             <button
               type="button"
-              className="btn-secondary py-1.5 text-sm"
+              className="btn-secondary px-3 text-sm"
               disabled={cards.busy || cards.have === null || allAdded}
               onClick={() => void cards.add(missing)}
             >
-              {allAdded ? '✓ Все в повторении' : 'Добавить все в повторение'}
+              {allAdded ? <Check aria-hidden className="size-4.5 text-brand" /> : <Plus aria-hidden className="size-4.5" />}
+              {allAdded ? 'Все в повторении' : 'Добавить все в повторение'}
             </button>
           </div>
           {cards.msg && (
-            <p className="text-sm text-stone-500" role="status">
+            <p className="text-sm text-ink-muted" role="status">
               {cards.msg}
             </p>
           )}
-          <ul className="card divide-y divide-stone-200 p-0 dark:divide-stone-800">
+          <ul className="card divide-y divide-line p-0">
             {text.glossary.map((g, i) => (
               <li key={i} className="flex items-center gap-3 px-3 py-2">
                 <span onClickCapture={reader.cancel}>
-                  <SpeakButton text={g.word} />
+                  <SpeakButton text={g.word} size="sm" />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <b className="font-medium" lang="pt-PT">
+                  <b className="font-semibold" lang="pt-PT">
                     {g.word}
                   </b>
-                  <span className="text-stone-400"> — </span>
-                  <span className="text-stone-700 dark:text-stone-300">{g.ru}</span>
+                  <span className="text-ink-subtle"> — </span>
+                  <span className="text-ink-muted">{g.ru}</span>
                 </span>
                 <AddCardButton
                   added={!!cards.have?.has(specs[i].id)}
@@ -186,6 +208,8 @@ function ReadingView({ text }: { text: ReadingText }) {
           <ReadingQuestions text={text} />
         </section>
       )}
+
+      <ReadingTutor text={text} />
     </article>
   )
 }

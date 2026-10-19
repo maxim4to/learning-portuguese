@@ -4,23 +4,23 @@ import type { Exercise } from '@/content'
 export function exerciseHeading(ex: Exercise): string {
   switch (ex.type) {
     case 'fill-gap':
-      return 'Вставь пропущенное'
+      return 'Вставьте пропущенное'
     case 'choice':
-      return 'Выбери правильный вариант'
+      return 'Выберите правильный вариант'
     case 'transform':
       return ex.instruction
     case 'order-words':
-      return 'Составь предложение'
+      return 'Составьте предложение'
     case 'translate-ru-pt':
-      return 'Переведи на португальский'
+      return 'Переведите на португальский'
     case 'listen-type':
-      return 'Послушай и запиши'
+      return 'Послушайте и запишите'
     case 'listen-choice':
-      return 'Послушай и выбери'
+      return 'Послушайте и выберите'
     case 'match':
-      return ex.prompt ?? 'Соедини пары'
+      return ex.prompt ?? 'Соедините пары'
     case 'speak-shadow':
-      return 'Послушай и повтори вслух'
+      return 'Послушайте и повторите вслух'
   }
 }
 
@@ -60,9 +60,9 @@ export function exerciseFront(ex: Exercise): string {
     case 'listen-type':
       return `Диктант: ${ex.text}`
     case 'listen-choice':
-      return `${ex.prompt ?? 'Выбери'} — «${ex.text}»\n[${ex.options.join(' / ')}]`
+      return `${ex.prompt ?? 'Выберите'} — «${ex.text}»\n[${ex.options.join(' / ')}]`
     case 'match':
-      return ex.prompt ?? 'Соедини пары'
+      return ex.prompt ?? 'Соедините пары'
     case 'speak-shadow':
       return ex.ru ?? ex.text
   }

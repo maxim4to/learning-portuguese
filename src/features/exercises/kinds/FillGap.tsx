@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useId } from 'react'
 import { gradeTyped } from '../grade'
 import { TextAnswer } from '../TextAnswer'
 import type { ExerciseProps } from '../types'
@@ -14,7 +14,7 @@ function GapSentence({ prompt, fill }: { prompt: string; fill?: string }) {
           <Fragment key={k}>
             {chunk}
             {k < arr.length - 1 && (
-              <mark className="rounded bg-brand-100 px-1 font-semibold text-brand-800 dark:bg-brand-800/40 dark:text-brand-100">
+              <mark className="animate-pop rounded-md bg-brand-soft px-1.5 font-semibold text-brand-ink [box-decoration-break:clone]">
                 {parts[i++] ?? parts[parts.length - 1]}
               </mark>
             )}
@@ -23,13 +23,17 @@ function GapSentence({ prompt, fill }: { prompt: string; fill?: string }) {
       </>
     )
   }
+  const n = prompt.split(/_{3,}/).length - 1
   return (
     <>
       {prompt.split(/_{3,}/).map((chunk, k, arr) => (
         <Fragment key={k}>
           {chunk}
           {k < arr.length - 1 && (
-            <span className="mx-0.5 inline-block w-14 border-b-2 border-dashed border-stone-400 align-baseline" aria-label="пропуск" />
+            <>
+              <span aria-hidden className="mx-0.5 inline-block w-14 translate-y-0.5 border-b-2 border-dashed border-azulejo/60" />
+              <span className="sr-only">[пропуск{n > 1 ? ` ${k + 1}` : ''}]</span>
+            </>
           )}
         </Fragment>
       ))}
@@ -37,20 +41,28 @@ function GapSentence({ prompt, fill }: { prompt: string; fill?: string }) {
   )
 }
 
-export function FillGapExercise({ exercise: ex, locked, result, onSubmit }: ExerciseProps<'fill-gap'>) {
+export function FillGapExercise({ exercise: ex, locked, result, onSubmit, onSkip }: ExerciseProps<'fill-gap'>) {
   const gaps = Math.max(1, (ex.prompt.match(/_{3,}/g) ?? []).length)
+  const id = useId()
   return (
     <div className="space-y-4">
-      <p className="text-xl leading-relaxed" lang="pt-PT">
+      <p id={`${id}-p`} className="text-xl leading-relaxed text-pretty" lang="pt-PT">
         <GapSentence prompt={ex.prompt} fill={locked ? (result?.expected ?? ex.answer[0]) : undefined} />
       </p>
       {(ex.ru || ex.hint) && (
-        <div className="space-y-0.5 text-sm text-stone-500 dark:text-stone-400">
-          {ex.ru && <p>{ex.ru}</p>}
-          {ex.hint && <p>Подсказка: {ex.hint}</p>}
+        <div className="space-y-0.5 text-sm text-ink-muted">
+          {ex.ru && <p id={`${id}-ru`}>{ex.ru}</p>}
+          {ex.hint && <p id={`${id}-h`}>Подсказка: {ex.hint}</p>}
         </div>
       )}
-      <TextAnswer fields={gaps} locked={locked} result={result} onSubmit={(v) => onSubmit(gradeTyped(v, ex.answer))} />
+      <TextAnswer
+        fields={gaps}
+        locked={locked}
+        result={result}
+        describedBy={[`${id}-p`, ex.ru && `${id}-ru`, ex.hint && `${id}-h`].filter(Boolean).join(' ')}
+        onSubmit={(v) => onSubmit(gradeTyped(v, ex.answer))}
+        onSkip={onSkip}
+      />
     </div>
   )
 }

@@ -274,6 +274,23 @@ export const ReadingTextSchema = z.strictObject({
 export type ReadingText = z.infer<typeof ReadingTextSchema>
 
 // ---------------------------------------------------------------------------
+// Tutor prompt overrides (content/tutor/<id>.json)
+// ---------------------------------------------------------------------------
+
+/**
+ * Optional per-item additions to the «Практика с агентом» prompts. `id` = id of an existing
+ * topic / situation / reading text / vocab theme.
+ */
+export const TutorNotesSchema = z.strictObject({
+  id,
+  /** Extra instructions for the AI tutor (ru), appended to every prompt of this item. */
+  notes: nonEmpty.optional(),
+  /** Extra exercise items (ru/pt) the tutor may use, appended to the task bank. */
+  extraTasks: z.array(nonEmpty).optional(),
+})
+export type TutorNotes = z.infer<typeof TutorNotesSchema>
+
+// ---------------------------------------------------------------------------
 // Diagnostic
 // ---------------------------------------------------------------------------
 

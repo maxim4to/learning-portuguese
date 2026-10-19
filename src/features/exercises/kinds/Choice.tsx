@@ -1,4 +1,6 @@
 import { useEffect, useRef } from 'react'
+import { Check, Volume2, X } from 'lucide-react'
+import { cx, haptic } from '@/components/cx'
 import { isInHiddenPanel } from '../keyboard'
 import { SpeakButton } from '../SpeakButton'
 import type { ExerciseProps } from '../types'
@@ -41,25 +43,50 @@ function Options({
         const isCorrect = i === correct
         const isGiven = given === opt
         const tone = !locked
-          ? 'border-stone-300 bg-white hover:border-brand-500 hover:bg-brand-50 dark:border-stone-700 dark:bg-stone-900 dark:hover:bg-brand-800/20'
+          ? 'border-line-strong bg-surface hover:border-azulejo hover:bg-azulejo-soft active:scale-[0.99]'
           : isCorrect
-            ? 'border-brand-500 bg-brand-50 text-brand-800 dark:bg-brand-800/30 dark:text-brand-100'
+            ? cx('border-brand bg-brand-soft text-brand-ink font-semibold', isGiven && 'animate-pop')
             : isGiven
-              ? 'border-red-400 bg-red-50 text-red-800 dark:bg-red-900/30 dark:text-red-200'
-              : 'border-stone-200 bg-white opacity-60 dark:border-stone-800 dark:bg-stone-900'
+              ? 'animate-shake border-danger bg-danger-soft text-danger'
+              : 'border-line bg-surface text-ink-muted opacity-70'
         return (
           <li key={i}>
             <button
               type="button"
               disabled={locked}
               onClick={() => onPick(i)}
-              className={`flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left text-[17px] transition disabled:cursor-default ${tone}`}
+              className={cx(
+                'flex min-h-13 w-full items-center gap-3 rounded-control border-[1.5px] px-4 py-3 text-left text-[1.0625rem] transition-[background-color,border-color,transform] duration-150 disabled:cursor-default',
+                tone,
+              )}
               lang="pt-PT"
             >
-              <span className="hidden w-5 shrink-0 text-sm text-stone-400 sm:inline">{i + 1}</span>
+              <span
+                aria-hidden
+                className={cx(
+                  'hidden size-6 shrink-0 place-items-center rounded-md border text-xs font-bold text-ink-muted tabular-nums sm:grid',
+                  locked ? 'border-transparent' : 'border-line-strong',
+                )}
+              >
+                {i + 1}
+              </span>
               <span className="flex-1">{opt}</span>
-              {locked && isCorrect && <span aria-label="верно">✓</span>}
-              {locked && isGiven && !isCorrect && <span aria-label="неверно">✗</span>}
+              {locked && isCorrect && (
+                <>
+                  <Check aria-hidden className="size-5 shrink-0" strokeWidth={2.75} />
+                  <span className="sr-only" lang="ru">
+                    {isGiven ? ' — ваш ответ, верно' : ' — верный ответ'}
+                  </span>
+                </>
+              )}
+              {locked && isGiven && !isCorrect && (
+                <>
+                  <X aria-hidden className="size-5 shrink-0" strokeWidth={2.75} />
+                  <span className="sr-only" lang="ru">
+                    {' — ваш ответ, неверно'}
+                  </span>
+                </>
+              )}
             </button>
           </li>
         )
@@ -71,7 +98,7 @@ function Options({
 export function ChoiceExercise({ exercise: ex, locked, result, onSubmit }: ExerciseProps<'choice'>) {
   return (
     <div className="space-y-4">
-      <p className="text-xl leading-relaxed" lang="pt-PT">
+      <p className="text-xl leading-relaxed text-pretty" lang="pt-PT">
         {ex.prompt}
       </p>
       <Options
@@ -79,9 +106,10 @@ export function ChoiceExercise({ exercise: ex, locked, result, onSubmit }: Exerc
         correct={ex.correct}
         locked={locked}
         given={result?.given}
-        onPick={(i) =>
+        onPick={(i) => {
+          haptic(5)
           onSubmit({ given: ex.options[i], verdict: i === ex.correct ? 'correct' : 'wrong', expected: ex.options[ex.correct] })
-        }
+        }}
       />
     </div>
   )
@@ -91,13 +119,14 @@ export function ListenChoiceExercise({ exercise: ex, locked, result, onSubmit }:
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
-        <SpeakButton text={ex.text} size="lg" label="Слушать" />
+        <SpeakButton text={ex.text} size="lg" variant="solid" label="Слушать" />
         <SpeakButton text={ex.text} rateFactor={0.75} label="Медленно" />
       </div>
       {ex.prompt && <p className="text-lg">{ex.prompt}</p>}
       {locked && (
-        <p className="rounded-xl bg-stone-100 px-4 py-2 dark:bg-stone-800" lang="pt-PT">
-          🔊 {ex.text}
+        <p className="card-sunken flex animate-enter items-center gap-2 px-4 py-2.5" lang="pt-PT">
+          <Volume2 aria-hidden className="size-4 shrink-0 text-azulejo" />
+          {ex.text}
         </p>
       )}
       <Options

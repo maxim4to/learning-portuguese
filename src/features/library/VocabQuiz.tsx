@@ -1,7 +1,9 @@
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import type { VocabTheme } from '@/content'
+import { Check, RotateCcw, X } from 'lucide-react'
 import { ProgressBar } from '@/components/ProgressBar'
-import { SpeakButton } from '@/features/exercises'
+import { SegmentedControl } from '@/components/SegmentedControl'
+import { SpeakButton } from '@/components/SpeakButton'
 import { GenderBadge } from './ui'
 
 type Direction = 'pt-ru' | 'ru-pt'
@@ -93,34 +95,37 @@ export function VocabQuiz({
   const back = word && (dir === 'pt-ru' ? word.ru : word.pt)
   const ptVisible = dir === 'pt-ru' || round.flipped
 
+  const flip = () => setRound((r) => ({ ...r, flipped: !r.flipped }))
+
   return (
-    <section className="card space-y-4 sm:p-6" aria-label="Самопроверка">
+    <section className="card-raised space-y-4 rounded-hero p-4 sm:p-6" aria-label="Самопроверка">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex gap-1 rounded-xl bg-stone-100 p-1 dark:bg-stone-800" role="group" aria-label="Направление">
-          {(['pt-ru', 'ru-pt'] as const).map((d) => (
-            <button
-              key={d}
-              type="button"
-              aria-pressed={dir === d}
-              onClick={() => {
-                setDir(d)
-                setRound(newRound(all))
-              }}
-              className={`rounded-lg px-3 py-1 text-sm font-medium transition ${
-                dir === d ? 'bg-white shadow-sm dark:bg-stone-900' : 'text-stone-500 hover:text-stone-800 dark:hover:text-stone-200'
-              }`}
-            >
-              {d === 'pt-ru' ? 'PT → RU' : 'RU → PT'}
-            </button>
-          ))}
-        </div>
-        <span className="text-sm text-stone-500 tabular-nums">
+        <SegmentedControl<Direction>
+          label="Направление"
+          value={dir}
+          onChange={(d) => {
+            setDir(d)
+            setRound(newRound(all))
+          }}
+          options={[
+            { value: 'pt-ru', label: 'PT → RU' },
+            { value: 'ru-pt', label: 'RU → PT' },
+          ]}
+        />
+        <span className="flex items-center gap-2 text-sm text-ink-muted tabular-nums">
           {Math.min(round.pos + 1, total)} / {total}
           {round.known.length + round.unknown.length > 0 && (
             <>
-              {' · '}
-              <span className="text-brand-700 dark:text-brand-500">✓ {round.known.length}</span>{' '}
-              <span className="text-red-600">✗ {round.unknown.length}</span>
+              <span className="inline-flex items-center gap-0.5 rounded-full bg-brand-soft px-2 py-0.5 text-xs font-bold text-brand-ink">
+                <Check aria-hidden className="size-3.5" strokeWidth={3} />
+                {round.known.length}
+                <span className="sr-only"> знаю</span>
+              </span>
+              <span className="inline-flex items-center gap-0.5 rounded-full bg-terracotta-soft px-2 py-0.5 text-xs font-bold text-terracotta">
+                <X aria-hidden className="size-3.5" strokeWidth={3} />
+                {round.unknown.length}
+                <span className="sr-only"> не знаю</span>
+              </span>
             </>
           )}
         </span>
@@ -129,73 +134,78 @@ export function VocabQuiz({
 
       {word ? (
         <>
+          {/* The card's accessible name is its content (the word) — no overriding aria-label. */}
           <button
             ref={cardRef}
             type="button"
-            onClick={() => setRound((r) => ({ ...r, flipped: !r.flipped }))}
-            className="flex min-h-44 w-full flex-col items-center justify-center gap-3 rounded-2xl border border-stone-200 bg-stone-50 p-5 text-center transition hover:border-brand-500/40 dark:border-stone-700 dark:bg-stone-950/40"
-            aria-label={round.flipped ? 'Скрыть ответ' : 'Показать ответ'}
+            onClick={flip}
+            aria-expanded={round.flipped}
+            aria-describedby="vq-hint"
+            className="flex min-h-48 w-full flex-col items-center justify-center gap-3 rounded-card border border-line bg-sunken p-5 text-center transition-[border-color,box-shadow] hover:border-azulejo/40"
           >
-            <span className="text-2xl font-semibold" lang={dir === 'pt-ru' ? 'pt-PT' : 'ru'}>
+            <span key={`${idx}:${dir}`} className="animate-enter font-serif text-[1.75rem] leading-tight font-semibold" lang={dir === 'pt-ru' ? 'pt-PT' : 'ru'}>
               {front}
             </span>
             {dir === 'pt-ru' && <GenderBadge gender={word.gender} />}
-            {round.flipped ? (
-              <>
-                <span className="h-px w-16 bg-stone-300 dark:bg-stone-700" aria-hidden />
-                <span className="text-xl text-brand-800 dark:text-brand-100" lang={dir === 'pt-ru' ? 'ru' : 'pt-PT'}>
+            {round.flipped && (
+              <span className="flex animate-enter flex-col items-center gap-2">
+                <span className="h-px w-16 bg-line-strong" aria-hidden />
+                <span className="text-xl font-semibold text-brand-ink" lang={dir === 'pt-ru' ? 'ru' : 'pt-PT'}>
                   {back}
                 </span>
                 {dir === 'ru-pt' && <GenderBadge gender={word.gender} />}
                 {word.example && (
-                  <span className="text-sm text-stone-500 italic" lang="pt-PT">
+                  <span className="font-serif text-sm text-ink-muted italic" lang="pt-PT">
                     {word.example}
                   </span>
                 )}
-              </>
-            ) : (
-              <span className="text-sm text-stone-400">нажмите, чтобы увидеть ответ (пробел)</span>
+              </span>
             )}
           </button>
+          <p id="vq-hint" className={round.flipped ? 'sr-only' : 'text-center text-sm text-ink-muted'}>
+            {round.flipped ? 'Нажмите, чтобы скрыть перевод' : 'Нажмите на карточку, чтобы увидеть перевод (пробел)'}
+          </p>
           {ptVisible && (
             <div className="flex justify-center">
               <SpeakButton key={word.pt} text={word.pt} label="Произношение" />
             </div>
           )}
-          {round.flipped ? (
-            <div className="grid grid-cols-2 gap-2">
-              <button type="button" className="btn-secondary border-red-300 text-red-700 dark:border-red-800 dark:text-red-300" onClick={() => answer(false)}>
-                Не знаю <kbd className="hidden text-xs opacity-60 sm:inline">1</kbd>
+          <div className="sticky-actions">
+            {round.flipped ? (
+              <div className="grid grid-cols-2 gap-2">
+                <button type="button" className="btn-secondary min-h-13 border-terracotta/40 text-terracotta" onClick={() => answer(false)}>
+                  Не знаю <kbd className="hidden font-sans text-xs opacity-70 sm:inline">1</kbd>
+                </button>
+                <button type="button" className="btn-primary min-h-13" onClick={() => answer(true)}>
+                  Знаю <kbd className="hidden font-sans text-xs opacity-70 sm:inline">2</kbd>
+                </button>
+              </div>
+            ) : (
+              <button type="button" className="btn-primary min-h-13 w-full" onClick={() => setRound((r) => ({ ...r, flipped: true }))}>
+                Показать ответ
               </button>
-              <button type="button" className="btn-primary" onClick={() => answer(true)}>
-                Знаю <kbd className="hidden text-xs opacity-60 sm:inline">2</kbd>
-              </button>
-            </div>
-          ) : (
-            <button type="button" className="btn-primary w-full" onClick={() => setRound((r) => ({ ...r, flipped: true }))}>
-              Показать ответ
-            </button>
-          )}
-          <p className="text-center text-xs text-stone-500">
+            )}
+          </div>
+          <p className="text-center text-xs text-ink-muted">
             Самопроверка не влияет на прогресс. «Не знаю» добавляет слово в повторение.
           </p>
         </>
       ) : (
-        <div className="space-y-4 text-center">
-          <p className="text-4xl font-bold text-brand-700 tabular-nums dark:text-brand-500">
+        <div className="animate-enter space-y-4 text-center">
+          <p className="font-serif text-4xl font-semibold text-brand-ink tabular-nums">
             {round.known.length} / {total}
           </p>
-          <p className="text-stone-600 dark:text-stone-400">
+          <p className="text-ink-muted">
             {round.unknown.length === 0
               ? 'Все слова знакомы!'
               : `Незнакомых слов: ${round.unknown.length} — они добавлены в повторение.`}
           </p>
           {round.unknown.length > 0 && (
-            <ul className="mx-auto max-w-md divide-y divide-stone-200 text-left dark:divide-stone-800">
+            <ul className="card-sunken mx-auto max-w-md divide-y divide-line p-0 text-left">
               {round.unknown.map((i) => (
-                <li key={i} className="flex justify-between gap-3 py-1.5">
+                <li key={i} className="flex justify-between gap-3 px-3 py-2">
                   <b lang="pt-PT">{theme.words[i].pt}</b>
-                  <span className="text-stone-600 dark:text-stone-400">{theme.words[i].ru}</span>
+                  <span className="text-ink-muted">{theme.words[i].ru}</span>
                 </li>
               ))}
             </ul>
@@ -203,13 +213,13 @@ export function VocabQuiz({
           <div className="flex flex-col justify-center gap-2 sm:flex-row">
             {round.unknown.length > 0 && (
               <button type="button" className="btn-primary" onClick={() => setRound(newRound(round.unknown))}>
-                Повторить незнакомые ({round.unknown.length})
+                <RotateCcw aria-hidden className="size-5" /> Повторить незнакомые ({round.unknown.length})
               </button>
             )}
             <button type="button" className="btn-secondary" onClick={() => setRound(newRound(all))}>
               Пройти заново
             </button>
-            <button type="button" className="btn-secondary" onClick={onClose}>
+            <button type="button" className="btn-ghost" onClick={onClose}>
               Закрыть
             </button>
           </div>

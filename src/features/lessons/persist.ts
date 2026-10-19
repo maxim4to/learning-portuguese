@@ -13,6 +13,28 @@ export interface SaveOutcome {
   progress?: TopicProgress
   errorsLogged: number
   cardsAdded: number
+  /**
+   * Cards for «Не знаю» answers, NOT saved yet: the result screen offers to add them
+   * (a run of skips must not flood the review queue).
+   */
+  pendingCards: SrsCard[]
+}
+
+/** Errors already logged in this tab session (exerciseId + given) — a retry doesn't log the same mistake twice. */
+const SESSION_KEY = 'ptpt:v1:logged-errors'
+function loggedThisSession(): Set<string> {
+  try {
+    return new Set(JSON.parse(sessionStorage.getItem(SESSION_KEY) ?? '[]') as string[])
+  } catch {
+    return new Set()
+  }
+}
+function rememberLogged(keys: Set<string>) {
+  try {
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify([...keys].slice(-500)))
+  } catch {
+    // ignore
+  }
 }
 
 /** Self-graded shadowing "again" is not an error worth a card. */
@@ -33,7 +55,16 @@ export async function saveRun(
     ? await repo.saveTopicResult({ topicId: topic.id, correct: summary.correct, total: summary.total, at, source: opts.source })
     : undefined
 
-  const wrong = summary.answers.filter((a) => !a.ok && isRealError(byId.get(a.exerciseId)))
+  const seen = loggedThisSession()
+  const wrong = summary.answers.filter((a) => {
+    if (a.ok || !isRealError(byId.get(a.exerciseId))) return false
+    const k = `${a.exerciseId}|${a.given}`
+    if (seen.has(k)) return false
+    seen.add(k)
+    return true
+  })
+  rememberLogged(seen)
+  const skippedIds = new Set(wrong.filter((a) => a.skipped).map((a) => a.exerciseId))
   const entries: ErrorEntryInput[] = wrong.map((a) => ({
     exerciseId: a.exerciseId,
     topicId: a.topicId,
@@ -44,13 +75,16 @@ export async function saveRun(
   const logged = await Promise.all(entries.map((e) => repo.logError(e)))
 
   let cardsAdded = 0
+  let pendingCards: SrsCard[] = []
   if (logged.length) {
     // Same id scheme / front format as the SRS module (`error:<exerciseId>`); existing cards keep their FSRS state.
     const fresh = cardsFromErrors(logged, await repo.getCards(), at)
-    if (fresh.length) await repo.upsertCards(fresh)
-    cardsAdded = fresh.length
+    const now = fresh.filter((c) => !c.exerciseId || !skippedIds.has(c.exerciseId))
+    pendingCards = fresh.filter((c) => c.exerciseId && skippedIds.has(c.exerciseId))
+    if (now.length) await repo.upsertCards(now)
+    cardsAdded = now.length
   }
-  return { progress, errorsLogged: logged.length, cardsAdded }
+  return { progress, errorsLogged: logged.length, cardsAdded, pendingCards }
 }
 
 /** Creates 'grammar' cards (front = ru, back = pt) for topic examples that aren't cards yet. Returns how many were added. */
