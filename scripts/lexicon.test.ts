@@ -1,4 +1,4 @@
-import { test } from 'node:test'
+import { test } from 'vitest'
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
@@ -743,11 +743,11 @@ test('real lexicon: every entry placed in its canonical file, valid conj', () =>
   }
 })
 
-test('bundle size: raw JSON ≤ 1 MB, gzip ≤ 250 KB (and the built lazy chunk, if dist/ exists)', (t) => {
+test('bundle size: raw JSON ≤ 1 MB, gzip ≤ 250 KB (and the built lazy chunk, if dist/ exists)', () => {
   const json = readFileSync(bundlePath, 'utf8')
   const raw = Buffer.byteLength(json)
   const gz = gzipSync(json).length
-  t.diagnostic(`src/generated/lexicon.json: ${(raw / 1024).toFixed(1)} KB raw, ${(gz / 1024).toFixed(1)} KB gzip`)
+  console.info(`src/generated/lexicon.json: ${(raw / 1024).toFixed(1)} KB raw, ${(gz / 1024).toFixed(1)} KB gzip`)
   assert.ok(raw <= BUNDLE_MAX_BYTES, `lexicon.json is ${raw} B (> 1 MB): split entries/forms`)
   assert.ok(gz <= BUNDLE_MAX_GZIP, `lexicon.json gzip is ${gz} B (> 250 KB)`)
   const assets = fileURLToPath(new URL('../dist/assets/', import.meta.url))
@@ -757,7 +757,7 @@ test('bundle size: raw JSON ≤ 1 MB, gzip ≤ 250 KB (and the built lazy chunk,
   if (!chunk) return
   const code = readFileSync(join(assets, chunk))
   const cgz = gzipSync(code).length
-  t.diagnostic(`dist/assets/${chunk}: ${(code.length / 1024).toFixed(1)} KB, ${(cgz / 1024).toFixed(1)} KB gzip`)
+  console.info(`dist/assets/${chunk}: ${(code.length / 1024).toFixed(1)} KB, ${(cgz / 1024).toFixed(1)} KB gzip`)
   assert.ok(cgz <= BUNDLE_MAX_GZIP, `lazy chunk ${chunk} gzip is ${cgz} B (> 250 KB)`)
 })
 

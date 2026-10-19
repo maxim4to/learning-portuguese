@@ -1,8 +1,8 @@
 /**
  * «Сбросить весь прогресс» — LocalRepository.resetProgress + per-device keys:
- *   npx tsx --test scripts/reset.test.ts
+ *   npx vitest run scripts/reset.test.ts
  */
-import { beforeEach, describe, test } from 'node:test'
+import { beforeEach, describe, test } from 'vitest'
 import assert from 'node:assert/strict'
 
 class MemoryStorage implements Storage {

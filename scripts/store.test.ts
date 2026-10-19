@@ -1,9 +1,9 @@
 /**
  * Local-first DataStore (src/data/store.ts): snapshot hydration, revalidation merge, optimistic writes with
  * rollback, conflict policy, per-uid snapshot isolation, reset/export/import, local backend.
- *   npx tsx --test scripts/store.test.ts
+ *   npx vitest run scripts/store.test.ts
  */
-import { beforeEach, describe, test } from 'node:test'
+import { beforeEach, describe, test } from 'vitest'
 import assert from 'node:assert/strict'
 
 class MemoryStorage implements Storage {

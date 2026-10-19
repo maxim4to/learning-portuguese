@@ -31,3 +31,9 @@ dev-dist
 # Claude Code local settings
 .claude/settings.local.json
 .claude/launch.json
+
+# Tests
+coverage
+test-results
+playwright-report
+.e2e

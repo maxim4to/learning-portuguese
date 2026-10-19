@@ -1,0 +1,12 @@
+{
+  // Type-checks tests/ (npm run test:types). Not part of `tsc -b` so a broken test never blocks the app build.
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.test.tsbuildinfo",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "vite-plugin-pwa/client", "node", "@testing-library/jest-dom/vitest"],
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": ["src", "tests", "vitest.config.ts", "playwright.config.ts", "playwright.emulator.config.ts"]
+}

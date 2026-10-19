@@ -1,13 +1,13 @@
 /**
  * Personal dictionary — Phase 5 integrations (pure functions):
- *   npx tsx --test scripts/integrations.test.ts
- *   (update the prompt snapshot: npx tsx --test --test-update-snapshots scripts/integrations.test.ts)
+ *   npx vitest run scripts/integrations.test.ts
+ *   (update the prompt snapshot: npx vitest run scripts/integrations.test.ts -u)
  *
  * - «Импорт списка»: line parsing (separators, empty lines, duplicates, headers) and lexicon resolution;
  * - «Мои слова»: word priority, the 30-word limit and a snapshot of the prompt;
  * - saved-word highlights: which tokens of a pt text are marked.
  */
-import { describe, test } from 'node:test'
+import { describe, expect, test } from 'vitest'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -202,7 +202,7 @@ describe('tutor: «Мои слова»', () => {
     assert.equal(tutorWordLine({ lemma: 'levantar-se', pos: 'verb', ru: 'вставать' }), 'levantar-se (глаг.) — вставать; пример: нет — придумай сам')
   })
 
-  test('prompt snapshot', (t) => {
+  test('prompt snapshot', () => {
     const items = [
       st('chávena', 'learning', [card({ due: NOW - DAY, lapses: 2 })], {
         lexId: 'chávena#noun',
@@ -222,7 +222,7 @@ describe('tutor: «Мои слова»', () => {
       st('fixe', 'known', [card()], { ru: 'классный' }),
     ]
     const prompt = buildWordsPrompt(pickTutorWords(items, NOW), { level: 'A2' })
-    t.assert.snapshot(prompt)
+    expect(prompt).toMatchSnapshot()
   })
 })
 

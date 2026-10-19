@@ -1,8 +1,8 @@
 /**
  * Personal dictionary unit tests (pure functions):
- *   npx tsx --test scripts/words.test.ts
+ *   npx vitest run scripts/words.test.ts
  */
-import { describe, test } from 'node:test'
+import { describe, test } from 'vitest'
 import assert from 'node:assert/strict'
 import { parseExportBundle, type ExportBundle, type SrsCard, type WordEntry } from '../src/data/types.ts'
 import { createSrsCard, dueCards, schedule } from '../src/engine/fsrs.ts'
