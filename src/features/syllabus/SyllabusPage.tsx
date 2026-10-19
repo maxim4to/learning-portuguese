@@ -31,9 +31,9 @@ export function SyllabusPage() {
         actions={
           <Link
             to="/diagnostic"
-            className="inline-flex min-h-11 items-center gap-2 rounded-control border border-line bg-surface px-3.5 text-sm font-semibold text-ink no-underline shadow-card hover:border-line-strong"
+            className="btn-secondary text-sm"
           >
-            <ClipboardCheck aria-hidden className="size-4.5 text-azulejo" /> Диагностика
+            <ClipboardCheck aria-hidden className="size-4.5" /> Диагностика
           </Link>
         }
       >
@@ -57,24 +57,24 @@ export function SyllabusPage() {
       {next && (
         <Link
           to={`/topic/${next.topic.id}`}
-          className="card-raised card-link group relative flex items-center gap-4 overflow-hidden rounded-hero p-4 sm:p-5"
+          className="card-raised card-link group relative flex items-center gap-4 overflow-hidden rounded-hero p-5 sm:p-7"
         >
           <span
             aria-hidden
-            className={`grid size-12 shrink-0 place-items-center rounded-2xl ${next.reason === 'next' ? 'bg-brand-soft text-brand-ink' : 'bg-terracotta-soft text-terracotta'}`}
+            className={`grid size-14 shrink-0 place-items-center rounded-full ${next.reason === 'next' ? 'bg-brand text-on-brand' : 'bg-terracotta-fill text-white'}`}
           >
             {next.reason === 'next' ? <BookOpen className="size-6" /> : <Target className="size-6" />}
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-xs font-semibold tracking-wide text-ink-muted uppercase">
+            <span className="block text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
               {next.reason === 'next' ? 'Продолжить курс' : 'Подтянуть слабую тему'}
             </span>
-            <span className="mt-0.5 flex items-center gap-2 font-serif text-lg leading-snug font-semibold">
+            <span className="mt-1 flex items-center gap-2 font-display text-[1.75rem] leading-[1.05]">
               <LevelBadge level={next.topic.level} className="font-sans" />
               <span className="line-clamp-2">{next.topic.title}</span>
             </span>
           </span>
-          <span aria-hidden className="grid size-10 shrink-0 place-items-center rounded-full bg-brand text-on-brand transition-transform group-hover:translate-x-0.5">
+          <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-full bg-ink text-surface transition-transform group-hover:translate-x-0.5">
             <ArrowRight className="size-5" />
           </span>
         </Link>
@@ -112,8 +112,8 @@ function LevelHeader({ level, modules, progress }: { level: Level; modules: Syll
   const ids = modules.flatMap((m) => m.topics)
   const c = countStatuses(ids, progress)
   return (
-    <div className="sticky top-(--sticky-top) z-10 -mx-4 flex items-center gap-3 border-b border-line bg-bg/90 px-4 py-2.5 backdrop-blur-md md:-mx-2 md:px-2">
-      <h2 className="shrink-0 font-serif">{level}</h2>
+    <div className="sticky top-(--sticky-top) z-10 -mx-4 flex items-center gap-4 bg-bg/90 px-4 pt-6 pb-3 backdrop-blur-md md:-mx-2 md:px-2">
+      <h2 className="shrink-0 font-display text-[3.5rem] leading-[0.85] font-black md:text-display">{level}</h2>
       {ids.length > 0 && (
         <>
           <ProgressBar
@@ -125,7 +125,7 @@ function LevelHeader({ level, modules, progress }: { level: Level; modules: Syll
               title: `${STATUS_META[s].label}: ${c[s]}`,
             }))}
           />
-          <span className="shrink-0 text-sm font-semibold text-ink-muted tabular-nums">
+          <span className="shrink-0 font-display text-2xl text-ink tabular-nums">
             {c.confident}/{ids.length}
           </span>
         </>
@@ -138,13 +138,13 @@ function ModuleCard({ mod, progress }: { mod: SyllabusModule; progress: Map<stri
   const c = countStatuses(mod.topics, progress)
   return (
     <div className="card overflow-hidden p-0">
-      <div className="flex items-baseline justify-between gap-3 px-4 pt-3.5 pb-2">
-        <h3>{mod.title}</h3>
+      <div className="flex items-baseline justify-between gap-3 px-5 pt-5 pb-2 sm:px-6">
+        <h3 className="font-display text-[1.625rem] leading-none font-extrabold">{mod.title}</h3>
         <span className="shrink-0 text-xs font-semibold text-ink-muted tabular-nums">
           {mod.topics.length - c['not-started']}/{mod.topics.length} начато
         </span>
       </div>
-      <ul className="divide-y divide-line">
+      <ul className="mx-3 divide-y-[1.5px] divide-dotted divide-line-strong pb-2 sm:mx-4">
         {mod.topics.map((tid) => (
           <TopicRow key={tid} id={tid} progress={progress} />
         ))}
@@ -176,11 +176,11 @@ function TopicRow({ id, progress }: { id: string; progress: Map<string, TopicPro
 
   return (
     <li>
-      <Link to={`/topic/${t.id}`} className="group flex min-h-14 items-center gap-3 px-4 py-2.5 text-ink no-underline transition-colors hover:bg-surface-2/70">
-        <i className={`size-2.5 shrink-0 rounded-full ${meta.dot}`} />
+      <Link to={`/topic/${t.id}`} className="group flex min-h-16 items-center gap-3 rounded-[1.25rem] px-2 py-3 text-ink no-underline transition-colors hover:bg-surface-2">
+        <i className={`size-3 shrink-0 rounded-full ${meta.dot}`} />
         <span className="min-w-0 flex-1">
           <span className="block leading-snug font-semibold">{t.title}</span>
-          <span className="block truncate font-serif text-sm text-ink-muted italic" lang="pt-PT">
+          <span className="block truncate font-pt text-sm text-ink-muted" lang="pt-PT">
             {t.titlePt}
           </span>
           {status === 'not-started' && unmet.length > 0 && (

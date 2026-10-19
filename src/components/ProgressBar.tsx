@@ -17,7 +17,7 @@ export function ProgressBar({
   className?: string
 }) {
   const pct = Math.round(Math.min(1, Math.max(0, value)) * 100)
-  const h = size === 'sm' ? 'h-1.5' : size === 'lg' ? 'h-3' : 'h-2'
+  const h = size === 'sm' ? 'h-2' : size === 'lg' ? 'h-4' : 'h-2.5'
   const fill = { brand: 'bg-brand', azulejo: 'bg-azulejo', sun: 'bg-sun-fill', terracotta: 'bg-terracotta-fill' }[tone]
   return (
     <div
@@ -26,7 +26,7 @@ export function ProgressBar({
       aria-valuemax={100}
       aria-valuenow={pct}
       aria-label={label}
-      className={cx('flex overflow-hidden rounded-full bg-sunken ring-1 ring-line ring-inset', h, className)}
+      className={cx('flex gap-0.5 overflow-hidden rounded-pill bg-sunken', h, className)}
     >
       {segments ? (
         segments.map((s, i) =>
@@ -34,7 +34,7 @@ export function ProgressBar({
             <div
               key={i}
               title={s.title}
-              className={cx('h-full transition-[width] duration-500 ease-out', s.className)}
+              className={cx('h-full rounded-pill transition-[width] duration-500 ease-out', s.className)}
               style={{ width: `${Math.min(1, s.value) * 100}%` }}
             />
           ) : null,

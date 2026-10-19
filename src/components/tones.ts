@@ -2,7 +2,7 @@
 export type BadgeTone = 'neutral' | 'brand' | 'azulejo' | 'terracotta' | 'sun' | 'danger' | 'solid'
 
 export const BADGE_TONE: Record<BadgeTone, string> = {
-  neutral: 'bg-surface-2 text-ink-muted',
+  neutral: 'bg-azulejo-soft text-ink',
   brand: 'bg-brand-soft text-brand-ink',
   azulejo: 'bg-azulejo-soft text-azulejo-ink',
   terracotta: 'bg-terracotta-soft text-terracotta',

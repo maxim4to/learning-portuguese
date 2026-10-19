@@ -296,17 +296,17 @@ export function DiagnosticPage() {
         </div>
         <ul className="grid grid-cols-3 gap-2 text-sm leading-tight text-ink-muted">
           <li className={stat}>
-            <span className="block font-serif text-2xl font-semibold text-ink tabular-nums">{questions.length}</span>
+            <span className="block font-display text-2xl text-ink tabular-nums">{questions.length}</span>
             вопросов
           </li>
           <li className={stat}>
-            <span className="block font-serif text-2xl font-semibold whitespace-nowrap text-ink tabular-nums">
+            <span className="block font-display text-2xl whitespace-nowrap text-ink tabular-nums">
               ~{minutesFor(questions.length)} мин
             </span>
             в своём темпе
           </li>
           <li className={stat}>
-            <span className="block font-serif text-2xl font-semibold text-ink">
+            <span className="block font-display text-2xl text-ink">
               {perLevel[0]?.level}–{perLevel[perLevel.length - 1]?.level}
             </span>
             {perLevel.length} этапа
@@ -397,7 +397,7 @@ function Interstitial(p: {
         </p>
         <div className="flex justify-center">
           <ProgressRing value={pct / 100} size={120} stroke={10} tone={toneForPct(pct)}>
-            <span className="font-serif text-3xl font-semibold tabular-nums">{pct}%</span>
+            <span className="font-display text-3xl tabular-nums">{pct}%</span>
           </ProgressRing>
         </div>
         <p className="text-ink-muted">

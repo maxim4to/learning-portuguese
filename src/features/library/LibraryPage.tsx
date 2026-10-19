@@ -16,11 +16,11 @@ const levelRank = (l?: string) => (l ? LEVELS.indexOf(l as (typeof LEVELS)[numbe
 export function MaterialsTabs({ active }: { active: 'library' | 'situations' }) {
   const tab = (on: boolean) =>
     cx(
-      'inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-[calc(var(--radius-sm)-4px)] px-4 text-sm font-semibold no-underline transition-[background-color,color,box-shadow] sm:flex-none',
-      on ? 'bg-surface text-ink shadow-card ring-1 ring-line' : 'text-ink-muted hover:text-ink',
+      'inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-pill px-5 text-sm font-semibold no-underline transition-[background-color,color] sm:flex-none',
+      on ? 'bg-ink text-surface' : 'text-ink-muted hover:bg-surface-2 hover:text-ink',
     )
   return (
-    <nav aria-label="Разделы практики" className="flex gap-1 rounded-control bg-surface-2 p-1 sm:inline-flex">
+    <nav aria-label="Разделы практики" className="flex gap-1 rounded-pill bg-surface p-1 sm:inline-flex">
       <Link to="/situations" className={tab(active === 'situations')} aria-current={active === 'situations' ? 'page' : undefined}>
         <MessagesSquare aria-hidden className="size-4" /> Ситуации
       </Link>
@@ -33,12 +33,12 @@ export function MaterialsTabs({ active }: { active: 'library' | 'situations' }) 
 
 function Section({ title, hint, icon: Icon, tone, children }: { title: string; hint?: string; icon: LucideIcon; tone: string; children: ReactNode }) {
   return (
-    <section className="space-y-3">
+    <section className="space-y-4">
       <div className="flex items-center gap-3">
-        <span aria-hidden className={cx('grid size-9 place-items-center rounded-xl', tone)}>
+        <span aria-hidden className={cx('grid size-12 place-items-center rounded-full', tone)}>
           <Icon className="size-5" />
         </span>
-        <h2 className="flex-1">{title}</h2>
+        <h2 className="flex-1 text-[2.5rem] leading-none md:text-4xl">{title}</h2>
         {hint && <span className="text-sm text-ink-muted">{hint}</span>}
       </div>
       {children}
@@ -54,7 +54,7 @@ function Empty({ children }: { children: ReactNode }) {
   )
 }
 
-const cardLink = 'card card-link group flex h-full items-start gap-3'
+const cardLink = 'card card-link group flex h-full items-start gap-3 sm:p-6'
 const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
 
 export function LibraryPage() {
@@ -74,7 +74,7 @@ export function LibraryPage() {
         <PageHeader title="Библиотека" subtitle="Шпаргалки для быстрой справки, тематические словари и тексты для чтения." />
       </div>
 
-      <Section title="Шпаргалки" icon={FileText} tone="bg-azulejo-soft text-azulejo" hint={sheets.length ? plural(sheets.length, 'лист', 'листа', 'листов') : undefined}>
+      <Section title="Шпаргалки" icon={FileText} tone="bg-ink text-surface" hint={sheets.length ? plural(sheets.length, 'лист', 'листа', 'листов') : undefined}>
         {sheets.length === 0 ? (
           <Empty>Шпаргалок пока нет.</Empty>
         ) : (
@@ -83,7 +83,7 @@ export function LibraryPage() {
               <li key={s.id}>
                 <Link to={`/library/cheatsheet/${s.id}`} className={cardLink}>
                   <span className="min-w-0 flex-1">
-                    <span className="block font-semibold">{s.title}</span>
+                    <span className="block font-display text-[1.625rem] leading-[1.05]">{s.title}</span>
                     {s.intro && <span className="mt-1 line-clamp-2 text-sm text-ink-muted">{s.intro}</span>}
                   </span>
                   {chevron}
@@ -103,13 +103,13 @@ export function LibraryPage() {
               <li key={t.id}>
                 <Link to={`/library/vocab/${t.id}`} className={cardLink}>
                   <span className="min-w-0 flex-1">
-                    <span className="flex items-center gap-2 font-semibold">
-                      {t.level && <LevelBadge level={t.level} />}
+                    <span className="flex items-center gap-2 font-display text-[1.625rem] leading-[1.05]">
+                      {t.level && <LevelBadge level={t.level} className="font-sans tracking-normal" />}
                       {t.title}
                     </span>
                     <span className="mt-0.5 block text-sm text-ink-muted">
                       {t.titlePt && (
-                        <i lang="pt-PT" className="font-serif">
+                        <i lang="pt-PT" className="font-pt">
                           {t.titlePt}
                           {' · '}
                         </i>
@@ -125,7 +125,7 @@ export function LibraryPage() {
         )}
       </Section>
 
-      <Section title="Чтение" icon={BookOpenText} tone="bg-terracotta-soft text-terracotta" hint={texts.length ? plural(texts.length, 'текст', 'текста', 'текстов') : undefined}>
+      <Section title="Чтение" icon={BookOpenText} tone="bg-brand text-on-brand" hint={texts.length ? plural(texts.length, 'текст', 'текста', 'текстов') : undefined}>
         {texts.length === 0 ? (
           <Empty>Текстов для чтения пока нет — они появятся здесь, как только будут добавлены.</Empty>
         ) : (
@@ -138,7 +138,7 @@ export function LibraryPage() {
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center gap-2">
                         <LevelBadge level={r.level} />
-                        <span className="font-serif text-lg leading-snug font-semibold" lang="pt-PT">
+                        <span className="font-display text-[1.625rem] leading-[1.05]" lang="pt-PT">
                           {r.title}
                         </span>
                       </span>

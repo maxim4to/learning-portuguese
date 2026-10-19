@@ -13,14 +13,14 @@ const TYPED = new Set(['fill-gap', 'transform', 'translate-ru-pt', 'listen-type'
 function CheckGlyph() {
   return (
     <svg viewBox="0 0 24 24" className="size-6" aria-hidden>
-      <circle cx="12" cy="12" r="11" className="fill-brand" />
+      <circle cx="12" cy="12" r="11" className="fill-success" />
       <path
         d="M7 12.5l3.2 3.2L17 9"
         fill="none"
         strokeWidth="2.4"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="draw-check stroke-on-brand"
+        className="draw-check stroke-surface"
         style={{ ['--dash' as string]: 16 }}
       />
     </svg>
@@ -79,7 +79,7 @@ export function ExerciseFeedback({ ex, rec, lenient }: { ex: Exercise; rec: Answ
           : 'Неверно'
 
   const box = {
-    correct: 'border-brand/35 bg-brand-soft',
+    correct: 'border-success-line bg-success-soft',
     accents: 'border-warning-line bg-warning-soft',
     wrong: 'border-danger-line bg-danger-soft',
     skipped: 'border-line-strong bg-surface-2',
@@ -98,7 +98,7 @@ export function ExerciseFeedback({ ex, rec, lenient }: { ex: Exercise; rec: Answ
 
   return (
     <div className={cx('animate-enter space-y-3 rounded-card border p-4', box)}>
-      <p className="flex items-center gap-2.5 text-lg font-bold">
+      <p className="flex items-center gap-3 font-display text-[1.75rem] leading-none">
         {icon}
         {head}
       </p>
@@ -119,7 +119,7 @@ export function ExerciseFeedback({ ex, rec, lenient }: { ex: Exercise; rec: Answ
           )}
           <ul className="grid gap-1 sm:grid-cols-2" lang="pt-PT">
             {ex.pairs.map((p, i) => (
-              <li key={i} className="rounded-[calc(var(--radius-sm)-2px)] bg-surface/70 px-3 py-1.5 text-sm">
+              <li key={i} className="rounded-pill bg-surface/70 px-3 py-1.5 text-sm">
                 <b className="font-semibold">{p.left}</b> <span className="text-ink-muted">—</span> {p.right}
               </li>
             ))}

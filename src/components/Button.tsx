@@ -14,9 +14,9 @@ const VARIANT: Record<ButtonVariant, string> = {
 }
 // Every size keeps a ≥44px touch target (sm is visually lighter, not shorter).
 const SIZE: Record<ButtonSize, string> = {
-  sm: 'px-3 text-sm',
+  sm: 'px-4 text-sm',
   md: '',
-  lg: 'min-h-13 px-6 text-lg',
+  lg: 'min-h-14 px-7 text-lg',
 }
 
 function buttonClass(variant: ButtonVariant = 'primary', size: ButtonSize = 'md', className?: string) {

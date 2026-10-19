@@ -23,7 +23,7 @@ export function TopicHeader({ topic, progress }: { topic: Topic; progress: Map<s
       }
       title={topic.title}
       subtitle={
-        <p className="font-serif text-lg italic" lang="pt-PT">
+        <p className="font-pt text-lg" lang="pt-PT">
           {topic.titlePt}
         </p>
       }
@@ -38,7 +38,7 @@ export function TopicHeader({ topic, progress }: { topic: Topic; progress: Map<s
               <Link
                 key={id}
                 to={`/topic/${id}`}
-                className="inline-flex min-h-11 items-center gap-2 rounded-control border border-line bg-surface px-3 py-1.5 text-ink no-underline shadow-card transition-colors hover:border-line-strong"
+                className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-surface py-1.5 pr-1.5 pl-4 text-ink no-underline transition-colors hover:bg-surface-2"
               >
                 <span>{t?.title ?? id}</span>
                 <StatusBadge status={st} />

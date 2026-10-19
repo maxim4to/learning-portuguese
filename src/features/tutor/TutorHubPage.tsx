@@ -17,7 +17,7 @@ const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text
 function SectionTitle({ icon, tone, children }: { icon: ReactNode; tone: string; children: ReactNode }) {
   return (
     <h2 className="flex items-center gap-2.5">
-      <span aria-hidden className={`grid size-9 place-items-center rounded-xl ${tone}`}>
+      <span aria-hidden className={`grid size-9 place-items-center rounded-full ${tone}`}>
         {icon}
       </span>
       {children}
@@ -156,7 +156,7 @@ export function TutorHubPage() {
                   <LevelBadge level={s.level} className="mt-0.5" />
                   <span className="min-w-0 flex-1">
                     <span className="block font-semibold">{s.title}</span>
-                    <span className="block font-serif text-sm text-ink-muted italic" lang="pt-PT">
+                    <span className="block font-pt text-sm text-ink-muted" lang="pt-PT">
                       {s.titlePt}
                     </span>
                   </span>

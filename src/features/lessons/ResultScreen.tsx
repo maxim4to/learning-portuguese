@@ -3,6 +3,7 @@ import { ArrowRight, Check, ChevronDown, Plus, RotateCcw } from 'lucide-react'
 import type { Exercise, Topic } from '@/content'
 import { useRepository, type TopicStatus } from '@/data'
 import { ButtonLink } from '@/components/Button'
+import { AzulejoCorner } from '@/components/Card'
 import { ProgressRing } from '@/components/ProgressRing'
 import { toneForPct } from '@/components/tones'
 import { StatusBadge } from '@/components/StatusBadge'
@@ -85,18 +86,19 @@ export function ResultScreen(p: ResultScreenProps) {
 
   return (
     <div className="animate-enter space-y-4">
-      <section className="card-raised relative overflow-hidden rounded-hero p-5 text-center sm:p-7">
-        <p className="text-xs font-semibold tracking-wide text-ink-muted uppercase">
+      <section className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
+        {pct >= 60 && <AzulejoCorner seed={pct} />}
+        <p className="text-xs font-semibold tracking-[0.08em] text-ink-muted uppercase">
           {p.retry ? 'Работа над ошибками' : 'Результат'}
         </p>
         <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6 sm:text-left">
-          <ProgressRing value={pct / 100} size={128} stroke={11} tone={toneForPct(pct)}>
-            <span className="font-serif text-3xl font-semibold tabular-nums" aria-hidden>
+          <ProgressRing value={pct / 100} size={152} stroke={14} tone={toneForPct(pct)}>
+            <span className="font-display text-[2.75rem] leading-none font-black tabular-nums" aria-hidden>
               {pct}%
             </span>
           </ProgressRing>
           <div className="space-y-1">
-            <p className="font-serif text-2xl font-semibold">{headline(pct)}</p>
+            <p className="font-display text-[2.25rem] leading-[0.95] sm:text-4xl">{headline(pct)}</p>
             <p className="text-ink-muted">
               <span className="sr-only">Результат: {pct} процентов, </span>Верно {summary.correct} из {summary.total}
             </p>

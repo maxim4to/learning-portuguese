@@ -37,15 +37,15 @@ export function Switch({
         aria-describedby={description ? `${id}-d` : undefined}
         onClick={() => onChange(!checked)}
         className={cx(
-          'hit relative mt-0.5 inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors duration-200',
-          checked ? 'border-transparent bg-brand' : 'border-line-strong bg-sunken',
+          'hit relative mt-0.5 inline-flex h-7 w-12 shrink-0 items-center rounded-pill border-[1.5px] transition-colors duration-200',
+          checked ? 'border-brand bg-brand' : 'border-line-strong bg-surface-2',
         )}
       >
         <span
           aria-hidden
           className={cx(
-            'inline-block size-5 rounded-full shadow-card transition-transform duration-200 ease-out',
-            checked ? 'translate-x-[1.375rem] bg-on-brand' : 'translate-x-1 bg-surface ring-1 ring-line-strong',
+            'inline-block size-5 rounded-full transition-transform duration-200 ease-out',
+            checked ? 'translate-x-[22.5px] bg-on-brand' : 'translate-x-[2.5px] bg-ink-subtle',
           )}
         />
       </button>

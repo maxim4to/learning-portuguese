@@ -80,7 +80,7 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
 
   return (
     <div className="space-y-4">
-      <section className="card-raised relative space-y-5 overflow-hidden rounded-hero p-4 sm:p-6">
+      <section className="card-raised relative space-y-5 overflow-hidden rounded-hero p-5 sm:p-8">
         <p className="text-sm text-ink-muted">
           Скопируйте промпт и вставьте его в новый чат Claude, ChatGPT или другого ассистента: он проведёт занятие по-русски на
           материале с сайта, строго в европейском варианте. После занятия отметьте его ниже — оно засчитается в прогресс.
@@ -103,16 +103,16 @@ export function TutorPanel<M extends string>({ modes, build, targetIds, hideHubL
                 tabIndex={on ? 0 : -1}
                 onClick={() => setModeId(m.id as M)}
                 className={cx(
-                  'flex h-full flex-col gap-1.5 rounded-control border-[1.5px] p-3 text-left transition-[border-color,background-color,box-shadow]',
-                  on ? 'border-terracotta bg-terracotta-soft shadow-card' : 'border-line bg-surface hover:border-line-strong',
+                  'flex h-full flex-col gap-1.5 rounded-[1.75rem] border-[1.5px] p-4 text-left transition-[border-color,background-color]',
+                  on ? 'border-terracotta-fill bg-terracotta-soft' : 'border-line-strong bg-surface hover:border-ink',
                 )}
               >
                 <span className="flex items-center gap-2.5 font-semibold">
                   <span
                     aria-hidden
                     className={cx(
-                      'grid size-8 shrink-0 place-items-center rounded-lg',
-                      on ? 'bg-surface text-terracotta' : 'bg-surface-2 text-ink-muted',
+                      'grid size-9 shrink-0 place-items-center rounded-full',
+                      on ? 'bg-terracotta-fill text-white' : 'bg-surface-2 text-ink',
                     )}
                   >
                     <m.icon className="size-4.5" />

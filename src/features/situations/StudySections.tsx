@@ -106,7 +106,7 @@ export function VocabSection({ situation }: { situation: Situation }) {
                 )}
               </p>
               {w.example && (
-                <p className="mt-1 flex items-center gap-2 font-serif text-sm text-ink-muted italic">
+                <p className="mt-1 flex items-center gap-2 font-pt text-sm text-ink-muted">
                   <span className="flex-1" lang="pt-PT">
                     {w.example}
                   </span>
@@ -148,7 +148,7 @@ export function VocabSection({ situation }: { situation: Situation }) {
                 <td className="px-3 py-2 align-top">
                   {w.example && (
                     <span className="flex items-start gap-2">
-                      <span className="flex-1 pt-2 font-serif italic" lang="pt-PT">
+                      <span className="flex-1 pt-2 font-pt" lang="pt-PT">
                         {w.example}
                       </span>
                       <SpeakButton text={w.example} size="sm" variant="ghost" ariaLabel="Прослушать пример" />

@@ -143,7 +143,7 @@ export function VocabQuiz({
             aria-describedby="vq-hint"
             className="flex min-h-48 w-full flex-col items-center justify-center gap-3 rounded-card border border-line bg-sunken p-5 text-center transition-[border-color,box-shadow] hover:border-azulejo/40"
           >
-            <span key={`${idx}:${dir}`} className="animate-enter font-serif text-[1.75rem] leading-tight font-semibold" lang={dir === 'pt-ru' ? 'pt-PT' : 'ru'}>
+            <span key={`${idx}:${dir}`} className="animate-enter font-display text-[1.75rem] leading-tight" lang={dir === 'pt-ru' ? 'pt-PT' : 'ru'}>
               {front}
             </span>
             {dir === 'pt-ru' && <GenderBadge gender={word.gender} />}
@@ -155,7 +155,7 @@ export function VocabQuiz({
                 </span>
                 {dir === 'ru-pt' && <GenderBadge gender={word.gender} />}
                 {word.example && (
-                  <span className="font-serif text-sm text-ink-muted italic" lang="pt-PT">
+                  <span className="font-pt text-sm text-ink-muted" lang="pt-PT">
                     {word.example}
                   </span>
                 )}
@@ -192,7 +192,7 @@ export function VocabQuiz({
         </>
       ) : (
         <div className="animate-enter space-y-4 text-center">
-          <p className="font-serif text-4xl font-semibold text-brand-ink tabular-nums">
+          <p className="font-display text-4xl text-brand-ink tabular-nums">
             {round.known.length} / {total}
           </p>
           <p className="text-ink-muted">

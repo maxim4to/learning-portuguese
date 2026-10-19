@@ -69,7 +69,7 @@ function DueBadge({ n, className }: { n: number; className?: string }) {
   return (
     <span
       className={cx(
-        'inline-grid h-5 min-w-5 place-items-center rounded-full bg-terracotta-fill px-1.5 text-[11px] leading-none font-bold text-white tabular-nums',
+        'inline-grid h-5 min-w-5 place-items-center rounded-full bg-terracotta-fill px-1.5 text-[0.6875rem] leading-none font-bold text-white tabular-nums',
         className,
       )}
     >
@@ -95,22 +95,22 @@ export function Layout() {
       <div className="min-h-dvh">
         <a
           href="#main"
-          className="sr-only z-50 rounded-control bg-ink px-4 py-3 font-semibold text-bg focus:not-sr-only focus:fixed focus:top-[calc(var(--safe-top)+0.5rem)] focus:left-4"
+          className="sr-only z-50 rounded-pill bg-ink px-5 py-3 font-semibold text-bg focus:not-sr-only focus:fixed focus:top-[calc(var(--safe-top)+0.5rem)] focus:left-4"
         >
           К содержанию
         </a>
 
         {/* Desktop top bar (fixed height = --header-h; in-page sticky bars stick right under it). */}
-        <header className="sticky top-[0px] z-20 hidden h-(--header-h) border-b border-line bg-bg/85 backdrop-blur-md backdrop-saturate-150 md:block">
-          <div className="mx-auto flex h-full max-w-4xl items-center gap-6 px-6">
-            <NavLink to="/" aria-label="Português PT — главная" className="flex items-center gap-2 text-ink no-underline">
-              <AzulejoMark className="size-7" />
-              <span className="font-serif text-xl font-semibold tracking-tight">Português</span>
-              <span className="rounded-md bg-terracotta-soft px-1.5 py-0.5 text-[11px] font-bold tracking-wider whitespace-nowrap text-terracotta">
+        <header className="sticky top-[0px] z-20 hidden h-(--header-h) bg-bg/90 backdrop-blur-md md:block">
+          <div className="mx-auto flex h-full max-w-5xl items-center gap-6 px-6">
+            <NavLink to="/" aria-label="Português PT — главная" className="flex items-center gap-2.5 text-ink no-underline">
+              <AzulejoMark className="size-8" />
+              <span className="font-display text-[1.75rem] leading-none font-black">Português</span>
+              <span className="rounded-pill bg-sun-soft px-2 py-0.5 text-[0.6875rem] font-bold tracking-wider whitespace-nowrap text-sun">
                 PT-PT
               </span>
             </NavLink>
-            <nav aria-label="Основные разделы" className="ml-auto flex items-center gap-1">
+            <nav aria-label="Основные разделы" className="ml-auto flex items-center gap-1 rounded-pill bg-surface p-1">
               {NAV_ITEMS.map((item) => {
                 const active = isNavActive(item, pathname)
                 const Icon = iconFor(item.to)
@@ -120,8 +120,8 @@ export function Layout() {
                     to={item.to}
                     aria-current={active ? 'page' : undefined}
                     className={cx(
-                      'inline-flex h-10 items-center gap-2 rounded-full px-3.5 text-sm font-semibold no-underline transition-colors',
-                      active ? 'bg-brand-soft text-brand-ink' : 'text-ink-muted hover:bg-surface-2 hover:text-ink',
+                      'inline-flex h-11 items-center gap-2 rounded-pill px-4 text-sm font-semibold no-underline transition-colors',
+                      active ? 'bg-ink text-surface' : 'text-ink hover:bg-surface-2',
                     )}
                   >
                     <Icon aria-hidden className="size-4.5" strokeWidth={active ? 2.25 : 1.9} />
@@ -137,7 +137,7 @@ export function Layout() {
         <main
           id="main"
           tabIndex={-1}
-          className="mx-auto max-w-4xl pt-[max(1rem,var(--safe-top))] pr-[max(1rem,var(--safe-right))] pb-[calc(var(--bottom-chrome)+2.5rem)] pl-[max(1rem,var(--safe-left))] outline-none md:px-6 md:pt-8 md:pb-16"
+          className="mx-auto max-w-5xl pt-[max(1rem,var(--safe-top))] pr-[max(1rem,var(--safe-right))] pb-[calc(var(--bottom-chrome)+2.5rem)] pl-[max(1rem,var(--safe-left))] outline-none md:px-6 md:pt-6 md:pb-20"
         >
           <OfflineBanner synced={repo.kind === 'firestore'} />
           <Outlet />
@@ -146,9 +146,9 @@ export function Layout() {
         {/* Mobile bottom tab bar (height --tabbar-h + home-indicator inset). */}
         <nav
           aria-label="Основные разделы"
-          className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/92 pr-(--safe-right) pb-(--safe-bottom) pl-(--safe-left) shadow-bar backdrop-blur-md backdrop-saturate-150 md:hidden"
+          className="fixed inset-x-0 bottom-0 z-20 pr-[max(0.75rem,var(--safe-right))] pb-[calc(var(--safe-bottom)+0.5rem)] pl-[max(0.75rem,var(--safe-left))] md:hidden"
         >
-          <ul className="grid h-(--tabbar-h)" style={{ gridTemplateColumns: `repeat(${NAV_ITEMS.length}, minmax(0, 1fr))` }}>
+          <ul className="grid h-(--tabbar-h) rounded-pill bg-ink px-1 text-surface" style={{ gridTemplateColumns: `repeat(${NAV_ITEMS.length}, minmax(0, 1fr))` }}>
             {NAV_ITEMS.map((item) => {
               const active = isNavActive(item, pathname)
               const Icon = iconFor(item.to)
@@ -158,14 +158,14 @@ export function Layout() {
                     to={item.to}
                     aria-current={active ? 'page' : undefined}
                     className={cx(
-                      'flex h-full flex-col items-center justify-center gap-1 text-[0.71875rem] leading-none font-semibold tracking-[-0.01em] no-underline',
-                      active ? 'text-brand-ink' : 'text-ink-muted',
+                      'flex h-full flex-col items-center justify-center gap-1 rounded-pill text-[0.71875rem] leading-none font-semibold no-underline focus-visible:outline-on-ink-accent focus-visible:-outline-offset-4',
+                      active ? 'text-surface' : 'text-surface/75',
                     )}
                   >
                     <span
                       className={cx(
                         'relative grid h-8 w-14 place-items-center rounded-full transition-colors duration-200',
-                        active && 'bg-brand-soft',
+                        active && 'bg-brand text-on-brand',
                       )}
                     >
                       <Icon aria-hidden className="size-[22px]" strokeWidth={active ? 2.3 : 1.8} />

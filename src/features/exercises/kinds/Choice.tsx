@@ -43,9 +43,9 @@ function Options({
         const isCorrect = i === correct
         const isGiven = given === opt
         const tone = !locked
-          ? 'border-line-strong bg-surface hover:border-azulejo hover:bg-azulejo-soft active:scale-[0.99]'
+          ? 'border-line-strong bg-surface hover:border-ink active:scale-[0.99]'
           : isCorrect
-            ? cx('border-brand bg-brand-soft text-brand-ink font-semibold', isGiven && 'animate-pop')
+            ? cx('border-success bg-success-soft text-success font-semibold', isGiven && 'animate-pop')
             : isGiven
               ? 'animate-shake border-danger bg-danger-soft text-danger'
               : 'border-line bg-surface text-ink-muted opacity-70'
@@ -125,7 +125,7 @@ export function ListenChoiceExercise({ exercise: ex, locked, result, onSubmit }:
       {ex.prompt && <p className="text-lg">{ex.prompt}</p>}
       {locked && (
         <p className="card-sunken flex animate-enter items-center gap-2 px-4 py-2.5" lang="pt-PT">
-          <Volume2 aria-hidden className="size-4 shrink-0 text-azulejo" />
+          <Volume2 aria-hidden className="size-4 shrink-0 text-ink" />
           {ex.text}
         </p>
       )}

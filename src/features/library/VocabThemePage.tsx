@@ -36,7 +36,7 @@ export function VocabThemePage() {
         title={theme.title}
         subtitle={
           theme.titlePt && (
-            <p className="font-serif text-lg italic" lang="pt-PT">
+            <p className="font-pt text-lg" lang="pt-PT">
               {theme.titlePt}
             </p>
           )
@@ -106,12 +106,12 @@ export function VocabThemePage() {
                   <td className="px-2 py-2 pt-4 sm:px-3">
                     {w.ru}
                     {w.example && (
-                      <p className="mt-1 font-serif text-sm text-ink-muted italic md:hidden" lang="pt-PT">
+                      <p className="mt-1 font-pt text-sm text-ink-muted md:hidden" lang="pt-PT">
                         {w.example}
                       </p>
                     )}
                   </td>
-                  <td className="hidden px-3 py-2 pt-4 font-serif text-sm text-ink-muted italic md:table-cell" lang="pt-PT">
+                  <td className="hidden px-3 py-2 pt-4 font-pt text-sm text-ink-muted md:table-cell" lang="pt-PT">
                     {w.example}
                   </td>
                   <td className="px-1.5 py-2 sm:px-2">

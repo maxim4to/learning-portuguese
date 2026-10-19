@@ -4,7 +4,7 @@ import { CalendarCheck, Layers, Plus } from 'lucide-react'
 import { ButtonLink } from '@/components/Button'
 import { EmptyState, ErrorState, PageSkeleton } from '@/components/EmptyState'
 import { PageHeader } from '@/components/PageHeader'
-import { ProgressRing } from '@/components/ProgressRing'
+import { AzulejoCorner } from '@/components/Card'
 import { TabPanel, Tabs } from '@/components/Tabs'
 import { useRepository } from '@/data'
 import type { SrsCard } from '@/data/types.ts'
@@ -115,20 +115,19 @@ export function ReviewPage() {
             />
           </section>
         ) : (
-          <section className="card-raised relative overflow-hidden rounded-hero p-6 text-center sm:p-8">
+          <section className="card-raised relative isolate overflow-hidden rounded-hero p-6 text-center sm:p-10">
             {due.length > 0 ? (
               <div className="flex flex-col items-center gap-4">
-                <ProgressRing value={1} size={132} stroke={10} tone="azulejo">
-                  <span>
-                    <span className="block font-serif text-4xl font-semibold tabular-nums">{due.length}</span>
-                    <span className="block text-xs font-semibold text-ink-muted">к повторению</span>
-                  </span>
-                </ProgressRing>
+                <AzulejoCorner seed={due.length} />
+                <p className="leading-none">
+                  <span className="block font-display text-[7rem] leading-[0.8] font-black tabular-nums sm:text-[9rem]">{due.length}</span>
+                  <span className="mt-2 block font-display text-2xl">к повторению</span>
+                </p>
                 <p className="text-ink-muted">
                   {newCount ? (newCount === due.length ? 'Все карточки новые' : `Из них новых: ${newCount}`) : 'Только повторение'}
                   {' · '}≈{Math.max(1, Math.round(due.length * 0.25))} мин
                 </p>
-                <button className="btn-primary min-h-13 w-full px-10 text-lg sm:w-auto" onClick={start}>
+                <button className="btn-primary min-h-14 w-full px-12 text-lg sm:w-auto" onClick={start}>
                   Начать
                 </button>
               </div>

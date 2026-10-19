@@ -14,7 +14,7 @@ function GapSentence({ prompt, fill }: { prompt: string; fill?: string }) {
           <Fragment key={k}>
             {chunk}
             {k < arr.length - 1 && (
-              <mark className="animate-pop rounded-md bg-brand-soft px-1.5 font-semibold text-brand-ink [box-decoration-break:clone]">
+              <mark className="animate-pop rounded-md bg-success-soft px-1.5 font-semibold text-success [box-decoration-break:clone]">
                 {parts[i++] ?? parts[parts.length - 1]}
               </mark>
             )}
@@ -31,7 +31,7 @@ function GapSentence({ prompt, fill }: { prompt: string; fill?: string }) {
           {chunk}
           {k < arr.length - 1 && (
             <>
-              <span aria-hidden className="mx-0.5 inline-block w-14 translate-y-0.5 border-b-2 border-dashed border-azulejo/60" />
+              <span aria-hidden className="mx-0.5 inline-block w-14 translate-y-0.5 border-b-2 border-dashed border-ink/60" />
               <span className="sr-only">[пропуск{n > 1 ? ` ${k + 1}` : ''}]</span>
             </>
           )}

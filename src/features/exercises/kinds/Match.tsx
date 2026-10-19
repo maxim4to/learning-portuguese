@@ -59,12 +59,12 @@ export function MatchExercise({ exercise: ex, locked, onSubmit }: ExerciseProps<
     'flex min-h-12 w-full items-center gap-2 rounded-control border-[1.5px] px-3 py-2.5 text-left text-[1.0625rem] leading-snug transition-[background-color,border-color,transform,opacity] duration-150 active:scale-[0.98] disabled:cursor-default'
   const style = (done: boolean, selected: boolean, bad: boolean) =>
     done
-      ? 'border-brand/40 bg-brand-soft text-brand-ink opacity-75'
+      ? 'border-success-line bg-success-soft text-success opacity-75'
       : bad
         ? 'animate-shake border-danger bg-danger-soft text-danger'
         : selected
-          ? 'border-azulejo bg-azulejo-soft text-azulejo-ink ring-2 ring-azulejo/40'
-          : 'border-line-strong bg-surface hover:border-azulejo/60 hover:bg-surface-2'
+          ? 'border-ink bg-ink text-surface'
+          : 'border-line-strong bg-surface hover:border-ink'
 
   const item = (side: Side, key: number, text: string, done: boolean, selected: boolean, bad: boolean) => (
     <li key={key}>

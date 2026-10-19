@@ -86,14 +86,14 @@ export function GlossaryPopover({ anchor, word, ru, added, busy, onAdd, onClose,
         if (to && !ref.current?.contains(to) && !anchor.el.contains(to)) onClose()
       }}
       style={{ left: pos?.left ?? 0, top: pos?.top ?? 0, visibility: pos ? 'visible' : 'hidden' }}
-      className="fixed z-30 w-max max-w-[min(19rem,calc(100vw-16px))] animate-fade rounded-card border border-line bg-surface p-3 shadow-raised"
+      className="fixed z-30 w-max max-w-[min(19rem,calc(100vw-16px))] animate-fade rounded-card border-[1.5px] border-ink bg-surface p-4 shadow-raised"
     >
       <div className="flex items-start gap-2">
         <span onClickCapture={onSpeak}>
           <SpeakButton text={word} />
         </span>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="font-serif text-lg leading-tight font-semibold" lang="pt-PT">
+          <p className="font-display text-lg leading-tight" lang="pt-PT">
             {word}
           </p>
           <p className="text-[0.9375rem] leading-snug text-ink-muted">{ru}</p>

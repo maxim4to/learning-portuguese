@@ -11,7 +11,7 @@ import { VitePWA } from 'vite-plugin-pwa'
  * there makes deep links (e.g. /learning-portuguese/topic/x) boot the app with the right URL.
  */
 /**
- * Preloads the critical UI font files (Manrope latin + cyrillic) so text doesn't flash in the fallback font.
+ * Preloads the critical font files (Onest latin + cyrillic, display cyrillic) so text doesn't flash in the fallback font.
  * Fonts are self-hosted (src/fonts.css) — no third-party request, precached by the service worker for offline use.
  */
 function preloadFonts(): Plugin {
@@ -25,7 +25,7 @@ function preloadFonts(): Plugin {
     transformIndexHtml: {
       order: 'post',
       handler(_html, ctx) {
-        const files = Object.keys(ctx.bundle ?? {}).filter((f) => /manrope-(latin|cyrillic)-wght-normal-[\w-]+\.woff2$/.test(f))
+        const files = Object.keys(ctx.bundle ?? {}).filter((f) => /(onest-(latin|cyrillic)|sofia-sans-extra-condensed-cyrillic)-wght-normal-[\w-]+\.woff2$/.test(f))
         return files.map((f) => ({
           tag: 'link',
           attrs: { rel: 'preload', as: 'font', type: 'font/woff2', href: `${base}${f}`, crossorigin: '' },
@@ -86,8 +86,8 @@ export default defineConfig(({ mode }) => {
           start_url: base,
           scope: base,
           display: 'standalone',
-          background_color: '#FBF7F0',
-          theme_color: '#FBF7F0',
+          background_color: '#E2E2DF',
+          theme_color: '#E2E2DF',
           shortcuts: [
             { name: 'Повторение', short_name: 'Повторение', url: `${base}review` },
             { name: 'Курс', short_name: 'Курс', url: `${base}syllabus` },

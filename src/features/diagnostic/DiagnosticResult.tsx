@@ -28,7 +28,7 @@ export function GradeCounts({ topics }: { topics: Map<string, TopicOutcome> }) {
     <div className="grid grid-cols-3 gap-2 text-center">
       {(['green', 'yellow', 'red'] as const).map((g) => (
         <div key={g} className={`rounded-control border px-2 py-3 ${GRADE_META[g].chip}`}>
-          <p className="font-serif text-3xl font-semibold tabular-nums">{c[g]}</p>
+          <p className="font-display text-3xl tabular-nums">{c[g]}</p>
           <p className="text-xs font-semibold">{GRADE_META[g].label}</p>
         </div>
       ))}

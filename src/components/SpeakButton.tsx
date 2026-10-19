@@ -28,14 +28,14 @@ const DIM = {
 } as const
 
 const VARIANT = {
-  solid: 'bg-azulejo text-surface shadow-card hover:brightness-110',
-  soft: 'bg-azulejo-soft text-azulejo-ink ring-1 ring-inset ring-azulejo/20 hover:ring-azulejo/45',
-  ghost: 'text-azulejo-ink ring-1 ring-inset ring-line-strong hover:bg-azulejo-soft',
+  solid: 'bg-ink text-surface hover:bg-brand hover:text-on-brand',
+  soft: 'bg-azulejo-soft text-ink hover:bg-sunken',
+  ghost: 'text-ink ring-[1.5px] ring-inset ring-line-strong hover:ring-ink',
 } as const
 
 /**
  * The one play/stop button for pt-PT audio (mp3 or Web Speech fallback) — states idle / playing / unavailable.
- * Audio actions are azulejo blue across the app.
+ * Audio actions are monochrome ink across the app; playback lights them Ember.
  */
 export function SpeakButton({
   text,
@@ -70,7 +70,7 @@ export function SpeakButton({
           'inline-flex shrink-0 items-center justify-center gap-2 rounded-full font-semibold transition-[background-color,box-shadow,filter,transform] duration-150 active:scale-95',
           label ? dim.label : dim.icon,
           VARIANT[variant],
-          playing && 'ring-2 ring-azulejo',
+          playing && 'bg-brand text-on-brand ring-2 ring-brand ring-offset-2 ring-offset-surface',
         )}
       >
         <Glyph aria-hidden className={cx(dim.glyph, playing && 'fill-current')} strokeWidth={2} />

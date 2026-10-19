@@ -17,7 +17,7 @@ export function GenderBadge({ gender }: { gender?: VocabWord['gender'] }) {
   return (
     <span
       title={g.title}
-      className="inline-flex shrink-0 items-center rounded-md border border-line bg-surface-2 px-1.5 py-px align-middle text-xs font-semibold text-ink-muted"
+      className="inline-flex shrink-0 items-center rounded-pill bg-surface-2 px-2 py-px align-middle text-xs font-semibold text-ink-muted"
     >
       <span aria-hidden>{g.label}</span>
       <span className="sr-only">{g.title}</span>
@@ -38,7 +38,7 @@ export function AddCardButton({ added, disabled, onClick }: { added: boolean; di
         'grid size-11 shrink-0 place-items-center rounded-full border transition-[background-color,border-color,transform] duration-150 active:scale-95 disabled:cursor-default',
         added
           ? 'border-transparent bg-brand-soft text-brand-ink'
-          : 'border-line-strong text-ink-muted hover:border-brand hover:bg-brand-soft hover:text-brand-ink',
+          : 'border-[1.5px] border-ink text-ink hover:border-brand hover:bg-brand hover:text-on-brand',
         disabled && !added && 'opacity-50',
       )}
     >

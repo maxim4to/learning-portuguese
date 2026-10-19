@@ -185,16 +185,16 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     <div ref={topRef} className="scroll-mt-24 space-y-4">
       <div className="space-y-2">
         <div className="flex items-baseline justify-between gap-3 text-sm">
-          <span className="min-w-0 truncate font-semibold text-ink">{title}</span>
+          <span className="min-w-0 truncate font-display text-xl leading-none text-ink">{title}</span>
           <span className="flex shrink-0 items-center gap-2 text-ink-muted tabular-nums">
-            <span>
+            <span className="font-display text-xl leading-none text-ink">
               <span className="sr-only">Задание </span>
               {index + 1} / {total}
             </span>
             {done > 0 && (
               <span
                 key={correctSoFar}
-                className="inline-flex animate-pop items-center gap-0.5 rounded-full bg-brand-soft px-2 py-0.5 text-xs font-bold text-brand-ink"
+                className="inline-flex animate-pop items-center gap-0.5 rounded-pill bg-success-soft px-2 py-0.5 text-xs font-bold text-success"
               >
                 <Check aria-hidden className="size-3.5" strokeWidth={3} />
                 {correctSoFar}
@@ -218,12 +218,12 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
         </div>
       )}
 
-      <section className="card space-y-5 sm:p-6" aria-labelledby={`${ex.id}-h`}>
+      <section className="card space-y-6 rounded-hero p-5 sm:p-10" aria-labelledby={`${ex.id}-h`}>
         <h3
           id={`${ex.id}-h`}
           ref={headingRef}
           tabIndex={-1}
-          className="text-sm font-semibold tracking-wide text-ink-muted uppercase outline-none"
+          className="inline-flex rounded-pill bg-sun-soft px-3 py-1 text-xs font-semibold tracking-[0.08em] text-sun uppercase outline-none"
         >
           {exerciseHeading(ex)}
         </h3>
@@ -238,7 +238,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
         {current && (
           <>
             <ExerciseFeedback ex={ex} rec={current} lenient={lenientAccents} />
-            <div className="sticky-actions -mx-2 rounded-control bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+            <div className="sticky-actions -mx-2 rounded-pill bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
               <button
                 ref={nextRef}
                 type="button"

@@ -39,7 +39,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           {item && (
             <div
               key={item.id}
-              className="pointer-events-auto flex animate-toast items-center gap-3 rounded-control bg-ink py-2 pr-2 pl-4 text-sm text-bg shadow-raised"
+              className="pointer-events-auto flex animate-toast items-center gap-3 rounded-[1.75rem] bg-ink py-2 pr-2 pl-5 text-sm text-bg"
             >
               <Icon
                 aria-hidden
@@ -49,7 +49,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               {item.action && (
                 <button
                   type="button"
-                  className="min-h-11 shrink-0 rounded-[calc(var(--radius-sm)-4px)] px-3 font-bold text-brand-100 underline-offset-2 hover:underline dark:text-brand-800"
+                  className="min-h-11 shrink-0 rounded-pill px-3 font-bold text-on-ink-accent focus-visible:outline-on-ink-accent underline-offset-2 hover:underline"
                   onClick={() => {
                     item.action!.onClick()
                     dismiss()
@@ -61,7 +61,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               <button
                 type="button"
                 aria-label="Закрыть уведомление"
-                className="grid size-11 shrink-0 place-items-center rounded-[calc(var(--radius-sm)-4px)] opacity-70 hover:opacity-100"
+                className="grid size-11 shrink-0 place-items-center rounded-full opacity-70 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-on-ink-accent"
                 onClick={dismiss}
               >
                 <X aria-hidden className="size-4" />

@@ -25,16 +25,16 @@ export function EmptyState({
     azulejo: 'bg-azulejo-soft text-azulejo-ink',
     terracotta: 'bg-terracotta-soft text-terracotta',
     sun: 'bg-sun-soft text-sun',
-    neutral: 'bg-surface-2 text-ink-muted',
+    neutral: 'bg-azulejo-soft text-ink',
   }[tone]
   return (
     <div className={cx('flex flex-col items-center text-center', compact ? 'gap-2 py-4' : 'gap-3 py-8', className)}>
       {icon && (
-        <span aria-hidden className={cx('grid place-items-center rounded-2xl', compact ? 'size-11' : 'size-14', iconTone)}>
+        <span aria-hidden className={cx('grid place-items-center rounded-full', compact ? 'size-12' : 'size-16', iconTone)}>
           {icon}
         </span>
       )}
-      <p className={cx('font-semibold text-ink', compact ? 'text-base' : 'text-lg')}>{title}</p>
+      <p className={cx('text-ink', compact ? 'text-base font-semibold' : 'font-display text-2xl')}>{title}</p>
       {text && <p className="max-w-[44ch] text-sm text-ink-muted">{text}</p>}
       {action && <div className="mt-1 flex flex-wrap justify-center gap-2">{action}</div>}
     </div>
@@ -45,10 +45,10 @@ export function EmptyState({
 export function ErrorState({ text, detail, onRetry }: { text?: string; detail?: string; onRetry?(): void }) {
   return (
     <div role="alert" className="card flex flex-col items-center gap-3 py-8 text-center">
-      <span aria-hidden className="grid size-14 place-items-center rounded-2xl bg-danger-soft text-danger">
+      <span aria-hidden className="grid size-16 place-items-center rounded-full bg-danger-soft text-danger">
         <TriangleAlert className="size-6" />
       </span>
-      <p className="text-lg font-semibold">{text ?? 'Не удалось загрузить данные'}</p>
+      <p className="font-display text-2xl">{text ?? 'Не удалось загрузить данные'}</p>
       {detail && <p className="max-w-[48ch] text-sm break-words text-ink-muted">{detail}</p>}
       {onRetry && (
         <button type="button" className="btn-secondary" onClick={onRetry}>
@@ -68,7 +68,7 @@ export function Skeleton({ className }: { className?: string }) {
 export function PageSkeleton({ cards = 3 }: { cards?: number }) {
   return (
     <div className="space-y-5" role="status" aria-label="Загрузка">
-      <Skeleton className="h-9 w-48 rounded-control" />
+      <Skeleton className="h-12 w-56 rounded-pill" />
       {Array.from({ length: cards }, (_, i) => (
         <Skeleton key={i} className={i === 0 ? 'h-40' : 'h-24'} />
       ))}

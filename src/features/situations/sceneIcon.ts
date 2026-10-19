@@ -57,7 +57,7 @@ export function sceneIcon(id: string): LucideIcon {
   return RULES.find(([re]) => re.test(id))?.[1] ?? MessageCircle
 }
 
-const TINTS = ['bg-azulejo-soft text-azulejo', 'bg-terracotta-soft text-terracotta', 'bg-sun-soft text-sun', 'bg-brand-soft text-brand-ink']
+const TINTS = ['bg-ink text-surface', 'bg-terracotta-soft text-terracotta', 'bg-sun-soft text-sun', 'bg-brand text-on-brand']
 
 export function sceneTint(id: string): string {
   let h = 0

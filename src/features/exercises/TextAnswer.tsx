@@ -65,7 +65,7 @@ export function TextAnswer({
   const tone = !result
     ? ''
     : result.ok
-      ? 'border-brand bg-brand-soft animate-pop'
+      ? 'border-success bg-success-soft animate-pop'
       : result.skipped
         ? 'border-line-strong bg-surface-2'
         : result.verdict === 'accents'
@@ -139,14 +139,14 @@ export function TextAnswer({
                 aria-label={`Вставить ${ch}`}
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => insert(ch)}
-                className="grid h-11 min-w-11 place-items-center rounded-[calc(var(--radius-sm)-2px)] border border-line bg-surface-2 px-2 text-lg font-medium text-ink transition-colors hover:border-line-strong hover:bg-surface active:scale-95"
+                className="grid h-11 min-w-11 place-items-center rounded-full bg-surface-2 px-2 text-lg font-medium text-ink transition-colors hover:border-line-strong hover:bg-surface active:scale-95"
                 lang="pt-PT"
               >
                 {ch}
               </button>
             ))}
           </div>
-          <div className="sticky-actions -mx-2 flex gap-2 rounded-control bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+          <div className="sticky-actions -mx-2 flex gap-2 rounded-pill bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
             <button type="submit" className="btn-primary flex-1 sm:flex-none sm:min-w-36" disabled={!filled}>
               Проверить
             </button>

@@ -41,7 +41,7 @@ export function SegmentedControl<T extends string>({
       role="radiogroup"
       aria-label={label}
       onKeyDown={onKey}
-      className={cx('inline-flex gap-1 rounded-control bg-surface-2 p-1', className)}
+      className={cx('inline-flex gap-1 rounded-pill bg-surface-2 p-1', className)}
     >
       {options.map((o, i) => {
         const on = o.value === value
@@ -56,9 +56,9 @@ export function SegmentedControl<T extends string>({
             tabIndex={focusable ? 0 : -1}
             onClick={() => onChange(o.value)}
             className={cx(
-              'inline-flex flex-1 items-center justify-center gap-1.5 rounded-[calc(var(--radius-sm)-4px)] px-3 font-semibold whitespace-nowrap transition-[background-color,color,box-shadow] duration-150',
+              'inline-flex flex-1 items-center justify-center gap-1.5 rounded-pill px-3 font-semibold sm:px-4 whitespace-nowrap transition-[background-color,color,box-shadow] duration-150',
               size === 'sm' ? 'min-h-9 text-sm hit' : 'min-h-11 text-sm',
-              on ? 'bg-surface text-ink shadow-card ring-1 ring-line' : 'text-ink-muted hover:text-ink',
+              on ? 'bg-ink text-surface' : 'text-ink-muted hover:bg-surface hover:text-ink',
             )}
           >
             {o.label}

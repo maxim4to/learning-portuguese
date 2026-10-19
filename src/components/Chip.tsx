@@ -15,10 +15,10 @@ export function Chip({
       type="button"
       aria-pressed={pressed}
       className={cx(
-        'hit inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-sm font-semibold whitespace-nowrap transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.97]',
+        'hit inline-flex h-9 shrink-0 items-center gap-1.5 rounded-pill border-[1.5px] px-4 text-sm font-semibold whitespace-nowrap transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.97]',
         pressed
-          ? 'border-transparent bg-ink text-bg shadow-card'
-          : 'border-line-strong bg-surface text-ink hover:border-ink-subtle hover:bg-surface-2',
+          ? 'border-ink bg-ink text-surface'
+          : 'border-line-strong bg-transparent text-ink hover:border-ink',
         muted && !pressed && 'text-ink-muted',
         className,
       )}

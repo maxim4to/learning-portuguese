@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { PartyPopper, X } from 'lucide-react'
 import { ButtonLink } from '@/components/Button'
+import { Halftone } from '@/components/Halftone'
 import { ProgressBar } from '@/components/ProgressBar'
 import { useRepository } from '@/data'
 import type { Settings, SrsCard } from '@/data/types.ts'
@@ -14,9 +15,9 @@ const REQUEUE_MS = 20 * 60_000
 
 const RATING_UI: { rating: ReviewRating; label: string; key: string; cls: string }[] = [
   { rating: 'again', label: 'Снова', key: '1', cls: 'border-danger-line bg-danger-soft text-danger hover:border-danger' },
-  { rating: 'hard', label: 'Трудно', key: '2', cls: 'border-warning-line bg-sun-soft text-sun hover:border-sun' },
-  { rating: 'good', label: 'Хорошо', key: '3', cls: 'border-brand/35 bg-brand-soft text-brand-ink hover:border-brand' },
-  { rating: 'easy', label: 'Легко', key: '4', cls: 'border-azulejo/30 bg-azulejo-soft text-azulejo-ink hover:border-azulejo' },
+  { rating: 'hard', label: 'Трудно', key: '2', cls: 'border-sun-soft bg-sun-soft text-sun hover:border-sun' },
+  { rating: 'good', label: 'Хорошо', key: '3', cls: 'border-brand bg-brand text-on-brand hover:bg-brand-hover' },
+  { rating: 'easy', label: 'Легко', key: '4', cls: 'border-ink bg-surface text-ink hover:bg-surface-2' },
 ]
 
 interface Props {
@@ -120,11 +121,14 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
     const minutes = Math.max(1, Math.round(((finishedAt ?? startedAt) - startedAt) / 60_000))
     const recalled = total ? (total - counts.again) / total : 0
     return (
-      <section className="card-raised animate-enter space-y-5 rounded-hero p-6 text-center sm:p-8">
-        <span aria-hidden className="mx-auto grid size-16 place-items-center rounded-2xl bg-sun-soft text-sun">
-          <PartyPopper className="size-8" />
-        </span>
-        <h2 ref={summaryRef} tabIndex={-1} className="font-serif text-2xl font-semibold outline-none">
+      <section className="card-raised animate-enter relative isolate space-y-5 overflow-hidden rounded-hero p-6 pt-0 text-center sm:p-10 sm:pt-0">
+        <div aria-hidden className="relative -mx-6 mb-2 h-36 sm:-mx-10 sm:h-44">
+          <Halftone seed={reviewedIds.size + 2} width={640} height={176} step={10} heat={0.55} className="absolute inset-0 size-full" />
+          <span className="absolute bottom-0 left-1/2 grid size-20 -translate-x-1/2 translate-y-1/3 place-items-center rounded-full bg-surface text-ink">
+            <PartyPopper className="size-9" />
+          </span>
+        </div>
+        <h2 ref={summaryRef} tabIndex={-1} className="pt-6 text-[2.75rem] leading-[0.95] outline-none sm:text-display">
           Сессия завершена
         </h2>
         <p className="text-ink-muted">
@@ -132,8 +136,8 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         </p>
         <div className="mx-auto grid max-w-md grid-cols-4 gap-2 text-sm">
           {RATING_UI.map((r) => (
-            <div key={r.rating} className={`rounded-control border p-2 font-semibold ${r.cls}`}>
-              <div className="text-xl font-bold tabular-nums">{counts[r.rating]}</div>
+            <div key={r.rating} className={`rounded-[1.25rem] border-[1.5px] p-2 font-semibold ${r.cls}`}>
+              <div className="font-display text-3xl tabular-nums">{counts[r.rating]}</div>
               {r.label}
             </div>
           ))}
@@ -176,7 +180,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         ) : (
           <button
             ref={endRef}
-            className="hit -mr-2 inline-flex min-h-9 items-center gap-1 rounded-lg px-2 font-semibold hover:bg-surface-2 hover:text-ink"
+            className="hit -mr-2 inline-flex min-h-9 items-center gap-1 rounded-pill px-3 font-semibold hover:bg-surface-2 hover:text-ink"
             onClick={() => setConfirmEnd(true)}
           >
             <X aria-hidden className="size-4" /> Завершить
@@ -184,7 +188,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
         )}
       </div>
 
-      <div className="card-raised select-text sm:p-6">
+      <div className="card-raised rounded-hero p-5 select-text sm:p-10">
         <CardFace key={card.id + card.fsrs.reps} card={card} revealed={revealed} settings={settings} />
       </div>
 
@@ -192,7 +196,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
 
       <div className="sticky-actions">
         {!revealed ? (
-          <button ref={revealRef} className="btn-primary min-h-14 w-full text-lg shadow-raised" onClick={() => setRevealed(true)}>
+          <button ref={revealRef} className="btn-primary min-h-14 w-full text-lg" onClick={() => setRevealed(true)}>
             Показать ответ
             <kbd className="hidden rounded-md bg-on-brand/20 px-1.5 py-0.5 font-sans text-xs md:inline">пробел</kbd>
           </button>
@@ -208,7 +212,7 @@ export function ReviewSession({ initial, settings, onCardUpdated, onFinish }: Pr
               <button
                 key={r.rating}
                 onClick={() => rate(r.rating)}
-                className={`flex min-h-14 animate-enter flex-col items-center justify-center rounded-control border-[1.5px] px-1 py-2 shadow-card transition-[border-color,transform] active:scale-[0.97] ${r.cls}`}
+                className={`flex min-h-16 animate-enter flex-col items-center justify-center rounded-[1.75rem] border-[1.5px] px-1 py-2 transition-[background-color,border-color,transform] active:scale-[0.97] ${r.cls}`}
               >
                 <span className="text-sm font-bold md:text-base">{r.label}</span>
                 <span className="text-xs tabular-nums">

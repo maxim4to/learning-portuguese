@@ -7,8 +7,8 @@ import remarkGfm from 'remark-gfm'
  * wide tables scroll horizontally inside their own container (no page overflow on mobile).
  */
 const components: Components = {
-  h1: ({ children }) => <h2 className="mt-7 mb-2 font-serif font-semibold first:mt-0">{children}</h2>,
-  h2: ({ children }) => <h2 className="mt-7 mb-2 font-serif font-semibold first:mt-0">{children}</h2>,
+  h1: ({ children }) => <h2 className="mt-7 mb-2 font-display first:mt-0">{children}</h2>,
+  h2: ({ children }) => <h2 className="mt-7 mb-2 font-display first:mt-0">{children}</h2>,
   h3: ({ children }) => <h3 className="mt-5 mb-2 first:mt-0">{children}</h3>,
   h4: ({ children }) => <h4 className="mt-4 mb-1 font-semibold first:mt-0">{children}</h4>,
   p: ({ children }) => <p className="my-3 max-w-[68ch] first:mt-0 last:mb-0">{children}</p>,
@@ -26,16 +26,16 @@ const components: Components = {
     </a>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="my-4 rounded-r-control border-l-4 border-azulejo bg-azulejo-soft py-2 pr-3 pl-4 text-ink">
+    <blockquote className="my-4 rounded-r-control border-l-4 border-brand bg-surface-2 py-2.5 pr-4 pl-4 text-ink">
       {children}
     </blockquote>
   ),
-  hr: () => <hr className="my-6 border-line" />,
+  hr: () => <hr className="rule-dotted my-6 border-0" />,
   code: ({ children, className }) => {
     // Fenced blocks get a language-* class; inline code doesn't.
     if (className) return <code className={className}>{children}</code>
     return (
-      <code className="rounded-md bg-surface-2 px-1.5 py-0.5 font-mono text-[0.9em] text-ink">
+      <code className="rounded-md bg-sun-soft px-1.5 py-0.5 font-mono text-[0.9em] text-ink">
         {children}
       </code>
     )
@@ -50,7 +50,7 @@ const components: Components = {
       <table className="w-full border-collapse text-left text-[0.9375rem] leading-snug">{children}</table>
     </div>
   ),
-  thead: ({ children }) => <thead className="bg-surface-2">{children}</thead>,
+  thead: ({ children }) => <thead className="bg-ink text-surface">{children}</thead>,
   tr: ({ children }) => (
     <tr className="border-b border-line last:border-b-0 even:bg-bg/60">
       {children}

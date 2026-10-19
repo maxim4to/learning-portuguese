@@ -102,14 +102,14 @@ function SituationModule({ situation }: { situation: Situation }) {
         }
         title={
           <span className="flex items-center gap-3">
-            <span aria-hidden className={cx('grid size-11 shrink-0 place-items-center rounded-2xl', sceneTint(situation.id))}>
+            <span aria-hidden className={cx('grid size-11 shrink-0 place-items-center rounded-full', sceneTint(situation.id))}>
               {createElement(sceneIcon(situation.id), { className: 'size-6', strokeWidth: 1.8 })}
             </span>
             {situation.title}
           </span>
         }
         subtitle={
-          <p className="font-serif text-lg italic" lang="pt-PT">
+          <p className="font-pt text-lg" lang="pt-PT">
             {situation.titlePt}
           </p>
         }

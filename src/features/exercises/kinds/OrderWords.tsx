@@ -5,7 +5,7 @@ import { isInHiddenPanel } from '../keyboard'
 import type { ExerciseProps } from '../types'
 
 const chip =
-  'inline-flex min-h-11 items-center rounded-control border-[1.5px] px-3.5 text-[1.0625rem] leading-none transition-[background-color,border-color,transform,opacity] duration-150 active:scale-95 disabled:cursor-default'
+  'inline-flex min-h-11 items-center rounded-pill border-[1.5px] px-4 text-[1.0625rem] leading-none transition-[background-color,border-color,transform,opacity] duration-150 active:scale-95 disabled:cursor-default'
 
 /** Tap-to-build sentence from shuffled word chips (may contain distractors). */
 export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onSkip }: ExerciseProps<'order-words'>) {
@@ -46,7 +46,7 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
   const tone = !result
     ? 'border-line-strong bg-sunken'
     : result.ok
-      ? 'animate-pop border-brand bg-brand-soft'
+      ? 'animate-pop border-success bg-success-soft'
       : result.skipped
         ? 'border-line-strong bg-surface-2'
         : 'animate-shake border-danger bg-danger-soft'
@@ -72,7 +72,7 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
             disabled={locked}
             aria-label={`${ex.words[id]} — убрать`}
             onClick={() => setBuilt((b) => b.filter((_, j) => j !== i))}
-            className={cx(chip, 'animate-pop border-azulejo/40 bg-surface text-ink shadow-card')}
+            className={cx(chip, 'animate-pop border-ink bg-ink text-surface')}
           >
             {ex.words[id]}
           </button>
@@ -88,14 +88,14 @@ export function OrderWordsExercise({ exercise: ex, locked, result, onSubmit, onS
             type="button"
             disabled={locked || used.has(id)}
             onClick={() => setBuilt((b) => [...b, id])}
-            className={cx(chip, 'border-line-strong bg-surface hover:border-azulejo/60 hover:bg-azulejo-soft', used.has(id) && 'invisible')}
+            className={cx(chip, 'border-line-strong bg-surface hover:border-ink', used.has(id) && 'invisible')}
           >
             {w}
           </button>
         ))}
       </div>
       {!locked && (
-        <div className="sticky-actions -mx-2 flex gap-2 rounded-control bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+        <div className="sticky-actions -mx-2 flex gap-2 rounded-pill bg-surface/95 p-2 backdrop-blur-sm sm:static sm:mx-0 sm:bg-transparent sm:p-0">
           <button type="button" className="btn-primary flex-1 sm:min-w-36 sm:flex-none" disabled={!built.length} onClick={check}>
             Проверить
           </button>

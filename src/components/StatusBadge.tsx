@@ -14,19 +14,19 @@ export function StatusBadge({ status, className = '' }: { status: TopicStatus; c
   )
 }
 
-/** CEFR level: azulejo blue, deepening A1 → B2. */
+/** CEFR level: stone → sulfur → violet → obsidian as the level deepens (A1 → B2). */
 const LEVEL_TONE: Record<string, string> = {
-  A1: 'bg-azulejo-soft text-azulejo-ink ring-1 ring-inset ring-azulejo/25',
-  A2: 'bg-azulejo-soft text-azulejo-ink ring-1 ring-inset ring-azulejo/45',
-  B1: 'bg-azulejo text-surface',
-  B2: 'bg-[color-mix(in_oklab,var(--azulejo)_75%,var(--ink))] text-surface',
+  A1: 'bg-azulejo-soft text-ink',
+  A2: 'bg-sun-soft text-sun',
+  B1: 'bg-terracotta-soft text-terracotta',
+  B2: 'bg-ink text-surface',
 }
 
 export function LevelBadge({ level, className = '' }: { level: string; className?: string }) {
   return (
     <span
       className={cx(
-        'inline-flex shrink-0 items-center rounded-md px-1.5 py-0.5 text-xs font-bold tracking-wide tabular-nums',
+        'inline-flex shrink-0 items-center rounded-pill px-2 py-0.5 text-xs font-bold tracking-wide tabular-nums',
         LEVEL_TONE[level] ?? LEVEL_TONE.A1,
         className,
       )}

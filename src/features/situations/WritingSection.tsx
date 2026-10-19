@@ -48,7 +48,7 @@ export function WritingSection({ situation }: { situation: Situation }) {
             setText(e.target.value)
           }}
           placeholder="Escreva aqui…"
-          className="input min-h-48 w-full resize-y font-serif text-[1.0625rem] leading-relaxed"
+          className="input min-h-48 w-full resize-y text-[1.0625rem] leading-relaxed"
         />
         <p className="flex justify-between text-xs text-ink-muted" aria-live="polite">
           <span>{text ? (saved ? 'Черновик сохранён на этом устройстве' : 'Сохраняю…') : 'Черновик сохраняется автоматически'}</span>
@@ -98,7 +98,7 @@ export function WritingSection({ situation }: { situation: Situation }) {
               <h3 className="text-base">Образец</h3>
               <SpeakButton text={task.sample} label="Прослушать" />
             </div>
-            <p className="font-serif leading-relaxed whitespace-pre-line" lang="pt-PT">
+            <p className="leading-relaxed whitespace-pre-line" lang="pt-PT">
               {task.sample}
             </p>
           </div>

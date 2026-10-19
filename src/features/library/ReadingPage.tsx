@@ -113,7 +113,7 @@ function ReadingView({ text }: { text: ReadingText }) {
             <span onClickCapture={reader.cancel} className="pt-0.5">
               <SpeakButton text={text.paragraphs[pi]} size="sm" ariaLabel={`Прослушать абзац ${pi + 1}`} />
             </span>
-            <p className="min-w-0 flex-1 font-serif text-[1.1875rem] leading-[1.75]">
+            <p className="min-w-0 flex-1 text-[1.1875rem] leading-[1.75]">
               {segs.map((s, si) =>
                 s.gi === undefined ? (
                   <span key={si}>{s.text}</span>

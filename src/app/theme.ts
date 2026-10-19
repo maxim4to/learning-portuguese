@@ -4,7 +4,7 @@ import { useSyncExternalStore } from 'react'
 export type ThemePref = 'system' | 'light' | 'dark'
 
 const KEY = 'ptpt:v1:theme' // keep in sync with the inline script in index.html
-const THEME_COLOR = { light: '#FBF7F0', dark: '#0F1311' } as const
+const THEME_COLOR = { light: '#E2E2DF', dark: '#100F0E' } as const
 
 const listeners = new Set<() => void>()
 const media = typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)') : undefined

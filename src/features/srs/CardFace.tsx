@@ -40,7 +40,7 @@ export function CardFace({ card, revealed, settings }: Props) {
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between gap-2 text-xs">
-        <span className={`shrink-0 rounded-full px-2 py-0.5 font-semibold whitespace-nowrap ${KIND_CHIP[card.kind]}`}>{KIND_LABEL[card.kind]}</span>
+        <span className={`shrink-0 rounded-pill px-2.5 py-0.5 font-semibold whitespace-nowrap ${KIND_CHIP[card.kind]}`}>{KIND_LABEL[card.kind]}</span>
         {topic && <span className="truncate text-ink-muted">{topic.title}</span>}
       </div>
 
@@ -49,20 +49,20 @@ export function CardFace({ card, revealed, settings }: Props) {
         {task ? (
           <>
             <p className="text-sm text-ink-muted">Задание, в котором была ошибка</p>
-            <p className="font-serif text-xl font-medium text-balance">{task.prompt}</p>
+            <p className="font-display text-[1.75rem] leading-[1.05] text-balance">{task.prompt}</p>
             {task.instruction && <p className="text-sm text-ink-muted">{task.instruction}</p>}
             {task.listen && <SpeakButton text={task.listen} voice={voice} rate={rate} label="Прослушать задание" />}
           </>
         ) : (
-          <p className="font-serif text-2xl font-medium text-balance sm:text-[1.75rem]">{card.front}</p>
+          <p className="font-display text-[2.5rem] leading-[0.98] text-balance sm:text-display">{card.front}</p>
         )}
       </div>
 
       {/* Back */}
       {revealed && (
-        <div className="reveal-rows"><div className="space-y-3 border-t border-dashed border-line-strong pt-5 text-center">
+        <div className="reveal-rows"><div className="space-y-3 rule-dotted pt-6 text-center">
           <div className="flex items-center justify-center gap-3">
-            <p lang="pt-PT" className="font-serif text-2xl font-semibold text-balance text-brand-ink">
+            <p lang="pt-PT" className="font-display text-[2.25rem] leading-none text-balance text-brand-ink sm:text-4xl">
               {card.back}
             </p>
             <SpeakButton text={fullSentence ?? card.back} voice={voice} rate={rate} />

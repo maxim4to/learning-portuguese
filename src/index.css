@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 /*
- * Design tokens — palette A «Azulejo & Terracota» (docs/design/audit.md §2.3, §7.0).
+ * Design tokens — «Caldera» (docs/design/concept-notes.md, docs/design/DESIGN.md).
+ * Flat, shadowless, tonal layering Pumice canvas → Limestone cards → Ember features; one hot accent (Ember),
+ * Plasma violet only for the halftone and «weak», Sulfur for tags / «learning».
+ * Semantic token NAMES are kept from the previous palette so component APIs stay intact:
+ *   brand = Ember · azulejo = ink (audio, links, tabs) · terracotta = Plasma violet (weak) · sun = Sulfur.
  *
  * Theme switching: `html.dark` is set before first paint by the inline script in index.html
  * (system preference, or the user's choice from Settings → stored in localStorage `ptpt:v1:theme`).
@@ -10,58 +14,67 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #fbf7f0;
-  --surface: #ffffff;
-  --surface-2: #f4ede1;
-  --surface-sunken: #f1eadd;
-  --border: #e7ddcc;
-  --border-strong: #d6c8b1;
+  --bg: #e2e2df; /* Pumice canvas */
+  --surface: #f7f6f2; /* Limestone — 1.20:1 on canvas (tonal, no border) */
+  --surface-2: #ecebe6;
+  --surface-sunken: #cccac3; /* tracks — visible on canvas and cards */
+  --border: #cfcdc6; /* hairlines, dotted dividers, table rules */
+  --border-strong: #7a7770; /* UI boundaries — 4.13 on surface, 3.44 on bg */
 
-  --ink: #1f2a2e;
-  --ink-muted: #5b6467; /* 5.68 on bg, 6.06 on surface, 5.21 on surface-2 */
-  --ink-subtle: #7a8285; /* ≥18px text or decoration only */
+  --ink: #070607; /* Obsidian — 18.71 on surface */
+  --ink-muted: #4a4843; /* 7.04 on bg, 8.45 on surface */
+  --ink-subtle: #5e5c56; /* 6.18 on surface, 5.15 on bg */
 
-  --brand: #0f6b4f; /* white on it 6.49 */
-  --brand-hover: #0b5540;
-  --brand-soft: #e3f1ea;
-  --brand-ink: #0b5540; /* on brand-soft 7.55 */
-  --on-brand: #ffffff;
+  --brand: #fc5000; /* Ember — obsidian text on it 6.06 */
+  --brand-hover: #e54800; /* 5.07 */
+  --brand-soft: #ffdcc8;
+  --brand-ink: #9e3000; /* 5.67 on soft, 5.62 on bg */
+  --on-brand: #070607;
 
-  --azulejo: #1f4e8c; /* links, tabs, audio — 7.78 on bg */
-  --azulejo-soft: #e6eef8;
-  --azulejo-ink: #1f4e8c;
+  /* «azulejo» role (audio, links, active tab meta) = ink in Caldera: controls are monochrome. */
+  --azulejo: #070607;
+  --azulejo-soft: #e4e3dd;
+  --azulejo-ink: #070607;
 
-  --terracotta: #9c4421; /* text 6.03 on bg */
-  --terracotta-fill: #b5532e; /* white on it 4.95 */
-  --terracotta-soft: #f8e7de;
+  /* «terracotta» role (weak status, accent) = Plasma violet. */
+  --terracotta: #4038d8; /* 5.83 on bg */
+  --terracotta-fill: #524ae9; /* white on it 5.97 */
+  --terracotta-soft: #e1dffb; /* violet text on it 5.82 */
 
-  --sun: #8a5a00; /* on sun-soft 5.24 */
-  --sun-fill: #e0a526;
-  --sun-soft: #fbf0d9;
+  /* «sun» role (learning, tags) = Sulfur. */
+  --sun: #4d4700; /* 8.11 on sulfur */
+  --sun-fill: #efe34a;
+  --sun-soft: #f5f28e;
 
-  --success: var(--brand);
-  --success-soft: var(--brand-soft);
-  --danger: #b42318; /* on danger-soft 5.75 */
-  --danger-fill: #b42318;
-  --danger-soft: #fdecea;
-  --danger-border: #f4b4ac;
-  --warning: #8a5a00;
-  --warning-soft: #fbf0d9;
-  --warning-border: #ecc98a;
+  /* Functional feedback only (correct / wrong) — kept off the brand hue so orange never reads as «error». */
+  --success: #17643a; /* 5.73 on soft */
+  --success-soft: #d9ead9;
+  --success-border: #8cc39c;
+  --danger: #b0122c; /* 5.49 on soft */
+  --danger-fill: #c0152f; /* white on it 6.20 */
+  --danger-soft: #f8dcdf;
+  --danger-border: #eda3ad;
+  --warning: #4d4700;
+  --warning-soft: #f5f28e;
+  --warning-border: #cfc54a;
 
-  --focus: #1f4e8c;
-  --scrim: rgb(31 42 46 / 0.4);
+  --focus: #070607;
+  --scrim: rgb(7 6 7 / 0.45);
+  /* Accent text on inverted (ink) surfaces: toasts, update prompt. */
+  --on-ink-accent: #ff7a3d; /* 7.81 on ink */
 
-  --shadow-1: 0 1px 2px rgb(60 40 20 / 0.06), 0 1px 1px rgb(60 40 20 / 0.04);
-  --shadow-2: 0 10px 28px -10px rgb(60 40 20 / 0.22), 0 1px 2px rgb(60 40 20 / 0.05);
-  --shadow-bar: 0 -1px 0 var(--border), 0 -8px 24px -12px rgb(60 40 20 / 0.12);
+  /* Deliberately shadowless (DESIGN.md «Elevation»). Kept as tokens so the API stays. */
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-bar: none;
 
-  --radius-sm: 0.75rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
+  --radius-sm: 1.25rem; /* blocks that are controls but multi-line: banners, textareas, tables */
+  --radius-md: 1.75rem; /* cards */
+  --radius-lg: 2.5rem; /* hero / feature surfaces (40px) */
+  --radius-pill: 800px;
 
   /* Layout metrics: fixed bar heights (sticky offsets derive from them, no magic numbers). */
-  --header-h: 3.5rem;
+  --header-h: 4.5rem;
   --tabbar-h: 4rem;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -69,14 +82,14 @@
   --safe-right: env(safe-area-inset-right, 0px);
   /* Where sticky in-page bars stick: under the status bar on mobile, under the top bar on desktop. */
   --sticky-top: var(--safe-top);
-  /* Space reserved at the bottom of the viewport (mobile tab bar + home indicator). */
-  --bottom-chrome: calc(var(--tabbar-h) + var(--safe-bottom));
+  /* Space reserved at the bottom of the viewport (floating mobile tab bar + its margin + home indicator). */
+  --bottom-chrome: calc(var(--tabbar-h) + 0.5rem + var(--safe-bottom));
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   /* Legacy neutral ramp used by pages not yet migrated (text shades adapt to the theme, see .dark). */
-  --legacy-400: #5f676a; /* was stone-400 (2.52:1) → 4.97 on surface-2 */
-  --legacy-500: #5b6467;
+  --legacy-400: #5e5c56;
+  --legacy-500: #4a4843;
 
   color-scheme: light;
 }
@@ -88,79 +101,85 @@
   }
 }
 
+/* Dark: «basalt and embers» — warm near-black canvas, lifted basalt cards, the same Ember. */
 .dark {
-  --bg: #0f1311;
-  --surface: #222a26; /* 1.31:1 against bg + border + inset highlight */
-  --surface-2: #2b3430;
-  --surface-sunken: #171c1a;
-  --border: #36413b;
-  --border-strong: #4a5650;
+  --bg: #100f0e;
+  --surface: #282522; /* 1.27:1 against bg */
+  --surface-2: #332f2b;
+  --surface-sunken: #3d3934;
+  --border: #3a3631;
+  --border-strong: #7f7b72; /* 3.71 on surface, 4.54 on bg */
 
-  --ink: #eef0ea;
-  --ink-muted: #a3aca6; /* 6.15 on surface */
-  --ink-subtle: #87908a;
+  --ink: #f4f2ec;
+  --ink-muted: #b5b1a7; /* 7.30 on surface */
+  --ink-subtle: #a29e94; /* 5.85 on surface */
 
-  --brand: #4fbf8f; /* dark ink on it 8.15 */
-  --brand-hover: #6bd0a4;
-  --brand-soft: rgb(79 191 143 / 0.14);
-  --brand-ink: #7fd6b0;
-  --on-brand: #0e1411;
+  --brand: #ff5c17; /* 5.06 on surface as a shape; dark ink on it 6.40 */
+  --brand-hover: #ff7a40;
+  --brand-soft: #3a2116;
+  --brand-ink: #ff9a6a; /* 7.50 on surface */
+  --on-brand: #0b0a09;
 
-  --azulejo: #8db4f0;
-  --azulejo-soft: rgb(141 180 240 / 0.13);
-  --azulejo-ink: #a9c6f4;
+  --azulejo: #f4f2ec;
+  --azulejo-soft: #36322d;
+  --azulejo-ink: #f4f2ec;
 
-  --terracotta: #f0a27e;
-  --terracotta-fill: #c8653d;
-  --terracotta-soft: rgb(240 162 126 / 0.13);
+  --terracotta: #a7a2ff; /* 6.89 on surface */
+  --terracotta-fill: #6a63f0; /* white on it 4.51 */
+  --terracotta-soft: #2b2846;
 
-  --sun: #f2c46b;
-  --sun-fill: #e0a526;
-  --sun-soft: rgb(242 196 107 / 0.13);
+  --sun: #f5f28e;
+  --sun-fill: #e8df5a;
+  --sun-soft: #37361c;
 
-  --danger: #ff9c8f;
-  --danger-fill: #c2412f;
-  --danger-soft: #2f1d1a;
-  --danger-border: #6b2e27;
-  --warning: #f2c46b;
-  --warning-soft: rgb(242 196 107 / 0.12);
-  --warning-border: #6b5424;
+  --success: #6fd394; /* 8.50 on surface */
+  --success-soft: #17291d;
+  --success-border: #2f6b44;
+  --danger: #ff8f96; /* 7.16 on surface */
+  --danger-fill: #cf2e40; /* white 5.10 */
+  --danger-soft: #36181b;
+  --danger-border: #7a2e36;
+  --warning: #f5f28e;
+  --warning-soft: #37361c;
+  --warning-border: #6e6a2a;
 
-  --focus: #8db4f0;
-  --scrim: rgb(0 0 0 / 0.55);
+  --focus: #f5f28e; /* sulfur ring, 16.1 on bg */
+  --scrim: rgb(0 0 0 / 0.6);
+  --on-ink-accent: #9e3000; /* 6.52 on the light «ink» toast */
 
-  --shadow-1: inset 0 1px 0 rgb(255 255 255 / 0.04), 0 1px 2px rgb(0 0 0 / 0.3);
-  --shadow-2: 0 14px 34px -12px rgb(0 0 0 / 0.65), inset 0 1px 0 rgb(255 255 255 / 0.06);
-  --shadow-bar: 0 -1px 0 var(--border), 0 -10px 30px -14px rgb(0 0 0 / 0.7);
-
-  --legacy-400: #a3aca6;
-  --legacy-500: #9da69f; /* 6.61 on surface */
+  --legacy-400: #a29e94;
+  --legacy-500: #b5b1a7;
 
   color-scheme: dark;
 }
 
 @theme {
-  --font-sans: "Manrope Variable", "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif;
-  --font-serif: "Lora Variable", "Lora", "PT Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Onest Variable", "Onest", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Compressed ultrabold display: headings, numbers, hero. Never for running text. */
+  --font-display: "Sofia Sans Extra Condensed Variable", "Sofia Sans Extra Condensed", "Arial Narrow", "Roboto Condensed",
+    Impact, sans-serif;
 
-  /* Type scale (≈1.2, rem so the browser font-size setting applies everywhere). */
+  /* Type scale (rem so the browser font-size setting applies everywhere). Body steps ≈1.2, display steps architectural. */
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.4;
   --text-sm: 0.9375rem;
   --text-sm--line-height: 1.45;
   --text-base: 1.0625rem;
-  --text-base--line-height: 1.6;
+  --text-base--line-height: 1.55;
   --text-lg: 1.25rem;
-  --text-lg--line-height: 1.45;
+  --text-lg--line-height: 1.4;
   --text-xl: 1.5rem;
-  --text-xl--line-height: 1.3;
+  --text-xl--line-height: 1.25;
   --text-2xl: 1.875rem;
-  --text-2xl--line-height: 1.2;
-  --text-3xl: 2.25rem;
-  --text-3xl--line-height: 1.15;
-  --text-display: 3rem;
-  --text-display--line-height: 1.05;
+  --text-2xl--line-height: 1.1;
+  --text-3xl: 2.5rem;
+  --text-3xl--line-height: 1;
+  --text-4xl: 3rem;
+  --text-4xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.94;
+  --text-mega: 7.5rem;
+  --text-mega--line-height: 0.86;
 
   --animate-pop: pop 260ms var(--ease-out);
   --animate-shake: shake 320ms ease-in-out;
@@ -168,26 +187,25 @@
   --animate-fade: fade 180ms ease-out;
   --animate-toast: toast-in 240ms var(--ease-out);
 
-  /* Legacy brand ramp (pages not yet migrated use brand-*). Retinted to the new verde. */
-  --color-brand-50: #e3f1ea;
-  --color-brand-100: #cde7da;
-  --color-brand-500: #4fbf8f;
-  --color-brand-600: #13805f;
-  --color-brand-700: #0f6b4f;
-  --color-brand-800: #0b5540;
-  --color-brand-900: #08402f;
+  /* Legacy brand ramp (pages not yet migrated use brand-*). Retinted to Ember. */
+  --color-brand-50: #ffeee4;
+  --color-brand-100: #ffdcc8;
+  --color-brand-500: #ff7a3d;
+  --color-brand-600: #fc5000;
+  --color-brand-700: #c43e00;
+  --color-brand-800: #9e3000;
+  --color-brand-900: #6e2200;
 
-  /* Legacy neutral ramp: Tailwind's stone retinted to the warm palette so un-migrated pages match.
-     Light shades = light-theme surfaces/borders, dark shades = dark-theme surfaces/borders. */
-  --color-stone-50: #fbf7f0;
-  --color-stone-100: #f4ede1;
-  --color-stone-200: #e7ddcc;
-  --color-stone-300: #d6c8b1;
-  --color-stone-600: #4a5356;
-  --color-stone-700: #3d4842;
-  --color-stone-800: #2b3430;
-  --color-stone-900: #222a26;
-  --color-stone-950: #0f1311;
+  /* Legacy neutral ramp retinted to the limestone/basalt palette. */
+  --color-stone-50: #f7f6f2;
+  --color-stone-100: #ecebe6;
+  --color-stone-200: #cfcdc6;
+  --color-stone-300: #7a7770;
+  --color-stone-600: #4a4843;
+  --color-stone-700: #3a3631;
+  --color-stone-800: #332f2b;
+  --color-stone-900: #282522;
+  --color-stone-950: #100f0e;
 }
 
 /* Semantic colour utilities (bg-surface, text-ink-muted, border-line…) resolve per element → theme-aware. */
@@ -217,6 +235,7 @@
   --color-sun-soft: var(--sun-soft);
   --color-success: var(--success);
   --color-success-soft: var(--success-soft);
+  --color-success-line: var(--success-border);
   --color-danger: var(--danger);
   --color-danger-fill: var(--danger-fill);
   --color-danger-soft: var(--danger-soft);
@@ -226,7 +245,8 @@
   --color-warning-line: var(--warning-border);
   --color-focus: var(--focus);
   --color-scrim: var(--scrim);
-  /* Theme-adaptive legacy text shades (fix stone-400/500 without dark: variants failing AA in dark). */
+  --color-on-ink-accent: var(--on-ink-accent);
+  /* Theme-adaptive legacy text shades. */
   --color-stone-400: var(--legacy-400);
   --color-stone-500: var(--legacy-500);
 
@@ -236,6 +256,7 @@
   --radius-control: var(--radius-sm);
   --radius-card: var(--radius-md);
   --radius-hero: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
 }
 
 @layer base {
@@ -247,21 +268,43 @@
   body {
     @apply bg-bg font-sans text-ink antialiased;
     font-size: var(--text-base);
-    line-height: 1.6;
-    font-feature-settings: 'ss01' off;
+    line-height: 1.55;
+    /* DM Sans-style Medium as the base weight: Regular reads anaemic next to the ultrabold display. */
+    font-weight: 500;
     text-rendering: optimizeLegibility;
   }
-  h1 {
-    @apply font-serif text-[1.625rem] leading-tight font-semibold tracking-tight text-ink md:text-2xl;
+  /* Display headings: compressed ultrabold, positive tracking (+0.02em, never negative). */
+  h1,
+  .h-display {
+    font-family: var(--font-display);
+    font-weight: 850;
+    letter-spacing: 0.02em;
+    line-height: 0.96;
+    font-size: 2.75rem;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  @media (min-width: 48rem) {
+    h1 {
+      font-size: var(--text-display);
+    }
   }
   h2 {
-    @apply text-[1.375rem] leading-snug font-bold tracking-tight;
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    font-size: 1.875rem;
   }
   h3 {
     @apply text-[1.125rem] leading-snug font-semibold;
   }
+  b,
+  strong {
+    font-weight: 650;
+  }
   a {
-    @apply text-azulejo underline-offset-[3px];
+    @apply text-azulejo underline decoration-brand decoration-2 underline-offset-[4px];
   }
   button {
     cursor: pointer;
@@ -271,10 +314,10 @@
   }
   :focus-visible {
     outline: 3px solid var(--focus);
-    outline-offset: 2px;
+    outline-offset: 3px;
   }
   ::selection {
-    background: color-mix(in oklab, var(--azulejo) 22%, transparent);
+    background: color-mix(in oklab, var(--brand) 35%, transparent);
   }
   /* Tabular figures wherever numbers are compared (counters, percentages). */
   .tabular-nums {
@@ -289,41 +332,64 @@
 /* Component classes (Tailwind v4 custom utilities, usable with variants and @apply).                 */
 /* ------------------------------------------------------------------------------------------------ */
 
+/* Display face as a utility (numbers, card titles ≥ 1.25rem). */
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+/* Portuguese gloss lines (titlePt, translations): the text face, slanted, warm muted ink. */
+@utility font-pt {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-synthesis: style;
+  font-weight: 500;
+}
+
+/* Flat surfaces: tone, not shadow or border, separates them from the canvas. */
 @utility card {
-  @apply rounded-card border border-line bg-surface p-4 shadow-card;
+  @apply rounded-card bg-surface p-4 sm:p-5;
 }
 @utility card-raised {
-  @apply rounded-card border border-line bg-surface p-4 shadow-raised;
+  @apply rounded-card bg-surface p-4 sm:p-5;
 }
 @utility card-sunken {
-  @apply rounded-card bg-sunken p-4;
+  @apply rounded-card bg-surface-2 p-4;
 }
-/* Interactive card (links): lift on hover, brand border on focus. */
+/* Interactive card (links): tonal hover + press, no lift. */
 @utility card-link {
-  @apply block text-ink no-underline transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-px hover:border-line-strong hover:shadow-raised active:translate-y-0;
+  @apply block text-ink no-underline transition-[background-color,transform,outline-color] duration-150 hover:bg-[color-mix(in_oklab,var(--surface)_80%,var(--brand-soft))] active:scale-[0.99];
 }
 
 @utility btn {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-control px-4 py-2 text-base leading-tight font-semibold no-underline transition-[background-color,border-color,color,box-shadow,transform] duration-150 select-none active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100;
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-pill px-5 py-2 text-base leading-tight font-semibold no-underline transition-[background-color,border-color,color,transform] duration-150 select-none active:scale-[0.97] disabled:opacity-50 disabled:active:scale-100;
 }
 @utility btn-primary {
-  @apply btn bg-brand text-on-brand shadow-card hover:bg-brand-hover;
+  @apply btn bg-brand text-on-brand hover:bg-brand-hover;
 }
 @utility btn-secondary {
-  @apply btn border border-line-strong bg-surface text-ink hover:border-ink-subtle hover:bg-surface-2;
+  @apply btn border-[1.5px] border-ink bg-transparent text-ink hover:bg-ink hover:text-surface;
 }
 @utility btn-ghost {
   @apply btn text-ink-muted hover:bg-surface-2 hover:text-ink;
 }
 @utility btn-danger {
-  @apply btn bg-danger-fill text-white shadow-card hover:brightness-110;
+  @apply btn bg-danger-fill text-white hover:brightness-110;
 }
 @utility btn-accent {
-  @apply btn bg-terracotta-fill text-white shadow-card hover:brightness-110;
+  @apply btn bg-terracotta-fill text-white hover:brightness-110;
 }
 
 @utility input {
-  @apply min-h-11 w-full rounded-control border border-line-strong bg-surface px-3 py-2.5 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-ink-muted/80 focus:border-focus;
+  @apply min-h-12 w-full rounded-pill border-[1.5px] border-line-strong bg-surface px-5 py-2.5 text-base font-medium text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-ink-muted/80 focus:border-ink;
+}
+textarea.input {
+  border-radius: var(--radius-sm);
+}
+
+/* Dotted 1.5px divider (Caldera signature detail). */
+@utility rule-dotted {
+  border-top: 1.5px dotted var(--border-strong);
 }
 
 /* Visual hit area ≥44×44 for small controls without growing the layout. */
@@ -351,16 +417,21 @@
 /* Edge fade for horizontally scrolling bars (tabs, chips). */
 @utility scroll-fade-x {
   scrollbar-width: none;
-  mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 20px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 20px), transparent 100%);
   &::-webkit-scrollbar {
     display: none;
   }
 }
 
-/* Decorative azulejo pattern (hero cards, logo). 4–6 % ink, tinted by currentColor. */
+/* Uniform halftone dot screen (small decorative fills; the hero uses the <Halftone> SVG). Tinted by currentColor. */
+@utility halftone-dots {
+  background-image: radial-gradient(circle at center, currentColor 0 1.6px, transparent 2px);
+  background-size: 7px 7px;
+}
+/* Legacy name: the old azulejo ornament is now the halftone screen. */
 @utility azulejo-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%231f4e8c' stroke-width='1.2' opacity='.5'%3E%3Cpath d='M24 4 44 24 24 44 4 24Z'/%3E%3Ccircle cx='24' cy='24' r='7'/%3E%3Cpath d='M24 17v-6M24 31v6M17 24h-6M31 24h6'/%3E%3Ccircle cx='0' cy='0' r='7'/%3E%3Ccircle cx='48' cy='0' r='7'/%3E%3Ccircle cx='0' cy='48' r='7'/%3E%3Ccircle cx='48' cy='48' r='7'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 48px 48px;
+  background-image: radial-gradient(circle at center, currentColor 0 1.6px, transparent 2px);
+  background-size: 7px 7px;
 }
 
 /* Grid-rows reveal (height animation without measuring). */

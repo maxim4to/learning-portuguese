@@ -6,10 +6,10 @@ export function NotFoundPage() {
   return (
     <section className="card-raised relative isolate mx-auto max-w-lg overflow-hidden rounded-hero px-6 py-10 text-center">
       <AzulejoCorner />
-      <span aria-hidden className="mx-auto grid size-16 place-items-center rounded-2xl bg-azulejo-soft text-azulejo">
+      <span aria-hidden className="mx-auto grid size-16 place-items-center rounded-full bg-azulejo-soft text-azulejo">
         <MapPinOff className="size-8" />
       </span>
-      <p className="mt-4 font-serif text-lg text-ink-muted italic" lang="pt-PT">
+      <p className="mt-4 font-pt text-lg text-ink-muted" lang="pt-PT">
         Perdido?
       </p>
       <h1 className="mt-1">Такой страницы нет</h1>
