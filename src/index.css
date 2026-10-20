@@ -128,6 +128,10 @@
     --gutter: 1.5rem;
   }
 }
+/* Touch keyboard up (Layout.tsx useTyping): the tab bar steps aside, so nothing reserves room for it. */
+:root[data-typing] {
+  --bottom-chrome: var(--safe-bottom);
+}
 @media (min-width: 48rem) {
   :root {
     --fs-h1: 2rem;
@@ -481,6 +485,21 @@
 textarea.input {
   border-radius: var(--radius-sm);
 }
+/* Selects look like the other fields everywhere: Safari's native control ignored the height and radius (a 27px
+   square box on iPhone). Own chevron, 44px pill, room for the chevron on the right. */
+select.input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234a4843' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  text-overflow: ellipsis;
+}
+.dark select.input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b5b1a7' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
 
 /* Section divider inside a card: a whisper line (1.2:1), never a dotted or strong rule. Prefer spacing. */
 @utility rule-dotted {
@@ -552,10 +571,18 @@ textarea.input {
     display: none;
   }
   &[data-fade-start] {
-    --fade-start: 24px;
+    --fade-start: 16px;
   }
   &[data-fade-end] {
-    --fade-end: 24px;
+    --fade-end: 16px;
+  }
+  @media (min-width: 40rem) {
+    &[data-fade-start] {
+      --fade-start: 24px;
+    }
+    &[data-fade-end] {
+      --fade-end: 24px;
+    }
   }
   &:is([data-fade-start], [data-fade-end]) {
     mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-start, 0px), #000 calc(100% - var(--fade-end, 0px)), transparent 100%); /* taste-skill-ignore: alpha mask for the scroll edge, nothing painted */

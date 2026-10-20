@@ -44,21 +44,22 @@ export function VocabIndexPage() {
       {groups.map((g) => (
         <section key={g.level ?? 'none'} className="space-y-3">
           <GroupTitle title={g.level ?? 'Без уровня'} hint={plural(g.items.length, 'тема', 'темы', 'тем')} />
-          <ul className="grid grid-cols-2 gap-(--gutter) sm:grid-cols-3 lg:grid-cols-4">
+          {/* Phones: one row per theme (title left, word count right) — two 165px tiles hyphenated every title. */}
+          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-(--gutter) lg:grid-cols-4">
             {g.items.map((t) => (
               <li key={t.id}>
-                <Link to={vocabHref(t.id)} className="card card-link flex h-full flex-col gap-3 p-4 no-underline lg:p-4">
-                  <span className="min-w-0">
-                    <span className="block leading-tight font-semibold text-ink hyphens-auto" lang="ru">
+                <Link to={vocabHref(t.id)} className="card card-link flex h-full gap-3 p-4 no-underline max-sm:items-center sm:flex-col lg:p-4">
+                  <span className="min-w-0 max-sm:flex-1">
+                    <span className="block leading-tight font-semibold text-ink sm:hyphens-auto" lang="ru">
                       {t.title}
                     </span>
                     {t.titlePt && (
-                      <span lang="pt-PT" className="mt-0.5 block font-pt text-sm text-ink-muted italic hyphens-auto">
+                      <span lang="pt-PT" className="mt-0.5 block font-pt text-sm text-ink-muted italic sm:hyphens-auto">
                         {t.titlePt}
                       </span>
                     )}
                   </span>
-                  <span className="mt-auto flex flex-wrap items-baseline justify-between gap-x-2 text-sm text-ink-muted">
+                  <span className="flex flex-wrap items-baseline justify-between gap-x-2 text-sm text-ink-muted max-sm:shrink-0 max-sm:flex-col max-sm:items-end sm:mt-auto">
                     <span>
                       <span className="font-display text-h2 leading-none text-ink tabular-nums">{t.words.length}</span>{' '}
                       {plural(t.words.length, 'слово', 'слова', 'слов').replace(/^\d+\s/, '')}

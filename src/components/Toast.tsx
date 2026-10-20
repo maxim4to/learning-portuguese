@@ -65,19 +65,23 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                 aria-hidden
                 className={cx('size-5 shrink-0', item.tone === 'danger' ? 'text-danger-line' : 'opacity-80')}
               />
-              <span className="min-w-0 flex-1 py-1.5">{item.text}</span>
-              {item.action && (
-                <button
-                  type="button"
-                  className="btn btn-sm shrink-0 text-on-ink-accent underline-offset-2 hover:underline focus-visible:outline-on-ink-accent"
-                  onClick={() => {
-                    item.action!.onClick()
-                    dismiss()
-                  }}
-                >
-                  {item.action.label}
-                </button>
-              )}
+              {/* Text and action share a wrapping row: on a phone the action drops under the text (beside it, the
+                  text was squeezed to ~140px and four lines). */}
+              <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-3">
+                <span className="min-w-0 flex-1 basis-48 py-1.5">{item.text}</span>
+                {item.action && (
+                  <button
+                    type="button"
+                    className="btn btn-sm -mt-1 -ml-4 shrink-0 text-on-ink-accent underline-offset-2 hover:underline focus-visible:outline-on-ink-accent sm:mt-0 sm:ml-0"
+                    onClick={() => {
+                      item.action!.onClick()
+                      dismiss()
+                    }}
+                  >
+                    {item.action.label}
+                  </button>
+                )}
+              </div>
               <button
                 type="button"
                 aria-label="Закрыть уведомление"

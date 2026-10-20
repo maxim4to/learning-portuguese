@@ -47,8 +47,9 @@ export function PageHeader({
   return (
     <header className={cx('space-y-4', className)}>
       {back && <BackLink {...back} />}
-      <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3">
-        <div className="min-w-0 flex-1 space-y-2">
+      {/* Phones: actions go under the text (beside it they squeezed the subtitle into a narrow column). */}
+      <div className="flex flex-col items-start gap-x-4 gap-y-3 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
+        <div className="min-w-0 space-y-2 self-stretch sm:flex-1 sm:self-auto">
           <h1 lang={titleLang} className="text-balance">
             {title}
           </h1>

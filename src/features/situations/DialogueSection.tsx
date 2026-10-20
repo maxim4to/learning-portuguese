@@ -155,7 +155,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
   const toggle = (on: boolean) =>
     cx(
       // Toggle buttons share the toolbar row with the primary, so they take the same md height (44px).
-      'btn border-[1.5px] max-[419px]:btn-icon',
+      'btn border-[1.5px] max-sm:btn-icon',
       on ? 'border-ink bg-ink text-bg' : 'border-line-strong bg-surface text-ink hover:border-ink',
     )
 
@@ -163,7 +163,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
     <div className="space-y-4">
       {/* One compact toolbar: play all · translation · role-play (audit P1-11). */}
       <div className="flex flex-wrap items-center gap-2" role="toolbar" aria-label="Диалог">
-        {/* Toggles are icon-only below 420px; their names stay in aria-label. */}
+        {/* Toggles are icon-only on phones (with labels the third one wrapped alone at 430px); names stay in aria-label. */}
         <button
           type="button"
           className="btn-primary"
@@ -185,10 +185,10 @@ export function DialogueSection({ situation }: { situation: Situation }) {
             setRuOverride(new Map())
           }}
         >
-          <Languages aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Переводы</span>
+          <Languages aria-hidden className="size-4.5" /> <span aria-hidden className="hidden sm:inline">Переводы</span>
         </button>
         <button type="button" className={toggle(roleplay)} aria-pressed={roleplay} aria-label="Роль B: ролевая игра, вы — B" onClick={toggleRoleplay}>
-          <Drama aria-hidden className="size-4.5" /> <span aria-hidden className="hidden min-[420px]:inline">Роль B</span>
+          <Drama aria-hidden className="size-4.5" /> <span aria-hidden className="hidden sm:inline">Роль B</span>
         </button>
       </div>
 
@@ -248,7 +248,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
               </span>
               <div
                 className={cx(
-                  'flex min-w-0 max-w-[85%] items-start gap-1 rounded-card border py-2 pr-1.5 pl-3.5 shadow-card transition-[border-color,box-shadow] sm:max-w-[75%]',
+                  'flex min-w-0 max-w-[calc(100%-2.5rem)] items-start gap-1 rounded-card border max-sm:grid max-sm:grid-cols-[minmax(0,1fr)_auto] max-sm:gap-y-0 py-2 pr-1.5 pl-3.5 shadow-card transition-[border-color,box-shadow] sm:max-w-[75%]',
                   isActive ? 'border-azulejo ring-2 ring-azulejo/30' : 'border-line',
                   isB ? 'rounded-br-sm bg-surface-2' : 'rounded-bl-sm bg-surface',
                 )}
@@ -271,7 +271,9 @@ export function DialogueSection({ situation }: { situation: Situation }) {
                   </div>
                 ) : (
                   <>
-                    <div className="min-w-0 flex-1 py-0.5">
+                    {/* Phones: the bubble is a grid — the pt line beside its two actions, the translation under both
+                        (full bubble width), so neither column of text is squeezed. */}
+                    <div className="min-w-0 flex-1 py-0.5 max-sm:contents">
                       {/* Plain pt text (not a button): tap / double-click / select a word → word card;
                           focus + Enter → «Все слова фразы». */}
                       <Pt
@@ -281,16 +283,17 @@ export function DialogueSection({ situation }: { situation: Situation }) {
                         src={{ kind: 'situation', id: situation.id, part: 'dialogue', index: i }}
                         ru={line.ru}
                         aria-describedby={ruShown(i) ? `dlg-ru-${i}` : undefined}
-                        className="scroll-mt-28 rounded-sm text-base leading-snug font-semibold"
+                        className="scroll-mt-28 rounded-sm text-base leading-snug font-semibold max-sm:col-start-1 max-sm:row-start-1 max-sm:self-center max-sm:py-1"
                       >
                         {line.pt}
                       </Pt>
                       {ruShown(i) && (
-                        <p id={`dlg-ru-${i}`} className="mt-0.5 text-sm text-ink-muted">
+                        <p id={`dlg-ru-${i}`} className="mt-0.5 text-sm text-ink-muted max-sm:col-span-2 max-sm:row-start-2 max-sm:mt-0 max-sm:pr-2 max-sm:pb-1">
                           {line.ru}
                         </p>
                       )}
                     </div>
+                    <div className="flex shrink-0 gap-1 max-sm:col-start-2 max-sm:row-start-1">
                     <button
                       type="button"
                       aria-expanded={ruShown(i)}
@@ -313,6 +316,7 @@ export function DialogueSection({ situation }: { situation: Situation }) {
                     >
                       {isActive ? <Square aria-hidden className="size-4 fill-current" /> : <Play aria-hidden className="size-4.5 fill-current" />}
                     </button>
+                    </div>
                   </>
                 )}
               </div>

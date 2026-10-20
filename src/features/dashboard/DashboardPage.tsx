@@ -453,7 +453,7 @@ function LevelBar({ stats }: { stats: LevelStats }) {
   return (
     <div className="space-y-1.5">
       <div className="flex items-baseline justify-between gap-2 text-sm">
-        <Link to={`/syllabus?level=${level}`} className="inline-flex min-h-8 items-center gap-2 font-bold text-ink no-underline hover:underline">
+        <Link to={`/syllabus?level=${level}`} className="hit inline-flex min-h-8 items-center gap-2 font-bold text-ink no-underline hover:underline">
           <LevelBadge level={level} />
           <span className="sr-only">Уровень {level}</span>
         </Link>

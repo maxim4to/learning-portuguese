@@ -18,13 +18,14 @@ export function LevelChips<T extends { level?: string }>({
   return (
     <ChipGroup
       label="Фильтр по уровню"
-      // Phones: one row that scrolls (edge to edge) instead of a lone chip wrapping onto a second line.
+      // Phones: one row; tighter chips (12px sides) fit all five from 375px, narrower screens scroll edge to edge
+      // instead of a lone chip wrapping onto a second line.
       className="scroll-fade-x max-sm:-mx-4 max-sm:-my-1 max-sm:flex-nowrap max-sm:overflow-x-auto max-sm:px-4 max-sm:py-1"
     >
       {(['all', ...LEVELS] as LevelFilter[]).map((l) => {
         const n = l === 'all' ? items.length : items.filter((i) => i.level === l).length
         return (
-          <Chip key={l} pressed={value === l} count={n} muted={!n} onClick={() => onChange(l)}>
+          <Chip key={l} pressed={value === l} count={n} muted={!n} onClick={() => onChange(l)} className="max-sm:px-3">
             {l === 'all' ? 'Все' : l}
           </Chip>
         )

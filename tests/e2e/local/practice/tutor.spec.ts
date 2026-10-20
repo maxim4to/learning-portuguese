@@ -41,8 +41,9 @@ test.describe('tutor hub', () => {
     await expect(page.getByRole('heading', { name: 'История занятий' })).toBeVisible()
     const entry = app.main.getByRole('listitem').filter({ hasText: /Свободная беседа дня\s*10\/10/ })
     await expect(entry).toBeVisible()
-    await entry.getByRole('link', { name: 'В кафе' }).click()
-    await expect(page).toHaveURL(/\/practice\/situations\/no-cafe\?tab=tutor$/)
+    // The situation of the day rotates with the date: follow whichever one the entry links to.
+    await entry.getByRole('link').filter({ has: page.locator('xpath=self::*[contains(@href, "/practice/situations/")]') }).first().click()
+    await expect(page).toHaveURL(/\/practice\/situations\/[^/?]+\?tab=tutor$/)
     await expect(page.getByRole('tab', { name: /С агентом/ })).toHaveAttribute('aria-selected', 'true')
     await page.goBack()
 

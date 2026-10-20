@@ -89,7 +89,7 @@ export function WordList({
                 </span>
               </p>
               {/* Phones: the status leads the meta line (no pill column); from sm it is the pill on the right. */}
-              <p className="mt-0.5 truncate text-sm text-ink-muted">
+              <p className="mt-0.5 line-clamp-2 text-sm text-ink-muted sm:line-clamp-1">
                 <span className="sm:hidden">
                   {WORD_STATUS_LABEL[status]}
                   {meta.length > 0 && ' · '}

@@ -212,7 +212,9 @@ export function UpdatePrompt() {
         className="flex w-full max-w-md animate-toast items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-5 text-sm text-bg"
       >
         <RefreshCw aria-hidden className={`size-5 shrink-0 opacity-80 ${applying ? 'motion-safe:animate-spin' : ''}`} />
-        <span className="min-w-0 flex-1">{applying ? 'Обновляем приложение…' : 'Доступна новая версия приложения'}</span>
+        {/* Text and «Обновить» wrap as one row: on a phone the button drops under the text instead of squeezing it. */}
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-1.5 py-1">
+        <span className="min-w-0 flex-1 basis-48">{applying ? 'Обновляем приложение…' : 'Доступна новая версия приложения'}</span>
         <button
           type="button"
           className="btn-primary btn-sm shrink-0 focus-visible:outline-on-ink-accent disabled:opacity-70"
@@ -222,6 +224,7 @@ export function UpdatePrompt() {
         >
           {applying ? 'Обновляем…' : 'Обновить'}
         </button>
+        </div>
         {!applying && (
           <button
             type="button"

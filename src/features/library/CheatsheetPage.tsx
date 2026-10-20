@@ -73,7 +73,7 @@ export function CheatsheetPage() {
                       e.preventDefault()
                       jump(i)
                     }}
-                    className="flex min-h-9 items-center rounded-pill bg-surface-2 px-3 no-underline transition-colors hover:bg-sunken/60 sm:block sm:min-h-0 sm:rounded-none sm:bg-transparent sm:px-0 sm:py-1.5 sm:hover:bg-transparent sm:hover:underline"
+                    className="hit flex min-h-9 items-center rounded-pill bg-surface-2 px-3 no-underline transition-colors hover:bg-sunken/60 sm:block sm:min-h-0 sm:rounded-none sm:bg-transparent sm:px-0 sm:py-1.5 sm:hover:bg-transparent sm:hover:underline"
                   >
                     {t.text}
                   </a>

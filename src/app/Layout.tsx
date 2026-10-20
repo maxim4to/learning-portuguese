@@ -52,6 +52,66 @@ function useTabBarHidden() {
   return hidden
 }
 
+/**
+ * Touch screens: while the on-screen keyboard is up for a text field, the tab bar steps aside (it would otherwise
+ * sit on top of the keyboard and cover the field's own actions, «Проверить» / «Не знаю»). Marks <html data-typing>,
+ * which zeroes --bottom-chrome, so sticky actions and toasts drop to the screen edge.
+ * «Keyboard up» = a text field has focus AND either the user tapped it (the keyboard opens on a tap) or the visible
+ * area shrank by a keyboard's height. A field focused by script alone (the next task) keeps the tab bar.
+ */
+const TEXT_INPUT = 'textarea, [contenteditable="true"], input:not([type]), input[type="text"], input[type="search"], input[type="email"], input[type="url"], input[type="tel"], input[type="number"], input[type="password"]'
+const KEYBOARD_MIN = 120
+function useTyping() {
+  const [typing, setTyping] = useState(false)
+  useEffect(() => {
+    const coarse = window.matchMedia?.('(pointer: coarse)')
+    const vv = window.visualViewport
+    const height = () => Math.min(window.innerHeight, vv?.height ?? Infinity)
+    let width = window.innerWidth
+    let full = height() // the visible height without a keyboard (re-measured on rotation / when no field is focused)
+    let tapped: Element | null = null
+    const field = () => {
+      const a = document.activeElement
+      return a instanceof HTMLElement && a.matches(TEXT_INPUT) && !a.closest('nav') ? a : null
+    }
+    const update = () => {
+      const f = field()
+      if (tapped && tapped !== f) tapped = null
+      if (window.innerWidth !== width) {
+        width = window.innerWidth
+        full = height()
+      } else if (!f) full = Math.max(full, height())
+      const on = !!coarse?.matches && !!f && (tapped === f || height() < full - KEYBOARD_MIN)
+      setTyping(on)
+      document.documentElement.toggleAttribute('data-typing', on)
+    }
+    // focusout fires before the next focusin: re-check on the next frame so moving between fields doesn't flash the bar.
+    let frame = 0
+    const schedule = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(update)
+    }
+    const onDown = (e: PointerEvent) => {
+      tapped = e.target instanceof Element ? e.target.closest(TEXT_INPUT) : null
+    }
+    document.addEventListener('pointerdown', onDown, true)
+    document.addEventListener('focusin', schedule)
+    document.addEventListener('focusout', schedule)
+    vv?.addEventListener('resize', schedule)
+    window.addEventListener('resize', schedule)
+    return () => {
+      cancelAnimationFrame(frame)
+      document.removeEventListener('pointerdown', onDown, true)
+      document.removeEventListener('focusin', schedule)
+      document.removeEventListener('focusout', schedule)
+      vv?.removeEventListener('resize', schedule)
+      window.removeEventListener('resize', schedule)
+      document.documentElement.removeAttribute('data-typing')
+    }
+  }, [])
+  return typing
+}
+
 function DueBadge({ n, className }: { n: number; className?: string }) {
   if (!n) return null
   return (
@@ -70,7 +130,7 @@ function DueBadge({ n, className }: { n: number; className?: string }) {
 /** Logo mark + product name, links home (same in the phone row and the desktop bar). */
 function HomeLogo({ size }: { size: number }) {
   return (
-    <NavLink to="/" data-halftone-surface="" aria-label="Learning Portuguese — главная" className="flex items-center gap-2.5 text-ink no-underline">
+    <NavLink to="/" data-halftone-surface="" aria-label="Learning Portuguese — главная" className="flex min-h-11 items-center gap-2.5 text-ink no-underline">
       <AzulejoMark size={size} />
       <span className="font-display text-h2 leading-none font-black whitespace-nowrap">Learning Portuguese</span>
     </NavLink>
@@ -83,6 +143,7 @@ export function Layout() {
   const repo = useRepository()
   const due = useDueCount(pathname)
   const barHidden = useTabBarHidden()
+  const typing = useTyping()
   // Tab-bar labels shrink together (12 → 11 → 10px, then icons only) when any of them would not fit its cell.
   const tabBarRef = useRef<HTMLUListElement>(null)
   useFitText(tabBarRef, [NAV_ITEMS.map((item) => item.short ?? item.label).join('|')])
@@ -160,7 +221,7 @@ export function Layout() {
           aria-label="Основные разделы"
           className={cx(
             'fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface pr-(--safe-right) pb-(--safe-bottom) pl-(--safe-left) transition-transform duration-200 ease-out focus-within:translate-y-0 motion-reduce:transition-none lg:hidden',
-            barHidden && 'translate-y-full',
+            (barHidden || typing) && 'translate-y-full',
           )}
         >
           <ul ref={tabBarRef} className="mx-auto grid h-(--tabbar-h) max-w-[30rem] grid-cols-5 px-3">

@@ -15,6 +15,9 @@ import { WordsTutor } from './panels'
 
 const linkCard = 'card card-link group flex h-full items-start gap-3'
 const chevron = <ChevronRight aria-hidden className="mt-0.5 size-5 shrink-0 text-ink-muted transition-transform group-hover:translate-x-0.5" />
+/** Status badge: under the title on phones (beside it, it squeezed the title into a narrow column), at the side from sm. */
+const inlineBadge = 'mt-1.5 sm:hidden'
+const sideBadge = 'shrink-0 max-sm:hidden'
 
 /** Plain section heading: no icon chips (design review: tinted icon circles read as a generated dashboard). */
 function SectionTitle({ children }: { children: ReactNode }) {
@@ -120,8 +123,9 @@ export function TutorHubPage() {
                 <span className="min-w-0 flex-1">
                   <span className="block font-semibold">{topic.title}</span>
                   <span className="block text-sm text-ink-muted">последний результат {Math.round(p.lastPct * 100)}%</span>
+                  <StatusBadge status={p.status} className={inlineBadge} />
                 </span>
-                <StatusBadge status={p.status} />
+                <StatusBadge status={p.status} className={sideBadge} />
                 {chevron}
               </Link>
             </li>
@@ -133,8 +137,9 @@ export function TutorHubPage() {
                 <span className="min-w-0 flex-1">
                   <span className="block font-semibold">{topic.title}</span>
                   <span className="block text-sm text-ink-muted">следующая тема курса</span>
+                  <StatusBadge status="not-started" className={inlineBadge} />
                 </span>
-                <StatusBadge status="not-started" />
+                <StatusBadge status="not-started" className={sideBadge} />
                 {chevron}
               </Link>
             </li>
@@ -156,8 +161,9 @@ export function TutorHubPage() {
                     <span className="block font-pt text-sm text-ink-muted" lang="pt-PT">
                       {s.titlePt}
                     </span>
+                    <StatusBadge status={p?.status ?? 'not-started'} className={inlineBadge} />
                   </span>
-                  <StatusBadge status={p?.status ?? 'not-started'} />
+                  <StatusBadge status={p?.status ?? 'not-started'} className={sideBadge} />
                   {chevron}
                 </Link>
               </li>

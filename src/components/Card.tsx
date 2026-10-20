@@ -37,7 +37,7 @@ export function AzulejoCorner({
       aria-hidden
       className={cx(
         'pointer-events-none absolute -z-10',
-        size === 'sm' ? 'top-0 right-0 h-24 w-40' : '-top-2 -right-2 h-44 w-72 sm:h-56 sm:w-96',
+        size === 'sm' ? 'top-0 right-0 h-24 w-40' : '-top-2 -right-2 h-32 w-48 sm:h-56 sm:w-96',
         className,
       )}
       style={{ opacity }}

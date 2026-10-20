@@ -136,6 +136,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
   const [resumeNote, setResumeNote] = useState(!!restored)
   const [live, setLive] = useState('')
   const nextRef = useRef<HTMLButtonElement>(null)
+  const feedbackRef = useRef<HTMLDivElement>(null)
   const topRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
@@ -252,7 +253,13 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
   useEffect(() => {
     if (!current) return
     nextRef.current?.focus({ preventScroll: true })
-    nextRef.current?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() })
+    // Bring the verdict into view, with room under it for «Дальше» (pinned above the tab bar on phones, so scrolling
+    // to the button alone left the verdict under it).
+    // Two frames later: the answered field has just blurred, and the phone tab bar (hidden while typing) is back,
+    // so the scroll margin accounts for it.
+    let frame = requestAnimationFrame(() => {
+      frame = requestAnimationFrame(() => (feedbackRef.current ?? nextRef.current)?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() }))
+    })
     const onKey = (e: KeyboardEvent) => {
       if (isLookupOpen()) return // Enter belongs to the word card while it is open
       if (e.key !== 'Enter' || e.repeat || e.isComposing || !noMods(e)) return
@@ -264,6 +271,7 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
     }
     const timer = setTimeout(() => window.addEventListener('keydown', onKey), 0)
     return () => {
+      cancelAnimationFrame(frame)
       clearTimeout(timer)
       window.removeEventListener('keydown', onKey)
     }
@@ -359,7 +367,9 @@ export function ExerciseRunner({ exercises, onFinish, title, persistKey, focusOn
         />
         {current && (
           <>
-            <ExerciseFeedback ex={ex} rec={current} lenient={lenientAccents} />
+            <div ref={feedbackRef} className="scroll-mt-4 scroll-mb-[calc(var(--bottom-chrome)+5.5rem)]">
+              <ExerciseFeedback ex={ex} rec={current} lenient={lenientAccents} />
+            </div>
             <div className="sticky-actions -mx-2 rounded-pill bg-surface p-2 sm:static sm:mx-0 sm:bg-transparent sm:p-0">
               <button
                 ref={nextRef}

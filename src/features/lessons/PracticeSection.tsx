@@ -92,6 +92,8 @@ export function PracticeSection({ topic, exercises, source, title, progress, pro
           : step.kind === 'topic'
             ? {
                 label: `${step.rec.reason === 'prereq' ? 'Подтянуть' : 'Следующая тема'}: ${step.rec.topic.title}`,
+                kicker: step.rec.reason === 'prereq' ? 'Подтянуть' : 'Следующая тема',
+                title: step.rec.topic.title,
                 to: `/topic/${step.rec.topic.id}`,
               }
             : { label: 'К курсу', to: '/syllabus' }

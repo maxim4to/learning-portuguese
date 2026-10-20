@@ -93,11 +93,12 @@ export function Dialog({
         if (e.target === e.currentTarget) onClose() // click on the backdrop
       }}
       className={cx(
-        'm-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-lg overflow-y-auto overscroll-contain rounded-card bg-surface p-0 text-ink',
+        'top-(--safe-top) bottom-(--safe-bottom) m-auto max-h-[calc(100dvh-var(--safe-top)-var(--safe-bottom)-2rem)] w-[calc(100%-2rem)] max-w-lg overflow-y-auto overscroll-contain rounded-card bg-surface p-0 text-ink',
         'backdrop:bg-black/55 open:animate-enter',
         className,
       )}
     >
+      {/* Centred inside the safe area (top/bottom = insets): never under the Dynamic Island or the home indicator. */}
       {open && (
         <div className="space-y-5 p-5 lg:p-6">
           <div className="flex items-start gap-3">

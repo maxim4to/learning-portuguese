@@ -188,11 +188,11 @@ function TopicRow({ id, progress }: { id: string; progress: Map<string, TopicPro
         <i className={`size-3 shrink-0 rounded-full ${meta.dot}`} />
         <span className="min-w-0 flex-1">
           <span className="block leading-snug font-semibold">{t.title}</span>
-          <span className="block truncate font-pt text-sm text-ink-muted" lang="pt-PT">
+          <span className="block font-pt text-sm text-pretty text-ink-muted sm:truncate" lang="pt-PT">
             {t.titlePt}
           </span>
           {status === 'not-started' && unmet.length > 0 && (
-            <span className="line-clamp-1 text-sm text-ink-muted">
+            <span className="line-clamp-2 text-sm text-ink-muted sm:line-clamp-1">
               Лучше сначала: {unmet.map((r) => getTopic(r)?.title ?? humanizeId(r)).join(', ')}
             </span>
           )}

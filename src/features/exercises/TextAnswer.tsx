@@ -1,5 +1,6 @@
 import { useRef, useState, type FormEvent, type KeyboardEvent } from 'react'
 import { cx } from '@/components/cx'
+import { useKeyboardInView } from '@/components/useKeyboardInView'
 import { focusMark, isImeEnter, noMods } from './keyboard'
 import type { AnswerRecord } from './types'
 import { isLookupOpen } from '@/features/words/capture/store'
@@ -41,6 +42,10 @@ export function TextAnswer({
   const [values, setValues] = useState<string[]>(() => Array.from({ length: fields }, () => ''))
   const [focused, setFocused] = useState(0)
   const refs = useRef<(HTMLInputElement | HTMLTextAreaElement | null)[]>([])
+  const formRef = useRef<HTMLFormElement>(null)
+  const actionsRef = useRef<HTMLDivElement>(null)
+  // Phones: the keyboard must not hide «Проверить» (the field and its actions stay in the visible area).
+  useKeyboardInView(formRef, actionsRef, !locked)
 
   const filled = values.some((v) => v.trim())
 
@@ -107,7 +112,7 @@ export function TextAnswer({
   const fieldLabel = (i: number) => (fields > 1 ? `Пропуск ${i + 1} из ${fields}` : label)
 
   return (
-    <form onSubmit={submit} className="space-y-3">
+    <form ref={formRef} onSubmit={submit} className="space-y-3">
       <div className={fields > 1 ? 'grid max-w-3xl gap-2 sm:grid-cols-2' : 'max-w-3xl'}>
         {values.map((v, i) =>
           multiline ? (
@@ -166,7 +171,7 @@ export function TextAnswer({
             ))}
           </div>
           {/* Not sticky: a pinned bar would cover the accent keys right above it on phones. */}
-          <div className="flex gap-2">
+          <div ref={actionsRef} className="flex gap-2">
             <button type="submit" className="btn-primary flex-1 sm:flex-none sm:min-w-36" disabled={!filled}>
               Проверить
             </button>

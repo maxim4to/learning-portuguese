@@ -8,7 +8,9 @@ import { cx, scrollBehavior } from './cx'
  * One row that scrolls sideways on phones (edges fade only where items are hidden).
  */
 export const subRowOuter = 'relative before:absolute before:inset-x-0 before:bottom-0 before:h-px before:bg-ink/12'
-export const subRowScroller = 'scroll-fade-x relative flex gap-5 overflow-x-auto lg:gap-6'
+// Phones: 16px between items (not 20) so a row that overflows shows the start of the next item at the edge
+// (at 393px the topic tabs ended exactly at the screen edge and «С агентом» was invisible).
+export const subRowScroller = 'scroll-fade-x relative flex gap-4 overflow-x-auto sm:gap-5 lg:gap-6'
 export function subItemClass(on: boolean) {
   return cx(
     'relative inline-flex h-11 shrink-0 items-center gap-1.5 px-0.5 text-sm font-semibold whitespace-nowrap no-underline transition-colors duration-150 focus-visible:-outline-offset-3',

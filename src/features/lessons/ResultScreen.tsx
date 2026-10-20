@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronRight, Plus, RotateCcw } from 'lucide-react'
 import type { Exercise } from '@/content'
 import { useCards, useDataReady, useRepository, type SrsCard, type TopicStatus } from '@/data'
+import { cx } from '@/components/cx'
 import { ProgressRing } from '@/components/ProgressRing'
 import { toneForPct } from '@/components/tones'
 import { LevelBadge, StatusBadge } from '@/components/StatusBadge'
@@ -18,6 +19,12 @@ import type { SaveOutcome } from './persist'
 /** The screen's one forward action: a route (`to`) or an in-page step (`onClick`). */
 export interface PrimaryAction {
   label: ReactNode
+  /**
+   * Two-line form for a long destination («Следующая тема» over the topic title): a small kicker line above `title`.
+   * `label` stays the accessible name. A centred two-line pill read as an accidental wrap on phones.
+   */
+  kicker?: string
+  title?: string
   to?: string
   onClick?(): void
   icon?: ReactNode
@@ -129,17 +136,29 @@ export function ResultScreen(p: ResultScreenProps) {
     ? `Ошибки повторены: ${summary.correct} из ${summary.total}`
     : `${p.runTitle ?? 'Результат'}: ${summary.correct} из ${summary.total}`
 
+  const twoLine = !!(primary.kicker && primary.title)
   const primaryContent = (
     <>
       {primary.icon && <span aria-hidden className="-ml-0.5 inline-flex shrink-0">{primary.icon}</span>}
-      <span className="min-w-0 text-balance">{primary.label}</span>
+      {twoLine ? (
+        <span aria-hidden className="flex min-w-0 flex-1 flex-col items-start text-left">
+          <span className="text-sm font-medium">{primary.kicker}</span>
+          <span className="text-pretty">{primary.title}</span>
+        </span>
+      ) : (
+        <span className="min-w-0 text-balance">{primary.label}</span>
+      )}
       {!primary.icon && <ArrowRight aria-hidden className="-mr-0.5 size-[1.125rem] shrink-0" />}
     </>
   )
+  const primaryName = twoLine && typeof primary.label === 'string' ? primary.label : undefined
 
   const quiet = 'btn-ghost btn-sm'
-  // A long next-topic title wraps instead of being cut off on phones.
-  const primaryCls = 'btn-primary h-auto min-h-11 max-w-full py-2.5 text-center whitespace-normal'
+  // A long next-topic title wraps instead of being cut off on phones; the two-line form is a left-aligned block.
+  const primaryCls = cx(
+    'btn-primary h-auto min-h-11 max-w-full py-2.5 whitespace-normal',
+    twoLine ? 'justify-between! gap-3 rounded-sm! py-3 pl-5 text-left' : 'text-center',
+  )
   const hasRecs = !!p.recs?.length
 
   return (
@@ -177,13 +196,14 @@ export function ResultScreen(p: ResultScreenProps) {
 
         <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
           {primary.to ? (
-            <Link ref={primaryRef} to={primary.to} className={primaryCls} onClick={(e) => guard(e)}>
+            <Link ref={primaryRef} to={primary.to} aria-label={primaryName} className={primaryCls} onClick={(e) => guard(e)}>
               {primaryContent}
             </Link>
           ) : (
             <button
               ref={primaryRef}
               type="button"
+              aria-label={primaryName}
               className={primaryCls}
               onClick={(e) => {
                 if (!guard(e)) primary.onClick?.()
